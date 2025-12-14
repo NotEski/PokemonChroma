@@ -1,0 +1,4 @@
+pyglet
+pydantic
+requests
+pyinstaller
