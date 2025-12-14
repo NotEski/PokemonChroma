@@ -50,3 +50,7 @@ desktop.ini
 
 # Temporary pause asset files
 /assets/*
+
+# Ignore the files in pokeapi_database
+pokeapi_database/
+temp_assets/
