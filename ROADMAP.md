@@ -80,3 +80,12 @@
 - [ ] Z-Moves
 - [ ] Dynamax/Gigantamax
 - [ ] Terastallization 
+
+
+
+More assets - Animated and static
+- Gen6 - https://docs.google.com/spreadsheets/d/1Gn0UORn-unvcbUeQhQdEBz0ADNcH49BZZqQ1dpXm9eo/edit?gid=0#gid=0
+- Gen7 - https://docs.google.com/spreadsheets/d/1FMcHbSKEWZc7v2Ur4cyJjT_NhO0gqXyU9kDhsOQhlBQ/edit?gid=0#gid=0
+- Gen8 - https://docs.google.com/spreadsheets/d/1acgzAjh0dnFRQnjZu8kSjS177rKCzpFfEHRLtwuuXRU/edit?gid=0#gid=0
+- Gen9 - https://docs.google.com/spreadsheets/d/1MCjDktTOOFjLKM5C-RW6SfBQGkjlxDSCZAZDma_ItuA/edit?gid=0#gid=0
+
