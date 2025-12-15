@@ -102,7 +102,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
         return [position for position, speed in sorted_positions]
 
-    def end_turn(self) -> bool:
+    def end_turn(self):
 
         
         if len(self.this_turns_actions) != 2:
@@ -128,6 +128,9 @@ class BattleManager(BaseModel, Generic[TPosition]):
             # If wild battle, display "Got away safely!"/"Can't escape!" message; if trainer battle, forfeit and fade out
             self.process_escape()
 
+            if not self.taking_actions:
+                return
+
             # Handle switches
             self.switch_pokemon()
             
@@ -148,9 +151,9 @@ class BattleManager(BaseModel, Generic[TPosition]):
             pass
         except UnfinishedTurnException as e:
             print(e)
-            return False
+            return
         self.taking_actions = False
-        return True
+        return
     #endregion
 
     #region Process Actions
@@ -180,13 +183,21 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
 
     def end_battle(self):
+        self.clear_all_stat_stages()
+
+        self.this_turns_actions.clear()
+        
+        self.clear_non_standard_variables()
+
+        self.in_play_pokemon.clear()
+
         self.taking_actions = False
         self.battle_config = None
         self.battle_state = None
-        self.in_play_pokemon.clear()
-        self.this_turns_actions.clear()
-        self.clear_non_standard_variables()
-        self.clear_all_stat_stages()
+        
+        
+        
+        
 
     @abstractmethod
     def clear_non_standard_variables(self):
@@ -245,6 +256,14 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
         else:
             raise ValueError("Invalid position for singles battle.")
 
+    def get_opposite_position_from_position(self, position: SinglesBattlePosition) -> SinglesBattlePosition:
+        if position == SinglesBattlePosition.Team1_Pokemon1:
+            return SinglesBattlePosition.Team2_Pokemon1
+        elif position == SinglesBattlePosition.Team2_Pokemon1:
+            return SinglesBattlePosition.Team1_Pokemon1
+        else:
+            raise ValueError("Invalid position for singles battle.")
+
     def clear_all_stat_stages(self):
         for pokemon in self.team_1.get_all_pokemons() + self.team_2.get_all_pokemons():
             self.clear_pokemon_stat_stages(pokemon)
@@ -277,13 +296,16 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
     def process_escape(self):
         for position, action in self.this_turns_actions.items():
             if isinstance(action, ActionEscape):
-                pokemon = self.in_play_pokemon[position]
-                success = calculate_escape_success(pokemon, , action.escape_attempts)
+                escaping_pokemon = self.in_play_pokemon[position]
+                enemy_pokemon = self.in_play_pokemon[self.get_opposite_position_from_position(position)]
+                
+                success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
-                    print(f"{pokemon.nickname} got away safely!")
+                    print(f"{escaping_pokemon.nickname} got away safely!")
                     self.end_battle()
+                    return
                 else:
-                    print(f"{pokemon.nickname} couldn't escape!")
+                    print(f"{escaping_pokemon.nickname} couldn't escape!")
 
     def process_move(self, turn_order: list[SinglesBattlePosition]):
         for position in turn_order:
@@ -324,6 +346,10 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
     def clear_non_standard_variables(self):
         self.team_1 = None
         self.team_2 = None
+
+    
+        
+    
 
 
 
