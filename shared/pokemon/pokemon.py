@@ -26,6 +26,26 @@ class PokemonBattleState(BaseModel):
     is_bound: bool = Field(default=False)
     is_flinching: bool = Field(default=False)
 
+    def reset(self):
+        self.reset_stat_stages()
+        self.reset_conditions()
+
+    def reset_stat_stages(self):
+        self.attack_stat_stage = 0
+        self.defense_stat_stage = 0
+        self.special_attack_stat_stage = 0
+        self.special_defense_stat_stage = 0
+        self.speed_stat_stage = 0
+        self.accuracy_stage = 0
+        self.evasion_stage = 0
+        self.critical_hit_stage = 0
+
+    def reset_conditions(self):
+        self.is_protected = False
+        self.confusion_turns = 0
+        self.is_bound = False
+        self.is_flinching = False
+
 class Pokemon(BaseModel):
     pokemon: PokemonBase
     nickname: str = Field(default="")

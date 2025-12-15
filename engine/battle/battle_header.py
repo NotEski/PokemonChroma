@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from abc import abstractmethod
 from typing import List, Optional
 from enum import Enum, auto
 from shared.pokemon.pokemon import Pokemon
@@ -31,6 +32,7 @@ class ActionMove(Action):
 
 class ActionSwitch(Action):
     action_type: ActionType = Field(default=ActionType.SWITCH)
+    switch_in_pokemon: Pokemon
 
 class ActionUseItem(Action):
     action_type: ActionType = Field(default=ActionType.USE_ITEM)
@@ -84,15 +86,22 @@ class BattleState(BaseModel):
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
 
 
-
 class Opponent(BaseModel):
-    pass
+    @abstractmethod
+    def get_all_pokemons(self) -> List[Pokemon]:
+        pass
 
 class TrainerOpponent(Opponent):
     trainer: BattleTrainer
 
+    def get_all_pokemons(self) -> List[Pokemon]:
+        return self.trainer.team.get_all_pokemons()
+
 class WildPokemonOpponent(Opponent):
     pokemon: Pokemon
+
+    def get_all_pokemons(self) -> List[Pokemon]:
+        return [self.pokemon]
 
 class BattlePosition(Enum):
     pass

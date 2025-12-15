@@ -19,6 +19,14 @@ class BattleManager(BaseModel, Generic[TPosition]):
     in_play_pokemon: dict[TPosition, Pokemon] = Field(default_factory=dict)
     this_turns_actions: dict[TPosition, Action] = Field(default_factory=dict)
     taking_actions: bool = Field(default=False)
+
+    def clear_pokemon_stat_stages(self, pokemon: Pokemon):
+        pokemon.pokemon_battle_state.reset()
+    
+    @abstractmethod
+    def clear_all_stat_stages(self):
+        # Reset stat stages for all pokemon that are associated with the battle for the start of battle
+        pass
     
     @abstractmethod
     def init_battle(self):
@@ -57,7 +65,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
     def switch_pokemon(self, user_position: TPosition, new_pokemon: Pokemon):
         if self._has_actioned(user_position): return
         # check if new_pokemon is in team and not fainted
-        self.this_turns_actions[user_position] = ActionSwitch()
+        self.this_turns_actions[user_position] = ActionSwitch(switch_in_pokemon=new_pokemon)
 
     def cancel_action(self, user_position: TPosition):
         if self._has_actioned(user_position):
@@ -65,7 +73,13 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
     def end_turn(self) -> bool:
         try:
-            self.process_turn()
+            # process action order
+            
+            # self.switch_pokemon
+            # self.use_move
+
+
+            pass
         except UnfinishedTurnException as e:
             print(e)
             return False
@@ -80,6 +94,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         self.in_play_pokemon.clear()
         self.this_turns_actions.clear()
         self.clear_non_standard_variables()
+        self.clear_all_stat_stages()
     
     @abstractmethod
     def clear_non_standard_variables(self):
@@ -108,7 +123,12 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
         else:
             self.battle_config.is_wild = True
 
+    def clear_all_stat_stages(self):
+        for pokemon in self.team_1.get_all_pokemons() + self.team_2.get_all_pokemons():
+            self.clear_pokemon_stat_stages(pokemon)
+
     def init_battle(self):
+        self.clear_all_stat_stages()
         self.send_out_first_pokemon()
         # activate any abilities or items that trigger on switch-in
 
@@ -164,6 +184,8 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                     critical_hit=is_critical,
                     battle_state=self.battle_state
                 )
+
+                action.move.current_pp -= 1
 
                 # show the amount of health the target has before applying damage
                 print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")
