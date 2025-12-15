@@ -7,10 +7,15 @@ from typing import Optional, TypeVar, Generic
 from abc import abstractmethod
 from shared.pokemon.pokemon import Pokemon
 from .battle_header import *
+from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent, ActionExecutor
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
+from .speed_calculator import calculate_speed
+from .escape_calculator import calculate_escape_success
 
 TPosition = TypeVar('TPosition', bound=BattlePosition)
+
+
 
 class BattleManager(BaseModel, Generic[TPosition]):
     battle_config: BattleConfig = Field(default_factory=BattleConfig)
@@ -19,6 +24,10 @@ class BattleManager(BaseModel, Generic[TPosition]):
     in_play_pokemon: dict[TPosition, Pokemon] = Field(default_factory=dict)
     this_turns_actions: dict[TPosition, Action] = Field(default_factory=dict)
     taking_actions: bool = Field(default=False)
+
+    @abstractmethod
+    def get_opponent_from_position(self, position: TPosition) -> Opponent:
+        pass
 
     def clear_pokemon_stat_stages(self, pokemon: Pokemon):
         pokemon.pokemon_battle_state.reset()
@@ -36,16 +45,21 @@ class BattleManager(BaseModel, Generic[TPosition]):
     def send_out_first_pokemon(self):
         pass
 
-    @abstractmethod
-    def process_turn(self):
-        pass
-
     # region Turn Actions
     def start_turn(self):
         self.taking_actions = True
         print(f"Turn {self.battle_state.turn_number + 1} start!")
         self.battle_state.turn_number += 1
         self.this_turns_actions.clear()
+
+    def use_escape(self, user_position: TPosition):
+        if self._has_actioned(user_position): return
+        if self.battle_config.is_wild is False:
+            raise ValueError("Cannot escape from trainer battles!")
+        
+        opponent_escaping = self.get_opponent_from_position(user_position)
+        opponent_escaping.escape_attempts += 1
+        self.this_turns_actions[user_position] = ActionEscape(escape_attempts=opponent_escaping.escape_attempts)
 
     def use_move(self, user_position: TPosition, move_index: int, target_position: TPosition):
         if self._has_actioned(user_position): return
@@ -71,13 +85,65 @@ class BattleManager(BaseModel, Generic[TPosition]):
         if self._has_actioned(user_position):
             del self.this_turns_actions[user_position]
 
-    def end_turn(self) -> bool:
-        try:
-            # process action order
-            
-            # self.switch_pokemon
-            # self.use_move
 
+    def get_turn_orders(self) -> list[TPosition]:
+        # Placeholder for turn order calculation logic
+        # For now, just return the positions in the order they acted
+
+        speed_dict: dict[TPosition, int] = {}
+
+        for position in self.this_turns_actions.keys():
+            pokemon = self.in_play_pokemon[position]
+            speed = calculate_speed(pokemon)
+            speed_dict[position] = speed
+        
+        # Sort positions by speed in descending order
+        sorted_positions = sorted(speed_dict.items(), key=lambda item: item[1], reverse=True)
+
+        return [position for position, speed in sorted_positions]
+
+    def end_turn(self) -> bool:
+
+        
+        if len(self.this_turns_actions) != 2:
+            # get a list of missing positions
+            missing_positions = [pos for pos in TPosition if pos not in self.this_turns_actions]
+            raise UnfinishedTurnException("Both players must select an action before processing the turn. Missing actions for positions: " + ", ".join([str(pos) for pos in missing_positions]))
+    
+        print(f"Processing turn {self.battle_state.turn_number}...")    
+
+
+        # get each pokemons speed and determine order of actions
+        turn_order = self.get_turn_orders()
+
+
+
+        try:
+            # --- Process Action Order ---
+            
+
+
+            # Quick Claw/Custap Berry announce their effects if applicable
+            
+            # If wild battle, display "Got away safely!"/"Can't escape!" message; if trainer battle, forfeit and fade out
+            self.process_escape()
+
+            # Handle switches
+            self.switch_pokemon()
+            
+            # Handle rotation
+            
+            # Item usage (in-game only)
+            self.process_item_use()
+            
+            # Mega Evolution, Ultra Burst
+            
+            # Focus Punch, Beak Blast, Shell Trap charging effects
+            
+            # Move usage in order
+            self.process_move(turn_order)
+            
+            # End of turn effects
 
             pass
         except UnfinishedTurnException as e:
@@ -87,6 +153,32 @@ class BattleManager(BaseModel, Generic[TPosition]):
         return True
     #endregion
 
+    #region Process Actions
+    @abstractmethod
+    def process_escape(self):
+        pass
+
+    def switch_pokemon(self):
+        # Process all switch actions
+        for position, action in self.this_turns_actions.items():
+            if isinstance(action, ActionSwitch):
+                old_pokemon = self.in_play_pokemon[position]
+                new_pokemon = action.switch_in_pokemon
+                self.in_play_pokemon[position] = new_pokemon
+                print(f"{old_pokemon.nickname} was switched out for {new_pokemon.nickname}!")
+
+                # TODO activate any abilities or items that trigger on switch-in
+
+    @abstractmethod
+    def process_move(self):
+        pass
+
+    @abstractmethod
+    def process_item_use(self):
+        pass
+    #endregion
+
+
     def end_battle(self):
         self.taking_actions = False
         self.battle_config = None
@@ -95,7 +187,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         self.this_turns_actions.clear()
         self.clear_non_standard_variables()
         self.clear_all_stat_stages()
-    
+
     @abstractmethod
     def clear_non_standard_variables(self):
         pass
@@ -109,7 +201,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
     @property
     def get_in_play_pokemon(self) -> dict[TPosition, Pokemon]:
         return self.in_play_pokemon
-    
+
 
 class SingleBattleManager(BattleManager[SinglesBattlePosition]):
     team_1: Opponent
@@ -117,11 +209,41 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
 
     def __init__(self, **data):
         super().__init__(**data)
+
+        self.team_1.action_executor = self._create_executer(SinglesBattlePosition.Team1_Pokemon1)
+        self.team_2.action_executor = self._create_executer(SinglesBattlePosition.Team2_Pokemon1)
+
         # Check if battle is against a wild pokemon
         if isinstance(self.team_1, TrainerOpponent) and isinstance(self.team_2, TrainerOpponent):
             self.battle_config.is_wild = False
         else:
             self.battle_config.is_wild = True
+
+    def _create_executer(self, position: SinglesBattlePosition) -> ActionExecutor:
+        manager = self
+
+        class SingleActionExecutor:
+            def execute_escape(self):
+                manager.use_escape(position)
+
+            def execute_move(self, move_index: int, target_position: SinglesBattlePosition):
+                manager.use_move(position, move_index, target_position)
+
+            def execute_switch(self, switch_in_pokemon: Pokemon):
+                manager.switch_pokemon(position, switch_in_pokemon)
+
+            def execute_use_item(self, item_name: str, target_position: SinglesBattlePosition = None):
+                pass  # TODO when item use is implemented
+
+        return SingleActionExecutor()
+    
+    def get_opponent_from_position(self, position: SinglesBattlePosition) -> Opponent:
+        if position == SinglesBattlePosition.Team1_Pokemon1:
+            return self.team_1
+        elif position == SinglesBattlePosition.Team2_Pokemon1:
+            return self.team_2
+        else:
+            raise ValueError("Invalid position for singles battle.")
 
     def clear_all_stat_stages(self):
         for pokemon in self.team_1.get_all_pokemons() + self.team_2.get_all_pokemons():
@@ -152,24 +274,20 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
             self.in_play_pokemon[SinglesBattlePosition.Team2_Pokemon1] = pokemon_2
             print(f"A wild {pokemon_2.nickname} appeared!")
 
-    def process_turn(self):
-        # Placeholder for turn processing logic
-        # this will require the moves to already be passed in from both sides
-
-        if len(self.this_turns_actions) != 2:
-            # get a list of missing positions
-            missing_positions = [pos for pos in SinglesBattlePosition if pos not in self.this_turns_actions]
-            raise UnfinishedTurnException("Both players must select an action before processing the turn. Missing actions for positions: " + ", ".join([str(pos) for pos in missing_positions]))
-    
-        print(f"Processing turn {self.battle_state.turn_number}...")
-        # For now, just print out the actions
-        # print (f"Actions this turn: {self.this_turns_actions}")
-
-        # Determine action order based on move priority and speed
-
-
-        # For the moment we will just process in order that they were added
+    def process_escape(self):
         for position, action in self.this_turns_actions.items():
+            if isinstance(action, ActionEscape):
+                pokemon = self.in_play_pokemon[position]
+                success = calculate_escape_success(pokemon, , action.escape_attempts)
+                if success:
+                    print(f"{pokemon.nickname} got away safely!")
+                    self.end_battle()
+                else:
+                    print(f"{pokemon.nickname} couldn't escape!")
+
+    def process_move(self, turn_order: list[SinglesBattlePosition]):
+        for position in turn_order:
+            action = self.this_turns_actions[position]
             if isinstance(action, ActionMove):
                 user_pokemon = self.in_play_pokemon[position]
                 target_position = action.target_position
@@ -199,6 +317,9 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                 if target_pokemon.current_hp <= 0:
                     target_pokemon.current_hp = 0
                     print(f"{target_pokemon.nickname} fainted!")
+
+    def process_item_use(self):
+        pass
 
     def clear_non_standard_variables(self):
         self.team_1 = None

@@ -1,1 +1,1 @@
-python download_assets.py --range 1 151
+python .\tools\download_assets.py --range 1 151

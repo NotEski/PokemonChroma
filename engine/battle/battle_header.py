@@ -20,7 +20,7 @@ class ActionType(Enum):
     MOVE = "move"
     SWITCH = "switch"
     USE_ITEM = "use_item"
-    FLEE = "flee"
+    ESCAPE = "escape"
 
 class Action(BaseModel):
     action_type: ActionType
@@ -39,8 +39,9 @@ class ActionUseItem(Action):
     item_name: str
     target_position: Optional['BattlePosition'] # specicially for when using pokeballs on wild pokemon
 
-class ActionFlee(Action):
-    action_type: ActionType = Field(default=ActionType.FLEE)
+class ActionEscape(Action):
+    action_type: ActionType = Field(default=ActionType.ESCAPE)
+    escape_attempts: int = Field(default=0)
 
 class BattleLogType(Enum):
     BATTLE_START = "battle_start"
@@ -75,7 +76,7 @@ class BattleLogEntry(BaseModel):
 
 class BattleConfig(BaseModel):
     is_wild: bool = Field(default=False)
-    can_flee: bool = Field(default=True)
+    can_escape: bool = Field(default=True)
     terrain: Optional[str] = None  # e.g., "grassy", "electric", etc.
 
 class BattleState(BaseModel):
@@ -84,24 +85,6 @@ class BattleState(BaseModel):
     terrain: Optional[str] = None  # e.g., "grassy", "electric", etc.
     field_effects: List[str] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
-
-
-class Opponent(BaseModel):
-    @abstractmethod
-    def get_all_pokemons(self) -> List[Pokemon]:
-        pass
-
-class TrainerOpponent(Opponent):
-    trainer: BattleTrainer
-
-    def get_all_pokemons(self) -> List[Pokemon]:
-        return self.trainer.team.get_all_pokemons()
-
-class WildPokemonOpponent(Opponent):
-    pokemon: Pokemon
-
-    def get_all_pokemons(self) -> List[Pokemon]:
-        return [self.pokemon]
 
 class BattlePosition(Enum):
     pass

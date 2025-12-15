@@ -1,5 +1,6 @@
 from engine.rendering.window import game_window
 from engine.battle.battle_manager import TrainerOpponent, WildPokemonOpponent, SingleBattleManager, SinglesBattlePosition
+from engine.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.types import PokemonType
 from shared.pokemon.trainer import BattleTrainer
@@ -64,24 +65,31 @@ battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
 
 battle_manager.init_battle()
 
-for _ in range(3):
-    print ("\n--- New Turn ---\n")
-    battle_manager.start_turn()
+# for _ in range(3):
 
-    battle_manager.use_move(
-        user_position=SinglesBattlePosition.Team1_Pokemon1,
-        move_index=0,
-        target_position=SinglesBattlePosition.Team2_Pokemon1
-    )
+battle_manager.start_turn()
 
-    battle_manager.use_move(
-        user_position=SinglesBattlePosition.Team2_Pokemon1,
-        move_index=0,
-        target_position=SinglesBattlePosition.Team1_Pokemon1
-    )
+opponent_1.use_move(
+    move_index=0,
+    target_position=SinglesBattlePosition.Team2_Pokemon1
+)
 
-    battle_manager.end_turn()
+opponent_2.use_move(
+    move_index=0,
+    target_position=SinglesBattlePosition.Team1_Pokemon1
+)
 
+battle_manager.end_turn()
+
+battle_manager.start_turn()
+
+opponent_1.use_escape()
+
+opponent_2.use_move(
+    move_index=0,
+    target_position=SinglesBattlePosition.Team1_Pokemon1
+)
+battle_manager.end_turn()
 
 print ("\nBattle ended.\n\n")
 print (get_weaknesses(PokemonType.FIRE))

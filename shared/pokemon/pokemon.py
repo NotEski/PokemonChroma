@@ -108,6 +108,10 @@ class Pokemon(BaseModel):
     def get_speed_stat(self) -> int:
         return self.calculate_stat(Stat.SPEED)
     
+    def get_base_stat(self, stat_name: str) -> int:
+        return getattr(self.pokemon.base_stats, stat_name)
+
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0
+    
