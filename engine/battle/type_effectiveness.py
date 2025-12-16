@@ -162,20 +162,3 @@ TYPE_EFFECTIVENESS: Mapping[PokemonType, dict[PokemonType, float]] = {
         PokemonType.STEEL: 0.5,
     },
 }
-
-
-def get_strengths(pokemon_type: PokemonType) -> list[PokemonType]:
-    weaknesses = []
-    effectiveness = TYPE_EFFECTIVENESS.get(pokemon_type, {})
-    for defender_type, multiplier in effectiveness.items():
-        if multiplier > 1.0:
-            weaknesses.append(defender_type)
-    return weaknesses
-
-def get_weaknesses(pokemon_type: PokemonType) -> list[PokemonType]:
-    resistances = []
-    effectiveness = TYPE_EFFECTIVENESS.get(pokemon_type, {})
-    for defender_type, multiplier in effectiveness.items():
-        if multiplier < 1.0:
-            resistances.append(defender_type)
-    return resistances

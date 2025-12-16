@@ -148,7 +148,8 @@ class TestBattleActions:
         battle.start_turn()
         
         # Use move from team 1
-        trainer_opponent.use_move(
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
             move_index=0,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
@@ -167,7 +168,11 @@ class TestBattleActions:
         battle.start_turn()
         
         with pytest.raises(ValueError):
-            trainer_opponent.use_move(move_index=10, target_position=SinglesBattlePosition.Team2_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team1_Pokemon1,
+                move_index=10,
+                target_position=SinglesBattlePosition.Team2_Pokemon1
+            )
 
     def test_escape_in_wild_battle(self, pikachu_pokemon, eevee_pokemon):
         """Test escaping from a wild battle."""
@@ -181,7 +186,7 @@ class TestBattleActions:
         battle.start_turn()
         
         # Trainer tries to escape
-        trainer_opponent.use_escape()
+        battle.use_escape(user_position=SinglesBattlePosition.Team1_Pokemon1)
         
         assert SinglesBattlePosition.Team1_Pokemon1 in battle.this_turns_actions
 
@@ -199,7 +204,7 @@ class TestBattleActions:
         battle.start_turn()
         
         with pytest.raises(ValueError):
-            trainer_1.use_escape()
+            battle.use_escape(user_position=SinglesBattlePosition.Team1_Pokemon1)
 
     def test_cancel_action(self, pikachu_pokemon, eevee_pokemon):
         """Test canceling an action."""
@@ -213,7 +218,11 @@ class TestBattleActions:
         battle.start_turn()
         
         # Use move
-        trainer_opponent.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
         assert SinglesBattlePosition.Team1_Pokemon1 in battle.this_turns_actions
         
         # Cancel action
@@ -237,8 +246,16 @@ class TestBattleFlow:
         battle.start_turn()
         
         # Both Pokemon use moves
-        trainer_opponent.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        wild_opponent.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         
         # End turn should process successfully
         battle.end_turn()
@@ -258,8 +275,16 @@ class TestBattleFlow:
         initial_pp = pikachu_pokemon.move_set.moves[0].current_pp
         
         battle.start_turn()
-        trainer_opponent.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        wild_opponent.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         battle.end_turn()
         
         assert pikachu_pokemon.move_set.moves[0].current_pp == initial_pp - 1
@@ -278,8 +303,16 @@ class TestBattleFlow:
         battle.init_battle()
         
         battle.start_turn()
-        trainer_opponent.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        wild_opponent.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         battle.end_turn()
         
         # Eevee should have taken damage
@@ -335,13 +368,6 @@ class TestOpponentActions:
         
         assert len(all_pokemon) == 1
         assert eevee_pokemon in all_pokemon
-
-    def test_action_executor_not_set_raises_error(self, eevee_pokemon):
-        """Test that using actions without executor raises error."""
-        opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
-        
-        with pytest.raises(Exception):
-            opponent.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
 
 
 class TestBattlePositions:

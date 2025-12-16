@@ -33,8 +33,16 @@ class TestCompleteWildBattle:
                 break
                 
             battle.start_turn()
-            trainer.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-            wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team1_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team2_Pokemon1
+            )
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team2_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team1_Pokemon1
+            )
             battle.end_turn()
         
         # Wild Pokemon should have taken damage
@@ -54,8 +62,12 @@ class TestCompleteWildBattle:
         escaped = False
         for _ in range(10):
             battle.start_turn()
-            trainer.use_escape()
-            wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_escape(user_position=SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team2_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team1_Pokemon1
+            )
             battle.end_turn()
             
             if not battle.taking_actions:
@@ -93,8 +105,16 @@ class TestCompleteTrainerBattle:
         
         # Execute one turn
         battle.start_turn()
-        trainer1.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        trainer2.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         battle.end_turn()
         
         # Both Pokemon should have taken damage
@@ -119,8 +139,16 @@ class TestCompleteTrainerBattle:
         battle.init_battle()
         
         battle.start_turn()
-        trainer1.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        trainer2.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         
         # Get turn order
         turn_order = battle.get_turn_orders()
@@ -149,8 +177,16 @@ class TestMultiTurnBattle:
             if eevee_pokemon.current_hp <= 0:
                 break
             battle.start_turn()
-            trainer.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-            wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team1_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team2_Pokemon1
+            )
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team2_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team1_Pokemon1
+            )
             battle.end_turn()
         
         # PP should have decreased
@@ -178,8 +214,16 @@ class TestMultiTurnBattle:
                 break
                 
             battle.start_turn()
-            trainer.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-            wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team1_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team2_Pokemon1
+            )
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team2_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team1_Pokemon1
+            )
             battle.end_turn()
         
         # Eevee should have fainted
@@ -242,8 +286,16 @@ class TestTypeAdvantageScenarios:
         initial_hp = bulbasaur.current_hp
         
         battle.start_turn()
-        trainer1.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        trainer2.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         battle.end_turn()
         
         # Bulbasaur should take super effective damage
@@ -291,8 +343,16 @@ class TestBattleStateManagement:
             battle.start_turn()
             assert battle.battle_state.turn_number == i + 1
             
-            trainer.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-            wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team1_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team2_Pokemon1
+            )
+            battle.use_move(
+                user_position=SinglesBattlePosition.Team2_Pokemon1,
+                move_index=0,
+                target_position=SinglesBattlePosition.Team1_Pokemon1
+            )
             battle.end_turn()
 
 
@@ -312,12 +372,20 @@ class TestActionCancellation:
         battle.start_turn()
         
         # Choose move 0
-        trainer.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
         assert SinglesBattlePosition.Team1_Pokemon1 in battle.this_turns_actions
         
         # Cancel and choose move 1
         battle.cancel_action(SinglesBattlePosition.Team1_Pokemon1)
-        trainer.use_move(1, SinglesBattlePosition.Team2_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=1,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
         
         # Should have move 1 queued
         assert SinglesBattlePosition.Team1_Pokemon1 in battle.this_turns_actions
@@ -343,8 +411,16 @@ class TestEdgeCases:
         battle.init_battle()
         
         battle.start_turn()
-        trainer1.use_move(0, SinglesBattlePosition.Team2_Pokemon1)
-        trainer2.use_move(0, SinglesBattlePosition.Team1_Pokemon1)
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )
         battle.end_turn()
         
         # Both should have taken damage
@@ -436,8 +512,16 @@ class TestRealGameScenario:
         
         # Turn 1: Pikachu uses Thunderbolt
         battle.start_turn()
-        trainer.use_move(1, SinglesBattlePosition.Team2_Pokemon1)  # Thunderbolt
-        wild.use_move(0, SinglesBattlePosition.Team1_Pokemon1)  # Tackle
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team1_Pokemon1,
+            move_index=1,
+            target_position=SinglesBattlePosition.Team2_Pokemon1
+        )  # Thunderbolt
+        battle.use_move(
+            user_position=SinglesBattlePosition.Team2_Pokemon1,
+            move_index=0,
+            target_position=SinglesBattlePosition.Team1_Pokemon1
+        )  # Tackle
         battle.end_turn()
         
         # Rattata should take significant damage (likely faint)

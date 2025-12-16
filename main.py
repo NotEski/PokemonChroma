@@ -6,7 +6,7 @@ from shared.pokemon.types import PokemonType
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.team import Team
 from shared.pokemon.move import MoveSet, MoveCategory, BaseMove
-from engine.battle.type_effectiveness import get_weaknesses
+# from engine.battle.type_effectiveness import get_weaknesses
 
 def main():
     game_window()
@@ -85,7 +85,13 @@ battle_manager.end_turn()
 
 battle_manager.start_turn()
 
-battle_manager.use_escape()
+#battle_manager.use_escape()
+
+battle_manager.use_move(
+    user_position=SinglesBattlePosition.Team1_Pokemon1,
+    move_index=0,
+    target_position=SinglesBattlePosition.Team2_Pokemon1
+)
 
 battle_manager.use_move(
     user_position=SinglesBattlePosition.Team2_Pokemon1,
@@ -95,7 +101,7 @@ battle_manager.use_move(
 battle_manager.end_turn()
 
 print ("\nBattle ended.\n\n")
-print (get_weaknesses(PokemonType.FIRE))
+#print (get_weaknesses(PokemonType.FIRE))
 
 
 

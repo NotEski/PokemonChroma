@@ -220,10 +220,6 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
 
     def __init__(self, **data):
         super().__init__(**data)
-
-        self.team_1.action_executor = self._create_executer(SinglesBattlePosition.Team1_Pokemon1)
-        self.team_2.action_executor = self._create_executer(SinglesBattlePosition.Team2_Pokemon1)
-
         # Check if battle is against a wild pokemon
         if isinstance(self.team_1, TrainerOpponent) and isinstance(self.team_2, TrainerOpponent):
             self.battle_config.is_wild = False
