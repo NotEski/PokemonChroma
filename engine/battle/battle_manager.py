@@ -7,7 +7,7 @@ from typing import Optional, TypeVar, Generic
 from abc import abstractmethod
 from shared.pokemon.pokemon import Pokemon
 from .battle_header import *
-from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent, ActionExecutor
+from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
@@ -229,24 +229,6 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
             self.battle_config.is_wild = False
         else:
             self.battle_config.is_wild = True
-
-    def _create_executer(self, position: SinglesBattlePosition) -> ActionExecutor:
-        manager = self
-
-        class SingleActionExecutor:
-            def execute_escape(self):
-                manager.use_escape(position)
-
-            def execute_move(self, move_index: int, target_position: SinglesBattlePosition):
-                manager.use_move(position, move_index, target_position)
-
-            def execute_switch(self, switch_in_pokemon: Pokemon):
-                manager.switch_pokemon(position, switch_in_pokemon)
-
-            def execute_use_item(self, item_name: str, target_position: SinglesBattlePosition = None):
-                pass  # TODO when item use is implemented
-
-        return SingleActionExecutor()
     
     def get_opponent_from_position(self, position: SinglesBattlePosition) -> Opponent:
         if position == SinglesBattlePosition.Team1_Pokemon1:

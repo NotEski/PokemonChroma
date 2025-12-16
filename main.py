@@ -69,13 +69,15 @@ battle_manager.init_battle()
 
 battle_manager.start_turn()
 
-opponent_1.use_move(
+battle_manager.use_move(
+    user_position=SinglesBattlePosition.Team1_Pokemon1,
     move_index=0,
     target_position=SinglesBattlePosition.Team2_Pokemon1
 )
 
-opponent_2.use_move(
+battle_manager.use_move(
     move_index=0,
+    user_position=SinglesBattlePosition.Team2_Pokemon1,
     target_position=SinglesBattlePosition.Team1_Pokemon1
 )
 
@@ -83,9 +85,10 @@ battle_manager.end_turn()
 
 battle_manager.start_turn()
 
-opponent_1.use_escape()
+battle_manager.use_escape()
 
-opponent_2.use_move(
+battle_manager.use_move(
+    user_position=SinglesBattlePosition.Team2_Pokemon1,
     move_index=0,
     target_position=SinglesBattlePosition.Team1_Pokemon1
 )
