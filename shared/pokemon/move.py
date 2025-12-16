@@ -18,12 +18,9 @@ class Move(BaseModel):
     current_pp: int
     base_move: BaseMove
 
-    
-
 class StatChange(BaseModel):
     stat: Stat
     change: int  # Positive for increase, negative for decrease
-
 
 class MoveSet(BaseModel):
     # this will store move objects in a dict of the move index, and then the move and its current pp
