@@ -5,7 +5,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional, TypeVar, Generic
 from abc import abstractmethod
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import Pokemon, PokemonBattleState
 from .battle_header import *
 from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent
 
@@ -30,7 +30,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         pass
 
     def clear_pokemon_stat_stages(self, pokemon: Pokemon):
-        pokemon.pokemon_battle_state.reset()
+        pokemon.pokemon_battle_state = PokemonBattleState()
     
     @abstractmethod
     def clear_all_stat_stages(self):

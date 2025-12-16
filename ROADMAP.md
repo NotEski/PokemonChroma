@@ -7,7 +7,7 @@
 
 ## Core Battle Mechanics
 - [ ] Move Priority System (moves processed in priority order)
-- [ ] Speed-based Turn Order (faster pokemon moves first)
+- [x] Speed-based Turn Order (faster pokemon moves first)
 - [ ] Accuracy/Evasion Checks (moves can miss)
 - [ ] Type Effectiveness Application (super effective, not very effective, etc.)
 - [x] PP Deduction (subtract PP when moves are used)
