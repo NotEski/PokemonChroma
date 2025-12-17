@@ -18,15 +18,15 @@ class AbilitySlot(BaseModel):
 
 class GenderRate(Enum):
     GENDERLESS = -1
-    ALWAYS_MALE = 0
-    MOSTLY_MALE = 1
-    VERY_LIKELY_MALE = 2
-    LIKELY_MALE = 3
+    ALWAYS_FEMALE = 0
+    MOSTLY_FEMALE = 1
+    MAJORITY_FEMALE = 2
+    LIKELY_FEMALE = 3
     EQUAL = 4
-    LIKELY_FEMALE = 5
-    VERY_LIKELY_FEMALE = 6
-    MOSTLY_FEMALE = 7
-    ALWAYS_FEMALE = 8
+    LIKELY_MALE = 5
+    MAJORITY_MALE = 6
+    MOSTLY_MALE = 7
+    ALWAYS_MALE = 8
 
 class Gender(Enum):
     MALE = "male"
@@ -41,7 +41,6 @@ def calculate_gender(rate: GenderRate) -> Gender:
         return Gender.MALE
     else:
         return Gender.FEMALE
-
 
 class PokemonBase(BaseModel):
     name: str
