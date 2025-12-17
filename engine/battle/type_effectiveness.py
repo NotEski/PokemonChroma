@@ -165,3 +165,59 @@ TYPE_EFFECTIVENESS: Mapping[PokemonType, dict[PokemonType, float]] = {
 
 
 
+
+def offensive_effectiveness_all(attacking_type: PokemonType) -> dict[PokemonType, float]:
+    """Get the offensive type effectiveness chart for a given attacking type.
+
+    Args:
+        attacking_type: The attacking PokemonType.
+    Returns:
+        A dictionary mapping defending PokemonTypes to their effectiveness multiplier.
+    """
+    effectiveness: dict[PokemonType, float] = {}
+    effectiveness = TYPE_EFFECTIVENESS.get(attacking_type, {})
+    for _type in PokemonType:
+        if _type not in effectiveness:
+            effectiveness[_type] = 1.0
+    return effectiveness
+
+def defensive_effectiveness_all(defending_type: PokemonType) -> dict[PokemonType, float]:
+    """Get the defensive type effectiveness chart for a given defending type.
+
+    Args:
+        defending_type: The defending PokemonType.
+    Returns:
+        A dictionary mapping attacking PokemonTypes to their effectiveness multiplier.
+    """
+    effectiveness: dict[PokemonType, float] = {}
+    for attacking_type in PokemonType:
+        attacking_effectiveness = TYPE_EFFECTIVENESS.get(attacking_type, {})
+        multiplier = attacking_effectiveness.get(defending_type, 1.0)
+        effectiveness[attacking_type] = multiplier
+    return effectiveness
+
+def effectiveness(attacking_type: PokemonType, defending_type: PokemonType) -> float:
+    """Get the offensive type effectiveness multiplier for a given attacking and defending type.
+
+    Args:
+        attacking_type: The attacking PokemonType.
+        defending_type: The defending PokemonType.
+    Returns:
+        The effectiveness multiplier as a float.
+    """
+    attacking_effectiveness = TYPE_EFFECTIVENESS.get(attacking_type, {})
+    return attacking_effectiveness.get(defending_type, 1.0)
+
+def get_attack_multiplier(attacking_type: PokemonType, defending_types: list[PokemonType]) -> float:
+    """Calculate the total attack multiplier for an attacking type against multiple defending types.
+
+    Args:
+        attacking_type: The attacking PokemonType.
+        defending_types: A list of defending PokemonTypes.
+    Returns:
+        The total effectiveness multiplier as a float.
+    """
+    multiplier = 1.0
+    for defending_type in defending_types:
+        multiplier *= effectiveness(attacking_type, defending_type)
+    return multiplier

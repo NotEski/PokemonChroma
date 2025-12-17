@@ -31,45 +31,75 @@ DEFAULT_OUTPUT_DIR = Path("pokeapi_database")
 
 # Available API endpoints
 AVAILABLE_ENDPOINTS = [
-    "pokemon",
-    "move",
-    "ability",
-    "type",
-    "item",
+    # Berry-related endpoints
     "berry",
-    "berry-flavor",
     "berry-firmness",
+    "berry-flavor",
+
+    # Contest-related endpoints
     "contest-type",
     "contest-effect",
     "super-contest-effect",
+
+    # Encounter-related endpoints
     "encounter-method",
     "encounter-condition",
     "encounter-condition-value",
+
+    # Evolution-related endpoints
     "evolution-chain",
     "evolution-trigger",
+
+    # Game-related endpoints
     "generation",
     "pokedex",
     "version",
     "version-group",
-    "region",
+
+    # Item-related endpoints
+    "item",
+    "item-attribute",
+    "item-category",
+    "item-fling-effect",
+    "item-pocket",
+
+    # Location-related endpoints
     "location",
     "location-area",
     "pal-park-area",
-    "language",
-    "nature",
-    "pokeathlon-stat",
-    "growth-rate",
-    "egg-group",
-    "gender",
-    "stat",
+    "region",
+
+    # Machine-related endpoints
+    "machine",
+
+    # Move-related endpoints
+    "move",
     "move-ailment",
     "move-battle-style",
     "move-category",
     "move-damage-class",
     "move-learn-method",
     "move-target",
+
+    # Pokémon-related endpoints
+    "ability",
     "characteristic",
-    "machine",
+    "egg-group",
+    "gender",
+    "growth-rate",
+    "nature",
+    "pokeathlon-stat",
+    "pokemon",
+    "pokemon-color",
+    "pokemon-form",
+    "pokemon-habitat",
+    "pokemon-shape",
+    "pokemon-species",
+    "stat",
+    "type",
+    
+    # Utility endpoints
+    "language",
 ]
 
 

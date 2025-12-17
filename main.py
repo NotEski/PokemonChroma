@@ -6,7 +6,7 @@ from shared.pokemon.types import PokemonType
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.team import Team
 from shared.pokemon.move import MoveSet, MoveCategory, BaseMove
-# from engine.battle.type_effectiveness import get_weaknesses
+from engine.battle.type_effectiveness import effectiveness
 
 def main():
     game_window()
@@ -101,8 +101,11 @@ battle_manager.use_move(
 battle_manager.end_turn()
 
 print ("\nBattle ended.\n\n")
-#print (get_weaknesses(PokemonType.FIRE))
 
+from shared.pokemon.pokemon import Gender, GenderRate, calculate_gender
+
+bingus = calculate_gender(GenderRate.EQUAL)
+plingus = Gender.MALE
 
 
 

@@ -3,6 +3,7 @@ from shared.pokemon.move import Move
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.types import MoveCategory, PokemonType, StatusCondition
 from engine.battle.battle_header import BattleState, BattleWeather
+from engine.battle.type_effectiveness import get_attack_multiplier
 
 def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, move: Move, critical_hit: bool, battle_state: BattleState) -> int:
     # Simplified damage calculation formula for demonstration purposes
@@ -117,13 +118,13 @@ def _get_stab_modifier(attacking_pokemon: Pokemon, move: Move) -> float:
     return 1.0
 
 def _get_type_effectiveness_modifier(move: Move, defending_pokemon: Pokemon) -> float:
-    # Placeholder for type effectiveness calculation
-    # This would involve checking the move's type against the defending Pokémon's types
-    return 1.0
+    multiplier = get_attack_multiplier(move.base_move.type, defending_pokemon.pokemon.types)
+    return multiplier if multiplier > 0 else 0.0
 
 def _get_burn_modifier(attacking_pokemon: Pokemon, move: Move) -> float:
     if move.base_move.category == MoveCategory.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
+        # if attacking_pokemon.ability
         return 0.5
     return 1.0
 

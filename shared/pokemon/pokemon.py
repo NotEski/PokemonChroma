@@ -1,15 +1,35 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
-from typing import List
+from typing import List, Dict
 from .types import *
 from .move import MoveSet
+import random
+
+
+
+def calculate_gender(rate: GenderRate) -> Gender:
+    if rate == -1:
+        return Gender.NONE
+    roll = random.randint(1, 100)
+    if roll <= (8 - rate.value) * 12.5:
+        return Gender.MALE
+    else:
+        return Gender.FEMALE
 
 class PokemonBase(BaseModel):
     name: str
+    name_readable: str = Field(default="")
     types: List[PokemonType]
     base_stats: BaseStats
     pokedex_number: int
-    catch_rate: int = Field(ge=1, le=255, default=45)
     ev_yield: EffortYield = Field(default_factory=EffortYield)
+    abilities: list[AbilitySlot] = Field(default_factory=list)
+
+    
+    gender_rate: GenderRate = Field(default=GenderRate.EQUAL)
+    capture_rate: int = Field(ge=0, le=255, default=45)
+    base_happiness: int = Field(ge=0, le=255, default=70)
+    
+
 
 class PokemonBattleState(BaseModel):
     attack_stat_stage: int = Field(default=0)
