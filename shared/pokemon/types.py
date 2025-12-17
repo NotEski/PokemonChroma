@@ -124,3 +124,25 @@ class Gender(Enum):
     MALE = "male"
     FEMALE = "female"
     NONE = "none"
+
+class Ability(BaseModel):
+    name: str
+    name_readable: str
+    description: str
+
+class AbilitySlot(BaseModel):
+    ability: Ability
+    is_hidden: bool = Field(default=False)
+    slot: int = Field(ge=1)
+
+class GenderRate(Enum):
+    GENDERLESS = -1
+    ALWAYS_FEMALE = 0
+    MOSTLY_FEMALE = 1
+    MAJORITY_FEMALE = 2
+    LIKELY_FEMALE = 3
+    EQUAL = 4
+    LIKELY_MALE = 5
+    MAJORITY_MALE = 6
+    MOSTLY_MALE = 7
+    ALWAYS_MALE = 8
