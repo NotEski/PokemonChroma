@@ -54,6 +54,12 @@ class PokemonAssetDownloader:
     ):
         self.pokeapi_dir = Path(pokeapi_dir)
         self.output_dir = Path(output_dir)
+        # Store Pokemon inside a dedicated subfolder for better organization
+        self.pokemon_root = (
+            self.output_dir
+            if self.output_dir.name.lower() == "pokemon"
+            else self.output_dir / "pokemon"
+        )
         self.verbose = verbose
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": "Pokemon-Asset-Downloader/1.0"})
@@ -185,7 +191,7 @@ class PokemonAssetDownloader:
         pokemon_id, pokemon_name = self._get_pokemon_identifier(pokemon_data)
         
         # Create Pokemon-specific directory
-        pokemon_dir = self.output_dir / f"{pokemon_id:04d}-{pokemon_name.capitalize()}"
+        pokemon_dir = self.pokemon_root / f"{pokemon_id:04d}-{pokemon_name.capitalize()}"
         
         self._print(f"Processing: {pokemon_id:04d} - {pokemon_name.capitalize()}")
         
@@ -246,7 +252,7 @@ class PokemonAssetDownloader:
         self._print(f"Pokemon Asset Downloader")
         self._print(f"{'='*60}")
         self._print(f"Source directory: {self.pokeapi_dir.absolute()}")
-        self._print(f"Output directory: {self.output_dir.absolute()}")
+        self._print(f"Output directory: {self.pokemon_root.absolute()}")
         self._print(f"Pokemon range: {start_id} to {end_id or 'end'}")
         self._print(f"{'='*60}\n")
         
@@ -321,7 +327,7 @@ class PokemonAssetDownloader:
         self._print(f"Cries downloaded: {total_stats['cries_downloaded']}")
         self._print(f"Cries failed: {total_stats['cries_failed']}")
         self._print(f"Total time: {elapsed_time:.2f} seconds ({elapsed_time/60:.2f} minutes)")
-        self._print(f"Output directory: {self.output_dir.absolute()}")
+        self._print(f"Output directory: {self.pokemon_root.absolute()}")
         self._print(f"{'='*60}")
         
         return total_stats
@@ -536,7 +542,10 @@ Examples:
         "-o",
         type=str,
         default=str(DEFAULT_OUTPUT_DIR),
-        help=f"Output directory for assets (default: {DEFAULT_OUTPUT_DIR})"
+        help=(
+            "Output directory for assets (Pokemon stored under <dir>/pokemon, "
+            f"default: {DEFAULT_OUTPUT_DIR})"
+        )
     )
     
     parser.add_argument(
