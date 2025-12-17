@@ -1,15 +1,63 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
-from typing import List
+from typing import List, Dict
 from .types import *
 from .move import MoveSet
+import random
+
+class Ability(BaseModel):
+    name: str
+    name_readable: str
+    description: str
+
+class AbilitySlot(BaseModel):
+    ability: Ability
+    is_hidden: bool = Field(default=False)
+    slot: int = Field(ge=1)
+
+
+
+class GenderRate(Enum):
+    GENDERLESS = -1
+    ALWAYS_MALE = 0
+    MOSTLY_MALE = 1
+    VERY_LIKELY_MALE = 2
+    LIKELY_MALE = 3
+    EQUAL = 4
+    LIKELY_FEMALE = 5
+    VERY_LIKELY_FEMALE = 6
+    MOSTLY_FEMALE = 7
+    ALWAYS_FEMALE = 8
+
+class Gender(Enum):
+    MALE = "male"
+    FEMALE = "female"
+    NONE = "none"
+
+def calculate_gender(rate: GenderRate) -> Gender:
+    if rate == -1:
+        return Gender.NONE
+    roll = random.randint(1, 100)
+    if roll <= (8 - rate.value) * 12.5:
+        return Gender.MALE
+    else:
+        return Gender.FEMALE
+
 
 class PokemonBase(BaseModel):
     name: str
+    name_readable: str = Field(default="")
     types: List[PokemonType]
     base_stats: BaseStats
     pokedex_number: int
-    catch_rate: int = Field(ge=1, le=255, default=45)
     ev_yield: EffortYield = Field(default_factory=EffortYield)
+    abilities: list[AbilitySlot] = Field(default_factory=list)
+
+    
+    gender_rate: GenderRate = Field(default=GenderRate.EQUAL)
+    capture_rate: int = Field(ge=0, le=255, default=45)
+    base_happiness: int = Field(ge=0, le=255, default=70)
+    
+
 
 class PokemonBattleState(BaseModel):
     attack_stat_stage: int = Field(default=0)
