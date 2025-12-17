@@ -1,8 +1,10 @@
 """Pytest configuration and shared fixtures for the Pokemon Fan Game test suite."""
 import pytest
 from shared.pokemon.pokemon import Pokemon, PokemonBase
-from shared.pokemon.types import PokemonType, MoveCategory, Nature, Gender
-from shared.pokemon.move import MoveSet, BaseMove
+from shared.pokemon.types import PokemonType
+from shared.pokemon.natures import Nature
+from shared.pokemon.genders import Gender
+from shared.pokemon.move import MoveSet, BaseMove, MoveCategory
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
 
@@ -22,7 +24,7 @@ def pikachu_base():
             "speed": 90,
         },
         pokedex_number=25,
-        catch_rate=190
+        capture_rate=190
     )
 
 
@@ -41,7 +43,7 @@ def charizard_base():
             "speed": 100,
         },
         pokedex_number=6,
-        catch_rate=45
+        capture_rate=45
     )
 
 
@@ -60,7 +62,7 @@ def eevee_base():
             "speed": 55,
         },
         pokedex_number=133,
-        catch_rate=45
+        capture_rate=45
     )
 
 

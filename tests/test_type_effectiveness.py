@@ -1,7 +1,7 @@
 """Test suite for type effectiveness system."""
 import pytest
 from engine.battle.type_effectiveness import (
-    TYPE_EFFECTIVENESS, get_strengths, get_weaknesses
+    TYPE_EFFECTIVENESS, offensive_effectiveness_all, defensive_effectiveness_all
 )
 from shared.pokemon.types import PokemonType
 
@@ -118,12 +118,12 @@ class TestComplexTypeMatchups:
 
 
 class TestGetStrengths:
-    """Tests for get_strengths function."""
+    """Tests for offensive strengths using provided effectiveness data."""
 
     def test_fire_strengths(self):
         """Test Fire type strengths."""
-        strengths = get_strengths(PokemonType.FIRE)
-        
+        chart = offensive_effectiveness_all(PokemonType.FIRE)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.GRASS in strengths
         assert PokemonType.ICE in strengths
         assert PokemonType.BUG in strengths
@@ -131,31 +131,31 @@ class TestGetStrengths:
 
     def test_water_strengths(self):
         """Test Water type strengths."""
-        strengths = get_strengths(PokemonType.WATER)
-        
+        chart = offensive_effectiveness_all(PokemonType.WATER)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.FIRE in strengths
         assert PokemonType.GROUND in strengths
         assert PokemonType.ROCK in strengths
 
     def test_electric_strengths(self):
         """Test Electric type strengths."""
-        strengths = get_strengths(PokemonType.ELECTRIC)
-        
+        chart = offensive_effectiveness_all(PokemonType.ELECTRIC)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.WATER in strengths
         assert PokemonType.FLYING in strengths
 
     def test_grass_strengths(self):
         """Test Grass type strengths."""
-        strengths = get_strengths(PokemonType.GRASS)
-        
+        chart = offensive_effectiveness_all(PokemonType.GRASS)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.WATER in strengths
         assert PokemonType.GROUND in strengths
         assert PokemonType.ROCK in strengths
 
     def test_ice_strengths(self):
         """Test Ice type strengths."""
-        strengths = get_strengths(PokemonType.ICE)
-        
+        chart = offensive_effectiveness_all(PokemonType.ICE)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.GRASS in strengths
         assert PokemonType.GROUND in strengths
         assert PokemonType.FLYING in strengths
@@ -163,8 +163,8 @@ class TestGetStrengths:
 
     def test_fighting_strengths(self):
         """Test Fighting type strengths."""
-        strengths = get_strengths(PokemonType.FIGHTING)
-        
+        chart = offensive_effectiveness_all(PokemonType.FIGHTING)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.NORMAL in strengths
         assert PokemonType.ICE in strengths
         assert PokemonType.ROCK in strengths
@@ -173,45 +173,45 @@ class TestGetStrengths:
 
     def test_poison_strengths(self):
         """Test Poison type strengths."""
-        strengths = get_strengths(PokemonType.POISON)
-        
+        chart = offensive_effectiveness_all(PokemonType.POISON)
+        strengths = [t for t, mult in chart.items() if mult == 2.0]
         assert PokemonType.GRASS in strengths
         assert PokemonType.FAIRY in strengths
 
 
 class TestGetWeaknesses:
-    """Tests for get_weaknesses function (resistances)."""
+    """Tests for resistances via offensive chart (multiplier 0.5)."""
 
     def test_fire_weaknesses(self):
-        """Test Fire type weaknesses (what it resists)."""
-        weaknesses = get_weaknesses(PokemonType.FIRE)
-        
+        """Test Fire type weaknesses (what resists Fire)."""
+        chart = offensive_effectiveness_all(PokemonType.FIRE)
+        weaknesses = [t for t, mult in chart.items() if mult == 0.5]
         assert PokemonType.FIRE in weaknesses
         assert PokemonType.WATER in weaknesses
         assert PokemonType.ROCK in weaknesses
         assert PokemonType.DRAGON in weaknesses
 
     def test_water_weaknesses(self):
-        """Test Water type weaknesses (what it resists)."""
-        weaknesses = get_weaknesses(PokemonType.WATER)
-        
+        """Test Water type weaknesses (what resists Water)."""
+        chart = offensive_effectiveness_all(PokemonType.WATER)
+        weaknesses = [t for t, mult in chart.items() if mult == 0.5]
         assert PokemonType.WATER in weaknesses
         assert PokemonType.GRASS in weaknesses
         assert PokemonType.DRAGON in weaknesses
 
     def test_grass_weaknesses(self):
-        """Test Grass type weaknesses (what it resists)."""
-        weaknesses = get_weaknesses(PokemonType.GRASS)
-        
+        """Test Grass type weaknesses (what resists Grass)."""
+        chart = offensive_effectiveness_all(PokemonType.GRASS)
+        weaknesses = [t for t, mult in chart.items() if mult == 0.5]
         assert PokemonType.FIRE in weaknesses
         assert PokemonType.POISON in weaknesses
         assert PokemonType.FLYING in weaknesses
         assert PokemonType.STEEL in weaknesses
 
     def test_steel_weaknesses(self):
-        """Test Steel type weaknesses (what it resists)."""
-        weaknesses = get_weaknesses(PokemonType.STEEL)
-        
+        """Test Steel type weaknesses (what resists Steel)."""
+        chart = offensive_effectiveness_all(PokemonType.STEEL)
+        weaknesses = [t for t, mult in chart.items() if mult == 0.5]
         assert PokemonType.FIRE in weaknesses
         assert PokemonType.WATER in weaknesses
         # Steel resists many types

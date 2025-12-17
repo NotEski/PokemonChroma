@@ -6,8 +6,8 @@ from engine.battle.damage_calculator import (
     _get_defence_stat_modifier, _get_stab_modifier, _get_type_effectiveness_modifier
 )
 from engine.battle.battle_header import BattleState, BattleWeather
-from shared.pokemon.types import MoveCategory, PokemonType, StatusCondition
-from shared.pokemon.move import Move
+from shared.pokemon.types import PokemonType, StatusCondition
+from shared.pokemon.move import Move, MoveCategory
 
 
 class TestDamageCalculation:
@@ -223,7 +223,7 @@ class TestTypeEffectiveness:
                 "special_attack": 50, "special_defense": 64, "speed": 43
             },
             pokedex_number=7,
-            catch_rate=45
+            capture_rate=45
         )
         
         # Create Fire-type Pokemon (Charmander)
@@ -235,7 +235,7 @@ class TestTypeEffectiveness:
                 "special_attack": 60, "special_defense": 50, "speed": 65
             },
             pokedex_number=4,
-            catch_rate=45
+            capture_rate=45
         )
         
         move_set = MoveSet(moves=[water_gun_move])

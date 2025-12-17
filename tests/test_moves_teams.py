@@ -3,7 +3,9 @@ import pytest
 from shared.pokemon.move import BaseMove, Move, MoveSet, StatChange
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
-from shared.pokemon.types import PokemonType, MoveCategory, StatusCondition, Stat
+from shared.pokemon.types import PokemonType, StatusCondition
+from shared.pokemon.move import MoveCategory
+from shared.pokemon.stats import Stat
 
 
 class TestBaseMove:

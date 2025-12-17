@@ -6,7 +6,8 @@ from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.move import MoveSet, BaseMove
-from shared.pokemon.types import PokemonType, MoveCategory
+from shared.pokemon.types import PokemonType
+from shared.pokemon.move import MoveCategory
 
 
 class TestCompleteWildBattle:
@@ -254,7 +255,7 @@ class TestTypeAdvantageScenarios:
                 "special_attack": 60, "special_defense": 50, "speed": 65
             },
             pokedex_number=4,
-            catch_rate=45
+            capture_rate=45
         )
         
         # Create a Grass-type Pokemon (weak to Fire)
@@ -266,7 +267,7 @@ class TestTypeAdvantageScenarios:
                 "special_attack": 65, "special_defense": 65, "speed": 45
             },
             pokedex_number=1,
-            catch_rate=45
+            capture_rate=45
         )
         
         move_set = MoveSet(moves=[ember])
@@ -480,7 +481,7 @@ class TestRealGameScenario:
                 "special_attack": 50, "special_defense": 50, "speed": 90
             },
             pokedex_number=25,
-            catch_rate=190
+            capture_rate=190
         )
         
         move_set = MoveSet(moves=[tackle, thunderbolt])
@@ -495,7 +496,7 @@ class TestRealGameScenario:
                 "special_attack": 25, "special_defense": 35, "speed": 72
             },
             pokedex_number=19,
-            catch_rate=255
+            capture_rate=255
         )
         
         rattata_moveset = MoveSet(moves=[tackle])
