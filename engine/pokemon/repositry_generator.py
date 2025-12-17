@@ -3,7 +3,7 @@
 
 import json
 from shared.pokemon.pokemon import PokemonBase, PokemonAbility
-from engine.pokemon.repositry import ability_repository, pokemon_repository
+from engine.pokemon.repository import ability_repository, pokemon_repository
 from shared.pokemon.types import PokemonType
 import pathlib
 

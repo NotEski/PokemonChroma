@@ -1,19 +1,12 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
-from typing import List, Dict
-from .types import *
+from typing import List
+from .types import PokemonType, StatusCondition
 from .move import MoveSet
-import random
+from .genders import Gender, GenderRate
+from .natures import Nature
+from .abilities import AbilitySlot, PokemonAbilities
+from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
 
-
-
-def calculate_gender(rate: GenderRate) -> Gender:
-    if rate == -1:
-        return Gender.NONE
-    roll = random.randint(1, 100)
-    if roll <= (8 - rate.value) * 12.5:
-        return Gender.MALE
-    else:
-        return Gender.FEMALE
 
 class PokemonBase(BaseModel):
     name: str
@@ -24,12 +17,10 @@ class PokemonBase(BaseModel):
     ev_yield: EffortYield = Field(default_factory=EffortYield)
     abilities: list[AbilitySlot] = Field(default_factory=list)
 
-    
     gender_rate: GenderRate = Field(default=GenderRate.EQUAL)
     capture_rate: int = Field(ge=0, le=255, default=45)
     base_happiness: int = Field(ge=0, le=255, default=70)
     
-
 
 class PokemonBattleState(BaseModel):
     attack_stat_stage: int = Field(default=0)
@@ -61,11 +52,10 @@ class Pokemon(BaseModel):
     terra_type: PokemonType = Field(default=None)
     nature: Nature = Field(default=Nature.HARDY)
     move_set: MoveSet = Field(default_factory=MoveSet)
+    abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
 
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)
-
-    
 
     @model_validator(mode="after")
     def __post_init__(self):

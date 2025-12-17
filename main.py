@@ -101,7 +101,7 @@ battle_manager.end_turn()
 
 print ("\nBattle ended.\n\n")
 
-from shared.pokemon.pokemon import Gender, GenderRate, calculate_gender
+from shared.pokemon.genders import Gender, GenderRate, calculate_gender
 
 bingus = calculate_gender(GenderRate.EQUAL)
 plingus = Gender.MALE

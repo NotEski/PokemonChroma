@@ -1,7 +1,14 @@
+from enum import Enum
 from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional
-from .types import PokemonType, MoveCategory, StatusCondition, Stat
+from .types import PokemonType, StatusCondition
+from .stats import Stat
 
+
+class MoveCategory(Enum):
+    PHYSICAL = "physical"
+    SPECIAL = "special"
+    STATUS = "status"
 
 class BaseMove(BaseModel):
     name: str
