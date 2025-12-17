@@ -12,7 +12,6 @@ def main():
     game_window()
 
 
-
 pickachu = PokemonBase(
     name="Pikachu",
     types=[PokemonType.ELECTRIC],
