@@ -14,8 +14,6 @@ class AbilitySlot(BaseModel):
     is_hidden: bool = Field(default=False)
     slot: int = Field(ge=1)
 
-
-
 class GenderRate(Enum):
     GENDERLESS = -1
     ALWAYS_FEMALE = 0
