@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Dict, Any
 
-from plugin_base import ToolPluginBase
+from plugin_base import ToolPluginBase #type: ignore
 
 
 class Plugin(ToolPluginBase):
