@@ -28,7 +28,7 @@ class StatusCondition(Enum):
     POISONED = "poisoned"
     BURNED = "burned"
     FROZEN = "frozen"
-    ASLEEP = "asleep"
+    SLEEP = "sleep"
 
 class LevelingRate(Enum):
     FAST = "fast"

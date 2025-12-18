@@ -101,12 +101,35 @@ battle_manager.end_turn()
 
 print ("\nBattle ended.\n\n")
 
-from shared.pokemon.genders import Gender, GenderRate, calculate_gender
 
-bingus = calculate_gender(GenderRate.EQUAL)
-plingus = Gender.MALE
+from shared.pokemon.pokeball import Pokeball
 
+pokeball =  Pokeball(
+    name="Pokeball",
+    catch_rate_modifier=1.0
+)
+ultraball =  Pokeball(
+    name="Ultraball",
+    catch_rate_modifier=2.0
+)
 
+ultrabeastball =  Pokeball(
+    name="Ultrabeast Ball",
+    catch_rate_modifier=4.0,
+    special_effect="higher catch rate for Ultra Beasts"
+)
+
+from engine.battle.catch_calculator import calculate_catch_probability, catch_attempt
+catch_chance_pokeball = calculate_catch_probability(pokemon=pokemon, pokeball=pokeball)
+catch_chance_ultraball = calculate_catch_probability(pokemon=pokemon, pokeball=ultraball)
+catch_chance_ultrabeastball = calculate_catch_probability(pokemon=pokemon, pokeball=ultrabeastball)
+
+print (f"\nCatch chance with Pokéball: {catch_chance_pokeball}/65536 each shake")
+catch_attempt(pokemon=pokemon, pokeball=pokeball)
+print (f"\nCatch chance with Ultra Ball: {catch_chance_ultraball}/65536 each shake")
+catch_attempt(pokemon=pokemon, pokeball=ultraball)
+print (f"\nCatch chance with Ultra Beast Ball: {catch_chance_ultrabeastball}/65536 each shake")
+catch_attempt(pokemon=pokemon, pokeball=ultrabeastball)    
 
 
 
