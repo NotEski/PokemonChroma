@@ -7,6 +7,7 @@ from shared.pokemon.genders import Gender
 from shared.pokemon.move import MoveSet, BaseMove, MoveCategory
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
+from shared.pokemon.pokeball import Pokeball
 
 
 @pytest.fixture
@@ -149,3 +150,38 @@ def basic_team(pikachu_pokemon):
 def ash_trainer(basic_team):
     """Ash trainer with a basic team."""
     return BattleTrainer(name="Ash", team=basic_team)
+
+@pytest.fixture
+def pokeball():
+    """Standard Pokeball fixture."""
+    return Pokeball(
+        name="Pokeball",
+        catch_rate_modifier=1.0
+    )
+
+
+@pytest.fixture
+def great_ball():
+    """Great Ball fixture."""
+    return Pokeball(
+        name="Great Ball",
+        catch_rate_modifier=1.5
+    )
+
+
+@pytest.fixture
+def ultra_ball():
+    """Ultra Ball fixture."""
+    return Pokeball(
+        name="Ultra Ball",
+        catch_rate_modifier=2.0
+    )
+
+
+@pytest.fixture
+def master_ball():
+    """Master Ball fixture (guaranteed catch)."""
+    return Pokeball(
+        name="Master Ball",
+        catch_rate_modifier=255.0
+    )

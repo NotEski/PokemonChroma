@@ -27,6 +27,7 @@ def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:
 
     bonus_level = max((30-pokemon.level)//10, 1)
 
+    bonus_status = 1.0  # Default no bonus
     if pokemon.status_condition in status_condition_big_bonus:
         bonus_status = 2.0
     elif pokemon.status_condition in status_condition_small_bonus:
@@ -59,10 +60,6 @@ def catch_attempt(pokemon: Pokemon, pokeball: Pokeball) -> bool:
 
     for _ in range(4):
         if not calculate_shake(shake_chance):
-            print ("Oh no! The Pokémon broke free!")
+            # send call outs here for shakes, caught and fail
             return False
-        if _ < 3:
-            print ("Shake!")
-        time.sleep(0.5)  # Simulate time between shakes
-    print ("Caught!")
     return True

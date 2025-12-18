@@ -119,17 +119,6 @@ ultrabeastball =  Pokeball(
     special_effect="higher catch rate for Ultra Beasts"
 )
 
-from engine.battle.catch_calculator import calculate_catch_probability, catch_attempt
-catch_chance_pokeball = calculate_catch_probability(pokemon=pokemon, pokeball=pokeball)
-catch_chance_ultraball = calculate_catch_probability(pokemon=pokemon, pokeball=ultraball)
-catch_chance_ultrabeastball = calculate_catch_probability(pokemon=pokemon, pokeball=ultrabeastball)
-
-print (f"\nCatch chance with Pokéball: {catch_chance_pokeball}/65536 each shake")
-catch_attempt(pokemon=pokemon, pokeball=pokeball)
-print (f"\nCatch chance with Ultra Ball: {catch_chance_ultraball}/65536 each shake")
-catch_attempt(pokemon=pokemon, pokeball=ultraball)
-print (f"\nCatch chance with Ultra Beast Ball: {catch_chance_ultrabeastball}/65536 each shake")
-catch_attempt(pokemon=pokemon, pokeball=ultrabeastball)    
 
 
 
