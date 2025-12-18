@@ -54,3 +54,4 @@ desktop.ini
 # Ignore the files in pokeapi_database
 pokeapi_database/
 temp_assets/
+data/pokemon/
