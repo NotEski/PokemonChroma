@@ -29,7 +29,7 @@ def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, mov
 
     modified_damage = round(initial_damage  * _get_targets_modifier(targets))
     modified_damage = round(modified_damage * _get_pb_modifier(pb_second_strike))
-    modified_damage = round(modified_damage * _get_weather_modifier(move.base_move.type, battle_state.weather))
+    modified_damage = round(modified_damage * _get_weather_modifier(move.base_move.type, battle_state.weather_turns.weather))
     modified_damage = round(modified_damage * _get_glaive_rush_modifier(glaive_rush))
     modified_damage = round(modified_damage * _get_critical_modifier(critical_hit))
     modified_damage = round(modified_damage * _get_random_factor())

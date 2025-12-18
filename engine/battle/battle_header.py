@@ -1,10 +1,12 @@
 from pydantic import BaseModel, Field
 from abc import abstractmethod
-from typing import List, Optional
+from typing import Dict, List, Optional
 from enum import Enum, auto
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.move import Move
+from .battle_logs import BattleLogEntry
+from .battle_positions import *
 
 class UnfinishedTurnException(Exception):
     pass
@@ -43,15 +45,6 @@ class ActionEscape(Action):
     action_type: ActionType = Field(default=ActionType.ESCAPE)
     escape_attempts: int = Field(default=0)
 
-class BattleLogType(Enum):
-    BATTLE_START = "battle_start"
-    TURN_START = "turn_start"
-    POKEMON_SWITCH_IN = "pokemon_switch_in"
-    MOVE_USED = "move_used"
-    DAMAGE_DEALT = "damage_dealt"
-    STATUS_APPLIED = "status_applied"
-    POKEMON_FAINTED = "pokemon_fainted"
-    BATTLE_END = "battle_end"
 
 class BattleWeather(Enum):
     HARSH_SUNLIGHT = "harsh_sunlight"
@@ -66,13 +59,10 @@ class BattleWeather(Enum):
     SHADOWY_AURA = "shadowy_aura"
     NONE = None
 
-class BattleLogEntry(BaseModel):
-    """
-    Docstring for BattleLogEntry needs to contain everything that happened in a turn. so it could be replicated later perfectly if needed.
-    """
-    turn_number: int
-    log_type: BattleLogType
-    description: str # TODO this will need to be more complex later. For now, just a string.
+class WeatherTurns(BaseModel):
+    weather: BattleWeather
+    remaining_turns: int
+
 
 class BattleConfig(BaseModel):
     is_wild: bool = Field(default=False)
@@ -81,20 +71,7 @@ class BattleConfig(BaseModel):
 
 class BattleState(BaseModel):
     turn_number: int = Field(default=0)
-    weather: BattleWeather = Field(default=None)
+    weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=0))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
     terrain: Optional[str] = None  # e.g., "grassy", "electric", etc.
     field_effects: List[str] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
-
-class BattlePosition(Enum):
-    pass
-
-class SinglesBattlePosition(BattlePosition):
-    Team1_Pokemon1 = auto()
-    Team2_Pokemon1 = auto()
-
-class DoublesBattlePosition(BattlePosition):
-    Team1_Pokemon1 = auto()
-    Team1_Pokemon2 = auto()
-    Team2_Pokemon1 = auto()
-    Team2_Pokemon2 = auto()

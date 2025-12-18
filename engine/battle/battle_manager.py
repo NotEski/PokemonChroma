@@ -7,6 +7,7 @@ from typing import Optional, TypeVar, Generic
 from abc import abstractmethod
 from shared.pokemon.pokemon import Pokemon, PokemonBattleState
 from .battle_header import *
+from .battle_logs import BattleLogEntry, BattleLogType
 from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
@@ -314,9 +315,16 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                     print("A critical hit!")
                 print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP remaining.")
 
+                BattleLogEntry(
+                    turn_number=self.battle_state.turn_number,
+                    log_type=BattleLogType.MOVE_USED,
+                    description=f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage."
+                )
+
                 if target_pokemon.current_hp <= 0:
                     target_pokemon.current_hp = 0
                     print(f"{target_pokemon.nickname} fainted!")
+                
 
     def process_item_use(self):
         pass
