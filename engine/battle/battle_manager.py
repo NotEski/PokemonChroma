@@ -103,9 +103,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
         return [position for position, speed in sorted_positions]
 
-    def end_turn(self):
-
-        
+    def end_turn(self):        
         if len(self.this_turns_actions) != 2:
             # get a list of missing positions
             missing_positions = [pos for pos in TPosition if pos not in self.this_turns_actions]

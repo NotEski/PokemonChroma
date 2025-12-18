@@ -164,7 +164,7 @@ class PokeAPIDownloader:
             # Create endpoint directory
             endpoint_dir = self.output_dir / endpoint
             endpoint_dir.mkdir(exist_ok=True)
-            
+
             # For Pokemon, extract ID from URL to construct filename with prefix
             if endpoint == "pokemon":
                 # Extract ID from URL: https://pokeapi.co/api/v2/pokemon/133/ -> 133
@@ -172,13 +172,13 @@ class PokeAPIDownloader:
                 filename = f"{int(pokemon_id):04d}-{name}.json"
             else:
                 filename = f"{name}.json"
-            
+
             file_path = endpoint_dir / filename
             
             # Skip if file already exists
             if file_path.exists():
                 return True
-            
+
             # Download the resource
             response = self.session.get(url, timeout=30)
             response.raise_for_status()

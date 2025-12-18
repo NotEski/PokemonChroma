@@ -6,7 +6,6 @@ from shared.pokemon.types import PokemonType
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.team import Team
 from shared.pokemon.move import MoveSet, MoveCategory, BaseMove
-from engine.battle.type_effectiveness import effectiveness
 
 def main():
     game_window()
@@ -102,22 +101,6 @@ battle_manager.end_turn()
 print ("\nBattle ended.\n\n")
 
 
-from shared.pokemon.pokeball import Pokeball
-
-pokeball =  Pokeball(
-    name="Pokeball",
-    catch_rate_modifier=1.0
-)
-ultraball =  Pokeball(
-    name="Ultraball",
-    catch_rate_modifier=2.0
-)
-
-ultrabeastball =  Pokeball(
-    name="Ultrabeast Ball",
-    catch_rate_modifier=4.0,
-    special_effect="higher catch rate for Ultra Beasts"
-)
 
 
 
