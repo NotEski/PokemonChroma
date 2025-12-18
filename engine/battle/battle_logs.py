@@ -5,6 +5,7 @@ from enum import Enum, auto
 
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.types import StatusCondition
+from shared.pokemon.move import BaseMove
 from .battle_positions import BattlePosition
 from .battle_header import BattleTrainer
 
@@ -20,6 +21,13 @@ class BattleLogType(Enum):
     POKEMON_FAINTED = "pokemon_fainted"
     BATTLE_END = "battle_end"
 
+
+class EffectivenessLevel(Enum):
+    NO_EFFECT = 0
+    NOT_EFFECTIVE = 1
+    NORMAL_EFFECTIVE = 2
+    SUPER_EFFECTIVE = 3
+
 class BattleLogEntry(BaseModel):
     """
     Docstring for BattleLogEntry needs to contain everything that happened in a turn. so it could be replicated later perfectly if needed.
@@ -30,12 +38,14 @@ class BattleLogEntry(BaseModel):
 
 
 class BattleLogMoveUsed(BattleLogEntry):
-    move_name: str # needs to be changed to Move reference later
+    move_name: BaseMove
     user_pokemon: Pokemon
-    target_pokemon: Optional[Pokemon]
-    damage_dealt: int
-    is_critical: bool
+    target_pokemon: List[Pokemon] = Field(default_factory=list)
+    damage_dealt: int = Field(default=0)
+    is_critical: bool = Field(default=False)
     status_condition_applied: Optional[StatusCondition]  # e.g., "burn", "paralysis", etc.
+    move_effectiveness: EffectivenessLevel = Field(default=EffectivenessLevel.NORMAL_EFFECTIVE)
+
 
 class BattleLogPokemonFainted(BattleLogEntry):
     fainted_pokemon: Pokemon
