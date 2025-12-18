@@ -1,11 +1,38 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
 from typing import List
+from enum import Enum
 from .types import PokemonType, StatusCondition
 from .move import MoveSet
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import AbilitySlot, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
+
+class GrowthRate(Enum):
+    FAST_THEN_VERY_SLOW = "fast-then-very-slow"
+    MEDIUM_SLOW = "medium-slow"
+    MEDIUM = "medium"
+    MEDIUM_FAST = "medium-fast"
+    FAST = "fast"
+    SLOW_THEN_VERY_FAST = "slow-then-very-fast"
+    SLOW = "slow"
+
+class EggGroup(Enum):
+    BUG = "bug"
+    DITTO = "ditto"
+    DRAGON = "dragon"
+    FAIRY = "fairy"
+    FLYING = "flying"
+    GROUND = "ground"
+    HUMANSHAPE = "humanshape"
+    INDETERMINATE = "indeterminate"
+    MINERAL = "mineral"
+    MONSTER = "monster"
+    NO_EGGS = "no-eggs"
+    PLANT = "plant"
+    WATER1 = "water1"
+    WATER2 = "water2"
+    WATER3 = "water3"
 
 
 class PokemonBase(BaseModel):
@@ -17,10 +44,15 @@ class PokemonBase(BaseModel):
     ev_yield: EffortYield = Field(default_factory=EffortYield)
     abilities: list[AbilitySlot] = Field(default_factory=list)
 
+    base_experience_yield: int = Field(default=64)
     gender_rate: GenderRate = Field(default=GenderRate.EQUAL)
     capture_rate: int = Field(ge=0, le=255, default=45)
     base_happiness: int = Field(ge=0, le=255, default=70)
-    
+    growth_rate: GrowthRate = Field(default=GrowthRate.MEDIUM)
+    egg_groups: List[EggGroup] = Field(default_factory=list)
+
+    height: float = Field(ge=0.0, default=1.0)  # in meters
+    weight: float = Field(ge=0.0, default=1.0)  # in kilograms
 
 class PokemonBattleState(BaseModel):
     attack_stat_stage: int = Field(default=0)
@@ -53,6 +85,8 @@ class Pokemon(BaseModel):
     nature: Nature = Field(default=Nature.HARDY)
     move_set: MoveSet = Field(default_factory=MoveSet)
     abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
+    friendship: int = Field(ge=0, le=255, default=70)
+    experience: int = Field(ge=0, default=0)
 
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)

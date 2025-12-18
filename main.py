@@ -7,38 +7,24 @@ from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.team import Team
 from shared.pokemon.move import MoveSet, MoveCategory, BaseMove
 
+from engine.pokemon.repositry_generator import generate_pokemon_repository_from_json, generate_abilities_repository_from_json
+from engine.pokemon.repository import pokemon_repository
+import os
+
 def main():
     game_window()
 
 
-pickachu = PokemonBase(
-    name="Pikachu",
-    types=[PokemonType.ELECTRIC],
-    base_stats={
-        "hp": 35,
-        "attack": 55,
-        "defense": 40,
-        "special_attack": 50,
-        "special_defense": 50,
-        "speed": 90,
-    },
-    pokedex_number=25,
-    catch_rate=190
-    )
-eevee = PokemonBase(
-    name="Eevee",
-    types=[PokemonType.NORMAL],
-    base_stats={
-        "hp": 55,
-        "attack": 55,
-        "defense": 50,
-        "special_attack": 45,
-        "special_defense": 65,
-        "speed": 55,
-    },
-    pokedex_number=133,
-    catch_rate=45
-    )
+os.listdir("data/pokemon")
+# Generate repositories from JSON data files
+for subdir, _, files in os.walk("data/pokemon"):
+    file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
+    generate_pokemon_repository_from_json(file_paths)
+
+print ("\nGenerated Pokemon Repository with the following Pokemon:\n")
+for pokemon in pokemon_repository.list_pokemons().values():
+    print (f"- {pokemon.name} (#{pokemon.pokedex_number})")
+
 
 tackle = BaseMove(
     name="Tackle",
@@ -50,11 +36,11 @@ tackle = BaseMove(
 )
 default_move_set = MoveSet(moves=[tackle])
 
-ashes_pickachu = Pokemon(pokemon=pickachu, level=15, move_set=default_move_set)
+ashes_pickachu = Pokemon(pokemon=pokemon_repository.get_pokemon("pikachu"), level=15, move_set=default_move_set)
 ashes_team = Team(pokemons=[ashes_pickachu])
 
 trainer=BattleTrainer(name="Ash", team=ashes_team)
-pokemon=Pokemon(pokemon=eevee, level=10, move_set=default_move_set)
+pokemon=Pokemon(pokemon=pokemon_repository.get_pokemon("eevee"), level=10, move_set=default_move_set)
 
 opponent_1 = TrainerOpponent(trainer=trainer)
 opponent_2 = WildPokemonOpponent(pokemon=pokemon)

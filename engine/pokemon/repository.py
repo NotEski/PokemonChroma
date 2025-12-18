@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field, model_validator
 from typing import Dict
 
 from shared.pokemon.pokemon import PokemonBase
-from shared.pokemon.types import Ability, AbilitySlot
+#from shared.pokemon.types import Ability, AbilitySlot
 
 
 class PokemonRepository(BaseModel):
@@ -30,37 +30,40 @@ class PokemonRepositorySingleton:
         if cls._instance is None:
             cls._instance = PokemonRepository()
         return cls._instance
-
-
-class PokemonAbilityRepository(BaseModel):
-    abilities: Dict[str, 'Ability'] = Field(default_factory=dict)
-
-
-    def create_ability(self, ability: 'Ability', force: bool = False):
-        key = ability.name.lower()
-        if key in self.abilities and not force:
-            raise ValueError(f"Ability with name '{ability.name}' already exists.")
-
-        self.abilities[key] = ability
-
-    def get_ability(self, key: str) -> 'Ability':
-        return self.abilities.get(key.lower())
     
-    def list_abilities(self) -> Dict[str, 'Ability']:
-        return self.abilities
+    def reset_instance(cls):
+        cls._instance = None
 
-class PokemonAbilityRepositorySingleton:
-    _instance: PokemonAbilityRepository = None
 
-    @classmethod
-    def get_instance(cls) -> PokemonAbilityRepository:
-        if cls._instance is None:
-            cls._instance = PokemonAbilityRepository()
-        return cls._instance
+# class PokemonAbilityRepository(BaseModel):
+#     abilities: Dict[str, 'Ability'] = Field(default_factory=dict)
+
+
+#     def create_ability(self, ability: 'Ability', force: bool = False):
+#         key = ability.name.lower()
+#         if key in self.abilities and not force:
+#             raise ValueError(f"Ability with name '{ability.name}' already exists.")
+
+#         self.abilities[key] = ability
+
+#     def get_ability(self, key: str) -> 'Ability':
+#         return self.abilities.get(key.lower())
+    
+#     def list_abilities(self) -> Dict[str, 'Ability']:
+#         return self.abilities
+
+# class PokemonAbilityRepositorySingleton:
+#     _instance: PokemonAbilityRepository = None
+
+#     @classmethod
+#     def get_instance(cls) -> PokemonAbilityRepository:
+#         if cls._instance is None:
+#             cls._instance = PokemonAbilityRepository()
+#         return cls._instance
 
 
 
 
 
 pokemon_repository = PokemonRepositorySingleton.get_instance()
-ability_repository = PokemonAbilityRepositorySingleton.get_instance()
+#ability_repository = PokemonAbilityRepositorySingleton.get_instance()

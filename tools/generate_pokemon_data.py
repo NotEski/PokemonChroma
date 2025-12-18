@@ -6,12 +6,12 @@ aligned to PokemonBase fields.
 
 - Uses sword-shield version-group for move learnsets.
 - Per-field fallback: for attributes available in multiple places, use the
-  latest if present, otherwise fallback to next available.
-- Abilities are kebab-case, types/growth_rate/egg_groups are UPPER_SNAKE enum-style.
+    latest if present, otherwise fallback to next available.
+- Abilities and types/growth_rate/egg_groups are stored as kebab-case slugs.
 - Height/weight converted: dm -> meters (÷10), hg -> kilograms (÷10)
 
 Usage:
-    python -m tools.generate_pokemon_data --limit 10 --overwrite
+        python -m tools.generate_pokemon_data --limit 10 --overwrite
 
 """
 from __future__ import annotations
@@ -38,6 +38,13 @@ def to_upper_snake(s: str) -> str:
     s = s.strip()
     s = s.replace("-", "_").replace(" ", "_")
     return s.upper()
+
+
+def to_kebab(s: str) -> str:
+    # Normalize to kebab-case: underscores/spaces to hyphens, lowercased
+    s = s.strip()
+    s = s.replace("_", "-").replace(" ", "-")
+    return s.lower()
 
 
 def to_title_spaces(s: str) -> str:
@@ -123,7 +130,7 @@ def map_types(pokemon_data: Dict[str, Any]) -> List[str]:
     for entry in sorted(pokemon_data.get("types", []), key=lambda e: e.get("slot", 0)):
         tname = entry.get("type", {}).get("name", "")
         if tname:
-            types.append(to_upper_snake(tname))
+            types.append(to_kebab(tname))
     return types
 
 
@@ -243,9 +250,9 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
     height_m = round(float(pokemon_data.get("height", 1.0)) / 10.0, 2)
     weight_kg = round(float(pokemon_data.get("weight", 10.0)) / 10.0, 2)
 
-    egg_groups = [to_upper_snake(eg.get("name")) for eg in species_data.get("egg_groups", [])] if species_data else []
+    egg_groups = [to_kebab(eg.get("name", "")) for eg in species_data.get("egg_groups", [])] if species_data else []
     growth_rate_slug = (species_data.get("growth_rate", {}) or {}).get("name") if species_data else None
-    growth_rate = to_upper_snake(growth_rate_slug) if growth_rate_slug else "MEDIUM_FAST"
+    growth_rate = to_kebab(growth_rate_slug) if growth_rate_slug else "medium-fast"
 
     evolution_line_id = extract_evolution_chain_id(species_data) if species_data else None
 
