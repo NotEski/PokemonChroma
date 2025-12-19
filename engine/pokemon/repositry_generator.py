@@ -4,7 +4,7 @@
 import json
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
-from shared.pokemon.abilities import PokemonAbilities
+from shared.pokemon.abilities import Ability, PokemonAbilities
 from engine.pokemon.repository import pokemon_repository
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
@@ -49,7 +49,6 @@ def generate_pokemon_repository_from_json(file_paths: list[str]):
         pokemon_base = load_pokemon_from_json_file(file_path)
         pokemon_repository.create_pokemon(pokemon_base)
 
-
 def generate_abilities_repository_from_json(file_paths: list[str]):
     for file_path in file_paths:
         with open(file_path, 'r') as f:
@@ -60,4 +59,18 @@ def generate_abilities_repository_from_json(file_paths: list[str]):
                 description=json_data["description"]
             )
             #ability_repository.create_ability(ability)
+
+
+
+def json_to_ability(json_data: dict) -> Ability:
+    return Ability(
+        name=json_data["name"],
+        name_readable=json_data["name_readable"],
+        description=json_data["description"]
+    )
+
+def load_ability_from_json_file(file_path: str) -> Ability:
+    with open(file_path, 'r') as f:
+        json_data = json.load(f)
+    return json_to_ability(json_data)
 

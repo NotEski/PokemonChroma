@@ -294,9 +294,61 @@ def write_payload(out_dir: Path, folder_name: str, payload: Dict[str, Any], over
     return target_file
 
 
+def build_ability_payload(ability_path: Path) -> Optional[Tuple[str, Dict[str, Any]]]:
+    """Extract ability name, readable name, and description from PokeAPI ability JSON."""
+    try:
+        ability_data = read_json(ability_path)
+    except Exception:
+        return None
+    
+    name_slug = ability_data.get("name", "")
+    if not name_slug:
+        return None
+    
+    # Extract English name
+    name_readable = ""
+    for entry in ability_data.get("names", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            name_readable = entry.get("name", "")
+            break
+    
+    if not name_readable:
+        name_readable = to_title_spaces(name_slug)
+    
+    # Extract English description (effect)
+    description = ""
+    for entry in ability_data.get("effect_entries", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            description = entry.get("effect", "")
+            if description:
+                break
+    
+    payload: Dict[str, Any] = {
+        "name": name_slug,
+        "name_readable": name_readable,
+        "description": description,
+    }
+    
+    return name_slug, payload
+
+
+def write_abilities_json(out_dir: Path, abilities: Dict[str, Dict[str, Any]], overwrite: bool) -> Path:
+    """Write all abilities to a single abilities.json file."""
+    target_file = out_dir / "abilities.json"
+    if target_file.exists() and not overwrite:
+        return target_file
+    
+    with target_file.open("w", encoding="utf-8") as f:
+        json.dump(abilities, f, indent=4)
+    return target_file
+
+
 def run(source: Path, out: Path, overwrite: bool, limit: Optional[int]) -> None:
     pokemon_dir = source / "pokemon"
     species_dir = source / "pokemon-species"
+    ability_dir = source / "ability"
 
     written = 0
     for p in sorted(pokemon_dir.glob("*.json")):
@@ -310,6 +362,22 @@ def run(source: Path, out: Path, overwrite: bool, limit: Optional[int]) -> None:
             break
 
     print(f"Wrote {written} Pokémon base files to {out}")
+    
+    # Generate abilities
+    abilities: Dict[str, Dict[str, Any]] = {}
+    abilities_written = 0
+    if ability_dir.exists():
+        for p in sorted(ability_dir.glob("*.json")):
+            built = build_ability_payload(p)
+            if not built:
+                continue
+            name, payload = built
+            abilities[name] = payload
+            abilities_written += 1
+        
+        if abilities:
+            write_abilities_json(out.parent, abilities, overwrite)
+            print(f"Wrote {abilities_written} abilities to {out.parent / 'abilities.json'}")
 
 
 def main(argv: Optional[List[str]] = None) -> None:

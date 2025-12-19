@@ -11,9 +11,17 @@ from engine.pokemon.repositry_generator import generate_pokemon_repository_from_
 from engine.pokemon.repository import pokemon_repository
 import os
 
-def main():
-    game_window()
+from direct.showbase.ShowBase import ShowBase
 
+
+class MyApp(ShowBase):
+
+    def __init__(self):
+        ShowBase.__init__(self)
+
+
+app = MyApp()
+app.run()
 
 os.listdir("data/pokemon")
 # Generate repositories from JSON data files
