@@ -1,9 +1,10 @@
 """
-Generate Pokémon base data and move files from cached PokeAPI JSON.
+Generate Pokémon base data, move files, and item files from cached PokeAPI JSON.
 
 Outputs:
 - data/pokemon/NNNN-name/base_pokemon.json aligned to PokemonBase fields
 - data/moves/NNNN-move-name.json copied from pokeapi_database/move
+- data/items/NNNN-item-name.json copied from pokeapi_database/item
 
 Rules:
 - Moveset source: sword-shield version-group only (no fallback for moves)
@@ -15,6 +16,7 @@ Rules:
 Usage:
     python -m tools.generate_pokemon_data --overwrite
     python -m tools.generate_pokemon_data --skip-pokemon --overwrite  # only moves
+    python -m tools.generate_pokemon_data --skip-pokemon --skip-moves --overwrite  # only items
 """
 from __future__ import annotations
 
@@ -28,6 +30,7 @@ WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = WORKSPACE_ROOT / "pokeapi_database"
 DEFAULT_OUT_POKEMON = WORKSPACE_ROOT / "data" / "pokemon"
 DEFAULT_OUT_MOVES = WORKSPACE_ROOT / "data" / "moves"
+DEFAULT_OUT_ITEMS = WORKSPACE_ROOT / "data" / "items"
 
 
 # ------------------------- Helpers -------------------------
@@ -175,6 +178,45 @@ def map_move_name_readable(move_data: Dict[str, Any], fallback_slug: str) -> str
     return to_title_spaces(fallback_slug)
 
 
+def map_item_name_readable(item_data: Dict[str, Any], fallback_slug: str) -> str:
+    for entry in item_data.get("names", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            nm = entry.get("name")
+            if nm:
+                return nm
+    return to_title_spaces(fallback_slug)
+
+
+def map_item_description(item_data: Dict[str, Any]) -> str:
+    for entry in item_data.get("effect_entries", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            text = entry.get("short_effect") or entry.get("effect")
+            if text:
+                return " ".join(text.replace("\n", " ").split())
+    for entry in item_data.get("flavor_text_entries", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            text = entry.get("text")
+            if text:
+                return " ".join(text.replace("\n", " ").split())
+    return ""
+
+
+def map_baby_trigger_id(item_data: Dict[str, Any]) -> Optional[int]:
+    url = (item_data.get("baby_trigger_for", {}) or {}).get("url")
+    if not url:
+        return None
+    match = re.search(r"/evolution-chain/(\d+)/", url)
+    if match:
+        try:
+            return int(match.group(1))
+        except ValueError:
+            return None
+    return None
+
+
 def extract_evolution_chain_id(species_data: Dict[str, Any]) -> Optional[int]:
     url = (species_data.get("evolution_chain", {}) or {}).get("url")
     if not url:
@@ -262,6 +304,80 @@ def write_payload(out_dir: Path, folder_name: str, payload: Dict[str, Any], over
     with target_file.open("w", encoding="utf-8") as f:
         json.dump(payload, f, indent=4)
     return target_file
+
+
+# ------------------------- Item files -------------------------
+
+def build_item_payload(item_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    iid = item_data.get("id")
+    iname = item_data.get("name")
+    if not isinstance(iid, int) or not isinstance(iname, str) or not iname:
+        return None
+
+    name_slug = to_lower_snake(iname)
+    name_readable = map_item_name_readable(item_data, name_slug)
+
+    attributes = [to_lower_snake(attr.get("name", "")) for attr in item_data.get("attributes", []) if attr.get("name")]
+    attributes = sorted(set(a for a in attributes if a))
+
+    category_raw = (item_data.get("category", {}) or {}).get("name", "")
+    category = to_lower_snake(category_raw) if category_raw else None
+
+    fling_effect_raw = (item_data.get("fling_effect", {}) or {}).get("name", "") if isinstance(item_data.get("fling_effect"), dict) else None
+    fling_effect = to_lower_snake(fling_effect_raw) if fling_effect_raw else None
+
+    held_by_pokemon = []
+    for entry in item_data.get("held_by_pokemon", []):
+        pname = (entry.get("pokemon", {}) or {}).get("name")
+        if pname:
+            held_by_pokemon.append(to_lower_snake(pname))
+    held_by_pokemon = sorted(set(held_by_pokemon))
+
+    payload: Dict[str, Any] = {
+        "name": name_slug,
+        "name_readable": name_readable,
+        "index": iid,
+        "description": map_item_description(item_data),
+        "cost": item_data.get("cost", 0) or 0,
+        "attributes": attributes,
+        "fling_effect": fling_effect,
+        "fling_power": item_data.get("fling_power") if item_data.get("fling_power") is not None else 0,
+        "baby_trigger_for": map_baby_trigger_id(item_data),
+        "category": category,
+        "held_by_pokemon": held_by_pokemon,
+    }
+    return payload
+
+
+def generate_items(source: Path, out_items: Path, overwrite: bool, limit: Optional[int]) -> int:
+    item_dir = source / "item"
+    if not item_dir.exists():
+        return 0
+    out_items.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for p in sorted(item_dir.glob("*.json")):
+        try:
+            data = read_json(p)
+        except Exception:
+            continue
+        payload = build_item_payload(data)
+        if not payload:
+            continue
+        iid = payload.get("index")
+        iname = payload.get("name")
+        fname = f"{zero_pad_id(iid)}-{iname}.json"
+        target_file = out_items / fname
+        if target_file.exists() and not overwrite:
+            written += 1
+            if limit and written >= limit:
+                break
+            continue
+        with target_file.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=4)
+        written += 1
+        if limit and written >= limit:
+            break
+    return written
 
 
 # ------------------------- Move files -------------------------
@@ -427,7 +543,17 @@ def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Option
 
 
 # ------------------------- Orchestration -------------------------
-def run(source: Path, out_pokemon: Path, out_moves: Path, overwrite: bool, limit: Optional[int], include_pokemon: bool, include_moves: bool) -> None:
+def run(
+    source: Path,
+    out_pokemon: Path,
+    out_moves: Path,
+    out_items: Path,
+    overwrite: bool,
+    limit: Optional[int],
+    include_pokemon: bool,
+    include_moves: bool,
+    include_items: bool,
+) -> None:
     pokemon_dir = source / "pokemon"
     species_dir = source / "pokemon-species"
 
@@ -447,31 +573,41 @@ def run(source: Path, out_pokemon: Path, out_moves: Path, overwrite: bool, limit
     if include_moves:
         total_moves = generate_moves(source, out_moves, overwrite, limit)
 
+    total_items = 0
+    if include_items:
+        total_items = generate_items(source, out_items, overwrite, limit)
+
     if include_pokemon:
         print(f"Wrote {total_pokemon} Pokémon base files to {out_pokemon}")
     if include_moves:
         print(f"Wrote {total_moves} move files to {out_moves}")
+    if include_items:
+        print(f"Wrote {total_items} item files to {out_items}")
 
 
 def main(argv: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Generate Pokémon base data and move data from cached PokeAPI JSON")
+    parser = argparse.ArgumentParser(description="Generate Pokémon base data, move data, and item data from cached PokeAPI JSON")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="Source pokeapi_database directory")
     parser.add_argument("--out-pokemon", type=Path, default=DEFAULT_OUT_POKEMON, help="Output data/pokemon directory")
     parser.add_argument("--out-moves", type=Path, default=DEFAULT_OUT_MOVES, help="Output data/moves directory")
+    parser.add_argument("--out-items", type=Path, default=DEFAULT_OUT_ITEMS, help="Output data/items directory")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing output files")
-    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon and moves)")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon, moves, and items)")
     parser.add_argument("--skip-pokemon", action="store_true", help="Skip generating Pokémon data")
     parser.add_argument("--skip-moves", action="store_true", help="Skip generating moves data")
+    parser.add_argument("--skip-items", action="store_true", help="Skip generating item data")
 
     args = parser.parse_args(argv)
     run(
         source=args.source,
         out_pokemon=args.out_pokemon,
         out_moves=args.out_moves,
+        out_items=args.out_items,
         overwrite=args.overwrite,
         limit=args.limit,
         include_pokemon=not args.skip_pokemon,
         include_moves=not args.skip_moves,
+        include_items=not args.skip_items,
     )
 
 

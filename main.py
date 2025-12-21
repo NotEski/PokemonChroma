@@ -71,6 +71,11 @@ default_move_set = MoveSet(moves=[tackle, growl, volt])
 ashes_pickachu = Pokemon(pokemon=pokemon_repository.get("pikachu"), level=15, move_set=default_move_set)
 ashes_team = Team(pokemons=[ashes_pickachu])
 
+
+
+
+
+
 trainer=BattleTrainer(name="Ash", team=ashes_team)
 pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=default_move_set)
 opponent_1 = TrainerOpponent(trainer=trainer)

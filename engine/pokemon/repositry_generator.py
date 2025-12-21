@@ -9,6 +9,7 @@ from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
 from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
+from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
 
 
 # ============================================================================
@@ -143,3 +144,24 @@ def load_move_from_json_file(file_path: str) -> BaseMove:
 def generate_move_repository_from_json(file_path: str):
     move = load_move_from_json_file(file_path)
     move_repository.create(move)
+
+
+# ============================================================================
+# Item
+# ============================================================================
+
+def json_to_item(json_data: dict) -> Item:
+    return Item(
+        name=json_data["name"],
+        name_readable=json_data["name_readable"],
+        index=json_data["index"],
+        description=json_data["description"],
+        cost=json_data.get("cost", 0),
+        attributes=[ItemAttribute(attr) for attr in json_data.get("attributes", [])],
+        fling_effect=ItemFlingEffect(json_data.get("fling_effect")) if json_data.get("fling_effect") else None,
+        fling_power=json_data.get("fling_power", None),
+        baby_trigger_for=json_data.get("baby_trigger_for", None),
+        category=ItemCategory(json_data["category"]),
+        held_by_pokemon=json_data.get("held_by_pokemon", []),
+        pocket=ItemPocket(json_data["pocket"]) if json_data.get("pocket") else None,
+    )

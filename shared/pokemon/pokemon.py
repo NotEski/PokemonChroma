@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
-from typing import List
+from typing import List, Optional
 from enum import Enum
 from .types import PokemonType
 from .move import MoveSet
@@ -8,6 +8,8 @@ from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
 from .status_conditions import StatusCondition
+from shared.items.items import Item
+from shared.trainer.trainer import OriginalTrainer, Trainer
 
 class GrowthRate(Enum):
     FAST_THEN_VERY_SLOW = "fast_then_very_slow"
@@ -35,6 +37,7 @@ class EggGroup(Enum):
     WATER1 = "water1"
     WATER2 = "water2"
     WATER3 = "water3"
+
 
 
 
@@ -87,7 +90,9 @@ class Pokemon(BaseModel):
     abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
+    held_item: Optional[Item] = Field(default=None)
 
+    #original_trainer: Optional[OriginalTrainer] = Field(default=None)
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)
 
@@ -138,6 +143,24 @@ class Pokemon(BaseModel):
     
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon.base_stats, stat_name)
+    
+    def _generate_original_trainer(self):
+        """
+        Sets the original trainer information for this Pokemon based on the current trainer data.
+        """
+        pass
+
+    def get_trainer(self) -> Trainer:
+        """
+        Returns the Trainer object corresponding to the original trainer of this Pokemon.
+        """
+        if self.original_trainer is None:
+            return None
+        return Trainer(
+            name=self.original_trainer.name,
+            unique_id=self.original_trainer.unique_id
+        )
+        
 
     @property
     def is_fainted(self) -> bool:

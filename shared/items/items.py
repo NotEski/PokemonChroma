@@ -1,0 +1,102 @@
+from pydantic import BaseModel, Field
+from typing import Optional, List
+from enum import Enum
+
+
+class ItemAttribute(Enum):
+    CONSUMABLE = "consumable"
+    COUNTABLE = "countable"
+    HOLDABLE_ACTIVE = "holdable_active"
+    HOLDABLE_PASSIVE = "holdable_passive"
+    HOLDABLE = "holdable"
+    UNDERGROUND = "underground"
+    USABLE_IN_BATTLE = "usable_in_battle"
+    USABLE_IN_OVERWORLD = "usable_in_overworld"
+
+class ItemCategory(Enum):
+    ALL_MACHINES = "all_machines"
+    ALL_MAIL = "all_mail"
+    APRICORN_BALLS = "apricorn_balls"
+    APRICORN_BOX = "apricorn_box"
+    BAD_HELD_ITEMS = "bad_held_items"
+    BAKING_ONLY = "baking_only"
+    CATCHING_ONLY = "catching_only"
+    CHOICE = "choice"
+    COLLECTIBLES = "collectibles"
+    CURRY_INGREDIENTS = "curry_ingredients"
+    DATA_CARDS = "data_cards"
+    DEX_COMPLETION = "dex_completion"
+    DYNAMAX_CRYSTALS = "dynamax_crystals"
+    EFFORT_DROP = "effort_drop"
+    EFFORT_TRAINING = "effort_training"
+    EVENT_ITEMS = "event_items"
+    EVOLUTION = "evolution"
+    FLUTES = "flutes"
+    GAMEPLAY = "gameplay"
+    HEALING = "healing"
+    HELD_ITEMS = "held_items"
+    IN_A_PINCH = "in_a_pinch"
+    JEWELS = "jewels"
+    LOOT = "loot"
+    MEDICINE = "medicine"
+    MEGA_STONES = "mega_stones"
+    MEMORIES = "memories"
+    MIRACLE_SHOOTER = "miracle_shooter"
+    MULCH = "mulch"
+    NATURE_MINTS = "nature_mints"
+    OTHER = "other"
+    PICKY_HEALING = "picky_healing"
+    PICNIC = "picnic"
+    PLATES = "plates"
+    PLOT_ADVANCEMENT = "plot_advancement"
+    PP_RECOVERY = "pp_recovery"
+    REVIVAL = "revival"
+    SANDWHICH_INGREDIENTS = "sandwhich_ingredients"
+    SCARVES = "scarves"
+    SPECIAL_BALLS = "special_balls"
+    SPECIAL_CANDIES = "special_candies"
+    SPECIES_SPECIFIC = "species_specific"
+    SPELUNKING = "spelunking"
+    STANDARD_BALLS = "standard_balls"
+    STAT_BOOSTS = "stat_boosts"
+    STATUS_CURES = "status_cures"
+    TERA_SHARD = "tera_shard"
+    TM_MATERIALS = "tm_materials"
+    TRAINING = "training"
+    TYPE_ENHANCEMENT = "type_enhancement"
+    UNUSED = "unused"
+    VITAMINS = "vitamins"
+    Z_CRYSTALS = "z_crystals"
+
+class ItemPocket(Enum):
+    BATTLE = "battle"
+    BERRIES = "berries"
+    KEY = "key"
+    MACHINES = "machines"
+    MAIL = "mail"
+    MEDICINE = "medicine"
+    MISC = "misc"
+    POKEBALLS = "pokeballs"
+
+class ItemFlingEffect(Enum):
+    BADLY_POISON = "badly_poison"
+    BERRY_EFFECT = "berry_effect"
+    BURN = "burn"
+    FLINCH = "flinch"
+    PARALYZE = "paralyze"
+    POISON = "poison"
+
+
+class Item(BaseModel):
+    name: str
+    name_readable: str
+    index: int
+    description: str
+    cost: int = Field(ge=0, default=0)
+    attributes: List[ItemAttribute] = Field(default_factory=list)
+    fling_effect: Optional[ItemFlingEffect] = None
+    fling_power: Optional[int] = None
+    baby_trigger_for: Optional[str] = None
+    category: ItemCategory
+    held_by_pokemon: List[str] = Field(default_factory=list)
+    pocket: Optional[ItemPocket] = None

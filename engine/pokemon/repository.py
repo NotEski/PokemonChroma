@@ -4,6 +4,7 @@ from typing import Dict, TypeVar, Generic
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
 from shared.pokemon.move import BaseMove
+from shared.items.items import Item
 
 T = TypeVar('T')
 
@@ -56,6 +57,9 @@ class MoveRepository(BaseRepository[BaseMove]):
 class PokemonAbilityRepository(BaseRepository[Ability]):
     pass
 
+class ItemRepository(BaseRepository[Item]):
+    pass
+
 
 # Concrete Singletons
 class PokemonRepositorySingleton(BaseSingleton[PokemonRepository]):
@@ -75,8 +79,13 @@ class PokemonAbilityRepositorySingleton(BaseSingleton[PokemonAbilityRepository])
     def _create_instance(cls) -> PokemonAbilityRepository:
         return PokemonAbilityRepository()
 
+class ItemRepositorySingleton(BaseSingleton[ItemRepository]):
+    @classmethod
+    def _create_instance(cls) -> ItemRepository:
+        return ItemRepository()
 
 # Module-level instances
 pokemon_repository = PokemonRepositorySingleton.get_instance()
 ability_repository = PokemonAbilityRepositorySingleton.get_instance()
 move_repository = MoveRepositorySingleton.get_instance()
+item_repository = ItemRepositorySingleton.get_instance()

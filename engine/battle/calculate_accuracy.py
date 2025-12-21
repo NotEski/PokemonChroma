@@ -1,4 +1,4 @@
-from random import random
+import random
 from shared.pokemon.move import BaseMove, DamageClass
 from shared.pokemon.pokemon import Pokemon
 from engine.battle.battle_header import BattleState, BattleWeather
@@ -13,7 +13,7 @@ def calculate_accuracy(base_move: BaseMove, user: Pokemon, target: Pokemon, batt
 
     adjusted_accuracy_stage_modifier = _get_accuracy_stage_modifier(user, target)
     micle_berry = _get_micle_berry_modifier(user)
-    other_modifiers = _get_other_modifiers()
+    other_modifiers = _get_other_modifiers(base_move, user, target, battle_state)
 
 
     accuracy_modified = base_move.accuracy * other_modifiers * adjusted_accuracy_stage_modifier * micle_berry - affection_bonus
@@ -110,7 +110,7 @@ def _get_accuracy_stage_modifier(user: Pokemon, target: Pokemon) -> float:
 
 def _get_micle_berry_modifier(user: Pokemon) -> float:
     # pokemon eating the micel berry
-    if user.pokemon.held_item == "micle-berry":
+    if user.held_item == "micle-berry":
 
         # Placeholder: Implement logic for Micle Berry effect
         return 1.2
@@ -118,5 +118,5 @@ def _get_micle_berry_modifier(user: Pokemon) -> float:
     return 1.0
 
 def calculate_accuracy_hit(accuracy: float) -> bool:
-    roll = random.uniform(0, 100)
+    roll = random.randint(0, 100)
     return roll <= accuracy
