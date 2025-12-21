@@ -1,5 +1,5 @@
 import random
-from shared.pokemon.move import Move
+from shared.pokemon.move import BaseMove
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
@@ -7,7 +7,7 @@ from shared.pokemon.move import DamageClass
 from engine.battle.battle_header import BattleState, BattleWeather
 from engine.battle.type_effectiveness import get_attack_multiplier
 
-def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, move: Move, critical_hit: bool, battle_state: BattleState) -> int:
+def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, move: BaseMove, critical_hit: bool, battle_state: BattleState) -> int:
     # Simplified damage calculation formula for demonstration purposes
     # Will need to pull in if this move hits multiple targets
 
@@ -30,7 +30,7 @@ def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, mov
 
     modified_damage = round(initial_damage  * _get_targets_modifier(targets))
     modified_damage = round(modified_damage * _get_pb_modifier(pb_second_strike))
-    modified_damage = round(modified_damage * _get_weather_modifier(move.base_move.type, battle_state.weather_turns.weather))
+    modified_damage = round(modified_damage * _get_weather_modifier(move.type, battle_state.weather_turns.weather))
     modified_damage = round(modified_damage * _get_glaive_rush_modifier(glaive_rush))
     modified_damage = round(modified_damage * _get_critical_modifier(critical_hit))
     modified_damage = round(modified_damage * _get_random_factor())
@@ -45,10 +45,10 @@ def _get_level_modifier(level: int) -> float:
     return (2 * level) / 5 + 2
 
 def _get_power_modifier(move) -> float:
-    return move.base_move.power if move.base_move.power is not None else 0
+    return move.power if move.power is not None else 0
 
-def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: Move) -> int:
-    if move.base_move.category == DamageClass.PHYSICAL:
+def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: BaseMove) -> int:
+    if move.category == DamageClass.PHYSICAL:
         attack_stat = attacking_pokemon.get_attack_stat()
 
         return attack_stat
@@ -57,9 +57,9 @@ def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: Move) -> int:
 
         return attack_stat
 
-def _get_defence_stat_modifier(defending_pokemon: Pokemon, move: Move) -> int:
+def _get_defence_stat_modifier(defending_pokemon: Pokemon, move: BaseMove) -> int:
     flip_defence = False  # Placeholder for moves that flip defense and special defense
-    if move.base_move.category == DamageClass.PHYSICAL and not flip_defence:
+    if move.category == DamageClass.PHYSICAL and not flip_defence:
         defence_stat = defending_pokemon.get_defense_stat()
         
         return defence_stat
@@ -114,17 +114,17 @@ def _get_critical_modifier(is_critical_hit) -> float:
 def _get_random_factor() -> float:
     return random.uniform(0.85, 1.0)
 
-def _get_stab_modifier(attacking_pokemon: Pokemon, move: Move) -> float:
-    if move.base_move.type in attacking_pokemon.pokemon.types:
+def _get_stab_modifier(attacking_pokemon: Pokemon, move: BaseMove) -> float:
+    if move.type in attacking_pokemon.pokemon.types:
         return 1.5
     return 1.0
 
-def _get_type_effectiveness_modifier(move: Move, defending_pokemon: Pokemon) -> float:
-    multiplier = get_attack_multiplier(move.base_move.type, defending_pokemon.pokemon.types)
+def _get_type_effectiveness_modifier(move: BaseMove, defending_pokemon: Pokemon) -> float:
+    multiplier = get_attack_multiplier(move.type, defending_pokemon.pokemon.types)
     return multiplier if multiplier > 0 else 0.0
 
-def _get_burn_modifier(attacking_pokemon: Pokemon, move: Move) -> float:
-    if move.base_move.category == DamageClass.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
+def _get_burn_modifier(attacking_pokemon: Pokemon, move: BaseMove) -> float:
+    if move.category == DamageClass.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
         # if attacking_pokemon.ability
         return 0.5

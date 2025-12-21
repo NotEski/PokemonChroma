@@ -59,6 +59,20 @@ class BattleWeather(Enum):
     SHADOWY_AURA = "shadowy_aura"
     NONE = None
 
+class BattleTerrain(Enum):
+    GRASSY = "grassy"
+    ELECTRIC = "electric"
+    MISTY = "misty"
+    PSYCHIC = "psychic"
+    NONE = None
+
+class FieldEffects(Enum):
+    TRICK_ROOM = "trick_room"
+    MAGIC_ROOM = "magic_room"
+    WONDER_ROOM = "wonder_room"
+    NONE = None
+
+
 class WeatherTurns(BaseModel):
     weather: BattleWeather
     remaining_turns: int
@@ -67,11 +81,12 @@ class WeatherTurns(BaseModel):
 class BattleConfig(BaseModel):
     is_wild: bool = Field(default=False)
     can_escape: bool = Field(default=True)
-    terrain: Optional[str] = None  # e.g., "grassy", "electric", etc.
+    terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
 
 class BattleState(BaseModel):
     turn_number: int = Field(default=0)
     weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=0))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
-    terrain: Optional[str] = None  # e.g., "grassy", "electric", etc.
-    field_effects: List[str] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
+    terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
+    field_effects: List[FieldEffects] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
+    
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events

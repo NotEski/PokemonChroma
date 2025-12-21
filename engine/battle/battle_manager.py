@@ -13,6 +13,7 @@ from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
 from .escape_calculator import calculate_escape_success
+from .calculate_accuracy import calculate_accuracy, calculate_accuracy_hit
 
 TPosition = TypeVar('TPosition', bound=BattlePosition)
 
@@ -134,6 +135,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
             self.switch_pokemon()
             
             # Handle rotation
+            # NOTE only applicable in rotation battles which are not implemented yet
             
             # Item usage (in-game only)
             self.process_item_use()
@@ -293,16 +295,35 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                 target_pokemon = self.in_play_pokemon[target_position]
 
                 is_critical = calculate_critical_hit(user_pokemon)
+                used_move = action.move.base_move
+
+
+                if used_move.accuracy is None:
+                    print (used_move.name + " never misses!")
+                    accuracy_check = 100.0
+                else:
+                    accuracy_check = calculate_accuracy(used_move, user_pokemon, target_pokemon, self.battle_state)
+                
+                    if not calculate_accuracy_hit(accuracy_check):
+                        print (f"{user_pokemon.nickname} used {used_move.name}, but it missed!")
+                        continue
+
 
                 damage = calculate_damage(
                     attacking_pokemon=user_pokemon,
                     defending_pokemon=target_pokemon,
-                    move=action.move,
+                    move=used_move,
                     critical_hit=is_critical,
                     battle_state=self.battle_state
                 )
 
                 action.move.current_pp -= 1
+
+                # if damage is 0, the move had no effect
+                if damage <= 0:
+                    print (f"{user_pokemon.nickname} used {action.move.base_move.name}, but it had no effect on {target_pokemon.nickname}!")
+                    continue
+
 
                 # show the amount of health the target has before applying damage
                 print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")

@@ -63,9 +63,10 @@ print("\n")
 
 tackle = move_repository.get("tackle")
 growl = move_repository.get("growl")
+volt = move_repository.get("10_000_000_volt_thunderbolt")
 
 
-default_move_set = MoveSet(moves=[tackle])
+default_move_set = MoveSet(moves=[tackle, growl, volt])
 
 ashes_pickachu = Pokemon(pokemon=pokemon_repository.get("pikachu"), level=15, move_set=default_move_set)
 ashes_team = Team(pokemons=[ashes_pickachu])
@@ -79,13 +80,12 @@ battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
 
 battle_manager.init_battle()
 
-# for _ in range(3):
 
 battle_manager.start_turn()
 
 battle_manager.use_move(
     user_position=SinglesBattlePosition.Team1_Pokemon1,
-    move_index=0,
+    move_index=2,
     target_position=SinglesBattlePosition.Team2_Pokemon1
 )
 

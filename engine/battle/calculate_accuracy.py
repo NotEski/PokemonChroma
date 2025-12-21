@@ -1,13 +1,122 @@
-from shared.pokemon.move import BaseMove
+from random import random
+from shared.pokemon.move import BaseMove, DamageClass
 from shared.pokemon.pokemon import Pokemon
+from engine.battle.battle_header import BattleState, BattleWeather
+from shared.pokemon.status_conditions import StatusCondition
 
 
-def calculate_accuracy(base_move: BaseMove, user: Pokemon, target: Pokemon) -> float:
+def calculate_accuracy(base_move: BaseMove, user: Pokemon, target: Pokemon, battle_state: BattleState) -> float:
     # Placeholder for actual calculation logic
-    modifier = 1.0  # Calculate based on weather, abilities, etc.
-    adjusted_accuracy_stage = 1.0  # Calculate based on accuracy/evasion stages
-    micle_berry = 1.0  # Check if target has Micle Berry
+
     affection_bonus = 1.0  # Check user's affection level
 
-    accuracy_modified = base_move.accuracy * modifier * adjusted_accuracy_stage * micle_berry - affection_bonus
+
+    adjusted_accuracy_stage_modifier = _get_accuracy_stage_modifier(user, target)
+    micle_berry = _get_micle_berry_modifier(user)
+    other_modifiers = _get_other_modifiers()
+
+
+    accuracy_modified = base_move.accuracy * other_modifiers * adjusted_accuracy_stage_modifier * micle_berry - affection_bonus
     return accuracy_modified
+
+
+def _get_other_modifiers(base_move: BaseMove, user: Pokemon, target: Pokemon, battle_state: BattleState) -> float:
+    modifier = 1.0
+
+    # Gravity 1.67
+
+    # Tangled Feet * 0.5
+    if target.abilities.has_ability("tangled_feet"):
+        if StatusCondition.CONFUSION in target.pokemon_battle_state.non_volatile_status_conditions:
+            modifier *= 0.5
+
+    # Hustle 0.8 - if the attacker has it and it's a physical move
+    if user.abilities.has_ability("hustle"):
+        if base_move.category == DamageClass.PHYSICAL:
+            modifier *= 0.8
+
+    # Sandveil 0.8 - if the target has it and the weather is sandstorm
+    if target.abilities.has_ability("sandveil"):
+        if battle_state.weather_turns.weather == BattleWeather.SANDSTORM:
+            modifier *= 0.8
+
+    # Snow Cloak 0.8 - if the target has it and the weather is hail or snow
+    if target.abilities.has_ability("snow_cloak"):
+        if battle_state.weather_turns.weather in [BattleWeather.HAIL, BattleWeather.SNOW]:
+            modifier *= 0.8
+
+    # Victory Star 1.1 - if the user or allies have it - this is multiplied per holder
+
+    # Compound Eyes 1.3 - if the user has it (ability)
+    if user.abilities.has_ability("compound_eyes"):
+        modifier *= 1.3
+
+    # Bright Powder 0.9 - if the target is holding it
+
+    # Lax Incense 0.9 - if the target is holding it
+
+    # Wide Lens 1.1 - if the user is holding it
+
+    # Zoom Lens 1.2 - if the user is holding it and moves after the target - requires turn order check which needs to implimented
+
+
+    return modifier
+
+def _get_accuracy_stage_modifier(user: Pokemon, target: Pokemon) -> float:
+    accuracy_stage_target = target.pokemon_battle_state.evasion_stage
+    accuracy_stage_user = user.pokemon_battle_state.accuracy_stage
+
+    if accuracy_stage_user > 6:
+        accuracy_stage_user = 6
+    elif accuracy_stage_user < -6:
+        accuracy_stage_user = -6
+    if accuracy_stage_target > 6:
+        accuracy_stage_target = 6
+    elif accuracy_stage_target < -6:
+        accuracy_stage_target = -6
+    
+    stage_difference = accuracy_stage_user - accuracy_stage_target
+
+    match stage_difference:
+        case 6:
+            return 3.0
+        case 5:
+            return 2.5
+        case 4:
+            return 2.0
+        case 3:
+            return 1.67
+        case 2:
+            return 1.5
+        case 1:
+            return 1.33
+        case 0:
+            return 1.0
+        case -1:
+            return 0.75
+        case -2:
+            return 0.67
+        case -3:
+            return 0.5
+        case -4:
+            return 0.4
+        case -5:
+            return 0.33
+        case -6:
+            return 0.25
+        case _:
+            return 1.0
+    return 1.0
+
+def _get_micle_berry_modifier(user: Pokemon) -> float:
+    # pokemon eating the micel berry
+    if user.pokemon.held_item == "micle-berry":
+
+        # Placeholder: Implement logic for Micle Berry effect
+        return 1.2
+
+    return 1.0
+
+def calculate_accuracy_hit(accuracy: float) -> bool:
+    roll = random.uniform(0, 100)
+    return roll <= accuracy

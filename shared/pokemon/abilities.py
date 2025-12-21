@@ -31,3 +31,26 @@ class PokemonAbilities(BaseModel):
             self.hidden = ability
         else:
             raise ValueError(f"Invalid ability slot: {slot}")
+    
+    def get_ability_by_slot(self, slot: AbilitySlot) -> Optional[Ability]:
+        if slot == AbilitySlot.PRIMARY:
+            return self.primary
+        elif slot == AbilitySlot.SECONDARY:
+            return self.secondary
+        elif slot == AbilitySlot.HIDDEN:
+            return self.hidden
+        else:
+            return None
+    
+    def list_abilities(self) -> dict:
+        return {
+            "primary": self.primary,
+            "secondary": self.secondary,
+            "hidden": self.hidden
+        }
+    
+    def has_ability(self, ability_name: str) -> bool:
+        for ability in self.list_abilities().values():
+            if ability and ability.name.lower() == ability_name.lower():
+                return True
+        return False
