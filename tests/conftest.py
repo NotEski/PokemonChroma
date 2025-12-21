@@ -4,7 +4,7 @@ from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.types import PokemonType
 from shared.pokemon.natures import Nature
 from shared.pokemon.genders import Gender
-from shared.pokemon.move import MoveSet, BaseMove, MoveCategory
+from shared.pokemon.move import MoveSet, BaseMove, DamageClass
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.pokeball import Pokeball
@@ -76,7 +76,7 @@ def tackle_move():
         power=40,
         accuracy=100,
         pp=35,
-        category=MoveCategory.PHYSICAL
+        category=DamageClass.PHYSICAL
     )
 
 
@@ -89,7 +89,7 @@ def thunderbolt_move():
         power=90,
         accuracy=100,
         pp=15,
-        category=MoveCategory.SPECIAL
+        category=DamageClass.SPECIAL
     )
 
 
@@ -102,7 +102,7 @@ def flamethrower_move():
         power=90,
         accuracy=100,
         pp=15,
-        category=MoveCategory.SPECIAL
+        category=DamageClass.SPECIAL
     )
 
 
@@ -115,7 +115,7 @@ def water_gun_move():
         power=40,
         accuracy=100,
         pp=25,
-        category=MoveCategory.SPECIAL
+        category=DamageClass.SPECIAL
     )
 
 

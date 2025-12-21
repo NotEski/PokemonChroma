@@ -2,7 +2,8 @@ from pydantic import BaseModel, Field, model_validator
 from typing import Dict
 
 from shared.pokemon.pokemon import PokemonBase
-from shared.pokemon.abilities import Ability, AbilitySlot
+from shared.pokemon.abilities import Ability
+from shared.pokemon.move import BaseMove
 
 
 class PokemonRepository(BaseModel):
@@ -34,8 +35,21 @@ class PokemonRepositorySingleton:
     def reset_instance(cls):
         cls._instance = None
 
-class MoveRepository:
-    pass
+
+class MoveRepository(BaseModel):
+    moves: Dict[str, 'BaseMove'] = Field(default_factory=dict)
+    def create_move(self, move: 'BaseMove', force: bool = False):
+        key = move.name.lower()
+        if key in self.moves and not force:
+            raise ValueError(f"Move with name '{move.name}' already exists.")
+
+        self.moves[key] = move
+
+    def get_move(self, key: str) -> 'BaseMove':
+        return self.moves.get(key.lower())
+    
+    def list_moves(self) -> Dict[str, 'BaseMove']:
+        return self.moves
 
 class MoveRepositorySingleton:
     _instance: MoveRepository = None
@@ -45,6 +59,10 @@ class MoveRepositorySingleton:
         if cls._instance is None:
             cls._instance = MoveRepository()
         return cls._instance
+
+
+
+
 
 class PokemonAbilityRepository(BaseModel):
     abilities: Dict[str, 'Ability'] = Field(default_factory=dict)
@@ -78,3 +96,4 @@ class PokemonAbilityRepositorySingleton:
 
 pokemon_repository = PokemonRepositorySingleton.get_instance()
 ability_repository = PokemonAbilityRepositorySingleton.get_instance()
+move_repository = MoveRepositorySingleton.get_instance()

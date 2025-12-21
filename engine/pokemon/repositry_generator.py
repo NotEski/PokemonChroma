@@ -3,18 +3,35 @@
 
 import json
 from shared.pokemon.genders import GenderRate
+from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, StatusCondition, StatChange
 from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
-from shared.pokemon.abilities import Ability, PokemonAbilities
-from engine.pokemon.repository import pokemon_repository
+from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
+from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
-import pathlib
 
 # pull data from json files and populate the repository
 
 def json_to_pokemon_base(json_data: dict) -> PokemonBase:
     if json_data.get("base_experience_yield", 64) is None:
         json_data["base_experience_yield"] = 64
+
+    compiled_abilities = []
+    for ability_entry in json_data.get("abilities", []):
+        ability_name = ability_entry["ability"]
+        ability_slot_str = ability_entry.get("slot", 1)
+        ability_slot = AbilitySlot(ability_slot_str)
+        is_hidden = ability_entry.get("is_hidden", False)
+
+        ability = ability_repository.abilities.get(ability_name.lower())
+        if ability is None:
+            raise ValueError(f"Ability '{ability_name}' not found in ability repository.")
+        compiled_abilities.append(PokemonBaseAbility(
+            ability=ability,
+            is_hidden=is_hidden,
+            slot=ability_slot
+        ))
+
     return PokemonBase(
         name=json_data["name"],
         name_readable=json_data["name_readable"],
@@ -27,7 +44,7 @@ def json_to_pokemon_base(json_data: dict) -> PokemonBase:
         base_happiness=json_data.get("base_happiness", 70),
         gender_rate=GenderRate(json_data.get("gender_rate", "4")),
 
-        #abilities=[AbilitySlot(**ability) for ability in json_data.get("abilities", [])],
+        abilities=compiled_abilities,
         height=json_data.get("height_m", 1.0),
         weight=json_data.get("weight_kg", 1.0),
 
@@ -44,23 +61,6 @@ def load_pokemon_from_json_file(file_path: str) -> PokemonBase:
         json_data = json.load(f)
     return json_to_pokemon_base(json_data)
 
-def generate_pokemon_repository_from_json(file_paths: list[str]):
-    for file_path in file_paths:
-        pokemon_base = load_pokemon_from_json_file(file_path)
-        pokemon_repository.create_pokemon(pokemon_base)
-
-def generate_abilities_repository_from_json(file_paths: list[str]):
-    for file_path in file_paths:
-        with open(file_path, 'r') as f:
-            json_data = json.load(f)
-            ability = PokemonAbilities(
-                name=json_data["name"],
-                name_readable=json_data["name_readable"],
-                description=json_data["description"]
-            )
-            #ability_repository.create_ability(ability)
-
-
 
 def json_to_ability(json_data: dict) -> Ability:
     return Ability(
@@ -73,4 +73,71 @@ def load_ability_from_json_file(file_path: str) -> Ability:
     with open(file_path, 'r') as f:
         json_data = json.load(f)
     return json_to_ability(json_data)
+
+
+def json_to_move(json_data: dict) -> BaseMove:
+
+    stat_changes_inflicted = []
+    if "stat_changes_inflicted" in json_data:
+        if isinstance(json_data["stat_changes_inflicted"], list):
+            for sc in json_data["stat_changes_inflicted"]:
+                stat_changes_inflicted.append(StatChange(**sc))
+    stat_changes_recieved = []
+    if "stat_changes_recieved" in json_data:
+        if isinstance(json_data["stat_changes_recieved"], list):
+            for sc in json_data["stat_changes_recieved"]:
+                stat_changes_recieved.append(StatChange(**sc))
+
+    return BaseMove(
+        name=json_data["name"],
+        name_readable=json_data.get("name_readable", json_data["name"]),
+
+        index=json_data["index"],
+        type=PokemonType(json_data["type"].lower()),
+        damage_class=DamageClass(json_data["damage_class"].lower()),
+        category=MoveCategory(json_data["category"].lower()),
+        accuracy=json_data.get("accuracy"),
+        power=json_data.get("power"),
+        pp=json_data.get("pp", 10),
+        target=MoveTarget(json_data.get("target", "selected_pokemon").lower()),
+        priority=json_data.get("priority", 0),
+        status_condition=StatusCondition(json_data.get("status_condition", "none")),
+        status_condition_chance=json_data.get("status_condition_chance", 0),
+        critical_hit_rate=json_data.get("critical_hit_rate", 0),
+        flinch_chance=json_data.get("flinch_chance", 0),
+        drain=json_data.get("drain", 0),
+        healing=json_data.get("healing", 0),
+        min_hits=json_data.get("min_hits"),
+        max_hits=json_data.get("max_hits"),
+        min_turns=json_data.get("min_turns"),
+        max_turns=json_data.get("max_turns"),
+        stat_changes_inflicted=stat_changes_inflicted,
+        stat_changes_recieved=stat_changes_recieved,
+    )
+        
+def load_move_from_json_file(file_path: str) -> BaseMove:
+    with open(file_path, 'r') as f:
+        json_data = json.load(f)
+    return json_to_move(json_data)
+
+
+def generate_pokemon_repository_from_json(file_paths: list[str]):
+    for file_path in file_paths:
+        pokemon_base = load_pokemon_from_json_file(file_path)
+        pokemon_repository.create_pokemon(pokemon_base)
+
+def generate_abilities_repository_from_json(file_path: str):
+    with open(file_path, 'r') as f:
+        json_data = json.load(f)
+        for ability_name, ability_data in json_data.items():
+            pokemon_ability = Ability(
+                name=ability_name,
+                name_readable=ability_data["name_readable"],
+                description=ability_data["description"]
+            )
+            ability_repository.create_ability(pokemon_ability)
+
+def generate_move_repository_from_json(file_path: str):
+    move = load_move_from_json_file(file_path)
+    move_repository.create_move(move)
 

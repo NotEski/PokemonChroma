@@ -5,17 +5,18 @@ from .types import PokemonType, StatusCondition
 from .move import MoveSet
 from .genders import Gender, GenderRate
 from .natures import Nature
-from .abilities import AbilitySlot, PokemonAbilities
+from .abilities import PokemonBaseAbility, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
 
 class GrowthRate(Enum):
-    FAST_THEN_VERY_SLOW = "fast-then-very-slow"
-    MEDIUM_SLOW = "medium-slow"
-    MEDIUM = "medium"
-    MEDIUM_FAST = "medium-fast"
-    FAST = "fast"
-    SLOW_THEN_VERY_FAST = "slow-then-very-fast"
+    FAST_THEN_VERY_SLOW = "fast_then_very_slow"
     SLOW = "slow"
+    MEDIUM_SLOW = "medium_slow"
+    MEDIUM = "medium"
+    MEDIUM_FAST = "medium_fast"
+    FAST = "fast"
+    SLOW_THEN_VERY_FAST = "slow_then_very_fast"
+    
 
 class EggGroup(Enum):
     BUG = "bug"
@@ -28,11 +29,12 @@ class EggGroup(Enum):
     INDETERMINATE = "indeterminate"
     MINERAL = "mineral"
     MONSTER = "monster"
-    NO_EGGS = "no-eggs"
+    NO_EGGS = "no_eggs"
     PLANT = "plant"
     WATER1 = "water1"
     WATER2 = "water2"
     WATER3 = "water3"
+
 
 
 class PokemonBase(BaseModel):
@@ -42,7 +44,7 @@ class PokemonBase(BaseModel):
     base_stats: BaseStats
     pokedex_number: int
     ev_yield: EffortYield = Field(default_factory=EffortYield)
-    abilities: list[AbilitySlot] = Field(default_factory=list)
+    abilities: list[PokemonBaseAbility] = Field(default_factory=list)
 
     base_experience_yield: int = Field(default=64)
     gender_rate: GenderRate = Field(default=GenderRate.EQUAL)

@@ -8,9 +8,9 @@ class Ability(BaseModel):
     description: str
 
 class AbilitySlot(Enum):
-    PRIMARY = "primary"
-    SECONDARY = "secondary"
-    HIDDEN = "hidden"
+    PRIMARY = 1
+    SECONDARY = 2
+    HIDDEN = 3
 
 class PokemonBaseAbility(BaseModel):
     ability: Ability

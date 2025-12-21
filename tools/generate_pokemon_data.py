@@ -1,18 +1,20 @@
 """
-Generate per-Pokémon base data from cached PokeAPI JSON.
+Generate Pokémon base data and move files from cached PokeAPI JSON.
 
-Outputs folders under data/pokemon/NNNN-name/ with base_pokemon.json
-aligned to PokemonBase fields.
+Outputs:
+- data/pokemon/NNNN-name/base_pokemon.json aligned to PokemonBase fields
+- data/moves/NNNN-move-name.json copied from pokeapi_database/move
 
-- Uses sword-shield version-group for move learnsets.
-- Per-field fallback: for attributes available in multiple places, use the
-    latest if present, otherwise fallback to next available.
-- Abilities and types/growth_rate/egg_groups are stored as kebab-case slugs.
-- Height/weight converted: dm -> meters (÷10), hg -> kilograms (÷10)
+Rules:
+- Moveset source: sword-shield version-group only (no fallback for moves)
+- Per-field fallback for Pokémon attributes when needed
+- Types, growth_rate, egg_groups: UPPER_SNAKE
+- Abilities: kebab-case slug names
+- Height/weight: dm→meters, hg→kilograms (÷10)
 
 Usage:
-        python -m tools.generate_pokemon_data --limit 10 --overwrite
-
+    python -m tools.generate_pokemon_data --overwrite
+    python -m tools.generate_pokemon_data --skip-pokemon --overwrite  # only moves
 """
 from __future__ import annotations
 
@@ -24,31 +26,32 @@ from typing import Any, Dict, List, Optional, Tuple
 
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = WORKSPACE_ROOT / "pokeapi_database"
-DEFAULT_OUT = WORKSPACE_ROOT / "data" / "pokemon"
+DEFAULT_OUT_POKEMON = WORKSPACE_ROOT / "data" / "pokemon"
+DEFAULT_OUT_MOVES = WORKSPACE_ROOT / "data" / "moves"
 
-# Helpers
 
+# ------------------------- Helpers -------------------------
 def read_json(path: Path) -> Dict[str, Any]:
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def to_upper_snake(s: str) -> str:
-    # Convert kebab or spaces to snake, uppercase
-    s = s.strip()
-    s = s.replace("-", "_").replace(" ", "_")
+    s = s.strip().replace("-", "_").replace(" ", "_")
     return s.upper()
 
 
+def to_lower_snake(s: str) -> str:
+    normalized = re.sub(r"[\s-]+", "_", s.strip().lower())
+    return re.sub(r"_+", "_", normalized)
+
+
 def to_kebab(s: str) -> str:
-    # Normalize to kebab-case: underscores/spaces to hyphens, lowercased
-    s = s.strip()
-    s = s.replace("_", "-").replace(" ", "-")
-    return s.lower()
+    normalized = re.sub(r"[ _]+", "-", s.strip().lower())
+    return re.sub(r"-+", "-", normalized)
 
 
 def to_title_spaces(s: str) -> str:
-    # Convert kebab to title-cased with spaces: "medium-fast" -> "Medium Fast"
     parts = re.split(r"[-_ ]+", s)
     parts = [p.capitalize() for p in parts if p]
     return " ".join(parts)
@@ -58,35 +61,9 @@ def zero_pad_id(num: int, width: int = 4) -> str:
     return str(num).zfill(width)
 
 
-# Version-group handling
-
-def sorted_version_groups(version_group_dir: Path) -> List[str]:
-    """Return version-group names sorted by order, descending (newest first)."""
-    if not version_group_dir.exists():
-        return []
-    groups: List[Tuple[int, str]] = []
-    for p in version_group_dir.glob("*.json"):
-        data = read_json(p)
-        order = data.get("order", -1)
-        name = data.get("name")
-        if isinstance(order, int) and name:
-            groups.append((order, name))
-    # Sort by order descending
-    groups.sort(key=lambda x: x[0], reverse=True)
-    return [name for _, name in groups]
-
-
-# Field mappers
-
+# ------------------------- Field mappers -------------------------
 def map_base_stats(pokemon_data: Dict[str, Any]) -> Dict[str, int]:
-    stats = {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "special_attack": 0,
-        "special_defense": 0,
-        "speed": 0,
-    }
+    stats = {"hp": 0, "attack": 0, "defense": 0, "special_attack": 0, "special_defense": 0, "speed": 0}
     for entry in pokemon_data.get("stats", []):
         base = entry.get("base_stat", 0)
         name = entry.get("stat", {}).get("name")
@@ -130,7 +107,7 @@ def map_types(pokemon_data: Dict[str, Any]) -> List[str]:
     for entry in sorted(pokemon_data.get("types", []), key=lambda e: e.get("slot", 0)):
         tname = entry.get("type", {}).get("name", "")
         if tname:
-            types.append(to_kebab(tname))
+            types.append(to_lower_snake(tname))
     return types
 
 
@@ -141,48 +118,40 @@ def map_abilities(pokemon_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         slot = entry.get("slot", 0)
         hidden = bool(entry.get("is_hidden", False))
         if aname:
-            mapped.append({
-                "ability": aname,
-                "slot": slot,
-                "is_hidden": hidden,
-            })
+            mapped.append({"ability": aname, "slot": slot, "is_hidden": hidden})
     return mapped
 
 
 def map_moves_sword_shield(pokemon_data: Dict[str, Any]) -> Dict[str, Any]:
-    """Extract moves from sword-shield version group."""
     moves = {"level": {}, "machine": [], "tutor": [], "egg_moves": []}
     target_vg = "sword-shield"
-    
     for m in pokemon_data.get("moves", []):
         mname = m.get("move", {}).get("name")
         if not mname:
             continue
-        # Filter to entries in sword-shield version-group only
+        mslug = to_lower_snake(mname)
         vg_entries = [d for d in m.get("version_group_details", []) if d.get("version_group", {}).get("name") == target_vg]
         if not vg_entries:
             continue
-        # Process moves from sword-shield
         for d in vg_entries:
             method = (d.get("move_learn_method", {}) or {}).get("name")
             level = d.get("level_learned_at", 0)
             if method == "level-up":
                 key = str(level)
                 moves["level"].setdefault(key, [])
-                moves["level"][key].append(mname)
+                moves["level"][key].append(mslug)
             elif method == "machine":
-                moves["machine"].append(mname)
+                moves["machine"].append(mslug)
             elif method == "tutor":
-                moves["tutor"].append(mname)
+                moves["tutor"].append(mslug)
             elif method == "egg":
-                moves["egg_moves"].append(mname)
-    
-    # Deduplicate and sort
-    moves["machine"] = sorted(list(set(moves["machine"])))
-    moves["tutor"] = sorted(list(set(moves["tutor"])))
-    moves["egg_moves"] = sorted(list(set(moves["egg_moves"])))
+                moves["egg_moves"].append(mslug)
+    # Dedup/sort
+    moves["machine"] = sorted(set(moves["machine"]))
+    moves["tutor"] = sorted(set(moves["tutor"]))
+    moves["egg_moves"] = sorted(set(moves["egg_moves"]))
     for lvl in list(moves["level"].keys()):
-        moves["level"][lvl] = sorted(list(set(moves["level"][lvl])))
+        moves["level"][lvl] = sorted(set(moves["level"][lvl]))
     return moves
 
 
@@ -193,7 +162,16 @@ def map_name_readable(species_data: Dict[str, Any], fallback_slug: str) -> str:
             nm = entry.get("name")
             if nm:
                 return nm
-    # Fallback to title-cased slug
+    return to_title_spaces(fallback_slug)
+
+
+def map_move_name_readable(move_data: Dict[str, Any], fallback_slug: str) -> str:
+    for entry in move_data.get("names", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            nm = entry.get("name")
+            if nm:
+                return nm
     return to_title_spaces(fallback_slug)
 
 
@@ -210,8 +188,7 @@ def extract_evolution_chain_id(species_data: Dict[str, Any]) -> Optional[int]:
     return None
 
 
-# Main processing per Pokémon
-
+# ------------------------- Pokémon payload -------------------------
 def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tuple[str, Dict[str, Any]]]:
     try:
         pokemon_data = read_json(pokemon_path)
@@ -223,12 +200,8 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
         return None
     species_path = species_dir / f"{pid}.json"
     if not species_path.exists():
-        # Some caches use name-based files; try name
         alt = species_dir / f"{name_slug}.json"
-        if alt.exists():
-            species_path = alt
-        else:
-            species_path = None
+        species_path = alt if alt.exists() else None
     species_data: Dict[str, Any] = {}
     if species_path and species_path.exists():
         try:
@@ -236,7 +209,6 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
         except Exception:
             species_data = {}
 
-    # Per-field mapping with reasonable fallbacks
     types = map_types(pokemon_data)
     base_stats = map_base_stats(pokemon_data)
     ev_yield = map_ev_yield(pokemon_data)
@@ -250,14 +222,12 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
     height_m = round(float(pokemon_data.get("height", 1.0)) / 10.0, 2)
     weight_kg = round(float(pokemon_data.get("weight", 10.0)) / 10.0, 2)
 
-    egg_groups = [to_kebab(eg.get("name", "")) for eg in species_data.get("egg_groups", [])] if species_data else []
+    egg_groups = [to_lower_snake(eg.get("name", "")) for eg in species_data.get("egg_groups", [])] if species_data else []
     growth_rate_slug = (species_data.get("growth_rate", {}) or {}).get("name") if species_data else None
-    growth_rate = to_kebab(growth_rate_slug) if growth_rate_slug else "medium-fast"
+    growth_rate = to_lower_snake(growth_rate_slug) if growth_rate_slug else "medium_fast"
 
     evolution_line_id = extract_evolution_chain_id(species_data) if species_data else None
-
     moves = map_moves_sword_shield(pokemon_data)
-
     name_readable = map_name_readable(species_data, name_slug)
 
     payload: Dict[str, Any] = {
@@ -294,101 +264,215 @@ def write_payload(out_dir: Path, folder_name: str, payload: Dict[str, Any], over
     return target_file
 
 
-def build_ability_payload(ability_path: Path) -> Optional[Tuple[str, Dict[str, Any]]]:
-    """Extract ability name, readable name, and description from PokeAPI ability JSON."""
-    try:
-        ability_data = read_json(ability_path)
-    except Exception:
+# ------------------------- Move files -------------------------
+def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Extract and normalize move data to BaseMove schema.
+    Maps PokeAPI fields to BaseMove fields with enum conversions.
+    """
+    mid = move_data.get("id")
+    mname = move_data.get("name")
+    if not isinstance(mid, int) or not isinstance(mname, str) or not mname:
         return None
-    
-    name_slug = ability_data.get("name", "")
-    if not name_slug:
+
+    mslug = to_lower_snake(mname)
+    if not mslug:
         return None
+    name_readable = map_move_name_readable(move_data, mslug)
+
+    # Core fields
+    mtype = to_lower_snake(move_data.get("type", {}).get("name", "normal"))
+    if mtype == "shadow":
+        return None  # Skip Shadow-type moves
+    damage_class_name = move_data.get("damage_class", {}).get("name", "physical")
+    damage_class = to_lower_snake(damage_class_name)  # physical, special, status
     
-    # Extract English name
-    name_readable = ""
-    for entry in ability_data.get("names", []):
-        lang = (entry.get("language", {}) or {}).get("name")
-        if lang == "en":
-            name_readable = entry.get("name", "")
-            break
+    # Category: map from PokeAPI category if present, else infer from type/damage_class
+    category_name = move_data.get("category", {}).get("name", "damage") if isinstance(move_data.get("category"), dict) else "damage"
+    category = to_lower_snake(category_name)  # damage, status, etc
     
-    if not name_readable:
-        name_readable = to_title_spaces(name_slug)
+    accuracy = move_data.get("accuracy")
+    power = move_data.get("power")
+    pp = move_data.get("pp", 15)
+    priority = move_data.get("priority", 0)
     
-    # Extract English description (effect)
-    description = ""
-    for entry in ability_data.get("effect_entries", []):
-        lang = (entry.get("language", {}) or {}).get("name")
-        if lang == "en":
-            description = entry.get("effect", "")
-            if description:
-                break
+    # Target
+    target_name = move_data.get("target", {}).get("name", "selected-pokemon")
+    target = to_lower_snake(target_name)  # all_opponents, selected_pokemon, etc
+    
+    # Status condition (extract from effect_entries if needed, or meta if present)
+    status_condition = "none"
+    status_condition_chance = 0
+    meta = move_data.get("meta", {})
+    if meta:
+        ailment = meta.get("ailment", {})
+        ailment_name = ailment.get("name") if isinstance(ailment, dict) else None
+        if ailment_name:
+            status_condition = to_lower_snake(ailment_name)
+            status_condition_chance = meta.get("ailment_chance", 0)
+    
+    # Move effects
+    critical_hit_rate = (meta.get("crit_rate", 0) * 8) if meta else 0  # Normalize to stages
+    flinch_chance = meta.get("flinch_chance", 0) if meta else 0
+    
+    # Drain: list [numerator, denominator] or single int
+    drain_data = meta.get("drain", [0, 1]) if meta else [0, 1]
+    if isinstance(drain_data, list) and len(drain_data) >= 2:
+        drain = (drain_data[0] * 100 // drain_data[1]) if drain_data[1] != 0 else 0
+    else:
+        drain = drain_data if isinstance(drain_data, int) else 0
+    
+    # Healing: list [numerator, denominator] or single int
+    healing_data = meta.get("healing", [0, 1]) if meta else [0, 1]
+    if isinstance(healing_data, list) and len(healing_data) >= 2:
+        healing = (healing_data[0] * 100 // healing_data[1]) if healing_data[1] != 0 else 0
+    else:
+        healing = healing_data if isinstance(healing_data, int) else 0
+    
+    # Multi-hit/multi-turn (from meta if present)
+    min_hits = meta.get("min_hits") if meta else None
+    max_hits = meta.get("max_hits") if meta else None
+    min_turns = meta.get("min_turns") if meta else None
+    max_turns = meta.get("max_turns") if meta else None
+    
+    # Stat changes - categorize based on target
+    stat_changes_raw = move_data.get("stat_changes", [])
+    stat_chance = meta.get("stat_chance", 0) if meta else 0
+    # If stat_chance is 0 and there are stat changes, it means guaranteed (100%)
+    if stat_chance == 0 and stat_changes_raw:
+        stat_chance = 100
+    
+    parsed_stat_changes = []
+    if stat_changes_raw and isinstance(stat_changes_raw, list):
+        for sc in stat_changes_raw:
+            stat_name = sc.get("stat", {}).get("name")
+            change = sc.get("change")
+            if stat_name and change is not None:
+                    parsed_stat_changes.append({
+                        "stat": to_lower_snake(stat_name),
+                    "change": change,
+                    "chance": stat_chance
+                })
+    
+    # Determine if stat changes affect user or target based on move target
+    user_targets = {"user", "user-and-allies", "user-or-allies", "users-field", "ally", "all-allies"}
+    stat_changes_inflicted = None
+    stat_changes_recieved = None
+    
+    if parsed_stat_changes:
+        # If target affects user/allies, stat changes are received by user
+        if target in user_targets:
+            stat_changes_recieved = parsed_stat_changes
+        else:
+            # Otherwise, stat changes are inflicted on opponents
+            stat_changes_inflicted = parsed_stat_changes
     
     payload: Dict[str, Any] = {
-        "name": name_slug,
+        "name": mslug,
         "name_readable": name_readable,
-        "description": description,
+        "index": mid,
+        "type": mtype,
+        "damage_class": damage_class,
+        "category": category,
+        "accuracy": accuracy,
+        "power": power,
+        "pp": pp,
+        "target": target,
+        "priority": priority,
+        "status_condition": status_condition,
+        "status_condition_chance": status_condition_chance,
+        "critical_hit_rate": critical_hit_rate,
+        "flinch_chance": flinch_chance,
+        "drain": drain,
+        "healing": healing,
+        "min_hits": min_hits,
+        "max_hits": max_hits,
+        "min_turns": min_turns,
+        "max_turns": max_turns,
+        "stat_changes_inflicted": stat_changes_inflicted,
+        "stat_changes_recieved": stat_changes_recieved,
     }
-    
-    return name_slug, payload
+    return payload
 
 
-def write_abilities_json(out_dir: Path, abilities: Dict[str, Dict[str, Any]], overwrite: bool) -> Path:
-    """Write all abilities to a single abilities.json file."""
-    target_file = out_dir / "abilities.json"
-    if target_file.exists() and not overwrite:
-        return target_file
-    
-    with target_file.open("w", encoding="utf-8") as f:
-        json.dump(abilities, f, indent=4)
-    return target_file
-
-
-def run(source: Path, out: Path, overwrite: bool, limit: Optional[int]) -> None:
-    pokemon_dir = source / "pokemon"
-    species_dir = source / "pokemon-species"
-    ability_dir = source / "ability"
-
+def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Optional[int]) -> int:
+    move_dir = source / "move"
+    if not move_dir.exists():
+        return 0
+    out_moves.mkdir(parents=True, exist_ok=True)
     written = 0
-    for p in sorted(pokemon_dir.glob("*.json")):
-        built = build_pokemon_payload(p, species_dir)
-        if not built:
+    for p in sorted(move_dir.glob("*.json")):
+        try:
+            data = read_json(p)
+        except Exception:
             continue
-        fname, payload = built
-        write_payload(out, fname, payload, overwrite)
+        payload = build_move_payload(data)
+        if not payload:
+            continue
+        mid = payload.get("index")
+        mname = payload.get("name")
+        fname = f"{zero_pad_id(mid)}-{mname}.json"
+        target_file = out_moves / fname
+        if target_file.exists() and not overwrite:
+            written += 1
+            if limit and written >= limit:
+                break
+            continue
+        with target_file.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=4)
         written += 1
         if limit and written >= limit:
             break
+    return written
 
-    print(f"Wrote {written} Pokémon base files to {out}")
-    
-    # Generate abilities
-    abilities: Dict[str, Dict[str, Any]] = {}
-    abilities_written = 0
-    if ability_dir.exists():
-        for p in sorted(ability_dir.glob("*.json")):
-            built = build_ability_payload(p)
+
+# ------------------------- Orchestration -------------------------
+def run(source: Path, out_pokemon: Path, out_moves: Path, overwrite: bool, limit: Optional[int], include_pokemon: bool, include_moves: bool) -> None:
+    pokemon_dir = source / "pokemon"
+    species_dir = source / "pokemon-species"
+
+    total_pokemon = 0
+    if include_pokemon:
+        for p in sorted(pokemon_dir.glob("*.json")):
+            built = build_pokemon_payload(p, species_dir)
             if not built:
                 continue
-            name, payload = built
-            abilities[name] = payload
-            abilities_written += 1
-        
-        if abilities:
-            write_abilities_json(out.parent, abilities, overwrite)
-            print(f"Wrote {abilities_written} abilities to {out.parent / 'abilities.json'}")
+            fname, payload = built
+            write_payload(out_pokemon, fname, payload, overwrite)
+            total_pokemon += 1
+            if limit and total_pokemon >= limit:
+                break
+
+    total_moves = 0
+    if include_moves:
+        total_moves = generate_moves(source, out_moves, overwrite, limit)
+
+    if include_pokemon:
+        print(f"Wrote {total_pokemon} Pokémon base files to {out_pokemon}")
+    if include_moves:
+        print(f"Wrote {total_moves} move files to {out_moves}")
 
 
 def main(argv: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Generate Pokémon base data from cached PokeAPI JSON")
+    parser = argparse.ArgumentParser(description="Generate Pokémon base data and move data from cached PokeAPI JSON")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="Source pokeapi_database directory")
-    parser.add_argument("--out", type=Path, default=DEFAULT_OUT, help="Output data/pokemon directory")
-    parser.add_argument("--overwrite", action="store_true", help="Overwrite existing base_pokemon.json files")
-    parser.add_argument("--limit", type=int, default=None, help="Limit number of Pokémon to process")
+    parser.add_argument("--out-pokemon", type=Path, default=DEFAULT_OUT_POKEMON, help="Output data/pokemon directory")
+    parser.add_argument("--out-moves", type=Path, default=DEFAULT_OUT_MOVES, help="Output data/moves directory")
+    parser.add_argument("--overwrite", action="store_true", help="Overwrite existing output files")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon and moves)")
+    parser.add_argument("--skip-pokemon", action="store_true", help="Skip generating Pokémon data")
+    parser.add_argument("--skip-moves", action="store_true", help="Skip generating moves data")
 
     args = parser.parse_args(argv)
-    run(args.source, args.out, args.overwrite, args.limit)
+    run(
+        source=args.source,
+        out_pokemon=args.out_pokemon,
+        out_moves=args.out_moves,
+        overwrite=args.overwrite,
+        limit=args.limit,
+        include_pokemon=not args.skip_pokemon,
+        include_moves=not args.skip_moves,
+    )
 
 
 if __name__ == "__main__":

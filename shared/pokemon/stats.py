@@ -1,5 +1,5 @@
 from enum import Enum
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 class Stat(Enum):
     HP = "hp"
@@ -8,6 +8,8 @@ class Stat(Enum):
     SPECIAL_ATTACK = "special_attack"
     SPECIAL_DEFENSE = "special_defense"
     SPEED = "speed"
+    ACCURACY = "accuracy"
+    EVASION = "evasion"
 
 class BaseStats(BaseModel):
     hp: int = Field(ge=1, le=255)

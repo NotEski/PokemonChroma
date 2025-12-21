@@ -2,7 +2,7 @@ import random
 from shared.pokemon.move import Move
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.types import PokemonType, StatusCondition
-from shared.pokemon.move import MoveCategory
+from shared.pokemon.move import DamageClass
 from engine.battle.battle_header import BattleState, BattleWeather
 from engine.battle.type_effectiveness import get_attack_multiplier
 
@@ -47,7 +47,7 @@ def _get_power_modifier(move) -> float:
     return move.base_move.power if move.base_move.power is not None else 0
 
 def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: Move) -> int:
-    if move.base_move.category == MoveCategory.PHYSICAL:
+    if move.base_move.category == DamageClass.PHYSICAL:
         attack_stat = attacking_pokemon.get_attack_stat()
 
         return attack_stat
@@ -58,7 +58,7 @@ def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: Move) -> int:
 
 def _get_defence_stat_modifier(defending_pokemon: Pokemon, move: Move) -> int:
     flip_defence = False  # Placeholder for moves that flip defense and special defense
-    if move.base_move.category == MoveCategory.PHYSICAL and not flip_defence:
+    if move.base_move.category == DamageClass.PHYSICAL and not flip_defence:
         defence_stat = defending_pokemon.get_defense_stat()
         
         return defence_stat
@@ -123,7 +123,7 @@ def _get_type_effectiveness_modifier(move: Move, defending_pokemon: Pokemon) -> 
     return multiplier if multiplier > 0 else 0.0
 
 def _get_burn_modifier(attacking_pokemon: Pokemon, move: Move) -> float:
-    if move.base_move.category == MoveCategory.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
+    if move.base_move.category == DamageClass.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
         # if attacking_pokemon.ability
         return 0.5

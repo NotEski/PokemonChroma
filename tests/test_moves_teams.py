@@ -4,7 +4,7 @@ from shared.pokemon.move import BaseMove, Move, MoveSet, StatChange
 from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.types import PokemonType, StatusCondition
-from shared.pokemon.move import MoveCategory
+from shared.pokemon.move import DamageClass
 from shared.pokemon.stats import Stat
 
 
@@ -18,12 +18,12 @@ class TestBaseMove:
         assert tackle_move.power == 40
         assert tackle_move.accuracy == 100
         assert tackle_move.pp == 35
-        assert tackle_move.category == MoveCategory.PHYSICAL
+        assert tackle_move.category == DamageClass.PHYSICAL
 
     def test_move_with_different_categories(self, tackle_move, thunderbolt_move):
         """Test moves with different categories."""
-        assert tackle_move.category == MoveCategory.PHYSICAL
-        assert thunderbolt_move.category == MoveCategory.SPECIAL
+        assert tackle_move.category == DamageClass.PHYSICAL
+        assert thunderbolt_move.category == DamageClass.SPECIAL
 
     def test_move_power_can_be_none(self):
         """Test that move power can be None (status moves)."""
@@ -33,11 +33,11 @@ class TestBaseMove:
             power=None,
             accuracy=90,
             pp=20,
-            category=MoveCategory.STATUS,
+            category=DamageClass.STATUS,
             status_condition=StatusCondition.PARALYZED
         )
         assert status_move.power is None
-        assert status_move.category == MoveCategory.STATUS
+        assert status_move.category == DamageClass.STATUS
 
     def test_move_pp_validation(self):
         """Test that PP is within valid range (1-40)."""
@@ -67,7 +67,7 @@ class TestBaseMove:
             power=15,
             accuracy=100,
             pp=35,
-            category=MoveCategory.PHYSICAL,
+            category=DamageClass.PHYSICAL,
             status_condition=StatusCondition.POISONED
         )
         assert poison_move.status_condition == StatusCondition.POISONED
@@ -303,7 +303,7 @@ class TestMoveProperties:
             power=150,
             accuracy=90,
             pp=5,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         assert hyper_beam.power == 150
         assert hyper_beam.pp == 5
@@ -316,7 +316,7 @@ class TestMoveProperties:
             power=110,
             accuracy=70,
             pp=10,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         assert thunder.accuracy == 70
 
@@ -327,7 +327,7 @@ class TestMoveProperties:
             type=PokemonType.FIRE,
             power=40,
             pp=25,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         
         water_move = BaseMove(
@@ -335,7 +335,7 @@ class TestMoveProperties:
             type=PokemonType.WATER,
             power=40,
             pp=25,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         
         assert fire_move.type == PokemonType.FIRE

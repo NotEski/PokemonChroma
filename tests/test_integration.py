@@ -7,7 +7,7 @@ from shared.pokemon.team import Team
 from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.move import MoveSet, BaseMove
 from shared.pokemon.types import PokemonType
-from shared.pokemon.move import MoveCategory
+from shared.pokemon.move import DamageClass
 
 
 class TestCompleteWildBattle:
@@ -243,7 +243,7 @@ class TestTypeAdvantageScenarios:
             power=40,
             pp=25,
             accuracy=100,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         
         # Create a Fire-type Pokemon
@@ -460,7 +460,7 @@ class TestRealGameScenario:
             power=40,
             pp=35,
             accuracy=100,
-            category=MoveCategory.PHYSICAL
+            category=DamageClass.PHYSICAL
         )
         
         thunderbolt = BaseMove(
@@ -469,7 +469,7 @@ class TestRealGameScenario:
             power=90,
             pp=15,
             accuracy=100,
-            category=MoveCategory.SPECIAL
+            category=DamageClass.SPECIAL
         )
         
         # Trainer's Pikachu

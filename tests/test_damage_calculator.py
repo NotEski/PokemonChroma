@@ -7,7 +7,7 @@ from engine.battle.damage_calculator import (
 )
 from engine.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.types import PokemonType, StatusCondition
-from shared.pokemon.move import Move, MoveCategory
+from shared.pokemon.move import Move, DamageClass
 
 
 class TestDamageCalculation:
