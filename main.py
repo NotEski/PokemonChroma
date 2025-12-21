@@ -30,55 +30,49 @@ class Application(ShowBase):
 abilities_file_path = "data/abilities.json"
 generate_abilities_repository_from_json(abilities_file_path)
 
-print ("\nGenerated Abilities Repository with the following Abilities:\n")
-for index, ability in enumerate(ability_repository.abilities.values()):
-    print (f"- {ability.name} : {ability.description}")
-    if index >= 10:
-        print ("...")
-        break
-print ("\n")
 
+loading_bar_length = 50
+loading_bar_increment_length = 100 / loading_bar_length
 
 # Generate Moves Repository
 moves_folder_path = "data/moves"
 for subdir, _, files in os.walk(moves_folder_path):
     file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
     for file_path in file_paths:
-        print (f"Generating moves from file: {file_path}")
+        # Loading bar
+        progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+        print (f"Loading Move Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
         generate_move_repository_from_json(file_path)
         
-        
+print ("\n")
 
 
 # Generate Pokemon Repository
 pokemon_folder_path = "data/pokemon"
 # Generate repositories from JSON data files
 for subdir, _, files in os.walk(pokemon_folder_path):
+    # progress_percent = (pokemon_folder_path.index(subdir) + 1) / len(os.listdir(pokemon_folder_path)) * 100
+
+    
+    # print (f"[{'=' * int(progress_percent // 5)}{'-' * (20 - int(progress_percent // 5))}] {progress_percent:.2f}%", end="\r")
     file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
     generate_pokemon_repository_from_json(file_paths)
 
-print ("\nGenerated Pokemon Repository with the following Pokemon:\n")
-for index, pokemon in enumerate(pokemon_repository.list_pokemons().values()):
-    print (f"- {pokemon.name} (#{pokemon.pokedex_number})")
-    if index >= 10:
-        print ("...")
-        break
-print ("\n")
 
 
 
-tackle = move_repository.get_move("tackle")
-growl = move_repository.get_move("growl")
+
+tackle = move_repository.get("tackle")
+growl = move_repository.get("growl")
 
 
 default_move_set = MoveSet(moves=[tackle])
 
-ashes_pickachu = Pokemon(pokemon=pokemon_repository.get_pokemon("pikachu"), level=15, move_set=default_move_set)
+ashes_pickachu = Pokemon(pokemon=pokemon_repository.get("pikachu"), level=15, move_set=default_move_set)
 ashes_team = Team(pokemons=[ashes_pickachu])
 
 trainer=BattleTrainer(name="Ash", team=ashes_team)
-pokemon=Pokemon(pokemon=pokemon_repository.get_pokemon("eevee"), level=10, move_set=default_move_set)
-
+pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=default_move_set)
 opponent_1 = TrainerOpponent(trainer=trainer)
 opponent_2 = WildPokemonOpponent(pokemon=pokemon)
 
@@ -128,5 +122,5 @@ print ("\nBattle ended.\n\n")
 
 
 
-app = Application()
-app.run()
+# app = Application()
+# app.run()

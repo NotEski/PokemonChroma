@@ -4,7 +4,7 @@ from typing import Dict, List, Optional
 from enum import Enum, auto
 
 from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.types import StatusCondition
+from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import BaseMove
 from .battle_positions import BattlePosition
 from .battle_header import BattleTrainer

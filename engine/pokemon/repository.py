@@ -1,99 +1,82 @@
-from pydantic import BaseModel, Field, model_validator
-from typing import Dict
+from pydantic import BaseModel, Field
+from typing import Dict, TypeVar, Generic
 
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
 from shared.pokemon.move import BaseMove
 
-
-class PokemonRepository(BaseModel):
-    pokemons: Dict[str, 'PokemonBase'] = Field(default_factory=dict)
+T = TypeVar('T')
 
 
-    def create_pokemon(self, pokemon: 'PokemonBase', force: bool = False):
-        key = pokemon.name.lower()
-        if key in self.pokemons and not force:
-            raise ValueError(f"Pokemon with name '{pokemon.name}' already exists.")
+class BaseRepository(BaseModel, Generic[T]):
+    """Generic base repository for managing entities."""
+    items: Dict[str, T] = Field(default_factory=dict)
 
-        self.pokemons[key] = pokemon
+    def create(self, item: T, force: bool = False):
+        key = item.name.lower()
+        if key in self.items and not force:
+            raise ValueError(f"{type(item).__name__} with name '{item.name}' already exists.")
+        self.items[key] = item
 
-    def get_pokemon(self, key: str) -> 'PokemonBase':
-        return self.pokemons.get(key.lower())
-    
-    def list_pokemons(self) -> Dict[str, 'PokemonBase']:
-        return self.pokemons
+    def get(self, key: str) -> T:
+        return self.items.get(key.lower())
 
-class PokemonRepositorySingleton:
-    _instance: PokemonRepository = None
+    def list(self) -> Dict[str, T]:
+        return self.items
+
+
+class BaseSingleton(Generic[T]):
+    """Generic singleton pattern implementation."""
+    _instance: T = None
 
     @classmethod
-    def get_instance(cls) -> PokemonRepository:
+    def get_instance(cls) -> T:
         if cls._instance is None:
-            cls._instance = PokemonRepository()
+            cls._instance = cls._create_instance()
         return cls._instance
-    
+
+    @classmethod
+    def _create_instance(cls) -> T:
+        raise NotImplementedError
+
+    @classmethod
     def reset_instance(cls):
         cls._instance = None
 
 
-class MoveRepository(BaseModel):
-    moves: Dict[str, 'BaseMove'] = Field(default_factory=dict)
-    def create_move(self, move: 'BaseMove', force: bool = False):
-        key = move.name.lower()
-        if key in self.moves and not force:
-            raise ValueError(f"Move with name '{move.name}' already exists.")
+# Concrete Repositories
+class PokemonRepository(BaseRepository[PokemonBase]):
+    pass
 
-        self.moves[key] = move
 
-    def get_move(self, key: str) -> 'BaseMove':
-        return self.moves.get(key.lower())
-    
-    def list_moves(self) -> Dict[str, 'BaseMove']:
-        return self.moves
+class MoveRepository(BaseRepository[BaseMove]):
+    pass
 
-class MoveRepositorySingleton:
-    _instance: MoveRepository = None
 
+class PokemonAbilityRepository(BaseRepository[Ability]):
+    pass
+
+
+# Concrete Singletons
+class PokemonRepositorySingleton(BaseSingleton[PokemonRepository]):
     @classmethod
-    def get_instance(cls) -> MoveRepository:
-        if cls._instance is None:
-            cls._instance = MoveRepository()
-        return cls._instance
+    def _create_instance(cls) -> PokemonRepository:
+        return PokemonRepository()
 
 
-
-
-
-class PokemonAbilityRepository(BaseModel):
-    abilities: Dict[str, 'Ability'] = Field(default_factory=dict)
-
-
-    def create_ability(self, ability: 'Ability', force: bool = False):
-        key = ability.name.lower()
-        if key in self.abilities and not force:
-            raise ValueError(f"Ability with name '{ability.name}' already exists.")
-
-        self.abilities[key] = ability
-
-    def get_ability(self, key: str) -> 'Ability':
-        return self.abilities.get(key.lower())
-
-    def list_abilities(self) -> Dict[str, 'Ability']:
-        return self.abilities
-
-class PokemonAbilityRepositorySingleton:
-    _instance: PokemonAbilityRepository = None
-
+class MoveRepositorySingleton(BaseSingleton[MoveRepository]):
     @classmethod
-    def get_instance(cls) -> PokemonAbilityRepository:
-        if cls._instance is None:
-            cls._instance = PokemonAbilityRepository()
-        return cls._instance
+    def _create_instance(cls) -> MoveRepository:
+        return MoveRepository()
 
 
+class PokemonAbilityRepositorySingleton(BaseSingleton[PokemonAbilityRepository]):
+    @classmethod
+    def _create_instance(cls) -> PokemonAbilityRepository:
+        return PokemonAbilityRepository()
 
 
-
+# Module-level instances
 pokemon_repository = PokemonRepositorySingleton.get_instance()
 ability_repository = PokemonAbilityRepositorySingleton.get_instance()
 move_repository = MoveRepositorySingleton.get_instance()

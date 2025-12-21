@@ -1,12 +1,13 @@
 from pydantic import BaseModel, Field, model_validator, field_validator
 from typing import List
 from enum import Enum
-from .types import PokemonType, StatusCondition
+from .types import PokemonType
 from .move import MoveSet
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
+from .status_conditions import StatusCondition
 
 class GrowthRate(Enum):
     FAST_THEN_VERY_SLOW = "fast_then_very_slow"
@@ -66,10 +67,7 @@ class PokemonBattleState(BaseModel):
     evasion_stage: int = Field(default=0)
     critical_hit_stage: int = Field(default=0)
 
-    is_protected: bool = Field(default=False)
-    confusion_turns: int = Field(default=0)
-    is_bound: bool = Field(default=False)
-    is_flinching: bool = Field(default=False)
+    non_volatile_status_conditions: List[StatusCondition] = Field(default_factory=list)
 
 
 class Pokemon(BaseModel):

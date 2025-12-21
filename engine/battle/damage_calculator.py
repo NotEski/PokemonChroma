@@ -1,7 +1,8 @@
 import random
 from shared.pokemon.move import Move
 from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.types import PokemonType, StatusCondition
+from shared.pokemon.types import PokemonType
+from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import DamageClass
 from engine.battle.battle_header import BattleState, BattleWeather
 from engine.battle.type_effectiveness import get_attack_multiplier
