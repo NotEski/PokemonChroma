@@ -58,10 +58,9 @@ def load_pokemon_from_json_file(file_path: str) -> PokemonBase:
         json_data = json.load(f)
     return json_to_pokemon_base(json_data)
 
-def generate_pokemon_repository_from_json(file_paths: list[str]):
-    for file_path in file_paths:
-        pokemon_base = load_pokemon_from_json_file(file_path)
-        pokemon_repository.create(pokemon_base)
+def generate_pokemon_repository_from_json(file_path: str):
+    pokemon_base = load_pokemon_from_json_file(file_path)
+    pokemon_repository.create(pokemon_base)
 
 
 # ============================================================================

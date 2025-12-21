@@ -41,22 +41,21 @@ for subdir, _, files in os.walk(moves_folder_path):
     for file_path in file_paths:
         # Loading bar
         progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-        print (f"Loading Move Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+        print (f"Loading Move Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
         generate_move_repository_from_json(file_path)
-        
-print ("\n")
-
+print("\n")
 
 # Generate Pokemon Repository
 pokemon_folder_path = "data/pokemon"
-# Generate repositories from JSON data files
 for subdir, _, files in os.walk(pokemon_folder_path):
-    # progress_percent = (pokemon_folder_path.index(subdir) + 1) / len(os.listdir(pokemon_folder_path)) * 100
-
-    
-    # print (f"[{'=' * int(progress_percent // 5)}{'-' * (20 - int(progress_percent // 5))}] {progress_percent:.2f}%", end="\r")
     file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
-    generate_pokemon_repository_from_json(file_paths)
+    for file_path in file_paths:
+        # Loading bar
+        progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+        print(f"Loading Pokemon Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+        generate_pokemon_repository_from_json(file_path)
+
+print("\n")
 
 
 
