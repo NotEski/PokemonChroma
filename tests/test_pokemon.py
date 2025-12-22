@@ -239,25 +239,25 @@ class TestPokemonGetters:
 
     def test_get_attack_stat(self, pikachu_pokemon):
         """Test getting attack stat."""
-        attack = pikachu_pokemon.get_attack_stat()
+        attack = pikachu_pokemon.stat_attack
         assert attack > 0
         assert isinstance(attack, int)
 
     def test_get_defense_stat(self, pikachu_pokemon):
         """Test getting defense stat."""
-        defense = pikachu_pokemon.get_defense_stat()
+        defense = pikachu_pokemon.stat_defense
         assert defense > 0
         assert isinstance(defense, int)
 
     def test_get_special_attack_stat(self, pikachu_pokemon):
         """Test getting special attack stat."""
-        sp_attack = pikachu_pokemon.get_special_attack_stat()
+        sp_attack = pikachu_pokemon.stat_special_attack
         assert sp_attack > 0
         assert isinstance(sp_attack, int)
 
     def test_get_special_defense_stat(self, pikachu_pokemon):
         """Test getting special defense stat."""
-        sp_defense = pikachu_pokemon.get_special_defense_stat()
+        sp_defense = pikachu_pokemon.stat_special_defense
         assert sp_defense > 0
         assert isinstance(sp_defense, int)
 

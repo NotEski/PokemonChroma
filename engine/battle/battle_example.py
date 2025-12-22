@@ -30,26 +30,30 @@ def pickachu_eevee_battle_example():
 
 
     trainer=Trainer(name="Ash", team=ashes_team)
-    pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=eevee_moveset)
+    wild_pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=eevee_moveset)
     opponent_1 = TrainerOpponent(trainer=trainer)
-    opponent_2 = WildPokemonOpponent(pokemon=pokemon)
+    opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 
     battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
+
+    ashes_pickachu.set_battle_actions(battle_manager)
+    ashes_pickachu.battle_actions.set_position(SinglesBattlePosition.Team1_Pokemon1)
+
+    wild_pokemon.set_battle_actions(battle_manager)
+    wild_pokemon.battle_actions.set_position(SinglesBattlePosition.Team2_Pokemon1)
 
     battle_manager.init_battle()
 
 
     battle_manager.start_turn()
 
-    battle_manager.use_move(
-        user_position=SinglesBattlePosition.Team1_Pokemon1,
-        move_index=33,
+    ashes_pickachu.battle_actions.use_move(
+        move="tackle",
         target_position=SinglesBattlePosition.Team2_Pokemon1
     )
 
-    battle_manager.use_move(
-        move_index=98,
-        user_position=SinglesBattlePosition.Team2_Pokemon1,
+    wild_pokemon.battle_actions.use_move(
+        move="quick_attack",
         target_position=SinglesBattlePosition.Team1_Pokemon1
     )
 
@@ -59,17 +63,16 @@ def pickachu_eevee_battle_example():
 
     #battle_manager.use_escape()
 
-    battle_manager.use_move(
-        user_position=SinglesBattlePosition.Team1_Pokemon1,
-        move_index=33,
+    ashes_pickachu.battle_actions.use_move(
+        move=33,
         target_position=SinglesBattlePosition.Team2_Pokemon1
     )
 
-    battle_manager.use_move(
-        user_position=SinglesBattlePosition.Team2_Pokemon1,
-        move_index=33,
+    wild_pokemon.battle_actions.use_move(
+        move=33,
         target_position=SinglesBattlePosition.Team1_Pokemon1
     )
+
     battle_manager.end_turn()
 
     print ("\nBattle ended.\n\n")

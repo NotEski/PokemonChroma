@@ -47,7 +47,7 @@
 - [ ] Healing Moves (Recover, Synthesis, etc.) - *healing field exists but not implemented*
 - [ ] Draining Moves (absorb HP from target) - *drain field exists but not implemented*
 - [ ] Protection Moves (Protect, Detect)
-- [ ] Priority Moves (+1, +2, etc. priority) - *priority field exists but not used*
+- [x] Priority Moves (+1, +2, etc. priority) - *priority field exists but not used*
 - [ ] Two-turn Moves (Fly, Dig, Solar Beam)
 - [ ] Charge Moves (must charge before attacking)
 

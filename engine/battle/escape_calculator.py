@@ -18,8 +18,8 @@ from shared.pokemon.pokemon import Pokemon
 import random
 
 def calculate_escape_success(escaping_pokemon: Pokemon, opponent_pokemon: Pokemon, escape_attempts: int) -> bool:
-    escaping_pokemon_speed = escaping_pokemon.get_speed_stat()
-    opponent_pokemon_speed = opponent_pokemon.get_speed_stat()
+    escaping_pokemon_speed = escaping_pokemon.stat_speed
+    opponent_pokemon_speed = opponent_pokemon.stat_speed
     
     if escaping_pokemon_speed > opponent_pokemon_speed:
         return True

@@ -49,22 +49,22 @@ def _get_power_modifier(move) -> float:
 
 def _get_attack_stat_modifier(attacking_pokemon: Pokemon, move: BaseMove) -> int:
     if move.category == DamageClass.PHYSICAL:
-        attack_stat = attacking_pokemon.get_attack_stat()
+        attack_stat = attacking_pokemon.stat_attack
 
         return attack_stat
     else:
-        attack_stat = attacking_pokemon.get_special_attack_stat()
+        attack_stat = attacking_pokemon.stat_special_attack
 
         return attack_stat
 
 def _get_defence_stat_modifier(defending_pokemon: Pokemon, move: BaseMove) -> int:
     flip_defence = False  # Placeholder for moves that flip defense and special defense
     if move.category == DamageClass.PHYSICAL and not flip_defence:
-        defence_stat = defending_pokemon.get_defense_stat()
+        defence_stat = defending_pokemon.stat_defense
         
         return defence_stat
     else:
-        defence_stat = defending_pokemon.get_special_defense_stat()
+        defence_stat = defending_pokemon.stat_special_defense
 
         return defence_stat
 

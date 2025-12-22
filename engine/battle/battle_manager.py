@@ -16,8 +16,9 @@ from .speed_calculator import calculate_speed
 from .escape_calculator import calculate_escape_success
 from .calculate_accuracy import calculate_accuracy, calculate_accuracy_hit
 
-TPosition = TypeVar('TPosition', bound=BattlePosition)
+from engine.pokemon.repository import pokemon_repository, item_repository, move_repository
 
+TPosition = TypeVar('TPosition', bound=BattlePosition)
 
 
 class BattleManager(BaseModel, Generic[TPosition]):
@@ -67,9 +68,19 @@ class BattleManager(BaseModel, Generic[TPosition]):
         opponent_escaping.escape_attempts += 1
         self.this_turns_actions[user_position] = ActionEscape(escape_attempts=opponent_escaping.escape_attempts)
 
-    def use_move(self, user_position: TPosition, move_index: int, target_position: TPosition):
+    def use_move(self, user_position: TPosition, move: int, target_position: TPosition):
         if self._has_actioned(user_position): return
         # check if move index is valid
+
+        if isinstance(move, str):
+            move_index = move_repository.get(move).index
+        elif isinstance(move, int):
+            move_index = move
+        elif isinstance(move, Move):
+            move_index = move.base_move.index
+        else:
+            raise ValueError("Invalid move type.")
+
 
         if move_index not in self.in_play_pokemon[user_position].move_set.moves:
             raise ValueError("Invalid move index.")

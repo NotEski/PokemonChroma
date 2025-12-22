@@ -112,7 +112,7 @@ class TestDamageCalculation:
         
         attack_modifier = _get_attack_stat_modifier(pikachu_pokemon, move)
         
-        assert attack_modifier == pikachu_pokemon.get_attack_stat()
+        assert attack_modifier == pikachu_pokemon.stat_attack
 
     def test_special_move_uses_special_attack_stat(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
         """Test that special moves use special attack stat."""
@@ -125,7 +125,7 @@ class TestDamageCalculation:
         
         attack_modifier = _get_attack_stat_modifier(pikachu_pokemon, move)
         
-        assert attack_modifier == pikachu_pokemon.get_special_attack_stat()
+        assert attack_modifier == pikachu_pokemon.stat_special_attack
 
 
 class TestCriticalHit:
@@ -195,7 +195,7 @@ class TestDamageModifiers:
         move = Move(base_move=tackle_move, current_pp=tackle_move.pp)
         defense_mod = _get_defence_stat_modifier(eevee_pokemon, move)
         
-        assert defense_mod == eevee_pokemon.get_defense_stat()
+        assert defense_mod == eevee_pokemon.stat_defense
 
     def test_defense_stat_modifier_special(self, eevee_pokemon, thunderbolt_move):
         """Test defense stat modifier for special moves."""
@@ -204,7 +204,7 @@ class TestDamageModifiers:
         move = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
         defense_mod = _get_defence_stat_modifier(eevee_pokemon, move)
         
-        assert defense_mod == eevee_pokemon.get_special_defense_stat()
+        assert defense_mod == eevee_pokemon.stat_special_defense
 
 
 class TestTypeEffectiveness:

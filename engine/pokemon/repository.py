@@ -22,6 +22,19 @@ class BaseRepository(BaseModel, Generic[T]):
     def get(self, key: str) -> T:
         return self.items.get(key.lower())
 
+    def get_index_by_name(self, name: str) -> str:
+        key = name.lower()
+        if key in self.items:
+            return key
+        raise KeyError(f"{type(self).__name__} with name '{name}' not found.")
+    
+    def delete(self, key: str) -> None:
+        key = key.lower()
+        if key in self.items:
+            del self.items[key]
+        else:
+            raise KeyError(f"{type(self).__name__} with name '{key}' not found.")
+
     def list(self) -> Dict[str, T]:
         return self.items
 

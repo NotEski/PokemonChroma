@@ -1,3 +1,4 @@
+from functools import cached_property
 from random import randint
 from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional, Protocol
@@ -73,6 +74,58 @@ class PokemonBattleState(BaseModel):
     critical_hit_stage: int = Field(default=0)
 
     non_volatile_status_conditions: List[StatusCondition] = Field(default_factory=list)
+
+    pokemon_enhancement_used: bool = Field(default=False)  # e.g., Mega Evolution, Terastallization, Z-Move
+
+class BattleActionExecutor(Protocol):
+    def use_move(self, move: str|int|Move, target: Optional[BattlePosition]) -> None:
+        # BattlePosition is only required for moves that target other Pokemon
+        pass
+
+    def use_item(self, item: Item) -> None:
+        pass
+
+    def use_escape(self) -> None:
+        pass
+
+    def use_pokeball(self, pokeball: Pokeball, target: Optional[BattlePosition]) -> None:
+        pass
+
+    def set_position(self, position: BattlePosition) -> None:
+        pass
+
+
+class BattleActions(BattleActionExecutor):    
+    def __init__(self, battle_manager):
+        self.battle_manager = battle_manager
+        self.position = None  # to be set when switched in
+
+    def use_move(self, move: str|int|Move, target_position: Optional[BattlePosition]) -> None:
+        # send the move action to the battle manager
+        self._check_position_set()
+        self.battle_manager.use_move(self.position, move, target_position)
+
+    def use_item(self, item: Item) -> None:
+        pass
+
+    def use_escape(self) -> None:
+        self._check_position_set()
+        self.battle_manager.use_escape(self.position)
+
+    def use_pokeball(self, pokeball: Pokeball, target: Optional[BattlePosition]) -> None:
+        self._check_position_set()
+        self.battle_manager.use_pokeball(self.position, pokeball, target)
+
+    def set_position(self, position: BattlePosition) -> None:
+        self.position = position
+
+    def _check_position_set(self):
+        if self.position is None:
+            raise ValueError("Battle position not set for BattleActions. Call set_position first.")
+
+    def clear(self):
+        self.position = None
+        self.battle_manager = None
 
 
 
@@ -160,46 +213,43 @@ class Pokemon(BaseModel):
         else:
             return round(((((2 * base + iv + (ev / 4)) * self.level) / 100) + 5) * nature)
 
-    def get_attack_stat(self) -> int:
-        return self.calculate_stat(Stat.ATTACK)
-    
-    def get_defense_stat(self) -> int:
-        return self.calculate_stat(Stat.DEFENSE)
-    
-    def get_special_attack_stat(self) -> int:
-        return self.calculate_stat(Stat.SPECIAL_ATTACK)
+    def set_battle_actions(self, battle_manager):
+        self._battle_manager = battle_manager
 
-    def get_special_defense_stat(self) -> int:
-        return self.calculate_stat(Stat.SPECIAL_DEFENSE)
-    
-    def get_speed_stat(self) -> int:
-        return self.calculate_stat(Stat.SPEED)
-    
+    @cached_property
+    def battle_actions(self) -> BattleActions:
+        if not hasattr(self, "_battle_manager"):
+            raise ValueError("Battle manager not set for Pokemon. Call set_battle_actions first.")
+        return BattleActions(self._battle_manager)
+
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon.base_stats, stat_name)
-        
+
+    @property
+    def stat_attack(self) -> int:
+        return self.calculate_stat(Stat.ATTACK)
+    
+    @property
+    def stat_defense(self) -> int:
+        return self.calculate_stat(Stat.DEFENSE)
+    
+    @property
+    def stat_special_attack(self) -> int:
+        return self.calculate_stat(Stat.SPECIAL_ATTACK)
+
+    @property
+    def stat_special_defense(self) -> int:
+        return self.calculate_stat(Stat.SPECIAL_DEFENSE)
+    
+    @property
+    def stat_speed(self) -> int:
+        return self.calculate_stat(Stat.SPEED)
+
 
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0
-    
-    
 
-
-class BattleActionExecutor(Protocol):
-    def use_move(self, move: str|int|Move, target: Optional[BattlePosition]) -> None:
-        # BattlePosition is only required for moves that target other Pokemon
-        
-        pass
-
-    def use_item(self, item: Item) -> None:
-        pass
-
-    def use_escape(self) -> None:
-        pass
-
-    def use_pokeball(self, pokeball: Pokeball, target: Optional[BattlePosition]) -> None:
-        pass
 
 
 class PokemonTeam(BaseModel):
