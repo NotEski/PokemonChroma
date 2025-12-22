@@ -4,10 +4,10 @@ from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.types import PokemonType
 from shared.pokemon.natures import Nature
 from shared.pokemon.genders import Gender
-from shared.pokemon.move import MoveSet, BaseMove, DamageClass
-from shared.pokemon.team import Team
-from shared.pokemon.trainer import BattleTrainer
-from shared.pokemon.pokeball import Pokeball
+from shared.pokemon.move import MoveSet, BaseMove, DamageClass, MoveCategory
+from shared.pokemon.pokemon import PokemonTeam
+from shared.trainer.trainer import BattleTrainer
+from shared.items.pokeball import Pokeball
 
 
 @pytest.fixture
@@ -72,11 +72,13 @@ def tackle_move():
     """Basic Tackle move fixture."""
     return BaseMove(
         name="Tackle",
+        index=1,
         type=PokemonType.NORMAL,
         power=40,
         accuracy=100,
         pp=35,
-        category=DamageClass.PHYSICAL
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE
     )
 
 
@@ -85,11 +87,13 @@ def thunderbolt_move():
     """Basic Thunderbolt move fixture."""
     return BaseMove(
         name="Thunderbolt",
+        index=24,
         type=PokemonType.ELECTRIC,
         power=90,
         accuracy=100,
         pp=15,
-        category=DamageClass.SPECIAL
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE
     )
 
 
@@ -98,11 +102,13 @@ def flamethrower_move():
     """Basic Flamethrower move fixture."""
     return BaseMove(
         name="Flamethrower",
+        index=15,
         type=PokemonType.FIRE,
         power=90,
         accuracy=100,
         pp=15,
-        category=DamageClass.SPECIAL
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE
     )
 
 
@@ -111,11 +117,13 @@ def water_gun_move():
     """Basic Water Gun move fixture."""
     return BaseMove(
         name="Water Gun",
+        index=55,
         type=PokemonType.WATER,
         power=40,
         accuracy=100,
         pp=25,
-        category=DamageClass.SPECIAL
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE
     )
 
 
@@ -143,7 +151,7 @@ def eevee_pokemon(eevee_base, tackle_move):
 @pytest.fixture
 def basic_team(pikachu_pokemon):
     """Basic team with a single Pikachu."""
-    return Team(pokemons=[pikachu_pokemon])
+    return PokemonTeam(pokemons=[pikachu_pokemon])
 
 
 @pytest.fixture

@@ -1,13 +1,13 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from enum import Enum
+from shared.pokemon.pokemon import PokemonTeam
 import uuid
 
 class PronounMixin(BaseModel):
     subject_pronoun: str
     object_pronoun: str
     posessive_pronoun: str
-
 
 class PronounEnum(str, Enum):
     HE_HIM = ["he/him", "he", "him", "his"]
@@ -37,13 +37,13 @@ class OriginalTrainer(object):
     trainer_type: Optional[str] = None  # e.g., "Ace Trainer", "Gym Leader", etc.
 
 
-
 class Trainer(BaseModel):
     name: str
     unique_id: Optional[str] = None # this is a hidden field that is generated if not provided
     id_number: int = Field(default=0)
+    team: PokemonTeam
 
-    pronouns: Optional[PronounMixin] = None
+    pronouns: PronounMixin = Field(default=PronounEnum.THEY_THEM.to_pronoun_mixin())
 
     trainer_type: Optional[str] = None  # e.g., "Ace Trainer", "Gym Leader", etc.
 

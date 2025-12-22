@@ -1,17 +1,18 @@
-from shared.pokemon.pokemon import Pokemon, StatusCondition
-from shared.pokemon.pokeball import Pokeball
+from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.status_conditions import StatusCondition
+from shared.items.pokeball import Pokeball
 from random import randint
 
 import time
 
 status_condition_big_bonus = [
     StatusCondition.SLEEP,
-    StatusCondition.FROZEN,
+    StatusCondition.FREEZE,
 ]
 status_condition_small_bonus = [
-    StatusCondition.PARALYZED,
-    StatusCondition.BURNED,
-    StatusCondition.POISONED,
+    StatusCondition.PARALYSIS,
+    StatusCondition.BURN,
+    StatusCondition.POISON,
 ]
 
 def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:

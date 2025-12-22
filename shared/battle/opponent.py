@@ -2,7 +2,8 @@
 
 from pydantic import BaseModel, ConfigDict
 from abc import abstractmethod
-from typing import Callable, Protocol, List, Optional, runtime_checkable
+from typing import List
+from ..trainer.trainer import Trainer
 from .battle_header import *
 
 
@@ -15,7 +16,7 @@ class Opponent(BaseModel):
         pass
 
 class TrainerOpponent(Opponent):
-    trainer: BattleTrainer
+    trainer: Trainer
 
     def get_all_pokemons(self) -> List[Pokemon]:
         return self.trainer.team.get_all_pokemons()

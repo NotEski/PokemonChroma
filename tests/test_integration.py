@@ -1,10 +1,9 @@
 """Integration tests for complete game scenarios."""
 import pytest
 from engine.battle.battle_manager import SingleBattleManager, SinglesBattlePosition
-from engine.battle.opponent import TrainerOpponent, WildPokemonOpponent
-from shared.pokemon.pokemon import Pokemon, PokemonBase
-from shared.pokemon.team import Team
-from shared.pokemon.trainer import BattleTrainer
+from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
+from shared.pokemon.pokemon import Pokemon, PokemonBase, PokemonTeam
+from shared.trainer.trainer import BattleTrainer
 from shared.pokemon.move import MoveSet, BaseMove
 from shared.pokemon.types import PokemonType
 from shared.pokemon.move import DamageClass
@@ -21,7 +20,7 @@ class TestCompleteWildBattle:
         eevee = Pokemon(pokemon=eevee_base, level=5, move_set=move_set)
         
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
         )
         wild = WildPokemonOpponent(pokemon=eevee)
         
@@ -36,12 +35,12 @@ class TestCompleteWildBattle:
             battle.start_turn()
             battle.use_move(
                 user_position=SinglesBattlePosition.Team1_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team2_Pokemon1
             )
             battle.use_move(
                 user_position=SinglesBattlePosition.Team2_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team1_Pokemon1
             )
             battle.end_turn()
@@ -52,7 +51,7 @@ class TestCompleteWildBattle:
     def test_wild_battle_escape_success(self, pikachu_pokemon, eevee_pokemon):
         """Test escaping from a wild battle."""
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu_pokemon]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
@@ -66,7 +65,7 @@ class TestCompleteWildBattle:
             battle.use_escape(user_position=SinglesBattlePosition.Team1_Pokemon1)
             battle.use_move(
                 user_position=SinglesBattlePosition.Team2_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team1_Pokemon1
             )
             battle.end_turn()
@@ -91,10 +90,10 @@ class TestCompleteTrainerBattle:
         charizard = Pokemon(pokemon=charizard_base, level=25, move_set=move_set2)
         
         trainer1 = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
         )
         trainer2 = TrainerOpponent(
-            trainer=BattleTrainer(name="Gary", team=Team(pokemons=[charizard]))
+            trainer=BattleTrainer(name="Gary", team=PokemonTeam(pokemons=[charizard]))
         )
         
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
@@ -108,12 +107,12 @@ class TestCompleteTrainerBattle:
         battle.start_turn()
         battle.use_move(
             user_position=SinglesBattlePosition.Team1_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
         battle.use_move(
             user_position=SinglesBattlePosition.Team2_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team1_Pokemon1
         )
         battle.end_turn()
@@ -130,10 +129,10 @@ class TestCompleteTrainerBattle:
         eevee = Pokemon(pokemon=eevee_base, level=20, move_set=move_set)
         
         trainer1 = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
         )
         trainer2 = TrainerOpponent(
-            trainer=BattleTrainer(name="Gary", team=Team(pokemons=[eevee]))
+            trainer=BattleTrainer(name="Gary", team=PokemonTeam(pokemons=[eevee]))
         )
         
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
@@ -142,12 +141,12 @@ class TestCompleteTrainerBattle:
         battle.start_turn()
         battle.use_move(
             user_position=SinglesBattlePosition.Team1_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
         battle.use_move(
             user_position=SinglesBattlePosition.Team2_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team1_Pokemon1
         )
         
@@ -164,7 +163,7 @@ class TestMultiTurnBattle:
     def test_pp_depletion_over_turns(self, pikachu_pokemon, eevee_pokemon):
         """Test that PP depletes correctly over multiple turns."""
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu_pokemon]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
@@ -180,12 +179,12 @@ class TestMultiTurnBattle:
             battle.start_turn()
             battle.use_move(
                 user_position=SinglesBattlePosition.Team1_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team2_Pokemon1
             )
             battle.use_move(
                 user_position=SinglesBattlePosition.Team2_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team1_Pokemon1
             )
             battle.end_turn()
@@ -202,7 +201,7 @@ class TestMultiTurnBattle:
         eevee = Pokemon(pokemon=eevee_base, level=1, move_set=move_set)
         
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
         )
         wild = WildPokemonOpponent(pokemon=eevee)
         
@@ -217,12 +216,12 @@ class TestMultiTurnBattle:
             battle.start_turn()
             battle.use_move(
                 user_position=SinglesBattlePosition.Team1_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team2_Pokemon1
             )
             battle.use_move(
                 user_position=SinglesBattlePosition.Team2_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team1_Pokemon1
             )
             battle.end_turn()
@@ -275,10 +274,10 @@ class TestTypeAdvantageScenarios:
         bulbasaur = Pokemon(pokemon=bulbasaur_base, level=20, move_set=move_set)
         
         trainer1 = TrainerOpponent(
-            trainer=BattleTrainer(name="Red", team=Team(pokemons=[charmander]))
+            trainer=BattleTrainer(name="Red", team=PokemonTeam(pokemons=[charmander]))
         )
         trainer2 = TrainerOpponent(
-            trainer=BattleTrainer(name="Blue", team=Team(pokemons=[bulbasaur]))
+            trainer=BattleTrainer(name="Blue", team=PokemonTeam(pokemons=[bulbasaur]))
         )
         
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
@@ -289,12 +288,12 @@ class TestTypeAdvantageScenarios:
         battle.start_turn()
         battle.use_move(
             user_position=SinglesBattlePosition.Team1_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
         battle.use_move(
             user_position=SinglesBattlePosition.Team2_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team1_Pokemon1
         )
         battle.end_turn()
@@ -309,7 +308,7 @@ class TestBattleStateManagement:
     def test_battle_state_resets_after_battle(self, pikachu_pokemon, eevee_pokemon):
         """Test that battle state resets properly after battle ends."""
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu_pokemon]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
@@ -330,7 +329,7 @@ class TestBattleStateManagement:
     def test_turn_number_increments_correctly(self, pikachu_pokemon, eevee_pokemon):
         """Test that turn numbers increment correctly."""
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu_pokemon]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
@@ -346,12 +345,12 @@ class TestBattleStateManagement:
             
             battle.use_move(
                 user_position=SinglesBattlePosition.Team1_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team2_Pokemon1
             )
             battle.use_move(
                 user_position=SinglesBattlePosition.Team2_Pokemon1,
-                move_index=0,
+                move_index=1,
                 target_position=SinglesBattlePosition.Team1_Pokemon1
             )
             battle.end_turn()
@@ -363,7 +362,7 @@ class TestActionCancellation:
     def test_cancel_and_choose_different_action(self, pikachu_pokemon, eevee_pokemon):
         """Test canceling an action and choosing a different one."""
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu_pokemon]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
@@ -375,7 +374,7 @@ class TestActionCancellation:
         # Choose move 0
         battle.use_move(
             user_position=SinglesBattlePosition.Team1_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
         assert SinglesBattlePosition.Team1_Pokemon1 in battle.this_turns_actions
@@ -402,10 +401,10 @@ class TestEdgeCases:
         pikachu2 = Pokemon(pokemon=pikachu_base, level=100, move_set=move_set)
         
         trainer1 = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu1]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu1]))
         )
         trainer2 = TrainerOpponent(
-            trainer=BattleTrainer(name="Gary", team=Team(pokemons=[pikachu2]))
+            trainer=BattleTrainer(name="Gary", team=PokemonTeam(pokemons=[pikachu2]))
         )
         
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
@@ -414,12 +413,12 @@ class TestEdgeCases:
         battle.start_turn()
         battle.use_move(
             user_position=SinglesBattlePosition.Team1_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team2_Pokemon1
         )
         battle.use_move(
             user_position=SinglesBattlePosition.Team2_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team1_Pokemon1
         )
         battle.end_turn()
@@ -434,10 +433,10 @@ class TestEdgeCases:
         pikachu2 = Pokemon(pokemon=pikachu_base, level=1, move_set=move_set)
         
         trainer1 = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu1]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu1]))
         )
         trainer2 = TrainerOpponent(
-            trainer=BattleTrainer(name="Gary", team=Team(pokemons=[pikachu2]))
+            trainer=BattleTrainer(name="Gary", team=PokemonTeam(pokemons=[pikachu2]))
         )
         
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
@@ -504,7 +503,7 @@ class TestRealGameScenario:
         
         # Setup battle
         trainer = TrainerOpponent(
-            trainer=BattleTrainer(name="Ash", team=Team(pokemons=[pikachu]))
+            trainer=BattleTrainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
         )
         wild = WildPokemonOpponent(pokemon=rattata)
         
@@ -520,7 +519,7 @@ class TestRealGameScenario:
         )  # Thunderbolt
         battle.use_move(
             user_position=SinglesBattlePosition.Team2_Pokemon1,
-            move_index=0,
+            move_index=1,
             target_position=SinglesBattlePosition.Team1_Pokemon1
         )  # Tackle
         battle.end_turn()

@@ -1,9 +1,7 @@
 from pydantic import BaseModel, Field
-from abc import abstractmethod
-from typing import Dict, List, Optional
-from enum import Enum, auto
+from typing import List, Optional
+from enum import Enum
 from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.trainer import BattleTrainer
 from shared.pokemon.move import Move
 from .battle_logs import BattleLogEntry
 from .battle_positions import *
@@ -76,7 +74,6 @@ class FieldEffects(Enum):
 class WeatherTurns(BaseModel):
     weather: BattleWeather
     remaining_turns: int
-
 
 class BattleConfig(BaseModel):
     is_wild: bool = Field(default=False)

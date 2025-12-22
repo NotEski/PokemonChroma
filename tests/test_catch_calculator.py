@@ -1,8 +1,9 @@
 """Test suite for catch calculation mechanics."""
 import pytest
 from unittest.mock import patch
-from shared.pokemon.pokemon import Pokemon, StatusCondition
-from shared.pokemon.pokeball import Pokeball
+from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.status_conditions import StatusCondition
+from shared.items.pokeball import Pokeball
 from engine.battle.catch_calculator import (
     calculate_catch_probability,
     calculate_shake,
@@ -69,7 +70,7 @@ class TestCalculateCatchProbability:
         eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy2 = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.BURNED
+        eevee_pokemon.status_condition = StatusCondition.BURN
         chance_burned = calculate_catch_probability(eevee_pokemon, pokeball)
         assert chance_burned > chance_healthy2
         assert chance_sleep > chance_burned  # Big bonus > small bonus
@@ -79,7 +80,7 @@ class TestCalculateCatchProbability:
         eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.FROZEN
+        eevee_pokemon.status_condition = StatusCondition.FREEZE
         chance_frozen = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_frozen > chance_healthy
@@ -89,7 +90,7 @@ class TestCalculateCatchProbability:
         eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.PARALYZED
+        eevee_pokemon.status_condition = StatusCondition.PARALYSIS
         chance_paralyzed = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_paralyzed > chance_healthy
@@ -99,7 +100,7 @@ class TestCalculateCatchProbability:
         eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.POISONED
+        eevee_pokemon.status_condition = StatusCondition.POISON
         chance_poisoned = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_poisoned > chance_healthy
@@ -370,10 +371,10 @@ class TestCatchCalculatorEdgeCases:
         # Test each status individually
         statuses_to_test = [
             (StatusCondition.SLEEP, True),  # Big bonus
-            (StatusCondition.FROZEN, True),  # Big bonus
-            (StatusCondition.PARALYZED, False),  # Small bonus
-            (StatusCondition.BURNED, False),  # Small bonus
-            (StatusCondition.POISONED, False),  # Small bonus
+            (StatusCondition.FREEZE, True),  # Big bonus
+            (StatusCondition.PARALYSIS, False),  # Small bonus
+            (StatusCondition.BURN, False),  # Small bonus
+            (StatusCondition.POISON, False),  # Small bonus
         ]
         
         chances = {}
@@ -382,5 +383,5 @@ class TestCatchCalculatorEdgeCases:
             chances[status] = calculate_catch_probability(eevee_pokemon, pokeball)
         
         # Verify big bonus statuses have higher catch rates than small bonus
-        assert chances[StatusCondition.SLEEP] > chances[StatusCondition.PARALYZED]
-        assert chances[StatusCondition.FROZEN] > chances[StatusCondition.BURNED]
+        assert chances[StatusCondition.SLEEP] > chances[StatusCondition.PARALYSIS]
+        assert chances[StatusCondition.FREEZE] > chances[StatusCondition.BURN]

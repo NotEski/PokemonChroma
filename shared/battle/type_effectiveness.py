@@ -2,6 +2,7 @@
 # Do not edit by hand. Regenerate via tools/generate_type_chart.py
 
 from typing import Mapping
+from enum import Enum
 from shared.pokemon.types import PokemonType
 
 TYPE_EFFECTIVENESS: Mapping[PokemonType, dict[PokemonType, float]] = {
@@ -165,6 +166,13 @@ TYPE_EFFECTIVENESS: Mapping[PokemonType, dict[PokemonType, float]] = {
 
 
 
+class EffectivenessLevel(Enum):
+    NO_EFFECT = 0
+    NOT_EFFECTIVE = 1
+    NORMAL_EFFECTIVE = 2
+    SUPER_EFFECTIVE = 3
+
+
 
 def offensive_effectiveness_all(attacking_type: PokemonType) -> dict[PokemonType, float]:
     """Get the offensive type effectiveness chart for a given attacking type.
@@ -221,3 +229,33 @@ def get_attack_multiplier(attacking_type: PokemonType, defending_types: list[Pok
     for defending_type in defending_types:
         multiplier *= effectiveness(attacking_type, defending_type)
     return multiplier
+
+def get_effectiveness_level(multiplier: float) -> EffectivenessLevel:
+    """Convert a multiplier to an EffectivenessLevel.
+
+    Args:
+        multiplier: The effectiveness multiplier.
+    Returns:
+        The corresponding EffectivenessLevel.
+    """
+    if multiplier == 0.0:
+        return EffectivenessLevel.NO_EFFECT
+    elif 0.0 < multiplier < 1.0:
+        return EffectivenessLevel.NOT_EFFECTIVE
+    elif multiplier == 1.0:
+        return EffectivenessLevel.NORMAL_EFFECTIVE
+    else:  # multiplier > 1.0
+        return EffectivenessLevel.SUPER_EFFECTIVE
+
+def effectiveness_message(level: EffectivenessLevel) -> str:
+    match level:
+        case EffectivenessLevel.SUPER_EFFECTIVE:
+            return "It's super effective!"
+        case EffectivenessLevel.NOT_EFFECTIVE:
+            return "It's not very effective..."
+        case EffectivenessLevel.NO_EFFECT:
+            return "It had no effect!"
+        case EffectivenessLevel.NORMAL_EFFECTIVE:
+            return ""
+        case _:
+            return ""

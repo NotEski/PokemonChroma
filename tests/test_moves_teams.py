@@ -1,10 +1,10 @@
 """Test suite for moves, teams, and trainer functionality."""
 import pytest
-from shared.pokemon.move import BaseMove, Move, MoveSet, StatChange
-from shared.pokemon.team import Team
-from shared.pokemon.trainer import BattleTrainer
-from shared.pokemon.types import PokemonType, StatusCondition
-from shared.pokemon.move import DamageClass
+from shared.pokemon.move import BaseMove, Move, MoveSet, StatChange, DamageClass, MoveCategory
+from shared.pokemon.pokemon import PokemonTeam
+from shared.trainer.trainer import Trainer
+from shared.pokemon.types import PokemonType
+from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.stats import Stat
 
 
@@ -18,31 +18,34 @@ class TestBaseMove:
         assert tackle_move.power == 40
         assert tackle_move.accuracy == 100
         assert tackle_move.pp == 35
-        assert tackle_move.category == DamageClass.PHYSICAL
+        assert tackle_move.damage_class == DamageClass.PHYSICAL
 
     def test_move_with_different_categories(self, tackle_move, thunderbolt_move):
-        """Test moves with different categories."""
-        assert tackle_move.category == DamageClass.PHYSICAL
-        assert thunderbolt_move.category == DamageClass.SPECIAL
+        """Test moves with different damage classes."""
+        assert tackle_move.damage_class == DamageClass.PHYSICAL
+        assert thunderbolt_move.damage_class == DamageClass.SPECIAL
 
     def test_move_power_can_be_none(self):
         """Test that move power can be None (status moves)."""
         status_move = BaseMove(
             name="Thunder Wave",
+            index=2,
             type=PokemonType.ELECTRIC,
             power=None,
             accuracy=90,
             pp=20,
-            category=DamageClass.STATUS,
-            status_condition=StatusCondition.PARALYZED
+            damage_class=DamageClass.STATUS,
+            category=MoveCategory.STATUS,
+            status_condition=StatusCondition.PARALYSIS
         )
         assert status_move.power is None
-        assert status_move.category == DamageClass.STATUS
+        assert status_move.damage_class == DamageClass.STATUS
 
     def test_move_pp_validation(self):
         """Test that PP is within valid range (1-40)."""
         valid_move = BaseMove(
             name="Test Move",
+            index=3,
             type=PokemonType.NORMAL,
             power=50,
             accuracy=100,
@@ -54,6 +57,7 @@ class TestBaseMove:
         with pytest.raises(Exception):
             BaseMove(
                 name="Invalid Move",
+                index=4,
                 type=PokemonType.NORMAL,
                 power=50,
                 pp=0  # Too low
@@ -63,14 +67,16 @@ class TestBaseMove:
         """Test move that inflicts status condition."""
         poison_move = BaseMove(
             name="Poison Sting",
+            index=5,
             type=PokemonType.POISON,
             power=15,
             accuracy=100,
             pp=35,
-            category=DamageClass.PHYSICAL,
-            status_condition=StatusCondition.POISONED
+            damage_class=DamageClass.PHYSICAL,
+            category=MoveCategory.DAMAGE,
+            status_condition=StatusCondition.POISON
         )
-        assert poison_move.status_condition == StatusCondition.POISONED
+        assert poison_move.status_condition == StatusCondition.POISON
 
 
 class TestMove:
@@ -110,15 +116,15 @@ class TestMoveSet:
         moveset = MoveSet(moves=[tackle_move, thunderbolt_move])
         
         assert len(moveset.moves) == 2
-        assert 0 in moveset.moves
-        assert 1 in moveset.moves
+        assert 1 in moveset.moves  # Tackle has index 1
+        assert 24 in moveset.moves  # Thunderbolt has index 24
 
     def test_moveset_with_single_move(self, tackle_move):
         """Test creating a moveset with a single move."""
         moveset = MoveSet(moves=[tackle_move])
         
         assert len(moveset.moves) == 1
-        assert moveset.moves[0].base_move.name == "Tackle"
+        assert moveset.moves[1].base_move.name == "Tackle"  # Tackle has index 1
 
     def test_moveset_max_four_moves(self, tackle_move):
         """Test that moveset can have up to 4 moves."""
@@ -133,8 +139,8 @@ class TestMoveSet:
         """Test that moveset initializes current PP from base PP."""
         moveset = MoveSet(moves=[tackle_move, thunderbolt_move])
         
-        assert moveset.moves[0].current_pp == tackle_move.pp
-        assert moveset.moves[1].current_pp == thunderbolt_move.pp
+        assert moveset.moves[1].current_pp == tackle_move.pp  # Tackle has index 1
+        assert moveset.moves[24].current_pp == thunderbolt_move.pp  # Thunderbolt has index 24
 
     def test_empty_moveset(self):
         """Test creating an empty moveset."""
@@ -174,31 +180,31 @@ class TestTeam:
 
     def test_create_team_with_one_pokemon(self, pikachu_pokemon):
         """Test creating a team with one Pokemon."""
-        team = Team(pokemons=[pikachu_pokemon])
+        team = PokemonTeam(pokemons=[pikachu_pokemon])
         
         assert len(team.pokemons) == 1
         assert team.pokemons[0] == pikachu_pokemon
 
     def test_create_team_with_multiple_pokemon(self, pikachu_pokemon, eevee_pokemon, charizard_pokemon):
         """Test creating a team with multiple Pokemon."""
-        team = Team(pokemons=[pikachu_pokemon, eevee_pokemon, charizard_pokemon])
+        team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon, charizard_pokemon])
         
         assert len(team.pokemons) == 3
 
     def test_team_max_six_pokemon(self, pikachu_pokemon):
         """Test that team cannot exceed 6 Pokemon."""
         with pytest.raises(Exception):
-            Team(pokemons=[pikachu_pokemon] * 7)
+            PokemonTeam(pokemons=[pikachu_pokemon] * 7)
 
     def test_team_requires_at_least_one_pokemon(self):
         """Test that team requires at least one Pokemon."""
         with pytest.raises(Exception):
-            Team(pokemons=[])
+            PokemonTeam(pokemons=[])
 
     def test_get_all_pokemons(self, pikachu_pokemon, eevee_pokemon):
         """Test getting all Pokemon from team."""
-        team = Team(pokemons=[pikachu_pokemon, eevee_pokemon])
-        all_pokemon = team.get_all_pokemons()
+        team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon])
+        all_pokemon = PokemonTeam.get_all_pokemons()
         
         assert len(all_pokemon) == 2
         assert pikachu_pokemon in all_pokemon
@@ -214,7 +220,7 @@ class TestTeam:
         for i in range(4):
             team_of_six.append(pikachu_pokemon)
         
-        team = Team(pokemons=team_of_six)
+        team = PokemonTeam(pokemons=team_of_six)
         assert len(team.pokemons) == 6
 
 
@@ -226,10 +232,10 @@ class TestBattleTrainer:
         assert ash_trainer.name == "Ash"
         assert ash_trainer.team is not None
 
-    def test_trainer_with_team(self, pikachu_pokemon):
+    def test_trainer_with_PokemonTeam(self, pikachu_pokemon):
         """Test trainer has a team of Pokemon."""
-        team = Team(pokemons=[pikachu_pokemon])
-        trainer = BattleTrainer(name="Misty", team=team)
+        team = PokemonTeam(pokemons=[pikachu_pokemon])
+        trainer = Trainer(name="Misty", team=team)
         
         assert trainer.name == "Misty"
         assert len(trainer.team.pokemons) >= 1
@@ -241,11 +247,11 @@ class TestBattleTrainer:
 
     def test_multiple_trainers(self, pikachu_pokemon, eevee_pokemon):
         """Test creating multiple trainers."""
-        team1 = Team(pokemons=[pikachu_pokemon])
-        team2 = Team(pokemons=[eevee_pokemon])
+        team1 = PokemonTeam(pokemons=[pikachu_pokemon])
+        team2 = PokemonTeam(pokemons=[eevee_pokemon])
         
-        trainer1 = BattleTrainer(name="Ash", team=team1)
-        trainer2 = BattleTrainer(name="Gary", team=team2)
+        trainer1 = Trainer(name="Ash", team=team1)
+        trainer2 = Trainer(name="Gary", team=team2)
         
         assert trainer1.name == "Ash"
         assert trainer2.name == "Gary"
@@ -281,12 +287,12 @@ class TestMoveUsageScenarios:
         assert move1.current_pp == initial_pp1 - 1
         assert move2.current_pp == initial_pp2 - 1
 
-    def test_switching_pokemon_in_team(self, pikachu_pokemon, eevee_pokemon):
+    def test_switching_pokemon_in_PokemonTeam(self, pikachu_pokemon, eevee_pokemon):
         """Test accessing different Pokemon in a team."""
-        team = Team(pokemons=[pikachu_pokemon, eevee_pokemon])
+        team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon])
         
-        first_pokemon = team.pokemons[0]
-        second_pokemon = team.pokemons[1]
+        first_pokemon = PokemonTeam.pokemons[0]
+        second_pokemon = PokemonTeam.pokemons[1]
         
         assert first_pokemon.pokemon.name == "Pikachu"
         assert second_pokemon.pokemon.name == "Eevee"
@@ -299,11 +305,13 @@ class TestMoveProperties:
         """Test creating a high power move."""
         hyper_beam = BaseMove(
             name="Hyper Beam",
+            index=63,
             type=PokemonType.NORMAL,
             power=150,
             accuracy=90,
             pp=5,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         assert hyper_beam.power == 150
         assert hyper_beam.pp == 5
@@ -312,11 +320,13 @@ class TestMoveProperties:
         """Test creating a low accuracy move."""
         thunder = BaseMove(
             name="Thunder",
+            index=25,
             type=PokemonType.ELECTRIC,
             power=110,
             accuracy=70,
             pp=10,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         assert thunder.accuracy == 70
 
@@ -324,18 +334,22 @@ class TestMoveProperties:
         """Test creating moves of different types."""
         fire_move = BaseMove(
             name="Ember",
+            index=6,
             type=PokemonType.FIRE,
             power=40,
             pp=25,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         
         water_move = BaseMove(
             name="Water Gun",
+            index=55,
             type=PokemonType.WATER,
             power=40,
             pp=25,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         
         assert fire_move.type == PokemonType.FIRE
@@ -357,7 +371,7 @@ class TestTeamManagement:
         mid_level = Pokemon(pokemon=pikachu_base, level=25, move_set=move_set)
         high_level = Pokemon(pokemon=pikachu_base, level=50, move_set=move_set)
         
-        team = Team(pokemons=[low_level, mid_level, high_level])
+        team = PokemonTeam(pokemons=[low_level, mid_level, high_level])
         
         assert team.pokemons[0].level == 5
         assert team.pokemons[1].level == 25
@@ -365,7 +379,7 @@ class TestTeamManagement:
 
     def test_team_order_preserved(self, pikachu_pokemon, eevee_pokemon, charizard_pokemon):
         """Test that team order is preserved."""
-        team = Team(pokemons=[pikachu_pokemon, eevee_pokemon, charizard_pokemon])
+        team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon, charizard_pokemon])
         
         assert team.pokemons[0].pokemon.name == "Pikachu"
         assert team.pokemons[1].pokemon.name == "Eevee"

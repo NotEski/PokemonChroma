@@ -6,9 +6,10 @@ from pydantic import BaseModel, Field
 from typing import Optional, TypeVar, Generic
 from abc import abstractmethod
 from shared.pokemon.pokemon import Pokemon, PokemonBattleState
-from .battle_header import *
-from .battle_logs import BattleLogEntry, BattleLogType
-from .opponent import Opponent, TrainerOpponent, WildPokemonOpponent
+from shared.battle.battle_header import *
+from shared.battle.battle_logs import BattleLogManager
+from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
+from shared.battle.opponent import Opponent, TrainerOpponent, WildPokemonOpponent
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
@@ -26,6 +27,8 @@ class BattleManager(BaseModel, Generic[TPosition]):
     in_play_pokemon: dict[TPosition, Pokemon] = Field(default_factory=dict)
     this_turns_actions: dict[TPosition, Action] = Field(default_factory=dict)
     taking_actions: bool = Field(default=False)
+
+    battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
 
     @abstractmethod
     def get_opponent_from_position(self, position: TPosition) -> Opponent:
@@ -50,7 +53,8 @@ class BattleManager(BaseModel, Generic[TPosition]):
     # region Turn Actions
     def start_turn(self):
         self.taking_actions = True
-        print(f"Turn {self.battle_state.turn_number + 1} start!")
+        self.battle_log.turn_start(turn_number=self.battle_state.turn_number)
+
         self.battle_state.turn_number += 1
         self.this_turns_actions.clear()
 
@@ -110,7 +114,6 @@ class BattleManager(BaseModel, Generic[TPosition]):
             missing_positions = [pos for pos in TPosition if pos not in self.this_turns_actions]
             raise UnfinishedTurnException("Both players must select an action before processing the turn. Missing actions for positions: " + ", ".join([str(pos) for pos in missing_positions]))
     
-        print(f"Processing turn {self.battle_state.turn_number}...")    
 
 
         # get each pokemons speed and determine order of actions
@@ -169,7 +172,11 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 old_pokemon = self.in_play_pokemon[position]
                 new_pokemon = action.switch_in_pokemon
                 self.in_play_pokemon[position] = new_pokemon
-                print(f"{old_pokemon.nickname} was switched out for {new_pokemon.nickname}!")
+                self.battle_log.pokemon_switch_in(
+                    switched_in_pokemon=new_pokemon,
+                    posistion=position,
+                    trainer=self.trainers[position.value // 2]
+                )
 
                 # TODO activate any abilities or items that trigger on switch-in
 
@@ -214,26 +221,36 @@ class BattleManager(BaseModel, Generic[TPosition]):
         priority_order = self.procress_priority_turn_order(turn_order)
 
         for position in priority_order:
+            description_list = []
+
             action = self.this_turns_actions[position]
-            if isinstance(action, ActionMove):
-                user_pokemon = self.in_play_pokemon[position]
-                target_position = action.target_position
-                target_pokemon = self.in_play_pokemon[target_position]
+            if not isinstance(action, ActionMove): continue
 
-                is_critical = calculate_critical_hit(user_pokemon)
-                used_move = action.move.base_move
+            user_pokemon = self.in_play_pokemon[position]
+            target_position = action.target_position
+            target_pokemon = self.in_play_pokemon[target_position]
+
+            description_list.append(f"{user_pokemon.nickname} used {action.move.base_move.name}!")
+
+            is_critical = calculate_critical_hit(user_pokemon)
+            used_move = action.move.base_move
 
 
-                if used_move.accuracy is None:
-                    print (used_move.name + " never misses!")
-                    accuracy_check = 100.0
-                else:
-                    accuracy_check = calculate_accuracy(used_move, user_pokemon, target_pokemon, self.battle_state)
+            if used_move.accuracy is None:
+                accuracy_check = 100.0
+            else:
+                accuracy_check = calculate_accuracy(used_move, user_pokemon, target_pokemon, self.battle_state)
+            
+            if not calculate_accuracy_hit(accuracy_check):
+                description_list.append(f"But it missed!")
+                damage = 0
+                effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
+
+            else:
+
+                effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.pokemon.types)
+                effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
                 
-                    if not calculate_accuracy_hit(accuracy_check):
-                        print (f"{user_pokemon.nickname} used {used_move.name}, but it missed!")
-                        continue
-
 
                 damage = calculate_damage(
                     attacking_pokemon=user_pokemon,
@@ -247,28 +264,44 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
                 # if damage is 0, the move had no effect
                 if damage <= 0:
-                    print (f"{user_pokemon.nickname} used {action.move.base_move.name}, but it had no effect on {target_pokemon.nickname}!")
+                    description_list.append(effectiveness_message(EffectivenessLevel.NO_EFFECT))
                     continue
+                else:
+                    description_list.append(effectiveness_message(effectiveness_level))
 
 
                 # show the amount of health the target has before applying damage
-                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")
+                # description_list.append(f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")
+
                 target_pokemon.current_hp -= damage
-                print (f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage!")
+
+                description_list.append(f"It dealt {damage} damage!")
                 # print if the hit was critical
                 if is_critical:
-                    print("A critical hit!")
-                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP remaining.")
+                    description_list.append("A critical hit!")
+                
+                
 
-                BattleLogEntry(
-                    turn_number=self.battle_state.turn_number,
-                    log_type=BattleLogType.MOVE_USED,
-                    description=f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage."
-                )
 
-                if target_pokemon.current_hp <= 0:
-                    target_pokemon.current_hp = 0
-                    print(f"{target_pokemon.nickname} fainted!")
+                description_list.append(f"DEBUG: {user_pokemon.nickname} used {used_move.name} on {target_pokemon.nickname} dealing {damage} damage.")
+
+            description = "\n".join(description_list)
+
+
+            self.battle_log.move_used(
+                move_name=used_move,
+                user_pokemon=user_pokemon,
+                target_pokemon=[target_pokemon],
+                damage_dealt=damage,
+                is_critical=is_critical,
+                status_condition_applied=None,
+                move_effectiveness=effectiveness_level,
+                description=description
+            )
+
+            if target_pokemon.current_hp <= 0:
+                target_pokemon.current_hp = 0
+                description_list.append(f"{target_pokemon.nickname} fainted!")
 
 
     @abstractmethod
@@ -371,7 +404,10 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                 
                 success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
-                    print(f"{escaping_pokemon.nickname} got away safely!")
+                    self.battle_log.battle_end(
+                        winning_trainer=None,
+                        description=f"{escaping_pokemon.nickname} successfully escaped!"
+                    )
                     self.end_battle()
                     return
                 else:

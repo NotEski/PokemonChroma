@@ -1,7 +1,8 @@
 """Test suite for Pokemon models and related functionality."""
 import pytest
 from shared.pokemon.pokemon import Pokemon, PokemonBase, PokemonBattleState
-from shared.pokemon.types import PokemonType, StatusCondition
+from shared.pokemon.types import PokemonType
+from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.genders import Gender
 from shared.pokemon.natures import Nature
 from shared.pokemon.stats import (
@@ -106,8 +107,8 @@ class TestPokemon:
         assert pikachu_pokemon.status_condition == StatusCondition.NONE
         
         # Simulate status change
-        pikachu_pokemon.status_condition = StatusCondition.PARALYZED
-        assert pikachu_pokemon.status_condition == StatusCondition.PARALYZED
+        pikachu_pokemon.status_condition = StatusCondition.PARALYSIS
+        assert pikachu_pokemon.status_condition == StatusCondition.PARALYSIS
 
     def test_pokemon_gender(self, pikachu_pokemon):
         """Test Pokemon gender."""
@@ -142,11 +143,13 @@ class TestPokemonBattleState:
         state = PokemonBattleState()
         assert state.attack_stat_stage == 0
         assert state.defense_stat_stage == 0
+        assert state.special_attack_stat_stage == 0
+        assert state.special_defense_stat_stage == 0
         assert state.speed_stat_stage == 0
         assert state.accuracy_stage == 0
         assert state.evasion_stage == 0
-        assert state.is_protected is False
-        assert state.confusion_turns == 0
+        assert state.critical_hit_stage == 0
+        assert state.non_volatile_status_conditions == []
 
     def test_reset_stat_stages(self):
         """Test stat stages can be reset to defaults."""
@@ -165,34 +168,26 @@ class TestPokemonBattleState:
         assert state.speed_stat_stage == 0
 
     def test_reset_conditions(self):
-        """Test battle conditions can be reset to defaults."""
+        """Test battle status conditions can be reset to defaults."""
         state = PokemonBattleState()
-        state.is_protected = True
-        state.confusion_turns = 3
-        state.is_flinching = True
+        state.non_volatile_status_conditions = [StatusCondition.CONFUSION]
 
         # Simulate reset to defaults
-        state.is_protected = False
-        state.confusion_turns = 0
-        state.is_flinching = False
+        state.non_volatile_status_conditions = []
 
-        assert state.is_protected is False
-        assert state.confusion_turns == 0
-        assert state.is_flinching is False
+        assert state.non_volatile_status_conditions == []
 
     def test_full_reset(self):
         """Test full reset of battle state via reinitialization."""
         state = PokemonBattleState()
         state.attack_stat_stage = 2
-        state.is_protected = True
-        state.confusion_turns = 2
+        state.non_volatile_status_conditions = [StatusCondition.CONFUSION]
 
         # Simulate full reset by creating a new instance
         state = PokemonBattleState()
 
         assert state.attack_stat_stage == 0
-        assert state.is_protected is False
-        assert state.confusion_turns == 0
+        assert state.non_volatile_status_conditions == []
 
 
 class TestPokemonIVsAndEVs:

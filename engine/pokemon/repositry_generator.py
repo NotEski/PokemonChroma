@@ -197,7 +197,7 @@ def initialize_repositories(application_root_path: str):
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
             print (f"Loading Move Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_move_repository_from_json(file_path)
-    print("\n")
+    print()
 
     # Generate Pokemon Repository
     pokemon_folder_path = os.path.join(application_root_path, "data/pokemon")
@@ -208,7 +208,7 @@ def initialize_repositories(application_root_path: str):
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
             print(f"Loading Pokemon Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_pokemon_repository_from_json(file_path)
-    print("\n")
+    print()
 
     # Generate Item Repository
     items_folder_path = os.path.join(application_root_path, "data/items")
@@ -219,5 +219,5 @@ def initialize_repositories(application_root_path: str):
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
             print (f"Loading Item Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_item_repository_from_json(file_path)
-    print("\n")
+    print()
 

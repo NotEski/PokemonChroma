@@ -1,17 +1,18 @@
 from random import randint
 from pydantic import BaseModel, Field, model_validator
-from typing import List, Optional
+from typing import List, Optional, Protocol
 from enum import Enum
 
 from .types import PokemonType
-from .move import MoveSet
+from .move import MoveSet, Move, MoveTarget
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
 from .status_conditions import StatusCondition
+from shared.items.pokeball import Pokeball
 from shared.items.items import Item
-from shared.trainer.trainer import Trainer
+from shared.battle.battle_positions import BattlePosition
 
 class GrowthRate(Enum):
     FAST_THEN_VERY_SLOW = "fast_then_very_slow"
@@ -39,6 +40,7 @@ class EggGroup(Enum):
     WATER1 = "water1"
     WATER2 = "water2"
     WATER3 = "water3"
+
 
 
 class PokemonBase(BaseModel):
@@ -175,15 +177,6 @@ class Pokemon(BaseModel):
     
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon.base_stats, stat_name)
-
-    def get_trainer(self) -> Trainer:
-        """
-        Returns the Trainer object corresponding to the original trainer of this Pokemon.
-
-        Needs a class to be made to hold functions that allow the pokemon to access the trainer data.
-        """
-
-        return NotImplemented
         
 
     @property
@@ -191,3 +184,26 @@ class Pokemon(BaseModel):
         return self.current_hp <= 0
     
     
+
+
+class BattleActionExecutor(Protocol):
+    def use_move(self, move: str|int|Move, target: Optional[BattlePosition]) -> None:
+        # BattlePosition is only required for moves that target other Pokemon
+        
+        pass
+
+    def use_item(self, item: Item) -> None:
+        pass
+
+    def use_escape(self) -> None:
+        pass
+
+    def use_pokeball(self, pokeball: Pokeball, target: Optional[BattlePosition]) -> None:
+        pass
+
+
+class PokemonTeam(BaseModel):
+    pokemons: List[Pokemon] = Field(min_items=1, max_items=6)
+
+    def get_all_pokemons(self) -> List[Pokemon]:
+        return self.pokemons

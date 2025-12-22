@@ -3,10 +3,9 @@
 from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
 
 from engine.battle.battle_manager import TrainerOpponent, WildPokemonOpponent, SingleBattleManager, SinglesBattlePosition
-from engine.battle.opponent import TrainerOpponent, WildPokemonOpponent
-from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.trainer import BattleTrainer
-from shared.pokemon.team import Team
+from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
+from shared.pokemon.pokemon import Pokemon, PokemonTeam
+from shared.trainer.trainer import Trainer
 from shared.pokemon.move import MoveSet
 
 
@@ -27,10 +26,10 @@ def pickachu_eevee_battle_example():
     ashes_pickachu = Pokemon(pokemon=pokemon_repository.get("pikachu"), level=15, move_set=pikachu_moveset)
     ashes_pickachu.nickname = "Pika"
     ashes_pickachu.held_item = item_repository.get("light_ball")
-    ashes_team = Team(pokemons=[ashes_pickachu])
+    ashes_team = PokemonTeam(pokemons=[ashes_pickachu])
 
 
-    trainer=BattleTrainer(name="Ash", team=ashes_team)
+    trainer=Trainer(name="Ash", team=ashes_team)
     pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=eevee_moveset)
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=pokemon)
@@ -74,3 +73,5 @@ def pickachu_eevee_battle_example():
     battle_manager.end_turn()
 
     print ("\nBattle ended.\n\n")
+
+    battle_manager.battle_log.print_log()

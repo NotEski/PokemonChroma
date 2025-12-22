@@ -5,8 +5,9 @@ from engine.battle.damage_calculator import (
     _get_level_modifier, _get_power_modifier, _get_attack_stat_modifier,
     _get_defence_stat_modifier, _get_stab_modifier, _get_type_effectiveness_modifier
 )
-from engine.battle.battle_header import BattleState, BattleWeather
-from shared.pokemon.types import PokemonType, StatusCondition
+from shared.battle.battle_header import BattleState, BattleWeather
+from shared.pokemon.types import PokemonType
+from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import Move, DamageClass
 
 
@@ -326,7 +327,7 @@ class TestStatusConditions:
         )
         
         # Burned damage
-        pikachu_pokemon.status_condition = StatusCondition.BURNED
+        pikachu_pokemon.status_condition = StatusCondition.BURN
         burned_damage = calculate_damage(
             attacking_pokemon=pikachu_pokemon,
             defending_pokemon=eevee_pokemon,

@@ -4,8 +4,8 @@ from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import DamageClass
-from engine.battle.battle_header import BattleState, BattleWeather
-from engine.battle.type_effectiveness import get_attack_multiplier
+from shared.battle.battle_header import BattleState, BattleWeather
+from shared.battle.type_effectiveness import get_attack_multiplier
 
 def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, move: BaseMove, critical_hit: bool, battle_state: BattleState) -> int:
     # Simplified damage calculation formula for demonstration purposes
@@ -153,3 +153,4 @@ def calculate_critical_hit(attacking_pokemon: Pokemon) -> bool:
     elif attacking_pokemon.pokemon_battle_state.critical_hit_stage >= 3:
         is_critical = True
     return is_critical
+
