@@ -1,6 +1,8 @@
-from pydantic import BaseModel, Field, model_validator, field_validator
+from random import randint
+from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional
 from enum import Enum
+
 from .types import PokemonType
 from .move import MoveSet
 from .genders import Gender, GenderRate
@@ -9,7 +11,7 @@ from .abilities import PokemonBaseAbility, PokemonAbilities
 from .stats import BaseStats, IndividualValues, EffortValues, EffortYield, Stat
 from .status_conditions import StatusCondition
 from shared.items.items import Item
-from shared.trainer.trainer import OriginalTrainer, Trainer
+from shared.trainer.trainer import Trainer
 
 class GrowthRate(Enum):
     FAST_THEN_VERY_SLOW = "fast_then_very_slow"
@@ -37,8 +39,6 @@ class EggGroup(Enum):
     WATER1 = "water1"
     WATER2 = "water2"
     WATER3 = "water3"
-
-
 
 
 class PokemonBase(BaseModel):
@@ -73,9 +73,11 @@ class PokemonBattleState(BaseModel):
     non_volatile_status_conditions: List[StatusCondition] = Field(default_factory=list)
 
 
+
 class Pokemon(BaseModel):
     pokemon: PokemonBase
     nickname: str = Field(default="")
+    personality_value: int = Field(default_factory=lambda: randint(0, 2**32 - 1))
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)
     max_hp: int = Field(ge=1, default=0)
@@ -92,22 +94,52 @@ class Pokemon(BaseModel):
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
 
-    #original_trainer: Optional[OriginalTrainer] = Field(default=None)
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)
 
     @model_validator(mode="after")
     def __post_init__(self):
+
+        # calc values based on personality value
+        self._calc_gender()
+        self._calc_nature()
+        self._calc_individual_values()
+        self._calc_shiny()
+
         self.max_hp = self.calculate_stat(Stat.HP)
         self.current_hp = self.max_hp
         self.nickname = self.pokemon.name
         self.terra_type = self.pokemon.types[0]  # Default tera type to first type
-        return self
 
-    def calculate_max_hp(self) -> int:
-        # Simplified HP calculation formula
-        return ((2 * self.pokemon.base_stats.hp + self.individual_values.hp + (self.effort_values.hp // 4)) * self.level) // 100 + self.level + 10
+        return self
+   
+    def _calc_shiny(self):
+        # Simplified shiny calculation
+        # In actual games, shiny determination is more complex
+        self.shiny = (self.personality_value % 8192) < 1 # 1 in 8192 chance
+
+    def _calc_gender(self):
+        rate = self.pokemon.gender_rate
+        if rate == GenderRate.GENDERLESS:
+            self.gender = Gender.NONE
+            return
+        self.gender = Gender.MALE if (self.personality_value % 8) <= rate.value else Gender.FEMALE
+
+    def _calc_nature(self):
+        nature_index = self.personality_value % 25
+        self.nature = Nature(list(Nature)[nature_index])
+
+    def _calc_individual_values(self):
+        self.individual_values.hp = self.personality_value & 0x1F
+        self.individual_values.attack = (self.personality_value >> 5) & 0x1F
+        self.individual_values.defense = (self.personality_value >> 10) & 0x1F
+        self.individual_values.speed = (self.personality_value >> 15) & 0x1F
+        self.individual_values.special_attack = (self.personality_value >> 20) & 0x1F
+        self.individual_values.special_defense = (self.personality_value >> 25) & 0x1F
     
+    def calculate_max_hp(self) -> int:
+        return (((self.individual_values.hp + 2 * self.pokemon.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10
+ 
     def calculate_stat(self, stat: Stat) -> int:
         base = getattr(self.pokemon.base_stats, stat.value)
         iv = getattr(self.individual_values, stat.value)
@@ -122,7 +154,7 @@ class Pokemon(BaseModel):
             nature = 1.0
 
         if stat.value == "hp":
-            return self.calculate_max_hp()
+            return round(self.calculate_max_hp())
         else:
             return round(((((2 * base + iv + (ev / 4)) * self.level) / 100) + 5) * nature)
 
@@ -143,26 +175,19 @@ class Pokemon(BaseModel):
     
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon.base_stats, stat_name)
-    
-    def _generate_original_trainer(self):
-        """
-        Sets the original trainer information for this Pokemon based on the current trainer data.
-        """
-        pass
 
     def get_trainer(self) -> Trainer:
         """
         Returns the Trainer object corresponding to the original trainer of this Pokemon.
+
+        Needs a class to be made to hold functions that allow the pokemon to access the trainer data.
         """
-        if self.original_trainer is None:
-            return None
-        return Trainer(
-            name=self.original_trainer.name,
-            unique_id=self.original_trainer.unique_id
-        )
+
+        return NotImplemented
         
 
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0
+    
     

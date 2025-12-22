@@ -67,7 +67,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         if self._has_actioned(user_position): return
         # check if move index is valid
 
-        if move_index < 0 or move_index >= len(self.in_play_pokemon[user_position].move_set.moves):
+        if move_index not in self.in_play_pokemon[user_position].move_set.moves:
             raise ValueError("Invalid move index.")
 
         user_pokemon = self.in_play_pokemon[user_position]
@@ -173,9 +173,103 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
                 # TODO activate any abilities or items that trigger on switch-in
 
-    @abstractmethod
-    def process_move(self):
-        pass
+    def procress_priority_turn_order(self, turn_order: list[TPosition]) -> list[TPosition]:
+        priority_moves: dict[TPosition, int] = {}
+
+        for position in turn_order:
+            action = self.this_turns_actions[position]
+            if isinstance(action, ActionMove):
+                move = action.move.base_move
+                priority = move.priority
+                priority_moves[position] = priority
+        # Sort by priority first (higher goes first), then by speed (handled in turn_order)
+        sorted_by_priority = sorted(priority_moves.keys(), key=lambda item: priority_moves[item], reverse=True)
+
+        #first check if there are any ties in priority
+        final_sorted_order: list[TPosition] = []
+        for i in range(len(sorted_by_priority)):
+            current_position = sorted_by_priority[i]
+            current_priority = priority_moves[current_position]
+
+            tied_positions = [current_position]
+
+            # check for ties
+            for j in range(i + 1, len(sorted_by_priority)):
+                next_position = sorted_by_priority[j]
+                next_priority = priority_moves[next_position]
+                if next_priority == current_priority:
+                    tied_positions.append(next_position)
+                else:
+                    break
+            if len(tied_positions) > 1:
+                # maintain original turn order for tied positions
+                tied_positions_sorted = sorted(tied_positions, key=lambda item: turn_order.index(item))
+                final_sorted_order.extend(tied_positions_sorted)
+            else:
+                final_sorted_order.append(current_position)
+        return final_sorted_order
+
+    def process_move(self, turn_order: list[TPosition]):
+        # process priority move order
+        priority_order = self.procress_priority_turn_order(turn_order)
+
+        for position in priority_order:
+            action = self.this_turns_actions[position]
+            if isinstance(action, ActionMove):
+                user_pokemon = self.in_play_pokemon[position]
+                target_position = action.target_position
+                target_pokemon = self.in_play_pokemon[target_position]
+
+                is_critical = calculate_critical_hit(user_pokemon)
+                used_move = action.move.base_move
+
+
+                if used_move.accuracy is None:
+                    print (used_move.name + " never misses!")
+                    accuracy_check = 100.0
+                else:
+                    accuracy_check = calculate_accuracy(used_move, user_pokemon, target_pokemon, self.battle_state)
+                
+                    if not calculate_accuracy_hit(accuracy_check):
+                        print (f"{user_pokemon.nickname} used {used_move.name}, but it missed!")
+                        continue
+
+
+                damage = calculate_damage(
+                    attacking_pokemon=user_pokemon,
+                    defending_pokemon=target_pokemon,
+                    move=used_move,
+                    critical_hit=is_critical,
+                    battle_state=self.battle_state
+                )
+
+                action.move.current_pp -= 1
+
+                # if damage is 0, the move had no effect
+                if damage <= 0:
+                    print (f"{user_pokemon.nickname} used {action.move.base_move.name}, but it had no effect on {target_pokemon.nickname}!")
+                    continue
+
+
+                # show the amount of health the target has before applying damage
+                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")
+                target_pokemon.current_hp -= damage
+                print (f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage!")
+                # print if the hit was critical
+                if is_critical:
+                    print("A critical hit!")
+                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP remaining.")
+
+                BattleLogEntry(
+                    turn_number=self.battle_state.turn_number,
+                    log_type=BattleLogType.MOVE_USED,
+                    description=f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage."
+                )
+
+                if target_pokemon.current_hp <= 0:
+                    target_pokemon.current_hp = 0
+                    print(f"{target_pokemon.nickname} fainted!")
+
 
     @abstractmethod
     def process_item_use(self):
@@ -195,9 +289,6 @@ class BattleManager(BaseModel, Generic[TPosition]):
         self.taking_actions = False
         self.battle_config = None
         self.battle_state = None
-        
-        
-        
         
 
     @abstractmethod
@@ -286,63 +377,7 @@ class SingleBattleManager(BattleManager[SinglesBattlePosition]):
                 else:
                     print(f"{escaping_pokemon.nickname} couldn't escape!")
 
-    def process_move(self, turn_order: list[SinglesBattlePosition]):
-        for position in turn_order:
-            action = self.this_turns_actions[position]
-            if isinstance(action, ActionMove):
-                user_pokemon = self.in_play_pokemon[position]
-                target_position = action.target_position
-                target_pokemon = self.in_play_pokemon[target_position]
 
-                is_critical = calculate_critical_hit(user_pokemon)
-                used_move = action.move.base_move
-
-
-                if used_move.accuracy is None:
-                    print (used_move.name + " never misses!")
-                    accuracy_check = 100.0
-                else:
-                    accuracy_check = calculate_accuracy(used_move, user_pokemon, target_pokemon, self.battle_state)
-                
-                    if not calculate_accuracy_hit(accuracy_check):
-                        print (f"{user_pokemon.nickname} used {used_move.name}, but it missed!")
-                        continue
-
-
-                damage = calculate_damage(
-                    attacking_pokemon=user_pokemon,
-                    defending_pokemon=target_pokemon,
-                    move=used_move,
-                    critical_hit=is_critical,
-                    battle_state=self.battle_state
-                )
-
-                action.move.current_pp -= 1
-
-                # if damage is 0, the move had no effect
-                if damage <= 0:
-                    print (f"{user_pokemon.nickname} used {action.move.base_move.name}, but it had no effect on {target_pokemon.nickname}!")
-                    continue
-
-
-                # show the amount of health the target has before applying damage
-                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP before the attack.")
-                target_pokemon.current_hp -= damage
-                print (f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage!")
-                # print if the hit was critical
-                if is_critical:
-                    print("A critical hit!")
-                print (f"{target_pokemon.nickname} has {target_pokemon.current_hp}/{target_pokemon.max_hp} HP remaining.")
-
-                BattleLogEntry(
-                    turn_number=self.battle_state.turn_number,
-                    log_type=BattleLogType.MOVE_USED,
-                    description=f"{user_pokemon.nickname} used {action.move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage."
-                )
-
-                if target_pokemon.current_hp <= 0:
-                    target_pokemon.current_hp = 0
-                    print(f"{target_pokemon.nickname} fainted!")
                 
 
     def process_item_use(self):

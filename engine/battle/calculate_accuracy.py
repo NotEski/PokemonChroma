@@ -52,10 +52,16 @@ def _get_other_modifiers(base_move: BaseMove, user: Pokemon, target: Pokemon, ba
         modifier *= 1.3
 
     # Bright Powder 0.9 - if the target is holding it
+    if target.held_item == "bright_powder":
+        modifier *= 0.9
 
     # Lax Incense 0.9 - if the target is holding it
+    if target.held_item == "lax_incense":
+        modifier *= 0.9
 
     # Wide Lens 1.1 - if the user is holding it
+    if user.held_item == "wide_lens":
+        modifier *= 1.1
 
     # Zoom Lens 1.2 - if the user is holding it and moves after the target - requires turn order check which needs to implimented
 
@@ -109,12 +115,18 @@ def _get_accuracy_stage_modifier(user: Pokemon, target: Pokemon) -> float:
     return 1.0
 
 def _get_micle_berry_modifier(user: Pokemon) -> float:
-    # pokemon eating the micel berry
-    if user.held_item == "micle-berry":
-
-        # Placeholder: Implement logic for Micle Berry effect
-        return 1.2
-
+    # pokemon eating the micle berry
+    if user.held_item == "micle_berry":
+        if user.abilities.has_ability("guts"):
+            if user.current_hp <= (user.max_hp / 2):
+                print ("Micle Berry consumed to boost accuracy!")
+                user.held_item = None  # Consume the berry
+                return 1.2
+        if user.current_hp <= (user.max_hp / 4):
+            print ("Micle Berry consumed to boost accuracy!")
+            user.held_item = None  # Consume the berry
+            return 1.2
+        
     return 1.0
 
 def calculate_accuracy_hit(accuracy: float) -> bool:

@@ -48,6 +48,7 @@ class MoveTarget(Enum):
 
 class BaseMove(BaseModel):
     name: str
+    name_readable: str = Field(default="")
     index: int
 
     type: PokemonType
@@ -83,6 +84,7 @@ class BaseMove(BaseModel):
     stat_changes_inflicted: Optional[List['StatChange']] = None  # List of stat changes inflicted by the move
     stat_changes_recieved: Optional[List['StatChange']] = None  # List of stat changes received by the user of the move
 
+
 class Move(BaseModel):
     current_pp: int
     base_move: BaseMove
@@ -99,8 +101,14 @@ class MoveSet(BaseModel):
     def __init__(self, moves: Optional[List[BaseMove]] = None, **data):
         super().__init__(**data)
         
-        if moves:
-            self.moves = {index: Move(base_move=move, current_pp=move.pp) for index, move in enumerate(moves)}
+        if not isinstance(moves, list):
+            if moves is None: moves = []
+            else:             moves = [moves]
+        for move in moves:
+            if not (isinstance(move, BaseMove)):
+                raise ValueError("Each move must be a BaseMove object.")
+            self.moves[move.index] = Move(current_pp=move.pp, base_move=move)
+            
 
     @model_validator(mode="after")
     def _validate_move_count(self):
@@ -119,3 +127,9 @@ class MoveSet(BaseModel):
             self.moves[index] = move
         else:
             raise IndexError("Move index out of range.")
+    
+    def _get_move_by_name(self, name: str) -> Optional[Move]:
+        for move in self.moves.values():
+            if move.base_move.name == name:
+                return move
+        return None

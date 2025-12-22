@@ -11,7 +11,7 @@ class ItemAttribute(Enum):
     HOLDABLE = "holdable"
     UNDERGROUND = "underground"
     USABLE_IN_BATTLE = "usable_in_battle"
-    USABLE_IN_OVERWORLD = "usable_in_overworld"
+    USABLE_OVERWORLD = "usable_overworld"
 
 class ItemCategory(Enum):
     ALL_MACHINES = "all_machines"
@@ -20,6 +20,7 @@ class ItemCategory(Enum):
     APRICORN_BOX = "apricorn_box"
     BAD_HELD_ITEMS = "bad_held_items"
     BAKING_ONLY = "baking_only"
+    CATCHING_BONUS = "catching_bonus"
     CATCHING_ONLY = "catching_only"
     CHOICE = "choice"
     COLLECTIBLES = "collectibles"
@@ -51,10 +52,10 @@ class ItemCategory(Enum):
     PLOT_ADVANCEMENT = "plot_advancement"
     PP_RECOVERY = "pp_recovery"
     REVIVAL = "revival"
-    SANDWHICH_INGREDIENTS = "sandwhich_ingredients"
+    SANDWICH_INGREDIENTS = "sandwich_ingredients"
     SCARVES = "scarves"
     SPECIAL_BALLS = "special_balls"
-    SPECIAL_CANDIES = "special_candies"
+    SPECIES_CANDIES = "species_candies"
     SPECIES_SPECIFIC = "species_specific"
     SPELUNKING = "spelunking"
     STANDARD_BALLS = "standard_balls"
@@ -64,6 +65,7 @@ class ItemCategory(Enum):
     TM_MATERIALS = "tm_materials"
     TRAINING = "training"
     TYPE_ENHANCEMENT = "type_enhancement"
+    TYPE_PROTECTION = "type_protection"
     UNUSED = "unused"
     VITAMINS = "vitamins"
     Z_CRYSTALS = "z_crystals"
@@ -83,6 +85,7 @@ class ItemFlingEffect(Enum):
     BERRY_EFFECT = "berry_effect"
     BURN = "burn"
     FLINCH = "flinch"
+    HERB_EFFECT = "herb_effect"
     PARALYZE = "paralyze"
     POISON = "poison"
 
@@ -96,7 +99,7 @@ class Item(BaseModel):
     attributes: List[ItemAttribute] = Field(default_factory=list)
     fling_effect: Optional[ItemFlingEffect] = None
     fling_power: Optional[int] = None
-    baby_trigger_for: Optional[str] = None
+    baby_trigger_for: Optional[int] = None
     category: ItemCategory
     held_by_pokemon: List[str] = Field(default_factory=list)
     pocket: Optional[ItemPocket] = None

@@ -6,10 +6,12 @@ from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory,
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
-from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository
+from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
+
+import os
 
 
 # ============================================================================
@@ -165,3 +167,57 @@ def json_to_item(json_data: dict) -> Item:
         held_by_pokemon=json_data.get("held_by_pokemon", []),
         pocket=ItemPocket(json_data["pocket"]) if json_data.get("pocket") else None,
     )
+
+def load_item_from_json_file(file_path: str) -> Item:
+    with open(file_path, 'r') as f:
+        json_data = json.load(f)
+    return json_to_item(json_data)
+
+def generate_item_repository_from_json(file_path: str):
+    item = load_item_from_json_file(file_path)
+    item_repository.create(item)
+
+
+def initialize_repositories(application_root_path: str):
+
+    # Generate Abilities Repository
+    abilities_file_path = os.path.join(application_root_path, "data/abilities.json")
+    generate_abilities_repository_from_json(abilities_file_path)
+
+
+    loading_bar_length = 50
+    loading_bar_increment_length = 100 / loading_bar_length
+
+    # Generate Moves Repository
+    moves_folder_path = os.path.join(application_root_path, "data/moves")
+    for subdir, _, files in os.walk(moves_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading Move Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            generate_move_repository_from_json(file_path)
+    print("\n")
+
+    # Generate Pokemon Repository
+    pokemon_folder_path = os.path.join(application_root_path, "data/pokemon")
+    for subdir, _, files in os.walk(pokemon_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print(f"Loading Pokemon Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            generate_pokemon_repository_from_json(file_path)
+    print("\n")
+
+    # Generate Item Repository
+    items_folder_path = os.path.join(application_root_path, "data/items")
+    for subdir, _, files in os.walk(items_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading Item Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            generate_item_repository_from_json(file_path)
+    print("\n")
+

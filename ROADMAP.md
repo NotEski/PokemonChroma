@@ -6,7 +6,7 @@
 - [ ] Convert GIF sprites into sprite sheets with metadata for animation
 
 ## Core Battle Mechanics
-- [ ] Move Priority System (moves processed in priority order) - *priority field exists but not used in turn order*
+- [x] Move Priority System (moves processed in priority order)
 - [x] Speed-based Turn Order (faster pokemon moves first)
 - [x] Accuracy/Evasion Checks (moves can miss) - *basic function exists but not integrated into battle flow*
 - [x] Type Effectiveness Application (super effective, not very effective, etc.)
