@@ -60,7 +60,7 @@ class BattleConfig(BaseModel):
 
 class BattleState(BaseModel):
     turn_number: int = Field(default=0)
-    weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=0))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
+    weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=-1))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
     field_effects: List[FieldEffects] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
     

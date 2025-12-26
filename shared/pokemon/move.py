@@ -97,6 +97,7 @@ class StatChange(BaseModel):
 class MoveSet(BaseModel):
     # this will store move objects in a dict of the move index, and then the move and its current pp
     moves: dict[int, Move] = Field(default_factory=dict)
+    moveset_order: List[int] = Field(default_factory=list)
 
     def __init__(self, moves: Optional[List[BaseMove]] = None, **data):
         super().__init__(**data)
@@ -108,6 +109,17 @@ class MoveSet(BaseModel):
             if not (isinstance(move, BaseMove)):
                 raise ValueError("Each move must be a BaseMove object.")
             self.moves[move.index] = Move(current_pp=move.pp, base_move=move)
+
+        self._set_initial_move_order()
+
+    def _set_initial_move_order(self):
+        self.moveset_order = list(self.moves.keys())[:4]
+
+    def get_move_by_move_order_index(self, index: int) -> Optional[Move]:
+        if 0 <= index < len(self.moveset_order):
+            move_index = self.moveset_order[index]
+            return self.moves.get(move_index, None)
+        return None
 
     def get_move_by_name(self, name: str) -> Optional[Move]:
         for move in self.moves.values():

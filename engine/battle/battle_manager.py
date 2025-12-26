@@ -91,7 +91,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         
         opponent_escaping = self.get_opponent_from_position(user_position)
         opponent_escaping.escape_attempts += 1
-        self.position_manager.add_position_action(user_position, EscapeAction(escape_attempts=opponent_escaping.escape_attempts))
+        self.position_manager.add_position_action(user_position, EscapeAction(position=user_position, escape_attempts=opponent_escaping.escape_attempts))
 
     def use_move(self, user_position: BattlePosition, move_index: int, target_position: BattlePosition):
         if self._has_actioned(user_position): return
@@ -108,7 +108,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
         if move.current_pp <= 0:
             raise ValueError(f"{user_pokemon.nickname} has no PP left for {move.name}!")
 
-        self.position_manager.add_position_action(user_position, MoveAction(move=move.base_move, move_index=move_index, position=target_position))
+        self.position_manager.add_position_action(user_position, MoveAction(move_index=move_index, position=user_position, target_position=target_position))
 
     def switch_pokemon(self, user_position: BattlePosition, new_pokemon: Pokemon):
         if self._has_actioned(user_position): return
@@ -131,9 +131,8 @@ class BattleManager(BaseModel, Generic[TPosition]):
         self.position_manager.clear_position_actions()
 
     def end_turn(self):        
-        if len(self.position_manager.position_actions()) != 2:
-            missing_positions = [pos for pos in self.position_manager.list_registered_positions() if pos not in self.position_manager.position_actions().keys()]
-            raise UnfinishedTurnException("Both players must select an action before processing the turn. Missing actions for positions: " + ", ".join([str(pos) for pos in missing_positions]))
+        if self.position_manager.get_missing_actions() != []:
+            raise UnfinishedTurnException("Not all positions have submitted actions.")
 
         turn_order = self.get_turn_orders()
 
@@ -180,9 +179,11 @@ class BattleManager(BaseModel, Generic[TPosition]):
         for position in turn_order:
             action = self.position_manager.get_position_action(position)
             if isinstance(action, MoveAction):
-                move = move_repository.get(action.move_index)
-                priority = move.priority
-                priority_moves[position] = priority
+                user_pokemon = self.position_manager.get_pokemon_at_position(position)
+                move = user_pokemon.move_set.moves.get(action.move_index)
+                if move is not None:
+                    priority = move.base_move.priority
+                    priority_moves[position] = priority
 
         sorted_by_priority = sorted(priority_moves.keys(), key=lambda item: priority_moves[item], reverse=True)
 
@@ -318,8 +319,7 @@ class SingleBattleManager(BattleManager[SinglesBattlePositionManager]):
         
     # region Utility Methods
     def get_opponent_from_position(self, position: BattlePosition) -> Opponent:
-        pokemon = self.position_manager.get_pokemon_at_position(position)
-        if pokemon == self.team_1.get_active_pokemon():
+        if position.team_id == 1:
             return self.team_2
         else:
             return self.team_1

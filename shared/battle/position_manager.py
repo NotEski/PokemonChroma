@@ -12,13 +12,20 @@ class BattlePositionManager(BaseModel):
     def get_valid_positions(self) -> list[BattlePosition]:
         pass
 
-    def check_position_validity(self, position: BattlePosition) -> bool:
-        valid_positions = self.get_valid_positions()
-        return position in valid_positions
-
     @abstractmethod
     def register_pokemon(self, pokemon: Pokemon, team_index: int, pokemon_index: int):
         pass
+
+    def check_position_validity(self, position: BattlePosition) -> bool:
+        valid_positions = self.get_valid_positions()
+        return position in valid_positions
+    
+    def get_missing_actions(self) -> list[BattlePosition]:
+        missing_positions = []
+        for position in self.list_registered_positions():
+            if position not in self.actions:
+                missing_positions.append(position)
+        return missing_positions
 
     def get_pokemon_at_position(self, position: BattlePosition) -> Pokemon:
         return self.positions.get((position.team_id, position.pokemon_index))

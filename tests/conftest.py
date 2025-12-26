@@ -6,7 +6,7 @@ from shared.pokemon.natures import Nature
 from shared.pokemon.genders import Gender
 from shared.pokemon.move import MoveSet, BaseMove, DamageClass, MoveCategory
 from shared.pokemon.pokemon import PokemonTeam
-from shared.trainer.trainer import BattleTrainer
+from shared.trainer.trainer import Trainer
 from shared.items.pokeball import Pokeball
 
 
@@ -157,7 +157,7 @@ def basic_team(pikachu_pokemon):
 @pytest.fixture
 def ash_trainer(basic_team):
     """Ash trainer with a basic team."""
-    return BattleTrainer(name="Ash", team=basic_team)
+    return Trainer(name="Ash", team=basic_team)
 
 @pytest.fixture
 def pokeball():

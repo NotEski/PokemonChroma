@@ -85,17 +85,16 @@ class PokemonBattleState(BaseModel):
 class Pokemon(BaseModel):
     pokemon: PokemonBase
     nickname: str = Field(default="")
-    personality_value: int = Field(default_factory=lambda: randint(0, 2**32 - 1))
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)
     max_hp: int = Field(ge=1, default=0)
     status_condition: StatusCondition = Field(default=StatusCondition.NONE)
-    shiny: bool = Field(default=False)
-    gender: Gender = Field(default=Gender.MALE)
-    individual_values: IndividualValues = Field(default_factory=IndividualValues)
+    shiny: bool = Field(default=None)
+    gender: Gender = Field(default=None)
+    individual_values: IndividualValues = Field(default=None)
     effort_values: EffortValues = Field(default_factory=EffortValues)
     terra_type: PokemonType = Field(default=None)
-    nature: Nature = Field(default=Nature.HARDY)
+    nature: Nature = Field(default=None)
     move_set: MoveSet = Field(default_factory=MoveSet)
     abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
     friendship: int = Field(ge=0, le=255, default=70)
@@ -122,28 +121,36 @@ class Pokemon(BaseModel):
         return self
    
     def _calc_shiny(self):
-        # Simplified shiny calculation
-        # In actual games, shiny determination is more complex
-        self.shiny = (self.personality_value % 8192) < 1 # 1 in 8192 chance
+        if self.shiny is not None:
+            return
+        self.shiny = (randint(0, 8191) < 1) # 1 in 8192 chance
 
     def _calc_gender(self):
+        if self.gender is not None:
+            return
         rate = self.pokemon.gender_rate
         if rate == GenderRate.GENDERLESS:
             self.gender = Gender.NONE
             return
-        self.gender = Gender.MALE if (self.personality_value % 8) <= rate.value else Gender.FEMALE
+        self.gender = Gender.MALE if randint(0, 7) <= rate.value else Gender.FEMALE
 
     def _calc_nature(self):
-        nature_index = self.personality_value % 25
+        if self.nature is not None:
+            return
+        nature_index = randint(0, 24)
         self.nature = Nature(list(Nature)[nature_index])
 
     def _calc_individual_values(self):
-        self.individual_values.hp = self.personality_value & 0x1F
-        self.individual_values.attack = (self.personality_value >> 5) & 0x1F
-        self.individual_values.defense = (self.personality_value >> 10) & 0x1F
-        self.individual_values.speed = (self.personality_value >> 15) & 0x1F
-        self.individual_values.special_attack = (self.personality_value >> 20) & 0x1F
-        self.individual_values.special_defense = (self.personality_value >> 25) & 0x1F
+        if self.individual_values:
+            return
+        self.individual_values = IndividualValues()
+
+        self.individual_values.hp = randint(0, 31)
+        self.individual_values.attack = randint(0, 31)
+        self.individual_values.defense = randint(0, 31)
+        self.individual_values.speed = randint(0, 31)
+        self.individual_values.special_attack = randint(0, 31)
+        self.individual_values.special_defense = randint(0, 31)
     
     def calculate_max_hp(self) -> int:
         return (((self.individual_values.hp + 2 * self.pokemon.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10

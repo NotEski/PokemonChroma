@@ -217,6 +217,7 @@ class TestPokemonIVsAndEVs:
         # Pokemon with max IVs should have higher stats
         assert pokemon.individual_values.hp == 31
         assert pokemon.individual_values.attack == 31
+        assert pokemon.individual_values.defense == 31
 
     def test_default_evs(self):
         """Test default EV values."""
