@@ -71,6 +71,12 @@ class BattlePositionManager(BaseModel):
         valid_positions = self.get_valid_positions()
         registered_positions = self.list_registered_positions()
         return [pos for pos in valid_positions if pos not in registered_positions]
+    
+    def check_fainted(self, position: BattlePosition) -> bool:
+        pokemon = self.get_pokemon_at_position(position)
+        if pokemon:
+            return pokemon.is_fainted
+        raise ValueError("No pokemon registered at the given position.")
 
 class SinglesBattlePositionManager(BattlePositionManager):
     

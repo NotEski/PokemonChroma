@@ -26,7 +26,7 @@ class GrowthRate(Enum):
     MEDIUM_FAST = "medium_fast"
     FAST = "fast"
     SLOW_THEN_VERY_FAST = "slow_then_very_fast"
-    
+
 
 class EggGroup(Enum):
     BUG = "bug"
@@ -105,6 +105,8 @@ class Pokemon(BaseModel):
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
+    
+
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
     # for all battle related status conditions, they should be stored in PokemonBattleState
@@ -113,10 +115,11 @@ class Pokemon(BaseModel):
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)
 
-    @model_validator(mode="after")
-    def __post_init__(self):
-
+    def __init__(self, **data):
+        super().__init__(**data)
         # calc values based on personality value
+        if hasattr(self, "_initialized"):
+            return
         self._calc_gender()
         self._calc_nature()
         self._calc_individual_values()
@@ -126,9 +129,9 @@ class Pokemon(BaseModel):
         self.current_hp = self.max_hp
         self.nickname = self.pokemon.name
         self.terra_type = self.pokemon.types[0]  # Default tera type to first type
+        self._initialized = True
 
-        return self
-   
+
     def _calc_shiny(self):
         if self.shiny is not None:
             return
@@ -162,7 +165,7 @@ class Pokemon(BaseModel):
         self.individual_values.special_defense = randint(0, 31)
     
     def calculate_max_hp(self) -> int:
-        return (((self.individual_values.hp + 2 * self.pokemon.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10
+        return round((((self.individual_values.hp + 2 * self.pokemon.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10)
  
     def calculate_stat(self, stat: Stat) -> int:
         base = getattr(self.pokemon.base_stats, stat.value)
@@ -178,7 +181,7 @@ class Pokemon(BaseModel):
             nature = 1.0
 
         if stat.value == "hp":
-            return round(self.calculate_max_hp())
+            return self.calculate_max_hp()
         else:
             return round(((((2 * base + iv + (ev / 4)) * self.level) / 100) + 5) * nature)
         
@@ -213,9 +216,18 @@ class Pokemon(BaseModel):
         current_position = self._get_current_position()
         return SwitchAction(position=current_position, switch_position=switch_position)
 
-
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon.base_stats, stat_name)
+
+    def faint_check(self) -> bool:
+        return self.current_hp <= 0
+    
+    def force_faint(self):
+        self.current_hp = 0
+
+    def faint(self):
+        # logic behind once a pokemon faints what needs to be done to it, clearing the battle state etc
+        pass
 
     @property
     def stat_attack(self) -> int:
@@ -248,3 +260,9 @@ class PokemonTeam(BaseModel):
 
     def get_all_pokemons(self) -> List[Pokemon]:
         return self.pokemons
+    
+    def get_usable_pokemons(self) -> List[Pokemon]:
+        return [pokemon for pokemon in self.pokemons if not pokemon.is_fainted]
+    
+    def has_usable_pokemons(self) -> bool:
+        return any(not pokemon.is_fainted for pokemon in self.pokemons)

@@ -1,8 +1,15 @@
 from engine.pokemon.repositry_generator import initialize_repositories
-from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
-from engine.battle.battle_example import pickachu_eevee_battle_example
+from engine.pokemon.repository import pokemon_repository, move_repository, item_repository
+from engine.battle.battle_example import moveset_from_names
+from engine.battle.battle_manager import SingleBattleManager
+from shared.battle.position_manager import BattlePosition
+from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
+from shared.trainer.trainer import Trainer
+from shared.pokemon.pokemon import PokemonTeam, Pokemon
 
 import os
+import tkinter as tk
+from tkinter import ttk, messagebox
 
 from direct.showbase.ShowBase import ShowBase
 
@@ -21,18 +28,292 @@ class Application(ShowBase):
         self.scene.setPos(-8, 42, 0)
 
 
+# Tkinter battle inspector helpers
+
+
+def simulate_sample_battle():
+    pikachu_moveset = moveset_from_names(["tackle", "growl", "volt_tackle", "quick_attack"])
+    eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
+
+    pikachu_base = pokemon_repository.get("pikachu")
+    eevee_base = pokemon_repository.get("eevee")
+
+    pikachu = Pokemon(pokemon=pikachu_base, level=15, move_set=pikachu_moveset)
+    pikachu.nickname = "Pika"
+    pikachu.held_item = item_repository.get("light_ball")
+
+    eevee = Pokemon(pokemon=eevee_base, level=10, move_set=eevee_moveset)
+
+    ashes_team = PokemonTeam(pokemons=[pikachu])
+    trainer = Trainer(name="Ash", team=ashes_team)
+    
+    opponent_1 = TrainerOpponent(trainer=trainer)
+    opponent_2 = WildPokemonOpponent(pokemon=eevee)
+
+    battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
+    battle_manager.init_battle()
+    battle_manager.start_turn()
+
+    return battle_manager, opponent_1, opponent_2
+
+
+class BattleInspectorWindow:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Pokemon Chroma Battle Inspector")
+        self.root.geometry("980x640")
+
+        self.turn_label = None
+        self.team_frames = {}
+        self.log_box = None
+        self.opponents = {}
+        self.battle_manager = None
+
+        self._build_layout()
+        self.refresh()
+
+    def _build_layout(self):
+        header = ttk.Label(self.root, text="Battle Inspector", font=("Segoe UI", 16, "bold"))
+        header.pack(pady=6)
+
+        controls = ttk.Frame(self.root)
+        controls.pack(fill="x", padx=10)
+        ttk.Button(controls, text="Re-run sample battle", command=self.refresh).pack(side="left")
+        ttk.Button(controls, text="End Turn", command=self.end_turn).pack(side="left", padx=(8, 0))
+        self.turn_label = ttk.Label(controls, text="")
+        self.turn_label.pack(side="left", padx=12)
+
+        body = ttk.Frame(self.root)
+        body.pack(fill="both", expand=True, padx=10, pady=10)
+        body.columnconfigure(0, weight=1)
+        body.columnconfigure(1, weight=1)
+        body.columnconfigure(2, weight=2)
+        body.rowconfigure(0, weight=1)
+
+        self.team_frames[1] = self._build_team_panel(body, "Team 1", column=0)
+        self.team_frames[2] = self._build_team_panel(body, "Team 2", column=1)
+
+        log_frame = ttk.LabelFrame(body, text="Battle Log")
+        log_frame.grid(row=0, column=2, sticky="nsew", padx=8)
+        log_frame.rowconfigure(0, weight=1)
+        log_frame.columnconfigure(0, weight=1)
+
+        self.log_box = tk.Text(log_frame, height=20, state="disabled", wrap="word")
+        scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.log_box.yview)
+        self.log_box.configure(yscrollcommand=scrollbar.set)
+        self.log_box.grid(row=0, column=0, sticky="nsew")
+        scrollbar.grid(row=0, column=1, sticky="ns")
+
+    def _build_team_panel(self, parent, title: str, column: int):
+        frame = ttk.LabelFrame(parent, text=title)
+        frame.grid(row=0, column=column, sticky="nsew", padx=8)
+        frame.columnconfigure(0, weight=1)
+
+        trainer_label = ttk.Label(frame, text="Trainer: -", font=("Segoe UI", 10, "bold"))
+        trainer_label.grid(row=0, column=0, sticky="w", pady=(4, 0))
+
+        name_label = ttk.Label(frame, text="Pokemon: -", font=("Segoe UI", 11))
+        name_label.grid(row=1, column=0, sticky="w")
+
+        hp_canvas = tk.Canvas(frame, width=240, height=22, highlightthickness=1, highlightbackground="#888")
+        hp_canvas.grid(row=2, column=0, sticky="w", pady=4)
+        hp_text = ttk.Label(frame, text="HP: -/-")
+        hp_text.grid(row=3, column=0, sticky="w")
+
+        status_label = ttk.Label(frame, text="Status: none")
+        status_label.grid(row=4, column=0, sticky="w", pady=(2, 6))
+
+        moves_label = ttk.Label(frame, text="Moves")
+        moves_label.grid(row=5, column=0, sticky="w")
+        moves_list = tk.Listbox(frame, height=6)
+        moves_list.grid(row=6, column=0, sticky="nsew", pady=(0, 6))
+        frame.rowconfigure(6, weight=1)
+
+        move_var = tk.StringVar()
+        move_selector = ttk.Combobox(frame, textvariable=move_var, state="readonly")
+        move_selector.grid(row=7, column=0, sticky="ew", pady=(0, 4))
+        queue_button = ttk.Button(frame, text="Queue Move")
+        queue_button.grid(row=8, column=0, sticky="ew", pady=(0, 6))
+
+        queued_label = ttk.Label(frame, text="Queued: none")
+        queued_label.grid(row=9, column=0, sticky="w")
+
+        return {
+            "frame": frame,
+            "trainer": trainer_label,
+            "name": name_label,
+            "hp_canvas": hp_canvas,
+            "hp_text": hp_text,
+            "status": status_label,
+            "moves": moves_list,
+            "move_var": move_var,
+            "move_selector": move_selector,
+            "queue_button": queue_button,
+            "queued_label": queued_label,
+        }
+
+    def _draw_hp_bar(self, canvas: tk.Canvas, current: int, maximum: int):
+        canvas.delete("all")
+        width = int(canvas["width"])
+        height = int(canvas["height"])
+        canvas.create_rectangle(0, 0, width, height, outline="#444")
+        if maximum <= 0:
+            return
+        ratio = max(0.0, min(1.0, current / maximum))
+        fill_width = int(width * ratio)
+        color = "#4caf50" if ratio > 0.5 else ("#ffc107" if ratio > 0.2 else "#f44336")
+        canvas.create_rectangle(0, 0, fill_width, height, fill=color, width=0)
+
+    def _format_status(self, pokemon: Pokemon) -> str:
+        statuses = list(pokemon.pokemon_battle_state.status_conditions.keys())
+        if not statuses:
+            return "Status: none"
+        names = ", ".join([s.value if hasattr(s, "value") else str(s) for s in statuses])
+        return f"Status: {names}"
+
+    def _format_moves(self, moves_listbox: tk.Listbox, move_selector: ttk.Combobox, move_var: tk.StringVar, pokemon: Pokemon):
+        moves_listbox.delete(0, tk.END)
+        move_names = []
+        for move in pokemon.move_set.moves.values():
+            display = f"{move.base_move.name}  PP {move.current_pp}/{move.base_move.pp}"
+            moves_listbox.insert(tk.END, display)
+            move_names.append(move.base_move.name)
+        move_selector["values"] = move_names
+        if move_names:
+            move_var.set(move_names[0])
+
+    def _update_panel(self, panel_widgets: dict, pokemon: Pokemon, owner_label: str, position: BattlePosition):
+        panel_widgets["trainer"].config(text=f"Trainer: {owner_label}")
+        if pokemon is None:
+            panel_widgets["name"].config(text="Pokemon: -")
+            panel_widgets["hp_text"].config(text="HP: -/-")
+            panel_widgets["status"].config(text="Status: none")
+            panel_widgets["moves"].delete(0, tk.END)
+            self._draw_hp_bar(panel_widgets["hp_canvas"], 0, 1)
+            panel_widgets["queued_label"].config(text="Queued: none")
+            return
+
+        panel_widgets["name"].config(text=f"Pokemon: {pokemon.nickname} (Lv {pokemon.level})")
+        panel_widgets["hp_text"].config(text=f"HP: {pokemon.current_hp}/{pokemon.max_hp}")
+        panel_widgets["status"].config(text=self._format_status(pokemon))
+        self._draw_hp_bar(panel_widgets["hp_canvas"], pokemon.current_hp, pokemon.max_hp)
+        self._format_moves(panel_widgets["moves"], panel_widgets["move_selector"], panel_widgets["move_var"], pokemon)
+
+        action = self.battle_manager.position_manager.get_position_action(position)
+        if action:
+            action_name = getattr(action, "move_index", None)
+            if action_name is not None:
+                move_obj = pokemon.move_set.moves.get(action.move_index)
+                if move_obj:
+                    panel_widgets["queued_label"].config(text=f"Queued: {move_obj.base_move.name}")
+                    return
+            panel_widgets["queued_label"].config(text="Queued: action set")
+        else:
+            panel_widgets["queued_label"].config(text="Queued: none")
+
+    def _format_log_line(self, log):
+        prefix = f"[{log.log_type.value}] " if hasattr(log, "log_type") else ""
+        if getattr(log, "description", ""):
+            return prefix + log.description
+        turn_no = getattr(log, "turn_number", None)
+        if turn_no is not None:
+            return f"{prefix}Turn {turn_no} started"
+        return prefix + "No description provided"
+
+    def _render_logs(self):
+        self.log_box.configure(state="normal")
+        self.log_box.delete("1.0", tk.END)
+        for log in self.battle_manager.battle_log.logs:
+            self.log_box.insert(tk.END, self._format_log_line(log) + "\n")
+        self.log_box.configure(state="disabled")
+
+    def _render_state(self):
+        self.turn_label.config(text=f"Turn counter: {self.battle_manager.battle_state.turn_number}")
+        positions = self.battle_manager.position_manager.list_registered_positions()
+        for position in positions:
+            pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
+            owner = self._owner_name(position.team_id)
+            panel = self.team_frames.get(position.team_id)
+            if panel:
+                self._update_panel(panel, pokemon, owner, position)
+        self._render_logs()
+
+    def _owner_name(self, team_id: int) -> str:
+        opponent = self.opponents.get(team_id)
+        if opponent is None:
+            return "Unknown"
+        trainer = getattr(opponent, "trainer", None)
+        if trainer:
+            return trainer.name
+        return "Wild"
+
+    def refresh(self):
+        battle_manager, opponent_1, opponent_2 = simulate_sample_battle()
+        self.battle_manager = battle_manager
+        self.opponents = {1: opponent_1, 2: opponent_2}
+        self._render_state()
+
+        # wire queue buttons to the freshly created battle
+        for team_id, panel in self.team_frames.items():
+            panel["queue_button"].configure(command=lambda tid=team_id: self.queue_move(tid))
+
+    def queue_move(self, team_id: int):
+        if self.battle_manager is None:
+            return
+        position = BattlePosition(team_id=team_id, pokemon_index=1)
+        pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
+        if pokemon is None:
+            messagebox.showerror("Queue Move", "No pokemon at this position.")
+            return
+
+        move_name = self.team_frames[team_id]["move_var"].get()
+        if not move_name:
+            messagebox.showerror("Queue Move", "Select a move first.")
+            return
+
+        try:
+            action = pokemon.create_move_action(
+                move=move_name,
+                target_position=self.battle_manager.position_manager.get_direct_opponent_position(position)
+            )
+            self.battle_manager.submit_action(action)
+        except Exception as exc:
+            messagebox.showerror("Queue Move", f"Could not queue move: {exc}")
+            return
+
+        self._render_state()
+
+    def end_turn(self):
+        if self.battle_manager is None:
+            return
+        try:
+            self.battle_manager.end_turn()
+        except Exception as exc:
+            messagebox.showerror("End Turn", f"Turn could not end: {exc}")
+            return
+
+        # Advance to the next turn if battle continues
+        try:
+            self.battle_manager.start_turn()
+        except Exception:
+            # if battle ended, ignore
+            pass
+
+        self._render_state()
+
+    def run(self):
+        self.root.mainloop()
+
+
+def launch_battle_inspector():
+    window = BattleInspectorWindow()
+    window.run()
+
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
 
-pickachu_eevee_battle_example()
-
-
-
-
-
-
-
+launch_battle_inspector()
 
 
 # app = Application()

@@ -31,7 +31,7 @@ def pickachu_eevee_battle_example():
 
 
     trainer=Trainer(name="Ash", team=ashes_team)
-    wild_pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=10, move_set=eevee_moveset)
+    wild_pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=1, move_set=eevee_moveset)
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 

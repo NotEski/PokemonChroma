@@ -11,6 +11,9 @@ def calculate_damage(attacking_pokemon: Pokemon, defending_pokemon: Pokemon, mov
     # Simplified damage calculation formula for demonstration purposes
     # Will need to pull in if this move hits multiple targets
 
+    if move.power is None or move.power == 0:
+        return 0
+
     # Placeholder values
     targets = 1
     pb_second_strike = False
@@ -124,7 +127,7 @@ def _get_type_effectiveness_modifier(move: BaseMove, defending_pokemon: Pokemon)
     return multiplier if multiplier > 0 else 0.0
 
 def _get_burn_modifier(attacking_pokemon: Pokemon, move: BaseMove) -> float:
-    if move.category == DamageClass.PHYSICAL and attacking_pokemon.status_condition == StatusCondition.BURNED:
+    if move.damage_class == DamageClass.PHYSICAL and StatusCondition.BURN in attacking_pokemon.pokemon_battle_state.status_conditions.keys():
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
         # if attacking_pokemon.ability
         return 0.5

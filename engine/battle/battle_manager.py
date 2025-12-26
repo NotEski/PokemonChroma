@@ -28,6 +28,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
     battle_state: BattleState = Field(default_factory=BattleState)
     taking_actions: bool = Field(default=False)
     battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
+    active_battle: bool = Field(default=True)
 
     # region Abstract Methods
     @abstractmethod
@@ -68,6 +69,8 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
     # region Action Submission
     def submit_action(self, action: BattleAction):
+        if not self.taking_actions:
+            raise ValueError("Not currently taking actions.")
         if isinstance(action, MoveAction):
             self.use_move(
                 user_position=action.position,
@@ -125,12 +128,14 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
     # region Turn Management
     def start_turn(self):
+        if not self.active_battle:
+            raise ValueError("No active battle to submit actions to.")
         self.taking_actions = True
         self.battle_log.turn_start(turn_number=self.battle_state.turn_number)
         self.battle_state.turn_number += 1
         self.position_manager.clear_position_actions()
 
-    def end_turn(self):        
+    def end_turn(self):    
         if self.position_manager.get_missing_actions() != []:
             raise UnfinishedTurnException("Not all positions have submitted actions.")
 
@@ -148,6 +153,9 @@ class BattleManager(BaseModel, Generic[TPosition]):
             self.process_damaging_status_conditions()
             self.process_weather()
 
+
+            self.process_fainted_pokemon()
+
         except UnfinishedTurnException as e:
             print(e)
             return
@@ -155,6 +163,13 @@ class BattleManager(BaseModel, Generic[TPosition]):
         return
 
     def end_battle(self):
+        self.battle_log.battle_end(
+            winning_trainer=None,
+            description="The battle has ended"
+        )
+        self.active_battle = False
+
+    def clear_battle(self):
         self.clear_all_stat_stages()
         self.position_manager.clear_position_actions()
         self.clear_non_standard_variables()
@@ -213,28 +228,6 @@ class BattleManager(BaseModel, Generic[TPosition]):
                     sorted_by_priority.extend(positions)
 
         return sorted_by_priority
-
-        # final_sorted_order: list[BattlePosition] = []
-        # for i in range(len(sorted_by_priority)):
-        #     current_position = sorted_by_priority[i]
-        #     current_priority = priority_moves[current_position]
-        #     tied_positions = [current_position]
-
-        #     for j in range(i + 1, len(sorted_by_priority)):
-        #         next_position = sorted_by_priority[j]
-        #         next_priority = priority_moves[next_position]
-        #         if next_priority == current_priority:
-        #             tied_positions.append(next_position)
-        #         else:
-        #             break
-
-        #     if len(tied_positions) > 1:
-        #         tied_positions_sorted = sorted(tied_positions, key=lambda item: turn_order.index(item))
-        #         final_sorted_order.extend(tied_positions_sorted)
-        #     else:
-        #         final_sorted_order.append(current_position)
-
-        # return final_sorted_order
     # endregion
 
     # region Process Actions
@@ -316,14 +309,18 @@ class BattleManager(BaseModel, Generic[TPosition]):
                     self.battle_log.status_condition_damage(
                         description=f"{pokemon.nickname} is hurt by its poison!"
                     )
-                
-
-
 
     def process_move(self, turn_order: list[BattlePosition]):
         priority_order = self.process_priority_turn_order(turn_order)
 
         for position in priority_order:
+            if self.position_manager.check_fainted(position):
+                self.battle_log.misc(
+                    description=f"{self.position_manager.get_pokemon_at_position(position).nickname} is fainted and cannot move!"
+                )
+                continue  # skip fainted pokemon
+
+
             description_list = []
 
             action = self.position_manager.get_position_action(position)
@@ -332,12 +329,25 @@ class BattleManager(BaseModel, Generic[TPosition]):
             # get pokemons move from moveactions moveindex
 
 
-            
-            
-
             user_pokemon = self.position_manager.get_pokemon_at_position(position)
             target_position = action.target_position
             target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
+
+            if self.position_manager.check_fainted(target_position):
+                description_list.append(f"{target_pokemon.nickname} is already fainted! The move failed.")
+                description = "\n".join(description_list)
+                self.battle_log.move_used(
+                    move_name=None,
+                    user_pokemon=user_pokemon,
+                    target_pokemon=[target_pokemon],
+                    damage_dealt=0,
+                    is_critical=False,
+                    status_condition_applied=None,
+                    move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
+                    description=description
+                )
+                continue
+
 
             used_move = user_pokemon.move_set.get_move_by_index(action.move_index)
             if used_move is None:
@@ -376,12 +386,15 @@ class BattleManager(BaseModel, Generic[TPosition]):
                     description_list.append(effectiveness_message(effectiveness_level))
 
                 target_pokemon.current_hp -= damage
+                description_list.append(f"{target_pokemon.nickname} now has {max(0, target_pokemon.current_hp)}/{target_pokemon.calculate_max_hp()} HP.")
                 description_list.append(f"It dealt {damage} damage!")
 
                 if is_critical:
                     description_list.append("A critical hit!")
-                
-                description_list.append(f"DEBUG: {user_pokemon.nickname} used {used_move.base_move.name} on {target_pokemon.nickname} dealing {damage} damage.")
+
+            if target_pokemon.current_hp <= 0:
+                target_pokemon.current_hp = 0
+                description_list.append(f"{target_pokemon.nickname} fainted!")
 
             description = "\n".join(description_list)
 
@@ -395,10 +408,19 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 move_effectiveness=effectiveness_level,
                 description=description
             )
+    
+    def process_fainted_pokemon(self):
+        for position in self.position_manager.list_registered_positions():
+            if self.position_manager.check_fainted(position):
+                # check which opponent the pokemon belongs to
+                opponent = self.get_opponent_from_position(position)
+                # if the opponent has usable pokemons, prompt for switch
 
-            if target_pokemon.current_hp <= 0:
-                target_pokemon.current_hp = 0
-                description_list.append(f"{target_pokemon.nickname} fainted!")
+                # if no usable pokemons, end battle
+
+                self.end_battle()
+                pass
+
     # endregion
 
 
