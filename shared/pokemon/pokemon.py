@@ -186,13 +186,10 @@ class Pokemon(BaseModel):
         self.pokemon_battle_state.current_position = position
 
     def _get_current_position(self) -> BattlePosition:
-        print (f"Current position for {self.nickname} is {self.pokemon_battle_state.current_position}")
         return self.pokemon_battle_state.current_position
 
     def create_move_action(self, move: str, target_position: BattlePosition = None) -> MoveAction:
-        current_position = self._get_current_position()
-        print (f"Creating move action for {self.nickname} at position {current_position} using move {move} targeting {target_position}")
-        
+        current_position = self._get_current_position()        
         # get the move object from the pokemon with name or index provided
         
             

@@ -1,8 +1,6 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List
 from enum import Enum
-from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.move import Move
 from .battle_logs import BattleLogEntry
 from .position_manager import *
 

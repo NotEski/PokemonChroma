@@ -43,7 +43,7 @@ def pickachu_eevee_battle_example():
     battle_manager.start_turn()
 
     quick_attack_action = ashes_pickachu.create_move_action(
-        move="quick_attack",
+        move="tackle",
         target_position=BattlePosition(team_id=2, pokemon_index=1)
     )
     wild_pokemon_action = wild_pokemon.create_move_action(
@@ -52,10 +52,7 @@ def pickachu_eevee_battle_example():
     )
 
     battle_manager.submit_action(quick_attack_action)
-    battle_manager.print_action_queue()
     battle_manager.submit_action(wild_pokemon_action)
-    battle_manager.print_action_queue()
-
 
 
 

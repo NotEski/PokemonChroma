@@ -1,5 +1,4 @@
 from pydantic import BaseModel, Field
-from abc import abstractmethod
 from typing import List, Literal, Optional, TypedDict, Unpack, NotRequired
 from enum import Enum
 
@@ -109,10 +108,20 @@ class BattleLogManager(BaseModel):
 
     def add_log(self, log_entry: 'BattleLogEntry'):
         self.logs.append(log_entry)
+    
+    def clear_logs(self):
+        self.logs.clear()
 
     def print_log(self):
         for log in self.logs:
             print(f"[{log.log_type.value}] {log.description}")
+
+    def misc(self, description: str):
+        log = BattleLogEntry(
+            log_type=BattleLogType.UNDEFINED,
+            description=description
+        )
+        self.add_log(log)
 
     def move_used(self, **data: Unpack[BattleLogMoveUsedData]):
         log = BattleLogMoveUsed(**data)
@@ -138,4 +147,16 @@ class BattleLogManager(BaseModel):
         log = BattleLogBattleEnd(**data)
         self.add_log(log)
 
+    def weather_end(self, description: str):
+        log = BattleLogEntry(
+            log_type=BattleLogType.UNDEFINED,
+            description=description
+        )
+        self.add_log(log)
     
+    def status_condition_damage(self, description: str):
+        log = BattleLogEntry(
+            log_type=BattleLogType.DAMAGE_DEALT,
+            description=description
+        )
+        self.add_log(log)

@@ -9,7 +9,6 @@ class ActionType(Enum):
     SWITCH = "switch"
     USE_ITEM = "use_item"
     ESCAPE = "escape"
-    FUTURE = "future"
     UNDEFINED = "undefined"
 
 class BattleAction(BaseModel):

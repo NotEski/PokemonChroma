@@ -176,8 +176,16 @@ class BattleManager(BaseModel, Generic[TPosition]):
         sorted_positions = sorted(speed_dict.items(), key=lambda item: item[1], reverse=True)
         return [position for position, speed in sorted_positions]
 
-    def procress_priority_turn_order(self, turn_order: list[BattlePosition]) -> list[BattlePosition]:
-        priority_moves: dict[BattlePosition, int] = {}
+    def process_priority_turn_order(self, turn_order: list[BattlePosition]) -> list[BattlePosition]:
+        marked_turn_order: dict[int, BattlePosition] = {}
+
+        # first mark the turn order into a dict with order values
+        for index, position in enumerate(turn_order):
+            marked_turn_order[index] = position
+
+        # create a dict prioritys with their value being a list of positions with that priority
+
+        priority_positions: dict[int, list[BattlePosition]] = {}
 
         for position in turn_order:
             action = self.position_manager.get_position_action(position)
@@ -186,31 +194,47 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 move = user_pokemon.move_set.moves.get(action.move_index)
                 if move is not None:
                     priority = move.base_move.priority
-                    priority_moves[position] = priority
+                    if priority not in priority_positions:
+                        priority_positions[priority] = []
+                    priority_positions[priority].append(position)
 
-        sorted_by_priority = sorted(priority_moves.keys(), key=lambda item: priority_moves[item], reverse=True)
+        highest_priority: int = max(priority_positions.keys())
+        lowest_priority: int = min(priority_positions.keys())
+        sorted_by_priority: list[BattlePosition] = []
 
-        final_sorted_order: list[BattlePosition] = []
-        for i in range(len(sorted_by_priority)):
-            current_position = sorted_by_priority[i]
-            current_priority = priority_moves[current_position]
-            tied_positions = [current_position]
-
-            for j in range(i + 1, len(sorted_by_priority)):
-                next_position = sorted_by_priority[j]
-                next_priority = priority_moves[next_position]
-                if next_priority == current_priority:
-                    tied_positions.append(next_position)
+        for priority in range(highest_priority, lowest_priority - 1, -1):
+            if priority in priority_positions:
+                positions = priority_positions[priority]
+                if len(positions) > 1:
+                    # sort by turn order
+                    positions_sorted = sorted(positions, key=lambda item: turn_order.index(item))
+                    sorted_by_priority.extend(positions_sorted)
                 else:
-                    break
+                    sorted_by_priority.extend(positions)
 
-            if len(tied_positions) > 1:
-                tied_positions_sorted = sorted(tied_positions, key=lambda item: turn_order.index(item))
-                final_sorted_order.extend(tied_positions_sorted)
-            else:
-                final_sorted_order.append(current_position)
+        return sorted_by_priority
 
-        return final_sorted_order
+        # final_sorted_order: list[BattlePosition] = []
+        # for i in range(len(sorted_by_priority)):
+        #     current_position = sorted_by_priority[i]
+        #     current_priority = priority_moves[current_position]
+        #     tied_positions = [current_position]
+
+        #     for j in range(i + 1, len(sorted_by_priority)):
+        #         next_position = sorted_by_priority[j]
+        #         next_priority = priority_moves[next_position]
+        #         if next_priority == current_priority:
+        #             tied_positions.append(next_position)
+        #         else:
+        #             break
+
+        #     if len(tied_positions) > 1:
+        #         tied_positions_sorted = sorted(tied_positions, key=lambda item: turn_order.index(item))
+        #         final_sorted_order.extend(tied_positions_sorted)
+        #     else:
+        #         final_sorted_order.append(current_position)
+
+        # return final_sorted_order
     # endregion
 
     # region Process Actions
@@ -254,11 +278,11 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 damage = max(1, pokemon.calculate_max_hp() // 16)
                 pokemon.current_hp -= damage
 
-
-        # decrement weather turns
-        print (f"The current weather is {self.battle_state.weather_turns.weather} with {self.battle_state.weather_turns.remaining_turns} turns remaining.")
-
         self.battle_state.decrement_weather()
+        if self.battle_state.weather_turns.weather == BattleWeather.NONE:
+            self.battle_log.weather_end(
+                description="The weather returned to normal."
+            )
 
     def process_damaging_status_conditions(self):
         # loop through all the pokemon in play and apply damage from status conditions
@@ -267,12 +291,21 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 if status_condition == StatusCondition.BURN:
                     damage = max(1, pokemon.calculate_max_hp() // 16)
                     pokemon.current_hp -= damage
+                    self.battle_log.status_condition_damage(
+                        description=f"{pokemon.nickname} is hurt by its burn!"
+                    )
                 if status_condition == StatusCondition.FROSTBITE:
                     damage = max(1, pokemon.calculate_max_hp() // 16)
                     pokemon.current_hp -= damage
+                    self.battle_log.status_condition_damage(
+                        description=f"{pokemon.nickname} is hurt by its frostbite!"
+                    )
                 if status_condition == StatusCondition.POISON:
                     damage = max(1, pokemon.calculate_max_hp() // 8)
                     pokemon.current_hp -= damage
+                    self.battle_log.status_condition_damage(
+                        description=f"{pokemon.nickname} is hurt by its poison!"
+                    )
                 if status_condition == StatusCondition.BADLY_POISON:
                     turns_poisoned = pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON]
                     if turns_poisoned > 15:
@@ -280,12 +313,15 @@ class BattleManager(BaseModel, Generic[TPosition]):
                     damage = max(1, (pokemon.calculate_max_hp() // 16) * turns_poisoned)
                     pokemon.current_hp -= damage
                     pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON] += 1
+                    self.battle_log.status_condition_damage(
+                        description=f"{pokemon.nickname} is hurt by its poison!"
+                    )
                 
 
 
 
     def process_move(self, turn_order: list[BattlePosition]):
-        priority_order = self.procress_priority_turn_order(turn_order)
+        priority_order = self.process_priority_turn_order(turn_order)
 
         for position in priority_order:
             description_list = []
@@ -429,7 +465,10 @@ class SingleBattleManager(BattleManager[SinglesBattlePositionManager]):
                     self.end_battle()
                     return
                 else:
-                    print(f"{escaping_pokemon.nickname} couldn't escape!")
+                    self.battle_log.misc(
+                        escaping_pokemon=escaping_pokemon,
+                        description=f"{escaping_pokemon.nickname} failed to escape!"
+                    )
 
     def process_item_use(self):
         pass

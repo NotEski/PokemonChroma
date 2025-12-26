@@ -79,9 +79,7 @@ class SinglesBattlePositionManager(BattlePositionManager):
         return [BattlePosition(team_id=1, pokemon_index=1), BattlePosition(team_id=2, pokemon_index=1)]
 
     def register_pokemon(self, pokemon: Pokemon, team_index: int, pokemon_index: int):
-        print (f"Registering pokemon {pokemon.pokemon.name} at position ({team_index}, {pokemon_index})")
         pokemon.set_position(BattlePosition(team_id=team_index, pokemon_index=pokemon_index))
-        print (pokemon.pokemon_battle_state.current_position)
         self.positions[(team_index, pokemon_index)] = pokemon
 
 
