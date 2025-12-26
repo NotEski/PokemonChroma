@@ -65,3 +65,10 @@ class BattleState(BaseModel):
     field_effects: List[FieldEffects] = Field(default_factory=list)  # e.g., "reflect", "light screen", etc.
     
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
+
+    def decrement_weather(self):
+        if self.weather_turns.remaining_turns > 0:
+            self.weather_turns.remaining_turns -= 1
+            if self.weather_turns.remaining_turns == 0:
+                self.weather_turns.weather = BattleWeather.NONE
+                self.weather_turns.remaining_turns = -1

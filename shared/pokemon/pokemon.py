@@ -76,9 +76,15 @@ class PokemonBattleState(BaseModel):
 
     current_position: BattlePosition = Field(default_factory=BattlePosition)  # (team_id, pokemon_index)
 
-    non_volatile_status_conditions: List[StatusCondition] = Field(default_factory=list)
+    status_conditions: dict = Field(default_factory=dict[StatusCondition, int])  # e.g., "burn", "poison", etc. with turns present
 
     pokemon_enhancement_used: bool = Field(default=False)  # e.g., Mega Evolution, Terastallization, Z-Move
+
+    def non_volatile_status_condition_check(self) -> List[StatusCondition]:
+        non_volatile_conditions = [status for status in self.status_conditions.keys() if status.is_non_volatile()]
+        if len(non_volatile_conditions) > 1:
+            print ("Warning: More than one non-volatile status condition present.")
+        return non_volatile_conditions
 
 
 
@@ -88,7 +94,6 @@ class Pokemon(BaseModel):
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)
     max_hp: int = Field(ge=1, default=0)
-    status_condition: StatusCondition = Field(default=StatusCondition.NONE)
     shiny: bool = Field(default=None)
     gender: Gender = Field(default=None)
     individual_values: IndividualValues = Field(default=None)
@@ -100,6 +105,10 @@ class Pokemon(BaseModel):
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
+
+    # NOTE FOR OUTSIDE OF BATTLE ONLY
+    # for all battle related status conditions, they should be stored in PokemonBattleState
+    external_status_condition: StatusCondition = Field(default=StatusCondition.NONE) 
 
 
     pokemon_battle_state: PokemonBattleState = Field(default_factory=PokemonBattleState)

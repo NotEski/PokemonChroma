@@ -64,6 +64,9 @@ class BattlePositionManager(BaseModel):
     def list_registered_positions(self) -> list[BattlePosition]:
         return [BattlePosition(team_id=team_id, pokemon_index=pokemon_index) for (team_id, pokemon_index) in self.positions.keys()]
     
+    def list_registered_pokemon(self) -> list[Pokemon]:
+        return list(self.positions.values())
+    
     def list_unregistered_positions(self) -> list[BattlePosition]:
         valid_positions = self.get_valid_positions()
         registered_positions = self.list_registered_positions()

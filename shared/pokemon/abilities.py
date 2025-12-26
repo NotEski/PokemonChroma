@@ -54,3 +54,8 @@ class PokemonAbilities(BaseModel):
             if ability and ability.name.lower() == ability_name.lower():
                 return True
         return False
+    
+    def has_any_ability(self, ability_names: list[str]) -> bool:
+        for ability in ability_names:
+            if self.has_ability(ability):
+                return True

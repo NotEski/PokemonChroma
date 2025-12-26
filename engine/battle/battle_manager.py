@@ -5,7 +5,6 @@
 from typing import TypeVar, Generic
 from pydantic import BaseModel, Field
 from abc import abstractmethod
-from shared.battle import position
 from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction
 from shared.pokemon.pokemon import Pokemon, PokemonBattleState
 from shared.battle.battle_header import *
@@ -13,7 +12,8 @@ from shared.battle.battle_logs import BattleLogManager
 from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
 from shared.battle.opponent import Opponent, TrainerOpponent
 from shared.battle.position_manager import BattlePosition, SinglesBattlePositionManager
-from engine.pokemon.repository import move_repository
+from shared.pokemon.status_conditions import StatusCondition
+from shared.pokemon.types import PokemonType
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
@@ -139,11 +139,14 @@ class BattleManager(BaseModel, Generic[TPosition]):
         try:
             self.process_escape()
             if not self.taking_actions:
-                return
+                return        
 
             self.process_switch()
             self.process_item_use()
             self.process_move(turn_order)
+
+            self.process_damaging_status_conditions()
+            self.process_weather()
 
         except UnfinishedTurnException as e:
             print(e)
@@ -221,6 +224,67 @@ class BattleManager(BaseModel, Generic[TPosition]):
                     posistion=position,
                     trainer=self.trainers[position.value // 2]
                 )
+
+    def process_weather(self):
+        weather = self.battle_state.weather_turns.weather
+        
+        if weather == BattleWeather.NONE:
+            return
+        elif weather == BattleWeather.HAIL:
+            for pokemon in self.position_manager.list_registered_pokemon():
+                if PokemonType.ICE in pokemon.pokemon.types:
+                    continue
+                elif pokemon.abilities.has_any_ability(["snow_cloak", "ice_body", "forecast", "magic_guard", "overcoat"]):
+                    continue
+                elif pokemon.held_item.name in ["safety_goggles"]:
+                    continue
+                damage = max(1, pokemon.calculate_max_hp() // 16)
+                pokemon.current_hp -= damage
+
+        elif weather == BattleWeather.SANDSTORM:
+            for pokemon in self.position_manager.list_registered_pokemon():
+                if PokemonType.ROCK in pokemon.pokemon.types or \
+                   PokemonType.GROUND in pokemon.pokemon.types or \
+                   PokemonType.STEEL in pokemon.pokemon.types:
+                    continue
+                elif pokemon.abilities.has_any_ability(["sand_veil", "sand_rush", "sand_force", "magic_guard", "overcoat"]):
+                    continue
+                elif pokemon.held_item.name in ["safety_goggles"]:
+                    continue
+                damage = max(1, pokemon.calculate_max_hp() // 16)
+                pokemon.current_hp -= damage
+
+
+
+
+        # decrement weather turns
+        print (f"The current weather is {self.battle_state.weather_turns.weather} with {self.battle_state.weather_turns.remaining_turns} turns remaining.")
+
+        self.battle_state.decrement_weather()
+
+    def process_damaging_status_conditions(self):
+        # loop through all the pokemon in play and apply damage from status conditions
+        for pokemon in self.position_manager.list_registered_pokemon():
+            for status_condition in pokemon.pokemon_battle_state.status_conditions.keys():
+                if status_condition == StatusCondition.BURN:
+                    damage = max(1, pokemon.calculate_max_hp() // 16)
+                    pokemon.current_hp -= damage
+                if status_condition == StatusCondition.FROSTBITE:
+                    damage = max(1, pokemon.calculate_max_hp() // 16)
+                    pokemon.current_hp -= damage
+                if status_condition == StatusCondition.POISON:
+                    damage = max(1, pokemon.calculate_max_hp() // 8)
+                    pokemon.current_hp -= damage
+                if status_condition == StatusCondition.BADLY_POISON:
+                    turns_poisoned = pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON]
+                    if turns_poisoned > 15:
+                        turns_poisoned = 15
+                    damage = max(1, (pokemon.calculate_max_hp() // 16) * turns_poisoned)
+                    pokemon.current_hp -= damage
+                    pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON] += 1
+                
+
+
 
     def process_move(self, turn_order: list[BattlePosition]):
         priority_order = self.procress_priority_turn_order(turn_order)

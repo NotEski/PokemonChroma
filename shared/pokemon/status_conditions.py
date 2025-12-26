@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class StatusCondition(Enum):
     NONE = "none"
 
@@ -27,12 +26,17 @@ class StatusCondition(Enum):
     # Non-volatile status conditions
     BURN = "burn"
     FREEZE = "freeze"
+    FROSTBITE = "frostbite"
     PARALYSIS = "paralysis"
     POISON = "poison"
     BADLY_POISON = "badly_poison"
     SLEEP = "sleep"
-    
 
+    def is_volatile(self) -> bool:
+        return self in volatile_status_conditions
+    
+    def is_non_volatile(self) -> bool:
+        return self in non_volatile_status_conditions
 
 volatile_status_conditions = {
     StatusCondition.CONFUSION,
@@ -57,8 +61,11 @@ non_volatile_status_conditions = {
     StatusCondition.BADLY_POISON,
     StatusCondition.BURN,
     StatusCondition.FREEZE,
+    StatusCondition.FROSTBITE,
     StatusCondition.SLEEP,
 }
+
+
 
 
 
