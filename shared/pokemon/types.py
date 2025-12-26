@@ -1,6 +1,4 @@
-from typing import Optional
 from enum import Enum
-from pydantic import BaseModel, Field, model_validator
 
 class PokemonType(Enum):
     NORMAL = "normal"

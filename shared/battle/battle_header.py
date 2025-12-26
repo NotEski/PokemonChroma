@@ -4,7 +4,7 @@ from enum import Enum
 from shared.pokemon.pokemon import Pokemon
 from shared.pokemon.move import Move
 from .battle_logs import BattleLogEntry
-from .battle_positions import *
+from .position_manager import *
 
 class UnfinishedTurnException(Exception):
     pass
@@ -21,28 +21,6 @@ class ActionType(Enum):
     SWITCH = "switch"
     USE_ITEM = "use_item"
     ESCAPE = "escape"
-
-class Action(BaseModel):
-    action_type: ActionType
-
-class ActionMove(Action):
-    action_type: ActionType = Field(default=ActionType.MOVE)
-    move: Move
-    target_position: Optional['BattlePosition'] = None
-
-class ActionSwitch(Action):
-    action_type: ActionType = Field(default=ActionType.SWITCH)
-    switch_in_pokemon: Pokemon
-
-class ActionUseItem(Action):
-    action_type: ActionType = Field(default=ActionType.USE_ITEM)
-    item_name: str
-    target_position: Optional['BattlePosition'] # specicially for when using pokeballs on wild pokemon
-
-class ActionEscape(Action):
-    action_type: ActionType = Field(default=ActionType.ESCAPE)
-    escape_attempts: int = Field(default=0)
-
 
 class BattleWeather(Enum):
     HARSH_SUNLIGHT = "harsh_sunlight"

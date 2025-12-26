@@ -2,7 +2,8 @@
 
 from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
 
-from engine.battle.battle_manager import TrainerOpponent, WildPokemonOpponent, SingleBattleManager, SinglesBattlePosition
+from engine.battle.battle_manager import SingleBattleManager
+from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonTeam
 from shared.trainer.trainer import Trainer
@@ -35,43 +36,46 @@ def pickachu_eevee_battle_example():
     opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 
     battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
-
-    ashes_pickachu.set_battle_actions(battle_manager)
-    ashes_pickachu.battle_actions.set_position(SinglesBattlePosition.Team1_Pokemon1)
-
-    wild_pokemon.set_battle_actions(battle_manager)
-    wild_pokemon.battle_actions.set_position(SinglesBattlePosition.Team2_Pokemon1)
+    
 
     battle_manager.init_battle()
 
-
     battle_manager.start_turn()
 
-    ashes_pickachu.battle_actions.use_move(
-        move="tackle",
-        target_position=SinglesBattlePosition.Team2_Pokemon1
+    quick_attack_action = ashes_pickachu.create_move_action(
+        move="quick_attack",
+        target_position=BattlePosition(team_id=2, pokemon_index=1)
+    )
+    wild_pokemon_action = wild_pokemon.create_move_action(
+        move="quick_attack",
+        target_position=BattlePosition(team_id=1, pokemon_index=1)
     )
 
-    wild_pokemon.battle_actions.use_move(
-        move="quick_attack",
-        target_position=SinglesBattlePosition.Team1_Pokemon1
-    )
+    battle_manager.submit_action(quick_attack_action)
+    battle_manager.print_action_queue()
+    battle_manager.submit_action(wild_pokemon_action)
+    battle_manager.print_action_queue()
+
+
+
 
     battle_manager.end_turn()
 
+    print ("\n--- Turn 1 ended ---\n")
+
     battle_manager.start_turn()
 
-    #battle_manager.use_escape()
-
-    ashes_pickachu.battle_actions.use_move(
-        move=33,
-        target_position=SinglesBattlePosition.Team2_Pokemon1
+    quick_attack_action_2 = ashes_pickachu.create_move_action(
+        move="quick_attack",
+        target_position=BattlePosition(team_id=2, pokemon_index=1)
+    )
+    wild_pokemon_action_2 = wild_pokemon.create_move_action(
+        move="quick_attack",
+        target_position=BattlePosition(team_id=1, pokemon_index=1)
     )
 
-    wild_pokemon.battle_actions.use_move(
-        move=33,
-        target_position=SinglesBattlePosition.Team1_Pokemon1
-    )
+    battle_manager.submit_action(quick_attack_action_2)
+    battle_manager.submit_action(wild_pokemon_action_2)
 
     battle_manager.end_turn()
 

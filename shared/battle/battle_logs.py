@@ -8,7 +8,7 @@ from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import BaseMove
 from shared.trainer.trainer import Trainer
 from shared.battle.type_effectiveness import EffectivenessLevel
-from .battle_positions import BattlePosition
+from shared.battle.position_manager import BattlePosition
 
 
 

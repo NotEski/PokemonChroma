@@ -20,7 +20,7 @@ class BaseRepository(BaseModel, Generic[T]):
         self.items[key] = item
 
     def get(self, key: str) -> T:
-        return self.items.get(key.lower())
+        return self.items.get(str(key).lower())
 
     def get_index_by_name(self, name: str) -> str:
         key = name.lower()
@@ -64,7 +64,16 @@ class PokemonRepository(BaseRepository[PokemonBase]):
 
 
 class MoveRepository(BaseRepository[BaseMove]):
-    pass
+    def get(self, key: str|int) -> T:
+        if isinstance(key, int):
+            for move in self.items.values():
+                if move.index == key:
+                    return move
+            return None
+        elif isinstance(key, str):
+            return self.items.get(str(key).lower())
+        else:
+            raise ValueError("Key must be a string (name) or integer (index).")
 
 
 class PokemonAbilityRepository(BaseRepository[Ability]):

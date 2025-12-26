@@ -108,6 +108,15 @@ class MoveSet(BaseModel):
             if not (isinstance(move, BaseMove)):
                 raise ValueError("Each move must be a BaseMove object.")
             self.moves[move.index] = Move(current_pp=move.pp, base_move=move)
+
+    def get_move_by_name(self, name: str) -> Optional[Move]:
+        for move in self.moves.values():
+            if move.base_move.name == name:
+                return move
+        return None
+    
+    def get_move_by_index(self, index: int) -> Optional[Move]:
+        return self.moves.get(index, None)
             
 
     @model_validator(mode="after")

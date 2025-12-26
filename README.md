@@ -34,3 +34,16 @@ Episodic Pokémon fangame built from scratch with `pyglet`. Follow Ash's anime r
 ## Contributing / Notes
 - This is a fan project; please use original assets responsibly and respect Nintendo/The Pokémon Company IP guidelines.
 - Issue ideas: balance tuning, AI improvements, map design, and episodic content scripting.
+
+
+
+
+
+Notes for when I get back to this
+
+Implimented the new battleposition system
+implimented the new InPlayPokemon system
+
+however they need to be linked together or ione needs to be superseeded as they now have conflicting information/inplaypokemon isnt being updated when it should be
+
+then make sure the actions are working and thaqt there is only one action system, link that to the logging system or just keep them seperate

@@ -1,6 +1,7 @@
 """Test suite for battle system functionality."""
 import pytest
-from engine.battle.battle_manager import SingleBattleManager, SinglesBattlePosition
+from engine.battle.battle_manager import SingleBattleManager
+from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.battle.battle_header import BattleState
 from shared.pokemon.pokemon import PokemonTeam
