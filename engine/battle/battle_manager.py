@@ -255,8 +255,6 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 pokemon.current_hp -= damage
 
 
-
-
         # decrement weather turns
         print (f"The current weather is {self.battle_state.weather_turns.weather} with {self.battle_state.weather_turns.remaining_turns} turns remaining.")
 

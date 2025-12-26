@@ -62,45 +62,42 @@ class TestCalculateCatchProbability:
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
         # Test big bonus status (SLEEP)
-        eevee_pokemon.status_condition = StatusCondition.SLEEP
+        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.SLEEP] = 0
         chance_sleep = calculate_catch_probability(eevee_pokemon, pokeball)
         assert chance_sleep > chance_healthy
         
         # Reset and test small bonus status (BURN)
-        eevee_pokemon.status_condition = StatusCondition.NONE
+        eevee_pokemon.pokemon_battle_state.status_conditions.clear()
         chance_healthy2 = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.BURN
+        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.BURN] = 0
         chance_burned = calculate_catch_probability(eevee_pokemon, pokeball)
         assert chance_burned > chance_healthy2
         assert chance_sleep > chance_burned  # Big bonus > small bonus
 
     def test_frozen_status_big_bonus(self, eevee_pokemon, pokeball):
         """Frozen Pokemon should get big catch bonus."""
-        eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.FREEZE
+        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.FREEZE] = 0
         chance_frozen = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_frozen > chance_healthy
 
     def test_paralyzed_status_small_bonus(self, eevee_pokemon, pokeball):
         """Paralyzed Pokemon should get small catch bonus."""
-        eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.PARALYSIS
+        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.PARALYSIS] = 0
         chance_paralyzed = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_paralyzed > chance_healthy
 
     def test_poisoned_status_small_bonus(self, eevee_pokemon, pokeball):
         """Poisoned Pokemon should get small catch bonus."""
-        eevee_pokemon.status_condition = StatusCondition.NONE
         chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
         
-        eevee_pokemon.status_condition = StatusCondition.POISON
+        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.POISON] = 0
         chance_poisoned = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert chance_poisoned > chance_healthy
@@ -144,12 +141,12 @@ class TestCalculateCatchProbability:
     def test_catch_probability_modifiers_stack(self, eevee_pokemon, pokeball):
         """Multiple modifiers should stack properly."""
         # Get baseline
-        eevee_pokemon.status_condition = StatusCondition.NONE
+        eevee_pokemon.external_status_condition = StatusCondition.NONE
         baseline = calculate_catch_probability(eevee_pokemon, pokeball)
         
         # Apply HP damage + status
         eevee_pokemon.current_hp = int(eevee_pokemon.max_hp * 0.25)
-        eevee_pokemon.status_condition = StatusCondition.SLEEP
+        eevee_pokemon.external_status_condition = StatusCondition.SLEEP
         modified = calculate_catch_probability(eevee_pokemon, pokeball)
         
         assert modified > baseline
@@ -277,7 +274,7 @@ class TestCatchCalculatorIntegration:
         
         pokemon = Pokemon(pokemon=eevee_base, level=5, move_set=move_set)
         pokemon.current_hp = 1  # Near death
-        pokemon.status_condition = StatusCondition.SLEEP
+        pokemon.external_status_condition = StatusCondition.SLEEP
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         shake_chance = calculate_catch_probability(pokemon, pokeball)
@@ -291,7 +288,7 @@ class TestCatchCalculatorIntegration:
         
         pokemon = Pokemon(pokemon=charizard_base, level=50, move_set=move_set)
         # Keep full HP (default)
-        pokemon.status_condition = StatusCondition.NONE
+        pokemon.external_status_condition = StatusCondition.NONE
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         shake_chance = calculate_catch_probability(pokemon, pokeball)
@@ -368,7 +365,7 @@ class TestCatchCalculatorEdgeCases:
 
     def test_multiple_status_conditions(self, eevee_pokemon, pokeball):
         """Pokemon with status conditions should have predictable behavior."""
-        # Test each status individually
+        # Test each status individually in battle state
         statuses_to_test = [
             (StatusCondition.SLEEP, True),  # Big bonus
             (StatusCondition.FREEZE, True),  # Big bonus
@@ -379,7 +376,8 @@ class TestCatchCalculatorEdgeCases:
         
         chances = {}
         for status, is_big_bonus in statuses_to_test:
-            eevee_pokemon.status_condition = status
+            eevee_pokemon.pokemon_battle_state.status_conditions.clear()
+            eevee_pokemon.pokemon_battle_state.status_conditions[status] = 0
             chances[status] = calculate_catch_probability(eevee_pokemon, pokeball)
         
         # Verify big bonus statuses have higher catch rates than small bonus

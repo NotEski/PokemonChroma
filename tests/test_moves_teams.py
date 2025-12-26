@@ -126,10 +126,10 @@ class TestMoveSet:
         assert len(moveset.moves) == 1
         assert moveset.moves[1].base_move.name == "Tackle"  # Tackle has index 1
 
-    def test_moveset_max_four_moves(self, tackle_move):
+    def test_moveset_max_four_moves(self, tackle_move, thunderbolt_move, water_gun_move, flamethrower_move):
         """Test that moveset can have up to 4 moves."""
-        # Test creating moveset with 4 moves (should work)
-        moveset_4 = MoveSet(moves=[tackle_move] * 4)
+        # Test creating moveset with 4 different moves (should work)
+        moveset_4 = MoveSet(moves=[tackle_move, thunderbolt_move, water_gun_move, flamethrower_move])
         assert len(moveset_4.moves) == 4
         
         # Note: Validation for >4 moves may be handled elsewhere
@@ -204,7 +204,7 @@ class TestTeam:
     def test_get_all_pokemons(self, pikachu_pokemon, eevee_pokemon):
         """Test getting all Pokemon from team."""
         team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon])
-        all_pokemon = PokemonTeam.get_all_pokemons()
+        all_pokemon = team.get_all_pokemons()
         
         assert len(all_pokemon) == 2
         assert pikachu_pokemon in all_pokemon
@@ -263,7 +263,7 @@ class TestMoveUsageScenarios:
 
     def test_pokemon_uses_all_pp(self, pikachu_pokemon):
         """Test Pokemon using all PP of a move."""
-        move = pikachu_pokemon.move_set.moves[0]
+        move = pikachu_pokemon.move_set.moves[1]  # Tackle (index 1)
         initial_pp = move.current_pp
         
         # Use move until PP is depleted
@@ -274,8 +274,8 @@ class TestMoveUsageScenarios:
 
     def test_pokemon_with_multiple_moves_uses_each(self, pikachu_pokemon):
         """Test Pokemon using multiple different moves."""
-        move1 = pikachu_pokemon.move_set.moves[0]
-        move2 = pikachu_pokemon.move_set.moves[1]
+        move1 = pikachu_pokemon.move_set.moves[1]  # Tackle
+        move2 = pikachu_pokemon.move_set.moves[24]  # Thunderbolt
         
         initial_pp1 = move1.current_pp
         initial_pp2 = move2.current_pp

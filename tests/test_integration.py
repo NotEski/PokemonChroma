@@ -171,7 +171,7 @@ class TestMultiTurnBattle:
         battle = SingleBattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
-        initial_pp = pikachu_pokemon.move_set.moves[0].current_pp
+        initial_pp = pikachu_pokemon.move_set.moves[1].current_pp  # Tackle has index 1
         
         # Execute 3 turns
         for i in range(3):
@@ -191,7 +191,7 @@ class TestMultiTurnBattle:
             battle.end_turn()
         
         # PP should have decreased
-        assert pikachu_pokemon.move_set.moves[0].current_pp < initial_pp
+        assert pikachu_pokemon.move_set.moves[1].current_pp < initial_pp
 
     def test_pokemon_fainting_ends_battle(self, pikachu_base, eevee_base, tackle_move):
         """Test that battle behavior when Pokemon faints."""
@@ -239,11 +239,13 @@ class TestTypeAdvantageScenarios:
         # Create Fire-type move
         ember = BaseMove(
             name="Ember",
+            index=52,
             type=PokemonType.FIRE,
             power=40,
             pp=25,
             accuracy=100,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         
         # Create a Fire-type Pokemon
@@ -461,20 +463,24 @@ class TestRealGameScenario:
         # Create Pokemon with appropriate moves
         tackle = BaseMove(
             name="Tackle",
+            index=1,
             type=PokemonType.NORMAL,
             power=40,
             pp=35,
             accuracy=100,
-            category=DamageClass.PHYSICAL
+            damage_class=DamageClass.PHYSICAL,
+            category=MoveCategory.DAMAGE
         )
         
         thunderbolt = BaseMove(
             name="Thunderbolt",
+            index=24,
             type=PokemonType.ELECTRIC,
             power=90,
             pp=15,
             accuracy=100,
-            category=DamageClass.SPECIAL
+            damage_class=DamageClass.SPECIAL,
+            category=MoveCategory.DAMAGE
         )
         
         # Trainer's Pikachu
@@ -520,18 +526,18 @@ class TestRealGameScenario:
         battle.start_turn()
         battle.use_move(
             user_position=BattlePosition(team_id=1, pokemon_index=1),
-            move_index=1,
+            move_index=24,  # Thunderbolt
             target_position=BattlePosition(team_id=2, pokemon_index=1)
-        )  # Thunderbolt
+        )
         battle.use_move(
             user_position=BattlePosition(team_id=2, pokemon_index=1),
-            move_index=1,
+            move_index=1,  # Tackle
             target_position=BattlePosition(team_id=1, pokemon_index=1)
-        )  # Tackle
+        )
         battle.end_turn()
         
         # Rattata should take significant damage (likely faint)
         assert rattata.current_hp < rattata.max_hp
         
         # PP should be reduced
-        assert pikachu.move_set.moves[1].current_pp < 15
+        assert pikachu.move_set.moves[24].current_pp < 15

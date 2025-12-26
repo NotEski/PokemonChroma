@@ -29,10 +29,14 @@ def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:
     bonus_level = max((30-pokemon.level)//10, 1)
 
     bonus_status = 1.0  # Default no bonus
-    if pokemon.status_condition in status_condition_big_bonus:
-        bonus_status = 2.0
-    elif pokemon.status_condition in status_condition_small_bonus:
-        bonus_status = 1.5
+
+    for status_condition in pokemon.pokemon_battle_state.status_conditions:
+        if status_condition in status_condition_big_bonus:
+            bonus_status = 2.0
+        elif status_condition in status_condition_small_bonus:
+            bonus_status = 1.5
+        if bonus_status != 1.0:
+            break
 
     rate_modified =  pokemon.pokemon.capture_rate * pokeball.catch_rate_modifier
 

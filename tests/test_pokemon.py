@@ -103,12 +103,12 @@ class TestPokemon:
         assert pokemon.nickname == "Sparky"
 
     def test_pokemon_status_condition(self, pikachu_pokemon):
-        """Test Pokemon status condition."""
-        assert pikachu_pokemon.status_condition == StatusCondition.NONE
+        """Test Pokemon external status condition (outside of battle)."""
+        assert pikachu_pokemon.external_status_condition == StatusCondition.NONE
         
-        # Simulate status change
-        pikachu_pokemon.status_condition = StatusCondition.PARALYSIS
-        assert pikachu_pokemon.status_condition == StatusCondition.PARALYSIS
+        # Simulate status change outside of battle
+        pikachu_pokemon.external_status_condition = StatusCondition.PARALYSIS
+        assert pikachu_pokemon.external_status_condition == StatusCondition.PARALYSIS
 
     def test_pokemon_gender(self, pikachu_pokemon):
         """Test Pokemon gender."""
@@ -149,7 +149,7 @@ class TestPokemonBattleState:
         assert state.accuracy_stage == 0
         assert state.evasion_stage == 0
         assert state.critical_hit_stage == 0
-        assert state.non_volatile_status_conditions == []
+        assert len(state.status_conditions) == 0
 
     def test_reset_stat_stages(self):
         """Test stat stages can be reset to defaults."""
@@ -170,24 +170,24 @@ class TestPokemonBattleState:
     def test_reset_conditions(self):
         """Test battle status conditions can be reset to defaults."""
         state = PokemonBattleState()
-        state.non_volatile_status_conditions = [StatusCondition.CONFUSION]
+        state.status_conditions[StatusCondition.CONFUSION] = 0
 
         # Simulate reset to defaults
-        state.non_volatile_status_conditions = []
+        state.status_conditions.clear()
 
-        assert state.non_volatile_status_conditions == []
+        assert len(state.status_conditions) == 0
 
     def test_full_reset(self):
         """Test full reset of battle state via reinitialization."""
         state = PokemonBattleState()
         state.attack_stat_stage = 2
-        state.non_volatile_status_conditions = [StatusCondition.CONFUSION]
+        state.status_conditions[StatusCondition.CONFUSION] = 0
 
         # Simulate full reset by creating a new instance
         state = PokemonBattleState()
 
         assert state.attack_stat_stage == 0
-        assert state.non_volatile_status_conditions == []
+        assert len(state.status_conditions) == 0
 
 
 class TestPokemonIVsAndEVs:
