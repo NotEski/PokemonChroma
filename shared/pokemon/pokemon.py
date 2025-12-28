@@ -371,7 +371,6 @@ class Pokemon(BaseModel):
     
     def calculate_stat(self, stat: Stat) -> int:
         return generic_calculate_stat(self.pokemon_base, self.effort_values, self.individual_values, self.nature, self.level, stat)
-     
 
 
     def create_move_action(self, move: str, target_position: BattlePosition = None) -> MoveAction:

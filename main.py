@@ -1,7 +1,7 @@
 from engine.pokemon.repositry_generator import initialize_repositories
 from engine.pokemon.repository import pokemon_repository, move_repository, item_repository
 from engine.battle.battle_example import moveset_from_names
-from engine.battle.battle_manager import SingleBattleManager
+from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.trainer.trainer import Trainer
@@ -9,10 +9,9 @@ from shared.pokemon.pokemon import PokemonTeam, Pokemon, BattleMon
 from shared.battle.battle_actions import MoveAction
 
 import os
-import sys
 import traceback
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk
 
 from direct.showbase.ShowBase import ShowBase
 
@@ -52,7 +51,7 @@ def simulate_sample_battle():
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=eevee)
 
-    battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
+    battle_manager = BattleManager(teams=[opponent_1, opponent_2])
     battle_manager.init_battle()
     battle_manager.start_turn()
 

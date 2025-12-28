@@ -1,6 +1,6 @@
 """Integration tests for complete game scenarios."""
 import pytest
-from engine.battle.battle_manager import SingleBattleManager
+from engine.battle.battle_manager import BattleManager
 from shared.battle.position import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonBase, PokemonTeam
@@ -25,7 +25,7 @@ class TestCompleteWildBattle:
         )
         wild = WildPokemonOpponent(pokemon=eevee)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         # Execute multiple turns
@@ -62,7 +62,7 @@ class TestCompleteWildBattle:
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         # Try to escape (may take multiple attempts)
@@ -103,7 +103,7 @@ class TestCompleteTrainerBattle:
             trainer=Trainer(name="Gary", team=PokemonTeam(pokemons=[charizard]))
         )
         
-        battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
+        battle = BattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
         # Record initial HP
@@ -144,7 +144,7 @@ class TestCompleteTrainerBattle:
             trainer=Trainer(name="Gary", team=PokemonTeam(pokemons=[eevee]))
         )
         
-        battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
+        battle = BattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
         battle.start_turn()
@@ -176,7 +176,7 @@ class TestMultiTurnBattle:
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         initial_pp = pikachu_pokemon.move_set.moves[1].current_pp  # Tackle has index 1
@@ -214,7 +214,7 @@ class TestMultiTurnBattle:
         )
         wild = WildPokemonOpponent(pokemon=eevee)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         # Fight until Eevee faints
@@ -294,7 +294,7 @@ class TestTypeAdvantageScenarios:
             trainer=Trainer(name="Blue", team=PokemonTeam(pokemons=[bulbasaur]))
         )
         
-        battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
+        battle = BattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
         initial_hp = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1)).current_hp
@@ -326,7 +326,7 @@ class TestBattleStateManagement:
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         # Modify battle state on active battlemons
@@ -349,7 +349,7 @@ class TestBattleStateManagement:
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         assert battle.battle_state.turn_number == 0
@@ -384,7 +384,7 @@ class TestActionCancellation:
         )
         wild = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         battle.start_turn()
@@ -426,7 +426,7 @@ class TestEdgeCases:
             trainer=Trainer(name="Gary", team=PokemonTeam(pokemons=[pikachu2]))
         )
         
-        battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
+        battle = BattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
         battle.start_turn()
@@ -460,7 +460,7 @@ class TestEdgeCases:
             trainer=Trainer(name="Gary", team=PokemonTeam(pokemons=[pikachu2]))
         )
         
-        battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
+        battle = BattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
         # Battle should initialize without errors
@@ -536,7 +536,7 @@ class TestRealGameScenario:
         )
         wild = WildPokemonOpponent(pokemon=rattata)
         
-        battle = SingleBattleManager(team_1=trainer, team_2=wild)
+        battle = BattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
         # Turn 1: Pikachu uses Thunderbolt

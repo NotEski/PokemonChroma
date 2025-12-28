@@ -13,7 +13,7 @@
 - [x] PP Deduction (subtract PP when moves are used)
 - [x] Critical Hit Calculation (fully implemented and integrated)
 - [ ] Multi-target Move Support (moves hitting multiple pokemon) - *data structure exists but not implemented*
-- [ ] Weather Effect Duration & Expiration - *partial: weather modifies damage but duration not tracked*
+- [x] Weather Effect Duration & Expiration - *partial: weather modifies damage but duration not tracked*
 - [ ] Terrain Effect Application - *data structure exists but not implemented*
 - [ ] Field Effect Management (Reflect, Light Screen, etc.) - *data structure exists but not implemented*
 

@@ -47,13 +47,19 @@ class FieldEffects(Enum):
     NONE = None
 
 
+class PositionEffects(Enum):
+    TOXIC_SPIKES = "toxic_spikes"
+    STEALTH_ROCK = "stealth_rock"
+
+
 class WeatherTurns(BaseModel):
     weather: BattleWeather
     remaining_turns: int
 
 class BattleConfig(BaseModel):
+    battle_type: BattleType = Field(default=BattleType.SINGLE)
     is_wild: bool = Field(default=False)
-    can_escape: bool = Field(default=True)
+    can_escape: bool = Field(default=False)
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
 
 class BattleState(BaseModel):
@@ -61,8 +67,13 @@ class BattleState(BaseModel):
     weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=-1))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
     field_effects: dict[FieldEffects, int] = Field(default_factory=dict)  # e.g., {FieldEffects.TRICK_ROOM: 5} means Trick Room has been active for 5 turns
+    positions_effects: dict[BattlePosition, PositionEffects] = Field(default_factory=dict)  # e.g., {BattlePosition(team_id=1, pokemon_index=1): PositionEffects}
 
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
+
+    def set_weather(self, weather: BattleWeather, turns: int = 5):
+        self.weather_turns.weather = weather
+        self.weather_turns.remaining_turns = turns
 
     def decrement_weather(self):
         if self.weather_turns.remaining_turns > 0:
@@ -71,6 +82,7 @@ class BattleState(BaseModel):
                 self.weather_turns.weather = BattleWeather.NONE
                 self.weather_turns.remaining_turns = -1
 
-    def set_weather(self, weather: BattleWeather, turns: int = 5):
-        self.weather_turns.weather = weather
-        self.weather_turns.remaining_turns = turns
+class PositionEffects(BaseModel):
+    is_protected: bool = Field(default=False)  # e.g., from moves like Protect
+    is_targeted: bool = Field(default=False)  # e.g., if the position is currently targeted by a move
+    position_effects: dict[PositionEffects, int] = Field(default_factory=dict)  # Needs to be changed to accommodate multiple types of effects like toxic spikes that will go from applying poison to bad poison

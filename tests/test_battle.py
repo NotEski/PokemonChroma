@@ -1,6 +1,6 @@
 """Test suite for battle system functionality."""
 import pytest
-from engine.battle.battle_manager import SingleBattleManager
+from engine.battle.battle_manager import BattleManager
 from shared.battle.position import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.battle.battle_header import BattleState
@@ -21,7 +21,7 @@ class TestBattleInitialization:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(
+        battle = BattleManager(
             team_1=trainer_opponent,
             team_2=wild_opponent
         )
@@ -48,7 +48,7 @@ class TestBattleInitialization:
             )
         )
         
-        battle = SingleBattleManager(team_1=trainer_1, team_2=trainer_2)
+        battle = BattleManager(team_1=trainer_1, team_2=trainer_2)
         battle.init_battle()
         
         assert battle.battle_config.is_wild is False
@@ -64,7 +64,7 @@ class TestBattleInitialization:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(
+        battle = BattleManager(
             team_1=trainer_opponent,
             team_2=wild_opponent
         )
@@ -90,7 +90,7 @@ class TestTurnManagement:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         
         initial_turn = battle.battle_state.turn_number
@@ -106,7 +106,7 @@ class TestTurnManagement:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         battle.start_turn()
         
@@ -125,7 +125,7 @@ class TestTurnManagement:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         
         assert battle.battle_state.turn_number == 0
@@ -143,7 +143,7 @@ class TestBattleActions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         battle.start_turn()
         
@@ -163,7 +163,7 @@ class TestBattleActions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         battle.start_turn()
         
@@ -181,7 +181,7 @@ class TestBattleActions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         battle.start_turn()
         
@@ -200,7 +200,7 @@ class TestBattleActions:
             trainer=Trainer(name="Gary", team=PokemonTeam(pokemons=[eevee_pokemon]))
         )
         
-        battle = SingleBattleManager(team_1=trainer_1, team_2=trainer_2)
+        battle = BattleManager(team_1=trainer_1, team_2=trainer_2)
         battle.init_battle()
         battle.start_turn()
         
@@ -214,7 +214,7 @@ class TestBattleActions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         battle.start_turn()
         
@@ -242,7 +242,7 @@ class TestBattleFlow:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         
         battle.start_turn()
@@ -271,7 +271,7 @@ class TestBattleFlow:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         
         initial_pp = pikachu_pokemon.move_set.moves[1].current_pp
@@ -302,7 +302,7 @@ class TestBattleFlow:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
         
         battle.start_turn()
@@ -341,7 +341,7 @@ class TestBattleState:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
 
         # Modify stat stages on active BattleMons
@@ -388,7 +388,7 @@ class TestBattlePositions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         
         opposite_1 = battle.get_opposite_position_from_position(
             BattlePosition(team_id=1, pokemon_index=1)
@@ -407,7 +407,7 @@ class TestBattlePositions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
+        battle = BattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         
         # Position (1,1) belongs to team_1, so opponent should be team_2 (wild)
         opponent_1 = battle.get_opponent_from_position(BattlePosition(team_id=1, pokemon_index=1))

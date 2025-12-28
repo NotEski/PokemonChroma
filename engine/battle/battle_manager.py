@@ -11,7 +11,7 @@ from shared.battle.battle_header import *
 from shared.battle.battle_logs import BattleLogManager
 from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
 from shared.battle.opponent import Opponent, TrainerOpponent
-from shared.battle.position_manager import BattlePosition, SinglesBattlePositionManager
+from shared.battle.position_manager import BattlePosition
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.types import PokemonType
 
@@ -20,40 +20,87 @@ from .speed_calculator import calculate_speed
 from .escape_calculator import calculate_escape_success
 from .calculate_accuracy import calculate_accuracy, calculate_accuracy_hit
 
-TPosition = TypeVar('TPosition', bound=BattlePositionManager)
 
-class BattleManager(BaseModel, Generic[TPosition]):
-    position_manager: TPosition
+class BattleManager(BaseModel):
+    position_manager: BattlePositionManager = Field(default_factory=BattlePositionManager)
     battle_config: BattleConfig = Field(default_factory=BattleConfig)
     battle_state: BattleState = Field(default_factory=BattleState)
     taking_actions: bool = Field(default=False)
     battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
     active_battle: bool = Field(default=True)
+    teams: dict[int, Opponent]|List[Opponent] = Field(default_factory=dict)
+
+
+    def __init__(self, **data):
+        super().__init__(**data)
+        if isinstance(self.teams, list):
+            teams_dict = {}
+            for index, team in enumerate(self.teams):
+                teams_dict[index + 1] = team
+            self.teams = teams_dict
+        elif isinstance(self.teams, dict):
+            # validate keys are 1, 2, ...
+            len_keys = len(self.teams.keys())
+            for i in range(1, len_keys + 1):
+                if i not in self.teams:
+                    raise ValueError("Teams dictionary keys must be sequential integers starting from 1.")
+                
+        self.position_manager.teams_count = len(self.teams)
+
+        if self.battle_config.battle_type == BattleType.SINGLE:
+            self.position_manager.pokemon_per_team = 1
+        elif self.battle_config.battle_type == BattleType.DOUBLE:
+            self.position_manager.pokemon_per_team = 2
+        elif self.battle_config.battle_type == BattleType.TRIPLE:
+            self.position_manager.pokemon_per_team = 3
+
 
     # region Abstract Methods
-    @abstractmethod
     def get_opponent_from_position(self, position: BattlePosition) -> Opponent:
-        pass
-
-    @abstractmethod
-    def clear_all_stat_stages(self):
-        pass
+        return self.teams[position.team_id]
     
-    @abstractmethod
+    def get_opposite_position_from_position(self, position: BattlePosition) -> BattlePosition:
+        return self.position_manager.get_direct_opponent_position(position)
+
+    def clear_all_stat_stages(self):
+        for pokemon in self.teams[1].get_all_battlemons() + self.teams[2].get_all_battlemons():
+            self.clear_pokemon_stat_stages(pokemon)
+    
     def init_battle(self):
-        pass
+        self.clear_all_stat_stages()
 
-    @abstractmethod
+        for i in range(1, self.position_manager.teams_count + 1):
+            for j in range(1, self.position_manager.pokemon_per_team + 1):
+                self.position_manager.register_pokemon(
+                    pokemon=self.teams[i].get_active_battlemon(),
+                    team_index=i,
+                    pokemon_index=j
+                )
+
     def process_escape(self):
-        pass
+        for position, action in self.position_manager.position_actions().items():
+            if isinstance(action, EscapeAction):
+                escaping_pokemon = self.position_manager.get_pokemon_at_position(position)
+                enemy_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
+                
+                success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
+                if success:
+                    self.battle_log.battle_end(
+                        winning_trainer=None,
+                        description=f"{escaping_pokemon.nickname} successfully escaped!"
+                    )
+                    self.end_battle()
+                    return
+                else:
+                    self.battle_log.misc(
+                        escaping_pokemon=escaping_pokemon,
+                        description=f"{escaping_pokemon.nickname} failed to escape!"
+                    )
 
-    @abstractmethod
-    def process_item_use(self):
-        pass
+    
 
-    @abstractmethod
     def clear_non_standard_variables(self):
-        pass
+        self.teams = {}
     # endregion
 
     # region Utility Methods
@@ -328,94 +375,102 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
             # get pokemons move from moveactions moveindex
 
-
             user_pokemon = self.position_manager.get_pokemon_at_position(position)
-            target_position = action.target_position
-            target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
-
-            if self.position_manager.check_fainted(target_position):
-                description_list.append(f"{target_pokemon.nickname} is already fainted! The move failed.")
-                description = "\n".join(description_list)
-                self.battle_log.move_used(
-                    move_name=None,
-                    user_pokemon=user_pokemon,
-                    target_pokemon=[target_pokemon],
-                    damage_dealt=0,
-                    is_critical=False,
-                    status_condition_applied=None,
-                    move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
-                    description=description
-                )
-                continue
-
 
             used_move = user_pokemon.move_set.get_move_by_index(action.move_index)
             if used_move is None:
                 raise ValueError("Move not found in user's move set.")
 
-            description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")
-            is_critical = calculate_critical_hit(user_pokemon)
 
-            if used_move.accuracy is None:
-                accuracy_check = 100.0
-            else:
-                accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
-            
-            if not calculate_accuracy_hit(accuracy_check):
-                description_list.append(f"But it missed!")
-                damage = 0
-                effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
-            else:
-                effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.types)
-                effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
-                
-                damage = calculate_damage(
-                    attacking_pokemon=user_pokemon,
-                    defending_pokemon=target_pokemon,
-                    move=used_move.base_move,
-                    critical_hit=is_critical,
-                    battle_state=self.battle_state
-                )
-
-                used_move.current_pp -= 1
-
-                if damage <= 0:
-                    description_list.append(effectiveness_message(EffectivenessLevel.NO_EFFECT))
-                    continue
-                else:
-                    description_list.append(effectiveness_message(effectiveness_level))
-
-                target_pokemon.current_hp -= damage
-                description_list.append(f"{target_pokemon.nickname} now has {max(0, target_pokemon.current_hp)}/{target_pokemon.calculate_max_hp()} HP.")
-                description_list.append(f"It dealt {damage} damage!")
-
-                if is_critical:
-                    description_list.append("A critical hit!")
-
-                    effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.pokemon_base.types)
-
-                if target_pokemon.current_hp <= 0:
-                    target_pokemon.current_hp = 0
-                    description_list.append(f"{target_pokemon.nickname} fainted!")
-
-            description = "\n".join(description_list)
-
-            self.battle_log.move_used(
-                move_name=used_move.base_move,
-                user_pokemon=user_pokemon,
-                target_pokemon=[target_pokemon],
-                damage_dealt=damage,
-                is_critical=is_critical,
-                status_condition_applied=None,
-                move_effectiveness=effectiveness_level,
-                description=description
+            target_positions = self.position_manager.get_target_positions(
+                user_position=position,
+                move_target=used_move.target,
+                selected_position=action.target_position
             )
+            
+            for target_position in target_positions:
+
+                target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
+
+                if self.position_manager.check_fainted(target_position):
+                    description_list.append(f"{target_pokemon.nickname} is already fainted! The move failed.")
+                    description = "\n".join(description_list)
+                    self.battle_log.move_used(
+                        move_name=None,
+                        user_pokemon=user_pokemon,
+                        target_pokemon=[target_pokemon],
+                        damage_dealt=0,
+                        is_critical=False,
+                        status_condition_applied=None,
+                        move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
+                        description=description
+                    )
+                    continue
+
+
+                description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")
+                is_critical = calculate_critical_hit(user_pokemon)
+
+                if used_move.accuracy is None:
+                    accuracy_check = 100.0
+                else:
+                    accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
+                
+                if not calculate_accuracy_hit(accuracy_check):
+                    description_list.append(f"But it missed!")
+                    damage = 0
+                    effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
+                else:
+                    effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.types)
+                    effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
+                    
+                    damage = calculate_damage(
+                        attacking_pokemon=user_pokemon,
+                        defending_pokemon=target_pokemon,
+                        move=used_move.base_move,
+                        critical_hit=is_critical,
+                        battle_state=self.battle_state
+                    )
+
+                    used_move.current_pp -= 1
+
+                    if damage <= 0:
+                        description_list.append(effectiveness_message(EffectivenessLevel.NO_EFFECT))
+                        continue
+                    else:
+                        description_list.append(effectiveness_message(effectiveness_level))
+
+                    target_pokemon.current_hp -= damage
+                    description_list.append(f"{target_pokemon.nickname} now has {max(0, target_pokemon.current_hp)}/{target_pokemon.calculate_max_hp()} HP.")
+                    description_list.append(f"It dealt {damage} damage!")
+
+                    if is_critical:
+                        description_list.append("A critical hit!")
+
+                        effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.pokemon_base.types)
+
+                    if target_pokemon.current_hp <= 0:
+                        target_pokemon.current_hp = 0
+                        description_list.append(f"{target_pokemon.nickname} fainted!")
+
+                description = "\n".join(description_list)
+
+                self.battle_log.move_used(
+                    move_name=used_move.base_move,
+                    user_pokemon=user_pokemon,
+                    target_pokemon=[target_pokemon],
+                    damage_dealt=damage,
+                    is_critical=is_critical,
+                    status_condition_applied=None,
+                    move_effectiveness=effectiveness_level,
+                    description=description
+                )
     
     def process_fainted_pokemon(self):
         for position in self.position_manager.list_registered_positions():
             if self.position_manager.check_fainted(position):
                 # check which opponent the pokemon belongs to
-                opponent = self.get_opponent_from_position(position)
+                # opponent = self.get_opponent_from_position(position)
                 # if the opponent has usable pokemons, prompt for switch
 
                 # if no usable pokemons, end battle
@@ -423,83 +478,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 self.end_battle()
                 pass
 
-    # endregion
-
-
-class SingleBattleManager(BattleManager[SinglesBattlePositionManager]):
-    position_manager: SinglesBattlePositionManager = Field(default_factory=SinglesBattlePositionManager)
-    team_1: Opponent
-    team_2: Opponent
-
-    def __init__(self, **data):
-        super().__init__(**data)
-        if isinstance(self.team_1, TrainerOpponent) and isinstance(self.team_2, TrainerOpponent):
-            self.battle_config.is_wild = False
-        else:
-            self.battle_config.is_wild = True
-
-        
-    # region Utility Methods
-    def get_opponent_from_position(self, position: BattlePosition) -> Opponent:
-        if position.team_id == 1:
-            return self.team_2
-        else:
-            return self.team_1
-
-    def get_opposite_position_from_position(self, position: BattlePosition) -> BattlePosition:
-        return self.position_manager.get_direct_opponent_position(position)
-    # endregion
-
-    # region Battle Setup
-    def clear_all_stat_stages(self):
-        for pokemon in self.team_1.get_all_battlemons() + self.team_2.get_all_battlemons():
-            self.clear_pokemon_stat_stages(pokemon)
-
-    def init_battle(self):
-        self.clear_all_stat_stages()
-
-        self.position_manager.register_pokemon(
-            pokemon=self.team_1.get_active_battlemon(),
-            team_index=1,
-            pokemon_index=1
-        )
-
-        self.position_manager.register_pokemon(
-            pokemon=self.team_2.get_active_battlemon(),
-            team_index=2,
-            pokemon_index=1
-        )
-
-        
-    # endregion
-
-    # region Process Actions
-    def process_escape(self):
-        for position, action in self.position_manager.position_actions().items():
-            if isinstance(action, EscapeAction):
-                escaping_pokemon = self.position_manager.get_pokemon_at_position(position)
-                enemy_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
-                
-                success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
-                if success:
-                    self.battle_log.battle_end(
-                        winning_trainer=None,
-                        description=f"{escaping_pokemon.nickname} successfully escaped!"
-                    )
-                    self.end_battle()
-                    return
-                else:
-                    self.battle_log.misc(
-                        escaping_pokemon=escaping_pokemon,
-                        description=f"{escaping_pokemon.nickname} failed to escape!"
-                    )
-
     def process_item_use(self):
         pass
-    # endregion
 
-    # region Cleanup
-    def clear_non_standard_variables(self):
-        self.team_1 = None
-        self.team_2 = None
     # endregion

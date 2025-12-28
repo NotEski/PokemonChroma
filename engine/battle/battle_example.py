@@ -2,7 +2,7 @@
 
 from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
 
-from engine.battle.battle_manager import SingleBattleManager
+from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonTeam
@@ -35,7 +35,7 @@ def pickachu_eevee_battle_example():
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 
-    battle_manager = SingleBattleManager(team_1=opponent_1, team_2=opponent_2)
+    battle_manager = BattleManager(team_1=opponent_1, team_2=opponent_2)
     
 
     battle_manager.init_battle()

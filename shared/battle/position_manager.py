@@ -2,19 +2,27 @@ from pydantic import BaseModel, Field
 from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction
 from shared.pokemon.pokemon import BattleMon
-from shared.battle.position import BattlePosition 
+from shared.battle.position import BattlePosition
+from shared.pokemon.move import MoveTarget
+import random
 
 class BattlePositionManager(BaseModel):
     positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
     actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
+    teams_count: int = 2
+    pokemon_per_team: int = 1
 
-    @abstractmethod
+
     def get_valid_positions(self) -> list[BattlePosition]:
-        pass
+        valid_positions = []
+        for team_id in range(1, self.teams_count + 1):
+            for pokemon_index in range(1, self.pokemon_per_team + 1):
+                valid_positions.append(BattlePosition(team_id=team_id, pokemon_index=pokemon_index))
+        return valid_positions
 
-    @abstractmethod
     def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
-        pass
+        pokemon.set_position(BattlePosition(team_id=team_index, pokemon_index=pokemon_index))
+        self.positions[(team_index, pokemon_index)] = pokemon
 
     def check_position_validity(self, position: BattlePosition) -> bool:
         valid_positions = self.get_valid_positions()
@@ -77,31 +85,79 @@ class BattlePositionManager(BaseModel):
         if pokemon:
             return pokemon.is_fainted
         raise ValueError("No pokemon registered at the given position.")
-
-class SinglesBattlePositionManager(BattlePositionManager):
     
+    def get_opponent_teams(self, team_id: int) -> list[int]:
+        return [tid for tid in range(1, self.teams_count + 1) if tid != team_id]
+    
+    
+    def get_target_positions(self, user_position: BattlePosition, move_target: MoveTarget, selected_position: BattlePosition = None) -> list[BattlePosition]:
+        # For simplicity, only implement single target opponent logic
+        if move_target == MoveTarget.ALL_ALLIES:
+            team_id = user_position.team_id
+            return [pos for pos in self.list_registered_positions() if pos.team_id == team_id and pos != user_position]
+        
+        elif move_target == MoveTarget.ALL_OPPONENTS:
+            opponent_team_ids = self.get_opponent_teams(user_position.team_id)
+            return [pos for pos in self.list_registered_positions() if pos.team_id in opponent_team_ids]
+        
+        elif move_target == MoveTarget.ALL_OTHER_POKEMON:
+            return [pos for pos in self.list_registered_positions() if pos != user_position]
+        
+        elif move_target == MoveTarget.ALL_POKEMON:
+            return self.list_registered_positions()
+        
+        elif move_target == MoveTarget.ALLY:
+            team_id = user_position.team_id
+            return [pos for pos in self.list_registered_positions() if pos.team_id == team_id and pos != user_position]
+        
+        elif move_target == MoveTarget.ENTIRE_FIELD:
+            # TODO Field effects not implemented yet
+            pass
 
-    def get_valid_positions(self) -> list[BattlePosition]:
-        return [BattlePosition(team_id=1, pokemon_index=1), BattlePosition(team_id=2, pokemon_index=1)]
+        elif move_target == MoveTarget.FAINTING_POKEMON:
+            # TODO target needs to be a fainted pokemon in the teams party not a position on the field but needs to be handled here kinda at least for now
+            pass
 
-    def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
-        pokemon.set_position(BattlePosition(team_id=team_index, pokemon_index=pokemon_index))
-        self.positions[(team_index, pokemon_index)] = pokemon
+        elif move_target == MoveTarget.OPPONENTS_FIELD:
+            # TODO Field effects not implemented yet
+            pass
 
+        elif move_target == MoveTarget.RANDOM_OPPONENT:
+            opponent_team_ids = self.get_opponent_teams(user_position.team_id)
+            opponent_positions = [pos for pos in self.list_registered_positions() if pos.team_id in opponent_team_ids]
+            if opponent_positions:
+                return [random.choice(opponent_positions)]
+            else:
+                return []
+            
+        elif move_target == MoveTarget.SELECTED_POKEMON_ME_FIRST:
+            # TODO will need to work with the priority or the move processing system, currently unsure
+            target_position = selected_position
 
-class DoublesBattlePositionManager(BattlePositionManager):
-    positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
+        elif move_target == MoveTarget.SELECTED_POKEMON:
+            target_position = selected_position
+            return [target_position]
+        
+        elif move_target == MoveTarget.SPECIFIC_MOVE:
+            # from what I understand this usually targets the pokemon that hit the user last
+            pass
 
-    def get_valid_positions(self) -> list[BattlePosition]:
-        return [
-            BattlePosition(team_id=1, pokemon_index=1),
-            BattlePosition(team_id=1, pokemon_index=2),
-            BattlePosition(team_id=2, pokemon_index=1),
-            BattlePosition(team_id=2, pokemon_index=2),
-        ]
+        elif move_target == MoveTarget.USER_AND_ALLIES:
+            team_id = user_position.team_id
+            return [pos for pos in self.list_registered_positions() if pos.team_id == team_id]
 
-    def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
-        self.positions[(team_index, pokemon_index)] = pokemon
+        elif move_target == MoveTarget.USER_OR_ALLY:
+            # Return the user after a check for validity
+            if user_position.team_id == selected_position.team_id:
+                return [selected_position]
+            return ValueError("Selected position is not the user or an ally.")
 
-    def get_pokemon_at_position(self, position: BattlePosition) -> BattleMon:
-        return self.positions.get((position.team_id, position.pokemon_index))
+        elif move_target == MoveTarget.USER:
+            return [user_position]
+
+        elif move_target == MoveTarget.USERS_FIELD:
+            # TODO Field effects not implemented yet
+            pass
+
+        else:
+            raise ValueError("Unsupported move target type.")
