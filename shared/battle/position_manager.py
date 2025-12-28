@@ -1,11 +1,11 @@
 from pydantic import BaseModel, Field
 from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition 
 
 class BattlePositionManager(BaseModel):
-    positions: dict[tuple[int, int], Pokemon] = Field(default_factory=dict)
+    positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
     actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
 
     @abstractmethod
@@ -13,7 +13,7 @@ class BattlePositionManager(BaseModel):
         pass
 
     @abstractmethod
-    def register_pokemon(self, pokemon: Pokemon, team_index: int, pokemon_index: int):
+    def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
         pass
 
     def check_position_validity(self, position: BattlePosition) -> bool:
@@ -27,7 +27,7 @@ class BattlePositionManager(BaseModel):
                 missing_positions.append(position)
         return missing_positions
 
-    def get_pokemon_at_position(self, position: BattlePosition) -> Pokemon:
+    def get_pokemon_at_position(self, position: BattlePosition) -> BattleMon:
         return self.positions.get((position.team_id, position.pokemon_index))
 
     def position_actions(self):
@@ -64,7 +64,7 @@ class BattlePositionManager(BaseModel):
     def list_registered_positions(self) -> list[BattlePosition]:
         return [BattlePosition(team_id=team_id, pokemon_index=pokemon_index) for (team_id, pokemon_index) in self.positions.keys()]
     
-    def list_registered_pokemon(self) -> list[Pokemon]:
+    def list_registered_pokemon(self) -> list[BattleMon]:
         return list(self.positions.values())
     
     def list_unregistered_positions(self) -> list[BattlePosition]:
@@ -84,13 +84,13 @@ class SinglesBattlePositionManager(BattlePositionManager):
     def get_valid_positions(self) -> list[BattlePosition]:
         return [BattlePosition(team_id=1, pokemon_index=1), BattlePosition(team_id=2, pokemon_index=1)]
 
-    def register_pokemon(self, pokemon: Pokemon, team_index: int, pokemon_index: int):
+    def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
         pokemon.set_position(BattlePosition(team_id=team_index, pokemon_index=pokemon_index))
         self.positions[(team_index, pokemon_index)] = pokemon
 
 
 class DoublesBattlePositionManager(BattlePositionManager):
-    positions: dict[tuple[int, int], Pokemon] = Field(default_factory=dict)
+    positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
 
     def get_valid_positions(self) -> list[BattlePosition]:
         return [
@@ -100,8 +100,8 @@ class DoublesBattlePositionManager(BattlePositionManager):
             BattlePosition(team_id=2, pokemon_index=2),
         ]
 
-    def register_pokemon(self, pokemon: Pokemon, team_index: int, pokemon_index: int):
+    def register_pokemon(self, pokemon: BattleMon, team_index: int, pokemon_index: int):
         self.positions[(team_index, pokemon_index)] = pokemon
 
-    def get_pokemon_at_position(self, position: BattlePosition) -> Pokemon:
+    def get_pokemon_at_position(self, position: BattlePosition) -> BattleMon:
         return self.positions.get((position.team_id, position.pokemon_index))

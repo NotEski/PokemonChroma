@@ -20,8 +20,8 @@ class TestDamageCalculation:
         battle_state = BattleState()
         
         damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
@@ -36,11 +36,11 @@ class TestDamageCalculation:
         battle_state = BattleState()
         
         # Even with very low attack pokemon
-        pikachu_pokemon.pokemon.base_stats.attack = 1
+        pikachu_pokemon.pokemon_base.base_stats.attack = 1
         
         damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
@@ -54,16 +54,16 @@ class TestDamageCalculation:
         battle_state = BattleState()
         
         normal_damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
         )
         
         critical_damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=True,
             battle_state=battle_state
@@ -77,23 +77,23 @@ class TestDamageCalculation:
         from shared.pokemon.pokemon import Pokemon
         
         move_set = MoveSet(moves=[tackle_move])
-        low_level = Pokemon(pokemon=pikachu_base, level=5, move_set=move_set)
-        high_level = Pokemon(pokemon=pikachu_base, level=50, move_set=move_set)
+        low_level = Pokemon(pokemon_base=pikachu_base, level=5, move_set=move_set)
+        high_level = Pokemon(pokemon_base=pikachu_base, level=50, move_set=move_set)
         
         battle_state = BattleState()
         move = low_level.move_set.moves[1]
         
         low_damage = calculate_damage(
-            attacking_pokemon=low_level,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=low_level.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
         )
         
         high_damage = calculate_damage(
-            attacking_pokemon=high_level,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=high_level.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
@@ -110,9 +110,9 @@ class TestDamageCalculation:
         
         move = pikachu_pokemon.move_set.moves[1]
         
-        attack_modifier = _get_attack_stat_modifier(pikachu_pokemon, move.base_move)
-        
-        assert attack_modifier == pikachu_pokemon.stat_attack
+        bm = pikachu_pokemon.generate_battlemon()
+        attack_modifier = _get_attack_stat_modifier(bm, move.base_move)
+        assert attack_modifier == bm.stat_attack
 
     def test_special_move_uses_special_attack_stat(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
         """Test that special moves use special attack stat."""
@@ -123,9 +123,9 @@ class TestDamageCalculation:
         
         move = pikachu_pokemon.move_set.moves[24]
         
-        attack_modifier = _get_attack_stat_modifier(pikachu_pokemon, move.base_move)
-        
-        assert attack_modifier == pikachu_pokemon.stat_special_attack
+        bm = pikachu_pokemon.generate_battlemon()
+        attack_modifier = _get_attack_stat_modifier(bm, move.base_move)
+        assert attack_modifier == bm.stat_special_attack
 
 
 class TestCriticalHit:
@@ -133,13 +133,14 @@ class TestCriticalHit:
 
     def test_calculate_critical_hit_returns_bool(self, pikachu_pokemon):
         """Test that critical hit calculation returns a boolean."""
-        result = calculate_critical_hit(pikachu_pokemon)
+        result = calculate_critical_hit(pikachu_pokemon.generate_battlemon())
         assert isinstance(result, bool)
 
     def test_critical_hit_possible(self, pikachu_pokemon):
         """Test that critical hits can occur."""
         # Run multiple times to check if critical can occur
-        results = [calculate_critical_hit(pikachu_pokemon) for _ in range(1000)]
+        bm = pikachu_pokemon.generate_battlemon()
+        results = [calculate_critical_hit(bm) for _ in range(1000)]
         
         # At least one should be True (critical hit) in 1000 tries
         # This is probabilistic but very unlikely to fail
@@ -179,13 +180,13 @@ class TestDamageModifiers:
         
         # Pikachu (Electric type) using Electric move should get STAB
         electric_move = Move(base_move=thunderbolt_move, current_pp=15)
-        stab = _get_stab_modifier(pikachu_pokemon, electric_move.base_move)
+        stab = _get_stab_modifier(pikachu_pokemon.generate_battlemon(), electric_move.base_move)
         assert stab == 1.5
         
         # Eevee (Normal type) using Electric move should not get STAB
         move_set = MoveSet(moves=[thunderbolt_move])
         eevee_pokemon.move_set = move_set
-        no_stab = _get_stab_modifier(eevee_pokemon, electric_move.base_move)
+        no_stab = _get_stab_modifier(eevee_pokemon.generate_battlemon(), electric_move.base_move)
         assert no_stab == 1.0
 
     def test_defense_stat_modifier_physical(self, eevee_pokemon, tackle_move):
@@ -193,18 +194,18 @@ class TestDamageModifiers:
         from shared.pokemon.move import Move
         
         move = Move(base_move=tackle_move, current_pp=tackle_move.pp)
-        defense_mod = _get_defence_stat_modifier(eevee_pokemon, move.base_move)
-        
-        assert defense_mod == eevee_pokemon.stat_defense
+        bm = eevee_pokemon.generate_battlemon()
+        defense_mod = _get_defence_stat_modifier(bm, move.base_move)
+        assert defense_mod == bm.stat_defense
 
     def test_defense_stat_modifier_special(self, eevee_pokemon, thunderbolt_move):
         """Test defense stat modifier for special moves."""
         from shared.pokemon.move import Move
         
         move = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
-        defense_mod = _get_defence_stat_modifier(eevee_pokemon, move.base_move)
-        
-        assert defense_mod == eevee_pokemon.stat_special_defense
+        bm = eevee_pokemon.generate_battlemon()
+        defense_mod = _get_defence_stat_modifier(bm, move.base_move)
+        assert defense_mod == bm.stat_special_defense
 
 
 class TestTypeEffectiveness:
@@ -240,16 +241,16 @@ class TestTypeEffectiveness:
         )
         
         move_set = MoveSet(moves=[water_gun_move])
-        squirtle = Pokemon(pokemon=squirtle_base, level=20, move_set=move_set)
-        charmander = Pokemon(pokemon=charmander_base, level=20, move_set=move_set)
+        squirtle = Pokemon(pokemon_base=squirtle_base, level=20, move_set=move_set)
+        charmander = Pokemon(pokemon_base=charmander_base, level=20, move_set=move_set)
         
         battle_state = BattleState()
         move = squirtle.move_set.moves[55]  # Water Gun has index 55
         
         # Water is super effective against Fire
         damage = calculate_damage(
-            attacking_pokemon=squirtle,
-            defending_pokemon=charmander,
+            attacking_pokemon=squirtle.generate_battlemon(),
+            defending_pokemon=charmander.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
@@ -265,7 +266,7 @@ class TestTypeEffectiveness:
         
         # Test that type effectiveness function exists and returns a value
         # Note: _get_type_effectiveness_modifier may return 1.0 as placeholder
-        effectiveness = _get_type_effectiveness_modifier(electric_move.base_move, pikachu_pokemon)
+        effectiveness = _get_type_effectiveness_modifier(electric_move.base_move, pikachu_pokemon.generate_battlemon())
         assert effectiveness >= 0.0
         assert isinstance(effectiveness, float)
 
@@ -281,21 +282,22 @@ class TestWeatherEffects:
         charizard_pokemon.move_set = move_set
         
         battle_state_normal = BattleState()
-        battle_state_sun = BattleState(weather=BattleWeather.HARSH_SUNLIGHT)
+        battle_state_sun = BattleState()
+        battle_state_sun.set_weather(BattleWeather.HARSH_SUNLIGHT)
         
         move = charizard_pokemon.move_set.moves[15]  # Flamethrower has index 15
         
         normal_damage = calculate_damage(
-            attacking_pokemon=charizard_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=charizard_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state_normal
         )
         
         sun_damage = calculate_damage(
-            attacking_pokemon=charizard_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=charizard_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state_sun
@@ -319,18 +321,19 @@ class TestStatusConditions:
         
         # Normal damage
         normal_damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
-            move=move,
+            attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
+            move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
         )
         
         # Burned damage
-        pikachu_pokemon.pokemon_battle_state.status_conditions[StatusCondition.BURN] = 0
+        bm = pikachu_pokemon.generate_battlemon()
+        bm.status_conditions[StatusCondition.BURN] = 0
         burned_damage = calculate_damage(
-            attacking_pokemon=pikachu_pokemon,
-            defending_pokemon=eevee_pokemon,
+            attacking_pokemon=bm,
+            defending_pokemon=eevee_pokemon.generate_battlemon(),
             move=move.base_move,
             critical_hit=False,
             battle_state=battle_state
@@ -350,8 +353,8 @@ class TestDamageRange:
         # Calculate damage multiple times
         damages = [
             calculate_damage(
-                attacking_pokemon=pikachu_pokemon,
-                defending_pokemon=eevee_pokemon,
+                attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+                defending_pokemon=eevee_pokemon.generate_battlemon(),
                 move=move.base_move,
                 critical_hit=False,
                 battle_state=battle_state
@@ -370,8 +373,8 @@ class TestDamageRange:
         
         damages = [
             calculate_damage(
-                attacking_pokemon=pikachu_pokemon,
-                defending_pokemon=eevee_pokemon,
+                attacking_pokemon=pikachu_pokemon.generate_battlemon(),
+                defending_pokemon=eevee_pokemon.generate_battlemon(),
                 move=move.base_move,
                 critical_hit=False,
                 battle_state=battle_state

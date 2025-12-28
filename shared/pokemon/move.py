@@ -89,6 +89,40 @@ class Move(BaseModel):
     current_pp: int
     base_move: BaseMove
 
+#region Move property getters
+    @property
+    def type(self) -> PokemonType:
+        return self.base_move.type
+    @property
+    def name(self) -> str:
+        return self.base_move.name
+    @property
+    def index(self) -> int:
+        return self.base_move.index
+    @property
+    def damage_class(self) -> DamageClass:
+        return self.base_move.damage_class
+    @property
+    def category(self) -> MoveCategory:
+        return self.base_move.category
+    @property
+    def power(self) -> Optional[int]:
+        return self.base_move.power
+    @property
+    def accuracy(self) -> Optional[int]:
+        return self.base_move.accuracy
+    @property
+    def pp(self) -> int:
+        return self.base_move.pp
+    @property
+    def target(self) -> MoveTarget:
+        return self.base_move.target
+    @property
+    def priority(self) -> int:
+        return self.base_move.priority
+#endregion
+
+
 class StatChange(BaseModel):
     stat: Stat
     change: int  # Positive for increase, negative for decrease

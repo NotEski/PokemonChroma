@@ -76,8 +76,8 @@ class TestBattleInitialization:
         
         assert pokemon_1 is not None
         assert pokemon_2 is not None
-        assert pokemon_1.pokemon.name == "Pikachu"
-        assert pokemon_2.pokemon.name == "Eevee"
+        assert pokemon_1.pokemon_base.name == "Pikachu"
+        assert pokemon_2.pokemon_base.name == "Eevee"
 
 
 class TestTurnManagement:
@@ -343,15 +343,16 @@ class TestBattleState:
         
         battle = SingleBattleManager(team_1=trainer_opponent, team_2=wild_opponent)
         battle.init_battle()
-        
-        # Modify stat stages
-        pikachu_pokemon.pokemon_battle_state.attack_stat_stage = 2
-        eevee_pokemon.pokemon_battle_state.defense_stat_stage = -1
-        
-        battle.end_battle()
-        
-        assert pikachu_pokemon.pokemon_battle_state.attack_stat_stage == 0
-        assert eevee_pokemon.pokemon_battle_state.defense_stat_stage == 0
+
+        # Modify stat stages on active BattleMons
+        pikachu_pokemon.battlemon.stat_stages.attack_stat_stage = 2
+        eevee_pokemon.battlemon.stat_stages.defense_stat_stage = -1
+
+        # Clear battle to reset stat stages
+        battle.clear_battle()
+
+        assert pikachu_pokemon.battlemon.stat_stages.attack_stat_stage == 0
+        assert eevee_pokemon.battlemon.stat_stages.defense_stat_stage == 0
 
 
 class TestOpponentActions:

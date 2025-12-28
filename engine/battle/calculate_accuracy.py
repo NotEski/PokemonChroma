@@ -1,11 +1,11 @@
 import random
 from shared.pokemon.move import BaseMove, DamageClass
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import BattleMon
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.status_conditions import StatusCondition
 
 
-def calculate_accuracy(base_move: BaseMove, user: Pokemon, target: Pokemon, battle_state: BattleState) -> float:
+def calculate_accuracy(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:
     # Placeholder for actual calculation logic
 
     affection_bonus = 1.0  # Check user's affection level
@@ -20,14 +20,14 @@ def calculate_accuracy(base_move: BaseMove, user: Pokemon, target: Pokemon, batt
     return accuracy_modified
 
 
-def _get_other_modifiers(base_move: BaseMove, user: Pokemon, target: Pokemon, battle_state: BattleState) -> float:
+def _get_other_modifiers(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:
     modifier = 1.0
 
     # Gravity 1.67
 
     # Tangled Feet * 0.5
     if target.abilities.has_ability("tangled_feet"):
-        if StatusCondition.CONFUSION in target.pokemon_battle_state.non_volatile_status_conditions:
+        if StatusCondition.CONFUSION in target.non_volatile_status_conditions:
             modifier *= 0.5
 
     # Hustle 0.8 - if the attacker has it and it's a physical move
@@ -68,9 +68,9 @@ def _get_other_modifiers(base_move: BaseMove, user: Pokemon, target: Pokemon, ba
 
     return modifier
 
-def _get_accuracy_stage_modifier(user: Pokemon, target: Pokemon) -> float:
-    accuracy_stage_target = target.pokemon_battle_state.evasion_stage
-    accuracy_stage_user = user.pokemon_battle_state.accuracy_stage
+def _get_accuracy_stage_modifier(user: BattleMon, target: BattleMon) -> float:
+    accuracy_stage_target = target.evasion_stage
+    accuracy_stage_user = user.accuracy_stage
 
     if accuracy_stage_user > 6:
         accuracy_stage_user = 6
@@ -114,7 +114,7 @@ def _get_accuracy_stage_modifier(user: Pokemon, target: Pokemon) -> float:
             return 1.0
     return 1.0
 
-def _get_micle_berry_modifier(user: Pokemon) -> float:
+def _get_micle_berry_modifier(user: BattleMon) -> float:
     # pokemon eating the micle berry
     if user.held_item == "micle_berry":
         if user.abilities.has_ability("guts"):

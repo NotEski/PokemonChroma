@@ -70,3 +70,7 @@ class BattleState(BaseModel):
             if self.weather_turns.remaining_turns == 0:
                 self.weather_turns.weather = BattleWeather.NONE
                 self.weather_turns.remaining_turns = -1
+
+    def set_weather(self, weather: BattleWeather, turns: int = 5):
+        self.weather_turns.weather = weather
+        self.weather_turns.remaining_turns = turns

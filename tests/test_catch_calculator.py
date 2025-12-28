@@ -17,13 +17,13 @@ class TestCalculateCatchProbability:
     def test_master_ball_guaranteed_catch(self, eevee_pokemon):
         """Master Ball should return maximum shake value (guaranteed catch)."""
         master_ball = Pokeball(name="Master Ball", catch_rate_modifier=255.0)
-        shake_chance = calculate_catch_probability(eevee_pokemon, master_ball)
+        shake_chance = calculate_catch_probability(eevee_pokemon.generate_battlemon(), master_ball)
         # Should return 65537 or higher (above max 16-bit value)
         assert shake_chance > 65536
 
     def test_standard_pokeball_catch_chance(self, eevee_pokemon, pokeball):
         """Standard Pokeball should return a reasonable catch chance."""
-        shake_chance = calculate_catch_probability(eevee_pokemon, pokeball)
+        shake_chance = calculate_catch_probability(eevee_pokemon.generate_battlemon(), pokeball)
         # Should be between 0 and 65536
         assert 0 <= shake_chance <= 65536
 
@@ -33,9 +33,10 @@ class TestCalculateCatchProbability:
         great_ball = Pokeball(name="Great Ball", catch_rate_modifier=1.5)
         ultra_ball = Pokeball(name="Ultra Ball", catch_rate_modifier=2.0)
         
-        chance_pokeball = calculate_catch_probability(eevee_pokemon, pokeball)
-        chance_great = calculate_catch_probability(eevee_pokemon, great_ball)
-        chance_ultra = calculate_catch_probability(eevee_pokemon, ultra_ball)
+        bm = eevee_pokemon.generate_battlemon()
+        chance_pokeball = calculate_catch_probability(bm, pokeball)
+        chance_great = calculate_catch_probability(bm, great_ball)
+        chance_ultra = calculate_catch_probability(bm, ultra_ball)
         
         assert chance_pokeball < chance_great < chance_ultra
 
@@ -44,61 +45,65 @@ class TestCalculateCatchProbability:
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
         # Full HP Pokemon
-        pokemon_full = Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+        pokemon_full = Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
         
         # Low HP Pokemon
-        pokemon_low = Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+        pokemon_low = Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
         pokemon_low.current_hp = int(pokemon_low.max_hp * 0.25)  # 25% HP
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         
-        chance_full = calculate_catch_probability(pokemon_full, pokeball)
-        chance_low = calculate_catch_probability(pokemon_low, pokeball)
+        chance_full = calculate_catch_probability(pokemon_full.generate_battlemon(), pokeball)
+        chance_low = calculate_catch_probability(pokemon_low.generate_battlemon(), pokeball)
         
         assert chance_low > chance_full
 
     def test_catch_probability_with_status_conditions(self, eevee_pokemon, pokeball):
         """Pokemon with status conditions should be easier to catch."""
-        chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm = eevee_pokemon.generate_battlemon()
+        chance_healthy = calculate_catch_probability(bm, pokeball)
         
         # Test big bonus status (SLEEP)
-        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.SLEEP] = 0
-        chance_sleep = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions[StatusCondition.SLEEP] = 0
+        chance_sleep = calculate_catch_probability(bm, pokeball)
         assert chance_sleep > chance_healthy
         
         # Reset and test small bonus status (BURN)
-        eevee_pokemon.pokemon_battle_state.status_conditions.clear()
-        chance_healthy2 = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions.clear()
+        chance_healthy2 = calculate_catch_probability(bm, pokeball)
         
-        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.BURN] = 0
-        chance_burned = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions[StatusCondition.BURN] = 0
+        chance_burned = calculate_catch_probability(bm, pokeball)
         assert chance_burned > chance_healthy2
         assert chance_sleep > chance_burned  # Big bonus > small bonus
 
     def test_frozen_status_big_bonus(self, eevee_pokemon, pokeball):
         """Frozen Pokemon should get big catch bonus."""
-        chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm = eevee_pokemon.generate_battlemon()
+        chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.FREEZE] = 0
-        chance_frozen = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions[StatusCondition.FREEZE] = 0
+        chance_frozen = calculate_catch_probability(bm, pokeball)
         
         assert chance_frozen > chance_healthy
 
     def test_paralyzed_status_small_bonus(self, eevee_pokemon, pokeball):
         """Paralyzed Pokemon should get small catch bonus."""
-        chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm = eevee_pokemon.generate_battlemon()
+        chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.PARALYSIS] = 0
-        chance_paralyzed = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions[StatusCondition.PARALYSIS] = 0
+        chance_paralyzed = calculate_catch_probability(bm, pokeball)
         
         assert chance_paralyzed > chance_healthy
 
     def test_poisoned_status_small_bonus(self, eevee_pokemon, pokeball):
         """Poisoned Pokemon should get small catch bonus."""
-        chance_healthy = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm = eevee_pokemon.generate_battlemon()
+        chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        eevee_pokemon.pokemon_battle_state.status_conditions[StatusCondition.POISON] = 0
-        chance_poisoned = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.status_conditions[StatusCondition.POISON] = 0
+        chance_poisoned = calculate_catch_probability(bm, pokeball)
         
         assert chance_poisoned > chance_healthy
 
@@ -106,15 +111,15 @@ class TestCalculateCatchProbability:
         """Lower level Pokemon should be easier to catch."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
-        pokemon_level_5 = Pokemon(pokemon=eevee_base, level=5, move_set=move_set)
-        pokemon_level_20 = Pokemon(pokemon=eevee_base, level=20, move_set=move_set)
-        pokemon_level_50 = Pokemon(pokemon=eevee_base, level=50, move_set=move_set)
+        pokemon_level_5 = Pokemon(pokemon_base=eevee_base, level=5, move_set=move_set)
+        pokemon_level_20 = Pokemon(pokemon_base=eevee_base, level=20, move_set=move_set)
+        pokemon_level_50 = Pokemon(pokemon_base=eevee_base, level=50, move_set=move_set)
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         
-        chance_5 = calculate_catch_probability(pokemon_level_5, pokeball)
-        chance_20 = calculate_catch_probability(pokemon_level_20, pokeball)
-        chance_50 = calculate_catch_probability(pokemon_level_50, pokeball)
+        chance_5 = calculate_catch_probability(pokemon_level_5.generate_battlemon(), pokeball)
+        chance_20 = calculate_catch_probability(pokemon_level_20.generate_battlemon(), pokeball)
+        chance_50 = calculate_catch_probability(pokemon_level_50.generate_battlemon(), pokeball)
         
         # Lower level should be easier to catch
         # bonus_level = max((30-level)//10, 1)
@@ -128,26 +133,26 @@ class TestCalculateCatchProbability:
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
         # Pikachu has 190 capture rate, Eevee has 45
-        pikachu = Pokemon(pokemon=pikachu_base, level=10, move_set=move_set)
-        eevee = Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=10, move_set=move_set)
+        eevee = Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         
-        chance_pikachu = calculate_catch_probability(pikachu, pokeball)
-        chance_eevee = calculate_catch_probability(eevee, pokeball)
+        chance_pikachu = calculate_catch_probability(pikachu.generate_battlemon(), pokeball)
+        chance_eevee = calculate_catch_probability(eevee.generate_battlemon(), pokeball)
         
         assert chance_pikachu > chance_eevee
 
     def test_catch_probability_modifiers_stack(self, eevee_pokemon, pokeball):
         """Multiple modifiers should stack properly."""
         # Get baseline
-        eevee_pokemon.external_status_condition = StatusCondition.NONE
-        baseline = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm = eevee_pokemon.generate_battlemon()
+        baseline = calculate_catch_probability(bm, pokeball)
         
         # Apply HP damage + status
-        eevee_pokemon.current_hp = int(eevee_pokemon.max_hp * 0.25)
-        eevee_pokemon.external_status_condition = StatusCondition.SLEEP
-        modified = calculate_catch_probability(eevee_pokemon, pokeball)
+        bm.current_hp = int(bm.max_hp * 0.25)
+        bm.status_conditions[StatusCondition.SLEEP] = 0
+        modified = calculate_catch_probability(bm, pokeball)
         
         assert modified > baseline
 
@@ -206,7 +211,7 @@ class TestCatchAttempt:
     def test_catch_attempt_success(self, mock_shake, eevee_pokemon, pokeball):
         """All four shakes should succeed for a catch."""
         mock_shake.return_value = True  # All shakes succeed
-        result = catch_attempt(eevee_pokemon, pokeball)
+        result = catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         assert result is True
         assert mock_shake.call_count == 4
@@ -215,7 +220,7 @@ class TestCatchAttempt:
     def test_catch_attempt_failure_first_shake(self, mock_shake, eevee_pokemon, pokeball):
         """Failure on first shake should fail catch."""
         mock_shake.return_value = False
-        result = catch_attempt(eevee_pokemon, pokeball)
+        result = catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         assert result is False
         assert mock_shake.call_count == 1
@@ -225,7 +230,7 @@ class TestCatchAttempt:
     def test_catch_attempt_failure_second_shake(self, mock_sleep, mock_shake, eevee_pokemon, pokeball):
         """Failure on second shake should fail catch."""
         mock_shake.side_effect = [True, False]
-        result = catch_attempt(eevee_pokemon, pokeball)
+        result = catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         assert result is False
         assert mock_shake.call_count == 2
@@ -235,7 +240,7 @@ class TestCatchAttempt:
     def test_catch_attempt_failure_third_shake(self, mock_sleep, mock_shake, eevee_pokemon, pokeball):
         """Failure on third shake should fail catch."""
         mock_shake.side_effect = [True, True, False]
-        result = catch_attempt(eevee_pokemon, pokeball)
+        result = catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         assert result is False
         assert mock_shake.call_count == 3
@@ -245,7 +250,7 @@ class TestCatchAttempt:
     def test_catch_attempt_failure_fourth_shake(self, mock_sleep, mock_shake, eevee_pokemon, pokeball):
         """Failure on fourth shake should fail catch."""
         mock_shake.side_effect = [True, True, True, False]
-        result = catch_attempt(eevee_pokemon, pokeball)
+        result = catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         assert result is False
         assert mock_shake.call_count == 4
@@ -256,7 +261,7 @@ class TestCatchAttempt:
         """Catch attempt should use calculate_catch_probability internally."""
         mock_shake.return_value = True
         
-        catch_attempt(eevee_pokemon, pokeball)
+        catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         
         # Verify calculate_shake was called 4 times with values in valid range
         assert mock_shake.call_count == 4
@@ -272,12 +277,12 @@ class TestCatchCalculatorIntegration:
         """Low level, low HP, with status should have high catch rate."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
-        pokemon = Pokemon(pokemon=eevee_base, level=5, move_set=move_set)
+        pokemon = Pokemon(pokemon_base=eevee_base, level=5, move_set=move_set)
         pokemon.current_hp = 1  # Near death
         pokemon.external_status_condition = StatusCondition.SLEEP
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
-        shake_chance = calculate_catch_probability(pokemon, pokeball)
+        shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
         
         # Should have very high catch rate
         assert shake_chance > 40000
@@ -286,12 +291,12 @@ class TestCatchCalculatorIntegration:
         """High level, full HP, no status should have low catch rate."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
-        pokemon = Pokemon(pokemon=charizard_base, level=50, move_set=move_set)
+        pokemon = Pokemon(pokemon_base=charizard_base, level=50, move_set=move_set)
         # Keep full HP (default)
         pokemon.external_status_condition = StatusCondition.NONE
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
-        shake_chance = calculate_catch_probability(pokemon, pokeball)
+        shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
         
         # Should have a lower catch rate than an easy catch scenario
         # But Charizard's capture rate is still low (45) making it hard regardless
@@ -307,11 +312,11 @@ class TestCatchCalculatorIntegration:
         ultra_ball = Pokeball(name="Ultra Ball", catch_rate_modifier=2.0)
         
         # With mocked shakes, both succeed, but different probability values should be used
-        catch_attempt(eevee_pokemon, pokeball)
+        catch_attempt(eevee_pokemon.generate_battlemon(), pokeball)
         call_count_pokeball = mock_shake.call_count
         
         mock_shake.reset_mock()
-        catch_attempt(eevee_pokemon, ultra_ball)
+        catch_attempt(eevee_pokemon.generate_battlemon(), ultra_ball)
         call_count_ultra = mock_shake.call_count
         
         # Both should have 4 shake attempts
@@ -322,15 +327,15 @@ class TestCatchCalculatorIntegration:
         """Capture rate should be clamped between 1 and 255."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
         
-        pokemon = Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+        pokemon = Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
         
         # Very low modifier (should be clamped to 1)
         low_ball = Pokeball(name="Low Ball", catch_rate_modifier=0.001)
-        chance_low = calculate_catch_probability(pokemon, low_ball)
+        chance_low = calculate_catch_probability(pokemon.generate_battlemon(), low_ball)
         
         # Very high modifier (should be clamped to 255)
         high_ball = Pokeball(name="High Ball", catch_rate_modifier=1000.0)
-        chance_high = calculate_catch_probability(pokemon, high_ball)
+        chance_high = calculate_catch_probability(pokemon.generate_battlemon(), high_ball)
         
         # Both should return valid values
         assert 0 <= chance_low <= 65536
@@ -344,22 +349,22 @@ class TestCatchCalculatorEdgeCases:
     def test_catch_probability_with_zero_hp(self, eevee_base, tackle_move):
         """Pokemon with 0 HP should still calculate (though shouldn't happen in practice)."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
-        pokemon = Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+        pokemon = Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
         pokemon.current_hp = 0
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         # Should not raise an error
-        shake_chance = calculate_catch_probability(pokemon, pokeball)
+        shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
         assert isinstance(shake_chance, (int, float))
         assert shake_chance >= 0
 
     def test_catch_probability_with_very_high_level(self, eevee_base, tackle_move):
         """Very high level Pokemon should still calculate properly."""
         move_set = pytest.importorskip("shared.pokemon.move").MoveSet(moves=[tackle_move])
-        pokemon = Pokemon(pokemon=eevee_base, level=100, move_set=move_set)
+        pokemon = Pokemon(pokemon_base=eevee_base, level=100, move_set=move_set)
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
-        shake_chance = calculate_catch_probability(pokemon, pokeball)
+        shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
         
         assert 0 <= shake_chance <= 65536
 
@@ -375,10 +380,11 @@ class TestCatchCalculatorEdgeCases:
         ]
         
         chances = {}
+        bm = eevee_pokemon.generate_battlemon()
         for status, is_big_bonus in statuses_to_test:
-            eevee_pokemon.pokemon_battle_state.status_conditions.clear()
-            eevee_pokemon.pokemon_battle_state.status_conditions[status] = 0
-            chances[status] = calculate_catch_probability(eevee_pokemon, pokeball)
+            bm.status_conditions.clear()
+            bm.status_conditions[status] = 0
+            chances[status] = calculate_catch_probability(bm, pokeball)
         
         # Verify big bonus statuses have higher catch rates than small bonus
         assert chances[StatusCondition.SLEEP] > chances[StatusCondition.PARALYSIS]

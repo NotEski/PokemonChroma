@@ -1,13 +1,13 @@
 # Speed Processing
 from pydantic import BaseModel
-from shared.pokemon.pokemon import Pokemon
-def calculate_speed(pokemon: Pokemon) -> int:
+from shared.pokemon.pokemon import BattleMon
+def calculate_speed(pokemon: BattleMon) -> int:
 
     # Start with the Pokemon's raw, untouched speed stat
     pokemon_speed = pokemon.stat_speed
 
     # if boost rank (R) > 0, multiply speed by (2+R), truncate to 16 bits, divide by 2 and round down
-    boost_rank = pokemon.pokemon_battle_state.speed_stat_stage
+    boost_rank = pokemon.speed_stat_stage
     if boost_rank > 0:
         pokemon_speed = (pokemon_speed * (2 + boost_rank)) // 2
 

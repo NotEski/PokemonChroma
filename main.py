@@ -5,9 +5,12 @@ from engine.battle.battle_manager import SingleBattleManager
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.trainer.trainer import Trainer
-from shared.pokemon.pokemon import PokemonTeam, Pokemon
+from shared.pokemon.pokemon import PokemonTeam, Pokemon, BattleMon
+from shared.battle.battle_actions import MoveAction
 
 import os
+import sys
+import traceback
 import tkinter as tk
 from tkinter import ttk, messagebox
 
@@ -38,12 +41,11 @@ def simulate_sample_battle():
     pikachu_base = pokemon_repository.get("pikachu")
     eevee_base = pokemon_repository.get("eevee")
 
-    pikachu = Pokemon(pokemon=pikachu_base, level=15, move_set=pikachu_moveset)
+    pikachu = Pokemon(pokemon_base=pikachu_base, level=15, move_set=pikachu_moveset)
     pikachu.nickname = "Pika"
     pikachu.held_item = item_repository.get("light_ball")
 
-    eevee = Pokemon(pokemon=eevee_base, level=10, move_set=eevee_moveset)
-
+    eevee = Pokemon(pokemon_base=eevee_base, level=10, move_set=eevee_moveset)
     ashes_team = PokemonTeam(pokemons=[pikachu])
     trainer = Trainer(name="Ash", team=ashes_team)
     
@@ -61,7 +63,14 @@ class BattleInspectorWindow:
     def __init__(self):
         self.root = tk.Tk()
         self.root.title("Pokemon Chroma Battle Inspector")
-        self.root.geometry("980x640")
+        self.root.geometry("1080x720")
+
+        # Print full tracebacks to terminal for Tkinter callback errors
+        def _tk_exception_printer(exc, val, tb):
+            print("[Tkinter] Exception in callback:")
+            traceback.print_exception(exc, val, tb)
+
+        self.root.report_callback_exception = _tk_exception_printer
 
         self.turn_label = None
         self.team_frames = {}
@@ -135,8 +144,11 @@ class BattleInspectorWindow:
         queue_button = ttk.Button(frame, text="Queue Move")
         queue_button.grid(row=8, column=0, sticky="ew", pady=(0, 6))
 
+        mega_button = ttk.Button(frame, text="Mega Evolve")
+        mega_button.grid(row=9, column=0, sticky="ew", pady=(0, 6))
+
         queued_label = ttk.Label(frame, text="Queued: none")
-        queued_label.grid(row=9, column=0, sticky="w")
+        queued_label.grid(row=10, column=0, sticky="w")
 
         return {
             "frame": frame,
@@ -149,6 +161,7 @@ class BattleInspectorWindow:
             "move_var": move_var,
             "move_selector": move_selector,
             "queue_button": queue_button,
+            "mega_button": mega_button,
             "queued_label": queued_label,
         }
 
@@ -164,25 +177,32 @@ class BattleInspectorWindow:
         color = "#4caf50" if ratio > 0.5 else ("#ffc107" if ratio > 0.2 else "#f44336")
         canvas.create_rectangle(0, 0, fill_width, height, fill=color, width=0)
 
-    def _format_status(self, pokemon: Pokemon) -> str:
-        statuses = list(pokemon.pokemon_battle_state.status_conditions.keys())
+    def _format_status(self, pokemon) -> str:
+        # Supports either BattleMon or Pokemon with an attached battlemon
+        statuses_dict = None
+        if hasattr(pokemon, "status_conditions"):
+            statuses_dict = pokemon.status_conditions
+        elif hasattr(pokemon, "battlemon") and pokemon.battlemon is not None and hasattr(pokemon.battlemon, "status_conditions"):
+            statuses_dict = pokemon.status_conditions
+
+        statuses = list(statuses_dict.keys()) if statuses_dict else []
         if not statuses:
             return "Status: none"
-        names = ", ".join([s.value if hasattr(s, "value") else str(s) for s in statuses])
+        names = ", ".join([getattr(s, "value", str(s)) for s in statuses])
         return f"Status: {names}"
 
-    def _format_moves(self, moves_listbox: tk.Listbox, move_selector: ttk.Combobox, move_var: tk.StringVar, pokemon: Pokemon):
+    def _format_moves(self, moves_listbox: tk.Listbox, move_selector: ttk.Combobox, move_var: tk.StringVar, pokemon):
         moves_listbox.delete(0, tk.END)
         move_names = []
         for move in pokemon.move_set.moves.values():
-            display = f"{move.base_move.name}  PP {move.current_pp}/{move.base_move.pp}"
+            display = f"{move.name}  PP {move.current_pp}/{move.pp}"
             moves_listbox.insert(tk.END, display)
-            move_names.append(move.base_move.name)
+            move_names.append(move.name)
         move_selector["values"] = move_names
         if move_names:
             move_var.set(move_names[0])
 
-    def _update_panel(self, panel_widgets: dict, pokemon: Pokemon, owner_label: str, position: BattlePosition):
+    def _update_panel(self, panel_widgets: dict, pokemon, owner_label: str, position: BattlePosition):
         panel_widgets["trainer"].config(text=f"Trainer: {owner_label}")
         if pokemon is None:
             panel_widgets["name"].config(text="Pokemon: -")
@@ -193,11 +213,17 @@ class BattleInspectorWindow:
             panel_widgets["queued_label"].config(text="Queued: none")
             return
 
-        panel_widgets["name"].config(text=f"Pokemon: {pokemon.nickname} (Lv {pokemon.level})")
+        base_name = getattr(pokemon.pokemon_base, "name_readable", None) or getattr(pokemon.pokemon_base, "name", "-")
+        panel_widgets["name"].config(text=f"Pokemon: {pokemon.nickname} (Lv {pokemon.level}) [{base_name}]")
         panel_widgets["hp_text"].config(text=f"HP: {pokemon.current_hp}/{pokemon.max_hp}")
         panel_widgets["status"].config(text=self._format_status(pokemon))
         self._draw_hp_bar(panel_widgets["hp_canvas"], pokemon.current_hp, pokemon.max_hp)
         self._format_moves(panel_widgets["moves"], panel_widgets["move_selector"], panel_widgets["move_var"], pokemon)
+
+        mega_btn = panel_widgets.get("mega_button")
+        if mega_btn:
+            state = "disabled" if getattr(pokemon, "pokemon_enhancement_used", False) else "normal"
+            mega_btn.state([state]) if state == "disabled" else mega_btn.state(["!disabled"])
 
         action = self.battle_manager.position_manager.get_position_action(position)
         if action:
@@ -205,7 +231,7 @@ class BattleInspectorWindow:
             if action_name is not None:
                 move_obj = pokemon.move_set.moves.get(action.move_index)
                 if move_obj:
-                    panel_widgets["queued_label"].config(text=f"Queued: {move_obj.base_move.name}")
+                    panel_widgets["queued_label"].config(text=f"Queued: {move_obj.name}")
                     return
             panel_widgets["queued_label"].config(text="Queued: action set")
         else:
@@ -256,6 +282,7 @@ class BattleInspectorWindow:
         # wire queue buttons to the freshly created battle
         for team_id, panel in self.team_frames.items():
             panel["queue_button"].configure(command=lambda tid=team_id: self.queue_move(tid))
+            panel["mega_button"].configure(command=lambda tid=team_id: self.mega_evolve(tid))
 
     def queue_move(self, team_id: int):
         if self.battle_manager is None:
@@ -263,22 +290,29 @@ class BattleInspectorWindow:
         position = BattlePosition(team_id=team_id, pokemon_index=1)
         pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
         if pokemon is None:
-            messagebox.showerror("Queue Move", "No pokemon at this position.")
+            # Print error instead of popup to surface in terminal
+            print("Queue Move error: No pokemon at this position.")
             return
 
         move_name = self.team_frames[team_id]["move_var"].get()
         if not move_name:
-            messagebox.showerror("Queue Move", "Select a move first.")
+            print("Queue Move error: Select a move first.")
             return
 
         try:
-            action = pokemon.create_move_action(
-                move=move_name,
-                target_position=self.battle_manager.position_manager.get_direct_opponent_position(position)
-            )
-            self.battle_manager.submit_action(action)
-        except Exception as exc:
-            messagebox.showerror("Queue Move", f"Could not queue move: {exc}")
+            # Resolve move index from the current Pokemon/BattleMon move set
+            move_obj = pokemon.move_set.get_move_by_name(move_name)
+            if move_obj is None:
+                raise ValueError(f"Move '{move_name}' not found on this pokemon.")
+
+            move_index = move_obj.index
+            target_position = self.battle_manager.position_manager.get_direct_opponent_position(position)
+
+            # Submit the move action directly to the battle manager
+            self.battle_manager.submit_action(MoveAction(position=position, move_index=move_index, target_position=target_position))
+        except Exception:
+            # Print full traceback to terminal; let Tk keep running
+            traceback.print_exc()
             return
 
         self._render_state()
@@ -288,8 +322,8 @@ class BattleInspectorWindow:
             return
         try:
             self.battle_manager.end_turn()
-        except Exception as exc:
-            messagebox.showerror("End Turn", f"Turn could not end: {exc}")
+        except Exception:
+            traceback.print_exc()
             return
 
         # Advance to the next turn if battle continues
@@ -298,6 +332,38 @@ class BattleInspectorWindow:
         except Exception:
             # if battle ended, ignore
             pass
+
+        self._render_state()
+
+    def _get_dragonite_base(self):
+        # Lazy-load Dragonite base for testing mega evolution.
+        if not hasattr(self, "_dragonite_base"):
+            self._dragonite_base = pokemon_repository.get("dragonite")
+        return self._dragonite_base
+
+    def mega_evolve(self, team_id: int):
+        if self.battle_manager is None:
+            return
+        position = BattlePosition(team_id=team_id, pokemon_index=1)
+        pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
+        if pokemon is None:
+            print("Mega Evolve error: No pokemon at this position.")
+            return
+
+        if getattr(pokemon, "pokemon_enhancement_used", False):
+            print("Mega Evolve: Enhancement already used.")
+            return
+
+        mega_base = self._get_dragonite_base()
+        if mega_base is None:
+            print("Mega Evolve error: Dragonite base not found in repository.")
+            return
+
+        try:
+            pokemon.mega_evolve(mega_base)
+        except Exception:
+            traceback.print_exc()
+            return
 
         self._render_state()
 

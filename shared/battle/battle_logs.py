@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from typing import List, Literal, Optional, TypedDict, Unpack, NotRequired
 from enum import Enum
 
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import BaseMove
 from shared.trainer.trainer import Trainer
@@ -33,8 +33,8 @@ class BattleLogEntry(BaseModel):
 
 class BattleLogMoveUsed(BattleLogEntry):
     move_name: BaseMove
-    user_pokemon: Pokemon
-    target_pokemon: Optional[List[Pokemon]] = Field(default_factory=list)
+    user_pokemon: BattleMon
+    target_pokemon: Optional[List[BattleMon]] = Field(default_factory=list)
     damage_dealt: int = Field(default=0)
     is_critical: bool = Field(default=False)
     status_condition_applied: Optional[StatusCondition] = Field(default=None)  # e.g., "burn", "paralysis", etc.
@@ -43,8 +43,8 @@ class BattleLogMoveUsed(BattleLogEntry):
 
 class BattleLogMoveUsedData(TypedDict):
     move_name: BaseMove
-    user_pokemon: Pokemon
-    target_pokemon: NotRequired[List[Pokemon]]
+    user_pokemon: BattleMon
+    target_pokemon: NotRequired[List[BattleMon]]
     damage_dealt: NotRequired[int]
     is_critical: NotRequired[bool]
     status_condition_applied: NotRequired[StatusCondition]
@@ -53,26 +53,26 @@ class BattleLogMoveUsedData(TypedDict):
 
 
 class BattleLogPokemonFainted(BattleLogEntry):
-    fainted_pokemon: Pokemon
+    fainted_pokemon: BattleMon
     pokemon_position: BattlePosition
     trainer: Trainer
     log_type: Literal[BattleLogType.POKEMON_FAINTED] = BattleLogType.POKEMON_FAINTED
 
 class BattleLogPokemonFaintedData(TypedDict):
-    fainted_pokemon: Pokemon
+    fainted_pokemon: BattleMon
     pokemon_position: BattlePosition
     trainer: Trainer
     description: NotRequired[str]
 
 
 class BattleLogPokemonSwitchIn(BattleLogEntry):
-    switched_in_pokemon: Pokemon
+    switched_in_pokemon: BattleMon
     posistion: BattlePosition
     trainer: Trainer
     log_type: Literal[BattleLogType.POKEMON_SWITCH_IN] = BattleLogType.POKEMON_SWITCH_IN
 
 class BattleLogPokemonSwitchInData(TypedDict):
-    switched_in_pokemon: Pokemon
+    switched_in_pokemon: BattleMon
     posistion: BattlePosition
     trainer: Trainer
     description: NotRequired[str]

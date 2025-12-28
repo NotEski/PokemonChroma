@@ -6,7 +6,7 @@ from typing import TypeVar, Generic
 from pydantic import BaseModel, Field
 from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction
-from shared.pokemon.pokemon import Pokemon, PokemonBattleState
+from shared.pokemon.pokemon import BattleMon, StatStages
 from shared.battle.battle_header import *
 from shared.battle.battle_logs import BattleLogManager
 from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
@@ -57,8 +57,8 @@ class BattleManager(BaseModel, Generic[TPosition]):
     # endregion
 
     # region Utility Methods
-    def clear_pokemon_stat_stages(self, pokemon: Pokemon):
-        pokemon.pokemon_battle_state = PokemonBattleState()
+    def clear_pokemon_stat_stages(self, pokemon: BattleMon):
+        pokemon.stat_stages = StatStages()
 
     def _has_actioned(self, position: BattlePosition) -> bool:
         return self.position_manager.get_position_action(position) is not None
@@ -113,7 +113,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
         self.position_manager.add_position_action(user_position, MoveAction(move_index=move_index, position=user_position, target_position=target_position))
 
-    def switch_pokemon(self, user_position: BattlePosition, new_pokemon: Pokemon):
+    def switch_pokemon(self, user_position: BattlePosition, new_pokemon: BattleMon):
         if self._has_actioned(user_position): return
         self.position_manager.add_position_action(user_position, SwitchAction(switch_in_position=new_pokemon))
     def cancel_action(self, user_position: BattlePosition):
@@ -208,7 +208,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 user_pokemon = self.position_manager.get_pokemon_at_position(position)
                 move = user_pokemon.move_set.moves.get(action.move_index)
                 if move is not None:
-                    priority = move.base_move.priority
+                    priority = move.priority
                     if priority not in priority_positions:
                         priority_positions[priority] = []
                     priority_positions[priority].append(position)
@@ -249,7 +249,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
             return
         elif weather == BattleWeather.HAIL:
             for pokemon in self.position_manager.list_registered_pokemon():
-                if PokemonType.ICE in pokemon.pokemon.types:
+                if PokemonType.ICE in pokemon.pokemon_base.types:
                     continue
                 elif pokemon.abilities.has_any_ability(["snow_cloak", "ice_body", "forecast", "magic_guard", "overcoat"]):
                     continue
@@ -260,9 +260,9 @@ class BattleManager(BaseModel, Generic[TPosition]):
 
         elif weather == BattleWeather.SANDSTORM:
             for pokemon in self.position_manager.list_registered_pokemon():
-                if PokemonType.ROCK in pokemon.pokemon.types or \
-                   PokemonType.GROUND in pokemon.pokemon.types or \
-                   PokemonType.STEEL in pokemon.pokemon.types:
+                if PokemonType.ROCK in pokemon.pokemon_base.types or \
+                   PokemonType.GROUND in pokemon.pokemon_base.types or \
+                   PokemonType.STEEL in pokemon.pokemon_base.types:
                     continue
                 elif pokemon.abilities.has_any_ability(["sand_veil", "sand_rush", "sand_force", "magic_guard", "overcoat"]):
                     continue
@@ -280,7 +280,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
     def process_damaging_status_conditions(self):
         # loop through all the pokemon in play and apply damage from status conditions
         for pokemon in self.position_manager.list_registered_pokemon():
-            for status_condition in pokemon.pokemon_battle_state.status_conditions.keys():
+            for status_condition in pokemon.status_conditions.keys():
                 if status_condition == StatusCondition.BURN:
                     damage = max(1, pokemon.calculate_max_hp() // 16)
                     pokemon.current_hp -= damage
@@ -300,12 +300,12 @@ class BattleManager(BaseModel, Generic[TPosition]):
                         description=f"{pokemon.nickname} is hurt by its poison!"
                     )
                 if status_condition == StatusCondition.BADLY_POISON:
-                    turns_poisoned = pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON]
+                    turns_poisoned = pokemon.status_conditions[StatusCondition.BADLY_POISON]
                     if turns_poisoned > 15:
                         turns_poisoned = 15
                     damage = max(1, (pokemon.calculate_max_hp() // 16) * turns_poisoned)
                     pokemon.current_hp -= damage
-                    pokemon.pokemon_battle_state.status_conditions[StatusCondition.BADLY_POISON] += 1
+                    pokemon.status_conditions[StatusCondition.BADLY_POISON] += 1
                     self.battle_log.status_condition_damage(
                         description=f"{pokemon.nickname} is hurt by its poison!"
                     )
@@ -353,10 +353,10 @@ class BattleManager(BaseModel, Generic[TPosition]):
             if used_move is None:
                 raise ValueError("Move not found in user's move set.")
 
-            description_list.append(f"{user_pokemon.nickname} used {used_move.base_move.name}!")
+            description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")
             is_critical = calculate_critical_hit(user_pokemon)
 
-            if used_move.base_move.accuracy is None:
+            if used_move.accuracy is None:
                 accuracy_check = 100.0
             else:
                 accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
@@ -366,7 +366,7 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 damage = 0
                 effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
             else:
-                effectiveness_multiplier = get_attack_multiplier(used_move.base_move.type, target_pokemon.pokemon.types)
+                effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.types)
                 effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
                 
                 damage = calculate_damage(
@@ -392,9 +392,11 @@ class BattleManager(BaseModel, Generic[TPosition]):
                 if is_critical:
                     description_list.append("A critical hit!")
 
-            if target_pokemon.current_hp <= 0:
-                target_pokemon.current_hp = 0
-                description_list.append(f"{target_pokemon.nickname} fainted!")
+                    effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.pokemon_base.types)
+
+                if target_pokemon.current_hp <= 0:
+                    target_pokemon.current_hp = 0
+                    description_list.append(f"{target_pokemon.nickname} fainted!")
 
             description = "\n".join(description_list)
 
@@ -450,20 +452,20 @@ class SingleBattleManager(BattleManager[SinglesBattlePositionManager]):
 
     # region Battle Setup
     def clear_all_stat_stages(self):
-        for pokemon in self.team_1.get_all_pokemons() + self.team_2.get_all_pokemons():
+        for pokemon in self.team_1.get_all_battlemons() + self.team_2.get_all_battlemons():
             self.clear_pokemon_stat_stages(pokemon)
 
     def init_battle(self):
         self.clear_all_stat_stages()
 
         self.position_manager.register_pokemon(
-            pokemon=self.team_1.get_active_pokemon(),
+            pokemon=self.team_1.get_active_battlemon(),
             team_index=1,
             pokemon_index=1
         )
 
         self.position_manager.register_pokemon(
-            pokemon=self.team_2.get_active_pokemon(),
+            pokemon=self.team_2.get_active_battlemon(),
             team_index=2,
             pokemon_index=1
         )

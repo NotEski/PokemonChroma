@@ -1,4 +1,4 @@
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.status_conditions import StatusCondition
 from shared.items.pokeball import Pokeball
 from random import randint
@@ -15,7 +15,7 @@ status_condition_small_bonus = [
     StatusCondition.POISON,
 ]
 
-def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:
+def calculate_catch_probability(pokemon: BattleMon, pokeball: Pokeball) -> float:
 
     if pokeball.name == "Master Ball":
         return 65537  # Guaranteed catch (above max shake chance)
@@ -30,7 +30,7 @@ def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:
 
     bonus_status = 1.0  # Default no bonus
 
-    for status_condition in pokemon.pokemon_battle_state.status_conditions:
+    for status_condition in pokemon.status_conditions:
         if status_condition in status_condition_big_bonus:
             bonus_status = 2.0
         elif status_condition in status_condition_small_bonus:
@@ -38,7 +38,7 @@ def calculate_catch_probability(pokemon: Pokemon, pokeball: Pokeball) -> float:
         if bonus_status != 1.0:
             break
 
-    rate_modified =  pokemon.pokemon.capture_rate * pokeball.catch_rate_modifier
+    rate_modified =  pokemon.pokemon_base.capture_rate * pokeball.catch_rate_modifier
 
     if rate_modified < 1:
         rate_modified = 1
@@ -60,7 +60,7 @@ def calculate_shake(shake_chance: int) -> bool:
     roll = randint(0, 65535)
     return roll < shake_chance
 
-def catch_attempt(pokemon: Pokemon, pokeball: Pokeball) -> bool:
+def catch_attempt(pokemon: BattleMon, pokeball: Pokeball) -> bool:
     shake_chance = calculate_catch_probability(pokemon, pokeball)
 
     for _ in range(4):

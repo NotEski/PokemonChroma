@@ -87,7 +87,7 @@ class TestMove:
         move = Move(base_move=tackle_move, current_pp=tackle_move.pp)
         
         assert move.current_pp == 35
-        assert move.base_move.name == "Tackle"
+        assert move.name == "Tackle"
 
     def test_move_pp_decreases(self, tackle_move):
         """Test that move PP can decrease."""
@@ -124,7 +124,7 @@ class TestMoveSet:
         moveset = MoveSet(moves=[tackle_move])
         
         assert len(moveset.moves) == 1
-        assert moveset.moves[1].base_move.name == "Tackle"  # Tackle has index 1
+        assert moveset.moves[1].name == "Tackle"  # Tackle has index 1
 
     def test_moveset_max_four_moves(self, tackle_move, thunderbolt_move, water_gun_move, flamethrower_move):
         """Test that moveset can have up to 4 moves."""
@@ -291,11 +291,11 @@ class TestMoveUsageScenarios:
         """Test accessing different Pokemon in a team."""
         team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon])
         
-        first_pokemon = PokemonTeam.pokemons[0]
-        second_pokemon = PokemonTeam.pokemons[1]
+        first_pokemon = team.pokemons[0]
+        second_pokemon = team.pokemons[1]
         
-        assert first_pokemon.pokemon.name == "Pikachu"
-        assert second_pokemon.pokemon.name == "Eevee"
+        assert first_pokemon.pokemon_base.name == "Pikachu"
+        assert second_pokemon.pokemon_base.name == "Eevee"
 
 
 class TestMoveProperties:
@@ -367,9 +367,9 @@ class TestTeamManagement:
         
         move_set = MoveSet(moves=[tackle_move])
         
-        low_level = Pokemon(pokemon=pikachu_base, level=5, move_set=move_set)
-        mid_level = Pokemon(pokemon=pikachu_base, level=25, move_set=move_set)
-        high_level = Pokemon(pokemon=pikachu_base, level=50, move_set=move_set)
+        low_level = Pokemon(pokemon_base=pikachu_base, level=5, move_set=move_set)
+        mid_level = Pokemon(pokemon_base=pikachu_base, level=25, move_set=move_set)
+        high_level = Pokemon(pokemon_base=pikachu_base, level=50, move_set=move_set)
         
         team = PokemonTeam(pokemons=[low_level, mid_level, high_level])
         
@@ -381,6 +381,6 @@ class TestTeamManagement:
         """Test that team order is preserved."""
         team = PokemonTeam(pokemons=[pikachu_pokemon, eevee_pokemon, charizard_pokemon])
         
-        assert team.pokemons[0].pokemon.name == "Pikachu"
-        assert team.pokemons[1].pokemon.name == "Eevee"
-        assert team.pokemons[2].pokemon.name == "Charizard"
+        assert team.pokemons[0].pokemon_base.name == "Pikachu"
+        assert team.pokemons[1].pokemon_base.name == "Eevee"
+        assert team.pokemons[2].pokemon_base.name == "Charizard"

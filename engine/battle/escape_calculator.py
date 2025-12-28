@@ -14,10 +14,10 @@
 # If the number is greater than F, then you escape.
 # If not, then you "can't escape" and wasted a turn.
 
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import BattleMon
 import random
 
-def calculate_escape_success(escaping_pokemon: Pokemon, opponent_pokemon: Pokemon, escape_attempts: int) -> bool:
+def calculate_escape_success(escaping_pokemon: BattleMon, opponent_pokemon: BattleMon, escape_attempts: int) -> bool:
     escaping_pokemon_speed = escaping_pokemon.stat_speed
     opponent_pokemon_speed = opponent_pokemon.stat_speed
     

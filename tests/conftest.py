@@ -131,21 +131,21 @@ def water_gun_move():
 def pikachu_pokemon(pikachu_base, tackle_move, thunderbolt_move):
     """Level 15 Pikachu with moves."""
     move_set = MoveSet(moves=[tackle_move, thunderbolt_move])
-    return Pokemon(pokemon=pikachu_base, level=15, move_set=move_set)
+    return Pokemon(pokemon_base=pikachu_base, level=15, move_set=move_set)
 
 
 @pytest.fixture
 def charizard_pokemon(charizard_base, tackle_move, flamethrower_move):
     """Level 50 Charizard with moves."""
     move_set = MoveSet(moves=[tackle_move, flamethrower_move])
-    return Pokemon(pokemon=charizard_base, level=50, move_set=move_set)
+    return Pokemon(pokemon_base=charizard_base, level=50, move_set=move_set)
 
 
 @pytest.fixture
 def eevee_pokemon(eevee_base, tackle_move):
     """Level 10 Eevee with Tackle."""
     move_set = MoveSet(moves=[tackle_move])
-    return Pokemon(pokemon=eevee_base, level=10, move_set=move_set)
+    return Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
 
 
 @pytest.fixture

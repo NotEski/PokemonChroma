@@ -5,7 +5,7 @@ from shared.battle.position import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonBase, PokemonTeam
 from shared.trainer.trainer import Trainer
-from shared.pokemon.move import MoveSet, BaseMove
+from shared.pokemon.move import MoveSet, BaseMove, MoveCategory
 from shared.pokemon.types import PokemonType
 from shared.pokemon.move import DamageClass
 
@@ -17,8 +17,8 @@ class TestCompleteWildBattle:
         """Test a complete wild battle where trainer wins."""
         # Setup
         move_set = MoveSet(moves=[tackle_move])
-        pikachu = Pokemon(pokemon=pikachu_base, level=20, move_set=move_set)
-        eevee = Pokemon(pokemon=eevee_base, level=5, move_set=move_set)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=20, move_set=move_set)
+        eevee = Pokemon(pokemon_base=eevee_base, level=5, move_set=move_set)
         
         trainer = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
@@ -30,7 +30,12 @@ class TestCompleteWildBattle:
         
         # Execute multiple turns
         for _ in range(5):
-            if eevee.current_hp <= 0:
+            # Stop if battle ended
+            if not battle.active_battle:
+                break
+            # Check battle-mon HP for faint
+            active_eevee = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+            if active_eevee.current_hp <= 0:
                 break
                 
             battle.start_turn()
@@ -46,8 +51,9 @@ class TestCompleteWildBattle:
             )
             battle.end_turn()
         
-        # Wild Pokemon should have taken damage
-        assert eevee.current_hp < eevee.max_hp
+        # Wild Pokemon's BattleMon should have taken damage
+        bm = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        assert bm.current_hp < bm.max_hp
 
     def test_wild_battle_escape_success(self, pikachu_pokemon, eevee_pokemon):
         """Test escaping from a wild battle."""
@@ -87,8 +93,8 @@ class TestCompleteTrainerBattle:
         move_set1 = MoveSet(moves=[tackle_move, thunderbolt_move])
         move_set2 = MoveSet(moves=[tackle_move])
         
-        pikachu = Pokemon(pokemon=pikachu_base, level=25, move_set=move_set1)
-        charizard = Pokemon(pokemon=charizard_base, level=25, move_set=move_set2)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=25, move_set=move_set1)
+        charizard = Pokemon(pokemon_base=charizard_base, level=25, move_set=move_set2)
         
         trainer1 = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
@@ -101,8 +107,8 @@ class TestCompleteTrainerBattle:
         battle.init_battle()
         
         # Record initial HP
-        initial_pikachu_hp = pikachu.current_hp
-        initial_charizard_hp = charizard.current_hp
+        initial_pikachu_hp = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=1)).current_hp
+        initial_charizard_hp = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1)).current_hp
         
         # Execute one turn
         battle.start_turn()
@@ -119,15 +125,17 @@ class TestCompleteTrainerBattle:
         battle.end_turn()
         
         # Both Pokemon should have taken damage
-        assert pikachu.current_hp < initial_pikachu_hp or charizard.current_hp < initial_charizard_hp
+        bm1 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=1))
+        bm2 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        assert bm1.current_hp < initial_pikachu_hp or bm2.current_hp < initial_charizard_hp
 
     def test_trainer_battle_speed_determines_order(self, pikachu_base, eevee_base, tackle_move):
         """Test that faster Pokemon moves first."""
         move_set = MoveSet(moves=[tackle_move])
         
         # Pikachu has higher base speed (90 vs 55)
-        pikachu = Pokemon(pokemon=pikachu_base, level=20, move_set=move_set)
-        eevee = Pokemon(pokemon=eevee_base, level=20, move_set=move_set)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=20, move_set=move_set)
+        eevee = Pokemon(pokemon_base=eevee_base, level=20, move_set=move_set)
         
         trainer1 = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
@@ -175,7 +183,7 @@ class TestMultiTurnBattle:
         
         # Execute 3 turns
         for i in range(3):
-            if eevee_pokemon.current_hp <= 0:
+            if not battle.active_battle:
                 break
             battle.start_turn()
             battle.use_move(
@@ -198,8 +206,8 @@ class TestMultiTurnBattle:
         move_set = MoveSet(moves=[tackle_move])
         
         # Create a very weak Eevee (low level, low HP)
-        pikachu = Pokemon(pokemon=pikachu_base, level=50, move_set=move_set)
-        eevee = Pokemon(pokemon=eevee_base, level=1, move_set=move_set)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=50, move_set=move_set)
+        eevee = Pokemon(pokemon_base=eevee_base, level=1, move_set=move_set)
         
         trainer = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu]))
@@ -211,7 +219,10 @@ class TestMultiTurnBattle:
         
         # Fight until Eevee faints
         for _ in range(10):
-            if eevee.current_hp <= 0:
+            if not battle.active_battle:
+                break
+            bm_eevee = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+            if bm_eevee.current_hp <= 0:
                 break
                 
             battle.start_turn()
@@ -228,7 +239,7 @@ class TestMultiTurnBattle:
             battle.end_turn()
         
         # Eevee should have fainted
-        assert eevee.current_hp == 0
+        assert battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1)).current_hp == 0
 
 
 class TestTypeAdvantageScenarios:
@@ -273,8 +284,8 @@ class TestTypeAdvantageScenarios:
         )
         
         move_set = MoveSet(moves=[ember])
-        charmander = Pokemon(pokemon=charmander_base, level=20, move_set=move_set)
-        bulbasaur = Pokemon(pokemon=bulbasaur_base, level=20, move_set=move_set)
+        charmander = Pokemon(pokemon_base=charmander_base, level=20, move_set=move_set)
+        bulbasaur = Pokemon(pokemon_base=bulbasaur_base, level=20, move_set=move_set)
         
         trainer1 = TrainerOpponent(
             trainer=Trainer(name="Red", team=PokemonTeam(pokemons=[charmander]))
@@ -286,23 +297,23 @@ class TestTypeAdvantageScenarios:
         battle = SingleBattleManager(team_1=trainer1, team_2=trainer2)
         battle.init_battle()
         
-        initial_hp = bulbasaur.current_hp
+        initial_hp = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1)).current_hp
         
         battle.start_turn()
         battle.use_move(
             user_position=BattlePosition(team_id=1, pokemon_index=1),
-            move_index=1,
+            move_index=52,
             target_position=BattlePosition(team_id=2, pokemon_index=1)
         )
         battle.use_move(
             user_position=BattlePosition(team_id=2, pokemon_index=1),
-            move_index=1,
+            move_index=52,
             target_position=BattlePosition(team_id=1, pokemon_index=1)
         )
         battle.end_turn()
         
         # Bulbasaur should take super effective damage
-        assert bulbasaur.current_hp < initial_hp
+        assert battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1)).current_hp < initial_hp
 
 
 class TestBattleStateManagement:
@@ -318,16 +329,18 @@ class TestBattleStateManagement:
         battle = SingleBattleManager(team_1=trainer, team_2=wild)
         battle.init_battle()
         
-        # Modify battle state
-        pikachu_pokemon.pokemon_battle_state.attack_stat_stage = 2
-        eevee_pokemon.pokemon_battle_state.defense_stat_stage = -1
+        # Modify battle state on active battlemons
+        pikachu_battlemon = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=1))
+        eevee_battlemon = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        pikachu_battlemon.stat_stages.attack_stat_stage = 2
+        eevee_battlemon.stat_stages.defense_stat_stage = -1
         
         # End battle
-        battle.end_battle()
+        battle.clear_battle()
         
         # Battle state should be reset
-        assert pikachu_pokemon.pokemon_battle_state.attack_stat_stage == 0
-        assert eevee_pokemon.pokemon_battle_state.defense_stat_stage == 0
+        assert pikachu_battlemon.stat_stages.attack_stat_stage == 0
+        assert eevee_battlemon.stat_stages.defense_stat_stage == 0
 
     def test_turn_number_increments_correctly(self, pikachu_pokemon, eevee_pokemon):
         """Test that turn numbers increment correctly."""
@@ -341,8 +354,10 @@ class TestBattleStateManagement:
         
         assert battle.battle_state.turn_number == 0
         
-        # Execute 3 turns
+        # Execute up to 3 turns; stop if battle ends early to avoid start_turn errors
         for i in range(3):
+            if not battle.active_battle:
+                break
             battle.start_turn()
             assert battle.battle_state.turn_number == i + 1
             
@@ -401,8 +416,8 @@ class TestEdgeCases:
     def test_battle_with_max_level_pokemon(self, pikachu_base, tackle_move):
         """Test battle with level 100 Pokemon."""
         move_set = MoveSet(moves=[tackle_move])
-        pikachu1 = Pokemon(pokemon=pikachu_base, level=100, move_set=move_set)
-        pikachu2 = Pokemon(pokemon=pikachu_base, level=100, move_set=move_set)
+        pikachu1 = Pokemon(pokemon_base=pikachu_base, level=100, move_set=move_set)
+        pikachu2 = Pokemon(pokemon_base=pikachu_base, level=100, move_set=move_set)
         
         trainer1 = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu1]))
@@ -428,13 +443,15 @@ class TestEdgeCases:
         battle.end_turn()
         
         # Both should have taken damage
-        assert pikachu1.current_hp < pikachu1.max_hp or pikachu2.current_hp < pikachu2.max_hp
+        bm1 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=1))
+        bm2 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        assert bm1.current_hp < bm1.max_hp or bm2.current_hp < bm2.max_hp
 
     def test_battle_with_minimum_level_pokemon(self, pikachu_base, tackle_move):
         """Test battle with level 1 Pokemon."""
         move_set = MoveSet(moves=[tackle_move])
-        pikachu1 = Pokemon(pokemon=pikachu_base, level=1, move_set=move_set)
-        pikachu2 = Pokemon(pokemon=pikachu_base, level=1, move_set=move_set)
+        pikachu1 = Pokemon(pokemon_base=pikachu_base, level=1, move_set=move_set)
+        pikachu2 = Pokemon(pokemon_base=pikachu_base, level=1, move_set=move_set)
         
         trainer1 = TrainerOpponent(
             trainer=Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu1]))
@@ -496,7 +513,7 @@ class TestRealGameScenario:
         )
         
         move_set = MoveSet(moves=[tackle, thunderbolt])
-        pikachu = Pokemon(pokemon=pikachu_base, level=15, move_set=move_set)
+        pikachu = Pokemon(pokemon_base=pikachu_base, level=15, move_set=move_set)
         
         # Wild Rattata
         rattata_base = PokemonBase(
@@ -511,7 +528,7 @@ class TestRealGameScenario:
         )
         
         rattata_moveset = MoveSet(moves=[tackle])
-        rattata = Pokemon(pokemon=rattata_base, level=3, move_set=rattata_moveset)
+        rattata = Pokemon(pokemon_base=rattata_base, level=3, move_set=rattata_moveset)
         
         # Setup battle
         trainer = TrainerOpponent(
@@ -537,7 +554,8 @@ class TestRealGameScenario:
         battle.end_turn()
         
         # Rattata should take significant damage (likely faint)
-        assert rattata.current_hp < rattata.max_hp
+        bm = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        assert bm.current_hp < bm.max_hp
         
         # PP should be reduced
         assert pikachu.move_set.moves[24].current_pp < 15
