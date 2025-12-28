@@ -69,12 +69,12 @@ class BattleManager(BaseModel):
     def init_battle(self):
         self.clear_all_stat_stages()
 
-        for i in range(1, self.position_manager.teams_count + 1):
-            for j in range(1, self.position_manager.pokemon_per_team + 1):
+        for team_id in range(1, self.position_manager.teams_count + 1):
+            for pokemon_index in range(1, self.position_manager.pokemon_per_team + 1):
                 self.position_manager.register_pokemon(
-                    pokemon=self.teams[i].get_active_battlemon(),
-                    team_index=i,
-                    pokemon_index=j
+                    pokemon=self.teams[team_id].get_active_battlemon(),
+                    team_index=team_id,
+                    pokemon_index=pokemon_index
                 )
 
     def process_escape(self):

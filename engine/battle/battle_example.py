@@ -35,7 +35,7 @@ def pickachu_eevee_battle_example():
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 
-    battle_manager = BattleManager(team_1=opponent_1, team_2=opponent_2)
+    battle_manager = BattleManager(teams=[opponent_1, opponent_2])
     
 
     battle_manager.init_battle()
