@@ -291,7 +291,7 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
         "moves": moves,
         "evolution_line_id": evolution_line_id,
     }
-    folder_name = f"{zero_pad_id(pid)}-{name_slug}"
+    folder_name = f"{name_slug}"
     return folder_name, payload
 
 
@@ -365,7 +365,7 @@ def generate_items(source: Path, out_items: Path, overwrite: bool, limit: Option
             continue
         iid = payload.get("index")
         iname = payload.get("name")
-        fname = f"{zero_pad_id(iid)}-{iname}.json"
+        fname = f"{iname}.json"
         target_file = out_items / fname
         if target_file.exists() and not overwrite:
             written += 1
@@ -527,7 +527,7 @@ def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Option
             continue
         mid = payload.get("index")
         mname = payload.get("name")
-        fname = f"{zero_pad_id(mid)}-{mname}.json"
+        fname = f"{mname}.json"
         target_file = out_moves / fname
         if target_file.exists() and not overwrite:
             written += 1

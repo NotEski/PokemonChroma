@@ -22,6 +22,7 @@ Run a plugin and forward args to the underlying script:
 python tools/toolbox.py run asset_downloader -- --help
 python tools/toolbox.py run pokeapi_downloader -- --help
 python tools/toolbox.py run type_chart -- --help
+python tools/toolbox.py run pokemon_data -- --help
 ```
 
 Interactive mode:
