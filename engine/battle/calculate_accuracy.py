@@ -1,5 +1,5 @@
 import random
-from shared.pokemon.move import BaseMove, DamageClass
+from shared.pokemon.moves import BaseMove, DamageClass
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.status_conditions import StatusCondition

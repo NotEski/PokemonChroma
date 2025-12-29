@@ -2,7 +2,7 @@
 
 import json
 from shared.pokemon.genders import GenderRate
-from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, StatChange
+from shared.pokemon.moves import BaseMove, MoveTarget, DamageClass, MoveCategory, StatChange
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility

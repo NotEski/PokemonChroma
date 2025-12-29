@@ -6,7 +6,7 @@ from typing import List, Optional
 from enum import Enum
 
 from .types import PokemonType
-from .move import MoveSet
+from .moves.move import MoveSet
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities

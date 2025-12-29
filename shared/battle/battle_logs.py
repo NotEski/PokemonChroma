@@ -4,7 +4,7 @@ from enum import Enum
 
 from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.status_conditions import StatusCondition
-from shared.pokemon.move import BaseMove
+from shared.pokemon.moves import BaseMove
 from shared.trainer.trainer import Trainer
 from shared.battle.type_effectiveness import EffectivenessLevel
 from shared.battle.position_manager import BattlePosition

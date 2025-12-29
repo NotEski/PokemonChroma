@@ -5,9 +5,9 @@ from shared.battle.position import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonBase, PokemonTeam
 from shared.trainer.trainer import Trainer
-from shared.pokemon.move import MoveSet, BaseMove, MoveCategory
+from shared.pokemon.moves import MoveSet, BaseMove, MoveCategory
 from shared.pokemon.types import PokemonType
-from shared.pokemon.move import DamageClass
+from shared.pokemon.moves import DamageClass
 
 
 class TestCompleteWildBattle:

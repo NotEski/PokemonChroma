@@ -1,9 +1,9 @@
 from enum import Enum
 from pydantic import BaseModel, Field, model_validator
 from typing import List, Optional
-from .types import PokemonType
-from .status_conditions import StatusCondition
-from .stats import Stat
+from ..types import PokemonType
+from ..status_conditions import StatusCondition
+from ..stats import Stat
 
 
 class DamageClass(Enum):

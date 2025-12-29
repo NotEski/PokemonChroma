@@ -3,7 +3,7 @@ from typing import Dict, TypeVar, Generic
 
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
-from shared.pokemon.move import BaseMove
+from shared.pokemon.moves.move import BaseMove
 from shared.items.items import Item
 
 T = TypeVar('T')

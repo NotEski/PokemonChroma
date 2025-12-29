@@ -8,7 +8,7 @@ from shared.pokemon.natures import Nature
 from shared.pokemon.stats import (
     Stat, IndividualValues, EffortValues
 )
-from shared.pokemon.move import MoveSet, BaseMove, Move
+from shared.pokemon.moves import MoveSet, BaseMove, Move
 
 
 class TestPokemonBase:
