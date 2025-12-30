@@ -1,9 +1,9 @@
 import random
-from shared.pokemon.moves import BaseMove
+from shared.pokemon.move import BaseMove
 from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
-from shared.pokemon.moves import DamageClass
+from shared.pokemon.move import DamageClass
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.battle.type_effectiveness import get_attack_multiplier
 
@@ -41,6 +41,9 @@ def calculate_damage(attacking_pokemon: BattleMon, defending_pokemon: BattleMon,
     modified_damage = round(modified_damage * _get_type_effectiveness_modifier(move, defending_pokemon))
     modified_damage = round(modified_damage * _get_burn_modifier(attacking_pokemon, move))
     modified_damage = round(modified_damage * _get_other_modifiers())
+
+    if modified_damage <= 0:
+        return 0
 
     return max(1, modified_damage)  # Ensure at least 1 damage is dealt
 

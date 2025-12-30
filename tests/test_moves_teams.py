@@ -1,6 +1,6 @@
 """Test suite for moves, teams, and trainer functionality."""
 import pytest
-from shared.pokemon.moves import BaseMove, Move, MoveSet, StatChange, DamageClass, MoveCategory
+from shared.pokemon.move import BaseMove, Move, MoveSet, StatChange, DamageClass, MoveCategory
 from shared.pokemon.pokemon import PokemonTeam
 from shared.trainer.trainer import Trainer
 from shared.pokemon.types import PokemonType
@@ -363,7 +363,7 @@ class TestTeamManagement:
     def test_team_with_mixed_levels(self, pikachu_base, tackle_move):
         """Test team with Pokemon of different levels."""
         from shared.pokemon.pokemon import Pokemon
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         
         move_set = MoveSet(moves=[tackle_move])
         

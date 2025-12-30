@@ -8,7 +8,7 @@ from engine.battle.damage_calculator import (
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
-from shared.pokemon.moves import Move, DamageClass
+from shared.pokemon.move import Move, DamageClass
 
 
 class TestDamageCalculation:
@@ -73,7 +73,7 @@ class TestDamageCalculation:
 
     def test_higher_level_deals_more_damage(self, pikachu_base, eevee_pokemon, tackle_move):
         """Test that higher level Pokemon deal more damage."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         from shared.pokemon.pokemon import Pokemon
         
         move_set = MoveSet(moves=[tackle_move])
@@ -103,7 +103,7 @@ class TestDamageCalculation:
 
     def test_physical_move_uses_attack_stat(self, pikachu_pokemon, eevee_pokemon, tackle_move):
         """Test that physical moves use attack stat."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         
         move_set = MoveSet(moves=[tackle_move])
         pikachu_pokemon.move_set = move_set
@@ -116,7 +116,7 @@ class TestDamageCalculation:
 
     def test_special_move_uses_special_attack_stat(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
         """Test that special moves use special attack stat."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         
         move_set = MoveSet(moves=[thunderbolt_move])
         pikachu_pokemon.move_set = move_set
@@ -162,7 +162,7 @@ class TestDamageModifiers:
 
     def test_power_modifier(self, tackle_move, thunderbolt_move):
         """Test power modifier from moves."""
-        from shared.pokemon.moves import Move
+        from shared.pokemon.move import Move
         
         tackle = Move(base_move=tackle_move, current_pp=tackle_move.pp)
         thunderbolt = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
@@ -176,7 +176,7 @@ class TestDamageModifiers:
 
     def test_stab_modifier(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
         """Test Same Type Attack Bonus (STAB) modifier."""
-        from shared.pokemon.moves import Move, MoveSet
+        from shared.pokemon.move import Move, MoveSet
         
         # Pikachu (Electric type) using Electric move should get STAB
         electric_move = Move(base_move=thunderbolt_move, current_pp=15)
@@ -191,7 +191,7 @@ class TestDamageModifiers:
 
     def test_defense_stat_modifier_physical(self, eevee_pokemon, tackle_move):
         """Test defense stat modifier for physical moves."""
-        from shared.pokemon.moves import Move
+        from shared.pokemon.move import Move
         
         move = Move(base_move=tackle_move, current_pp=tackle_move.pp)
         bm = eevee_pokemon.generate_battlemon()
@@ -200,7 +200,7 @@ class TestDamageModifiers:
 
     def test_defense_stat_modifier_special(self, eevee_pokemon, thunderbolt_move):
         """Test defense stat modifier for special moves."""
-        from shared.pokemon.moves import Move
+        from shared.pokemon.move import Move
         
         move = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
         bm = eevee_pokemon.generate_battlemon()
@@ -213,7 +213,7 @@ class TestTypeEffectiveness:
 
     def test_super_effective_deals_more_damage(self, pikachu_base, tackle_move, water_gun_move):
         """Test that super effective moves deal more damage."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         from shared.pokemon.pokemon import Pokemon, PokemonBase
         
         # Create a Water-type Pokemon (Squirtle)
@@ -260,7 +260,7 @@ class TestTypeEffectiveness:
 
     def test_type_effectiveness_modifier(self, pikachu_pokemon, thunderbolt_move):
         """Test type effectiveness modifier calculation."""
-        from shared.pokemon.moves import Move
+        from shared.pokemon.move import Move
         
         electric_move = Move(base_move=thunderbolt_move, current_pp=15)
         
@@ -276,7 +276,7 @@ class TestWeatherEffects:
 
     def test_harsh_sunlight_boosts_fire(self, charizard_pokemon, eevee_pokemon, flamethrower_move):
         """Test that harsh sunlight boosts Fire-type moves."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         
         move_set = MoveSet(moves=[flamethrower_move])
         charizard_pokemon.move_set = move_set
@@ -311,7 +311,7 @@ class TestStatusConditions:
 
     def test_burn_reduces_physical_damage(self, pikachu_pokemon, eevee_pokemon, tackle_move):
         """Test that burn reduces physical move damage."""
-        from shared.pokemon.moves import MoveSet
+        from shared.pokemon.move import MoveSet
         
         move_set = MoveSet(moves=[tackle_move])
         pikachu_pokemon.move_set = move_set

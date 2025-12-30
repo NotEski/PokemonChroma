@@ -3,7 +3,7 @@ from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition
-from shared.pokemon.moves import MoveTarget
+from shared.pokemon.move import MoveTarget
 import random
 
 class BattlePositionManager(BaseModel):

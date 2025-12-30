@@ -4,7 +4,7 @@ from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.types import PokemonType
 from shared.pokemon.natures import Nature
 from shared.pokemon.genders import Gender
-from shared.pokemon.moves import MoveSet, BaseMove, DamageClass, MoveCategory
+from shared.pokemon.move import MoveSet, BaseMove, DamageClass, MoveCategory
 from shared.pokemon.pokemon import PokemonTeam
 from shared.trainer.trainer import Trainer
 from shared.items.pokeball import Pokeball

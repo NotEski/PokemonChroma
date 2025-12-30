@@ -1,9 +1,9 @@
 from enum import Enum
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 from typing import List, Optional
-from ..types import PokemonType
-from ..status_conditions import StatusCondition
-from ..stats import Stat
+from .types import PokemonType
+from .status_conditions import StatusCondition
+from .stats import Stat
 
 
 class DamageClass(Enum):
@@ -46,9 +46,17 @@ class MoveTarget(Enum):
     USERS_FIELD = "users_field"
 
 
+class StatChange(BaseModel):
+    stat: Stat
+    change: int  # Positive for increase, negative for decrease
+    chance: int = Field(default=100)  # Percentage chance to apply the stat change
+
+
 class BaseMove(BaseModel):
+    model_config = ConfigDict(extra='allow')
+    
     name: str
-    name_readable: str = Field(default="")
+    display_name: str = Field(default="")
     index: int
 
     type: PokemonType
@@ -63,7 +71,7 @@ class BaseMove(BaseModel):
 
     priority: int = Field(default=0)  # Move priority
     
-    status_condition: StatusCondition = StatusCondition.NONE # Status condition inflicted by the move
+    status_condition: Optional[StatusCondition] = None
     status_condition_chance: int = 0  # Percentage chance to inflict status condition
 
     critical_hit_rate: int = Field(default=0)  # Additional stages to critical hit rate
@@ -78,11 +86,27 @@ class BaseMove(BaseModel):
     min_turns: Optional[int] = None  # For moves that last multiple turns
     max_turns: Optional[int] = None  # For moves that last multiple turns
     
-    stat_changes: Optional[List['StatChange']] = None  # List of stat changes inflicted by the move
+    stat_changes: Optional[List[StatChange]] = None  # List of stat changes inflicted by the move
     stat_chance: int = Field(default=0)  # Percentage chance to apply stat changes
     
-    stat_changes_inflicted: Optional[List['StatChange']] = None  # List of stat changes inflicted by the move
-    stat_changes_recieved: Optional[List['StatChange']] = None  # List of stat changes received by the user of the move
+    stat_changes_inflicted: Optional[List[StatChange]] = None  # List of stat changes inflicted by the move
+    stat_changes_recieved: Optional[List[StatChange]] = None  # List of stat changes received by the user of the move
+
+    def on_use(self):
+        """Called when the move is used."""
+        return None
+
+    def on_hit(self):
+        """Called when the move hits the target."""
+        return None
+
+    def before_use(self):
+        """Called before the move is used."""
+        return None
+    
+    def damage_calculation(self, attacker, defender, field) -> int:
+        """Calculate damage dealt by the move instead of using standard formula. e.g. 50% of target's max HP"""
+        return None
 
 
 class Move(BaseModel):
@@ -123,10 +147,6 @@ class Move(BaseModel):
 #endregion
 
 
-class StatChange(BaseModel):
-    stat: Stat
-    change: int  # Positive for increase, negative for decrease
-    chance: int = Field(default=100)  # Percentage chance to apply the stat change
 
 class MoveSet(BaseModel):
     # this will store move objects in a dict of the move index, and then the move and its current pp

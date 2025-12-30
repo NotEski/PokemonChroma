@@ -45,6 +45,9 @@ class BattleManager(BaseModel):
                 if i not in self.teams:
                     raise ValueError("Teams dictionary keys must be sequential integers starting from 1.")
                 
+        if len(self.teams) != 2: # only support 2 teams for now. probably will only ever need 2 teams
+            raise ValueError("There must be exactly 2 teams for a battle.")
+                
         self.position_manager.teams_count = len(self.teams)
 
         if self.battle_config.battle_type == BattleType.SINGLE:
@@ -373,6 +376,7 @@ class BattleManager(BaseModel):
             action = self.position_manager.get_position_action(position)
             if not isinstance(action, MoveAction): continue
 
+
             # get pokemons move from moveactions moveindex
 
             user_pokemon = self.position_manager.get_pokemon_at_position(position)
@@ -387,6 +391,9 @@ class BattleManager(BaseModel):
                 move_target=used_move.target,
                 selected_position=action.target_position
             )
+
+            base_move = used_move.base_move
+            base_move.on_use()
             
             for target_position in target_positions:
 

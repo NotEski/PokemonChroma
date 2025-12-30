@@ -158,7 +158,7 @@ def map_moves_sword_shield(pokemon_data: Dict[str, Any]) -> Dict[str, Any]:
     return moves
 
 
-def map_name_readable(species_data: Dict[str, Any], fallback_slug: str) -> str:
+def map_display_name(species_data: Dict[str, Any], fallback_slug: str) -> str:
     for entry in species_data.get("names", []):
         lang = (entry.get("language", {}) or {}).get("name")
         if lang == "en":
@@ -168,7 +168,7 @@ def map_name_readable(species_data: Dict[str, Any], fallback_slug: str) -> str:
     return to_title_spaces(fallback_slug)
 
 
-def map_move_name_readable(move_data: Dict[str, Any], fallback_slug: str) -> str:
+def map_move_display_name(move_data: Dict[str, Any], fallback_slug: str) -> str:
     for entry in move_data.get("names", []):
         lang = (entry.get("language", {}) or {}).get("name")
         if lang == "en":
@@ -178,7 +178,7 @@ def map_move_name_readable(move_data: Dict[str, Any], fallback_slug: str) -> str
     return to_title_spaces(fallback_slug)
 
 
-def map_item_name_readable(item_data: Dict[str, Any], fallback_slug: str) -> str:
+def map_item_display_name(item_data: Dict[str, Any], fallback_slug: str) -> str:
     for entry in item_data.get("names", []):
         lang = (entry.get("language", {}) or {}).get("name")
         if lang == "en":
@@ -270,11 +270,11 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
 
     evolution_line_id = extract_evolution_chain_id(species_data) if species_data else None
     moves = map_moves_sword_shield(pokemon_data)
-    name_readable = map_name_readable(species_data, name_slug)
+    display_name = map_display_name(species_data, name_slug)
 
     payload: Dict[str, Any] = {
         "name": name_slug,
-        "name_readable": name_readable,
+        "display_name": display_name,
         "pokedex_number": pid,
         "types": types,
         "base_stats": base_stats,
@@ -315,7 +315,7 @@ def build_item_payload(item_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         return None
 
     name_slug = to_lower_snake(iname)
-    name_readable = map_item_name_readable(item_data, name_slug)
+    display_name = map_item_display_name(item_data, name_slug)
 
     attributes = [to_lower_snake(attr.get("name", "")) for attr in item_data.get("attributes", []) if attr.get("name")]
     attributes = sorted(set(a for a in attributes if a))
@@ -335,7 +335,7 @@ def build_item_payload(item_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 
     payload: Dict[str, Any] = {
         "name": name_slug,
-        "name_readable": name_readable,
+        "display_name": display_name,
         "index": iid,
         "description": map_item_description(item_data),
         "cost": item_data.get("cost", 0) or 0,
@@ -394,7 +394,7 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     mslug = to_lower_snake(mname)
     if not mslug:
         return None
-    name_readable = map_move_name_readable(move_data, mslug)
+    display_name = map_move_display_name(move_data, mslug)
 
     # Core fields
     mtype = to_lower_snake(move_data.get("type", {}).get("name", "normal"))
@@ -485,7 +485,7 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     
     payload: Dict[str, Any] = {
         "name": mslug,
-        "name_readable": name_readable,
+        "display_name": display_name,
         "index": mid,
         "type": mtype,
         "damage_class": damage_class,

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 class Ability(BaseModel):
     name: str
-    name_readable: str
+    display_name: str
     description: str
 
 class AbilitySlot(Enum):

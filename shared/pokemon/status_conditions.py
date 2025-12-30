@@ -1,73 +1,15 @@
-from enum import Enum
+from pydantic import BaseModel, Field
 
-class StatusCondition(Enum):
-    NONE = "none"
 
-    # Volatile status conditions
-    CONFUSION = "confusion"
-    CURSE = "curse"
-    DISABLE = "disable"
-    EMBARGO = "embargo"
-    FLINCH = "flinch"
-    HEAL_BLOCK = "heal_block"
-    INFATUATION = "infatuation"
-    INGRAIN = "ingrain"
-    LEECH_SEED = "leech_seed"
-    NIGHTMARE = "nightmare"
-    NO_TYPE_IMMUNITY = "no_type_immunity"
-    PERISH_SONG = "perish_song"
-    SILENCE = "silence"
-    TAR_SHOT = "tar_shot"
-    TORMENT = "torment"
-    TRAP = "trap"
-    UNKNOWN = "unknown"
-    YAWN = "yawn"
+class StatusCondition(BaseModel):
+    name: str
+    display_name: str = Field(default="")
+    mutual_exclusive: bool = Field(default=False) # whether this status condition is mutually exclusive with others also marked as such
 
-    # Non-volatile status conditions
-    BURN = "burn"
-    FREEZE = "freeze"
-    FROSTBITE = "frostbite"
-    PARALYSIS = "paralysis"
-    POISON = "poison"
-    BADLY_POISON = "badly_poison"
-    SLEEP = "sleep"
-
-    def is_volatile(self) -> bool:
-        return self in volatile_status_conditions
+    def on_turn_end(self):
+        """Called at the end of the Pokémon's turn."""
+        return None
     
-    def is_non_volatile(self) -> bool:
-        return self in non_volatile_status_conditions
-
-volatile_status_conditions = {
-    StatusCondition.CONFUSION,
-    StatusCondition.FLINCH,
-    StatusCondition.TRAP,
-    StatusCondition.LEECH_SEED,
-    StatusCondition.NIGHTMARE,
-    StatusCondition.PERISH_SONG,
-    StatusCondition.INFATUATION,
-    StatusCondition.TORMENT,
-    StatusCondition.CURSE,
-    StatusCondition.INGRAIN,
-    StatusCondition.HEAL_BLOCK,
-    StatusCondition.YAWN,
-    StatusCondition.EMBARGO,
-    StatusCondition.SILENCE,
-    StatusCondition.TAR_SHOT,
-}
-non_volatile_status_conditions = {
-    StatusCondition.PARALYSIS,
-    StatusCondition.POISON,
-    StatusCondition.BADLY_POISON,
-    StatusCondition.BURN,
-    StatusCondition.FREEZE,
-    StatusCondition.FROSTBITE,
-    StatusCondition.SLEEP,
-}
-
-
-
-
-
-# Non-volatile status conditions affect the Pokémon outside of battle as well,
-# while volatile status conditions are removed when the Pokémon is switched out.
+    def on_switch_out(self):
+        """Called when the Pokémon switches out."""
+        return None

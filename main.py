@@ -3,9 +3,9 @@ from engine.pokemon.repository import pokemon_repository, move_repository, item_
 from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
-from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
+from shared.battle.opponent import TrainerOpponent
 from shared.trainer.trainer import Trainer
-from shared.pokemon.pokemon import PokemonTeam, Pokemon, BattleMon
+from shared.pokemon.pokemon import PokemonTeam, Pokemon
 from shared.battle.battle_actions import MoveAction
 
 import os
@@ -34,22 +34,35 @@ class Application(ShowBase):
 
 
 def simulate_sample_battle():
-    pikachu_moveset = moveset_from_names(["tackle", "growl", "volt_tackle", "quick_attack"])
+    pikachu_moveset = moveset_from_names(["perish_song", "growl", "volt_tackle", "quick_attack"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
     pikachu_base = pokemon_repository.get("pikachu")
     eevee_base = pokemon_repository.get("eevee")
 
-    pikachu = Pokemon(pokemon_base=pikachu_base, level=15, move_set=pikachu_moveset)
-    pikachu.nickname = "Pika"
+    pikachu = Pokemon(pokemon_base=pikachu_base, level=50, move_set=pikachu_moveset)
+    pikachu.nickname = "Pickle"
     pikachu.held_item = item_repository.get("light_ball")
 
-    eevee = Pokemon(pokemon_base=eevee_base, level=10, move_set=eevee_moveset)
-    ashes_team = PokemonTeam(pokemons=[pikachu])
-    trainer = Trainer(name="Ash", team=ashes_team)
+
+    eevee = Pokemon(pokemon_base=eevee_base, level=50, move_set=eevee_moveset)
+    eevee.nickname = "Stevie"
+    eevee.held_item = item_repository.get("eviolite")
+
+
+    marshtomp_moveset = moveset_from_names(["mud_slap", "water_gun", "rock_throw", "protect"])
+    marshtomp_base = pokemon_repository.get("marshtomp")
+    marshtomp = Pokemon(pokemon_base=marshtomp_base, level=50, move_set=marshtomp_moveset)
     
-    opponent_1 = TrainerOpponent(trainer=trainer)
-    opponent_2 = WildPokemonOpponent(pokemon=eevee)
+
+    youngseos_team = PokemonTeam(pokemons=[pikachu])
+    trainer_1 = Trainer(name="Youngseo", team=youngseos_team)
+    
+    declans_team = PokemonTeam(pokemons=[marshtomp])
+    trainer_2 = Trainer(name="Declan", team=declans_team)
+
+    opponent_1 = TrainerOpponent(trainer=trainer_1)
+    opponent_2 = TrainerOpponent(trainer=trainer_2)
 
     battle_manager = BattleManager(teams=[opponent_1, opponent_2])
     battle_manager.init_battle()
@@ -212,7 +225,7 @@ class BattleInspectorWindow:
             panel_widgets["queued_label"].config(text="Queued: none")
             return
 
-        base_name = getattr(pokemon.pokemon_base, "name_readable", None) or getattr(pokemon.pokemon_base, "name", "-")
+        base_name = getattr(pokemon.pokemon_base, "display_name", None) or getattr(pokemon.pokemon_base, "name", "-")
         panel_widgets["name"].config(text=f"Pokemon: {pokemon.nickname} (Lv {pokemon.level}) [{base_name}]")
         panel_widgets["hp_text"].config(text=f"HP: {pokemon.current_hp}/{pokemon.max_hp}")
         panel_widgets["status"].config(text=self._format_status(pokemon))
@@ -337,7 +350,7 @@ class BattleInspectorWindow:
     def _get_dragonite_base(self):
         # Lazy-load Dragonite base for testing mega evolution.
         if not hasattr(self, "_dragonite_base"):
-            self._dragonite_base = pokemon_repository.get("dragonite")
+            self._dragonite_base = pokemon_repository.get("rayquaza-mega")
         return self._dragonite_base
 
     def mega_evolve(self, team_id: int):

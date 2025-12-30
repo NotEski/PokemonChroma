@@ -10,6 +10,7 @@ class Stat(Enum):
     SPEED = "speed"
     ACCURACY = "accuracy"
     EVASION = "evasion"
+    CRITICAL_HIT = "critical_hit"
 
 class BaseStats(BaseModel):
     hp: int = Field(ge=1, le=255)

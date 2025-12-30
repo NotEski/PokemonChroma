@@ -92,7 +92,7 @@ class ItemFlingEffect(Enum):
 
 class Item(BaseModel):
     name: str
-    name_readable: str
+    display_name: str
     index: int
     description: str
     cost: int = Field(ge=0, default=0)

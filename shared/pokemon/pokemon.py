@@ -6,7 +6,7 @@ from typing import List, Optional
 from enum import Enum
 
 from .types import PokemonType
-from .moves.move import MoveSet
+from .move import MoveSet
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
@@ -47,7 +47,7 @@ class EggGroup(Enum):
 
 class PokemonBase(BaseModel):
     name: str
-    name_readable: str = Field(default="")
+    display_name: str = Field(default="")
     types: List[PokemonType]
     base_stats: BaseStats
     pokedex_number: int
@@ -166,7 +166,6 @@ class BattleMon(BaseModel):
     def calculate_stat(self, stat: Stat) -> int:
         return generic_calculate_stat(self.pokemon_base, self.effort_values, self.individual_values, self.nature, self.level, stat)
     
-
     def mega_evolve(self, mega_evolved_base: PokemonBase):
         self.evolve_pokemon(mega_evolved_base)
         self.pokemon_enhancement_used = True
@@ -178,7 +177,6 @@ class BattleMon(BaseModel):
     def types(self) -> List[PokemonType]:
         return self.pokemon_base.types
 #endregion
-
 
 #region Pokemon stats Proxy Properties
     @property
@@ -206,7 +204,6 @@ class BattleMon(BaseModel):
         return self.current_hp <= 0
 #endregion
 
-
 #region Stat Stage Proxy Properties
     @property
     def attack_stat_stage(self) -> int:
@@ -233,7 +230,6 @@ class BattleMon(BaseModel):
     def critical_hit_stage(self) -> int:
         return self.stat_stages.critical_hit_stage
 #endregion
-
 
 #region Proxy Properties to Pokemon Reference
     @property
@@ -308,7 +304,7 @@ class Pokemon(BaseModel):
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
     # for all battle related status conditions, they should be stored in BattleMon
-    external_status_condition: StatusCondition = Field(default=StatusCondition.NONE) 
+    external_status_condition: Optional[StatusCondition] = Field(default=None)
 
 
     battlemon: Optional[BattleMon] = Field(default=None)
