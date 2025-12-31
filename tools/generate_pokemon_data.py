@@ -1,22 +1,23 @@
 """
-Generate Pokémon base data, move files, and item files from cached PokeAPI JSON.
+Generate Pokémon base data, move files, item files, and ability files from cached PokeAPI JSON.
 
 Outputs:
 - data/pokemon/NNNN-name/base_pokemon.json aligned to PokemonBase fields
-- data/moves/NNNN-move-name.json copied from pokeapi_database/move
+- data/moves/NNNN-move-name.pkmn generated from pokeapi_database/move
 - data/items/NNNN-item-name.json copied from pokeapi_database/item
+- data/abilities/ability-name.pkmn generated from pokeapi_database/ability
 
 Rules:
 - Moveset source: sword-shield version-group only (no fallback for moves)
 - Per-field fallback for Pokémon attributes when needed
-- Types, growth_rate, egg_groups: UPPER_SNAKE
+- Types, growth_rate, egg_groups: lower_snake
 - Abilities: kebab-case slug names
 - Height/weight: dm→meters, hg→kilograms (÷10)
 
 Usage:
     python -m tools.generate_pokemon_data --overwrite
-    python -m tools.generate_pokemon_data --skip-pokemon --overwrite  # only moves
-    python -m tools.generate_pokemon_data --skip-pokemon --skip-moves --overwrite  # only items
+    python -m tools.generate_pokemon_data --skip-pokemon --overwrite  # only moves, items, abilities
+    python -m tools.generate_pokemon_data --skip-pokemon --skip-moves --skip-items --overwrite  # only abilities
 """
 from __future__ import annotations
 
@@ -31,6 +32,7 @@ DEFAULT_SOURCE = WORKSPACE_ROOT / "pokeapi_database"
 DEFAULT_OUT_POKEMON = WORKSPACE_ROOT / "data" / "pokemon"
 DEFAULT_OUT_MOVES = WORKSPACE_ROOT / "data" / "moves"
 DEFAULT_OUT_ITEMS = WORKSPACE_ROOT / "data" / "items"
+DEFAULT_OUT_ABILITIES = WORKSPACE_ROOT / "data" / "abilities"
 
 
 # ------------------------- Helpers -------------------------
@@ -121,7 +123,7 @@ def map_abilities(pokemon_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         slot = entry.get("slot", 0)
         hidden = bool(entry.get("is_hidden", False))
         if aname:
-            mapped.append({"ability": aname, "slot": slot, "is_hidden": hidden})
+            mapped.append({"ability": to_lower_snake(aname), "slot": slot, "is_hidden": hidden})
     return mapped
 
 
@@ -236,7 +238,7 @@ def build_pokemon_payload(pokemon_path: Path, species_dir: Path) -> Optional[Tup
         pokemon_data = read_json(pokemon_path)
     except Exception:
         return None
-    name_slug = pokemon_data.get("name", "")
+    name_slug = to_lower_snake(pokemon_data.get("name", ""))
     pid = int(pokemon_data.get("id")) if isinstance(pokemon_data.get("id"), int) else None
     if not name_slug or pid is None:
         return None
@@ -363,7 +365,6 @@ def generate_items(source: Path, out_items: Path, overwrite: bool, limit: Option
         payload = build_item_payload(data)
         if not payload:
             continue
-        iid = payload.get("index")
         iname = payload.get("name")
         fname = f"{iname}.json"
         target_file = out_items / fname
@@ -511,6 +512,76 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     return payload
 
 
+def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
+    """Generate .pkmn file content from move payload."""
+    move_id = payload.get("name")
+    class_name = "_" + "".join(word.capitalize() for word in move_id.split("_"))
+    
+    # Build meta dict
+    meta_lines = [
+        "    meta = {",
+        f'        "display_name": "{payload.get("display_name")}",',
+        f'        "type": "{payload.get("type")}",',
+        f'        "index": {payload.get("index")},',
+        f'        "damage_class": "{payload.get("damage_class")}",',
+        f'        "category": "{payload.get("category")}",',
+    ]
+    
+    # Handle None values properly
+    accuracy = payload.get("accuracy")
+    power = payload.get("power")
+    meta_lines.append(f'        "accuracy": {accuracy if accuracy is not None else "None"},')
+    meta_lines.append(f'        "power": {power if power is not None else "None"},')
+    meta_lines.append(f'        "pp": {payload.get("pp")},')
+    meta_lines.append(f'        "target": "{payload.get("target")}",')
+    
+    # Optional fields with defaults
+    priority = payload.get("priority", 0)
+    if priority != 0:
+        meta_lines.append(f'        "priority": {priority},')
+    
+    status_condition = payload.get("status_condition", "none")
+    if status_condition != "none":
+        meta_lines.append(f'        "status_condition": "{status_condition}",')
+        status_chance = payload.get("status_condition_chance", 0)
+        meta_lines.append(f'        "status_condition_chance": {status_chance},')
+    
+    crit_rate = payload.get("critical_hit_rate", 0)
+    if crit_rate != 0:
+        meta_lines.append(f'        "critical_hit_rate": {crit_rate},')
+    
+    flinch = payload.get("flinch_chance", 0)
+    if flinch != 0:
+        meta_lines.append(f'        "flinch_chance": {flinch},')
+    
+    drain = payload.get("drain", 0)
+    if drain != 0:
+        meta_lines.append(f'        "drain": {drain},')
+    
+    healing = payload.get("healing", 0)
+    if healing != 0:
+        meta_lines.append(f'        "healing": {healing},')
+    
+    # Stat changes
+    stat_changes_inflicted = payload.get("stat_changes_inflicted")
+    if stat_changes_inflicted:
+        meta_lines.append(f'        "stat_changes_inflicted": {json.dumps(stat_changes_inflicted)},')
+    
+    stat_changes_recieved = payload.get("stat_changes_recieved")
+    if stat_changes_recieved:
+        meta_lines.append(f'        "stat_changes_recieved": {json.dumps(stat_changes_recieved)},')
+    
+    meta_lines.append("    }")
+    
+    # Build the full file content
+    lines = [
+        f'@move("{move_id}")  # type: ignore',
+        f'class {class_name}:',
+    ] + meta_lines
+    
+    return "\n".join(lines) + "\n"
+
+
 def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Optional[int]) -> int:
     move_dir = source / "move"
     if not move_dir.exists():
@@ -527,15 +598,117 @@ def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Option
             continue
         mid = payload.get("index")
         mname = payload.get("name")
-        fname = f"{mname}.json"
+        fname = f"{mname}.pkmn"
         target_file = out_moves / fname
         if target_file.exists() and not overwrite:
             written += 1
             if limit and written >= limit:
                 break
             continue
+        pkmn_content = generate_move_pkmn_file(payload)
         with target_file.open("w", encoding="utf-8") as f:
-            json.dump(payload, f, indent=4)
+            f.write(pkmn_content)
+        written += 1
+        if limit and written >= limit:
+            break
+    return written
+
+
+# ------------------------- Ability files -------------------------
+def build_ability_payload(ability_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Extract and normalize ability data to BaseAbility schema.
+    Maps PokeAPI fields to BaseAbility fields.
+    """
+    aid = ability_data.get("id")
+    aname = ability_data.get("name")
+    if not isinstance(aid, int) or not isinstance(aname, str) or not aname:
+        return None
+
+    aslug = to_lower_snake(aname)
+    if not aslug:
+        return None
+    
+    display_name = map_ability_display_name(ability_data, aslug)
+    description = map_ability_description(ability_data)
+    
+    payload: Dict[str, Any] = {
+        "name": aslug,
+        "display_name": display_name,
+        "index": aid,
+        "description": description,
+    }
+    return payload
+
+
+def map_ability_display_name(ability_data: Dict[str, Any], fallback_slug: str) -> str:
+    for entry in ability_data.get("names", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            nm = entry.get("name")
+            if nm:
+                return nm
+    return to_title_spaces(fallback_slug)
+
+
+def map_ability_description(ability_data: Dict[str, Any]) -> str:
+    for entry in ability_data.get("effect_entries", []):
+        lang = (entry.get("language", {}) or {}).get("name")
+        if lang == "en":
+            text = entry.get("short_effect") or entry.get("effect")
+            if text:
+                return " ".join(text.replace("\n", " ").split())
+    return ""
+
+
+def generate_ability_pkmn_file(payload: Dict[str, Any]) -> str:
+    """Generate .pkmn file content from ability payload."""
+    ability_id = payload.get("name")
+    class_name = "_" + "".join(word.capitalize() for word in ability_id.split("_"))
+    
+    # Build meta dict
+    meta_lines = [
+        "    meta = {",
+        f'        "display_name": "{payload.get("display_name")}",',
+        f'        "description": "{payload.get("description")}",',
+        f'        "index": {payload.get("index")},',
+        "    }",
+    ]
+    
+    # Build the full file content
+    lines = [
+        f'@ability("{ability_id}")  # type: ignore',
+        f'class {class_name}:',
+    ] + meta_lines
+    
+    return "\n".join(lines) + "\n"
+
+
+def generate_abilities(source: Path, out_abilities: Path, overwrite: bool, limit: Optional[int]) -> int:
+    ability_dir = source / "ability"
+    if not ability_dir.exists():
+        return 0
+    out_abilities.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for p in sorted(ability_dir.glob("*.json")):
+        try:
+            data = read_json(p)
+        except Exception:
+            continue
+        payload = build_ability_payload(data)
+        if not payload:
+            continue
+        aname = payload.get("name")
+        fname = f"{aname}.pkmn"
+        target_file = out_abilities / fname
+        if target_file.exists() and not overwrite:
+            written += 1
+            if limit and written >= limit:
+                break
+            continue
+        pkmn_content = generate_ability_pkmn_file(payload)
+        with target_file.open("w", encoding="utf-8") as f:
+            f.write(pkmn_content)
         written += 1
         if limit and written >= limit:
             break
@@ -548,11 +721,13 @@ def run(
     out_pokemon: Path,
     out_moves: Path,
     out_items: Path,
+    out_abilities: Path,
     overwrite: bool,
     limit: Optional[int],
     include_pokemon: bool,
     include_moves: bool,
     include_items: bool,
+    include_abilities: bool,
 ) -> None:
     pokemon_dir = source / "pokemon"
     species_dir = source / "pokemon-species"
@@ -577,25 +752,33 @@ def run(
     if include_items:
         total_items = generate_items(source, out_items, overwrite, limit)
 
+    total_abilities = 0
+    if include_abilities:
+        total_abilities = generate_abilities(source, out_abilities, overwrite, limit)
+
     if include_pokemon:
         print(f"Wrote {total_pokemon} Pokémon base files to {out_pokemon}")
     if include_moves:
         print(f"Wrote {total_moves} move files to {out_moves}")
     if include_items:
         print(f"Wrote {total_items} item files to {out_items}")
+    if include_abilities:
+        print(f"Wrote {total_abilities} ability files to {out_abilities}")
 
 
 def main(argv: Optional[List[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Generate Pokémon base data, move data, and item data from cached PokeAPI JSON")
+    parser = argparse.ArgumentParser(description="Generate Pokémon base data, move data, item data, and ability data from cached PokeAPI JSON")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="Source pokeapi_database directory")
     parser.add_argument("--out-pokemon", type=Path, default=DEFAULT_OUT_POKEMON, help="Output data/pokemon directory")
     parser.add_argument("--out-moves", type=Path, default=DEFAULT_OUT_MOVES, help="Output data/moves directory")
     parser.add_argument("--out-items", type=Path, default=DEFAULT_OUT_ITEMS, help="Output data/items directory")
+    parser.add_argument("--out-abilities", type=Path, default=DEFAULT_OUT_ABILITIES, help="Output data/abilities directory")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing output files")
-    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon, moves, and items)")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon, moves, items, and abilities)")
     parser.add_argument("--skip-pokemon", action="store_true", help="Skip generating Pokémon data")
     parser.add_argument("--skip-moves", action="store_true", help="Skip generating moves data")
     parser.add_argument("--skip-items", action="store_true", help="Skip generating item data")
+    parser.add_argument("--skip-abilities", action="store_true", help="Skip generating ability data")
 
     args = parser.parse_args(argv)
     run(
@@ -603,11 +786,13 @@ def main(argv: Optional[List[str]] = None) -> None:
         out_pokemon=args.out_pokemon,
         out_moves=args.out_moves,
         out_items=args.out_items,
+        out_abilities=args.out_abilities,
         overwrite=args.overwrite,
         limit=args.limit,
         include_pokemon=not args.skip_pokemon,
         include_moves=not args.skip_moves,
         include_items=not args.skip_items,
+        include_abilities=not args.skip_abilities,
     )
 
 

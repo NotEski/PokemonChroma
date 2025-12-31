@@ -1,11 +1,62 @@
 from typing import Optional
 from enum import Enum
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 class Ability(BaseModel):
+    model_config = ConfigDict(extra='allow')
+
     name: str
     display_name: str
     description: str
+
+    def __hash__(self):
+        return hash(self.name)
+    
+    def on_modify_attack(self, pokemon, move, target) -> Optional[int]:
+        """Modify the attack stat of the Pokémon."""
+        return None
+    
+    def on_modify_defense(self, pokemon, move, target) -> Optional[int]:
+        """Modify the defense stat of the Pokémon."""
+        return None
+    
+    def on_modify_speed(self, pokemon, move, target) -> Optional[int]:
+        """Modify the speed stat of the Pokémon."""
+        return None
+    
+    def on_before_move(self, pokemon, move, target) -> Optional[bool]:
+        """Called before the Pokémon uses a move."""
+        return None
+    
+    def on_escape_attempt(self, pokemon) -> Optional[bool]:
+        """Called when the Pokémon attempts to escape from battle. for Eevee Run Away ability"""
+        return None
+    
+    def on_enemy_escape_attempt(self, pokemon) -> Optional[bool]:
+        """Called when an enemy Pokémon attempts to escape from battle."""
+        return None
+
+    def on_switch_in(self, pokemon) -> None:
+        """Called when the Pokémon switches in."""
+        pass
+
+    def on_switch_out(self, pokemon) -> None:
+        """Called when the Pokémon switches out."""
+        pass
+
+    def on_faint(self, pokemon) -> None:
+        """Called when the Pokémon faints."""
+        pass
+
+    def on_damage_taken(self, pokemon, damage) -> Optional[int]:
+        """Called when the Pokémon takes damage."""
+        return None
+    
+    def on_contact(self, pokemon, attacker) -> None:
+        """Called when the Pokémon is hit by a contact move."""
+        pass
+    
+
 
 class AbilitySlot(Enum):
     PRIMARY = 1

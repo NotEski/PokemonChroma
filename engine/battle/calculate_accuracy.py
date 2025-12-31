@@ -2,7 +2,7 @@ import random
 from shared.pokemon.move import BaseMove, DamageClass
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.battle_header import BattleState, BattleWeather
-from shared.pokemon.status_conditions import StatusCondition
+from engine.pokemon.repository import status_repository
 
 
 def calculate_accuracy(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:
@@ -27,7 +27,7 @@ def _get_other_modifiers(base_move: BaseMove, user: BattleMon, target: BattleMon
 
     # Tangled Feet * 0.5
     if target.abilities.has_ability("tangled_feet"):
-        if StatusCondition.CONFUSION in target.non_volatile_status_conditions:
+        if status_repository.get("confusion") in target.non_volatile_status_conditions:
             modifier *= 0.5
 
     # Hustle 0.8 - if the attacker has it and it's a physical move

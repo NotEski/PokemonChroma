@@ -39,7 +39,6 @@ class BaseRepository(BaseModel, Generic[T]):
     def list(self) -> Dict[str, T]:
         return self.items
 
-
 class BaseSingleton(Generic[T]):
     """Generic singleton pattern implementation."""
     _instance: T = None

@@ -32,7 +32,7 @@ class BattleLogEntry(BaseModel):
 
 
 class BattleLogMoveUsed(BattleLogEntry):
-    move_name: BaseMove
+    move_name: Optional[BaseMove] = Field(default=None)
     user_pokemon: BattleMon
     target_pokemon: Optional[List[BattleMon]] = Field(default_factory=list)
     damage_dealt: int = Field(default=0)
@@ -114,7 +114,7 @@ class BattleLogManager(BaseModel):
 
     def print_log(self):
         for log in self.logs:
-            print(f"[{log.log_type.value}] {log.description}")
+            print(f"[{log.log_type.value}]\n{log.description}")
 
     def misc(self, description: str):
         log = BattleLogEntry(

@@ -1,18 +1,18 @@
 from shared.pokemon.pokemon import BattleMon
-from shared.pokemon.status_conditions import StatusCondition
 from shared.items.pokeball import Pokeball
+from engine.pokemon.repository import status_repository
 from random import randint
 
 import time
 
 status_condition_big_bonus = [
-    StatusCondition.SLEEP,
-    StatusCondition.FREEZE,
+    status_repository.get("sleep"),
+    status_repository.get("freeze"),
 ]
 status_condition_small_bonus = [
-    StatusCondition.PARALYSIS,
-    StatusCondition.BURN,
-    StatusCondition.POISON,
+    status_repository.get("paralysis"),
+    status_repository.get("burn"),
+    status_repository.get("poison"),
 ]
 
 def calculate_catch_probability(pokemon: BattleMon, pokeball: Pokeball) -> float:

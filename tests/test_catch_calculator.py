@@ -2,7 +2,7 @@
 import pytest
 from unittest.mock import patch
 from shared.pokemon.pokemon import Pokemon
-from shared.pokemon.status_conditions import StatusCondition
+from engine.pokemon.repository import status_repository
 from shared.items.pokeball import Pokeball
 from engine.battle.catch_calculator import (
     calculate_catch_probability,
@@ -64,7 +64,7 @@ class TestCalculateCatchProbability:
         chance_healthy = calculate_catch_probability(bm, pokeball)
         
         # Test big bonus status (SLEEP)
-        bm.status_conditions[StatusCondition.SLEEP] = 0
+        bm.status_conditions[status_repository.get("sleep")] = 0
         chance_sleep = calculate_catch_probability(bm, pokeball)
         assert chance_sleep > chance_healthy
         
@@ -72,7 +72,7 @@ class TestCalculateCatchProbability:
         bm.status_conditions.clear()
         chance_healthy2 = calculate_catch_probability(bm, pokeball)
         
-        bm.status_conditions[StatusCondition.BURN] = 0
+        bm.status_conditions[status_repository.get("burn")] = 0
         chance_burned = calculate_catch_probability(bm, pokeball)
         assert chance_burned > chance_healthy2
         assert chance_sleep > chance_burned  # Big bonus > small bonus
@@ -82,7 +82,7 @@ class TestCalculateCatchProbability:
         bm = eevee_pokemon.generate_battlemon()
         chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        bm.status_conditions[StatusCondition.FREEZE] = 0
+        bm.status_conditions[status_repository.get("freeze")] = 0
         chance_frozen = calculate_catch_probability(bm, pokeball)
         
         assert chance_frozen > chance_healthy
@@ -92,7 +92,7 @@ class TestCalculateCatchProbability:
         bm = eevee_pokemon.generate_battlemon()
         chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        bm.status_conditions[StatusCondition.PARALYSIS] = 0
+        bm.status_conditions[status_repository.get("paralysis")] = 0
         chance_paralyzed = calculate_catch_probability(bm, pokeball)
         
         assert chance_paralyzed > chance_healthy
@@ -102,7 +102,7 @@ class TestCalculateCatchProbability:
         bm = eevee_pokemon.generate_battlemon()
         chance_healthy = calculate_catch_probability(bm, pokeball)
         
-        bm.status_conditions[StatusCondition.POISON] = 0
+        bm.status_conditions[status_repository.get("poison")] = 0
         chance_poisoned = calculate_catch_probability(bm, pokeball)
         
         assert chance_poisoned > chance_healthy
@@ -151,7 +151,7 @@ class TestCalculateCatchProbability:
         
         # Apply HP damage + status
         bm.current_hp = int(bm.max_hp * 0.25)
-        bm.status_conditions[StatusCondition.SLEEP] = 0
+        bm.status_conditions[status_repository.get("sleep")] = 0
         modified = calculate_catch_probability(bm, pokeball)
         
         assert modified > baseline
@@ -279,7 +279,7 @@ class TestCatchCalculatorIntegration:
         
         pokemon = Pokemon(pokemon_base=eevee_base, level=5, move_set=move_set)
         pokemon.current_hp = 1  # Near death
-        pokemon.external_status_condition = StatusCondition.SLEEP
+        pokemon.external_status_condition = status_repository.get("sleep")
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
@@ -293,7 +293,7 @@ class TestCatchCalculatorIntegration:
         
         pokemon = Pokemon(pokemon_base=charizard_base, level=50, move_set=move_set)
         # Keep full HP (default)
-        pokemon.external_status_condition = StatusCondition.NONE
+        pokemon.external_status_condition = None
         
         pokeball = Pokeball(name="Pokeball", catch_rate_modifier=1.0)
         shake_chance = calculate_catch_probability(pokemon.generate_battlemon(), pokeball)
@@ -372,11 +372,11 @@ class TestCatchCalculatorEdgeCases:
         """Pokemon with status conditions should have predictable behavior."""
         # Test each status individually in battle state
         statuses_to_test = [
-            (StatusCondition.SLEEP, True),  # Big bonus
-            (StatusCondition.FREEZE, True),  # Big bonus
-            (StatusCondition.PARALYSIS, False),  # Small bonus
-            (StatusCondition.BURN, False),  # Small bonus
-            (StatusCondition.POISON, False),  # Small bonus
+            (status_repository.get("sleep"), True),  # Big bonus
+            (status_repository.get("freeze"), True),  # Big bonus
+            (status_repository.get("paralysis"), False),  # Small bonus
+            (status_repository.get("burn"), False),  # Small bonus
+            (status_repository.get("poison"), False),  # Small bonus
         ]
         
         chances = {}
@@ -387,5 +387,5 @@ class TestCatchCalculatorEdgeCases:
             chances[status] = calculate_catch_probability(bm, pokeball)
         
         # Verify big bonus statuses have higher catch rates than small bonus
-        assert chances[StatusCondition.SLEEP] > chances[StatusCondition.PARALYSIS]
-        assert chances[StatusCondition.FREEZE] > chances[StatusCondition.BURN]
+        assert chances[status_repository.get("sleep")] > chances[status_repository.get("paralysis")]
+        assert chances[status_repository.get("freeze")] > chances[status_repository.get("burn")]

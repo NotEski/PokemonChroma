@@ -1,5 +1,5 @@
 from engine.pokemon.repositry_generator import initialize_repositories
-from engine.pokemon.repository import pokemon_repository, move_repository, item_repository
+from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository
 from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
@@ -14,6 +14,8 @@ import tkinter as tk
 from tkinter import ttk
 
 from direct.showbase.ShowBase import ShowBase
+
+
 
 
 class Application(ShowBase):
@@ -156,8 +158,8 @@ class BattleInspectorWindow:
         queue_button = ttk.Button(frame, text="Queue Move")
         queue_button.grid(row=8, column=0, sticky="ew", pady=(0, 6))
 
-        mega_button = ttk.Button(frame, text="Mega Evolve")
-        mega_button.grid(row=9, column=0, sticky="ew", pady=(0, 6))
+        burn_button = ttk.Button(frame, text="Give Burn")
+        burn_button.grid(row=9, column=0, sticky="ew", pady=(0, 6))
 
         queued_label = ttk.Label(frame, text="Queued: none")
         queued_label.grid(row=10, column=0, sticky="w")
@@ -173,7 +175,7 @@ class BattleInspectorWindow:
             "move_var": move_var,
             "move_selector": move_selector,
             "queue_button": queue_button,
-            "mega_button": mega_button,
+            "burn_button": burn_button,
             "queued_label": queued_label,
         }
 
@@ -200,7 +202,7 @@ class BattleInspectorWindow:
         statuses = list(statuses_dict.keys()) if statuses_dict else []
         if not statuses:
             return "Status: none"
-        names = ", ".join([getattr(s, "value", str(s)) for s in statuses])
+        names = ", ".join([getattr(s, "name", str(s)) for s in statuses])
         return f"Status: {names}"
 
     def _format_moves(self, moves_listbox: tk.Listbox, move_selector: ttk.Combobox, move_var: tk.StringVar, pokemon):
@@ -232,11 +234,6 @@ class BattleInspectorWindow:
         self._draw_hp_bar(panel_widgets["hp_canvas"], pokemon.current_hp, pokemon.max_hp)
         self._format_moves(panel_widgets["moves"], panel_widgets["move_selector"], panel_widgets["move_var"], pokemon)
 
-        mega_btn = panel_widgets.get("mega_button")
-        if mega_btn:
-            state = "disabled" if getattr(pokemon, "pokemon_enhancement_used", False) else "normal"
-            mega_btn.state([state]) if state == "disabled" else mega_btn.state(["!disabled"])
-
         action = self.battle_manager.position_manager.get_position_action(position)
         if action:
             action_name = getattr(action, "move_index", None)
@@ -250,7 +247,7 @@ class BattleInspectorWindow:
             panel_widgets["queued_label"].config(text="Queued: none")
 
     def _format_log_line(self, log):
-        prefix = f"[{log.log_type.value}] " if hasattr(log, "log_type") else ""
+        prefix = f"[{log.log_type.value}]\n" if hasattr(log, "log_type") else ""
         if getattr(log, "description", ""):
             return prefix + log.description
         turn_no = getattr(log, "turn_number", None)
@@ -294,7 +291,7 @@ class BattleInspectorWindow:
         # wire queue buttons to the freshly created battle
         for team_id, panel in self.team_frames.items():
             panel["queue_button"].configure(command=lambda tid=team_id: self.queue_move(tid))
-            panel["mega_button"].configure(command=lambda tid=team_id: self.mega_evolve(tid))
+            panel["burn_button"].configure(command=lambda tid=team_id: self.give_burn(tid))
 
     def queue_move(self, team_id: int):
         if self.battle_manager is None:
@@ -347,32 +344,22 @@ class BattleInspectorWindow:
 
         self._render_state()
 
-    def _get_dragonite_base(self):
-        # Lazy-load Dragonite base for testing mega evolution.
-        if not hasattr(self, "_dragonite_base"):
-            self._dragonite_base = pokemon_repository.get("rayquaza-mega")
-        return self._dragonite_base
-
-    def mega_evolve(self, team_id: int):
+    def give_burn(self, team_id: int):
         if self.battle_manager is None:
             return
         position = BattlePosition(team_id=team_id, pokemon_index=1)
         pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
         if pokemon is None:
-            print("Mega Evolve error: No pokemon at this position.")
+            print("Give Burn error: No pokemon at this position.")
             return
 
-        if getattr(pokemon, "pokemon_enhancement_used", False):
-            print("Mega Evolve: Enhancement already used.")
-            return
-
-        mega_base = self._get_dragonite_base()
-        if mega_base is None:
-            print("Mega Evolve error: Dragonite base not found in repository.")
+        burn = status_repository.get("freeze")
+        if burn is None:
+            print("Give Burn error: 'burn' status not found in repository.")
             return
 
         try:
-            pokemon.mega_evolve(mega_base)
+            pokemon.status_conditions[burn] = 0  # 0 turns indicates persistent until cured
         except Exception:
             traceback.print_exc()
             return

@@ -2,7 +2,7 @@ import random
 from shared.pokemon.move import BaseMove
 from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.types import PokemonType
-from shared.pokemon.status_conditions import StatusCondition
+from engine.pokemon.repository import status_repository
 from shared.pokemon.move import DamageClass
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.battle.type_effectiveness import get_attack_multiplier
@@ -130,7 +130,7 @@ def _get_type_effectiveness_modifier(move: BaseMove, defending_pokemon: BattleMo
     return multiplier if multiplier > 0 else 0.0
 
 def _get_burn_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> float:
-    if move.damage_class == DamageClass.PHYSICAL and StatusCondition.BURN in attacking_pokemon.status_conditions.keys():
+    if move.damage_class == DamageClass.PHYSICAL and status_repository.get("burn") in attacking_pokemon.status_conditions.keys():
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
         # if attacking_pokemon.ability
         return 0.5

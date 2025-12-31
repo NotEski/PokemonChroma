@@ -76,6 +76,7 @@ class BaseMove(BaseModel):
 
     critical_hit_rate: int = Field(default=0)  # Additional stages to critical hit rate
     flinch_chance: int = Field(default=0)  # Percentage chance to flinch the target
+    makes_contact: bool = Field(default=False)
 
     drain: int = Field(default=0)  # Percentage of in percentage of damage dealt healed, recoiled damage if negative
     healing: int = Field(default=0)  # Percentage of max HP healed
@@ -104,8 +105,10 @@ class BaseMove(BaseModel):
         """Called before the move is used."""
         return None
     
-    def damage_calculation(self, attacker, defender, field) -> int:
-        """Calculate damage dealt by the move instead of using standard formula. e.g. 50% of target's max HP"""
+    def damage_calculation(self, attacker, defender) -> int:
+        """Calculate damage dealt by the move instead of using standard formula. e.g. 50% of target's max HP
+        Returns the damage amount as an integer.
+        """
         return None
 
 

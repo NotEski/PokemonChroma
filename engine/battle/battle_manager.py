@@ -10,10 +10,10 @@ from shared.pokemon.pokemon import BattleMon, StatStages
 from shared.battle.battle_header import *
 from shared.battle.battle_logs import BattleLogManager
 from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
-from shared.battle.opponent import Opponent, TrainerOpponent
+from shared.battle.opponent import Opponent
 from shared.battle.position_manager import BattlePosition
-from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.types import PokemonType
+from engine.pokemon.repository import status_repository
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
@@ -330,35 +330,9 @@ class BattleManager(BaseModel):
     def process_damaging_status_conditions(self):
         # loop through all the pokemon in play and apply damage from status conditions
         for pokemon in self.position_manager.list_registered_pokemon():
-            for status_condition in pokemon.status_conditions.keys():
-                if status_condition == StatusCondition.BURN:
-                    damage = max(1, pokemon.calculate_max_hp() // 16)
-                    pokemon.current_hp -= damage
-                    self.battle_log.status_condition_damage(
-                        description=f"{pokemon.nickname} is hurt by its burn!"
-                    )
-                if status_condition == StatusCondition.FROSTBITE:
-                    damage = max(1, pokemon.calculate_max_hp() // 16)
-                    pokemon.current_hp -= damage
-                    self.battle_log.status_condition_damage(
-                        description=f"{pokemon.nickname} is hurt by its frostbite!"
-                    )
-                if status_condition == StatusCondition.POISON:
-                    damage = max(1, pokemon.calculate_max_hp() // 8)
-                    pokemon.current_hp -= damage
-                    self.battle_log.status_condition_damage(
-                        description=f"{pokemon.nickname} is hurt by its poison!"
-                    )
-                if status_condition == StatusCondition.BADLY_POISON:
-                    turns_poisoned = pokemon.status_conditions[StatusCondition.BADLY_POISON]
-                    if turns_poisoned > 15:
-                        turns_poisoned = 15
-                    damage = max(1, (pokemon.calculate_max_hp() // 16) * turns_poisoned)
-                    pokemon.current_hp -= damage
-                    pokemon.status_conditions[StatusCondition.BADLY_POISON] += 1
-                    self.battle_log.status_condition_damage(
-                        description=f"{pokemon.nickname} is hurt by its poison!"
-                    )
+            for status_condition, turns_active in pokemon.status_conditions.items():
+                status_condition.on_turn_end(turns_active, pokemon)
+
 
     def process_move(self, turn_order: list[BattlePosition]):
         priority_order = self.process_priority_turn_order(turn_order)
@@ -377,9 +351,29 @@ class BattleManager(BaseModel):
             if not isinstance(action, MoveAction): continue
 
 
-            # get pokemons move from moveactions moveindex
-
             user_pokemon = self.position_manager.get_pokemon_at_position(position)
+
+            user_pokemon_status_conditions = list(user_pokemon.status_conditions.keys())
+            can_move = True
+            for status_condition in user_pokemon_status_conditions:
+                status_condition.on_turn_start(user_pokemon)
+                if not status_condition.can_move(user_pokemon):
+                    description_list.append(f"{user_pokemon.nickname} is affected by {status_condition.name} and cannot move!")
+                    description = "\n".join(description_list)
+                    self.battle_log.move_used(
+                        move_name=None,
+                        user_pokemon=user_pokemon,
+                        target_pokemon=[],
+                        damage_dealt=0,
+                        is_critical=False,
+                        status_condition_applied=None,
+                        move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
+                        description=description
+                    )
+                    break
+            if not can_move:
+                continue
+
 
             used_move = user_pokemon.move_set.get_move_by_index(action.move_index)
             if used_move is None:

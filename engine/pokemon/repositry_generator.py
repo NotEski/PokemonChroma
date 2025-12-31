@@ -1,9 +1,9 @@
 # Generate Repository from json files
 
 import ast
-from pathlib import Path
 import json
 import builtins
+from random import randint
 import os
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, StatChange
@@ -101,13 +101,16 @@ def move(move_name: str):
 
         if hasattr(dsl_cls, "on_use"):
             dsl_method = dsl_cls.on_use
-            base_move.on_use = lambda *args, **kwargs: dsl_method(base_move, *args, **kwargs)
+            base_move.on_use = lambda: dsl_method(base_move)
         if hasattr(dsl_cls, "on_hit"):
             dsl_method = dsl_cls.on_hit
-            base_move.on_hit = lambda *args, **kwargs: dsl_method(base_move, *args, **kwargs)
+            base_move.on_hit = lambda: dsl_method(base_move)
         if hasattr(dsl_cls, "before_use"):
             dsl_method = dsl_cls.before_use
-            base_move.before_use = lambda *args, **kwargs: dsl_method(base_move, *args, **kwargs)
+            base_move.before_use = lambda: dsl_method(base_move)
+        if hasattr(dsl_cls, "damage_calculation"):
+            dsl_method = dsl_cls.damage_calculation
+            base_move.damage_calculation = lambda attacker, defender: dsl_method(base_move, attacker, defender)
 
         move_repository.create(base_move)
         return dsl_cls
@@ -117,6 +120,28 @@ def status(status_name: str):
     def decorator(dsl_cls):
         dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
         status_condition = StatusCondition(name=status_name, display_name=dsl_cls.meta.get("display_name", status_name.capitalize()), mutual_exclusive=dsl_cls.meta.get("mutual_exclusive", False))
+
+        if hasattr(dsl_cls, "on_inflicted"):
+            dsl_method = dsl_cls.on_inflicted
+            status_condition.on_inflicted = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+
+        if hasattr(dsl_cls, "on_turn_start"):
+            dsl_method = dsl_cls.on_turn_start
+            status_condition.on_turn_start = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+
+        if hasattr(dsl_cls, "on_turn_end"):
+            dsl_method = dsl_cls.on_turn_end
+            status_condition.on_turn_end = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            
+        if hasattr(dsl_cls, "on_switch_out"):
+            dsl_method = dsl_cls.on_switch_out
+            status_condition.on_switch_out = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+
+        if hasattr(dsl_cls, "can_move"):
+            dsl_method = dsl_cls.can_move
+            status_condition.can_move = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+        
+
         status_repository.create(status_condition)
         return dsl_cls
     return decorator
@@ -129,7 +154,13 @@ def item(item_name: str):
 
 def ability(ability_name: str):
     def decorator(dsl_cls):
-        # Code goes here for registering abilities
+        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+        ability = Ability(
+            name=ability_name,
+            display_name=dsl_cls.meta.get("display_name", ability_name.capitalize()),
+            description=dsl_cls.meta.get("description", ""),
+        )
+        ability_repository.create(ability)
         return dsl_cls
     return decorator
 
@@ -141,10 +172,16 @@ safe_namespace = {
             "list": list,
             "str": str,
             "int": int,
+            "float": float,
+            "bool": bool,
             "None": None,
             "True": True,
             "False": False,
-            "print": print,
+            "print": print, # for debugging purposes only will be removed later
+            "max": max,
+            "min": min,
+            "len": len,
+            "randint": randint,
         },
         "move": move,
         "status": status,
@@ -268,88 +305,6 @@ def generate_pokemon_repository_from_json(file_path: str):
 
 
 # ============================================================================
-# Ability
-# ============================================================================
-
-def json_to_ability(json_data: dict) -> Ability:
-    return Ability(
-        name=json_data["name"],
-        display_name=json_data["display_name"],
-        description=json_data["description"]
-    )
-
-def load_ability_from_json_file(file_path: str) -> Ability:
-    with open(file_path, 'r') as f:
-        json_data = json.load(f)
-    return json_to_ability(json_data)
-
-def generate_abilities_repository_from_json(file_path: str):
-    with open(file_path, 'r') as f:
-        json_data = json.load(f)
-        for ability_name, ability_data in json_data.items():
-            pokemon_ability = Ability(
-                name=ability_name,
-                display_name=ability_data["display_name"],
-                description=ability_data["description"]
-            )
-            ability_repository.create(pokemon_ability)
-
-
-# ============================================================================
-# Move
-# ============================================================================
-
-# def json_to_move(json_data: dict) -> BaseMove:
-#     stat_changes_inflicted = []
-#     if "stat_changes_inflicted" in json_data:
-#         if isinstance(json_data["stat_changes_inflicted"], list):
-#             for sc in json_data["stat_changes_inflicted"]:
-#                 stat_changes_inflicted.append(StatChange(**sc))
-    
-#     stat_changes_recieved = []
-#     if "stat_changes_recieved" in json_data:
-#         if isinstance(json_data["stat_changes_recieved"], list):
-#             for sc in json_data["stat_changes_recieved"]:
-#                 stat_changes_recieved.append(StatChange(**sc))
-    
-
-#     return BaseMove(
-#         name=json_data["name"],
-#         display_name=json_data.get("display_name", json_data["name"]),
-#         index=json_data["index"],
-#         type=PokemonType(json_data["type"]),
-#         damage_class=DamageClass(json_data["damage_class"]),
-#         category=MoveCategory(json_data["category"]),
-#         accuracy=json_data.get("accuracy"),
-#         power=json_data.get("power"),
-#         pp=json_data.get("pp", 10),
-#         target=MoveTarget(json_data.get("target", "selected_pokemon")),
-#         priority=json_data.get("priority", 0),
-#         status_condition=StatusCondition(json_data.get("status_condition", "none")),
-#         status_condition_chance=json_data.get("status_condition_chance", 0),
-#         critical_hit_rate=json_data.get("critical_hit_rate", 0),
-#         flinch_chance=json_data.get("flinch_chance", 0),
-#         drain=json_data.get("drain", 0),
-#         healing=json_data.get("healing", 0),
-#         min_hits=json_data.get("min_hits"),
-#         max_hits=json_data.get("max_hits"),
-#         min_turns=json_data.get("min_turns"),
-#         max_turns=json_data.get("max_turns"),
-#         stat_changes_inflicted=stat_changes_inflicted,
-#         stat_changes_recieved=stat_changes_recieved,
-#     )
-
-# def load_move_from_json_file(file_path: str) -> BaseMove:
-#     with open(file_path, 'r') as f:
-#         json_data = json.load(f)
-#     return json_to_move(json_data)
-
-# def generate_move_repository_from_json(file_path: str):
-#     move = load_move_from_json_file(file_path)
-#     move_repository.create(move)
-
-
-# ============================================================================
 # Item
 # ============================================================================
 
@@ -386,13 +341,19 @@ def generate_item_repository_from_json(file_path: str):
 
 def initialize_repositories(application_root_path: str):
 
-    # Generate Abilities Repository
-    abilities_file_path = os.path.join(application_root_path, "data/abilities.json")
-    generate_abilities_repository_from_json(abilities_file_path)
-
-
     loading_bar_length = 50
     loading_bar_increment_length = 100 / loading_bar_length
+
+    # Generate Ability Repository
+    abilities_folder_path = os.path.join(application_root_path, "data/abilities")
+    for subdir, _, files in os.walk(abilities_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading Ability Repo   - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            load_dsl_files_from_directory(file_path)
+    print()
 
     # Generate Status Condition Repository
     status_conditions_folder_path = os.path.join(application_root_path, "data/status")
@@ -401,7 +362,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Status Repo  - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Status Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
     print()
 
@@ -412,7 +373,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Move Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Move Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
     print()
 
@@ -423,7 +384,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print(f"Loading Pokemon Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print(f"Loading Pokemon Repo   - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_pokemon_repository_from_json(file_path)
     print()
 
@@ -434,7 +395,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Item Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Item Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_item_repository_from_json(file_path)
     print()
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from random import randint
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field
 from typing import List, Optional
 from enum import Enum
 
@@ -45,6 +45,10 @@ class EggGroup(Enum):
     WATER2 = "water2"
     WATER3 = "water3"
 
+class MegaEvolution(BaseModel):
+    mega_evolved_form: PokemonBase
+    required_item: Optional[Item] = None
+
 class PokemonBase(BaseModel):
     name: str
     display_name: str = Field(default="")
@@ -63,6 +67,8 @@ class PokemonBase(BaseModel):
 
     height: float = Field(ge=0.0, default=1.0)  # in meters
     weight: float = Field(ge=0.0, default=1.0)  # in kilograms
+
+    mega_evolutions: Optional[List[MegaEvolution]] = Field(default=None)
 
 
 class StatStages(BaseModel):
@@ -117,9 +123,6 @@ class BattleMon(BaseModel):
     # Status Conditions
     status_conditions: dict[StatusCondition, int] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
 
-    # this might need to be moved to 
-    pokemon_enhancement_used: bool = Field(default=False)  # e.g., Mega Evolution, Terastallization, Z-Move
-
 
     def __post_init__(self, **data):
         super().__init__(**data)
@@ -137,28 +140,20 @@ class BattleMon(BaseModel):
             self.current_hp = self.max_hp
 
 
-    def non_volatile_status_condition_check(self) -> List[StatusCondition]:
-        non_volatile_conditions = [status for status in self.status_conditions.keys() if status.is_non_volatile()]
-        if len(non_volatile_conditions) > 1:
-            print ("Warning: More than one non-volatile status condition present.")
-        return non_volatile_conditions
-    
-    def evolve_pokemon(self, new_base_pokemon: PokemonBase):
-        self.pokemon_base = new_base_pokemon
+    def mutual_exclusive_status_conditions(self) -> List[StatusCondition]:
+        return [status for status in self.status_conditions.keys() if status.mutual_exclusive]
 
-        past_max_hp = self.max_hp
-
-        # Recalculate max HP based on new base stats
-        self.max_hp = round((((self.individual_values.hp + 2 * self.pokemon_base.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10)
-
-        # Adjust current HP proportionally
-        self.current_hp = round((self.current_hp / past_max_hp) * self.max_hp)
-        if self.current_hp > self.max_hp:
-            self.current_hp = self.max_hp
+    def remove_status_condition(self, status_name: str):
+        status_to_remove = None
+        for status in self.status_conditions.keys():
+            if status.name == status_name:
+                status_to_remove = status
+                break
+        if status_to_remove:
+            del self.status_conditions[status_to_remove]
 
     def set_position(self, position: BattlePosition):
         self.current_position = position
-
 
     def calculate_max_hp(self) -> int:
         return generic_calculate_max_hp(self.pokemon_base, self.individual_values, self.effort_values, self.level)
@@ -166,10 +161,24 @@ class BattleMon(BaseModel):
     def calculate_stat(self, stat: Stat) -> int:
         return generic_calculate_stat(self.pokemon_base, self.effort_values, self.individual_values, self.nature, self.level, stat)
     
-    def mega_evolve(self, mega_evolved_base: PokemonBase):
-        self.evolve_pokemon(mega_evolved_base)
-        self.pokemon_enhancement_used = True
-        # update move set if there is any replaced moves in a mega evolution
+    def can_mega_evolve(self) -> bool:
+        # logic to determine if the pokemon can mega evolve
+        if self.pokemon_base.mega_evolutions not in (None, []) and self.pokemon_reference:
+            for mega_evo in self.pokemon_base.mega_evolutions:
+                if mega_evo.required_item is None:
+                    return True
+                if self.pokemon_reference.held_item == mega_evo.required_item:
+                    return True
+        return False
+
+    def mega_evolve(self):
+        if not self.can_mega_evolve():
+            raise ValueError("This Pokémon cannot mega evolve at this time.")
+        for mega_evo in self.pokemon_base.mega_evolutions:
+            if mega_evo.required_item is None:
+                self.pokemon_base = mega_evo.mega_evolved_form
+            elif self.pokemon_reference.held_item == mega_evo.required_item:
+                self.pokemon_base = mega_evo.mega_evolved_form    
 
 
 #region Pokemon Base Proxy Properties
@@ -299,8 +308,6 @@ class Pokemon(BaseModel):
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
-    
-
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
     # for all battle related status conditions, they should be stored in BattleMon
@@ -417,6 +424,27 @@ class Pokemon(BaseModel):
         self.battlemon = battlemon
         return battlemon
 
+    def level_up(self, levels: int = 1):
+        self.level += levels
+        self.recalculate_health()
+    
+    def evolve_pokemon(self, new_base_pokemon: PokemonBase):
+        self.pokemon_base = new_base_pokemon
+        self.recalculate_health()
+
+    def recalculate_health(self):
+        past_max_hp = self.max_hp
+
+        # Recalculate max HP based on new base stats
+        self.max_hp = round((((self.individual_values.hp + 2 * self.pokemon_base.base_stats.hp +((self.effort_values.hp)/4)+100) * self.level)/100)+10)
+
+        # Adjust current HP proportionally
+        self.current_hp = round((self.current_hp / past_max_hp) * self.max_hp)
+        if self.current_hp > self.max_hp:
+            self.current_hp = self.max_hp
+        # Other stats are already recalculated as needed
+
+    #region Pokemon stats Proxy Properties
     @property
     def stat_attack(self) -> int:
         return self.calculate_stat(Stat.ATTACK)
@@ -440,6 +468,7 @@ class Pokemon(BaseModel):
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0
+    #endregion
 
 
 
