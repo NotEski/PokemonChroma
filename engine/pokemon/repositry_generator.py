@@ -101,7 +101,7 @@ def move(move_name: str):
 
         if hasattr(dsl_cls, "on_use"):
             dsl_method = dsl_cls.on_use
-            base_move.on_use = lambda: dsl_method(base_move)
+            base_move.on_use = lambda attacker, defender, battle_state: dsl_method(base_move, attacker, defender, battle_state)
         if hasattr(dsl_cls, "on_hit"):
             dsl_method = dsl_cls.on_hit
             base_move.on_hit = lambda: dsl_method(base_move)
@@ -164,6 +164,30 @@ def ability(ability_name: str):
         return dsl_cls
     return decorator
 
+def get_status_condition(status_name: str) -> StatusCondition:
+    status_condition = status_repository.get(status_name.lower())
+    if status_condition is None:
+        raise ValueError(f"Status Condition '{status_name}' not found in status repository.")
+    return status_condition
+
+def get_move(move_name: str) -> BaseMove:
+    move = move_repository.get(move_name.lower())
+    if move is None:
+        raise ValueError(f"Move '{move_name}' not found in move repository.")
+    return move
+
+def get_ability(ability_name: str) -> Ability:
+    ability = ability_repository.get(ability_name.lower())
+    if ability is None:
+        raise ValueError(f"Ability '{ability_name}' not found in ability repository.")
+    return ability
+
+def get_item(item_name: str) -> Item:
+    item = item_repository.get(item_name.lower())
+    if item is None:
+        raise ValueError(f"Item '{item_name}' not found in item repository.")
+    return item
+
 safe_namespace = {
         "__builtins__": {
             "__build_class__": builtins.__build_class__,
@@ -187,6 +211,11 @@ safe_namespace = {
         "status": status,
         "item": item,
         "ability": ability,
+
+        "get_status_condition": get_status_condition,
+        "get_move": get_move,
+        "get_ability": get_ability,
+        "get_item": get_item,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):

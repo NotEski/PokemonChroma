@@ -15,11 +15,11 @@ class StatusCondition(BaseModel):
         """Called when the status condition is inflicted on a Pokémon."""
         pass
 
-    def on_turn_start(self, turns_active, pokemon):
+    def on_turn_start(self, pokemon):
         """Called at the start of the Pokémon's turn."""
         pass
 
-    def on_turn_end(self, turns_active, pokemon):
+    def on_turn_end(self, pokemon):
         """Called at the end of the Pokémon's turn."""
         pass
     

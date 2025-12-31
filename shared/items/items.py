@@ -89,7 +89,6 @@ class ItemFlingEffect(Enum):
     PARALYZE = "paralyze"
     POISON = "poison"
 
-
 class Item(BaseModel):
     name: str
     display_name: str
@@ -103,3 +102,35 @@ class Item(BaseModel):
     category: ItemCategory
     held_by_pokemon: List[str] = Field(default_factory=list)
     pocket: Optional[ItemPocket] = None
+
+    def after_move_effect(self, pokemon, move, target) -> None:
+        """Called after the Pokémon uses a move."""
+        pass
+
+    def on_consume(self, pokemon) -> None:
+        """Called when the item is consumed by the Pokémon."""
+        pass
+
+    def on_switch_in(self, pokemon) -> None:
+        """Called when the Pokémon switches in."""
+        pass
+
+    def on_switch_out(self, pokemon) -> None:
+        """Called when the Pokémon switches out."""
+        pass
+
+    def on_faint(self, pokemon) -> None:
+        """Called when the Pokémon faints."""
+        pass
+
+    def on_damage_taken(self, pokemon, damage) -> Optional[int]:
+        """Called when the Pokémon takes damage."""
+        return None
+    
+    def on_contact(self, pokemon, attacker) -> None:
+        """Called when the Pokémon is hit by a contact move."""
+        pass
+
+    def modify_stat(self, pokemon, stat_name: str, amount: int) -> Optional[int]:
+        """Modify the specified stat of the Pokémon."""
+        return None

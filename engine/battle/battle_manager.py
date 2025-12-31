@@ -2,9 +2,7 @@
 # calculate the priority
 # apply effects
 
-from typing import TypeVar, Generic
 from pydantic import BaseModel, Field
-from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction
 from shared.pokemon.pokemon import BattleMon, StatStages
 from shared.battle.battle_header import *
@@ -13,7 +11,7 @@ from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_m
 from shared.battle.opponent import Opponent
 from shared.battle.position_manager import BattlePosition
 from shared.pokemon.types import PokemonType
-from engine.pokemon.repository import status_repository
+from shared.pokemon.status_conditions import StatusCondition
 
 from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
@@ -57,6 +55,8 @@ class BattleManager(BaseModel):
         elif self.battle_config.battle_type == BattleType.TRIPLE:
             self.position_manager.pokemon_per_team = 3
 
+        self.battle_state.position_manager_ref = self.position_manager
+
 
     # region Abstract Methods
     def get_opponent_from_position(self, position: BattlePosition) -> Opponent:
@@ -99,8 +99,6 @@ class BattleManager(BaseModel):
                         escaping_pokemon=escaping_pokemon,
                         description=f"{escaping_pokemon.nickname} failed to escape!"
                     )
-
-    
 
     def clear_non_standard_variables(self):
         self.teams = {}
@@ -166,6 +164,7 @@ class BattleManager(BaseModel):
     def switch_pokemon(self, user_position: BattlePosition, new_pokemon: BattleMon):
         if self._has_actioned(user_position): return
         self.position_manager.add_position_action(user_position, SwitchAction(switch_in_position=new_pokemon))
+
     def cancel_action(self, user_position: BattlePosition):
         if self._has_actioned(user_position):
             self.position_manager.remove_position_action(user_position)
@@ -330,143 +329,143 @@ class BattleManager(BaseModel):
     def process_damaging_status_conditions(self):
         # loop through all the pokemon in play and apply damage from status conditions
         for pokemon in self.position_manager.list_registered_pokemon():
-            for status_condition, turns_active in pokemon.status_conditions.items():
-                status_condition.on_turn_end(turns_active, pokemon)
+            for status_condition in pokemon.status_conditions.keys():
+                status_condition.on_turn_end(pokemon)
 
-
-    def process_move(self, turn_order: list[BattlePosition]):
+    def process_move_loop(self, turn_order: list[BattlePosition]):
         priority_order = self.process_priority_turn_order(turn_order)
 
         for position in priority_order:
-            if self.position_manager.check_fainted(position):
-                self.battle_log.misc(
-                    description=f"{self.position_manager.get_pokemon_at_position(position).nickname} is fainted and cannot move!"
-                )
-                continue  # skip fainted pokemon
+            self.process_move(position)
+
+    def process_move(self, position: BattlePosition):
+        action = self.position_manager.get_position_action(position)
+        if not isinstance(action, MoveAction): return
+
+        if self.position_manager.check_fainted(position):
+            self.battle_log.misc(
+                description=f"{self.position_manager.get_pokemon_at_position(position).nickname} is fainted and cannot move!"
+            )
+            return  # skip fainted pokemon
 
 
-            description_list = []
+        description_list = []
 
-            action = self.position_manager.get_position_action(position)
-            if not isinstance(action, MoveAction): continue
+        user_pokemon = self.position_manager.get_pokemon_at_position(position)
+        target_pokemon = self.position_manager.get_pokemon_at_position(action.target_position)
+
+        user_pokemon_status_conditions = list(user_pokemon.status_conditions.keys())
+        description_list.extend(self._move_start_of_turn_effects(user_pokemon_status_conditions, user_pokemon))
+        can_move = self._can_move_check(user_pokemon_status_conditions, user_pokemon)
+        if not can_move:
+            description_list.append(f"{user_pokemon.nickname} is unable to move!")
+            return
 
 
-            user_pokemon = self.position_manager.get_pokemon_at_position(position)
+        used_move = user_pokemon.move_set.get_move_by_index(action.move_index)
+        if used_move is None:
+            raise ValueError("Move not found in user's move set.")
 
-            user_pokemon_status_conditions = list(user_pokemon.status_conditions.keys())
-            can_move = True
-            for status_condition in user_pokemon_status_conditions:
-                status_condition.on_turn_start(user_pokemon)
-                if not status_condition.can_move(user_pokemon):
-                    description_list.append(f"{user_pokemon.nickname} is affected by {status_condition.name} and cannot move!")
-                    description = "\n".join(description_list)
-                    self.battle_log.move_used(
-                        move_name=None,
-                        user_pokemon=user_pokemon,
-                        target_pokemon=[],
-                        damage_dealt=0,
-                        is_critical=False,
-                        status_condition_applied=None,
-                        move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
-                        description=description
-                    )
-                    break
-            if not can_move:
+
+        target_positions = self.position_manager.get_target_positions(
+            user_position=position,
+            move_target=used_move.target,
+            selected_position=action.target_position
+        )
+
+        base_move = used_move.base_move
+        base_move.on_use(attacker=user_pokemon, defender=target_pokemon, battle_state=self.battle_state)
+        
+        multi_target_pokemon = []
+        for target_position in target_positions:
+
+            target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
+            multi_target_pokemon.append(target_pokemon)
+
+            if self.position_manager.check_fainted(target_position):
+                description_list.append(f"{target_pokemon.nickname} is already fainted! The move failed.")
                 continue
 
 
-            used_move = user_pokemon.move_set.get_move_by_index(action.move_index)
-            if used_move is None:
-                raise ValueError("Move not found in user's move set.")
+            description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")
+            is_critical = calculate_critical_hit(user_pokemon)
 
+            if used_move.accuracy is None:
+                accuracy_check = 100.0
+            else:
+                accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
 
-            target_positions = self.position_manager.get_target_positions(
-                user_position=position,
-                move_target=used_move.target,
-                selected_position=action.target_position
+            if not calculate_accuracy_hit(accuracy_check):
+                description_list.append(f"But it missed!")
+                damage = 0
+                effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
+                continue
+            
+            
+            effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.types)
+            effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
+            
+            
+            damage = calculate_damage(
+                attacking_pokemon=user_pokemon,
+                defending_pokemon=target_pokemon,
+                move=used_move.base_move,
+                critical_hit=is_critical,
+                battle_state=self.battle_state
             )
 
-            base_move = used_move.base_move
-            base_move.on_use()
+            used_move.current_pp -= 1
+
+            # If damage is less than or equal to 0, it means no damage was dealt (e.g., immune)
+            if damage <= 0:
+                description_list.append(effectiveness_message(EffectivenessLevel.NO_EFFECT))
+                continue
             
-            for target_position in target_positions:
+            # Apply effectiveness message
+            description_list.append(effectiveness_message(effectiveness_level))
+            target_pokemon.current_hp -= damage
+            description_list.append(f"{target_pokemon.nickname} now has {max(0, target_pokemon.current_hp)}/{target_pokemon.calculate_max_hp()} HP.")
+            description_list.append(f"It dealt {damage} damage!")
 
-                target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
+            # Is the hit critical?
+            if is_critical:
+                description_list.append("A critical hit!")
 
-                if self.position_manager.check_fainted(target_position):
-                    description_list.append(f"{target_pokemon.nickname} is already fainted! The move failed.")
-                    description = "\n".join(description_list)
-                    self.battle_log.move_used(
-                        move_name=None,
-                        user_pokemon=user_pokemon,
-                        target_pokemon=[target_pokemon],
-                        damage_dealt=0,
-                        is_critical=False,
-                        status_condition_applied=None,
-                        move_effectiveness=EffectivenessLevel.NORMAL_EFFECTIVE,
-                        description=description
-                    )
-                    continue
+            # Check for faint
+            if target_pokemon.current_hp <= 0:
+                target_pokemon.current_hp = 0
+                description_list.append(f"{target_pokemon.nickname} fainted!")
 
+            description = "\n".join(description_list)
 
-                description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")
-                is_critical = calculate_critical_hit(user_pokemon)
-
-                if used_move.accuracy is None:
-                    accuracy_check = 100.0
-                else:
-                    accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
-                
-                if not calculate_accuracy_hit(accuracy_check):
-                    description_list.append(f"But it missed!")
-                    damage = 0
-                    effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
-                else:
-                    effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.types)
-                    effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
-                    
-                    damage = calculate_damage(
-                        attacking_pokemon=user_pokemon,
-                        defending_pokemon=target_pokemon,
-                        move=used_move.base_move,
-                        critical_hit=is_critical,
-                        battle_state=self.battle_state
-                    )
-
-                    used_move.current_pp -= 1
-
-                    if damage <= 0:
-                        description_list.append(effectiveness_message(EffectivenessLevel.NO_EFFECT))
-                        continue
-                    else:
-                        description_list.append(effectiveness_message(effectiveness_level))
-
-                    target_pokemon.current_hp -= damage
-                    description_list.append(f"{target_pokemon.nickname} now has {max(0, target_pokemon.current_hp)}/{target_pokemon.calculate_max_hp()} HP.")
-                    description_list.append(f"It dealt {damage} damage!")
-
-                    if is_critical:
-                        description_list.append("A critical hit!")
-
-                        effectiveness_multiplier = get_attack_multiplier(used_move.type, target_pokemon.pokemon_base.types)
-
-                    if target_pokemon.current_hp <= 0:
-                        target_pokemon.current_hp = 0
-                        description_list.append(f"{target_pokemon.nickname} fainted!")
-
-                description = "\n".join(description_list)
-
-                self.battle_log.move_used(
-                    move_name=used_move.base_move,
-                    user_pokemon=user_pokemon,
-                    target_pokemon=[target_pokemon],
-                    damage_dealt=damage,
-                    is_critical=is_critical,
-                    status_condition_applied=None,
-                    move_effectiveness=effectiveness_level,
-                    description=description
-                )
+        self.battle_log.move_used(
+            move_name=used_move.base_move,
+            user_pokemon=user_pokemon,
+            target_pokemon=multi_target_pokemon,
+            damage_dealt=damage,
+            is_critical=is_critical,
+            status_condition_applied=None,
+            move_effectiveness=effectiveness_level,
+            description=description
+        )
     
+    def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon):
+        description_list = []
+        for status_condition in status_conditions:
+            if not isinstance(status_condition, StatusCondition):
+                continue
+            status_condition.on_turn_start(user_pokemon)
+        return description_list
+    
+    def _can_move_check(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon) -> bool:
+        can_move = True
+        for status_condition in status_conditions:
+            if not isinstance(status_condition, StatusCondition):
+                continue
+            if not status_condition.can_move(user_pokemon):
+                can_move = False
+        return can_move
+
     def process_fainted_pokemon(self):
         for position in self.position_manager.list_registered_positions():
             if self.position_manager.check_fainted(position):

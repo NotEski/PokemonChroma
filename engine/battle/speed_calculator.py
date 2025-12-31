@@ -19,28 +19,25 @@ def calculate_speed(pokemon: BattleMon) -> int:
     default_modifier = 4096
     modifier = default_modifier
 
-    # if ability is activated Swift Swim, Chlorophyll, Slush Rush, Sand Rush, Surge Surfer, or Unburden, multiply modifier by 8192/4096
+    # if ability is activated Swift Swim, Chlorophyll, Slush Rush, Sand Rush, Surge Surfer, or Unburden, multiply modifier by 2
+    for ability in pokemon.abilities.get_all_active_abilities():
+        modifier *= ability.stat_speed_mod
 
 
-    # if ability is activated Quick Feet, multiply modifier by 6144/4096
+    # if ability is Slow Start and has not expired yet, multiply modifier by 0.5
 
 
-    # if ability is Slow Start and has not expired yet, multiply modifier by 2048/4096
+    # if item is Quick Powder and species is Ditto (not transformed), multiply modifier by 2
 
 
-    # if item is Quick Powder and species is Ditto (not transformed), multiply modifier by 8192/4096
+    # if item is Choice Scarf, multiply modifier by 1.5
+
+    # if item is Iron Ball, Macho Brace, or a Power EV item, multiply modifier by 0.5
 
 
-    # if item is Choice Scarf, multiply modifier by 6144/4096
+    # if Tailwind is in effect on this side, multiply modifier by 2
 
-
-    # if item is Iron Ball, Macho Brace, or a Power EV item, multiply modifier by 2048/4096
-
-
-    # if Tailwind is in effect on this side, multiply modifier by 8192/4096
-
-
-    # if pledge swamp is in effect on this side, multiply modifier by 1024/4096
+    # if pledge swamp is in effect on this side, multiply modifier by 1.5
 
 
     # multiply speed (last used in step 3) by modifier, divide by 4096, and round to nearest but ties round DOWN

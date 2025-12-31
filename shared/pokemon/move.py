@@ -78,6 +78,8 @@ class BaseMove(BaseModel):
     flinch_chance: int = Field(default=0)  # Percentage chance to flinch the target
     makes_contact: bool = Field(default=False)
 
+    one_hit_ko: bool = Field(default=False)
+
     drain: int = Field(default=0)  # Percentage of in percentage of damage dealt healed, recoiled damage if negative
     healing: int = Field(default=0)  # Percentage of max HP healed
 
@@ -93,7 +95,7 @@ class BaseMove(BaseModel):
     stat_changes_inflicted: Optional[List[StatChange]] = None  # List of stat changes inflicted by the move
     stat_changes_recieved: Optional[List[StatChange]] = None  # List of stat changes received by the user of the move
 
-    def on_use(self):
+    def on_use(self, attacker, defender, battle_state):
         """Called when the move is used."""
         return None
 
@@ -104,12 +106,29 @@ class BaseMove(BaseModel):
     def before_use(self):
         """Called before the move is used."""
         return None
-    
+
     def damage_calculation(self, attacker, defender) -> int:
         """Calculate damage dealt by the move instead of using standard formula. e.g. 50% of target's max HP
         Returns the damage amount as an integer.
         """
         return None
+
+    @property
+    def is_multi_hit(self) -> bool:
+        return self.min_hits is not None and self.max_hits is not None and self.min_hits > 1
+
+    @property
+    def physical(self) -> bool:
+        return self.damage_class == DamageClass.PHYSICAL
+
+    @property
+    def special(self) -> bool:
+        return self.damage_class == DamageClass.SPECIAL
+
+    @property
+    def status(self) -> bool:
+        return self.damage_class == DamageClass.STATUS
+
 
 
 class Move(BaseModel):
@@ -186,6 +205,14 @@ class MoveSet(BaseModel):
     
     def get_move_by_index(self, index: int) -> Optional[Move]:
         return self.moves.get(index, None)
+    
+    def list_moves(self) -> List[Move]:
+        move_list = []
+        for move_index in self.moveset_order:
+            move = self.moves.get(move_index, None)
+            if move:
+                move_list.append(move)
+        return move_list
             
 
     @model_validator(mode="after")

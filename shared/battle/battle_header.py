@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Optional
 from enum import Enum
 from .battle_logs import BattleLogEntry
 from .position_manager import *
@@ -69,6 +69,8 @@ class BattleState(BaseModel):
     field_effects: dict[FieldEffects, int] = Field(default_factory=dict)  # e.g., {FieldEffects.TRICK_ROOM: 5} means Trick Room has been active for 5 turns
     positions_effects: dict[BattlePosition, PositionEffects] = Field(default_factory=dict)  # e.g., {BattlePosition(team_id=1, pokemon_index=1): PositionEffects}
 
+    position_manager_ref: Optional[BattlePositionManager] = None  # Reference to the PositionManager managing the battle positions
+
     battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
 
     def set_weather(self, weather: BattleWeather, turns: int = 5):
@@ -81,6 +83,16 @@ class BattleState(BaseModel):
             if self.weather_turns.remaining_turns == 0:
                 self.weather_turns.weather = BattleWeather.NONE
                 self.weather_turns.remaining_turns = -1
+    
+    def get_all_active_pokemon(self) -> List[BattleMon]:
+        if self.position_manager_ref is None:
+            raise ValueError("Position manager reference is not set in BattleState.")
+        active_pokemon = []
+        for position in self.position_manager_ref.get_valid_positions():
+            pokemon = self.position_manager_ref.get_pokemon_at_position(position)
+            if pokemon is not None and not pokemon.is_fainted:
+                active_pokemon.append(pokemon)
+        return active_pokemon
 
 class PositionEffects(BaseModel):
     is_protected: bool = Field(default=False)  # e.g., from moves like Protect

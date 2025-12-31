@@ -17,7 +17,6 @@ from shared.items.items import Item
 from shared.battle.battle_actions import MoveAction, SwitchAction, UseItemAction
 from shared.battle.position import BattlePosition
 
-
 class GrowthRate(Enum):
     FAST_THEN_VERY_SLOW = "fast_then_very_slow"
     SLOW = "slow"
@@ -121,8 +120,7 @@ class BattleMon(BaseModel):
     current_position: Optional[BattlePosition] = Field(default=None)  # (team_id, pokemon_index)
 
     # Status Conditions
-    status_conditions: dict[StatusCondition, int] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
-
+    status_conditions: dict[StatusCondition, dict] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
 
     def __post_init__(self, **data):
         super().__init__(**data)
@@ -143,6 +141,18 @@ class BattleMon(BaseModel):
     def mutual_exclusive_status_conditions(self) -> List[StatusCondition]:
         return [status for status in self.status_conditions.keys() if status.mutual_exclusive]
 
+    def add_status_condition(self, status: StatusCondition, status_data: dict):
+        if status in self.status_conditions:
+            return  # Status condition already present
+
+        # Check for mutual exclusivity
+        for mutual_status in self.mutual_exclusive_status_conditions():
+            if status.name == mutual_status.name:
+                return  # Do not add if a mutually exclusive status is already present
+        # Add the new status condition
+        new_status = status
+        self.status_conditions[new_status] = status_data
+
     def remove_status_condition(self, status_name: str):
         status_to_remove = None
         for status in self.status_conditions.keys():
@@ -151,6 +161,8 @@ class BattleMon(BaseModel):
                 break
         if status_to_remove:
             del self.status_conditions[status_to_remove]
+
+    
 
     def set_position(self, position: BattlePosition):
         self.current_position = position
