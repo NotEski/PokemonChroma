@@ -173,7 +173,21 @@ def move(move_name: str):
 
         if healing_flag is not None and healing_flag is False and not heal_exception:
             raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")
+        
+        # Field Effect
+        field_effect: dict = dsl_cls.__dict__.get("field_effect", None)
+        if field_effect is not None:
+            for field_effect_name, field_effect_turns in field_effect.items():
+                field_effect_obj = field_effect_repository.get(field_effect_name)
+                if field_effect_obj is None:
+                    raise ValueError(f"Move '{move_name}' field effect '{field_effect_name}' not found in repository.")
+                if field_effect_turns is None:
+                    field_effect_turns = field_effect_obj.default_duration
+                move_tags.append(FieldEffectMove(field_effect=field_effect_obj, turns=field_effect_turns))
 
+
+
+        # Generate BaseMove
         base_move = BaseMove(
             name=move_name,
             display_name=display_name,
@@ -261,12 +275,12 @@ def field_effect(field_effect_name: str):
     def decorator(dsl_cls):
         dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
         display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=field_effect_name.capitalize())
-        duration = get_field(dsl_cls.meta, "duration", int, required=True)
+        duration = get_field(dsl_cls.meta, "default_duration", int, required=True)
 
         field_effect = FieldEffect(
             name=field_effect_name,
             display_name=display_name,
-            duration=duration
+            default_duration=duration
         )
 
         if hasattr(dsl_cls, "on_apply"):

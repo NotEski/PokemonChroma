@@ -527,9 +527,12 @@ class BattleManager(BaseModel):
 
     def process_field_effect_move(self, move: BaseMove, position: BattlePosition):
         """Process a field-effect move."""
+        
         if move.has_tag(FieldEffectMove):
+            print ("Adding field effect")
             field_effect = move.get_tag(FieldEffectMove).field_effect
             turns = move.get_tag(FieldEffectMove).turns
+            print ("Field effect:", field_effect)
             self.position_manager.add_field_effect(position, field_effect, turns)
         if move.has_tag(EntryHazardMove):
             hazard = move.get_tag(EntryHazardMove).entry_hazard

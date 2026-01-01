@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 class FieldEffect(BaseModel):
     name: str
     display_name: str
-    duration: int  # Duration in turns
+    default_duration: int  # Duration in turns
 
     def __hash__(self):
         return hash(f"field_effect_{self.name}")
