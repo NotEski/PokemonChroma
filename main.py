@@ -18,7 +18,7 @@ from tkinter import ttk
 
 
 def simulate_sample_battle():
-    pikachu_moveset = moveset_from_names(["toxic_spikes", "trick_room", "volt_tackle", "quick_attack"])
+    pikachu_moveset = moveset_from_names(["fissure", "trick_room", "volt_tackle", "quick_attack"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
     pikachu_base = pokemon_repository.get("pikachu")

@@ -419,6 +419,8 @@ class BattleManager(BaseModel):
         
 
         all_target_pokemon: list[BattleMon] = []
+        is_critical = False
+        
         for target_position in target_positions:
             target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
             all_target_pokemon.append(target_pokemon)
@@ -431,27 +433,21 @@ class BattleManager(BaseModel):
 
 
             if used_move.category in MoveCategoryCategories.DAMAGE_MOVES:
-                print ("Processing damage move")
                 effectiveness_level = self.process_damage_move(user_pokemon, target_pokemon, used_move.base_move, is_critical)
             
             if used_move.category in MoveCategoryCategories.STATUS_MOVES:
-                print ("Processing status move")
                 self.process_status_move(user_pokemon, target_pokemon, used_move.base_move)
 
             if used_move.category in MoveCategoryCategories.FIELD_EFFECT_MOVES:
-                print ("Processing field effect move")
                 self.process_field_effect_move(used_move.base_move, target_position)
 
             if used_move.category in MoveCategoryCategories.STAT_CHANGE_MOVES:
-                print ("Processing stat change move")
                 self.process_stat_change_move(user_pokemon, target_pokemon, used_move.base_move)
 
             if used_move.category == MoveCategory.HEAL:
-                print ("Processing healing move")
                 self.process_healing_move(user_pokemon, target_pokemon, used_move.base_move)
 
             if used_move.category == MoveCategory.OHKO:
-                print ("Processing OHKO move")
                 self.process_ohko_move(target_pokemon)
 
 
@@ -527,12 +523,10 @@ class BattleManager(BaseModel):
 
     def process_field_effect_move(self, move: BaseMove, position: BattlePosition):
         """Process a field-effect move."""
-        
+
         if move.has_tag(FieldEffectMove):
-            print ("Adding field effect")
             field_effect = move.get_tag(FieldEffectMove).field_effect
             turns = move.get_tag(FieldEffectMove).turns
-            print ("Field effect:", field_effect)
             self.position_manager.add_field_effect(position, field_effect, turns)
         if move.has_tag(EntryHazardMove):
             hazard = move.get_tag(EntryHazardMove).entry_hazard
@@ -546,11 +540,6 @@ class BattleManager(BaseModel):
     def process_ohko_move(self, target: BattleMon):
         """Process a one-hit KO move."""
         target.current_hp = 0
-
-
-
-
-
 
 
     def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon):
