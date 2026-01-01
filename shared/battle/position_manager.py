@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from shared.battle.battle_actions import BattleAction
+from shared.battle.battle_actions import BattleAction, EscapeAction, SwitchAction
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition
 from shared.pokemon.move import MoveTarget
@@ -47,6 +47,12 @@ class BattlePositionManager(BaseModel):
         # check if position is valid
         if not self.check_position_validity(position):
             raise ValueError("Invalid battle position.")
+        
+        if type(action) not in [SwitchAction, EscapeAction]:
+            # check if pokemon at position is fainted
+            pokemon = self.get_pokemon_at_position(position)
+            if pokemon is None or pokemon.is_fainted:
+                raise ValueError("Cannot perform action with a fainted Pokémon.")
 
         self.actions[position] = action
 

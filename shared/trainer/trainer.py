@@ -67,7 +67,3 @@ class Trainer(BaseModel):
             trainer_type=self.trainer_type
         )
 
-
-
-
-

@@ -113,6 +113,12 @@ class BattleManager(BaseModel):
 
     def _has_actioned(self, position: BattlePosition) -> bool:
         return self.position_manager.get_position_action(position) is not None
+    
+    def _has_fainted(self, position: BattlePosition) -> bool:
+        print ("Checking fainted for position:", position)
+        output = self.position_manager.check_fainted(position)
+        print("Fainted status:", output)
+        return output
 
     def get_taking_actions(self) -> bool:
         return self.taking_actions
@@ -140,6 +146,8 @@ class BattleManager(BaseModel):
 
     def use_escape(self, user_position: BattlePosition):
         if self._has_actioned(user_position): return
+        if self._has_fainted(user_position): return
+
         if self.battle_config.is_wild is False:
             raise ValueError("Cannot escape from trainer battles!")
         
@@ -149,6 +157,7 @@ class BattleManager(BaseModel):
 
     def use_move(self, user_position: BattlePosition, move_index: int, target_position: BattlePosition):
         if self._has_actioned(user_position): return
+        if self._has_fainted(user_position): return
 
         if not isinstance(move_index, int):
             raise ValueError("Invalid move type.")
@@ -164,9 +173,20 @@ class BattleManager(BaseModel):
 
         self.position_manager.add_position_action(user_position, MoveAction(move_index=move_index, position=user_position, target_position=target_position))
 
-    def switch_pokemon(self, user_position: BattlePosition, new_pokemon: BattleMon):
+    def switch_pokemon(self, user_position: BattlePosition, new_pokemon_index: int):
         if self._has_actioned(user_position): return
-        self.position_manager.add_position_action(user_position, SwitchAction(switch_in_position=new_pokemon))
+
+        opponent = self.get_opponent_from_position(user_position)
+        if new_pokemon_index < 0 or new_pokemon_index >= len(opponent.get_all_battlemons()):
+            raise ValueError("Invalid Pokémon index for switch.")
+        new_pokemon = opponent.get_battlemon_by_index(new_pokemon_index)
+        if new_pokemon.is_fainted:
+            raise ValueError("Cannot switch to a fainted Pokémon.")
+        current_pokemon = self.position_manager.get_pokemon_at_position(user_position)
+        if new_pokemon == current_pokemon:
+            raise ValueError("Cannot switch to the same Pokémon.")
+
+        self.position_manager.add_position_action(user_position, SwitchAction(position=user_position, switch_in_pokemon_index=new_pokemon_index))
 
     def cancel_action(self, user_position: BattlePosition):
         if self._has_actioned(user_position):
@@ -316,12 +336,14 @@ class BattleManager(BaseModel):
     def process_switch(self):
         for position, action in self.position_manager.position_actions().items():
             if isinstance(action, SwitchAction):
-                new_pokemon = action.switch_in_pokemon
+                new_pokemon_index = action.switch_in_pokemon_index
+                new_pokemon = self.get_opponent_from_position(position).get_battlemon_by_index(new_pokemon_index)
                 self.position_manager.register_pokemon(new_pokemon, position.team_id, position.pokemon_index)
                 self.battle_log.pokemon_switch_in(
                     switched_in_pokemon=new_pokemon,
                     posistion=position,
-                    trainer=self.trainers[position.value // 2]
+                    trainer=self.teams[position.team_id].trainer,
+                    description=f"{new_pokemon.nickname} was switched in!"
                 )
 
     def process_end_of_turn_effects(self):
@@ -420,7 +442,7 @@ class BattleManager(BaseModel):
 
         all_target_pokemon: list[BattleMon] = []
         is_critical = False
-        
+
         for target_position in target_positions:
             target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
             all_target_pokemon.append(target_pokemon)
@@ -501,7 +523,6 @@ class BattleManager(BaseModel):
 
         return effectiveness_level
 
-
     def process_status_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
         """Process a status move."""
         if move.has_tag(StatusConditionMove):
@@ -541,7 +562,6 @@ class BattleManager(BaseModel):
         """Process a one-hit KO move."""
         target.current_hp = 0
 
-
     def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon):
         description_list = []
         for status_condition in status_conditions:
@@ -563,13 +583,18 @@ class BattleManager(BaseModel):
         for position in self.position_manager.list_registered_positions():
             if self.position_manager.check_fainted(position):
                 # check which opponent the pokemon belongs to
-                # opponent = self.get_opponent_from_position(position)
-                # if the opponent has usable pokemons, prompt for switch
-
-                # if no usable pokemons, end battle
-
-                self.end_battle()
-                pass
+                opponent = self.get_opponent_from_position(position)
+                fainted_pokemon = self.position_manager.get_pokemon_at_position(position)
+                self.battle_log.pokemon_fainted(
+                    fainted_pokemon=fainted_pokemon,
+                    pokemon_position=position,
+                    trainer=opponent.get_trainer(),
+                    description=f"{fainted_pokemon.nickname} has fainted!"
+                )
+                # check if the opponent has usable pokemons
+                if not opponent.has_viable_pokemons():
+                    # if no usable pokemons, end battle
+                    self.end_battle()
 
     def process_item_use(self):
         pass

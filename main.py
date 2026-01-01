@@ -1,7 +1,7 @@
 from engine.pokemon.repositry_generator import initialize_repositories
 from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
 from engine.battle.battle_example import moveset_from_names
-from engine.battle.battle_manager import BattleManager
+from engine.battle.battle_manager import BattleManager, BattleConfig, BattleType
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent
 from shared.trainer.trainer import Trainer
@@ -34,7 +34,7 @@ def simulate_sample_battle():
     eevee.held_item = item_repository.get("eviolite")
 
 
-    marshtomp_moveset = moveset_from_names(["mud_slap", "water_gun", "rock_throw", "protect"])
+    marshtomp_moveset = moveset_from_names(["mud_slap", "water_gun", "rock_throw", "instakill"])
     marshtomp_base = pokemon_repository.get("marshtomp")
     marshtomp = Pokemon(pokemon_base=marshtomp_base, level=50, move_set=marshtomp_moveset)
     
@@ -47,6 +47,7 @@ def simulate_sample_battle():
 
     opponent_1 = TrainerOpponent(trainer=trainer_1)
     opponent_2 = TrainerOpponent(trainer=trainer_2)
+
 
     battle_manager = BattleManager(teams=[opponent_1, opponent_2])
     battle_manager.init_battle()
@@ -463,11 +464,10 @@ class BattleInspectorWindow:
             print("Switch error: Invalid selection index.")
             return
 
-        new_pokemon = battlemons[switch_index]
         position = BattlePosition(team_id=team_id, pokemon_index=1)
 
         try:
-            self.battle_manager.switch_pokemon(position, new_pokemon)
+            self.battle_manager.switch_pokemon(position, switch_index)
         except Exception:
             traceback.print_exc()
             return

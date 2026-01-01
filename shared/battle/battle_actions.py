@@ -22,7 +22,7 @@ class MoveAction(BattleAction):
 
 class SwitchAction(BattleAction):
     action_type: ActionType = Field(default=ActionType.SWITCH)
-    switch_in_position: BattlePosition
+    switch_in_pokemon_index: int
 
 class UseItemAction(BattleAction):
     action_type: ActionType = Field(default=ActionType.USE_ITEM)
