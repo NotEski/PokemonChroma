@@ -6,11 +6,22 @@ import builtins
 from random import randint
 import os
 from shared.pokemon.genders import GenderRate
-from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, StatChange
+from shared.pokemon.hazard import EntryHazard
+from shared.battle.field_effect import FieldEffect
+from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory
+from shared.pokemon.move_tags import *
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
-from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository, status_repository
+from engine.pokemon.repository import (
+    pokemon_repository,
+    ability_repository,
+    move_repository,
+    item_repository,
+    status_repository,
+    hazard_repository,
+    field_effect_repository
+)
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
@@ -47,35 +58,121 @@ def move(move_name: str):
         # Priority
         priority = get_field(dsl_cls.meta, "priority", int, required=False, default=0)
 
-        # Status Condition and chance
-        # Needs to be looked into further as these might be becoming a part of on hit effects so they can be more dynamic
-        # but for now we will keep them here for simplicity
-        if "status_condition" in dsl_cls.meta and dsl_cls.meta.get("status_condition") is not None:
-            status_condition = status_repository.get(dsl_cls.meta.get("status_condition"))
-        else:
-            status_condition = None
+        # Below are MoveTags specific fields
 
-        status_condition_chance = get_field(dsl_cls.meta, "status_condition_chance", int, required=False, default=0)
+        move_tags = []
+        healing_flag = None
+        heal_exception = False
+        dsl_cls.flags = dsl_cls.__dict__.get("flags", None)
+        if dsl_cls.flags is not None:
+            for flag in dsl_cls.flags:
+                match flag:
+                    case "contact":
+                        move_tags.append(ContactMove())
+                    case "charge":
+                        move_tags.append(ChargeMove())
+                    case "recharge":
+                        move_tags.append(RechargeMove())
+                    case "protect":
+                        move_tags.append(ProtectMove())
+                    case "reflectable":
+                        move_tags.append(ReflectableMove())
+                    case "snatch":
+                        move_tags.append(SnatchMove())
+                    case "mirror":
+                        move_tags.append(MirrorMove())
+                    case "punch":
+                        move_tags.append(PunchMove())
+                    case "sound":
+                        move_tags.append(SoundMove())
+                    case "gravity":
+                        move_tags.append(GravityMove())
+                    case "defrost":
+                        move_tags.append(DefrostMove())
+                    case "distance":
+                        move_tags.append(DistanceMove())
+                    case "heal":
+                        # Set a value that needs to be true by the end of decorator
+                        # This will be set by healing or positive drain
+                        healing_flag = False
+                    case "authentic":
+                        move_tags.append(AuthenticMove())
+                    case "powder":
+                        move_tags.append(PowderMove())
+                    case "bite":
+                        move_tags.append(BiteMove())
+                    case "pulse":
+                        move_tags.append(PulseMove())
+                    case "ballistics":
+                        move_tags.append(BallisticsMove())
+                    case "mental":
+                        move_tags.append(MentalMove())
+                    case "non-sky-battle":
+                        move_tags.append(NonSkyBattleMove())
+                    case "pivot":
+                        move_tags.append(PivotMove())
+                    case "heal_exception":
+                        heal_exception = True
+
         # Critical Hit Rate
-        critical_hit_rate = get_field(dsl_cls.meta, "critical_hit_rate", int, required=False, default=0)
-        # Flinch Chance
-        flinch_chance = get_field(dsl_cls.meta, "flinch_chance", int, required=False, default=0)
+        critical_hit_rate = dsl_cls.__dict__.get("critical_hit_rate", None)
+        if critical_hit_rate is not None:
+            move_tags.append(CriticalHitMove(critical_hit_rate_increase=critical_hit_rate))
+
         # Drain
-        drain = get_field(dsl_cls.meta, "drain", int, required=False, default=0)
+        drain = dsl_cls.__dict__.get("drain", None)
+        if drain is not None and drain != 0:
+            if healing_flag is False and drain > 0:
+                healing_flag = True
+            move_tags.append(DrainMove(drain_percentage=drain))
+
+        # Flinch Chance
+        flinch_chance = dsl_cls.__dict__.get("flinch_chance", None)
+        if flinch_chance is not None:
+            move_tags.append(FlinchMove(chance=flinch_chance))
+
+        # Status Condition and chance
+        status_condition = dsl_cls.__dict__.get("status_condition", None)
+        if status_condition is not None:
+            if isinstance(status_condition, dict):
+                for sc_name, sc_chance in status_condition.items():
+                    status_condition_obj = get_status_condition(sc_name)
+                    move_tags.append(StatusConditionMove(
+                        status_condition=status_condition_obj,
+                        chance=sc_chance
+                    ))
+            else:
+                raise ValueError(f"Move '{move_name}' has invalid status_condition definition. {type(status_condition)} found, dict expected.")
+        
         # Healing
-        healing = get_field(dsl_cls.meta, "healing", int, required=False, default=0)
-        # Stat Changes Inflicted
-        stat_changes_inflicted = []
-        if "stat_changes_inflicted" in dsl_cls.meta and dsl_cls.meta.get("stat_changes_inflicted") is not None:
-            for sc in dsl_cls.meta.get("stat_changes_inflicted", []):
-                stat_change = StatChange(**sc)
-                stat_changes_inflicted.append(stat_change)
-        # Stat Changes Received
-        stat_changes_recieved = []
-        if "stat_changes_recieved" in dsl_cls.meta and dsl_cls.meta.get("stat_changes_recieved") is not None:
-            for sc in dsl_cls.meta.get("stat_changes_recieved", []):
-                stat_change = StatChange(**sc)
-                stat_changes_recieved.append(stat_change)
+        healing = dsl_cls.__dict__.get("healing", None)
+        if healing is not None:
+            if healing_flag is False and healing > 0:
+                healing_flag = True
+            if healing != 0:
+                move_tags.append(HealMove(heal_percentage=healing))
+
+        # Stat Changes
+        stat_changes = dsl_cls.__dict__.get("stat_changes", None)
+        if stat_changes is not None:
+            if "stat_changes_inflicted" in stat_changes:
+                for sc in stat_changes["stat_changes_inflicted"]:
+                    stat_change = StatChangeInflictedMove(**sc)
+                    move_tags.append(stat_change)
+            if "stat_changes_received" in stat_changes:
+                for sc in stat_changes["stat_changes_received"]:
+                    stat_change = StatChangeReceivedMove(**sc)
+                    move_tags.append(stat_change)
+
+        # Hazard
+        hazard: dict = dsl_cls.__dict__.get("hazard", None)
+        if hazard is not None:
+            for hazard_name, layers_added in hazard.items():
+                harard_obj = hazard_repository.get(hazard_name)
+                move_tags.append(EntryHazardMove(entry_hazard=harard_obj, layers=layers_added))
+
+        if healing_flag is not None and healing_flag is False and not heal_exception:
+            raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")
 
         base_move = BaseMove(
             name=move_name,
@@ -89,14 +186,7 @@ def move(move_name: str):
             pp=pp,
             target=target,
             priority=priority,
-            status_condition=status_condition,
-            status_condition_chance=status_condition_chance,
-            critical_hit_rate=critical_hit_rate,
-            flinch_chance=flinch_chance,
-            drain=drain,
-            healing=healing,
-            stat_changes_inflicted=stat_changes_inflicted,
-            stat_changes_recieved=stat_changes_recieved,
+            move_tags=move_tags
         )
 
         if hasattr(dsl_cls, "on_use"):
@@ -119,7 +209,13 @@ def move(move_name: str):
 def status(status_name: str):
     def decorator(dsl_cls):
         dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
-        status_condition = StatusCondition(name=status_name, display_name=dsl_cls.meta.get("display_name", status_name.capitalize()), mutual_exclusive=dsl_cls.meta.get("mutual_exclusive", False))
+        dsl_cls.default_data = dsl_cls.__dict__.get("default_data", {})
+        status_condition = StatusCondition(
+            name=status_name,
+            display_name=dsl_cls.meta.get("display_name", status_name.capitalize()),
+            mutual_exclusive=dsl_cls.meta.get("mutual_exclusive", False),
+            default_data=dsl_cls.default_data
+            )
 
         if hasattr(dsl_cls, "on_inflicted"):
             dsl_method = dsl_cls.on_inflicted
@@ -143,6 +239,49 @@ def status(status_name: str):
         
 
         status_repository.create(status_condition)
+        return dsl_cls
+    return decorator
+
+def hazard(hazard_name: str):
+    def decorator(dsl_cls):
+        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+        display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=hazard_name.capitalize())
+        hazard = EntryHazard(name=hazard_name, display_name=display_name)
+        if hasattr(dsl_cls, "on_entry"):
+            dsl_method = dsl_cls.on_entry
+            hazard.on_entry = lambda pokemon, layer_count, method=dsl_method: method(dsl_cls, pokemon, layer_count)
+        try:
+            hazard_repository.create(hazard)
+        except ValueError:
+            pass  # Ignore if already exists
+        return dsl_cls
+    return decorator
+
+def field_effect(field_effect_name: str):
+    def decorator(dsl_cls):
+        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+        display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=field_effect_name.capitalize())
+        duration = get_field(dsl_cls.meta, "duration", int, required=True)
+
+        field_effect = FieldEffect(
+            name=field_effect_name,
+            display_name=display_name,
+            duration=duration
+        )
+
+        if hasattr(dsl_cls, "on_apply"):
+            dsl_method = dsl_cls.on_apply
+            field_effect.on_apply = lambda position, method=dsl_method: method(dsl_cls, position)
+
+        if hasattr(dsl_cls, "on_remove"):
+            dsl_method = dsl_cls.on_remove
+            field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position)
+
+        if hasattr(dsl_cls, "on_stat_calculation"):
+            dsl_method = dsl_cls.on_stat_calculation
+            field_effect.on_stat_calculation = lambda pokemon, stat, method=dsl_method: method(dsl_cls, pokemon, stat)
+
+        field_effect_repository.create(field_effect)
         return dsl_cls
     return decorator
 
@@ -211,6 +350,8 @@ safe_namespace = {
         "status": status,
         "item": item,
         "ability": ability,
+        "hazard": hazard,
+        "field_effect": field_effect,
 
         "get_status_condition": get_status_condition,
         "get_move": get_move,
@@ -380,7 +521,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Ability Repo   - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Ability Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
     print()
 
@@ -391,7 +532,29 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Status Repo    - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Status Repo       - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            load_dsl_files_from_directory(file_path)
+    print()
+
+    # Generate Entry Hazard Repository
+    hazards_folder_path = os.path.join(application_root_path, "data/hazards")
+    for subdir, _, files in os.walk(hazards_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading Hazard Repo       - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            load_dsl_files_from_directory(file_path)
+    print()
+
+    # Generate Field Effect Repository
+    field_effects_folder_path = os.path.join(application_root_path, "data/field_effects")
+    for subdir, _, files in os.walk(field_effects_folder_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading Field Effect Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
     print()
 
@@ -402,7 +565,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Move Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Move Repo         - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
     print()
 
@@ -413,7 +576,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print(f"Loading Pokemon Repo   - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print(f"Loading Pokemon Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_pokemon_repository_from_json(file_path)
     print()
 
@@ -424,7 +587,7 @@ def initialize_repositories(application_root_path: str):
         for file_path in file_paths:
             # Loading bar
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Item Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            print (f"Loading Item Repo         - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_item_repository_from_json(file_path)
     print()
 

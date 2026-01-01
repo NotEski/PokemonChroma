@@ -6,6 +6,7 @@ Outputs:
 - data/moves/NNNN-move-name.pkmn generated from pokeapi_database/move
 - data/items/NNNN-item-name.json copied from pokeapi_database/item
 - data/abilities/ability-name.pkmn generated from pokeapi_database/ability
+- data/status/status-name.pkmn generated from SQLite move ailments
 
 Rules:
 - Moveset source: sword-shield version-group only (no fallback for moves)
@@ -18,14 +19,16 @@ Usage:
     python -m tools.generate_pokemon_data --overwrite
     python -m tools.generate_pokemon_data --skip-pokemon --overwrite  # only moves, items, abilities
     python -m tools.generate_pokemon_data --skip-pokemon --skip-moves --skip-items --overwrite  # only abilities
+    python -m tools.generate_pokemon_data --sqlite-db database_download/veekun-pokedex.sqlite/veekun-pokedex.sqlite --overwrite  # use SQLite for moves/status
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import sqlite3
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 WORKSPACE_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = WORKSPACE_ROOT / "pokeapi_database"
@@ -33,6 +36,8 @@ DEFAULT_OUT_POKEMON = WORKSPACE_ROOT / "data" / "pokemon"
 DEFAULT_OUT_MOVES = WORKSPACE_ROOT / "data" / "moves"
 DEFAULT_OUT_ITEMS = WORKSPACE_ROOT / "data" / "items"
 DEFAULT_OUT_ABILITIES = WORKSPACE_ROOT / "data" / "abilities"
+DEFAULT_OUT_STATUS = WORKSPACE_ROOT / "data" / "status"
+DEFAULT_SQLITE_DB = WORKSPACE_ROOT / "database_download" / "veekun-pokedex.sqlite" / "veekun-pokedex.sqlite"
 
 
 # ------------------------- Helpers -------------------------
@@ -64,6 +69,42 @@ def to_title_spaces(s: str) -> str:
 
 def zero_pad_id(num: int, width: int = 4) -> str:
     return str(num).zfill(width)
+
+
+def load_table_names(conn: sqlite3.Connection) -> Set[str]:
+    cur = conn.execute("SELECT name FROM sqlite_master WHERE type='table'")
+    return {row[0] for row in cur.fetchall()}
+
+
+def pick_table(existing: Set[str], *candidates: str) -> Optional[str]:
+    for name in candidates:
+        if name in existing:
+            return name
+    return None
+
+
+def normalize_move_category(category_raw: str) -> str:
+    """
+    Normalize move category from database format to enum format.
+    Maps database identifiers (with hyphens and plus signs) to snake_case enum values.
+    """
+    category_map = {
+        "damage": "damage",
+        "ailment": "status",
+        "damage+ailment": "damage_status",
+        "damage+heal": "damage_heal",
+        "damage+lower": "damage_lower",
+        "damage+raise": "damage_raise",
+        "field-effect": "field_effect",
+        "force-switch": "force_switch",
+        "heal": "heal",
+        "net-good-stats": "net_good_stats",
+        "ohko": "ohko",
+        "swagger": "swagger",
+        "unique": "unique",
+        "whole-field-effect": "whole_field_effect",
+    }
+    return category_map.get(category_raw, to_lower_snake(category_raw))
 
 
 # ------------------------- Field mappers -------------------------
@@ -406,7 +447,7 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     
     # Category: map from PokeAPI category if present, else infer from type/damage_class
     category_name = move_data.get("category", {}).get("name", "damage") if isinstance(move_data.get("category"), dict) else "damage"
-    category = to_lower_snake(category_name)  # damage, status, etc
+    category = normalize_move_category(category_name)
     
     accuracy = move_data.get("accuracy")
     power = move_data.get("power")
@@ -508,6 +549,7 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
         "max_turns": max_turns,
         "stat_changes_inflicted": stat_changes_inflicted,
         "stat_changes_recieved": stat_changes_recieved,
+        "flags": [],
     }
     return payload
 
@@ -540,37 +582,6 @@ def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
     if priority != 0:
         meta_lines.append(f'        "priority": {priority},')
     
-    status_condition = payload.get("status_condition", "none")
-    if status_condition != "none":
-        meta_lines.append(f'        "status_condition": "{status_condition}",')
-        status_chance = payload.get("status_condition_chance", 0)
-        meta_lines.append(f'        "status_condition_chance": {status_chance},')
-    
-    crit_rate = payload.get("critical_hit_rate", 0)
-    if crit_rate != 0:
-        meta_lines.append(f'        "critical_hit_rate": {crit_rate},')
-    
-    flinch = payload.get("flinch_chance", 0)
-    if flinch != 0:
-        meta_lines.append(f'        "flinch_chance": {flinch},')
-    
-    drain = payload.get("drain", 0)
-    if drain != 0:
-        meta_lines.append(f'        "drain": {drain},')
-    
-    healing = payload.get("healing", 0)
-    if healing != 0:
-        meta_lines.append(f'        "healing": {healing},')
-    
-    # Stat changes
-    stat_changes_inflicted = payload.get("stat_changes_inflicted")
-    if stat_changes_inflicted:
-        meta_lines.append(f'        "stat_changes_inflicted": {json.dumps(stat_changes_inflicted)},')
-    
-    stat_changes_recieved = payload.get("stat_changes_recieved")
-    if stat_changes_recieved:
-        meta_lines.append(f'        "stat_changes_recieved": {json.dumps(stat_changes_recieved)},')
-    
     meta_lines.append("    }")
     
     # Build the full file content
@@ -578,7 +589,43 @@ def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
         f'@move("{move_id}")  # type: ignore',
         f'class {class_name}:',
     ] + meta_lines
-    
+
+    flags = payload.get("flags") or []
+    if flags:
+        lines.append(f"    flags = {json.dumps(flags)}")
+
+    stat_changes_inflicted = payload.get("stat_changes_inflicted")
+    stat_changes_recieved = payload.get("stat_changes_recieved")
+    if stat_changes_inflicted or stat_changes_recieved:
+        lines.append("    stat_changes = {")
+        if stat_changes_inflicted:
+            lines.append(f'        "stat_changes_inflicted": {json.dumps(stat_changes_inflicted)},')
+        if stat_changes_recieved:
+            lines.append(f'        "stat_changes_recieved": {json.dumps(stat_changes_recieved)},')
+        lines.append("    }")
+
+    status_condition = payload.get("status_condition", "none")
+    status_condition_chance = payload.get("status_condition_chance", 0)
+    if status_condition and status_condition != "none":
+        lines.append("    status_condition = {")
+        lines.append(f'        "{status_condition}": {status_condition_chance},')
+        lines.append("    }")
+
+    crit_rate = payload.get("critical_hit_rate", 0)
+    if crit_rate:
+        lines.append(f"    critical_hit_rate = {crit_rate}")
+
+    flinch = payload.get("flinch_chance", 0)
+    if flinch:
+        lines.append(f"    flinch_chance = {flinch}")
+
+    drain = payload.get("drain", 0)
+    if drain:
+        lines.append(f"    drain = {drain}")
+    healing = payload.get("healing", 0)
+    if healing:
+        lines.append(f"    healing = {healing}")
+
     return "\n".join(lines) + "\n"
 
 
@@ -611,6 +658,241 @@ def generate_moves(source: Path, out_moves: Path, overwrite: bool, limit: Option
         written += 1
         if limit and written >= limit:
             break
+    return written
+
+
+def fetch_english_name(
+    cur: sqlite3.Cursor,
+    table: Optional[str],
+    id_col: str,
+    value_col: str,
+    target_id: int,
+    language_table: Optional[str],
+    language_identifier_field: str = "identifier",
+    language_value: str = "en",
+    language_id_col: str = "local_language_id",
+) -> Optional[str]:
+    if not table or not language_table:
+        return None
+    try:
+        row = cur.execute(
+            f"""
+            SELECT n.{value_col}
+            FROM {table} n
+            JOIN {language_table} l ON l.id = n.{language_id_col}
+            WHERE l.{language_identifier_field} = ? AND n.{id_col} = ?
+            LIMIT 1
+            """,
+            (language_value, target_id),
+        ).fetchone()
+        if row and row[0]:
+            return str(row[0])
+    except Exception:
+        return None
+    return None
+
+
+def generate_moves_from_sqlite(db_path: Path, out_moves: Path, overwrite: bool, limit: Optional[int]) -> int:
+    if not db_path.exists() or db_path.stat().st_size == 0:
+        print(f"SQLite database {db_path} missing or empty; skipping move generation")
+        return 0
+
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    tables = load_table_names(conn)
+
+    moves_table = pick_table(tables, "moves", "move")
+    type_table = pick_table(tables, "types", "type")
+    damage_class_table = pick_table(tables, "move_damage_classes", "move_damage_class")
+    meta_table = pick_table(tables, "move_meta")
+    meta_category_table = pick_table(tables, "move_meta_categories", "move_category", "move_categories")
+    target_table = pick_table(tables, "move_targets", "move_target")
+    ailment_table = pick_table(tables, "move_meta_ailments", "move_ailments")
+    flag_table = pick_table(tables, "move_flags", "move_flag")
+    flag_map_table = pick_table(tables, "move_flag_map", "move_flag_maps")
+    stat_change_table = pick_table(tables, "move_meta_stat_changes", "move_stat_changes")
+    stat_table = pick_table(tables, "stats", "stat")
+    move_names_table = pick_table(tables, "move_names")
+    language_table = pick_table(tables, "languages", "language")
+
+    required = [moves_table, type_table, damage_class_table, target_table, meta_table]
+    if any(t is None for t in required):
+        print("SQLite move generation skipped: required tables missing (moves/types/damage_class/target)")
+        return 0
+
+    category_select = "mc.identifier AS category" if meta_category_table else "NULL AS category"
+    category_join = f"LEFT JOIN {meta_category_table} mc ON mc.id = mm.meta_category_id" if meta_category_table else ""
+
+    ailment_select = "ma.identifier AS ailment" if ailment_table else "NULL AS ailment"
+    ailment_join = f"LEFT JOIN {ailment_table} ma ON ma.id = mm.meta_ailment_id" if ailment_table else ""
+
+    meta_join = f"LEFT JOIN {meta_table} mm ON mm.move_id = m.id" if meta_table else ""
+
+    query = f"""
+    SELECT
+        m.id,
+        m.identifier AS name,
+        t.identifier AS type,
+        dc.identifier AS damage_class,
+        {category_select},
+        m.accuracy,
+        m.power,
+        m.pp,
+        m.priority,
+        mt.identifier AS target,
+        mm.min_hits AS min_hits,
+        mm.max_hits AS max_hits,
+        mm.min_turns AS min_turns,
+        mm.max_turns AS max_turns,
+        mm.drain AS drain,
+        mm.healing AS healing,
+        mm.crit_rate AS crit_rate,
+        mm.ailment_chance AS ailment_chance,
+        mm.flinch_chance AS flinch_chance,
+        mm.stat_chance AS stat_chance,
+        {ailment_select}
+    FROM {moves_table} m
+    LEFT JOIN {type_table} t ON t.id = m.type_id
+    LEFT JOIN {damage_class_table} dc ON dc.id = m.damage_class_id
+    {meta_join}
+    {category_join}
+    LEFT JOIN {target_table} mt ON mt.id = m.target_id
+    {ailment_join}
+    ORDER BY m.id
+    """
+
+    params: Tuple[Any, ...] = ()
+    if limit:
+        query += " LIMIT ?"
+        params = (limit,)
+
+    out_moves.mkdir(parents=True, exist_ok=True)
+    written = 0
+
+    rows = cur.execute(query, params).fetchall()
+
+    for row in rows:
+        row_dict = dict(row)
+        mname = row_dict.get("name")
+        if not mname:
+            continue
+        # Skip shadow-type moves
+        mtype = to_lower_snake(row_dict.get("type")) if row_dict.get("type") else "normal"
+        if mtype == "shadow":
+            continue
+        mslug = to_lower_snake(str(mname))
+        display_name = fetch_english_name(
+            cur,
+            move_names_table,
+            id_col="move_id",
+            value_col="name",
+            target_id=row_dict.get("id", 0),
+            language_table=language_table,
+            language_id_col="local_language_id",
+        ) or to_title_spaces(mslug)
+
+        flags: List[str] = []
+        if flag_table and flag_map_table:
+            try:
+                flag_rows = conn.execute(
+                    f"""
+                    SELECT mf.identifier
+                    FROM {flag_map_table} mfm
+                    JOIN {flag_table} mf ON mf.id = mfm.move_flag_id
+                    WHERE mfm.move_id = ?
+                    """,
+                    (row_dict.get("id", 0),),
+                ).fetchall()
+                flags = [to_lower_snake(fr[0]) for fr in flag_rows if fr and fr[0]]
+            except Exception:
+                flags = []
+
+        stat_changes_inflicted = None
+        stat_changes_recieved = None
+        if stat_change_table and stat_table:
+            try:
+                stat_rows = conn.execute(
+                    f"""
+                    SELECT s.identifier, msc.change
+                    FROM {stat_change_table} msc
+                    JOIN {stat_table} s ON s.id = msc.stat_id
+                    WHERE msc.move_id = ?
+                    """,
+                    (row_dict.get("id", 0),),
+                ).fetchall()
+                stat_list = []
+                stat_chance = row_dict.get("stat_chance", 0)
+                if stat_chance == 0 and stat_rows:
+                    stat_chance = 100
+                for sr in stat_rows:
+                    stat_identifier = sr[0]
+                    change_val = sr[1]
+                    if stat_identifier is None or change_val is None:
+                        continue
+                    stat_list.append({
+                        "stat": to_lower_snake(str(stat_identifier)),
+                        "change": change_val,
+                        "chance": stat_chance,
+                    })
+
+                if stat_list:
+                    target_slug = to_lower_snake(row_dict.get("target")) if row_dict.get("target") else "selected_pokemon"
+                    user_targets = {"user", "user_and_allies", "user_or_allies", "users_field", "ally", "all_allies"}
+                    if target_slug in user_targets:
+                        stat_changes_recieved = stat_list
+                    else:
+                        stat_changes_inflicted = stat_list
+            except Exception:
+                stat_changes_inflicted = None
+                stat_changes_recieved = None
+
+        status_condition = to_lower_snake(row_dict.get("ailment")) if row_dict.get("ailment") else "none"
+        if status_condition == "none" or status_condition == "unknown":
+            status_condition = "none"
+
+        payload: Dict[str, Any] = {
+            "name": mslug,
+            "display_name": display_name,
+            "index": int(row_dict.get("id", 0)),
+            "type": to_lower_snake(row_dict.get("type")) if row_dict.get("type") else "normal",
+            "damage_class": to_lower_snake(row_dict.get("damage_class")) if row_dict.get("damage_class") else "physical",
+            "category": normalize_move_category(row_dict.get("category")) if row_dict.get("category") else "damage",
+            "accuracy": row_dict.get("accuracy"),
+            "power": row_dict.get("power"),
+            "pp": row_dict.get("pp"),
+            "target": to_lower_snake(row_dict.get("target")) if row_dict.get("target") else "selected_pokemon",
+            "priority": row_dict.get("priority") or 0,
+            "status_condition": status_condition,
+            "status_condition_chance": row_dict.get("ailment_chance", 0) or 0,
+            "critical_hit_rate": ((row_dict.get("crit_rate", 0) or 0) * 8),
+            "flinch_chance": row_dict.get("flinch_chance", 0) or 0,
+            "drain": row_dict.get("drain", 0) or 0,
+            "healing": row_dict.get("healing", 0) or 0,
+            "min_hits": row_dict.get("min_hits"),
+            "max_hits": row_dict.get("max_hits"),
+            "min_turns": row_dict.get("min_turns"),
+            "max_turns": row_dict.get("max_turns"),
+            "stat_changes_inflicted": stat_changes_inflicted,
+            "stat_changes_recieved": stat_changes_recieved,
+            "flags": flags,
+        }
+
+        target_file = out_moves / f"{mslug}.pkmn"
+        if target_file.exists() and not overwrite:
+            written += 1
+            if limit and written >= limit:
+                break
+            continue
+
+        pkmn_content = generate_move_pkmn_file(payload)
+        with target_file.open("w", encoding="utf-8") as f:
+            f.write(pkmn_content)
+        written += 1
+        if limit and written >= limit:
+            break
+
+    conn.close()
     return written
 
 
@@ -715,22 +997,110 @@ def generate_abilities(source: Path, out_abilities: Path, overwrite: bool, limit
     return written
 
 
+def generate_statuses_from_sqlite(db_path: Path, out_status: Path, overwrite: bool, limit: Optional[int]) -> int:
+    if not db_path.exists() or db_path.stat().st_size == 0:
+        print(f"SQLite database {db_path} missing or empty; skipping status generation")
+        return 0
+
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    tables = load_table_names(conn)
+
+    ailment_table = pick_table(tables, "move_meta_ailments", "move_ailments")
+    ailment_names_table = pick_table(tables, "move_meta_ailment_names", "move_ailment_names")
+    language_table = pick_table(tables, "languages", "language")
+
+    english_language_id: Optional[int] = None
+    if language_table:
+        try:
+            row = cur.execute(f"SELECT id FROM {language_table} WHERE identifier = 'en'").fetchone()
+            if row:
+                english_language_id = int(row[0])
+        except Exception:
+            english_language_id = None
+
+    if not ailment_table:
+        print("Status generation skipped: move_meta_ailments table missing")
+        return 0
+
+    params: Tuple[Any, ...] = ()
+    if ailment_names_table and language_table and english_language_id:
+        query = f"""
+        SELECT ma.id, ma.identifier, man.name AS display_name
+        FROM {ailment_table} ma
+        LEFT JOIN {ailment_names_table} man ON man.move_meta_ailment_id = ma.id AND man.local_language_id = ?
+        ORDER BY ma.id
+        """
+        if limit:
+            query += " LIMIT ?"
+            params = (english_language_id, limit)
+        else:
+            params = (english_language_id,)
+    else:
+        query = f"SELECT ma.id, ma.identifier, NULL AS display_name FROM {ailment_table} ma ORDER BY ma.id"
+        if limit:
+            query += " LIMIT ?"
+            params = (limit,)
+
+    out_status.mkdir(parents=True, exist_ok=True)
+    written = 0
+
+    for row in cur.execute(query, params):
+        row_dict = dict(row)
+        slug = to_lower_snake(row_dict.get("identifier", ""))
+        if not slug or slug == "none":
+            continue
+        display_name = row_dict.get("display_name") or to_title_spaces(slug)
+        class_name = "_" + "".join(word.capitalize() for word in slug.split("_")) + "Status"
+
+        lines = [
+            f'@status("{slug}")  # type: ignore',
+            f'class {class_name}:',
+            "    meta = {",
+            f'        "display_name": "{display_name}",',
+            f'        "mutual_exclusive": {"True" if slug != "none" else "False"},',
+            "    }",
+        ]
+
+        target_file = out_status / f"{slug}.pkmn"
+        if target_file.exists() and not overwrite:
+            written += 1
+            if limit and written >= limit:
+                break
+            continue
+
+        with target_file.open("w", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+        written += 1
+        if limit and written >= limit:
+            break
+
+    conn.close()
+    return written
+
+
 # ------------------------- Orchestration -------------------------
 def run(
     source: Path,
+    sqlite_db: Optional[Path],
     out_pokemon: Path,
     out_moves: Path,
     out_items: Path,
     out_abilities: Path,
+    out_status: Path,
     overwrite: bool,
     limit: Optional[int],
     include_pokemon: bool,
     include_moves: bool,
     include_items: bool,
     include_abilities: bool,
+    include_status: bool,
 ) -> None:
     pokemon_dir = source / "pokemon"
     species_dir = source / "pokemon-species"
+
+    use_sqlite = bool(sqlite_db and sqlite_db.exists() and sqlite_db.stat().st_size > 0)
 
     total_pokemon = 0
     if include_pokemon:
@@ -746,7 +1116,10 @@ def run(
 
     total_moves = 0
     if include_moves:
-        total_moves = generate_moves(source, out_moves, overwrite, limit)
+        if use_sqlite:
+            total_moves = generate_moves_from_sqlite(sqlite_db, out_moves, overwrite, limit)
+        else:
+            total_moves = generate_moves(source, out_moves, overwrite, limit)
 
     total_items = 0
     if include_items:
@@ -756,6 +1129,13 @@ def run(
     if include_abilities:
         total_abilities = generate_abilities(source, out_abilities, overwrite, limit)
 
+    total_status = 0
+    if include_status:
+        if use_sqlite:
+            total_status = generate_statuses_from_sqlite(sqlite_db, out_status, overwrite, limit)
+        else:
+            print("Status generation requires SQLite; skipping status files")
+
     if include_pokemon:
         print(f"Wrote {total_pokemon} Pokémon base files to {out_pokemon}")
     if include_moves:
@@ -764,35 +1144,43 @@ def run(
         print(f"Wrote {total_items} item files to {out_items}")
     if include_abilities:
         print(f"Wrote {total_abilities} ability files to {out_abilities}")
+    if include_status:
+        print(f"Wrote {total_status} status files to {out_status}")
 
 
 def main(argv: Optional[List[str]] = None) -> None:
     parser = argparse.ArgumentParser(description="Generate Pokémon base data, move data, item data, and ability data from cached PokeAPI JSON")
     parser.add_argument("--source", type=Path, default=DEFAULT_SOURCE, help="Source pokeapi_database directory")
+    parser.add_argument("--sqlite-db", type=Path, default=DEFAULT_SQLITE_DB, help="Optional SQLite source (uses flags/stat changes from DB when present)")
     parser.add_argument("--out-pokemon", type=Path, default=DEFAULT_OUT_POKEMON, help="Output data/pokemon directory")
     parser.add_argument("--out-moves", type=Path, default=DEFAULT_OUT_MOVES, help="Output data/moves directory")
     parser.add_argument("--out-items", type=Path, default=DEFAULT_OUT_ITEMS, help="Output data/items directory")
     parser.add_argument("--out-abilities", type=Path, default=DEFAULT_OUT_ABILITIES, help="Output data/abilities directory")
+    parser.add_argument("--out-status", type=Path, default=DEFAULT_OUT_STATUS, help="Output data/status directory")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing output files")
     parser.add_argument("--limit", type=int, default=None, help="Limit number of entries to process (separately for pokemon, moves, items, and abilities)")
     parser.add_argument("--skip-pokemon", action="store_true", help="Skip generating Pokémon data")
     parser.add_argument("--skip-moves", action="store_true", help="Skip generating moves data")
     parser.add_argument("--skip-items", action="store_true", help="Skip generating item data")
     parser.add_argument("--skip-abilities", action="store_true", help="Skip generating ability data")
+    parser.add_argument("--skip-status", action="store_true", help="Skip generating status data")
 
     args = parser.parse_args(argv)
     run(
         source=args.source,
+        sqlite_db=args.sqlite_db,
         out_pokemon=args.out_pokemon,
         out_moves=args.out_moves,
         out_items=args.out_items,
         out_abilities=args.out_abilities,
+        out_status=args.out_status,
         overwrite=args.overwrite,
         limit=args.limit,
         include_pokemon=not args.skip_pokemon,
         include_moves=not args.skip_moves,
         include_items=not args.skip_items,
         include_abilities=not args.skip_abilities,
+        include_status=not args.skip_status,
     )
 
 

@@ -51,6 +51,10 @@ class Ability(BaseModel):
     def on_contact(self, pokemon, attacker) -> None:
         """Called when the Pokémon is hit by a contact move."""
         pass
+
+    def accuracy_modifier(self, user, opponent, move) -> float:
+        """Modify the accuracy of moves used by the Pokémon."""
+        return 1.0
     
 
 

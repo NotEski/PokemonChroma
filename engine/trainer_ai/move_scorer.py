@@ -80,8 +80,8 @@ def score_crit_potential(move: BaseMove, user: BattleMon, target: BattleMon) -> 
     if target.abilities.has_active_ability("battle_armor") or target.abilities.has_active_ability("shell_armor"):
         return 0
     
-    is_high_crit = (move.function_code == "HighCriticalHitRate")
-    is_always_crit = "AlwaysCriticalHit" in move.function_code
+    is_high_crit = move.high_critical_hit
+    is_always_crit = move.always_critical_hit
     
     if user.effects.get("FocusEnergy", 0) > 0:
         if is_high_crit:

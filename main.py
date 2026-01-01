@@ -1,5 +1,5 @@
 from engine.pokemon.repositry_generator import initialize_repositories
-from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository
+from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
 from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
@@ -36,7 +36,7 @@ class Application(ShowBase):
 
 
 def simulate_sample_battle():
-    pikachu_moveset = moveset_from_names(["perish_song", "growl", "volt_tackle", "quick_attack"])
+    pikachu_moveset = moveset_from_names(["toxic_spikes", "growl", "volt_tackle", "quick_attack"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
     pikachu_base = pokemon_repository.get("pikachu")
@@ -376,6 +376,7 @@ def launch_battle_inspector():
 
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 launch_battle_inspector()

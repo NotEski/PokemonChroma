@@ -3,6 +3,8 @@ from typing import List, Optional
 from enum import Enum
 from .battle_logs import BattleLogEntry
 from .position_manager import *
+from .weather import *
+from .terrain import *
 
 class UnfinishedTurnException(Exception):
     pass
@@ -20,42 +22,6 @@ class ActionType(Enum):
     USE_ITEM = "use_item"
     ESCAPE = "escape"
 
-class BattleWeather(Enum):
-    HARSH_SUNLIGHT = "harsh_sunlight"
-    RAIN = "rain"
-    SANDSTORM = "sandstorm"
-    HAIL = "hail"
-    SNOW = "snow"
-    FOG = "fog"
-    EXTREMELY_HARSH_SUNLIGHT = "extremely_harsh_sunlight"
-    HEAVY_RAIN = "heavy_rain"
-    STRONG_WIND = "strong_wind"
-    SHADOWY_AURA = "shadowy_aura"
-    NONE = None
-
-class BattleTerrain(Enum):
-    GRASSY = "grassy"
-    ELECTRIC = "electric"
-    MISTY = "misty"
-    PSYCHIC = "psychic"
-    NONE = None
-
-class FieldEffects(Enum):
-    TRICK_ROOM = "trick_room"
-    MAGIC_ROOM = "magic_room"
-    WONDER_ROOM = "wonder_room"
-    NONE = None
-
-
-class PositionEffects(Enum):
-    TOXIC_SPIKES = "toxic_spikes"
-    STEALTH_ROCK = "stealth_rock"
-
-
-class WeatherTurns(BaseModel):
-    weather: BattleWeather
-    remaining_turns: int
-
 class BattleConfig(BaseModel):
     battle_type: BattleType = Field(default=BattleType.SINGLE)
     is_wild: bool = Field(default=False)
@@ -66,8 +32,6 @@ class BattleState(BaseModel):
     turn_number: int = Field(default=0)
     weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=-1))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
-    field_effects: dict[FieldEffects, int] = Field(default_factory=dict)  # e.g., {FieldEffects.TRICK_ROOM: 5} means Trick Room has been active for 5 turns
-    positions_effects: dict[BattlePosition, PositionEffects] = Field(default_factory=dict)  # e.g., {BattlePosition(team_id=1, pokemon_index=1): PositionEffects}
 
     position_manager_ref: Optional[BattlePositionManager] = None  # Reference to the PositionManager managing the battle positions
 
@@ -93,8 +57,3 @@ class BattleState(BaseModel):
             if pokemon is not None and not pokemon.is_fainted:
                 active_pokemon.append(pokemon)
         return active_pokemon
-
-class PositionEffects(BaseModel):
-    is_protected: bool = Field(default=False)  # e.g., from moves like Protect
-    is_targeted: bool = Field(default=False)  # e.g., if the position is currently targeted by a move
-    position_effects: dict[PositionEffects, int] = Field(default_factory=dict)  # Needs to be changed to accommodate multiple types of effects like toxic spikes that will go from applying poison to bad poison

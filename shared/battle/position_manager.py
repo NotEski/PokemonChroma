@@ -1,14 +1,16 @@
 from pydantic import BaseModel, Field
-from abc import abstractmethod
 from shared.battle.battle_actions import BattleAction
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition
 from shared.pokemon.move import MoveTarget
+from shared.pokemon.hazard import EntryHazard
+from shared.battle.field_effect import FieldEffect
 import random
 
 class BattlePositionManager(BaseModel):
     positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
     actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
+    field_effects: dict[BattlePosition, dict[EntryHazard|FieldEffect, int]] = Field(default_factory=dict)
     teams_count: int = 2
     pokemon_per_team: int = 1
 
@@ -89,37 +91,70 @@ class BattlePositionManager(BaseModel):
     def get_opponent_teams(self, team_id: int) -> list[int]:
         return [tid for tid in range(1, self.teams_count + 1) if tid != team_id]
     
+    def add_hazard(self, position: BattlePosition, hazard: EntryHazard, layers: int):
+        if position not in self.field_effects:
+            self.field_effects[position] = {}
+        if hazard in self.field_effects[position]:
+            self.field_effects[position][hazard] += layers
+        else:
+            self.field_effects[position][hazard] = layers
     
+    def remove_hazard(self, position: BattlePosition, hazard: EntryHazard, layers: int):
+        if position in self.field_effects and hazard in self.field_effects[position]:
+            self.field_effects[position][hazard] -= layers
+            if self.field_effects[position][hazard] <= 0:
+                del self.field_effects[position][hazard]
+            if not self.field_effects[position]:
+                del self.field_effects[position]
+
+    def add_field_effect(self, position: BattlePosition, effect: FieldEffect, turns: int):
+        if position not in self.field_effects:
+            self.field_effects[position] = {}
+        self.field_effects[position][effect] = turns
+    
+    def remove_field_effect(self, position: BattlePosition, effect: FieldEffect):
+        if position in self.field_effects and effect in self.field_effects[position]:
+            del self.field_effects[position][effect]
+            if not self.field_effects[position]:
+                del self.field_effects[position]
+
+    def decrement_field_effects(self):
+        # Decrement duration of all field effects and remove those that expire
+        # Exclude entry hazards from this process
+        for position in list(self.field_effects.keys()):
+            effects_to_remove = []
+            for effect, duration in self.field_effects[position].items():
+                if isinstance(effect, FieldEffect):
+                    self.field_effects[position][effect] -= 1
+                    if self.field_effects[position][effect] <= 0:
+                        effects_to_remove.append(effect)
+            for effect in effects_to_remove:
+                del self.field_effects[position][effect]
+            if not self.field_effects[position]:
+                del self.field_effects[position]
+
     def get_target_positions(self, user_position: BattlePosition, move_target: MoveTarget, selected_position: BattlePosition = None) -> list[BattlePosition]:
         # For simplicity, only implement single target opponent logic
         if move_target == MoveTarget.ALL_ALLIES:
             team_id = user_position.team_id
             return [pos for pos in self.list_registered_positions() if pos.team_id == team_id and pos != user_position]
         
-        elif move_target == MoveTarget.ALL_OPPONENTS:
+        elif move_target in [MoveTarget.ALL_OPPONENTS, MoveTarget.OPPONENTS_FIELD]:
             opponent_team_ids = self.get_opponent_teams(user_position.team_id)
             return [pos for pos in self.list_registered_positions() if pos.team_id in opponent_team_ids]
         
         elif move_target == MoveTarget.ALL_OTHER_POKEMON:
             return [pos for pos in self.list_registered_positions() if pos != user_position]
         
-        elif move_target == MoveTarget.ALL_POKEMON:
+        elif move_target in [MoveTarget.ALL_POKEMON, MoveTarget.ENTIRE_FIELD]:
             return self.list_registered_positions()
         
         elif move_target == MoveTarget.ALLY:
             team_id = user_position.team_id
             return [pos for pos in self.list_registered_positions() if pos.team_id == team_id and pos != user_position]
-        
-        elif move_target == MoveTarget.ENTIRE_FIELD:
-            # TODO Field effects not implemented yet
-            pass
 
         elif move_target == MoveTarget.FAINTING_POKEMON:
             # TODO target needs to be a fainted pokemon in the teams party not a position on the field but needs to be handled here kinda at least for now
-            pass
-
-        elif move_target == MoveTarget.OPPONENTS_FIELD:
-            # TODO Field effects not implemented yet
             pass
 
         elif move_target == MoveTarget.RANDOM_OPPONENT:
@@ -152,12 +187,8 @@ class BattlePositionManager(BaseModel):
                 return [selected_position]
             return ValueError("Selected position is not the user or an ally.")
 
-        elif move_target == MoveTarget.USER:
+        elif move_target in [MoveTarget.USER, MoveTarget.USERS_FIELD]:
             return [user_position]
-
-        elif move_target == MoveTarget.USERS_FIELD:
-            # TODO Field effects not implemented yet
-            pass
 
         else:
             raise ValueError("Unsupported move target type.")

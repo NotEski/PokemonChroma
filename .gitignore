@@ -56,3 +56,5 @@ pokeapi_database/
 temp_assets/
 data/
 AdvancedAI/
+
+*.sqlite

@@ -1,11 +1,13 @@
 from pydantic import BaseModel, Field
 from typing import Dict, TypeVar, Generic
 
+from shared.pokemon.hazard import EntryHazard
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
 from shared.pokemon.move import BaseMove
 from shared.items.items import Item
 from shared.pokemon.status_conditions import StatusCondition
+from shared.battle.field_effect import FieldEffect
 
 T = TypeVar('T')
 
@@ -85,6 +87,12 @@ class ItemRepository(BaseRepository[Item]):
 class StatusConditionRepository(BaseRepository[StatusCondition]):
     pass
 
+class HazardRepository(BaseRepository[EntryHazard]):
+    pass
+
+class FieldEffectRepository(BaseRepository[FieldEffect]):
+    pass
+
 
 # Concrete Singletons
 class PokemonRepositorySingleton(BaseSingleton[PokemonRepository]):
@@ -113,6 +121,16 @@ class StatusConditionRepositorySingleton(BaseSingleton[StatusConditionRepository
     @classmethod
     def _create_instance(cls) -> StatusConditionRepository:
         return StatusConditionRepository()
+    
+class HazardRepositorySingleton(BaseSingleton[HazardRepository]):
+    @classmethod
+    def _create_instance(cls) -> HazardRepository:
+        return HazardRepository()
+    
+class FieldEffectRepositorySingleton(BaseSingleton[FieldEffectRepository]):
+    @classmethod
+    def _create_instance(cls) -> FieldEffectRepository:
+        return FieldEffectRepository()
 
 # Module-level instances
 pokemon_repository = PokemonRepositorySingleton.get_instance()
@@ -120,3 +138,5 @@ ability_repository = PokemonAbilityRepositorySingleton.get_instance()
 move_repository = MoveRepositorySingleton.get_instance()
 item_repository = ItemRepositorySingleton.get_instance()
 status_repository = StatusConditionRepositorySingleton.get_instance()
+hazard_repository = HazardRepositorySingleton.get_instance()
+field_effect_repository = FieldEffectRepositorySingleton.get_instance()

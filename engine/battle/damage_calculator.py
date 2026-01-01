@@ -140,21 +140,24 @@ def _get_other_modifiers() -> float:
     # Placeholder for other miscellaneous modifiers
     return 1.0
 
-def calculate_critical_hit(attacking_pokemon: BattleMon) -> bool:
+def calculate_critical_hit(attacking_pokemon: BattleMon, move: BaseMove) -> bool:
     is_critical = False
-    if attacking_pokemon.critical_hit_stage == 0:
+
+    critical_hit_stage = attacking_pokemon.critical_hit_stage + move.critical_hit_rate_stage_increase
+
+    if critical_hit_stage == 0:
         chance = 1/24
         if random.random() < chance:
             is_critical = True
-    elif attacking_pokemon.critical_hit_stage == 1:
+    elif critical_hit_stage == 1:
         chance = 1/8
         if random.random() < chance:
             is_critical = True
-    elif attacking_pokemon.critical_hit_stage == 2:
+    elif critical_hit_stage == 2:
         chance = 1/2
         if random.random() < chance:
             is_critical = True
-    elif attacking_pokemon.critical_hit_stage >= 3:
+    elif critical_hit_stage >= 3:
         is_critical = True
     return is_critical
 

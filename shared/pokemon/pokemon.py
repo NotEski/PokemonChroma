@@ -190,7 +190,10 @@ class BattleMon(BaseModel):
             if mega_evo.required_item is None:
                 self.pokemon_base = mega_evo.mega_evolved_form
             elif self.pokemon_reference.held_item == mega_evo.required_item:
-                self.pokemon_base = mega_evo.mega_evolved_form    
+                self.pokemon_base = mega_evo.mega_evolved_form
+    
+    def modify_stat_stage(self, stat: Stat, stages: int):
+        self.stat_stages.adjust_stat_stage(stat, stages)
 
 
 #region Pokemon Base Proxy Properties

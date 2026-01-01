@@ -8,7 +8,7 @@ from engine.pokemon.repository import status_repository
 def calculate_accuracy(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:
     # Placeholder for actual calculation logic
 
-    affection_bonus = 1.0  # Check user's affection level
+    # affection_bonus = 1.0  # Check user's affection level
 
 
     adjusted_accuracy_stage_modifier = _get_accuracy_stage_modifier(user, target)
@@ -16,9 +16,9 @@ def calculate_accuracy(base_move: BaseMove, user: BattleMon, target: BattleMon, 
     other_modifiers = _get_other_modifiers(base_move, user, target, battle_state)
 
 
-    accuracy_modified = base_move.accuracy * other_modifiers * adjusted_accuracy_stage_modifier * micle_berry - affection_bonus
+    accuracy_modified = base_move.accuracy * other_modifiers * adjusted_accuracy_stage_modifier * micle_berry # - affection_bonus
     return accuracy_modified
-
+    
 
 def _get_other_modifiers(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:
     modifier = 1.0

@@ -2,8 +2,7 @@ from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from typing import List, Optional
 from .types import PokemonType
-from .status_conditions import StatusCondition
-from .stats import Stat
+from .move_tags import *
 
 
 class DamageClass(Enum):
@@ -14,10 +13,10 @@ class DamageClass(Enum):
 class MoveCategory(Enum):
     DAMAGE = "damage"
     STATUS = "status"
-    DAMAGE_AND_STATUS = "damage_status"
-    DAMAGE_AND_HEAL = "damage_heal"
-    DAMAGE_AND_LOWER = "damage_lower"
-    DAMAGE_AND_RAISE = "damage_raise"
+    DAMAGE_STATUS = "damage_status"
+    DAMAGE_HEAL = "damage_heal"
+    DAMAGE_LOWER = "damage_lower"
+    DAMAGE_RAISE = "damage_raise"
     FIELD_EFFECT = "field_effect"
     FORCE_SWITCH = "force_switch"
     HEAL = "heal"
@@ -26,6 +25,30 @@ class MoveCategory(Enum):
     SWAGGER = "swagger"
     UNIQUE = "unique"
     WHOLE_FIELD_EFFECT = "whole_field_effect"
+
+
+class MoveCategoryCategories:
+    DAMAGE_MOVES = [
+            MoveCategory.DAMAGE,
+            MoveCategory.DAMAGE_STATUS,
+            MoveCategory.DAMAGE_HEAL,
+            MoveCategory.DAMAGE_LOWER,
+            MoveCategory.DAMAGE_RAISE
+        ]
+    STATUS_MOVES = [
+        MoveCategory.STATUS
+    ]
+    STAT_CHANGE_MOVES = [
+            MoveCategory.DAMAGE_LOWER,
+            MoveCategory.DAMAGE_RAISE,
+            MoveCategory.NET_GOOD_STATS
+        ]
+    FIELD_EFFECT_MOVES = [
+        MoveCategory.FIELD_EFFECT,
+        MoveCategory.WHOLE_FIELD_EFFECT
+    ]
+
+
 
 class MoveTarget(Enum):
     ALL_ALLIES = "all_allies"
@@ -46,12 +69,6 @@ class MoveTarget(Enum):
     USERS_FIELD = "users_field"
 
 
-class StatChange(BaseModel):
-    stat: Stat
-    change: int  # Positive for increase, negative for decrease
-    chance: int = Field(default=100)  # Percentage chance to apply the stat change
-
-
 class BaseMove(BaseModel):
     model_config = ConfigDict(extra='allow')
     
@@ -68,32 +85,12 @@ class BaseMove(BaseModel):
     pp: int = Field(ge=1, le=40, default=15)
 
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
-
     priority: int = Field(default=0)  # Move priority
-    
-    status_condition: Optional[StatusCondition] = None
-    status_condition_chance: int = 0  # Percentage chance to inflict status condition
 
-    critical_hit_rate: int = Field(default=0)  # Additional stages to critical hit rate
-    flinch_chance: int = Field(default=0)  # Percentage chance to flinch the target
     makes_contact: bool = Field(default=False)
 
-    one_hit_ko: bool = Field(default=False)
-
-    drain: int = Field(default=0)  # Percentage of in percentage of damage dealt healed, recoiled damage if negative
-    healing: int = Field(default=0)  # Percentage of max HP healed
-
-    min_hits: Optional[int] = None  # For multi-hit moves
-    max_hits: Optional[int] = None  # For multi-hit moves
-
-    min_turns: Optional[int] = None  # For moves that last multiple turns
-    max_turns: Optional[int] = None  # For moves that last multiple turns
+    move_tags: Optional[List[MoveTag]] = None  # Additional tags for the move
     
-    stat_changes: Optional[List[StatChange]] = None  # List of stat changes inflicted by the move
-    stat_chance: int = Field(default=0)  # Percentage chance to apply stat changes
-    
-    stat_changes_inflicted: Optional[List[StatChange]] = None  # List of stat changes inflicted by the move
-    stat_changes_recieved: Optional[List[StatChange]] = None  # List of stat changes received by the user of the move
 
     def on_use(self, attacker, defender, battle_state):
         """Called when the move is used."""
@@ -112,23 +109,136 @@ class BaseMove(BaseModel):
         Returns the damage amount as an integer.
         """
         return None
+    
+    def has_tag(self, tag_type: MoveTag) -> bool:
+        if self.move_tags is None:
+            return False
+        for tag in self.move_tags:
+            if isinstance(tag, tag_type):
+                return True
+        return False
+    
+    def get_tag(self, tag_type: MoveTag) -> Optional[MoveTag]:
+        if self.move_tags is None:
+            return None
+        if isinstance(tag_type, StatChangeMove):
+            raise ValueError("For StatChangeMove use get_stat_change_tag() instead.")
+        for tag in self.move_tags:
+            if isinstance(tag, tag_type):
+                return tag
+        return None
+    
+    def get_stat_change_tags(self, tag_type: StatChangeMove) -> List[StatChangeMove]:
+        if self.move_tags is None:
+            return []
+        stat_change_tags = []
+        for tag in self.move_tags:
+            if isinstance(tag, tag_type):
+                stat_change_tags.append(tag)
+        return stat_change_tags
+    
+    def add_tag(self, tag: MoveTag):
+        if self.move_tags is None:
+            self.move_tags = []
+        self.move_tags.append(tag)
+    
+    def remove_tag(self, tag_type: MoveTag):
+        if self.move_tags is None:
+            return
+        self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
 
-    @property
-    def is_multi_hit(self) -> bool:
-        return self.min_hits is not None and self.max_hits is not None and self.min_hits > 1
 
     @property
     def physical(self) -> bool:
         return self.damage_class == DamageClass.PHYSICAL
-
     @property
     def special(self) -> bool:
         return self.damage_class == DamageClass.SPECIAL
-
     @property
     def status(self) -> bool:
         return self.damage_class == DamageClass.STATUS
-
+    
+    @property
+    def requires_charge(self) -> bool:
+        return self.has_tag(ChargeMove)
+    @property
+    def critical_hit_rate_stage_increase(self) -> int:
+        crit_tag = self.get_tag(CriticalHitMove)
+        if crit_tag:
+            return crit_tag.critical_hit_rate_increase
+        return 0
+    @property
+    def high_critical_hit(self) -> bool:
+        crit_tag = self.get_tag(CriticalHitMove)
+        if crit_tag:
+            return crit_tag.critical_hit_rate_increase >= 2
+        return False
+    @property
+    def always_critical_hit(self) -> bool:
+        crit_tag = self.get_tag(CriticalHitMove)
+        if crit_tag:
+            return crit_tag.critical_hit_rate_increase >= 3
+        return False
+    @property
+    def drain_percentage(self) -> int:
+        drain_tag = self.get_tag(DrainMove)
+        if drain_tag:
+            return drain_tag.drain_percentage
+        return 0
+    @property
+    def is_recoil(self) -> bool:
+        drain_tag = self.get_tag(DrainMove)
+        if drain_tag:
+            return drain_tag.is_recoil
+        return False
+    @property
+    def flinch_chance(self) -> int:
+        flinch_tag = self.get_tag(FlinchMove)
+        if flinch_tag:
+            return flinch_tag.chance
+        return 0
+    @property
+    def is_hazard(self) -> bool:
+        return self.has_tag(EntryHazardMove)
+    @property
+    def heal_percentage(self) -> int:
+        heal_tag = self.get_tag(HealMove)
+        if heal_tag:
+            return heal_tag.heal_percentage
+        return 0
+    @property
+    def is_multi_hit(self) -> bool:
+        return self.has_tag(MultiHitMove)
+    @property
+    def is_multi_turn(self) -> bool:
+        return self.has_tag(MultiTurnMove)
+    @property
+    def is_ohko(self) -> bool:
+        return self.category == MoveCategory.OHKO
+    @property
+    def is_protect_move(self) -> bool:
+        return self.has_tag(ProtectMove)
+    @property
+    def is_pivot_move(self) -> bool:
+        return self.has_tag(PivotMove)
+    @property
+    def is_screen_move(self) -> bool:
+        return self.has_tag(ScreenMove)
+    @property
+    def screen_move(self) -> Optional[ScreenMove]:
+        return self.get_tag(ScreenMove)
+    @property
+    def is_stat_change_move(self) -> bool:
+        return self.has_tag(StatChangeMove)
+    @property
+    def is_status_condition_move(self) -> bool:
+        return self.has_tag(StatusConditionMove)    
+    @property
+    def is_terrain_move(self) -> bool:
+        return self.has_tag(TerrainMove)
+    @property
+    def is_weather_move(self) -> bool:
+        return self.has_tag(WeatherMove)
 
 
 class Move(BaseModel):
@@ -166,6 +276,12 @@ class Move(BaseModel):
     @property
     def priority(self) -> int:
         return self.base_move.priority
+    @property
+    def makes_contact(self) -> bool:
+        return self.base_move.makes_contact
+    
+    
+    
 #endregion
 
 

@@ -7,9 +7,13 @@ class StatusCondition(BaseModel):
     name: str
     display_name: str = Field(default="")
     mutual_exclusive: bool = Field(default=False) # whether this status condition is mutually exclusive with others also marked as such
+    default_data: dict = Field(default_factory=dict)  # Default data associated with the status condition
 
     def __hash__(self):
         return hash(self.name)
+    
+    def _default_data_factory(self):
+        return dict()
 
     def on_inflicted(self, pokemon):
         """Called when the status condition is inflicted on a Pokémon."""
