@@ -1,14 +1,10 @@
-# pick the move
-# calculate the priority
-# apply effects
-
 from pydantic import BaseModel, Field
-from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction
+from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction, SkipTurnAction
 from shared.pokemon.move import BaseMove, MoveCategory, MoveCategoryCategories
 from shared.pokemon.pokemon import BattleMon, StatStages
 from shared.battle.battle_header import *
 from shared.battle.battle_logs import BattleLogManager
-from shared.battle.type_effectiveness import EffectivenessLevel, effectiveness_message, get_attack_multiplier, get_effectiveness_level
+from shared.battle.type_effectiveness import EffectivenessLevel, get_attack_multiplier, get_effectiveness_level
 from shared.battle.opponent import Opponent
 from shared.battle.position_manager import BattlePosition
 from shared.pokemon.types import PokemonType
@@ -37,18 +33,18 @@ class BattleManager(BaseModel):
         if isinstance(self.teams, list):
             teams_dict = {}
             for index, team in enumerate(self.teams):
-                teams_dict[index + 1] = team
+                teams_dict[index] = team
             self.teams = teams_dict
         elif isinstance(self.teams, dict):
-            # validate keys are 1, 2, ...
+            # validate keys are 0, 1, 2, ...
             len_keys = len(self.teams.keys())
-            for i in range(1, len_keys + 1):
+            for i in range(0, len_keys):
                 if i not in self.teams:
-                    raise ValueError("Teams dictionary keys must be sequential integers starting from 1.")
-                
+                    raise ValueError("Teams dictionary keys must be sequential integers starting from 0.")
+
         if len(self.teams) != 2: # only support 2 teams for now. probably will only ever need 2 teams
             raise ValueError("There must be exactly 2 teams for a battle.")
-                
+
         self.position_manager.teams_count = len(self.teams)
 
         if self.battle_config.battle_type == BattleType.SINGLE:
@@ -60,23 +56,25 @@ class BattleManager(BaseModel):
 
         self.battle_state.position_manager_ref = self.position_manager
 
+        print (self.position_manager.list_unregistered_positions())
+
 
     # region Abstract Methods
     def get_opponent_from_position(self, position: BattlePosition) -> Opponent:
         return self.teams[position.team_id]
-    
+
     def get_opposite_position_from_position(self, position: BattlePosition) -> BattlePosition:
         return self.position_manager.get_direct_opponent_position(position)
 
     def clear_all_stat_stages(self):
-        for pokemon in self.teams[1].get_all_battlemons() + self.teams[2].get_all_battlemons():
+        for pokemon in self.teams[0].get_all_battlemons() + self.teams[1].get_all_battlemons():
             self.clear_pokemon_stat_stages(pokemon)
-    
+
     def init_battle(self):
         self.clear_all_stat_stages()
 
-        for team_id in range(1, self.position_manager.teams_count + 1):
-            for pokemon_index in range(1, self.position_manager.pokemon_per_team + 1):
+        for team_id in range(0, self.position_manager.teams_count):
+            for pokemon_index in range(0, self.position_manager.pokemon_per_team):
                 self.position_manager.register_pokemon(
                     pokemon=self.teams[team_id].get_active_battlemon(),
                     team_index=team_id,
@@ -88,7 +86,7 @@ class BattleManager(BaseModel):
             if isinstance(action, EscapeAction):
                 escaping_pokemon = self.position_manager.get_pokemon_at_position(position)
                 enemy_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
-                
+
                 success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
                     self.battle_log.battle_end(
@@ -119,6 +117,9 @@ class BattleManager(BaseModel):
         output = self.position_manager.check_fainted(position)
         print("Fainted status:", output)
         return output
+    
+    def get_switch_turn(self) -> bool:
+        return self.battle_state.switch_turn
 
     def get_taking_actions(self) -> bool:
         return self.taking_actions
@@ -128,16 +129,19 @@ class BattleManager(BaseModel):
     def submit_action(self, action: BattleAction):
         if not self.taking_actions:
             raise ValueError("Not currently taking actions.")
-        if isinstance(action, MoveAction):
+        
+        if isinstance(action, SwitchAction):
+            self.switch_pokemon(
+                user_position=action.position,
+                new_pokemon=action.switch_in_pokemon
+            )
+        elif self.battle_state.switch_turn:
+            raise ValueError("Cannot submit non-switch actions during a switch turn.")
+        elif isinstance(action, MoveAction):
             self.use_move(
                 user_position=action.position,
                 move_index=action.move_index,
                 target_position=action.target_position
-            )
-        elif isinstance(action, SwitchAction):
-            self.switch_pokemon(
-                user_position=action.position,
-                new_pokemon=action.switch_in_pokemon
             )
         else:
             raise ValueError("Invalid action type submitted.")
@@ -204,13 +208,18 @@ class BattleManager(BaseModel):
             raise ValueError("No active battle to submit actions to.")
         self.taking_actions = True
         self.battle_log.turn_start(turn_number=self.battle_state.turn_number)
-        self.battle_state.turn_number += 1
         self.position_manager.clear_position_actions()
+        if not self.battle_state.switch_turn:
+            self.battle_state.turn_number += 1
+        else:
+            self.position_manager.load_switch_turn_actions()
 
     def end_turn(self):    
         if self.position_manager.get_missing_actions() != []:
             raise UnfinishedTurnException("Not all positions have submitted actions.")
-
+        
+        if self.battle_state.switch_turn:
+            self.battle_state.switch_turn = False
         try:
             self.process_turn()
         except UnfinishedTurnException as e:
@@ -245,10 +254,12 @@ class BattleManager(BaseModel):
         self.process_move_charging_effects()
 
         # Move usage in order
-        turn_order = self.get_turn_orders()
-        priority_order = self.calculate_turn_order(turn_order)
-        for participant in priority_order:
-            self.process_move(participant)
+        # Check if there are any moves to process
+        if self.check_needs_turn_order_calculation():
+            turn_order = self.get_turn_orders()
+            priority_order = self.calculate_turn_order(turn_order)
+            for participant in priority_order:
+                self.process_move(participant)
 
 
         # End of turn effects
@@ -275,6 +286,12 @@ class BattleManager(BaseModel):
     # endregion
 
     # region Turn Order
+    def check_needs_turn_order_calculation(self) -> bool:
+        for action in self.position_manager.position_actions().values():
+            if isinstance(action, MoveAction):
+                return True
+        return False
+
     def get_turn_orders(self) -> list[BattlePosition]:
         speed_dict: dict[BattlePosition, int] = {}
 
@@ -579,7 +596,13 @@ class BattleManager(BaseModel):
                 can_move = False
         return can_move
 
+    def process_item_use(self):
+        pass
+
     def process_fainted_pokemon(self):
+        # If this occurs we need to not track this as a turn end but rather a mid-turn event
+
+        list_of_non_fainted_positions: list[BattlePosition] = []
         for position in self.position_manager.list_registered_positions():
             if self.position_manager.check_fainted(position):
                 # check which opponent the pokemon belongs to
@@ -595,8 +618,12 @@ class BattleManager(BaseModel):
                 if not opponent.has_viable_pokemons():
                     # if no usable pokemons, end battle
                     self.end_battle()
-
-    def process_item_use(self):
-        pass
-
+                    break
+                continue
+            list_of_non_fainted_positions.append(position)
+        if len(list_of_non_fainted_positions) < len(self.position_manager.list_registered_positions()):
+            self.taking_actions = True
+            self.battle_state.switch_turn = True
+            for position in list_of_non_fainted_positions:
+                self.position_manager.add_switch_turn_action(position, SkipTurnAction(position=position))
     # endregion

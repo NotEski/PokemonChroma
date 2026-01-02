@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from shared.battle.battle_actions import BattleAction, EscapeAction, SwitchAction
+from shared.battle.battle_actions import BattleAction, EscapeAction, SkipTurnAction, SwitchAction
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition
 from shared.pokemon.move import MoveTarget
@@ -10,6 +10,8 @@ import random
 class BattlePositionManager(BaseModel):
     positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
     actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
+    future_actions: dict[int, dict[BattlePosition, BattleAction]] = Field(default_factory=dict)
+    switch_turn_actions: dict[BattlePosition, SwitchAction|SkipTurnAction] = Field(default_factory=dict)
     field_effects: dict[BattlePosition, dict[EntryHazard|FieldEffect, int]] = Field(default_factory=dict)
     teams_count: int = 2
     pokemon_per_team: int = 1
@@ -17,8 +19,8 @@ class BattlePositionManager(BaseModel):
 
     def get_valid_positions(self) -> list[BattlePosition]:
         valid_positions = []
-        for team_id in range(1, self.teams_count + 1):
-            for pokemon_index in range(1, self.pokemon_per_team + 1):
+        for team_id in range(0, self.teams_count):
+            for pokemon_index in range(0, self.pokemon_per_team):
                 valid_positions.append(BattlePosition(team_id=team_id, pokemon_index=pokemon_index))
         return valid_positions
 
@@ -48,6 +50,10 @@ class BattlePositionManager(BaseModel):
         if not self.check_position_validity(position):
             raise ValueError("Invalid battle position.")
         
+        if position in self.actions and type(self.actions[position]) == SkipTurnAction:
+            print ("Position already has a SkipTurnAction, not overwriting.")
+            return
+        
         if type(action) not in [SwitchAction, EscapeAction]:
             # check if pokemon at position is fainted
             pokemon = self.get_pokemon_at_position(position)
@@ -55,6 +61,29 @@ class BattlePositionManager(BaseModel):
                 raise ValueError("Cannot perform action with a fainted Pokémon.")
 
         self.actions[position] = action
+
+    def add_future_position_action(self, turn_number: int, position: BattlePosition, action: BattleAction):
+        if turn_number not in self.future_actions:
+            self.future_actions[turn_number] = {}
+        self.future_actions[turn_number][position] = action
+
+    def get_future_position_actions(self, turn_number: int) -> dict[BattlePosition, BattleAction]:
+        return self.future_actions.get(turn_number, {})
+    
+    def load_future_position_actions(self, turn_number: int):
+        actions = self.get_future_position_actions(turn_number)
+        for position, action in actions.items():
+            self.add_position_action(position, action)
+        if turn_number in self.future_actions:
+            del self.future_actions[turn_number]
+
+    def add_switch_turn_action(self, position: BattlePosition, action: SwitchAction|SkipTurnAction):
+        self.switch_turn_actions[position] = action
+
+    def load_switch_turn_actions(self):
+        for position, action in self.switch_turn_actions.items():
+            self.add_position_action(position, action)
+        self.switch_turn_actions.clear()
 
     def remove_position_action(self, position: BattlePosition):
         if position in self.actions:
@@ -67,12 +96,11 @@ class BattlePositionManager(BaseModel):
         self.actions.clear()
 
     def get_direct_opponent_position(self, position: BattlePosition) -> BattlePosition:
-        if position.team_id == 1 and position.pokemon_index == 1:
-            return BattlePosition(team_id=2, pokemon_index=1)
-        elif position.team_id == 2 and position.pokemon_index == 1:
-            return BattlePosition(team_id=1, pokemon_index=1)
+        if position.team_id == 0:
+            opponent_team_id = 1
         else:
-            raise ValueError("Invalid position for singles battle.")
+            opponent_team_id = 0
+        return BattlePosition(team_id=opponent_team_id, pokemon_index=position.pokemon_index)
     
     def clear(self):
         self.positions.clear()

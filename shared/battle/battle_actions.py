@@ -9,6 +9,7 @@ class ActionType(Enum):
     SWITCH = "switch"
     USE_ITEM = "use_item"
     ESCAPE = "escape"
+    SKIP = "skip"
     UNDEFINED = "undefined"
 
 class BattleAction(BaseModel):
@@ -32,3 +33,6 @@ class UseItemAction(BattleAction):
 class EscapeAction(BattleAction):
     action_type: ActionType = Field(default=ActionType.ESCAPE)
     escape_attempts: int = 0
+
+class SkipTurnAction(BattleAction):
+    action_type: ActionType = Field(default=ActionType.SKIP)

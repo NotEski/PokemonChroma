@@ -24,14 +24,14 @@ def pickachu_eevee_battle_example():
     pikachu_moveset = moveset_from_names(["tackle", "growl", "volt_tackle", "quick_attack"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
-    ashes_pickachu = Pokemon(pokemon=pokemon_repository.get("pikachu"), level=15, move_set=pikachu_moveset)
+    ashes_pickachu = Pokemon(pokemon_base=pokemon_repository.get("pikachu"), level=15, move_set=pikachu_moveset)
     ashes_pickachu.nickname = "Pika"
     ashes_pickachu.held_item = item_repository.get("light_ball")
     ashes_team = PokemonTeam(pokemons=[ashes_pickachu])
 
 
     trainer=Trainer(name="Ash", team=ashes_team)
-    wild_pokemon=Pokemon(pokemon=pokemon_repository.get("eevee"), level=1, move_set=eevee_moveset)
+    wild_pokemon=Pokemon(pokemon_base=pokemon_repository.get("eevee"), level=1, move_set=eevee_moveset)
     opponent_1 = TrainerOpponent(trainer=trainer)
     opponent_2 = WildPokemonOpponent(pokemon=wild_pokemon)
 
@@ -42,13 +42,16 @@ def pickachu_eevee_battle_example():
 
     battle_manager.start_turn()
 
+    pikachu_opponent = battle_manager.position_manager.get_direct_opponent_position(ashes_pickachu._get_current_position())
     quick_attack_action = ashes_pickachu.create_move_action(
         move="tackle",
-        target_position=BattlePosition(team_id=2, pokemon_index=1)
+        target_position=pikachu_opponent
     )
+
+    eevee_opponent = battle_manager.position_manager.get_direct_opponent_position(wild_pokemon._get_current_position())
     wild_pokemon_action = wild_pokemon.create_move_action(
         move="quick_attack",
-        target_position=BattlePosition(team_id=1, pokemon_index=1)
+        target_position=eevee_opponent
     )
 
     battle_manager.submit_action(quick_attack_action)

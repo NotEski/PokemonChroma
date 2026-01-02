@@ -22,14 +22,22 @@ class ActionType(Enum):
     USE_ITEM = "use_item"
     ESCAPE = "escape"
 
+class BattleSwitchType(Enum):
+    SET = "set"
+    SWITCH = "switch"
+
 class BattleConfig(BaseModel):
     battle_type: BattleType = Field(default=BattleType.SINGLE)
+    battle_switch_type: BattleSwitchType = Field(default=BattleSwitchType.SET)
     is_wild: bool = Field(default=False)
     can_escape: bool = Field(default=False)
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
 
 class BattleState(BaseModel):
     turn_number: int = Field(default=0)
+
+    switch_turn: bool = Field(default=False)  # Indicates if the current turn is a switch turn
+
     weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=-1))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
 

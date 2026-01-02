@@ -1,7 +1,8 @@
 from engine.pokemon.repositry_generator import initialize_repositories
 from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
-from engine.battle.battle_example import moveset_from_names
-from engine.battle.battle_manager import BattleManager, BattleConfig, BattleType
+from engine.battle.battle_example import moveset_from_names, pickachu_eevee_battle_example
+from engine.battle.battle_manager import BattleManager
+from shared.battle.battle_header import BattleType, BattleConfig
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent
 from shared.trainer.trainer import Trainer
@@ -37,19 +38,23 @@ def simulate_sample_battle():
     marshtomp_moveset = moveset_from_names(["mud_slap", "water_gun", "rock_throw", "instakill"])
     marshtomp_base = pokemon_repository.get("marshtomp")
     marshtomp = Pokemon(pokemon_base=marshtomp_base, level=50, move_set=marshtomp_moveset)
+    marshtomp.nickname = "Marshy"
     
+    squirtle_moveset = moveset_from_names(["water_gun", "tackle", "bubble", "withdraw"])
+    squirtle_base = pokemon_repository.get("squirtle")
+    squirtle = Pokemon(pokemon_base=squirtle_base, level=50, move_set=squirtle_moveset)
+    squirtle.nickname = "Squirt"
 
     youngseos_team = PokemonTeam(pokemons=[pikachu, eevee])
     trainer_1 = Trainer(name="Youngseo", team=youngseos_team)
     
-    declans_team = PokemonTeam(pokemons=[marshtomp])
+    declans_team = PokemonTeam(pokemons=[marshtomp, squirtle])
     trainer_2 = Trainer(name="Declan", team=declans_team)
 
     opponent_1 = TrainerOpponent(trainer=trainer_1)
     opponent_2 = TrainerOpponent(trainer=trainer_2)
 
-
-    battle_manager = BattleManager(teams=[opponent_1, opponent_2])
+    battle_manager = BattleManager(teams=[opponent_1, opponent_2], battle_config=BattleConfig(battle_type=BattleType.SINGLE, is_wild=False))
     battle_manager.init_battle()
     battle_manager.start_turn()
 
@@ -122,8 +127,8 @@ class BattleInspectorWindow:
         buttons_1 = ttk.Frame(team1_move_frame)
         buttons_1.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
         buttons_1.columnconfigure(0, weight=1)
-        self.team_panels["move_buttons_frame_1"] = buttons_1
-        ttk.Button(team1_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(1)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
+        self.team_panels["move_buttons_frame_0"] = buttons_1
+        ttk.Button(team1_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(0)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
 
         # Team 2 moves
         team2_move_frame = ttk.LabelFrame(move_frame, text="Team 2 Moves")
@@ -132,8 +137,8 @@ class BattleInspectorWindow:
         buttons_2 = ttk.Frame(team2_move_frame)
         buttons_2.grid(row=0, column=0, sticky="nsew", padx=5, pady=5)
         buttons_2.columnconfigure(0, weight=1)
-        self.team_panels["move_buttons_frame_2"] = buttons_2
-        ttk.Button(team2_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(2)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
+        self.team_panels["move_buttons_frame_1"] = buttons_2
+        ttk.Button(team2_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(1)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
 
         # Right side panel with logs and team info
         right_panel = ttk.Frame(body)
@@ -160,20 +165,20 @@ class BattleInspectorWindow:
         roster_frame_1.grid(row=1, column=0, sticky="nsew", pady=(0, 6))
         roster_frame_1.columnconfigure(0, weight=1)
         roster_frame_1.rowconfigure(0, weight=1)
-        self.team_panels["roster_1"] = tk.Listbox(roster_frame_1, height=8, font=("Segoe UI", 10))
-        self.team_panels["roster_1"].grid(row=0, column=0, sticky="nsew")
-        r1_scroll = ttk.Scrollbar(roster_frame_1, orient="vertical", command=self.team_panels["roster_1"].yview)
-        self.team_panels["roster_1"].configure(yscrollcommand=r1_scroll.set)
+        self.team_panels["roster_0"] = tk.Listbox(roster_frame_1, height=8, font=("Segoe UI", 10))
+        self.team_panels["roster_0"].grid(row=0, column=0, sticky="nsew")
+        r1_scroll = ttk.Scrollbar(roster_frame_1, orient="vertical", command=self.team_panels["roster_0"].yview)
+        self.team_panels["roster_0"].configure(yscrollcommand=r1_scroll.set)
         r1_scroll.grid(row=0, column=1, sticky="ns")
 
         roster_frame_2 = ttk.LabelFrame(right_panel, text="Team 2 Roster")
         roster_frame_2.grid(row=2, column=0, sticky="nsew")
         roster_frame_2.columnconfigure(0, weight=1)
         roster_frame_2.rowconfigure(0, weight=1)
-        self.team_panels["roster_2"] = tk.Listbox(roster_frame_2, height=8, font=("Segoe UI", 10))
-        self.team_panels["roster_2"].grid(row=0, column=0, sticky="nsew")
-        r2_scroll = ttk.Scrollbar(roster_frame_2, orient="vertical", command=self.team_panels["roster_2"].yview)
-        self.team_panels["roster_2"].configure(yscrollcommand=r2_scroll.set)
+        self.team_panels["roster_1"] = tk.Listbox(roster_frame_2, height=8, font=("Segoe UI", 10))
+        self.team_panels["roster_1"].grid(row=0, column=0, sticky="nsew")
+        r2_scroll = ttk.Scrollbar(roster_frame_2, orient="vertical", command=self.team_panels["roster_1"].yview)
+        self.team_panels["roster_1"].configure(yscrollcommand=r2_scroll.set)
         r2_scroll.grid(row=0, column=1, sticky="ns")
 
     def _draw_battle_field(self):
@@ -213,7 +218,7 @@ class BattleInspectorWindow:
             pokemon_index = position.pokemon_index
 
             # Calculate position on grid (teams on opposite sides)
-            if team_id == 1:
+            if team_id == 0:
                 col = pokemon_index
                 row = 0
             else:
@@ -235,7 +240,7 @@ class BattleInspectorWindow:
             )
 
             # Draw team label
-            team_label = "Team 1" if team_id == 1 else "Team 2"
+            team_label = "Team 1" if team_id == 0 else "Team 2"
             self.battle_field_canvas.create_text(
                 cell_x + 10, cell_y + 10,
                 text=team_label,
@@ -357,11 +362,11 @@ class BattleInspectorWindow:
             hp_text = f"{pokemon.current_hp}/{pokemon.max_hp}"
             status = self._format_status(pokemon)
             status_text = f" [{status}]" if status != "none" else ""
-            roster.insert(tk.END, f"{i+1}. {pokemon.nickname} ({base_name}) - Lv {pokemon.level} - HP: {hp_text}{status_text}")
+            roster.insert(tk.END, f"{i}. {pokemon.nickname} ({base_name}) - Lv {pokemon.level} - HP: {hp_text}{status_text}")
 
     def _render_all_rosters(self):
+        self._render_team_roster(0)
         self._render_team_roster(1)
-        self._render_team_roster(2)
 
     def _format_status(self, pokemon) -> str:
         """Get status condition names from a BattleMon."""
@@ -378,8 +383,8 @@ class BattleInspectorWindow:
     def refresh(self):
         battle_manager, opponent_1, opponent_2 = simulate_sample_battle()
         self.battle_manager = battle_manager
-        self.opponents = {1: opponent_1, 2: opponent_2}
-        self.active_team_id = 1
+        self.opponents = {0: opponent_1, 1: opponent_2}
+        self.active_team_id = 0
         self._draw_battle_field()
         self._render_all_rosters()
         self._update_move_selector()
@@ -390,11 +395,11 @@ class BattleInspectorWindow:
         """Refresh move buttons for both teams."""
         if self.battle_manager is None:
             return
+        self._update_move_buttons(0)
         self._update_move_buttons(1)
-        self._update_move_buttons(2)
 
     def _update_move_buttons(self, team_id: int):
-        position = BattlePosition(team_id=team_id, pokemon_index=1)
+        position = BattlePosition(team_id=team_id, pokemon_index=0)
         pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
 
         moves_container = self.team_panels.get(f"move_buttons_frame_{team_id}")
@@ -421,7 +426,7 @@ class BattleInspectorWindow:
     def queue_move(self, team_id: int, move_index: int = None):
         if self.battle_manager is None:
             return
-        position = BattlePosition(team_id=team_id, pokemon_index=1)
+        position = BattlePosition(team_id=team_id, pokemon_index=0)
         pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
         if pokemon is None:
             print("Queue Move error: No pokemon at this position.")
@@ -432,6 +437,7 @@ class BattleInspectorWindow:
             return
 
         try:
+            print (f"Queuing move index {move_index} for Team {team_id}'s {pokemon.nickname}")
             target_position = self.battle_manager.position_manager.get_direct_opponent_position(position)
             self.battle_manager.submit_action(MoveAction(position=position, move_index=move_index, target_position=target_position))
         except Exception:
@@ -464,7 +470,7 @@ class BattleInspectorWindow:
             print("Switch error: Invalid selection index.")
             return
 
-        position = BattlePosition(team_id=team_id, pokemon_index=1)
+        position = BattlePosition(team_id=team_id, pokemon_index=0)
 
         try:
             self.battle_manager.switch_pokemon(position, switch_index)
@@ -556,7 +562,7 @@ def launch_battle_inspector():
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
-
+# pickachu_eevee_battle_example()
 
 launch_battle_inspector()
 
