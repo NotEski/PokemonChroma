@@ -1,0 +1,10 @@
+@status("confusion")  # type: ignore
+class _ConfusionStatus:
+    meta = {
+        "display_name": "Confusion",
+    }
+    def on_inflicted(self):
+        print("Confusion status effect inflicted")
+
+    def on_turn_end(self, pokemon):
+        print("Confusion status effect on turn end")

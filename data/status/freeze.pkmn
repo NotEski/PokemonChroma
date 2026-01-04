@@ -1,0 +1,12 @@
+@status("freeze")  # type: ignore
+class _FreezeStatus:
+    meta = {
+        "display_name": "Freeze",
+        "mutual_exclusive": True,
+    }
+    def can_move(self, pokemon) -> bool:
+        return False
+    
+    def on_turn_start(self, pokemon):
+        if randint(1, 5) == 1:
+            pokemon.remove_status_condition("freeze")

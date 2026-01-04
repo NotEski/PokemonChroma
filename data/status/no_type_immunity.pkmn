@@ -1,0 +1,5 @@
+@status("no_type_immunity")  # type: ignore
+class _NoTypeImmunityStatus:
+    meta = {
+        "display_name": "No type immunity",
+    }

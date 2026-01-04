@@ -1,0 +1,12 @@
+@status("poison")  # type: ignore
+class _PoisonStatus:
+    meta = {
+        "display_name": "Poison",
+        "mutual_exclusive": True,
+    }
+    def on_turn_end(self, pokemon):
+        print("Poison status effect on turn end")
+        pokemon.current_hp = max(pokemon.current_hp - max(1, pokemon.max_hp // 8), 0)
+
+    def on_switch_out(self, pokemon):
+        print("Poison status effect on switch out")

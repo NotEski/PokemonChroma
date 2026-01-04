@@ -1,0 +1,5 @@
+@status("torment")  # type: ignore
+class _TormentStatus:
+    meta = {
+        "display_name": "Torment",
+    }

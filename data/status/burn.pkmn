@@ -1,0 +1,9 @@
+@status("burn")  # type: ignore
+class _BurnStatus:
+    meta = {
+        "display_name": "Burn",
+        "mutual_exclusive": True,
+    }
+
+    def on_turn_end(self, pokemon):
+        pokemon.current_hp = max(pokemon.current_hp - max(1, pokemon.max_hp // 16), 0)

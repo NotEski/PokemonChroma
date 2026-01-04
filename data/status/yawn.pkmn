@@ -1,0 +1,5 @@
+@status("yawn")  # type: ignore
+class _YawnStatus:
+    meta = {
+        "display_name": "Yawn",
+    }

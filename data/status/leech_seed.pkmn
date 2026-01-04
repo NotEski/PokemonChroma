@@ -1,0 +1,5 @@
+@status("leech_seed")  # type: ignore
+class _LeechSeedStatus:
+    meta = {
+        "display_name": "Leech Seed",
+    }

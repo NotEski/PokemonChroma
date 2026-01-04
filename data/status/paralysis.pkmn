@@ -1,0 +1,19 @@
+@status("paralysis")  # type: ignore
+class _ParalysisStatus:
+    meta = {
+        "display_name": "Paralysis",
+        "mutual_exclusive": True,
+    }
+
+    def on_inflicted(self):
+        print("Paralysis status effect inflicted")
+        
+    def on_turn_end(self, pokemon):
+        print("Paralysis status effect on turn end")
+
+    def can_move(self, pokemon) -> bool:
+        random_chance = randint(1, 4)
+        if random_chance == 1:
+            return True
+        print("Paralysis status effect prevents movement!")
+        return False

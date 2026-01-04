@@ -1,0 +1,5 @@
+@status("nightmare")  # type: ignore
+class _NightmareStatus:
+    meta = {
+        "display_name": "Nightmare",
+    }

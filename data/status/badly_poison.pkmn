@@ -1,0 +1,10 @@
+@status("badly_poison") # type: ignore
+class BadlyPoisonStatus:
+    meta = {
+        "mutual_exclusive": True
+    }
+    def on_inflicted(self, pokemon):
+        print("Badly Poison status effect inflicted")
+
+    def on_turn_end(self, pokemon):
+        print("Badly Poison status effect on turn end")

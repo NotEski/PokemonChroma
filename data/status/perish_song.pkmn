@@ -1,0 +1,8 @@
+@status("perish_song")  # type: ignore
+class _PerishSongStatus:
+    meta = {
+        "display_name": "Perish Song",
+    }
+    default_data = {
+        "turns_active": 0
+    }

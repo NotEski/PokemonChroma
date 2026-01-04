@@ -1,0 +1,6 @@
+@status("heal_block")  # type: ignore
+class _HealBlockStatus:
+    meta = {
+        "display_name": "Heal Block",
+        "mutual_exclusive": True,
+    }

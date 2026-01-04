@@ -1,0 +1,5 @@
+@status("embargo")  # type: ignore
+class _EmbargoStatus:
+    meta = {
+        "display_name": "Embargo",
+    }

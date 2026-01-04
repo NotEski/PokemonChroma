@@ -1,0 +1,6 @@
+@status("infatuation")  # type: ignore
+class _InfatuationStatus:
+    meta = {
+        "display_name": "Infatuation",
+        "mutual_exclusive": True,
+    }

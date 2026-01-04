@@ -1,0 +1,5 @@
+@status("ingrain")  # type: ignore
+class _IngrainStatus:
+    meta = {
+        "display_name": "Ingrain",
+    }

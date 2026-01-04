@@ -1,0 +1,5 @@
+@status("trap")  # type: ignore
+class _TrapStatus:
+    meta = {
+        "display_name": "Trap",
+    }

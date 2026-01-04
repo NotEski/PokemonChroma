@@ -1,0 +1,12 @@
+@status("sleep")  # type: ignore
+class _SleepStatus:
+    meta = {
+        "display_name": "Sleep",
+        "mutual_exclusive": True,
+    }
+    def on_turn_start(self, turns_active, pokemon):
+        if turns_active >= randint(2, 4):
+            pokemon.remove_status_condition("sleep")
+
+    def can_move(self, pokemon) -> bool:
+        return False

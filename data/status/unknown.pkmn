@@ -1,0 +1,5 @@
+@status("unknown")  # type: ignore
+class _UnknownStatus:
+    meta = {
+        "display_name": "????",
+    }
