@@ -1,0 +1,154 @@
+{
+    "name": "tapu_bulu",
+    "display_name": "Tapu Bulu",
+    "pokedex_number": 787,
+    "types": [
+        "grass",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 130,
+        "defense": 115,
+        "special_attack": 85,
+        "special_defense": 95,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "grassy_surge",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.9,
+    "weight_kg": 45.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "25": [
+                "whirlwind"
+            ],
+            "30": [
+                "horn_attack"
+            ],
+            "10": [
+                "disable"
+            ],
+            "20": [
+                "mega_drain"
+            ],
+            "15": [
+                "leech_seed"
+            ],
+            "5": [
+                "withdraw"
+            ],
+            "70": [
+                "skull_bash"
+            ],
+            "35": [
+                "scary_face"
+            ],
+            "50": [
+                "mean_look"
+            ],
+            "65": [
+                "megahorn"
+            ],
+            "1": [
+                "leafage",
+                "rock_smash"
+            ],
+            "45": [
+                "zen_headbutt"
+            ],
+            "60": [
+                "wood_hammer"
+            ],
+            "40": [
+                "horn_leech"
+            ],
+            "75": [
+                "grassy_terrain"
+            ],
+            "55": [
+                "natures_madness"
+            ]
+        },
+        "machine": [
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bullet_seed",
+            "calm_mind",
+            "close_combat",
+            "darkest_lariat",
+            "dazzling_gleam",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "guard_swap",
+            "high_horsepower",
+            "hyper_beam",
+            "iron_defense",
+            "light_screen",
+            "mega_punch",
+            "megahorn",
+            "payback",
+            "power_swap",
+            "protect",
+            "reflect",
+            "rest",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "scary_face",
+            "seed_bomb",
+            "sleep_talk",
+            "smart_strike",
+            "snarl",
+            "snore",
+            "solar_beam",
+            "stone_edge",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "taunt",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

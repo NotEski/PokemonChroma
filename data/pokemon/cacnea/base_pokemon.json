@@ -1,0 +1,54 @@
+{
+    "name": "cacnea",
+    "display_name": "Cacnea",
+    "pokedex_number": 331,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 85,
+        "defense": 40,
+        "special_attack": 85,
+        "special_defense": 40,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 67,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sand_veil",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 51.3,
+    "egg_groups": [
+        "plant",
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 167
+}

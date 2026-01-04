@@ -1,0 +1,151 @@
+{
+    "name": "drednaw",
+    "display_name": "Drednaw",
+    "pokedex_number": 834,
+    "types": [
+        "water",
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 115,
+        "defense": 90,
+        "special_attack": 48,
+        "special_defense": 68,
+        "speed": 74
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 170,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "strong_jaw",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 115.5,
+    "egg_groups": [
+        "monster",
+        "water1"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "21": [
+                "headbutt"
+            ],
+            "1": [
+                "bite",
+                "crunch",
+                "protect",
+                "razor_shell",
+                "rock_polish",
+                "rock_tomb",
+                "tackle",
+                "water_gun"
+            ],
+            "57": [
+                "body_slam"
+            ],
+            "30": [
+                "counter"
+            ],
+            "0": [
+                "rock_tomb"
+            ],
+            "66": [
+                "head_smash"
+            ],
+            "48": [
+                "liquidation"
+            ],
+            "39": [
+                "jaw_lock"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "dive",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "false_swipe",
+            "giga_impact",
+            "high_horsepower",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "iron_defense",
+            "iron_tail",
+            "liquidation",
+            "megahorn",
+            "mud_shot",
+            "muddy_water",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "razor_shell",
+            "rest",
+            "revenge",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "scald",
+            "scary_face",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "surf",
+            "swords_dance",
+            "throat_chop",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [
+            "meteor_beam",
+            "scale_shot",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 439
+}

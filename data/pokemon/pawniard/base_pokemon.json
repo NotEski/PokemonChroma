@@ -1,0 +1,152 @@
+{
+    "name": "pawniard",
+    "display_name": "Pawniard",
+    "pokedex_number": 624,
+    "types": [
+        "dark",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 85,
+        "defense": 70,
+        "special_attack": 40,
+        "special_defense": 40,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 68,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "defiant",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pressure",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 10.2,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "scratch"
+            ],
+            "65": [
+                "guillotine"
+            ],
+            "60": [
+                "swords_dance"
+            ],
+            "35": [
+                "slash"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "5": [
+                "fury_cutter"
+            ],
+            "10": [
+                "metal_claw"
+            ],
+            "15": [
+                "torment"
+            ],
+            "30": [
+                "metal_sound"
+            ],
+            "45": [
+                "iron_defense"
+            ],
+            "25": [
+                "assurance"
+            ],
+            "40": [
+                "night_slash"
+            ],
+            "55": [
+                "iron_head"
+            ],
+            "50": [
+                "laser_focus"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "beat_up",
+            "brick_break",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "foul_play",
+            "grass_knot",
+            "iron_defense",
+            "iron_head",
+            "low_kick",
+            "low_sweep",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stealth_rock",
+            "substitute",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "thunder_wave",
+            "x_scissor"
+        ],
+        "tutor": [
+            "lash_out",
+            "steel_beam"
+        ],
+        "egg_moves": [
+            "headbutt",
+            "mean_look",
+            "quick_guard",
+            "sucker_punch"
+        ]
+    },
+    "evolution_line_id": 317
+}

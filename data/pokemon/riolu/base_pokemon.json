@@ -1,0 +1,163 @@
+{
+    "name": "riolu",
+    "display_name": "Riolu",
+    "pokedex_number": 447,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 70,
+        "defense": 40,
+        "special_attack": 35,
+        "special_defense": 40,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 57,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 20.2,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "40": [
+                "swords_dance"
+            ],
+            "12": [
+                "counter"
+            ],
+            "1": [
+                "endure",
+                "quick_attack"
+            ],
+            "28": [
+                "screech"
+            ],
+            "56": [
+                "reversal"
+            ],
+            "8": [
+                "metal_claw"
+            ],
+            "20": [
+                "rock_smash"
+            ],
+            "44": [
+                "helping_hand"
+            ],
+            "4": [
+                "feint"
+            ],
+            "48": [
+                "copycat"
+            ],
+            "36": [
+                "force_palm"
+            ],
+            "24": [
+                "nasty_plot"
+            ],
+            "32": [
+                "quick_guard"
+            ],
+            "52": [
+                "final_gambit"
+            ],
+            "16": [
+                "work_up"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "blaze_kick",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "helping_hand",
+            "ice_punch",
+            "iron_defense",
+            "iron_tail",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thunder_punch",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": [
+            "bite",
+            "bullet_punch",
+            "circle_throw",
+            "cross_chop",
+            "detect",
+            "high_jump_kick",
+            "howl",
+            "mind_reader",
+            "vacuum_wave"
+        ]
+    },
+    "evolution_line_id": 232
+}

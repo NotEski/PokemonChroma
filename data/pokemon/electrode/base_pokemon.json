@@ -1,0 +1,58 @@
+{
+    "name": "electrode",
+    "display_name": "Electrode",
+    "pokedex_number": 101,
+    "types": [
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 70,
+        "special_attack": 80,
+        "special_defense": 80,
+        "speed": 150
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 172,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "soundproof",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "static",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "aftermath",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 66.6,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 44
+}

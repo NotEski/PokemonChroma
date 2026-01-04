@@ -1,0 +1,123 @@
+{
+    "name": "eldegoss",
+    "display_name": "Eldegoss",
+    "pokedex_number": 830,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 50,
+        "defense": 90,
+        "special_attack": 80,
+        "special_defense": 120,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 161,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "cotton_down",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "effect_spore",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 2.5,
+    "egg_groups": [
+        "plant"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "cotton_spore",
+                "leafage",
+                "rapid_spin",
+                "sing",
+                "sweet_scent"
+            ],
+            "12": [
+                "razor_leaf"
+            ],
+            "0": [
+                "cotton_spore"
+            ],
+            "28": [
+                "synthesis"
+            ],
+            "34": [
+                "hyper_voice"
+            ],
+            "40": [
+                "aromatherapy"
+            ],
+            "46": [
+                "leaf_storm"
+            ],
+            "16": [
+                "round"
+            ],
+            "23": [
+                "leaf_tornado"
+            ],
+            "52": [
+                "cotton_guard"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bullet_seed",
+            "charm",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "helping_hand",
+            "hyper_beam",
+            "hyper_voice",
+            "leaf_storm",
+            "light_screen",
+            "magical_leaf",
+            "pollen_puff",
+            "protect",
+            "rest",
+            "round",
+            "seed_bomb",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "weather_ball"
+        ],
+        "tutor": [
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 437
+}

@@ -1,0 +1,174 @@
+{
+    "name": "sableye",
+    "display_name": "Sableye",
+    "pokedex_number": 302,
+    "types": [
+        "dark",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 75,
+        "special_attack": 65,
+        "special_defense": 65,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 133,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "stall",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 11.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "scratch"
+            ],
+            "15": [
+                "disable"
+            ],
+            "21": [
+                "night_shade"
+            ],
+            "6": [
+                "confuse_ray"
+            ],
+            "24": [
+                "fury_swipes"
+            ],
+            "18": [
+                "detect"
+            ],
+            "36": [
+                "mean_look"
+            ],
+            "45": [
+                "shadow_ball"
+            ],
+            "12": [
+                "fake_out"
+            ],
+            "27": [
+                "knock_off"
+            ],
+            "3": [
+                "astonish"
+            ],
+            "39": [
+                "power_gem"
+            ],
+            "33": [
+                "shadow_claw"
+            ],
+            "9": [
+                "shadow_sneak"
+            ],
+            "42": [
+                "zen_headbutt"
+            ],
+            "48": [
+                "foul_play"
+            ],
+            "30": [
+                "quash"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "calm_mind",
+            "dark_pulse",
+            "dazzling_gleam",
+            "dig",
+            "drain_punch",
+            "encore",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "foul_play",
+            "gyro_ball",
+            "helping_hand",
+            "hex",
+            "ice_punch",
+            "icy_wind",
+            "imprison",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "nasty_plot",
+            "payback",
+            "poison_jab",
+            "power_gem",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "rock_tomb",
+            "round",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "trick",
+            "will_o_wisp",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "lash_out",
+            "poltergeist"
+        ],
+        "egg_moves": [
+            "feint",
+            "flatter",
+            "metal_burst",
+            "recover",
+            "sucker_punch",
+            "torment"
+        ]
+    },
+    "evolution_line_id": 149
+}

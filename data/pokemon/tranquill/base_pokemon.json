@@ -1,0 +1,118 @@
+{
+    "name": "tranquill",
+    "display_name": "Tranquill",
+    "pokedex_number": 520,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 62,
+        "attack": 77,
+        "defense": 62,
+        "special_attack": 50,
+        "special_defense": 42,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 125,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "super_luck",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "rivalry",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 15.0,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "growl",
+                "gust",
+                "leer",
+                "quick_attack"
+            ],
+            "56": [
+                "sky_attack"
+            ],
+            "34": [
+                "detect"
+            ],
+            "20": [
+                "swagger"
+            ],
+            "12": [
+                "taunt"
+            ],
+            "26": [
+                "feather_dance"
+            ],
+            "16": [
+                "air_cutter"
+            ],
+            "44": [
+                "roost"
+            ],
+            "50": [
+                "tailwind"
+            ],
+            "38": [
+                "air_slash"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "attract",
+            "endure",
+            "facade",
+            "fly",
+            "focus_energy",
+            "heat_wave",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "u_turn",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 266
+}

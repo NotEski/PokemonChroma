@@ -1,0 +1,149 @@
+{
+    "name": "relicanth",
+    "display_name": "Relicanth",
+    "pokedex_number": 369,
+    "types": [
+        "water",
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 90,
+        "defense": 130,
+        "special_attack": 45,
+        "special_defense": 65,
+        "speed": 55
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 25,
+    "base_experience_yield": 170,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 23.4,
+    "egg_groups": [
+        "water1",
+        "water2"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "harden",
+                "tackle"
+            ],
+            "25": [
+                "take_down"
+            ],
+            "50": [
+                "double_edge"
+            ],
+            "5": [
+                "water_gun"
+            ],
+            "45": [
+                "hydro_pump"
+            ],
+            "35": [
+                "rest"
+            ],
+            "40": [
+                "flail"
+            ],
+            "10": [
+                "ancient_power"
+            ],
+            "15": [
+                "yawn"
+            ],
+            "20": [
+                "dive"
+            ],
+            "30": [
+                "aqua_tail"
+            ],
+            "55": [
+                "head_smash"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "bounce",
+            "brine",
+            "bulldoze",
+            "calm_mind",
+            "dive",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "giga_impact",
+            "hail",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "iron_defense",
+            "liquidation",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "surf",
+            "waterfall",
+            "whirlpool",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "meteor_beam",
+            "scale_shot"
+        ],
+        "egg_moves": [
+            "mud_slap",
+            "skull_bash"
+        ]
+    },
+    "evolution_line_id": 189
+}

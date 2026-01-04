@@ -1,0 +1,129 @@
+{
+    "name": "moltres_galar",
+    "display_name": "Moltres Galar",
+    "pokedex_number": 10171,
+    "types": [
+        "dark",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 85,
+        "defense": 90,
+        "special_attack": 100,
+        "special_defense": 125,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 3,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 290,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "berserk",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 66.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "gust",
+                "leer"
+            ],
+            "15": [
+                "wing_attack"
+            ],
+            "20": [
+                "agility"
+            ],
+            "70": [
+                "sky_attack"
+            ],
+            "60": [
+                "endure"
+            ],
+            "10": [
+                "safeguard"
+            ],
+            "25": [
+                "ancient_power"
+            ],
+            "65": [
+                "memento"
+            ],
+            "5": [
+                "payback"
+            ],
+            "30": [
+                "sucker_punch"
+            ],
+            "35": [
+                "air_slash"
+            ],
+            "50": [
+                "nasty_plot"
+            ],
+            "40": [
+                "after_you"
+            ],
+            "55": [
+                "hurricane"
+            ],
+            "45": [
+                "fiery_wrath"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "assurance",
+            "brave_bird",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "fly",
+            "foul_play",
+            "giga_impact",
+            "hex",
+            "hurricane",
+            "hyper_beam",
+            "hyper_voice",
+            "imprison",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "rest",
+            "round",
+            "safeguard",
+            "scary_face",
+            "shadow_ball",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "swift",
+            "taunt",
+            "u_turn"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

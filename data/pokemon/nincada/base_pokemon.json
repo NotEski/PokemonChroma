@@ -1,0 +1,110 @@
+{
+    "name": "nincada",
+    "display_name": "Nincada",
+    "pokedex_number": 290,
+    "types": [
+        "bug",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 31,
+        "attack": 45,
+        "defense": 90,
+        "special_attack": 30,
+        "special_defense": 30,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 53,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "compound_eyes",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "run_away",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 5.5,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "sand_attack",
+                "scratch"
+            ],
+            "21": [
+                "absorb"
+            ],
+            "40": [
+                "dig"
+            ],
+            "5": [
+                "harden"
+            ],
+            "30": [
+                "fury_swipes"
+            ],
+            "35": [
+                "mind_reader"
+            ],
+            "15": [
+                "mud_slap"
+            ],
+            "10": [
+                "false_swipe"
+            ],
+            "25": [
+                "metal_claw"
+            ]
+        },
+        "machine": [
+            "bug_buzz",
+            "dig",
+            "endure",
+            "facade",
+            "false_swipe",
+            "giga_drain",
+            "leech_life",
+            "protect",
+            "rest",
+            "round",
+            "sandstorm",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "x_scissor"
+        ],
+        "tutor": [
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "bug_bite",
+            "final_gambit",
+            "flail",
+            "gust",
+            "night_slash"
+        ]
+    },
+    "evolution_line_id": 144
+}

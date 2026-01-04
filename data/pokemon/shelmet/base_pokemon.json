@@ -1,0 +1,130 @@
+{
+    "name": "shelmet",
+    "display_name": "Shelmet",
+    "pokedex_number": 616,
+    "types": [
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 40,
+        "defense": 85,
+        "special_attack": 40,
+        "special_defense": 65,
+        "speed": 25
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "hydration",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 7.7,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "36": [
+                "body_slam"
+            ],
+            "4": [
+                "acid"
+            ],
+            "1": [
+                "absorb",
+                "protect"
+            ],
+            "12": [
+                "mega_drain"
+            ],
+            "40": [
+                "recover"
+            ],
+            "24": [
+                "acid_armor"
+            ],
+            "8": [
+                "curse"
+            ],
+            "28": [
+                "giga_drain"
+            ],
+            "20": [
+                "yawn"
+            ],
+            "32": [
+                "guard_swap"
+            ],
+            "44": [
+                "bug_buzz"
+            ],
+            "48": [
+                "final_gambit"
+            ],
+            "16": [
+                "struggle_bug"
+            ]
+        },
+        "machine": [
+            "attract",
+            "baton_pass",
+            "body_slam",
+            "bug_buzz",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "guard_swap",
+            "leech_life",
+            "mud_shot",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "spikes",
+            "substitute",
+            "toxic_spikes",
+            "venoshock"
+        ],
+        "tutor": [
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "double_edge",
+            "feint",
+            "guard_split",
+            "mind_reader"
+        ]
+    },
+    "evolution_line_id": 312
+}

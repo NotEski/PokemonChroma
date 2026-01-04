@@ -1,0 +1,47 @@
+{
+    "name": "wo_chien",
+    "display_name": "Wo Chien",
+    "pokedex_number": 1001,
+    "types": [
+        "dark",
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 85,
+        "defense": 100,
+        "special_attack": 95,
+        "special_defense": 135,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 3,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 285,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "tablets_of_ruin",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 74.2,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

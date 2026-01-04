@@ -1,0 +1,147 @@
+{
+    "name": "aurorus",
+    "display_name": "Aurorus",
+    "pokedex_number": 699,
+    "types": [
+        "rock",
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 123,
+        "attack": 77,
+        "defense": 72,
+        "special_attack": 99,
+        "special_defense": 92,
+        "speed": 58
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 104,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "refrigerate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "snow_warning",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.7,
+    "weight_kg": 225.0,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "ancient_power",
+                "encore",
+                "growl",
+                "powder_snow"
+            ],
+            "20": [
+                "mist"
+            ],
+            "42": [
+                "ice_beam"
+            ],
+            "60": [
+                "blizzard"
+            ],
+            "24": [
+                "aurora_beam"
+            ],
+            "66": [
+                "hyper_beam"
+            ],
+            "28": [
+                "thunder_wave"
+            ],
+            "48": [
+                "light_screen"
+            ],
+            "12": [
+                "icy_wind"
+            ],
+            "54": [
+                "hail"
+            ],
+            "32": [
+                "nature_power"
+            ],
+            "16": [
+                "round"
+            ],
+            "36": [
+                "freeze_dry"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "bulldoze",
+            "calm_mind",
+            "dark_pulse",
+            "earth_power",
+            "earthquake",
+            "encore",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "giga_impact",
+            "hail",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "icicle_spear",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "light_screen",
+            "mud_shot",
+            "outrage",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "weather_ball",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "meteor_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 358
+}

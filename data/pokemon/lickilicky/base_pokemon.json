@@ -1,0 +1,149 @@
+{
+    "name": "lickilicky",
+    "display_name": "Lickilicky",
+    "pokedex_number": 463,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 110,
+        "attack": 85,
+        "defense": 95,
+        "special_attack": 80,
+        "special_defense": 95,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 30,
+    "base_experience_yield": 180,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "oblivious",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "cloud_nine",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 140.0,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "48": [
+                "slam"
+            ],
+            "30": [
+                "stomp"
+            ],
+            "18": [
+                "wrap"
+            ],
+            "1": [
+                "defense_curl",
+                "lick",
+                "rollout",
+                "supersonic"
+            ],
+            "24": [
+                "disable"
+            ],
+            "42": [
+                "screech"
+            ],
+            "60": [
+                "belly_drum"
+            ],
+            "36": [
+                "knock_off"
+            ],
+            "54": [
+                "power_whip"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "dig",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "gyro_ball",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "muddy_water",
+            "power_whip",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "screech",
+            "self_destruct",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swords_dance",
+            "thief",
+            "thunder",
+            "thunder_punch",
+            "thunderbolt",
+            "whirlpool",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "steel_roller",
+            "terrain_pulse"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 48
+}

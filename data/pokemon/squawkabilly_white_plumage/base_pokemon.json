@@ -1,0 +1,57 @@
+{
+    "name": "squawkabilly_white_plumage",
+    "display_name": "Squawkabilly White Plumage",
+    "pokedex_number": 10262,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 82,
+        "attack": 96,
+        "defense": 51,
+        "special_attack": 45,
+        "special_defense": 51,
+        "speed": 92
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 146,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "hustle",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 2.4,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

@@ -1,0 +1,158 @@
+{
+    "name": "jynx",
+    "display_name": "Jynx",
+    "pokedex_number": 124,
+    "types": [
+        "ice",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 50,
+        "defense": 35,
+        "special_attack": 115,
+        "special_defense": 95,
+        "speed": 95
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 159,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "oblivious",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "forewarn",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "dry_skin",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 40.6,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "copycat",
+                "lick",
+                "pound",
+                "powder_snow",
+                "sweet_kiss"
+            ],
+            "28": [
+                "ice_punch"
+            ],
+            "20": [
+                "sing"
+            ],
+            "58": [
+                "blizzard"
+            ],
+            "12": [
+                "confusion"
+            ],
+            "34": [
+                "psychic"
+            ],
+            "40": [
+                "lovely_kiss"
+            ],
+            "52": [
+                "perish_song"
+            ],
+            "46": [
+                "mean_look"
+            ],
+            "24": [
+                "fake_tears"
+            ],
+            "16": [
+                "covet"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "brick_break",
+            "calm_mind",
+            "charm",
+            "drain_punch",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "fling",
+            "focus_blast",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "hail",
+            "helping_hand",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "ice_punch",
+            "icicle_spear",
+            "icy_wind",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psycho_cut",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "taunt",
+            "thief",
+            "trick",
+            "trick_room",
+            "uproar",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 59
+}

@@ -1,0 +1,104 @@
+{
+    "name": "aegislash_blade",
+    "display_name": "Aegislash Blade",
+    "pokedex_number": 10026,
+    "types": [
+        "steel",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 140,
+        "defense": 50,
+        "special_attack": 140,
+        "special_defense": 50,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 250,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "stance_change",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 53.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "aerial_ace",
+                "autotomize",
+                "fury_cutter",
+                "head_smash",
+                "iron_defense",
+                "iron_head",
+                "kings_shield",
+                "metal_sound",
+                "night_slash",
+                "power_trick",
+                "retaliate",
+                "sacred_sword",
+                "shadow_sneak",
+                "slash",
+                "swords_dance",
+                "tackle"
+            ],
+            "0": [
+                "kings_shield"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "attract",
+            "brick_break",
+            "brutal_swing",
+            "close_combat",
+            "endure",
+            "facade",
+            "false_swipe",
+            "flash_cannon",
+            "giga_impact",
+            "gyro_ball",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "reversal",
+            "rock_slide",
+            "round",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_blade",
+            "substitute",
+            "sunny_day",
+            "swords_dance"
+        ],
+        "tutor": [
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

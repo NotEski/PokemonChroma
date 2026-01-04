@@ -1,0 +1,124 @@
+{
+    "name": "honedge",
+    "display_name": "Honedge",
+    "pokedex_number": 679,
+    "types": [
+        "steel",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 80,
+        "defense": 100,
+        "special_attack": 35,
+        "special_defense": 37,
+        "speed": 28
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 180,
+    "base_experience_yield": 65,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "no_guard",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 2.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "44": [
+                "swords_dance"
+            ],
+            "1": [
+                "fury_cutter",
+                "tackle"
+            ],
+            "20": [
+                "slash"
+            ],
+            "16": [
+                "metal_sound"
+            ],
+            "12": [
+                "aerial_ace"
+            ],
+            "32": [
+                "iron_defense"
+            ],
+            "40": [
+                "power_trick"
+            ],
+            "24": [
+                "night_slash"
+            ],
+            "4": [
+                "shadow_sneak"
+            ],
+            "36": [
+                "iron_head"
+            ],
+            "8": [
+                "autotomize"
+            ],
+            "28": [
+                "retaliate"
+            ],
+            "48": [
+                "sacred_sword"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "brutal_swing",
+            "close_combat",
+            "endure",
+            "facade",
+            "false_swipe",
+            "flash_cannon",
+            "gyro_ball",
+            "iron_defense",
+            "iron_head",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "reversal",
+            "rock_slide",
+            "round",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_blade",
+            "substitute",
+            "swords_dance"
+        ],
+        "tutor": [
+            "steel_beam"
+        ],
+        "egg_moves": [
+            "block",
+            "destiny_bond",
+            "wide_guard"
+        ]
+    },
+    "evolution_line_id": 349
+}

@@ -1,0 +1,131 @@
+{
+    "name": "magnemite",
+    "display_name": "Magnemite",
+    "pokedex_number": 81,
+    "types": [
+        "electric",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 25,
+        "attack": 35,
+        "defense": 70,
+        "special_attack": 95,
+        "special_defense": 55,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 65,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 6.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "tackle",
+                "thunder_shock"
+            ],
+            "4": [
+                "supersonic"
+            ],
+            "8": [
+                "thunder_wave"
+            ],
+            "24": [
+                "screech"
+            ],
+            "44": [
+                "light_screen"
+            ],
+            "52": [
+                "zap_cannon"
+            ],
+            "48": [
+                "lock_on"
+            ],
+            "20": [
+                "spark"
+            ],
+            "40": [
+                "metal_sound"
+            ],
+            "16": [
+                "gyro_ball"
+            ],
+            "28": [
+                "magnet_rise"
+            ],
+            "32": [
+                "flash_cannon"
+            ],
+            "36": [
+                "discharge"
+            ],
+            "12": [
+                "electro_ball"
+            ]
+        },
+        "machine": [
+            "electro_ball",
+            "electroweb",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "gyro_ball",
+            "iron_defense",
+            "light_screen",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "volt_switch",
+            "wild_charge"
+        ],
+        "tutor": [
+            "rising_voltage",
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 34
+}

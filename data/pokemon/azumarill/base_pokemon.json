@@ -1,0 +1,159 @@
+{
+    "name": "azumarill",
+    "display_name": "Azumarill",
+    "pokedex_number": 184,
+    "types": [
+        "water",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 50,
+        "defense": 80,
+        "special_attack": 60,
+        "special_defense": 80,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 189,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "huge_power",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 28.5,
+    "egg_groups": [
+        "water1",
+        "fairy"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "12": [
+                "slam"
+            ],
+            "1": [
+                "defense_curl",
+                "helping_hand",
+                "rollout",
+                "tackle",
+                "tail_whip",
+                "water_gun"
+            ],
+            "45": [
+                "double_edge"
+            ],
+            "40": [
+                "hydro_pump"
+            ],
+            "6": [
+                "bubble_beam"
+            ],
+            "9": [
+                "charm"
+            ],
+            "35": [
+                "rain_dance"
+            ],
+            "50": [
+                "superpower"
+            ],
+            "15": [
+                "bounce"
+            ],
+            "30": [
+                "aqua_ring"
+            ],
+            "21": [
+                "aqua_tail"
+            ],
+            "25": [
+                "play_rough"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "blizzard",
+            "body_slam",
+            "bounce",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "charm",
+            "dig",
+            "dive",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fling",
+            "focus_blast",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "light_screen",
+            "liquidation",
+            "mega_kick",
+            "mega_punch",
+            "misty_terrain",
+            "mud_shot",
+            "muddy_water",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "superpower",
+            "surf",
+            "swift",
+            "uproar",
+            "waterfall",
+            "whirlpool",
+            "work_up"
+        ],
+        "tutor": [
+            "misty_explosion",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 90
+}

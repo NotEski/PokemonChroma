@@ -1,0 +1,56 @@
+{
+    "name": "meowth_gmax",
+    "display_name": "Meowth Gmax",
+    "pokedex_number": 10200,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "special_attack": 40,
+        "special_defense": 40,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 58,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 33.0,
+    "weight_kg": 1000.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

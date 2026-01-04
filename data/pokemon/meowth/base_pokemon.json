@@ -1,0 +1,146 @@
+{
+    "name": "meowth",
+    "display_name": "Meowth",
+    "pokedex_number": 52,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 35,
+        "special_attack": 40,
+        "special_defense": 40,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 58,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 4.2,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "12": [
+                "pay_day"
+            ],
+            "8": [
+                "scratch"
+            ],
+            "16": [
+                "bite"
+            ],
+            "1": [
+                "fake_out",
+                "growl"
+            ],
+            "32": [
+                "screech"
+            ],
+            "29": [
+                "fury_swipes"
+            ],
+            "36": [
+                "slash"
+            ],
+            "20": [
+                "taunt"
+            ],
+            "4": [
+                "feint"
+            ],
+            "24": [
+                "assurance"
+            ],
+            "40": [
+                "nasty_plot"
+            ],
+            "44": [
+                "play_rough"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "assurance",
+            "attract",
+            "body_slam",
+            "charm",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "foul_play",
+            "gunk_shot",
+            "hyper_voice",
+            "icy_wind",
+            "iron_tail",
+            "nasty_plot",
+            "pay_day",
+            "payback",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "round",
+            "screech",
+            "seed_bomb",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder",
+            "thunderbolt",
+            "u_turn",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "lash_out"
+        ],
+        "egg_moves": [
+            "covet",
+            "flail",
+            "hypnosis",
+            "last_resort",
+            "spite",
+            "tail_whip"
+        ]
+    },
+    "evolution_line_id": 22
+}

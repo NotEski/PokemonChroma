@@ -1,0 +1,47 @@
+{
+    "name": "aerodactyl_mega",
+    "display_name": "Aerodactyl Mega",
+    "pokedex_number": 10042,
+    "types": [
+        "rock",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 135,
+        "defense": 85,
+        "special_attack": 70,
+        "special_defense": 95,
+        "speed": 150
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 215,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "tough_claws",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.1,
+    "weight_kg": 79.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

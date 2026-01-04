@@ -1,0 +1,146 @@
+{
+    "name": "xerneas",
+    "display_name": "Xerneas",
+    "pokedex_number": 716,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 126,
+        "attack": 131,
+        "defense": 95,
+        "special_attack": 131,
+        "special_defense": 98,
+        "speed": 99
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 306,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "fairy_aura",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 3.0,
+    "weight_kg": 215.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "gravity",
+                "tackle"
+            ],
+            "50": [
+                "take_down"
+            ],
+            "10": [
+                "aurora_beam"
+            ],
+            "5": [
+                "light_screen"
+            ],
+            "80": [
+                "outrage"
+            ],
+            "70": [
+                "megahorn"
+            ],
+            "30": [
+                "psych_up"
+            ],
+            "15": [
+                "nature_power"
+            ],
+            "45": [
+                "ingrain"
+            ],
+            "25": [
+                "aromatherapy"
+            ],
+            "75": [
+                "close_combat"
+            ],
+            "20": [
+                "night_slash"
+            ],
+            "85": [
+                "giga_impact"
+            ],
+            "65": [
+                "heal_pulse"
+            ],
+            "35": [
+                "horn_leech"
+            ],
+            "40": [
+                "misty_terrain"
+            ],
+            "60": [
+                "moonblast"
+            ],
+            "55": [
+                "geomancy"
+            ]
+        },
+        "machine": [
+            "body_slam",
+            "calm_mind",
+            "close_combat",
+            "dazzling_gleam",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "hail",
+            "hyper_beam",
+            "hyper_voice",
+            "light_screen",
+            "megahorn",
+            "misty_terrain",
+            "outrage",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "round",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "misty_explosion",
+            "terrain_pulse"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 368
+}

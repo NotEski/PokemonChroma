@@ -1,0 +1,140 @@
+{
+    "name": "salandit",
+    "display_name": "Salandit",
+    "pokedex_number": 757,
+    "types": [
+        "poison",
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 48,
+        "attack": 44,
+        "defense": 40,
+        "special_attack": 71,
+        "special_defense": 40,
+        "speed": 77
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 64,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "corrosion",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "oblivious",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 4.8,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "poison_gas",
+                "scratch"
+            ],
+            "10": [
+                "ember"
+            ],
+            "50": [
+                "flamethrower"
+            ],
+            "55": [
+                "toxic"
+            ],
+            "5": [
+                "smog"
+            ],
+            "20": [
+                "sweet_scent"
+            ],
+            "60": [
+                "endeavor"
+            ],
+            "15": [
+                "poison_fang"
+            ],
+            "40": [
+                "dragon_pulse"
+            ],
+            "25": [
+                "nasty_plot"
+            ],
+            "35": [
+                "venoshock"
+            ],
+            "30": [
+                "incinerate"
+            ],
+            "45": [
+                "venom_drench"
+            ]
+        },
+        "machine": [
+            "attract",
+            "beat_up",
+            "dragon_claw",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "fling",
+            "foul_play",
+            "gunk_shot",
+            "heat_wave",
+            "helping_hand",
+            "iron_tail",
+            "leech_life",
+            "nasty_plot",
+            "overheat",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rest",
+            "round",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_wave",
+            "venom_drench",
+            "venoshock",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "scale_shot",
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "belch",
+            "fake_out",
+            "mud_slap",
+            "sand_attack"
+        ]
+    },
+    "evolution_line_id": 390
+}

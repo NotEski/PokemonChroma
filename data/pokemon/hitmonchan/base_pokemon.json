@@ -1,0 +1,152 @@
+{
+    "name": "hitmonchan",
+    "display_name": "Hitmonchan",
+    "pokedex_number": 107,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 105,
+        "defense": 79,
+        "special_attack": 35,
+        "special_defense": 110,
+        "speed": 76
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 159,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 50.2,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "32": [
+                "mega_punch"
+            ],
+            "24": [
+                "fire_punch",
+                "ice_punch",
+                "thunder_punch"
+            ],
+            "1": [
+                "bullet_punch",
+                "drain_punch",
+                "fake_out",
+                "feint",
+                "focus_energy",
+                "helping_hand",
+                "tackle",
+                "vacuum_wave"
+            ],
+            "40": [
+                "counter"
+            ],
+            "28": [
+                "agility"
+            ],
+            "4": [
+                "mach_punch"
+            ],
+            "12": [
+                "detect"
+            ],
+            "44": [
+                "focus_punch"
+            ],
+            "16": [
+                "revenge"
+            ],
+            "36": [
+                "close_combat"
+            ],
+            "0": [
+                "drain_punch"
+            ],
+            "21": [
+                "quick_guard"
+            ],
+            "8": [
+                "power_up_punch"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "aura_sphere",
+            "body_slam",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "helping_hand",
+            "ice_punch",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "throat_chop",
+            "thunder_punch",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 47
+}

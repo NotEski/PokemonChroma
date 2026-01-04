@@ -1,0 +1,52 @@
+{
+    "name": "charizard_gmax",
+    "display_name": "Charizard Gmax",
+    "pokedex_number": 10196,
+    "types": [
+        "fire",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 78,
+        "attack": 84,
+        "defense": 78,
+        "special_attack": 109,
+        "special_defense": 85,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 240,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "solar_power",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 28.0,
+    "weight_kg": 1000.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

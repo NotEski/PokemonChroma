@@ -1,0 +1,59 @@
+{
+    "name": "gligar",
+    "display_name": "Gligar",
+    "pokedex_number": 207,
+    "types": [
+        "ground",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 75,
+        "defense": 105,
+        "special_attack": 35,
+        "special_defense": 65,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 86,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "immunity",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 64.8,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 104
+}

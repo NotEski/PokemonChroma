@@ -1,0 +1,140 @@
+{
+    "name": "stufful",
+    "display_name": "Stufful",
+    "pokedex_number": 759,
+    "types": [
+        "normal",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 75,
+        "defense": 50,
+        "special_attack": 45,
+        "special_defense": 50,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 140,
+    "base_experience_yield": 68,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "fluffy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "klutz",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "cute_charm",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 6.8,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "tackle"
+            ],
+            "24": [
+                "take_down"
+            ],
+            "36": [
+                "thrash"
+            ],
+            "44": [
+                "double_edge"
+            ],
+            "20": [
+                "strength"
+            ],
+            "28": [
+                "flail"
+            ],
+            "16": [
+                "endure"
+            ],
+            "40": [
+                "pain_split"
+            ],
+            "48": [
+                "superpower"
+            ],
+            "32": [
+                "hammer_arm"
+            ],
+            "8": [
+                "payback"
+            ],
+            "4": [
+                "baby_doll_eyes"
+            ],
+            "12": [
+                "brutal_swing"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "charm",
+            "earthquake",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "ice_punch",
+            "iron_head",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "superpower",
+            "swords_dance",
+            "taunt",
+            "thunder_punch",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": [
+            "defense_curl",
+            "force_palm",
+            "rollout",
+            "stomp"
+        ]
+    },
+    "evolution_line_id": 391
+}

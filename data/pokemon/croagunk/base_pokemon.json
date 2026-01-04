@@ -1,0 +1,165 @@
+{
+    "name": "croagunk",
+    "display_name": "Croagunk",
+    "pokedex_number": 453,
+    "types": [
+        "poison",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 48,
+        "attack": 61,
+        "defense": 40,
+        "special_attack": 61,
+        "special_defense": 40,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 140,
+    "base_experience_yield": 60,
+    "base_happiness": 100,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "anticipation",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "dry_skin",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "poison_touch",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 23.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "mud_slap",
+                "poison_sting"
+            ],
+            "36": [
+                "toxic"
+            ],
+            "44": [
+                "sludge_bomb"
+            ],
+            "28": [
+                "swagger"
+            ],
+            "12": [
+                "flatter"
+            ],
+            "8": [
+                "taunt"
+            ],
+            "16": [
+                "revenge"
+            ],
+            "4": [
+                "astonish"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "32": [
+                "poison_jab"
+            ],
+            "40": [
+                "nasty_plot"
+            ],
+            "20": [
+                "venoshock"
+            ],
+            "48": [
+                "belch"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "baton_pass",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "dark_pulse",
+            "dig",
+            "drain_punch",
+            "earthquake",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "gunk_shot",
+            "helping_hand",
+            "ice_punch",
+            "icy_wind",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "venom_drench",
+            "venoshock",
+            "work_up",
+            "x_scissor"
+        ],
+        "tutor": [
+            "coaching",
+            "lash_out"
+        ],
+        "egg_moves": [
+            "bullet_punch",
+            "counter",
+            "cross_chop",
+            "dynamic_punch",
+            "fake_out",
+            "feint",
+            "headbutt",
+            "quick_guard",
+            "vacuum_wave"
+        ]
+    },
+    "evolution_line_id": 235
+}

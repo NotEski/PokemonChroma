@@ -1,0 +1,110 @@
+{
+    "name": "vileplume",
+    "display_name": "Vileplume",
+    "pokedex_number": 45,
+    "types": [
+        "grass",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 85,
+        "special_attack": 110,
+        "special_defense": 90,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 221,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "effect_spore",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 18.6,
+    "egg_groups": [
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "absorb",
+                "acid",
+                "aromatherapy",
+                "giga_drain",
+                "grassy_terrain",
+                "growth",
+                "mega_drain",
+                "moonblast",
+                "moonlight",
+                "petal_blizzard",
+                "petal_dance",
+                "poison_powder",
+                "sleep_powder",
+                "stun_spore",
+                "sweet_scent",
+                "toxic"
+            ],
+            "0": [
+                "petal_blizzard"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "bullet_seed",
+            "charm",
+            "dazzling_gleam",
+            "drain_punch",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fling",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "hyper_beam",
+            "pollen_puff",
+            "protect",
+            "rest",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "venoshock"
+        ],
+        "tutor": [
+            "corrosive_gas",
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 18
+}

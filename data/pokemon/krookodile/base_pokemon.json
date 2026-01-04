@@ -1,0 +1,168 @@
+{
+    "name": "krookodile",
+    "display_name": "Krookodile",
+    "pokedex_number": 553,
+    "types": [
+        "ground",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 117,
+        "defense": 80,
+        "special_attack": 65,
+        "special_defense": 70,
+        "speed": 92
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 234,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "moxie",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "anger_point",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 96.3,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "hone_claws",
+                "leer",
+                "power_trip",
+                "sand_attack"
+            ],
+            "51": [
+                "thrash"
+            ],
+            "15": [
+                "bite"
+            ],
+            "44": [
+                "earthquake"
+            ],
+            "21": [
+                "dig"
+            ],
+            "12": [
+                "scary_face"
+            ],
+            "58": [
+                "outrage"
+            ],
+            "32": [
+                "sandstorm"
+            ],
+            "24": [
+                "swagger"
+            ],
+            "27": [
+                "crunch"
+            ],
+            "18": [
+                "torment"
+            ],
+            "9": [
+                "sand_tomb"
+            ],
+            "35": [
+                "foul_play"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "beat_up",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "crunch",
+            "dark_pulse",
+            "darkest_lariat",
+            "dig",
+            "dragon_claw",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_fang",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "high_horsepower",
+            "hyper_beam",
+            "iron_tail",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "payback",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "snarl",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder_fang",
+            "uproar"
+        ],
+        "tutor": [
+            "lash_out",
+            "scale_shot",
+            "scorching_sands",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 281
+}

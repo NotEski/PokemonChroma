@@ -1,0 +1,148 @@
+{
+    "name": "tapu_koko",
+    "display_name": "Tapu Koko",
+    "pokedex_number": 785,
+    "types": [
+        "electric",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 115,
+        "defense": 85,
+        "special_attack": 95,
+        "special_defense": 75,
+        "speed": 130
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "electric_surge",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 20.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "quick_attack",
+                "thunder_shock"
+            ],
+            "35": [
+                "agility"
+            ],
+            "40": [
+                "screech"
+            ],
+            "5": [
+                "withdraw"
+            ],
+            "15": [
+                "false_swipe"
+            ],
+            "20": [
+                "spark"
+            ],
+            "50": [
+                "mean_look"
+            ],
+            "30": [
+                "charge"
+            ],
+            "25": [
+                "shock_wave"
+            ],
+            "70": [
+                "power_swap"
+            ],
+            "65": [
+                "brave_bird"
+            ],
+            "45": [
+                "discharge"
+            ],
+            "60": [
+                "wild_charge"
+            ],
+            "10": [
+                "fairy_wind"
+            ],
+            "75": [
+                "electric_terrain"
+            ],
+            "55": [
+                "natures_madness"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "assurance",
+            "brave_bird",
+            "calm_mind",
+            "dazzling_gleam",
+            "eerie_impulse",
+            "electric_terrain",
+            "electro_ball",
+            "electroweb",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fly",
+            "giga_impact",
+            "grass_knot",
+            "hyper_beam",
+            "hyper_voice",
+            "iron_defense",
+            "iron_head",
+            "light_screen",
+            "power_swap",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stored_power",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "u_turn",
+            "volt_switch",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

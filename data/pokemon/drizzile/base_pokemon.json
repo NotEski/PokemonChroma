@@ -1,0 +1,111 @@
+{
+    "name": "drizzile",
+    "display_name": "Drizzile",
+    "pokedex_number": 817,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 60,
+        "defense": 55,
+        "special_attack": 95,
+        "special_defense": 55,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 147,
+    "base_happiness": 50,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sniper",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 11.5,
+    "egg_groups": [
+        "water1",
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "bind",
+                "growl",
+                "pound",
+                "water_gun"
+            ],
+            "48": [
+                "rain_dance"
+            ],
+            "12": [
+                "water_pulse"
+            ],
+            "30": [
+                "u_turn"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "42": [
+                "soak"
+            ],
+            "36": [
+                "liquidation"
+            ],
+            "19": [
+                "tearful_look"
+            ]
+        },
+        "machine": [
+            "attract",
+            "baton_pass",
+            "bounce",
+            "dive",
+            "endure",
+            "facade",
+            "fling",
+            "light_screen",
+            "liquidation",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "swift",
+            "u_turn",
+            "weather_ball",
+            "whirlpool",
+            "work_up"
+        ],
+        "tutor": [
+            "water_pledge"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 432
+}

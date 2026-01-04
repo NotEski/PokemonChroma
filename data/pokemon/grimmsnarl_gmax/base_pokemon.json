@@ -1,0 +1,57 @@
+{
+    "name": "grimmsnarl_gmax",
+    "display_name": "Grimmsnarl Gmax",
+    "pokedex_number": 10222,
+    "types": [
+        "dark",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 120,
+        "defense": 65,
+        "special_attack": 95,
+        "special_defense": 75,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 255,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 32.0,
+    "weight_kg": 1000.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

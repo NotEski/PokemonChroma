@@ -1,0 +1,148 @@
+{
+    "name": "wigglytuff",
+    "display_name": "Wigglytuff",
+    "pokedex_number": 40,
+    "types": [
+        "normal",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 140,
+        "attack": 70,
+        "defense": 45,
+        "special_attack": 85,
+        "special_defense": 50,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 50,
+    "base_experience_yield": 196,
+    "base_happiness": 70,
+    "gender_rate": 6,
+    "abilities": [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "competitive",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 12.0,
+    "egg_groups": [
+        "fairy"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "body_slam",
+                "charm",
+                "copycat",
+                "covet",
+                "defense_curl",
+                "disable",
+                "disarming_voice",
+                "double_edge",
+                "echoed_voice",
+                "gyro_ball",
+                "hyper_voice",
+                "mimic",
+                "play_rough",
+                "pound",
+                "rest",
+                "round",
+                "sing",
+                "spit_up",
+                "stockpile",
+                "swallow",
+                "sweet_kiss"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "baton_pass",
+            "blizzard",
+            "body_slam",
+            "bounce",
+            "brick_break",
+            "charm",
+            "dazzling_gleam",
+            "dig",
+            "drain_punch",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "gyro_ball",
+            "helping_hand",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "misty_terrain",
+            "play_rough",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "round",
+            "safeguard",
+            "screech",
+            "self_destruct",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "substitute",
+            "sunny_day",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "tri_attack",
+            "uproar",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [
+            "expanding_force",
+            "misty_explosion",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 16
+}

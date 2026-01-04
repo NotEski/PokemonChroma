@@ -1,0 +1,147 @@
+{
+    "name": "grovyle",
+    "display_name": "Grovyle",
+    "pokedex_number": 253,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 45,
+        "special_attack": 85,
+        "special_defense": 65,
+        "speed": 95
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 142,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 21.6,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "energy_ball",
+                "false_swipe",
+                "fury_cutter",
+                "leafage",
+                "leer",
+                "pound",
+                "quick_attack",
+                "x_scissor"
+            ],
+            "30": [
+                "slam"
+            ],
+            "9": [
+                "mega_drain"
+            ],
+            "45": [
+                "screech"
+            ],
+            "35": [
+                "double_team"
+            ],
+            "12": [
+                "detect"
+            ],
+            "25": [
+                "giga_drain"
+            ],
+            "50": [
+                "endeavor"
+            ],
+            "40": [
+                "leaf_blade"
+            ],
+            "20": [
+                "assurance"
+            ],
+            "55": [
+                "leaf_storm"
+            ],
+            "15": [
+                "quick_guard"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "assurance",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "bullet_seed",
+            "crunch",
+            "dig",
+            "drain_punch",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "fling",
+            "giga_drain",
+            "grass_knot",
+            "grassy_terrain",
+            "iron_tail",
+            "leaf_blade",
+            "leaf_storm",
+            "low_kick",
+            "low_sweep",
+            "magical_leaf",
+            "mega_kick",
+            "mega_punch",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "screech",
+            "seed_bomb",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thunder_punch",
+            "work_up",
+            "x_scissor"
+        ],
+        "tutor": [
+            "grass_pledge",
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 130
+}

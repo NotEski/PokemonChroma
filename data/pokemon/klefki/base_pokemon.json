@@ -1,0 +1,136 @@
+{
+    "name": "klefki",
+    "display_name": "Klefki",
+    "pokedex_number": 707,
+    "types": [
+        "steel",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 57,
+        "attack": 80,
+        "defense": 91,
+        "special_attack": 80,
+        "special_defense": 87,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "magician",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 3.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "4": [
+                "tackle"
+            ],
+            "12": [
+                "torment"
+            ],
+            "28": [
+                "recycle"
+            ],
+            "32": [
+                "imprison"
+            ],
+            "1": [
+                "astonish",
+                "fairy_lock"
+            ],
+            "20": [
+                "metal_sound"
+            ],
+            "52": [
+                "last_resort"
+            ],
+            "36": [
+                "flash_cannon"
+            ],
+            "44": [
+                "magic_room"
+            ],
+            "48": [
+                "foul_play"
+            ],
+            "24": [
+                "draining_kiss"
+            ],
+            "16": [
+                "crafty_shield"
+            ],
+            "40": [
+                "play_rough"
+            ],
+            "8": [
+                "fairy_wind"
+            ]
+        },
+        "machine": [
+            "attract",
+            "calm_mind",
+            "dazzling_gleam",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "foul_play",
+            "giga_impact",
+            "hyper_beam",
+            "imprison",
+            "iron_defense",
+            "light_screen",
+            "magic_room",
+            "misty_terrain",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "spikes",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "thief",
+            "thunder_wave"
+        ],
+        "tutor": [
+            "steel_beam"
+        ],
+        "egg_moves": [
+            "magnet_rise",
+            "switcheroo"
+        ]
+    },
+    "evolution_line_id": 363
+}

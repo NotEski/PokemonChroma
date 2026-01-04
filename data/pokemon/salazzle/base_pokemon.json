@@ -1,0 +1,147 @@
+{
+    "name": "salazzle",
+    "display_name": "Salazzle",
+    "pokedex_number": 758,
+    "types": [
+        "poison",
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 68,
+        "attack": 64,
+        "defense": 60,
+        "special_attack": 111,
+        "special_defense": 60,
+        "speed": 117
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 168,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "corrosion",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "oblivious",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 22.2,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "disable",
+                "ember",
+                "encore",
+                "endeavor",
+                "fire_lash",
+                "knock_off",
+                "poison_gas",
+                "pound",
+                "scratch",
+                "smog",
+                "swagger",
+                "torment"
+            ],
+            "58": [
+                "flamethrower"
+            ],
+            "65": [
+                "toxic"
+            ],
+            "20": [
+                "sweet_scent"
+            ],
+            "15": [
+                "poison_fang"
+            ],
+            "44": [
+                "dragon_pulse"
+            ],
+            "25": [
+                "nasty_plot"
+            ],
+            "37": [
+                "venoshock"
+            ],
+            "30": [
+                "incinerate"
+            ],
+            "51": [
+                "venom_drench"
+            ],
+            "0": [
+                "fire_lash"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "attract",
+            "beat_up",
+            "breaking_swipe",
+            "cross_poison",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "encore",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_blast",
+            "flamethrower",
+            "flare_blitz",
+            "fling",
+            "foul_play",
+            "gunk_shot",
+            "heat_wave",
+            "helping_hand",
+            "iron_tail",
+            "leech_life",
+            "nasty_plot",
+            "overheat",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rest",
+            "round",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_wave",
+            "venom_drench",
+            "venoshock",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "corrosive_gas",
+            "scale_shot",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 390
+}

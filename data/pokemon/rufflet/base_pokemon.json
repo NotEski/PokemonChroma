@@ -1,0 +1,134 @@
+{
+    "name": "rufflet",
+    "display_name": "Rufflet",
+    "pokedex_number": 627,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 83,
+        "defense": 50,
+        "special_attack": 37,
+        "special_defense": 50,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 70,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "hustle",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 10.5,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "12": [
+                "wing_attack"
+            ],
+            "42": [
+                "whirlwind"
+            ],
+            "66": [
+                "thrash"
+            ],
+            "1": [
+                "leer",
+                "peck"
+            ],
+            "36": [
+                "slash"
+            ],
+            "24": [
+                "scary_face"
+            ],
+            "48": [
+                "crush_claw"
+            ],
+            "30": [
+                "aerial_ace"
+            ],
+            "18": [
+                "tailwind"
+            ],
+            "55": [
+                "air_slash"
+            ],
+            "72": [
+                "brave_bird"
+            ],
+            "60": [
+                "defog"
+            ],
+            "6": [
+                "hone_claws"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "brave_bird",
+            "bulk_up",
+            "close_combat",
+            "endure",
+            "facade",
+            "fly",
+            "heat_wave",
+            "hurricane",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swift",
+            "u_turn",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 319
+}

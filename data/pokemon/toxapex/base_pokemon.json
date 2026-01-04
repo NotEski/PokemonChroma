@@ -1,0 +1,130 @@
+{
+    "name": "toxapex",
+    "display_name": "Toxapex",
+    "pokedex_number": 748,
+    "types": [
+        "poison",
+        "water"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 63,
+        "defense": 152,
+        "special_attack": 53,
+        "special_defense": 142,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 173,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "merciless",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "limber",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 14.5,
+    "egg_groups": [
+        "water1"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "baneful_bunker",
+                "bite",
+                "peck",
+                "poison_sting",
+                "wide_guard"
+            ],
+            "25": [
+                "pin_missile"
+            ],
+            "56": [
+                "toxic"
+            ],
+            "20": [
+                "recover"
+            ],
+            "30": [
+                "toxic_spikes"
+            ],
+            "49": [
+                "poison_jab"
+            ],
+            "15": [
+                "venoshock"
+            ],
+            "42": [
+                "venom_drench"
+            ],
+            "0": [
+                "baneful_bunker"
+            ],
+            "35": [
+                "liquidation"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "brine",
+            "cross_poison",
+            "endure",
+            "facade",
+            "gunk_shot",
+            "hail",
+            "hex",
+            "hydro_pump",
+            "ice_beam",
+            "icy_wind",
+            "iron_defense",
+            "light_screen",
+            "liquidation",
+            "mud_shot",
+            "muddy_water",
+            "payback",
+            "pin_missile",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scald",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "surf",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 385
+}

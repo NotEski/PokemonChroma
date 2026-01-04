@@ -1,0 +1,138 @@
+{
+    "name": "stunfisk_galar",
+    "display_name": "Stunfisk Galar",
+    "pokedex_number": 10180,
+    "types": [
+        "ground",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 109,
+        "attack": 81,
+        "defense": 99,
+        "special_attack": 66,
+        "special_defense": 84,
+        "speed": 32
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "mimicry",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 20.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "metal_claw",
+                "mud_slap",
+                "tackle",
+                "water_gun"
+            ],
+            "55": [
+                "fissure"
+            ],
+            "50": [
+                "flail"
+            ],
+            "5": [
+                "endure"
+            ],
+            "15": [
+                "revenge"
+            ],
+            "20": [
+                "metal_sound"
+            ],
+            "40": [
+                "muddy_water"
+            ],
+            "30": [
+                "iron_defense"
+            ],
+            "35": [
+                "bounce"
+            ],
+            "10": [
+                "mud_shot"
+            ],
+            "25": [
+                "sucker_punch"
+            ],
+            "45": [
+                "snap_trap"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bounce",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "foul_play",
+            "ice_fang",
+            "iron_defense",
+            "mud_shot",
+            "muddy_water",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scald",
+            "screech",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "surf",
+            "thunder_wave",
+            "uproar"
+        ],
+        "tutor": [
+            "lash_out",
+            "steel_beam",
+            "terrain_pulse"
+        ],
+        "egg_moves": [
+            "astonish",
+            "bind",
+            "counter",
+            "curse",
+            "pain_split",
+            "reflect_type",
+            "spite",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": null
+}

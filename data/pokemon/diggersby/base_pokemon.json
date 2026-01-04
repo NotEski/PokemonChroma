@@ -1,0 +1,157 @@
+{
+    "name": "diggersby",
+    "display_name": "Diggersby",
+    "pokedex_number": 660,
+    "types": [
+        "normal",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 56,
+        "defense": 77,
+        "special_attack": 50,
+        "special_defense": 77,
+        "speed": 78
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 127,
+    "base_experience_yield": 148,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "cheek_pouch",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "huge_power",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 42.4,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "43": [
+                "swords_dance"
+            ],
+            "18": [
+                "double_kick"
+            ],
+            "1": [
+                "laser_focus",
+                "leer",
+                "mud_slap",
+                "tackle"
+            ],
+            "38": [
+                "take_down"
+            ],
+            "48": [
+                "earthquake"
+            ],
+            "28": [
+                "dig"
+            ],
+            "9": [
+                "quick_attack"
+            ],
+            "53": [
+                "super_fang"
+            ],
+            "15": [
+                "flail"
+            ],
+            "33": [
+                "bounce"
+            ],
+            "12": [
+                "mud_shot"
+            ],
+            "58": [
+                "hammer_arm"
+            ],
+            "23": [
+                "bulldoze"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "body_slam",
+            "bounce",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "dig",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "gunk_shot",
+            "high_horsepower",
+            "hyper_beam",
+            "ice_punch",
+            "iron_head",
+            "iron_tail",
+            "low_kick",
+            "mega_kick",
+            "mega_punch",
+            "mud_shot",
+            "payback",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "spikes",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "surf",
+            "swords_dance",
+            "thief",
+            "thunder_punch",
+            "u_turn",
+            "uproar",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 340
+}

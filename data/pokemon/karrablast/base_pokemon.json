@@ -1,0 +1,129 @@
+{
+    "name": "karrablast",
+    "display_name": "Karrablast",
+    "pokedex_number": 588,
+    "types": [
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 45,
+        "special_attack": 40,
+        "special_defense": 45,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 63,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "shed_skin",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "no_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 5.9,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "36": [
+                "swords_dance"
+            ],
+            "20": [
+                "headbutt"
+            ],
+            "40": [
+                "take_down"
+            ],
+            "48": [
+                "double_edge"
+            ],
+            "1": [
+                "leer",
+                "peck"
+            ],
+            "24": [
+                "flail"
+            ],
+            "28": [
+                "scary_face"
+            ],
+            "8": [
+                "endure"
+            ],
+            "12": [
+                "false_swipe"
+            ],
+            "4": [
+                "fury_cutter"
+            ],
+            "32": [
+                "x_scissor"
+            ],
+            "44": [
+                "bug_buzz"
+            ],
+            "16": [
+                "acid_spray"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bug_buzz",
+            "drill_run",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "giga_drain",
+            "iron_defense",
+            "megahorn",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "swords_dance",
+            "x_scissor"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "bug_bite",
+            "counter",
+            "knock_off",
+            "night_slash",
+            "slash"
+        ]
+    },
+    "evolution_line_id": 299
+}

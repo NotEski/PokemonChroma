@@ -1,0 +1,168 @@
+{
+    "name": "dragonite",
+    "display_name": "Dragonite",
+    "pokedex_number": 149,
+    "types": [
+        "dragon",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 91,
+        "attack": 134,
+        "defense": 95,
+        "special_attack": 100,
+        "special_defense": 100,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 270,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "multiscale",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.2,
+    "weight_kg": 210.0,
+    "egg_groups": [
+        "water1",
+        "dragon"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "extreme_speed",
+                "fire_punch",
+                "hurricane",
+                "leer",
+                "roost",
+                "thunder_punch",
+                "thunder_wave",
+                "twister",
+                "wing_attack",
+                "wrap"
+            ],
+            "25": [
+                "slam"
+            ],
+            "80": [
+                "hyper_beam"
+            ],
+            "20": [
+                "agility"
+            ],
+            "41": [
+                "outrage"
+            ],
+            "46": [
+                "safeguard"
+            ],
+            "53": [
+                "rain_dance"
+            ],
+            "62": [
+                "dragon_dance"
+            ],
+            "33": [
+                "aqua_tail"
+            ],
+            "39": [
+                "dragon_rush"
+            ],
+            "15": [
+                "dragon_tail"
+            ],
+            "0": [
+                "hurricane"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "attract",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "breaking_swipe",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "dive",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "fling",
+            "fly",
+            "focus_blast",
+            "giga_impact",
+            "hail",
+            "heat_wave",
+            "hurricane",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_head",
+            "iron_tail",
+            "light_screen",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "surf",
+            "swift",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat",
+            "scale_shot"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 76
+}

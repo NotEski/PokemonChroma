@@ -1,0 +1,58 @@
+{
+    "name": "grumpig",
+    "display_name": "Grumpig",
+    "pokedex_number": 326,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 45,
+        "defense": 65,
+        "special_attack": 90,
+        "special_defense": 110,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "own_tempo",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 71.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 164
+}

@@ -1,0 +1,155 @@
+{
+    "name": "skuntank",
+    "display_name": "Skuntank",
+    "pokedex_number": 435,
+    "types": [
+        "poison",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 103,
+        "attack": 93,
+        "defense": 67,
+        "special_attack": 71,
+        "special_defense": 61,
+        "speed": 84
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 168,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "stench",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "aftermath",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 38.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "feint",
+                "flamethrower",
+                "poison_gas",
+                "scratch",
+                "smokescreen"
+            ],
+            "18": [
+                "bite"
+            ],
+            "0": [
+                "flamethrower"
+            ],
+            "27": [
+                "toxic"
+            ],
+            "24": [
+                "screech"
+            ],
+            "15": [
+                "focus_energy"
+            ],
+            "53": [
+                "explosion"
+            ],
+            "12": [
+                "fury_swipes"
+            ],
+            "33": [
+                "memento"
+            ],
+            "30": [
+                "sucker_punch"
+            ],
+            "38": [
+                "night_slash"
+            ],
+            "21": [
+                "venoshock"
+            ],
+            "9": [
+                "acid_spray"
+            ],
+            "43": [
+                "belch"
+            ],
+            "48": [
+                "venom_drench"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_spin",
+            "flamethrower",
+            "focus_energy",
+            "foul_play",
+            "giga_impact",
+            "hex",
+            "hyper_beam",
+            "iron_tail",
+            "nasty_plot",
+            "payback",
+            "play_rough",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scary_face",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "tail_slap",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "corrosive_gas",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 223
+}

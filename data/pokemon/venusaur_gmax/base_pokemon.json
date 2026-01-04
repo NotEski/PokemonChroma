@@ -1,0 +1,52 @@
+{
+    "name": "venusaur_gmax",
+    "display_name": "Venusaur Gmax",
+    "pokedex_number": 10195,
+    "types": [
+        "grass",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 82,
+        "defense": 83,
+        "special_attack": 100,
+        "special_defense": 100,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 236,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "chlorophyll",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 24.0,
+    "weight_kg": 1000.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

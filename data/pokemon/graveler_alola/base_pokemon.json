@@ -1,0 +1,57 @@
+{
+    "name": "graveler_alola",
+    "display_name": "Graveler Alola",
+    "pokedex_number": 10110,
+    "types": [
+        "rock",
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 95,
+        "defense": 115,
+        "special_attack": 45,
+        "special_defense": 45,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 137,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "galvanize",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 110.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

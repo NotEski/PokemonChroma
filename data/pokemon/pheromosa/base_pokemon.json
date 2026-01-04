@@ -1,0 +1,135 @@
+{
+    "name": "pheromosa",
+    "display_name": "Pheromosa",
+    "pokedex_number": 795,
+    "types": [
+        "bug",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 71,
+        "attack": 137,
+        "defense": 37,
+        "special_attack": 137,
+        "special_defense": 37,
+        "speed": 151
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 25.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "35": [
+                "stomp"
+            ],
+            "25": [
+                "double_kick"
+            ],
+            "5": [
+                "leer"
+            ],
+            "20": [
+                "low_kick"
+            ],
+            "40": [
+                "agility"
+            ],
+            "70": [
+                "high_jump_kick"
+            ],
+            "30": [
+                "triple_kick"
+            ],
+            "1": [
+                "feint",
+                "rapid_spin"
+            ],
+            "50": [
+                "bounce"
+            ],
+            "60": [
+                "bug_buzz"
+            ],
+            "15": [
+                "bug_bite"
+            ],
+            "65": [
+                "quiver_dance"
+            ],
+            "10": [
+                "quick_guard"
+            ],
+            "45": [
+                "lunge"
+            ],
+            "55": [
+                "speed_swap"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "blizzard",
+            "bounce",
+            "brick_break",
+            "bug_buzz",
+            "close_combat",
+            "drill_run",
+            "electroweb",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "low_kick",
+            "low_sweep",
+            "outrage",
+            "poison_jab",
+            "protect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "substitute",
+            "swift",
+            "taunt",
+            "throat_chop",
+            "u_turn"
+        ],
+        "tutor": [
+            "coaching",
+            "skitter_smack",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 416
+}

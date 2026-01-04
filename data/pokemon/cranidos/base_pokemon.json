@@ -1,0 +1,53 @@
+{
+    "name": "cranidos",
+    "display_name": "Cranidos",
+    "pokedex_number": 408,
+    "types": [
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 67,
+        "attack": 125,
+        "defense": 40,
+        "special_attack": 30,
+        "special_defense": 30,
+        "speed": 58
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 70,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "mold_breaker",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 31.5,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 211
+}

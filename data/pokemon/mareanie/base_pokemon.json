@@ -1,0 +1,133 @@
+{
+    "name": "mareanie",
+    "display_name": "Mareanie",
+    "pokedex_number": 747,
+    "types": [
+        "poison",
+        "water"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 53,
+        "defense": 62,
+        "special_attack": 43,
+        "special_defense": 52,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "merciless",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "limber",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 8.0,
+    "egg_groups": [
+        "water1"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "peck",
+                "poison_sting"
+            ],
+            "25": [
+                "pin_missile"
+            ],
+            "10": [
+                "bite"
+            ],
+            "50": [
+                "toxic"
+            ],
+            "20": [
+                "recover"
+            ],
+            "30": [
+                "toxic_spikes"
+            ],
+            "45": [
+                "poison_jab"
+            ],
+            "5": [
+                "wide_guard"
+            ],
+            "15": [
+                "venoshock"
+            ],
+            "40": [
+                "venom_drench"
+            ],
+            "35": [
+                "liquidation"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "brine",
+            "endure",
+            "facade",
+            "gunk_shot",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "icy_wind",
+            "iron_defense",
+            "liquidation",
+            "mud_shot",
+            "muddy_water",
+            "payback",
+            "pin_missile",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scald",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "surf",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "haze",
+            "infestation",
+            "spit_up",
+            "stockpile",
+            "swallow"
+        ]
+    },
+    "evolution_line_id": 385
+}

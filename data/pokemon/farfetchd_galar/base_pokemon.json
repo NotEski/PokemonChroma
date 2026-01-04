@@ -1,0 +1,138 @@
+{
+    "name": "farfetchd_galar",
+    "display_name": "Farfetchd Galar",
+    "pokedex_number": 10166,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 52,
+        "attack": 95,
+        "defense": 55,
+        "special_attack": 58,
+        "special_defense": 62,
+        "speed": 55
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 132,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 42.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "45": [
+                "swords_dance"
+            ],
+            "50": [
+                "slam"
+            ],
+            "1": [
+                "peck",
+                "sand_attack"
+            ],
+            "5": [
+                "leer"
+            ],
+            "25": [
+                "detect"
+            ],
+            "10": [
+                "fury_cutter"
+            ],
+            "15": [
+                "rock_smash"
+            ],
+            "40": [
+                "brick_break"
+            ],
+            "30": [
+                "knock_off"
+            ],
+            "55": [
+                "leaf_blade"
+            ],
+            "65": [
+                "brave_bird"
+            ],
+            "35": [
+                "defog"
+            ],
+            "60": [
+                "final_gambit"
+            ],
+            "20": [
+                "brutal_swing"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "body_slam",
+            "brave_bird",
+            "brick_break",
+            "brutal_swing",
+            "close_combat",
+            "endure",
+            "facade",
+            "focus_energy",
+            "helping_hand",
+            "leaf_blade",
+            "poison_jab",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_blade",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "throat_chop",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "counter",
+            "covet",
+            "curse",
+            "double_edge",
+            "feint",
+            "flail",
+            "night_slash",
+            "quick_attack",
+            "quick_guard",
+            "simple_beam",
+            "sky_attack"
+        ]
+    },
+    "evolution_line_id": null
+}

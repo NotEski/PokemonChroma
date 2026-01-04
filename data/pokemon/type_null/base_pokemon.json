@@ -1,0 +1,118 @@
+{
+    "name": "type_null",
+    "display_name": "Type Null",
+    "pokedex_number": 772,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 95,
+        "defense": 95,
+        "special_attack": 95,
+        "special_defense": 95,
+        "speed": 59
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 107,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "battle_armor",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.9,
+    "weight_kg": 120.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "imprison",
+                "tackle"
+            ],
+            "50": [
+                "take_down"
+            ],
+            "55": [
+                "double_edge"
+            ],
+            "35": [
+                "tri_attack"
+            ],
+            "10": [
+                "scary_face"
+            ],
+            "25": [
+                "crush_claw"
+            ],
+            "20": [
+                "metal_sound"
+            ],
+            "5": [
+                "aerial_ace"
+            ],
+            "30": [
+                "air_slash"
+            ],
+            "40": [
+                "x_scissor"
+            ],
+            "45": [
+                "iron_head"
+            ],
+            "15": [
+                "double_hit"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "dragon_claw",
+            "endure",
+            "facade",
+            "giga_impact",
+            "hail",
+            "hyper_beam",
+            "icy_wind",
+            "imprison",
+            "iron_defense",
+            "iron_head",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thunder_wave",
+            "tri_attack",
+            "u_turn",
+            "work_up",
+            "x_scissor"
+        ],
+        "tutor": [
+            "terrain_pulse"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

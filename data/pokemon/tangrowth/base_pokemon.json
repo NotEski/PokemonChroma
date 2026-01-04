@@ -1,0 +1,145 @@
+{
+    "name": "tangrowth",
+    "display_name": "Tangrowth",
+    "pokedex_number": 465,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 125,
+        "special_attack": 110,
+        "special_defense": 50,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 30,
+    "base_experience_yield": 187,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 128.6,
+    "egg_groups": [
+        "plant"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "absorb",
+                "bind",
+                "block",
+                "growth",
+                "stun_spore"
+            ],
+            "40": [
+                "slam"
+            ],
+            "16": [
+                "vine_whip"
+            ],
+            "12": [
+                "mega_drain"
+            ],
+            "20": [
+                "poison_powder"
+            ],
+            "36": [
+                "sleep_powder"
+            ],
+            "32": [
+                "giga_drain"
+            ],
+            "24": [
+                "ancient_power"
+            ],
+            "52": [
+                "ingrain"
+            ],
+            "28": [
+                "knock_off"
+            ],
+            "44": [
+                "tickle"
+            ],
+            "48": [
+                "power_whip"
+            ],
+            "56": [
+                "grassy_terrain"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "bullet_seed",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fling",
+            "focus_blast",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "hyper_beam",
+            "leaf_storm",
+            "payback",
+            "poison_jab",
+            "power_swap",
+            "power_whip",
+            "protect",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "seed_bomb",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "thief"
+        ],
+        "tutor": [
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 52
+}

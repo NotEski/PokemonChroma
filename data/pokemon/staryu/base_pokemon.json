@@ -1,0 +1,141 @@
+{
+    "name": "staryu",
+    "display_name": "Staryu",
+    "pokedex_number": 120,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 30,
+        "attack": 45,
+        "defense": 55,
+        "special_attack": 70,
+        "special_defense": 55,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 225,
+    "base_experience_yield": 68,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "illuminate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "natural_cure",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 34.5,
+    "egg_groups": [
+        "water3"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "harden",
+                "tackle"
+            ],
+            "4": [
+                "water_gun"
+            ],
+            "56": [
+                "hydro_pump"
+            ],
+            "44": [
+                "surf"
+            ],
+            "24": [
+                "psybeam"
+            ],
+            "40": [
+                "psychic"
+            ],
+            "48": [
+                "recover"
+            ],
+            "16": [
+                "minimize"
+            ],
+            "8": [
+                "confuse_ray"
+            ],
+            "32": [
+                "light_screen"
+            ],
+            "20": [
+                "swift"
+            ],
+            "12": [
+                "rapid_spin"
+            ],
+            "52": [
+                "cosmic_power"
+            ],
+            "28": [
+                "brine"
+            ],
+            "36": [
+                "power_gem"
+            ]
+        },
+        "machine": [
+            "blizzard",
+            "brine",
+            "cosmic_power",
+            "dazzling_gleam",
+            "dive",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "gyro_ball",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "icy_wind",
+            "light_screen",
+            "power_gem",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "tri_attack",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [
+            "flip_turn"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 56
+}

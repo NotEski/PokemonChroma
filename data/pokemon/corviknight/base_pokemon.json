@@ -1,0 +1,138 @@
+{
+    "name": "corviknight",
+    "display_name": "Corviknight",
+    "pokedex_number": 823,
+    "types": [
+        "flying",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 98,
+        "attack": 87,
+        "defense": 105,
+        "special_attack": 53,
+        "special_defense": 85,
+        "speed": 67
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 248,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mirror_armor",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.2,
+    "weight_kg": 75.0,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "12": [
+                "fury_attack"
+            ],
+            "1": [
+                "hone_claws",
+                "iron_defense",
+                "leer",
+                "metal_sound",
+                "peck",
+                "power_trip",
+                "steel_wing"
+            ],
+            "34": [
+                "drill_peck"
+            ],
+            "28": [
+                "scary_face"
+            ],
+            "42": [
+                "swagger"
+            ],
+            "0": [
+                "steel_wing"
+            ],
+            "22": [
+                "taunt"
+            ],
+            "16": [
+                "pluck"
+            ],
+            "50": [
+                "brave_bird"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "body_press",
+            "body_slam",
+            "brave_bird",
+            "bulk_up",
+            "endure",
+            "facade",
+            "fake_tears",
+            "flash_cannon",
+            "fly",
+            "focus_energy",
+            "giga_impact",
+            "heavy_slam",
+            "hurricane",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "light_screen",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "reflect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "u_turn",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 434
+}

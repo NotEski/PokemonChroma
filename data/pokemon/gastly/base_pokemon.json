@@ -1,0 +1,145 @@
+{
+    "name": "gastly",
+    "display_name": "Gastly",
+    "pokedex_number": 92,
+    "types": [
+        "ghost",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 30,
+        "attack": 35,
+        "defense": 30,
+        "special_attack": 100,
+        "special_defense": 35,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 62,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 0.1,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "4": [
+                "hypnosis"
+            ],
+            "28": [
+                "night_shade"
+            ],
+            "1": [
+                "confuse_ray",
+                "lick"
+            ],
+            "48": [
+                "dream_eater"
+            ],
+            "20": [
+                "curse"
+            ],
+            "16": [
+                "spite"
+            ],
+            "44": [
+                "destiny_bond"
+            ],
+            "8": [
+                "mean_look"
+            ],
+            "40": [
+                "shadow_ball"
+            ],
+            "12": [
+                "payback"
+            ],
+            "32": [
+                "sucker_punch"
+            ],
+            "36": [
+                "dark_pulse"
+            ],
+            "24": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "dark_pulse",
+            "dazzling_gleam",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "foul_play",
+            "giga_drain",
+            "hex",
+            "ice_punch",
+            "icy_wind",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "scary_face",
+            "self_destruct",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "uproar",
+            "venoshock",
+            "will_o_wisp",
+            "wonder_room"
+        ],
+        "tutor": [
+            "corrosive_gas",
+            "poltergeist",
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "astonish",
+            "clear_smog",
+            "disable",
+            "grudge",
+            "haze",
+            "perish_song",
+            "reflect_type",
+            "smog",
+            "toxic"
+        ]
+    },
+    "evolution_line_id": 40
+}

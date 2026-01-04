@@ -1,0 +1,132 @@
+{
+    "name": "impidimp",
+    "display_name": "Impidimp",
+    "pokedex_number": 859,
+    "types": [
+        "dark",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 45,
+        "defense": 30,
+        "special_attack": 55,
+        "special_defense": 40,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 53,
+    "base_happiness": 50,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 5.5,
+    "egg_groups": [
+        "fairy",
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "4": [
+                "bite"
+            ],
+            "20": [
+                "swagger"
+            ],
+            "1": [
+                "confide",
+                "fake_out"
+            ],
+            "28": [
+                "torment"
+            ],
+            "8": [
+                "flatter"
+            ],
+            "12": [
+                "fake_tears"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "33": [
+                "dark_pulse"
+            ],
+            "36": [
+                "nasty_plot"
+            ],
+            "44": [
+                "foul_play"
+            ],
+            "40": [
+                "play_rough"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "dark_pulse",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fake_tears",
+            "foul_play",
+            "leech_life",
+            "low_kick",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "nasty_plot",
+            "play_rough",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "taunt",
+            "thief",
+            "thunder_wave",
+            "trick",
+            "uproar"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 451
+}

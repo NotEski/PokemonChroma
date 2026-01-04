@@ -1,0 +1,59 @@
+{
+    "name": "murkrow",
+    "display_name": "Murkrow",
+    "pokedex_number": 198,
+    "types": [
+        "dark",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 42,
+        "special_attack": 85,
+        "special_defense": 42,
+        "speed": 91
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 30,
+    "base_experience_yield": 81,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "super_luck",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 2.1,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 97
+}

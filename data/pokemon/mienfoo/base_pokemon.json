@@ -1,0 +1,154 @@
+{
+    "name": "mienfoo",
+    "display_name": "Mienfoo",
+    "pokedex_number": 619,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 85,
+        "defense": 50,
+        "special_attack": 55,
+        "special_defense": 50,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 180,
+    "base_experience_yield": 70,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "reckless",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 20.0,
+    "egg_groups": [
+        "ground",
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "detect",
+                "pound"
+            ],
+            "60": [
+                "high_jump_kick"
+            ],
+            "15": [
+                "fury_swipes"
+            ],
+            "10": [
+                "reversal"
+            ],
+            "5": [
+                "fake_out"
+            ],
+            "51": [
+                "bounce"
+            ],
+            "55": [
+                "calm_mind"
+            ],
+            "30": [
+                "u_turn"
+            ],
+            "25": [
+                "force_palm"
+            ],
+            "45": [
+                "aura_sphere"
+            ],
+            "35": [
+                "drain_punch"
+            ],
+            "40": [
+                "hone_claws"
+            ],
+            "20": [
+                "quick_guard"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "ally_switch",
+            "attract",
+            "aura_sphere",
+            "baton_pass",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "calm_mind",
+            "close_combat",
+            "dig",
+            "drain_punch",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "grass_knot",
+            "helping_hand",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "u_turn",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": [
+            "feint",
+            "focus_punch",
+            "knock_off",
+            "vital_throw"
+        ]
+    },
+    "evolution_line_id": 314
+}

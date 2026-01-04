@@ -1,0 +1,134 @@
+{
+    "name": "zweilous",
+    "display_name": "Zweilous",
+    "pokedex_number": 634,
+    "types": [
+        "dark",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 72,
+        "attack": 85,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 70,
+        "speed": 58
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 147,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 50.0,
+    "egg_groups": [
+        "dragon"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "28": [
+                "slam"
+            ],
+            "20": [
+                "headbutt"
+            ],
+            "1": [
+                "bite",
+                "double_hit",
+                "dragon_breath",
+                "focus_energy",
+                "tackle"
+            ],
+            "44": [
+                "body_slam"
+            ],
+            "12": [
+                "roar"
+            ],
+            "36": [
+                "scary_face"
+            ],
+            "66": [
+                "outrage"
+            ],
+            "32": [
+                "crunch"
+            ],
+            "48": [
+                "hyper_voice"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "40": [
+                "dragon_pulse"
+            ],
+            "54": [
+                "dragon_rush"
+            ],
+            "60": [
+                "nasty_plot"
+            ],
+            "24": [
+                "work_up"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "beat_up",
+            "body_slam",
+            "crunch",
+            "dark_pulse",
+            "dragon_pulse",
+            "earth_power",
+            "endure",
+            "facade",
+            "fire_fang",
+            "focus_energy",
+            "helping_hand",
+            "hyper_voice",
+            "ice_fang",
+            "nasty_plot",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "taunt",
+            "thief",
+            "thunder_fang",
+            "thunder_wave",
+            "uproar",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 323
+}

@@ -1,0 +1,150 @@
+{
+    "name": "bisharp",
+    "display_name": "Bisharp",
+    "pokedex_number": 625,
+    "types": [
+        "dark",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 125,
+        "defense": 100,
+        "special_attack": 60,
+        "special_defense": 70,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 172,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "defiant",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pressure",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 70.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "fury_cutter",
+                "leer",
+                "metal_burst",
+                "metal_claw",
+                "scratch"
+            ],
+            "71": [
+                "guillotine"
+            ],
+            "64": [
+                "swords_dance"
+            ],
+            "35": [
+                "slash"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "15": [
+                "torment"
+            ],
+            "30": [
+                "metal_sound"
+            ],
+            "45": [
+                "iron_defense"
+            ],
+            "25": [
+                "assurance"
+            ],
+            "40": [
+                "night_slash"
+            ],
+            "57": [
+                "iron_head"
+            ],
+            "50": [
+                "laser_focus"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "assurance",
+            "attract",
+            "beat_up",
+            "brick_break",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "low_kick",
+            "low_sweep",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder_wave",
+            "x_scissor"
+        ],
+        "tutor": [
+            "lash_out",
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 317
+}

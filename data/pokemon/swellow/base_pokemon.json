@@ -1,0 +1,54 @@
+{
+    "name": "swellow",
+    "display_name": "Swellow",
+    "pokedex_number": 277,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 60,
+        "special_attack": 75,
+        "special_defense": 50,
+        "speed": 125
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 159,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "guts",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 19.8,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 138
+}

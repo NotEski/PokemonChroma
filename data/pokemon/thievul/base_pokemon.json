@@ -1,0 +1,135 @@
+{
+    "name": "thievul",
+    "display_name": "Thievul",
+    "pokedex_number": 828,
+    "types": [
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 58,
+        "defense": 58,
+        "special_attack": 87,
+        "special_defense": 92,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 127,
+    "base_experience_yield": 159,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "stakeout",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 19.9,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "beat_up",
+                "hone_claws",
+                "quick_attack",
+                "tail_whip",
+                "thief"
+            ],
+            "0": [
+                "thief"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "28": [
+                "sucker_punch"
+            ],
+            "34": [
+                "night_slash"
+            ],
+            "22": [
+                "nasty_plot"
+            ],
+            "46": [
+                "foul_play"
+            ],
+            "40": [
+                "tail_slap"
+            ],
+            "12": [
+                "snarl"
+            ],
+            "52": [
+                "parting_shot"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "beat_up",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_fang",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "hyper_beam",
+            "ice_fang",
+            "mud_shot",
+            "nasty_plot",
+            "play_rough",
+            "protect",
+            "psychic",
+            "rest",
+            "round",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "swift",
+            "tail_slap",
+            "taunt",
+            "thief",
+            "thunder_fang",
+            "u_turn"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 436
+}

@@ -1,0 +1,145 @@
+{
+    "name": "munna",
+    "display_name": "Munna",
+    "pokedex_number": 517,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 76,
+        "attack": 25,
+        "defense": 45,
+        "special_attack": 67,
+        "special_defense": 55,
+        "speed": 24
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 58,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "forewarn",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "synchronize",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 23.3,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "8": [
+                "psybeam"
+            ],
+            "36": [
+                "psychic"
+            ],
+            "4": [
+                "hypnosis"
+            ],
+            "1": [
+                "defense_curl",
+                "stored_power"
+            ],
+            "44": [
+                "dream_eater"
+            ],
+            "16": [
+                "moonlight"
+            ],
+            "48": [
+                "future_sight"
+            ],
+            "20": [
+                "magic_coat"
+            ],
+            "32": [
+                "yawn"
+            ],
+            "12": [
+                "imprison"
+            ],
+            "28": [
+                "calm_mind"
+            ],
+            "24": [
+                "zen_headbutt"
+            ],
+            "52": [
+                "wonder_room"
+            ],
+            "40": [
+                "moonblast"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "amnesia",
+            "attract",
+            "calm_mind",
+            "dazzling_gleam",
+            "endure",
+            "energy_ball",
+            "facade",
+            "future_sight",
+            "guard_swap",
+            "gyro_ball",
+            "helping_hand",
+            "imprison",
+            "light_screen",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "swift",
+            "thunder_wave",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": [
+            "curse",
+            "healing_wish"
+        ]
+    },
+    "evolution_line_id": 265
+}

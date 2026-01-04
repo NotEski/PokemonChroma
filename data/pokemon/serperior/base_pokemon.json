@@ -1,0 +1,54 @@
+{
+    "name": "serperior",
+    "display_name": "Serperior",
+    "pokedex_number": 497,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 75,
+        "defense": 95,
+        "special_attack": 75,
+        "special_defense": 95,
+        "speed": 113
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 238,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "contrary",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 3.3,
+    "weight_kg": 63.0,
+    "egg_groups": [
+        "ground",
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 256
+}

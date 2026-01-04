@@ -1,0 +1,53 @@
+{
+    "name": "rampardos",
+    "display_name": "Rampardos",
+    "pokedex_number": 409,
+    "types": [
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 97,
+        "attack": 165,
+        "defense": 60,
+        "special_attack": 65,
+        "special_defense": 50,
+        "speed": 58
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 173,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "mold_breaker",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 102.5,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 211
+}

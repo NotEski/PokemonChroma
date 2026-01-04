@@ -1,0 +1,147 @@
+{
+    "name": "basculin_red_striped",
+    "display_name": "Basculin Red Striped",
+    "pokedex_number": 550,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 92,
+        "defense": 65,
+        "special_attack": 80,
+        "special_defense": 55,
+        "speed": 98
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 161,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "reckless",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "adaptability",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 18.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "24": [
+                "headbutt"
+            ],
+            "4": [
+                "tackle"
+            ],
+            "36": [
+                "take_down"
+            ],
+            "48": [
+                "thrash"
+            ],
+            "52": [
+                "double_edge"
+            ],
+            "1": [
+                "tail_whip",
+                "water_gun"
+            ],
+            "16": [
+                "bite"
+            ],
+            "8": [
+                "flail"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "32": [
+                "crunch"
+            ],
+            "44": [
+                "aqua_tail"
+            ],
+            "12": [
+                "aqua_jet"
+            ],
+            "56": [
+                "head_smash"
+            ],
+            "28": [
+                "soak"
+            ],
+            "40": [
+                "final_gambit"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "attract",
+            "bounce",
+            "brine",
+            "crunch",
+            "dive",
+            "endure",
+            "facade",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "ice_fang",
+            "icy_wind",
+            "liquidation",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "psychic_fangs",
+            "rain_dance",
+            "rest",
+            "revenge",
+            "reversal",
+            "round",
+            "scald",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "superpower",
+            "surf",
+            "swift",
+            "taunt",
+            "uproar",
+            "waterfall",
+            "whirlpool",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "flip_turn",
+            "scale_shot"
+        ],
+        "egg_moves": [
+            "bubble_beam",
+            "endeavor"
+        ]
+    },
+    "evolution_line_id": null
+}

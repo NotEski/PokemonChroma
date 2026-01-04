@@ -1,0 +1,148 @@
+{
+    "name": "durant",
+    "display_name": "Durant",
+    "pokedex_number": 632,
+    "types": [
+        "bug",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 58,
+        "attack": 109,
+        "defense": 112,
+        "special_attack": 48,
+        "special_defense": 48,
+        "speed": 109
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 169,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "hustle",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "truant",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 33.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "4": [
+                "vice_grip"
+            ],
+            "56": [
+                "guillotine"
+            ],
+            "1": [
+                "fury_cutter",
+                "sand_attack"
+            ],
+            "20": [
+                "bite"
+            ],
+            "28": [
+                "dig"
+            ],
+            "24": [
+                "agility"
+            ],
+            "8": [
+                "metal_claw"
+            ],
+            "36": [
+                "crunch"
+            ],
+            "12": [
+                "beat_up"
+            ],
+            "40": [
+                "metal_sound"
+            ],
+            "52": [
+                "iron_defense"
+            ],
+            "32": [
+                "x_scissor"
+            ],
+            "44": [
+                "iron_head"
+            ],
+            "16": [
+                "bug_bite"
+            ],
+            "48": [
+                "entrainment"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "baton_pass",
+            "beat_up",
+            "crunch",
+            "dig",
+            "endure",
+            "energy_ball",
+            "facade",
+            "flash_cannon",
+            "giga_impact",
+            "helping_hand",
+            "iron_defense",
+            "iron_head",
+            "protect",
+            "rest",
+            "retaliate",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "thunder_fang",
+            "thunder_wave",
+            "x_scissor"
+        ],
+        "tutor": [
+            "skitter_smack",
+            "steel_beam"
+        ],
+        "egg_moves": [
+            "first_impression",
+            "flail",
+            "infestation",
+            "metal_burst",
+            "struggle_bug"
+        ]
+    },
+    "evolution_line_id": 322
+}

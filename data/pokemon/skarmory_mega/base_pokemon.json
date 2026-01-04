@@ -1,0 +1,41 @@
+{
+    "name": "skarmory_mega",
+    "display_name": "Skarmory Mega",
+    "pokedex_number": 10284,
+    "types": [
+        "steel",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 140,
+        "defense": 110,
+        "special_attack": 40,
+        "special_defense": 100,
+        "speed": 110
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": null,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [],
+    "height_m": 1.7,
+    "weight_kg": 40.4,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

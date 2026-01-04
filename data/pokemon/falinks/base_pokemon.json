@@ -1,0 +1,134 @@
+{
+    "name": "falinks",
+    "display_name": "Falinks",
+    "pokedex_number": 870,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 100,
+        "defense": 100,
+        "special_attack": 70,
+        "special_defense": 60,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 165,
+    "base_happiness": 50,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "battle_armor",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 3.0,
+    "weight_kg": 62.0,
+    "egg_groups": [
+        "fairy",
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "15": [
+                "headbutt"
+            ],
+            "1": [
+                "protect",
+                "tackle"
+            ],
+            "60": [
+                "counter"
+            ],
+            "10": [
+                "focus_energy"
+            ],
+            "30": [
+                "reversal"
+            ],
+            "25": [
+                "endure"
+            ],
+            "55": [
+                "megahorn"
+            ],
+            "5": [
+                "rock_smash"
+            ],
+            "45": [
+                "iron_defense"
+            ],
+            "20": [
+                "bulk_up"
+            ],
+            "50": [
+                "close_combat"
+            ],
+            "35": [
+                "first_impression"
+            ],
+            "40": [
+                "no_retreat"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "beat_up",
+            "brick_break",
+            "bulk_up",
+            "close_combat",
+            "endure",
+            "facade",
+            "false_swipe",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "helping_hand",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "megahorn",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "screech",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "substitute",
+            "superpower",
+            "swords_dance",
+            "throat_chop",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 453
+}

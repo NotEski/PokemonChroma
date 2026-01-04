@@ -1,0 +1,137 @@
+{
+    "name": "aromatisse",
+    "display_name": "Aromatisse",
+    "pokedex_number": 683,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 101,
+        "attack": 72,
+        "defense": 72,
+        "special_attack": 99,
+        "special_defense": 89,
+        "speed": 29
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 140,
+    "base_experience_yield": 162,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "healer",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "aroma_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 15.5,
+    "egg_groups": [
+        "fairy"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "27": [
+                "psychic"
+            ],
+            "21": [
+                "flail"
+            ],
+            "1": [
+                "aromatic_mist",
+                "echoed_voice",
+                "fairy_wind",
+                "heal_pulse",
+                "sweet_kiss",
+                "sweet_scent"
+            ],
+            "30": [
+                "charm"
+            ],
+            "18": [
+                "attract"
+            ],
+            "42": [
+                "psych_up"
+            ],
+            "39": [
+                "skill_swap"
+            ],
+            "12": [
+                "aromatherapy"
+            ],
+            "33": [
+                "calm_mind"
+            ],
+            "9": [
+                "disarming_voice"
+            ],
+            "15": [
+                "draining_kiss"
+            ],
+            "24": [
+                "misty_terrain"
+            ],
+            "36": [
+                "moonblast"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "flash_cannon",
+            "giga_impact",
+            "gyro_ball",
+            "helping_hand",
+            "hyper_beam",
+            "light_screen",
+            "metronome",
+            "misty_terrain",
+            "nasty_plot",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "thunder",
+            "thunderbolt",
+            "trick_room"
+        ],
+        "tutor": [
+            "misty_explosion"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 350
+}

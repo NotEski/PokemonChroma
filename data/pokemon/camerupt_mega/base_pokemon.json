@@ -1,0 +1,47 @@
+{
+    "name": "camerupt_mega",
+    "display_name": "Camerupt Mega",
+    "pokedex_number": 10087,
+    "types": [
+        "fire",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 100,
+        "special_attack": 145,
+        "special_defense": 105,
+        "speed": 20
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 196,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sheer_force",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.5,
+    "weight_kg": 320.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

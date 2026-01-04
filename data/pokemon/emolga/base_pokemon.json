@@ -1,0 +1,137 @@
+{
+    "name": "emolga",
+    "display_name": "Emolga",
+    "pokedex_number": 587,
+    "types": [
+        "electric",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 75,
+        "defense": 60,
+        "special_attack": 75,
+        "special_defense": 60,
+        "speed": 103
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 150,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "static",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "motor_drive",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 5.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "nuzzle",
+                "tail_whip"
+            ],
+            "15": [
+                "thunder_shock"
+            ],
+            "55": [
+                "agility"
+            ],
+            "10": [
+                "quick_attack"
+            ],
+            "5": [
+                "double_team"
+            ],
+            "45": [
+                "light_screen"
+            ],
+            "30": [
+                "spark"
+            ],
+            "35": [
+                "encore"
+            ],
+            "20": [
+                "charge"
+            ],
+            "50": [
+                "discharge"
+            ],
+            "25": [
+                "acrobatics"
+            ],
+            "40": [
+                "volt_switch"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "attract",
+            "baton_pass",
+            "charm",
+            "eerie_impulse",
+            "electro_ball",
+            "electroweb",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fling",
+            "helping_hand",
+            "iron_tail",
+            "light_screen",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "speed_swap",
+            "substitute",
+            "swift",
+            "taunt",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "u_turn",
+            "volt_switch",
+            "wild_charge"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "rising_voltage"
+        ],
+        "egg_moves": [
+            "astonish",
+            "covet",
+            "defog",
+            "roost",
+            "shock_wave",
+            "tickle"
+        ]
+    },
+    "evolution_line_id": 298
+}

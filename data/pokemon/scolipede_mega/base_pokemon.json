@@ -1,0 +1,41 @@
+{
+    "name": "scolipede_mega",
+    "display_name": "Scolipede Mega",
+    "pokedex_number": 10288,
+    "types": [
+        "bug",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 140,
+        "defense": 149,
+        "special_attack": 75,
+        "special_defense": 99,
+        "speed": 62
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": null,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [],
+    "height_m": 3.2,
+    "weight_kg": 230.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

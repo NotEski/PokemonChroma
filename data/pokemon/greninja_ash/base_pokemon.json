@@ -1,0 +1,47 @@
+{
+    "name": "greninja_ash",
+    "display_name": "Greninja Ash",
+    "pokedex_number": 10117,
+    "types": [
+        "water",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 72,
+        "attack": 145,
+        "defense": 67,
+        "special_attack": 153,
+        "special_defense": 71,
+        "speed": 132
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 288,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "battle_bond",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 40.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

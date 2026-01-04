@@ -1,0 +1,150 @@
+{
+    "name": "squirtle",
+    "display_name": "Squirtle",
+    "pokedex_number": 7,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 44,
+        "attack": 48,
+        "defense": 65,
+        "special_attack": 50,
+        "special_defense": 64,
+        "speed": 43
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 63,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 9.0,
+    "egg_groups": [
+        "monster",
+        "water1"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "tackle",
+                "tail_whip"
+            ],
+            "12": [
+                "bite"
+            ],
+            "3": [
+                "water_gun"
+            ],
+            "33": [
+                "hydro_pump"
+            ],
+            "6": [
+                "withdraw"
+            ],
+            "36": [
+                "skull_bash"
+            ],
+            "18": [
+                "protect"
+            ],
+            "9": [
+                "rapid_spin"
+            ],
+            "21": [
+                "rain_dance"
+            ],
+            "30": [
+                "iron_defense"
+            ],
+            "15": [
+                "water_pulse"
+            ],
+            "24": [
+                "aqua_tail"
+            ],
+            "27": [
+                "shell_smash"
+            ]
+        },
+        "machine": [
+            "attract",
+            "aura_sphere",
+            "blizzard",
+            "body_slam",
+            "brick_break",
+            "brine",
+            "dig",
+            "dive",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "gyro_ball",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_defense",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "muddy_water",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_tomb",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "waterfall",
+            "weather_ball",
+            "whirlpool",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "flip_turn",
+            "water_pledge"
+        ],
+        "egg_moves": [
+            "aqua_jet",
+            "aqua_ring",
+            "fake_out",
+            "flail",
+            "haze",
+            "life_dew",
+            "mirror_coat",
+            "mist",
+            "water_spout",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 3
+}

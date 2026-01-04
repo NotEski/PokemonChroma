@@ -1,0 +1,51 @@
+{
+    "name": "floette_eternal",
+    "display_name": "Floette Eternal",
+    "pokedex_number": 10061,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 74,
+        "attack": 65,
+        "defense": 67,
+        "special_attack": 125,
+        "special_defense": 128,
+        "speed": 92
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 243,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "flower_veil",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "symbiosis",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 0.9,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

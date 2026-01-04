@@ -1,0 +1,119 @@
+{
+    "name": "fletchling",
+    "display_name": "Fletchling",
+    "pokedex_number": 661,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 50,
+        "defense": 43,
+        "special_attack": 40,
+        "special_defense": 38,
+        "speed": 62
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 56,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "gale_wings",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 1.7,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "50": [
+                "fly"
+            ],
+            "1": [
+                "growl",
+                "peck"
+            ],
+            "10": [
+                "ember"
+            ],
+            "25": [
+                "agility"
+            ],
+            "5": [
+                "quick_attack"
+            ],
+            "15": [
+                "flail"
+            ],
+            "40": [
+                "steel_wing"
+            ],
+            "30": [
+                "aerial_ace"
+            ],
+            "45": [
+                "roost"
+            ],
+            "35": [
+                "tailwind"
+            ],
+            "20": [
+                "acrobatics"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "attract",
+            "endure",
+            "facade",
+            "fly",
+            "heat_wave",
+            "overheat",
+            "protect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "u_turn",
+            "will_o_wisp",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "defog",
+            "flame_charge",
+            "quick_guard"
+        ]
+    },
+    "evolution_line_id": 341
+}

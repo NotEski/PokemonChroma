@@ -1,0 +1,158 @@
+{
+    "name": "farfetchd",
+    "display_name": "Farfetch\u2019d",
+    "pokedex_number": 83,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 52,
+        "attack": 90,
+        "defense": 55,
+        "special_attack": 58,
+        "special_defense": 62,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 132,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 15.0,
+    "egg_groups": [
+        "flying",
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "45": [
+                "swords_dance"
+            ],
+            "15": [
+                "cut"
+            ],
+            "1": [
+                "peck",
+                "sand_attack"
+            ],
+            "5": [
+                "leer"
+            ],
+            "60": [
+                "agility"
+            ],
+            "40": [
+                "slash"
+            ],
+            "35": [
+                "false_swipe"
+            ],
+            "10": [
+                "fury_cutter"
+            ],
+            "30": [
+                "knock_off"
+            ],
+            "25": [
+                "air_cutter"
+            ],
+            "20": [
+                "aerial_ace"
+            ],
+            "55": [
+                "leaf_blade"
+            ],
+            "50": [
+                "air_slash"
+            ],
+            "65": [
+                "brave_bird"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "attract",
+            "baton_pass",
+            "body_slam",
+            "brave_bird",
+            "brutal_swing",
+            "close_combat",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fly",
+            "focus_energy",
+            "heat_wave",
+            "helping_hand",
+            "iron_tail",
+            "leaf_blade",
+            "poison_jab",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_blade",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thief",
+            "throat_chop",
+            "u_turn",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "covet",
+            "curse",
+            "feather_dance",
+            "feint",
+            "final_gambit",
+            "first_impression",
+            "flail",
+            "gust",
+            "night_slash",
+            "quick_attack",
+            "roost",
+            "simple_beam",
+            "sky_attack"
+        ]
+    },
+    "evolution_line_id": 35
+}

@@ -1,0 +1,144 @@
+{
+    "name": "scolipede",
+    "display_name": "Scolipede",
+    "pokedex_number": 545,
+    "types": [
+        "bug",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 100,
+        "defense": 89,
+        "special_attack": 55,
+        "special_defense": 69,
+        "speed": 112
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 218,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "swarm",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.5,
+    "weight_kg": 200.5,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "34": [
+                "take_down"
+            ],
+            "66": [
+                "double_edge"
+            ],
+            "1": [
+                "baton_pass",
+                "defense_curl",
+                "iron_defense",
+                "poison_sting",
+                "protect",
+                "rollout"
+            ],
+            "50": [
+                "toxic"
+            ],
+            "42": [
+                "agility"
+            ],
+            "16": [
+                "screech"
+            ],
+            "74": [
+                "megahorn"
+            ],
+            "12": [
+                "poison_tail"
+            ],
+            "20": [
+                "bug_bite"
+            ],
+            "26": [
+                "venoshock"
+            ],
+            "58": [
+                "venom_drench"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "bulldoze",
+            "cross_poison",
+            "dig",
+            "earthquake",
+            "endure",
+            "facade",
+            "giga_impact",
+            "gyro_ball",
+            "hex",
+            "hyper_beam",
+            "iron_defense",
+            "iron_tail",
+            "megahorn",
+            "payback",
+            "pin_missile",
+            "poison_jab",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "screech",
+            "sleep_talk",
+            "sludge_bomb",
+            "smart_strike",
+            "snore",
+            "solar_beam",
+            "spikes",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "throat_chop",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock",
+            "x_scissor"
+        ],
+        "tutor": [
+            "skitter_smack",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 277
+}

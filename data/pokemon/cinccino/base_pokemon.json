@@ -1,0 +1,122 @@
+{
+    "name": "cinccino",
+    "display_name": "Cinccino",
+    "pokedex_number": 573,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 60,
+        "special_attack": 65,
+        "special_defense": 60,
+        "speed": 115
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 6,
+    "abilities": [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "skill_link",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 7.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "after_you",
+                "baby_doll_eyes",
+                "bullet_seed",
+                "charm",
+                "echoed_voice",
+                "encore",
+                "helping_hand",
+                "hyper_voice",
+                "last_resort",
+                "pound",
+                "rock_blast",
+                "sing",
+                "slam",
+                "swift",
+                "tail_slap",
+                "tickle"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bullet_seed",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "dig",
+            "encore",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "gunk_shot",
+            "helping_hand",
+            "hyper_beam",
+            "hyper_voice",
+            "iron_tail",
+            "light_screen",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "rock_blast",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "tail_slap",
+            "thief",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "u_turn",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 292
+}

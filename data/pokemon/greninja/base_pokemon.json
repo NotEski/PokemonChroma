@@ -1,0 +1,54 @@
+{
+    "name": "greninja",
+    "display_name": "Greninja",
+    "pokedex_number": 658,
+    "types": [
+        "water",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 72,
+        "attack": 95,
+        "defense": 67,
+        "special_attack": 103,
+        "special_defense": 71,
+        "speed": 122
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 239,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "protean",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 40.0,
+    "egg_groups": [
+        "water1"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 339
+}

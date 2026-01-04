@@ -1,0 +1,156 @@
+{
+    "name": "claydol",
+    "display_name": "Claydol",
+    "pokedex_number": 344,
+    "types": [
+        "ground",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 70,
+        "defense": 105,
+        "special_attack": 70,
+        "special_defense": 120,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 175,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 108.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "15": [
+                "psybeam"
+            ],
+            "0": [
+                "hyper_beam"
+            ],
+            "1": [
+                "confusion",
+                "harden",
+                "hyper_beam",
+                "mud_slap",
+                "rapid_spin",
+                "teleport"
+            ],
+            "33": [
+                "self_destruct"
+            ],
+            "48": [
+                "explosion"
+            ],
+            "43": [
+                "sandstorm"
+            ],
+            "18": [
+                "ancient_power"
+            ],
+            "21": [
+                "imprison"
+            ],
+            "9": [
+                "rock_tomb"
+            ],
+            "24": [
+                "cosmic_power"
+            ],
+            "27": [
+                "extrasensory"
+            ],
+            "12": [
+                "power_trick"
+            ],
+            "30": [
+                "earth_power"
+            ],
+            "38": [
+                "guard_split",
+                "power_split"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "body_press",
+            "bulldoze",
+            "calm_mind",
+            "cosmic_power",
+            "dazzling_gleam",
+            "dig",
+            "drill_run",
+            "earth_power",
+            "earthquake",
+            "eerie_impulse",
+            "endure",
+            "facade",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "guard_swap",
+            "gyro_ball",
+            "hex",
+            "hyper_beam",
+            "ice_beam",
+            "imprison",
+            "iron_defense",
+            "light_screen",
+            "nasty_plot",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sand_tomb",
+            "sandstorm",
+            "self_destruct",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "stone_edge",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 175
+}

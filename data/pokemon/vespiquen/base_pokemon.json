@@ -1,0 +1,138 @@
+{
+    "name": "vespiquen",
+    "display_name": "Vespiquen",
+    "pokedex_number": 416,
+    "types": [
+        "bug",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 80,
+        "defense": 102,
+        "special_attack": 80,
+        "special_defense": 102,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 166,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 38.5,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "bug_bite",
+                "confuse_ray",
+                "gust",
+                "poison_sting",
+                "slash",
+                "struggle_bug",
+                "sweet_scent"
+            ],
+            "36": [
+                "toxic"
+            ],
+            "16": [
+                "fury_swipes"
+            ],
+            "0": [
+                "slash"
+            ],
+            "44": [
+                "destiny_bond"
+            ],
+            "20": [
+                "swagger"
+            ],
+            "4": [
+                "fury_cutter"
+            ],
+            "24": [
+                "aromatherapy"
+            ],
+            "28": [
+                "air_slash"
+            ],
+            "32": [
+                "power_gem"
+            ],
+            "40": [
+                "attack_order",
+                "defend_order"
+            ],
+            "12": [
+                "fell_stinger"
+            ],
+            "8": [
+                "aromatic_mist"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "air_slash",
+            "assurance",
+            "attract",
+            "beat_up",
+            "bug_buzz",
+            "cross_poison",
+            "endure",
+            "facade",
+            "fling",
+            "giga_impact",
+            "hex",
+            "hyper_beam",
+            "pin_missile",
+            "power_gem",
+            "protect",
+            "rain_dance",
+            "rest",
+            "revenge",
+            "reversal",
+            "round",
+            "screech",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "toxic_spikes",
+            "u_turn",
+            "uproar",
+            "venoshock",
+            "x_scissor"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 214
+}

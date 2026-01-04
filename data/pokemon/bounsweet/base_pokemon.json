@@ -1,0 +1,122 @@
+{
+    "name": "bounsweet",
+    "display_name": "Bounsweet",
+    "pokedex_number": 761,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 42,
+        "attack": 30,
+        "defense": 38,
+        "special_attack": 30,
+        "special_defense": 38,
+        "speed": 32
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 235,
+    "base_experience_yield": 42,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "leaf_guard",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "oblivious",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sweet_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 3.2,
+    "egg_groups": [
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "12": [
+                "razor_leaf"
+            ],
+            "1": [
+                "splash"
+            ],
+            "24": [
+                "flail"
+            ],
+            "8": [
+                "rapid_spin"
+            ],
+            "16": [
+                "sweet_scent"
+            ],
+            "28": [
+                "teeter_dance"
+            ],
+            "36": [
+                "aromatherapy"
+            ],
+            "20": [
+                "magical_leaf"
+            ],
+            "4": [
+                "play_nice"
+            ],
+            "32": [
+                "aromatic_mist"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bounce",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "grass_knot",
+            "helping_hand",
+            "light_screen",
+            "magical_leaf",
+            "play_rough",
+            "protect",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "grassy_glide"
+        ],
+        "egg_moves": [
+            "acupressure",
+            "endeavor",
+            "synthesis"
+        ]
+    },
+    "evolution_line_id": 392
+}

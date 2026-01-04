@@ -1,0 +1,131 @@
+{
+    "name": "cradily",
+    "display_name": "Cradily",
+    "pokedex_number": 346,
+    "types": [
+        "rock",
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 86,
+        "attack": 81,
+        "defense": 97,
+        "special_attack": 81,
+        "special_defense": 107,
+        "speed": 43
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 173,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "suction_cups",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "storm_drain",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 60.4,
+    "egg_groups": [
+        "water3"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "acid",
+                "astonish",
+                "confuse_ray",
+                "leech_seed",
+                "wrap"
+            ],
+            "20": [
+                "mega_drain"
+            ],
+            "28": [
+                "amnesia"
+            ],
+            "36": [
+                "giga_drain"
+            ],
+            "16": [
+                "ancient_power"
+            ],
+            "43": [
+                "spit_up",
+                "stockpile",
+                "swallow"
+            ],
+            "12": [
+                "ingrain"
+            ],
+            "24": [
+                "brine"
+            ],
+            "32": [
+                "gastro_acid"
+            ],
+            "48": [
+                "energy_ball"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "body_slam",
+            "brine",
+            "bulldoze",
+            "bullet_seed",
+            "dig",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "hyper_beam",
+            "mud_shot",
+            "power_whip",
+            "protect",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "seed_bomb",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swords_dance"
+        ],
+        "tutor": [
+            "meteor_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 176
+}

@@ -1,0 +1,147 @@
+{
+    "name": "noibat",
+    "display_name": "Noibat",
+    "pokedex_number": 714,
+    "types": [
+        "flying",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 35,
+        "special_attack": 45,
+        "special_defense": 40,
+        "speed": 55
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 49,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "frisk",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 8.0,
+    "egg_groups": [
+        "flying",
+        "dragon"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "4": [
+                "gust"
+            ],
+            "16": [
+                "wing_attack"
+            ],
+            "28": [
+                "whirlwind"
+            ],
+            "1": [
+                "absorb",
+                "tackle"
+            ],
+            "20": [
+                "bite"
+            ],
+            "8": [
+                "supersonic"
+            ],
+            "40": [
+                "screech"
+            ],
+            "12": [
+                "double_team"
+            ],
+            "32": [
+                "super_fang"
+            ],
+            "24": [
+                "air_cutter"
+            ],
+            "44": [
+                "roost"
+            ],
+            "49": [
+                "tailwind"
+            ],
+            "36": [
+                "air_slash"
+            ],
+            "52": [
+                "hurricane"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "attract",
+            "brick_break",
+            "dark_pulse",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "fly",
+            "heat_wave",
+            "hurricane",
+            "hyper_voice",
+            "iron_tail",
+            "leech_life",
+            "outrage",
+            "protect",
+            "psychic",
+            "rest",
+            "round",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "u_turn",
+            "uproar",
+            "wild_charge",
+            "x_scissor"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "defog",
+            "dragon_rush"
+        ]
+    },
+    "evolution_line_id": 367
+}

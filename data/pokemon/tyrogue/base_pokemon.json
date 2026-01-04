@@ -1,0 +1,103 @@
+{
+    "name": "tyrogue",
+    "display_name": "Tyrogue",
+    "pokedex_number": 236,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 35,
+        "attack": 35,
+        "defense": 35,
+        "special_attack": 35,
+        "special_defense": 35,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 42,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "guts",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "steadfast",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 21.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "fake_out",
+                "focus_energy",
+                "helping_hand",
+                "tackle"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "earthquake",
+            "endure",
+            "facade",
+            "focus_energy",
+            "helping_hand",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "rock_slide",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "bullet_punch",
+            "counter",
+            "feint",
+            "high_jump_kick",
+            "mach_punch",
+            "mind_reader",
+            "rapid_spin",
+            "vacuum_wave"
+        ]
+    },
+    "evolution_line_id": 47
+}

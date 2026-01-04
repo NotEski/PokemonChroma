@@ -1,0 +1,59 @@
+{
+    "name": "pawmo",
+    "display_name": "Pawmo",
+    "pokedex_number": 922,
+    "types": [
+        "electric",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 75,
+        "defense": 40,
+        "special_attack": 50,
+        "special_defense": 40,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 80,
+    "base_experience_yield": 123,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "natural_cure",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 6.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 484
+}

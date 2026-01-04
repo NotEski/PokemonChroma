@@ -1,0 +1,120 @@
+{
+    "name": "eiscue_noice",
+    "display_name": "Eiscue Noice",
+    "pokedex_number": 10185,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 50,
+        "speed": 130
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "ice_face",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 89.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "24": [
+                "headbutt"
+            ],
+            "1": [
+                "powder_snow",
+                "tackle"
+            ],
+            "6": [
+                "mist"
+            ],
+            "54": [
+                "surf"
+            ],
+            "60": [
+                "blizzard"
+            ],
+            "30": [
+                "amnesia"
+            ],
+            "18": [
+                "icy_wind"
+            ],
+            "42": [
+                "hail"
+            ],
+            "12": [
+                "weather_ball"
+            ],
+            "36": [
+                "freeze_dry"
+            ],
+            "48": [
+                "aurora_veil"
+            ]
+        },
+        "machine": [
+            "agility",
+            "amnesia",
+            "attract",
+            "avalanche",
+            "blizzard",
+            "brine",
+            "dive",
+            "endure",
+            "facade",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "ice_punch",
+            "icicle_spear",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "liquidation",
+            "protect",
+            "reflect",
+            "rest",
+            "reversal",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "waterfall",
+            "weather_ball",
+            "whirlpool",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "aqua_ring",
+            "belly_drum",
+            "double_edge",
+            "head_smash",
+            "icicle_crash",
+            "soak"
+        ]
+    },
+    "evolution_line_id": null
+}

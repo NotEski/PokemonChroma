@@ -1,0 +1,147 @@
+{
+    "name": "mesprit",
+    "display_name": "Mesprit",
+    "pokedex_number": 481,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 105,
+        "defense": 105,
+        "special_attack": 105,
+        "special_defense": 105,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 261,
+    "base_happiness": 140,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 0.3,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "21": [
+                "psybeam"
+            ],
+            "1": [
+                "confusion",
+                "rest"
+            ],
+            "49": [
+                "psychic"
+            ],
+            "7": [
+                "swift"
+            ],
+            "14": [
+                "protect"
+            ],
+            "42": [
+                "charm"
+            ],
+            "63": [
+                "future_sight"
+            ],
+            "56": [
+                "flatter"
+            ],
+            "28": [
+                "imprison"
+            ],
+            "35": [
+                "extrasensory"
+            ],
+            "77": [
+                "healing_wish"
+            ],
+            "70": [
+                "copycat"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "ally_switch",
+            "baton_pass",
+            "blizzard",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "fling",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "imprison",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "metronome",
+            "nasty_plot",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psycho_cut",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "tri_attack",
+            "trick",
+            "trick_room",
+            "u_turn",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 242
+}

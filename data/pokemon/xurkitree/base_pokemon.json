@@ -1,0 +1,130 @@
+{
+    "name": "xurkitree",
+    "display_name": "Xurkitree",
+    "pokedex_number": 796,
+    "types": [
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 83,
+        "attack": 89,
+        "defense": 71,
+        "special_attack": 173,
+        "special_defense": 71,
+        "speed": 83
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 3.8,
+    "weight_kg": 100.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "40": [
+                "thunder_punch"
+            ],
+            "1": [
+                "thunder_shock",
+                "wrap"
+            ],
+            "55": [
+                "thunderbolt"
+            ],
+            "10": [
+                "thunder_wave"
+            ],
+            "30": [
+                "hypnosis"
+            ],
+            "70": [
+                "zap_cannon"
+            ],
+            "20": [
+                "spark"
+            ],
+            "5": [
+                "charge"
+            ],
+            "15": [
+                "ingrain"
+            ],
+            "25": [
+                "shock_wave"
+            ],
+            "50": [
+                "magnet_rise"
+            ],
+            "45": [
+                "discharge"
+            ],
+            "65": [
+                "power_whip"
+            ],
+            "35": [
+                "eerie_impulse"
+            ],
+            "60": [
+                "electric_terrain"
+            ]
+        },
+        "machine": [
+            "brutal_swing",
+            "calm_mind",
+            "dazzling_gleam",
+            "eerie_impulse",
+            "electric_terrain",
+            "electro_ball",
+            "electroweb",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fling",
+            "giga_impact",
+            "grass_knot",
+            "hyper_beam",
+            "light_screen",
+            "power_whip",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "volt_switch",
+            "wild_charge"
+        ],
+        "tutor": [
+            "rising_voltage"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 417
+}

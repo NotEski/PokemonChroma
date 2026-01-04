@@ -1,0 +1,147 @@
+{
+    "name": "hitmontop",
+    "display_name": "Hitmontop",
+    "pokedex_number": 237,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 95,
+        "defense": 95,
+        "special_attack": 35,
+        "special_defense": 110,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 159,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "steadfast",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 48.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "fake_out",
+                "feint",
+                "focus_energy",
+                "helping_hand",
+                "rapid_spin",
+                "tackle",
+                "triple_kick"
+            ],
+            "40": [
+                "counter"
+            ],
+            "32": [
+                "dig"
+            ],
+            "28": [
+                "agility"
+            ],
+            "4": [
+                "quick_attack"
+            ],
+            "0": [
+                "triple_kick"
+            ],
+            "12": [
+                "detect"
+            ],
+            "16": [
+                "revenge"
+            ],
+            "44": [
+                "endeavor"
+            ],
+            "8": [
+                "gyro_ball"
+            ],
+            "36": [
+                "close_combat"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "21": [
+                "quick_guard",
+                "wide_guard"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "dig",
+            "drill_run",
+            "earthquake",
+            "endure",
+            "facade",
+            "focus_blast",
+            "focus_energy",
+            "gyro_ball",
+            "helping_hand",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_slide",
+            "round",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 47
+}

@@ -1,0 +1,52 @@
+{
+    "name": "dialga_origin",
+    "display_name": "Dialga Origin",
+    "pokedex_number": 10245,
+    "types": [
+        "steel",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 120,
+        "special_attack": 150,
+        "special_defense": 120,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 306,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 7.0,
+    "weight_kg": 848.7,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

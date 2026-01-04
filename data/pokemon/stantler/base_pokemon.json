@@ -1,0 +1,58 @@
+{
+    "name": "stantler",
+    "display_name": "Stantler",
+    "pokedex_number": 234,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 73,
+        "attack": 95,
+        "defense": 62,
+        "special_attack": 85,
+        "special_defense": 65,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 163,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 71.2,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 120
+}

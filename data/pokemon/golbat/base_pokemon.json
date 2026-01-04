@@ -1,0 +1,129 @@
+{
+    "name": "golbat",
+    "display_name": "Golbat",
+    "pokedex_number": 42,
+    "types": [
+        "poison",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 75,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 159,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 55.0,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "34": [
+                "bite"
+            ],
+            "1": [
+                "absorb",
+                "astonish",
+                "mean_look",
+                "screech",
+                "supersonic"
+            ],
+            "55": [
+                "confuse_ray"
+            ],
+            "41": [
+                "haze"
+            ],
+            "69": [
+                "leech_life"
+            ],
+            "15": [
+                "poison_fang"
+            ],
+            "27": [
+                "air_cutter"
+            ],
+            "62": [
+                "air_slash"
+            ],
+            "48": [
+                "venoshock"
+            ],
+            "20": [
+                "quick_guard"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "brave_bird",
+            "crunch",
+            "endure",
+            "facade",
+            "fly",
+            "giga_drain",
+            "giga_impact",
+            "heat_wave",
+            "hyper_beam",
+            "leech_life",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "u_turn",
+            "uproar",
+            "venom_drench",
+            "venoshock",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 17
+}

@@ -1,0 +1,59 @@
+{
+    "name": "golem",
+    "display_name": "Golem",
+    "pokedex_number": 76,
+    "types": [
+        "rock",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 120,
+        "defense": 130,
+        "special_attack": 55,
+        "special_defense": 65,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 223,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 300.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 31
+}

@@ -1,0 +1,180 @@
+{
+    "name": "rhyperior",
+    "display_name": "Rhyperior",
+    "pokedex_number": 464,
+    "types": [
+        "ground",
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 115,
+        "attack": 140,
+        "defense": 130,
+        "special_attack": 55,
+        "special_defense": 55,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 30,
+    "base_experience_yield": 241,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "lightning_rod",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "solid_rock",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "reckless",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.4,
+    "weight_kg": 282.8,
+    "egg_groups": [
+        "monster",
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "25": [
+                "stomp"
+            ],
+            "15": [
+                "horn_attack"
+            ],
+            "68": [
+                "horn_drill"
+            ],
+            "1": [
+                "bulldoze",
+                "hammer_arm",
+                "smack_down",
+                "tackle",
+                "tail_whip"
+            ],
+            "40": [
+                "take_down"
+            ],
+            "47": [
+                "earthquake"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "61": [
+                "megahorn"
+            ],
+            "30": [
+                "rock_blast"
+            ],
+            "75": [
+                "rock_wrecker"
+            ],
+            "54": [
+                "stone_edge"
+            ],
+            "35": [
+                "drill_run"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "breaking_swipe",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "dragon_pulse",
+            "drill_run",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_punch",
+            "flamethrower",
+            "flash_cannon",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "heat_crash",
+            "heavy_slam",
+            "helping_hand",
+            "high_horsepower",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "ice_punch",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "megahorn",
+            "mud_shot",
+            "outrage",
+            "pay_day",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "reversal",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "surf",
+            "swords_dance",
+            "thief",
+            "thunder",
+            "thunder_fang",
+            "thunder_punch",
+            "thunderbolt",
+            "uproar",
+            "whirlpool"
+        ],
+        "tutor": [
+            "meteor_beam",
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 50
+}

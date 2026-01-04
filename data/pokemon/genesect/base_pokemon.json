@@ -1,0 +1,138 @@
+{
+    "name": "genesect",
+    "display_name": "Genesect",
+    "pokedex_number": 649,
+    "types": [
+        "bug",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 71,
+        "attack": 120,
+        "defense": 95,
+        "special_attack": 120,
+        "special_defense": 95,
+        "speed": 99
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 270,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "download",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 82.5,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "fury_cutter",
+                "quick_attack"
+            ],
+            "7": [
+                "screech"
+            ],
+            "91": [
+                "self_destruct"
+            ],
+            "70": [
+                "zap_cannon"
+            ],
+            "77": [
+                "lock_on"
+            ],
+            "14": [
+                "metal_claw"
+            ],
+            "35": [
+                "metal_sound"
+            ],
+            "49": [
+                "magnet_rise"
+            ],
+            "42": [
+                "x_scissor"
+            ],
+            "56": [
+                "bug_buzz"
+            ],
+            "28": [
+                "flame_charge"
+            ],
+            "63": [
+                "simple_beam"
+            ],
+            "84": [
+                "techno_blast"
+            ],
+            "21": [
+                "fell_stinger"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "assurance",
+            "blaze_kick",
+            "blizzard",
+            "bug_buzz",
+            "dark_pulse",
+            "electroweb",
+            "endure",
+            "energy_ball",
+            "facade",
+            "flamethrower",
+            "flash_cannon",
+            "fly",
+            "giga_drain",
+            "giga_impact",
+            "gunk_shot",
+            "hyper_beam",
+            "ice_beam",
+            "iron_defense",
+            "iron_head",
+            "leech_life",
+            "light_screen",
+            "protect",
+            "psychic",
+            "reflect",
+            "rest",
+            "round",
+            "screech",
+            "self_destruct",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "tri_attack",
+            "u_turn",
+            "x_scissor",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 336
+}

@@ -1,0 +1,59 @@
+{
+    "name": "overqwil",
+    "display_name": "Overqwil",
+    "pokedex_number": 904,
+    "types": [
+        "dark",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 115,
+        "defense": 95,
+        "special_attack": 65,
+        "special_defense": 65,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 135,
+    "base_experience_yield": 179,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "intimidate",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.5,
+    "weight_kg": 60.5,
+    "egg_groups": [
+        "water2"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 106
+}

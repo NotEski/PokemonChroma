@@ -1,0 +1,135 @@
+{
+    "name": "mimikyu_disguised",
+    "display_name": "Mimikyu Disguised",
+    "pokedex_number": 778,
+    "types": [
+        "ghost",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 90,
+        "defense": 80,
+        "special_attack": 50,
+        "special_defense": 105,
+        "speed": 96
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 167,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "disguise",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 0.7,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "copycat",
+                "scratch",
+                "splash",
+                "wood_hammer"
+            ],
+            "24": [
+                "mimic"
+            ],
+            "12": [
+                "double_team"
+            ],
+            "36": [
+                "slash"
+            ],
+            "48": [
+                "charm"
+            ],
+            "60": [
+                "pain_split"
+            ],
+            "42": [
+                "shadow_claw"
+            ],
+            "6": [
+                "shadow_sneak"
+            ],
+            "30": [
+                "hone_claws"
+            ],
+            "54": [
+                "play_rough"
+            ],
+            "18": [
+                "baby_doll_eyes"
+            ]
+        },
+        "machine": [
+            "attract",
+            "beat_up",
+            "bulk_up",
+            "charm",
+            "dark_pulse",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fling",
+            "giga_drain",
+            "giga_impact",
+            "hex",
+            "hyper_beam",
+            "leech_life",
+            "light_screen",
+            "magic_room",
+            "payback",
+            "phantom_force",
+            "play_rough",
+            "protect",
+            "psychic",
+            "rest",
+            "round",
+            "safeguard",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "will_o_wisp",
+            "work_up",
+            "x_scissor"
+        ],
+        "tutor": [
+            "burning_jealousy"
+        ],
+        "egg_moves": [
+            "curse",
+            "destiny_bond",
+            "grudge"
+        ]
+    },
+    "evolution_line_id": null
+}

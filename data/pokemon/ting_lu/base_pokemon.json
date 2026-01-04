@@ -1,0 +1,47 @@
+{
+    "name": "ting_lu",
+    "display_name": "Ting Lu",
+    "pokedex_number": 1003,
+    "types": [
+        "dark",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 155,
+        "attack": 110,
+        "defense": 125,
+        "special_attack": 55,
+        "special_defense": 80,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 285,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "vessel_of_ruin",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.7,
+    "weight_kg": 699.7,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

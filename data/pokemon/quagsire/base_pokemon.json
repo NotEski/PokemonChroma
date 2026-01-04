@@ -1,0 +1,144 @@
+{
+    "name": "quagsire",
+    "display_name": "Quagsire",
+    "pokedex_number": 195,
+    "types": [
+        "water",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 85,
+        "defense": 85,
+        "special_attack": 65,
+        "special_defense": 65,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 151,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "damp",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "unaware",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 75.0,
+    "egg_groups": [
+        "water1",
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "16": [
+                "slam"
+            ],
+            "1": [
+                "mud_shot",
+                "rain_dance",
+                "tail_whip",
+                "water_gun"
+            ],
+            "12": [
+                "haze",
+                "mist"
+            ],
+            "52": [
+                "earthquake"
+            ],
+            "46": [
+                "toxic"
+            ],
+            "40": [
+                "amnesia"
+            ],
+            "23": [
+                "yawn"
+            ],
+            "34": [
+                "muddy_water"
+            ],
+            "28": [
+                "aqua_tail"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "blizzard",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "dig",
+            "dive",
+            "earth_power",
+            "earthquake",
+            "eerie_impulse",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "guard_swap",
+            "hail",
+            "high_horsepower",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "liquidation",
+            "mega_kick",
+            "mega_punch",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "scald",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "surf",
+            "thief",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 96
+}

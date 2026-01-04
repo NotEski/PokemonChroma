@@ -1,0 +1,161 @@
+{
+    "name": "haxorus",
+    "display_name": "Haxorus",
+    "pokedex_number": 612,
+    "types": [
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 76,
+        "attack": 147,
+        "defense": 90,
+        "special_attack": 60,
+        "special_defense": 70,
+        "speed": 97
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 243,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "rivalry",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 105.5,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "bite",
+                "false_swipe",
+                "leer",
+                "scratch"
+            ],
+            "53": [
+                "guillotine"
+            ],
+            "41": [
+                "swords_dance"
+            ],
+            "15": [
+                "slash"
+            ],
+            "21": [
+                "scary_face"
+            ],
+            "46": [
+                "outrage"
+            ],
+            "24": [
+                "crunch"
+            ],
+            "12": [
+                "taunt"
+            ],
+            "18": [
+                "dragon_claw"
+            ],
+            "27": [
+                "dragon_dance"
+            ],
+            "9": [
+                "assurance"
+            ],
+            "36": [
+                "dragon_pulse"
+            ],
+            "60": [
+                "giga_impact"
+            ],
+            "30": [
+                "dual_chop"
+            ],
+            "33": [
+                "laser_focus"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "breaking_swipe",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "close_combat",
+            "crunch",
+            "dig",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earthquake",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "grass_knot",
+            "hyper_beam",
+            "iron_tail",
+            "low_kick",
+            "outrage",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "rest",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "surf",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "x_scissor"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "scale_shot"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 309
+}

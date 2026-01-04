@@ -1,0 +1,152 @@
+{
+    "name": "tauros",
+    "display_name": "Tauros",
+    "pokedex_number": 128,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 100,
+        "defense": 95,
+        "special_attack": 40,
+        "special_defense": 70,
+        "speed": 110
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 172,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "anger_point",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 88.4,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "20": [
+                "horn_attack"
+            ],
+            "1": [
+                "tackle",
+                "tail_whip"
+            ],
+            "35": [
+                "take_down"
+            ],
+            "50": [
+                "thrash"
+            ],
+            "55": [
+                "double_edge"
+            ],
+            "40": [
+                "rest"
+            ],
+            "25": [
+                "scary_face"
+            ],
+            "45": [
+                "swagger"
+            ],
+            "10": [
+                "payback"
+            ],
+            "15": [
+                "assurance"
+            ],
+            "60": [
+                "giga_impact"
+            ],
+            "30": [
+                "zen_headbutt"
+            ],
+            "5": [
+                "work_up"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "blizzard",
+            "body_slam",
+            "bulldoze",
+            "close_combat",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "giga_impact",
+            "helping_hand",
+            "high_horsepower",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "iron_head",
+            "iron_tail",
+            "megahorn",
+            "outrage",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "solar_beam",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "throat_chop",
+            "thunder",
+            "thunderbolt",
+            "uproar",
+            "whirlpool",
+            "wild_charge",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 63
+}

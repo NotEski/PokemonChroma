@@ -1,0 +1,143 @@
+{
+    "name": "scyther",
+    "display_name": "Scyther",
+    "pokedex_number": 123,
+    "types": [
+        "bug",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 80,
+        "special_attack": 55,
+        "special_defense": 80,
+        "speed": 105
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 100,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "steadfast",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 56.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "48": [
+                "swords_dance"
+            ],
+            "12": [
+                "wing_attack"
+            ],
+            "1": [
+                "leer",
+                "quick_attack"
+            ],
+            "32": [
+                "agility"
+            ],
+            "16": [
+                "double_team"
+            ],
+            "28": [
+                "focus_energy"
+            ],
+            "24": [
+                "slash"
+            ],
+            "8": [
+                "false_swipe"
+            ],
+            "4": [
+                "fury_cutter"
+            ],
+            "36": [
+                "air_slash"
+            ],
+            "40": [
+                "x_scissor"
+            ],
+            "20": [
+                "double_hit"
+            ],
+            "44": [
+                "laser_focus"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "brick_break",
+            "brutal_swing",
+            "bug_buzz",
+            "cross_poison",
+            "endure",
+            "facade",
+            "false_swipe",
+            "focus_energy",
+            "giga_impact",
+            "hyper_beam",
+            "light_screen",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "rest",
+            "reversal",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thief",
+            "u_turn",
+            "x_scissor"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "counter",
+            "defog",
+            "feint",
+            "night_slash",
+            "quick_guard"
+        ]
+    },
+    "evolution_line_id": 58
+}

@@ -1,0 +1,129 @@
+{
+    "name": "anorith",
+    "display_name": "Anorith",
+    "pokedex_number": 347,
+    "types": [
+        "rock",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 95,
+        "defense": 50,
+        "special_attack": 40,
+        "special_defense": 50,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 71,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "battle_armor",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 12.5,
+    "egg_groups": [
+        "water3"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {
+            "4": [
+                "water_gun"
+            ],
+            "1": [
+                "fury_cutter",
+                "harden"
+            ],
+            "28": [
+                "slash"
+            ],
+            "41": [
+                "protect"
+            ],
+            "12": [
+                "metal_claw"
+            ],
+            "16": [
+                "ancient_power"
+            ],
+            "32": [
+                "crush_claw"
+            ],
+            "36": [
+                "rock_blast"
+            ],
+            "24": [
+                "brine"
+            ],
+            "44": [
+                "x_scissor"
+            ],
+            "20": [
+                "bug_bite"
+            ],
+            "8": [
+                "smack_down"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brine",
+            "cross_poison",
+            "dig",
+            "earth_power",
+            "endure",
+            "facade",
+            "false_swipe",
+            "iron_defense",
+            "mud_shot",
+            "protect",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "x_scissor"
+        ],
+        "tutor": [
+            "meteor_beam"
+        ],
+        "egg_moves": [
+            "aqua_jet",
+            "curse",
+            "knock_off",
+            "rapid_spin",
+            "sand_attack",
+            "water_pulse"
+        ]
+    },
+    "evolution_line_id": 177
+}

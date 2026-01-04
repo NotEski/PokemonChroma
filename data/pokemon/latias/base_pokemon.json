@@ -1,0 +1,165 @@
+{
+    "name": "latias",
+    "display_name": "Latias",
+    "pokedex_number": 380,
+    "types": [
+        "dragon",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 90,
+        "special_attack": 110,
+        "special_defense": 130,
+        "speed": 110
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 3,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 270,
+    "base_happiness": 90,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 40.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "15": [
+                "confusion"
+            ],
+            "60": [
+                "psychic"
+            ],
+            "10": [
+                "recover"
+            ],
+            "1": [
+                "charm",
+                "stored_power"
+            ],
+            "25": [
+                "dragon_breath"
+            ],
+            "5": [
+                "helping_hand"
+            ],
+            "30": [
+                "wish"
+            ],
+            "35": [
+                "mist_ball"
+            ],
+            "70": [
+                "healing_wish"
+            ],
+            "20": [
+                "tailwind"
+            ],
+            "75": [
+                "psycho_shift"
+            ],
+            "45": [
+                "dragon_pulse"
+            ],
+            "40": [
+                "zen_headbutt"
+            ],
+            "65": [
+                "guard_split"
+            ],
+            "50": [
+                "heal_pulse"
+            ],
+            "55": [
+                "reflect_type"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "ally_switch",
+            "attract",
+            "aura_sphere",
+            "baton_pass",
+            "body_slam",
+            "breaking_swipe",
+            "bulldoze",
+            "calm_mind",
+            "charm",
+            "dive",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fly",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "light_screen",
+            "magic_room",
+            "mystical_fire",
+            "outrage",
+            "protect",
+            "psychic",
+            "psycho_cut",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "steel_wing",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "tri_attack",
+            "trick",
+            "waterfall",
+            "whirlpool",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat",
+            "scale_shot"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 196
+}

@@ -1,0 +1,156 @@
+{
+    "name": "sneasel",
+    "display_name": "Sneasel",
+    "pokedex_number": 215,
+    "types": [
+        "dark",
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 95,
+        "defense": 55,
+        "special_attack": 35,
+        "special_defense": 75,
+        "speed": 115
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 86,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 28.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "scratch"
+            ],
+            "48": [
+                "agility"
+            ],
+            "12": [
+                "quick_attack"
+            ],
+            "54": [
+                "screech"
+            ],
+            "30": [
+                "fury_swipes"
+            ],
+            "60": [
+                "slash"
+            ],
+            "24": [
+                "icy_wind"
+            ],
+            "18": [
+                "metal_claw"
+            ],
+            "42": [
+                "beat_up"
+            ],
+            "6": [
+                "taunt"
+            ],
+            "36": [
+                "hone_claws"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "avalanche",
+            "beat_up",
+            "blizzard",
+            "brick_break",
+            "calm_mind",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "fake_tears",
+            "false_swipe",
+            "fling",
+            "foul_play",
+            "hail",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "round",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "whirlpool",
+            "x_scissor"
+        ],
+        "tutor": [
+            "lash_out",
+            "triple_axel"
+        ],
+        "egg_moves": [
+            "bite",
+            "counter",
+            "double_hit",
+            "fake_out",
+            "feint",
+            "ice_shard",
+            "icicle_crash",
+            "spite"
+        ]
+    },
+    "evolution_line_id": 109
+}

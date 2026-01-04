@@ -1,0 +1,111 @@
+{
+    "name": "dottler",
+    "display_name": "Dottler",
+    "pokedex_number": 825,
+    "types": [
+        "bug",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 35,
+        "defense": 80,
+        "special_attack": 50,
+        "special_defense": 90,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 117,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "compound_eyes",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 19.5,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "0": [
+                "confusion",
+                "light_screen",
+                "reflect"
+            ],
+            "1": [
+                "confusion",
+                "light_screen",
+                "reflect",
+                "struggle_bug"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "body_press",
+            "bug_buzz",
+            "calm_mind",
+            "endure",
+            "energy_ball",
+            "facade",
+            "future_sight",
+            "guard_swap",
+            "helping_hand",
+            "imprison",
+            "iron_defense",
+            "leech_life",
+            "light_screen",
+            "magic_room",
+            "payback",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stored_power",
+            "substitute",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 435
+}

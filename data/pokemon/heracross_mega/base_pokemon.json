@@ -1,0 +1,47 @@
+{
+    "name": "heracross_mega",
+    "display_name": "Heracross Mega",
+    "pokedex_number": 10047,
+    "types": [
+        "bug",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 185,
+        "defense": 115,
+        "special_attack": 40,
+        "special_defense": 105,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 210,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "skill_link",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 62.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

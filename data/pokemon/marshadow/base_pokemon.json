@@ -1,0 +1,150 @@
+{
+    "name": "marshadow",
+    "display_name": "Marshadow",
+    "pokedex_number": 802,
+    "types": [
+        "fighting",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 125,
+        "defense": 80,
+        "special_attack": 90,
+        "special_defense": 90,
+        "speed": 125
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 270,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "technician",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 22.2,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "copycat",
+                "counter",
+                "feint",
+                "fire_punch",
+                "ice_punch",
+                "shadow_sneak",
+                "thunder_punch"
+            ],
+            "63": [
+                "psych_up"
+            ],
+            "9": [
+                "role_play"
+            ],
+            "90": [
+                "endeavor"
+            ],
+            "18": [
+                "shadow_punch"
+            ],
+            "99": [
+                "close_combat"
+            ],
+            "36": [
+                "assurance"
+            ],
+            "45": [
+                "sucker_punch"
+            ],
+            "27": [
+                "force_palm"
+            ],
+            "54": [
+                "drain_punch"
+            ],
+            "81": [
+                "laser_focus"
+            ],
+            "72": [
+                "spectral_thief"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "assurance",
+            "aura_sphere",
+            "blaze_kick",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "calm_mind",
+            "close_combat",
+            "drain_punch",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fire_punch",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "hex",
+            "hyper_beam",
+            "ice_punch",
+            "iron_head",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "payback",
+            "phantom_force",
+            "poison_jab",
+            "protect",
+            "rest",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "swift",
+            "thief",
+            "throat_chop",
+            "thunder_punch",
+            "will_o_wisp",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching",
+            "poltergeist",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 423
+}

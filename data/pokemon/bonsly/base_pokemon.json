@@ -1,0 +1,131 @@
+{
+    "name": "bonsly",
+    "display_name": "Bonsly",
+    "pokedex_number": 438,
+    "types": [
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 80,
+        "defense": 95,
+        "special_attack": 10,
+        "special_defense": 45,
+        "speed": 10
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 58,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 15.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "44": [
+                "double_edge"
+            ],
+            "36": [
+                "low_kick"
+            ],
+            "40": [
+                "counter"
+            ],
+            "8": [
+                "rock_throw"
+            ],
+            "16": [
+                "mimic"
+            ],
+            "32": [
+                "rock_slide"
+            ],
+            "4": [
+                "flail"
+            ],
+            "1": [
+                "copycat",
+                "fake_tears"
+            ],
+            "20": [
+                "rock_tomb"
+            ],
+            "12": [
+                "block"
+            ],
+            "28": [
+                "sucker_punch"
+            ],
+            "24": [
+                "tearful_look"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "calm_mind",
+            "dig",
+            "earth_power",
+            "endure",
+            "facade",
+            "fake_tears",
+            "foul_play",
+            "helping_hand",
+            "low_kick",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "self_destruct",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "thief",
+            "uproar"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "curse",
+            "defense_curl",
+            "harden",
+            "headbutt",
+            "rock_polish",
+            "rollout"
+        ]
+    },
+    "evolution_line_id": 91
+}

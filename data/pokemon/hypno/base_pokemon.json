@@ -1,0 +1,58 @@
+{
+    "name": "hypno",
+    "display_name": "Hypno",
+    "pokedex_number": 97,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 73,
+        "defense": 70,
+        "special_attack": 73,
+        "special_defense": 115,
+        "speed": 67
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 169,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "forewarn",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 75.6,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 42
+}

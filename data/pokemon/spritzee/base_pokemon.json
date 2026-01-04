@@ -1,0 +1,134 @@
+{
+    "name": "spritzee",
+    "display_name": "Spritzee",
+    "pokedex_number": 682,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 78,
+        "attack": 52,
+        "defense": 60,
+        "special_attack": 63,
+        "special_defense": 65,
+        "speed": 23
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 68,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "healer",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "aroma_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 0.5,
+    "egg_groups": [
+        "fairy"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "27": [
+                "psychic"
+            ],
+            "21": [
+                "flail"
+            ],
+            "3": [
+                "sweet_kiss"
+            ],
+            "30": [
+                "charm"
+            ],
+            "18": [
+                "attract"
+            ],
+            "1": [
+                "fairy_wind",
+                "sweet_scent"
+            ],
+            "39": [
+                "skill_swap"
+            ],
+            "12": [
+                "aromatherapy"
+            ],
+            "33": [
+                "calm_mind"
+            ],
+            "6": [
+                "echoed_voice"
+            ],
+            "9": [
+                "draining_kiss"
+            ],
+            "15": [
+                "draining_kiss"
+            ],
+            "24": [
+                "misty_terrain"
+            ],
+            "36": [
+                "moonblast"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "flash_cannon",
+            "gyro_ball",
+            "helping_hand",
+            "light_screen",
+            "misty_terrain",
+            "nasty_plot",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "thunderbolt",
+            "trick_room"
+        ],
+        "tutor": [
+            "misty_explosion"
+        ],
+        "egg_moves": [
+            "after_you",
+            "disable",
+            "wish"
+        ]
+    },
+    "evolution_line_id": 350
+}

@@ -1,0 +1,140 @@
+{
+    "name": "bulbasaur",
+    "display_name": "Bulbasaur",
+    "pokedex_number": 1,
+    "types": [
+        "grass",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 49,
+        "defense": 49,
+        "special_attack": 65,
+        "special_defense": 65,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 64,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "chlorophyll",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 6.9,
+    "egg_groups": [
+        "monster",
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "3": [
+                "vine_whip"
+            ],
+            "1": [
+                "growl",
+                "tackle"
+            ],
+            "21": [
+                "take_down"
+            ],
+            "33": [
+                "double_edge"
+            ],
+            "9": [
+                "leech_seed"
+            ],
+            "6": [
+                "growth"
+            ],
+            "12": [
+                "razor_leaf"
+            ],
+            "36": [
+                "solar_beam"
+            ],
+            "15": [
+                "poison_powder",
+                "sleep_powder"
+            ],
+            "24": [
+                "sweet_scent"
+            ],
+            "27": [
+                "synthesis"
+            ],
+            "30": [
+                "worry_seed"
+            ],
+            "18": [
+                "seed_bomb"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "body_slam",
+            "bullet_seed",
+            "charm",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "giga_drain",
+            "grass_knot",
+            "grassy_terrain",
+            "helping_hand",
+            "leaf_storm",
+            "light_screen",
+            "magical_leaf",
+            "power_whip",
+            "protect",
+            "rest",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "venoshock",
+            "weather_ball",
+            "work_up"
+        ],
+        "tutor": [
+            "grass_pledge",
+            "grassy_glide"
+        ],
+        "egg_moves": [
+            "curse",
+            "ingrain",
+            "nature_power",
+            "petal_dance",
+            "skull_bash",
+            "toxic"
+        ]
+    },
+    "evolution_line_id": 1
+}

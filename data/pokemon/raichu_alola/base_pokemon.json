@@ -1,0 +1,132 @@
+{
+    "name": "raichu_alola",
+    "display_name": "Raichu Alola",
+    "pokedex_number": 10100,
+    "types": [
+        "electric",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 50,
+        "special_attack": 95,
+        "special_defense": 85,
+        "speed": 110
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 243,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "surge_surfer",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 21.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "agility",
+                "charm",
+                "discharge",
+                "double_team",
+                "electro_ball",
+                "feint",
+                "growl",
+                "light_screen",
+                "nasty_plot",
+                "nuzzle",
+                "play_nice",
+                "psychic",
+                "quick_attack",
+                "slam",
+                "spark",
+                "sweet_kiss",
+                "tail_whip",
+                "thunder",
+                "thunder_shock",
+                "thunder_wave",
+                "thunderbolt"
+            ],
+            "0": [
+                "psychic"
+            ]
+        },
+        "machine": [
+            "agility",
+            "ally_switch",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "calm_mind",
+            "charm",
+            "dig",
+            "draining_kiss",
+            "electric_terrain",
+            "electro_ball",
+            "electroweb",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "hyper_beam",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "pay_day",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "reversal",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "stored_power",
+            "substitute",
+            "surf",
+            "swift",
+            "thief",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "uproar",
+            "volt_switch",
+            "wild_charge"
+        ],
+        "tutor": [
+            "expanding_force",
+            "rising_voltage"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

@@ -1,0 +1,154 @@
+{
+    "name": "meowstic_female",
+    "display_name": "Meowstic Female",
+    "pokedex_number": 10025,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 74,
+        "attack": 48,
+        "defense": 76,
+        "special_attack": 83,
+        "special_defense": 81,
+        "speed": 104
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 163,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "competitive",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 8.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "disarming_voice",
+                "fake_out",
+                "leer",
+                "magical_leaf",
+                "scratch"
+            ],
+            "21": [
+                "psybeam"
+            ],
+            "9": [
+                "confusion"
+            ],
+            "54": [
+                "psychic"
+            ],
+            "34": [
+                "light_screen",
+                "reflect"
+            ],
+            "49": [
+                "shadow_ball"
+            ],
+            "59": [
+                "future_sight"
+            ],
+            "29": [
+                "role_play"
+            ],
+            "44": [
+                "extrasensory"
+            ],
+            "18": [
+                "covet"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "15": [
+                "charge_beam"
+            ],
+            "39": [
+                "psyshock"
+            ],
+            "12": [
+                "stored_power"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "charm",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "future_sight",
+            "giga_impact",
+            "helping_hand",
+            "hyper_beam",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "magical_leaf",
+            "nasty_plot",
+            "pay_day",
+            "payback",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "tail_slap",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

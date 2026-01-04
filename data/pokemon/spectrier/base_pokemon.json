@@ -1,0 +1,124 @@
+{
+    "name": "spectrier",
+    "display_name": "Spectrier",
+    "pokedex_number": 897,
+    "types": [
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 65,
+        "defense": 60,
+        "special_attack": 145,
+        "special_defense": 80,
+        "speed": 130
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 290,
+    "base_happiness": 35,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "grim_neigh",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 44.5,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "18": [
+                "stomp"
+            ],
+            "6": [
+                "double_kick"
+            ],
+            "1": [
+                "tackle",
+                "tail_whip"
+            ],
+            "42": [
+                "take_down"
+            ],
+            "54": [
+                "thrash"
+            ],
+            "66": [
+                "double_edge"
+            ],
+            "60": [
+                "disable"
+            ],
+            "48": [
+                "agility"
+            ],
+            "24": [
+                "confuse_ray"
+            ],
+            "30": [
+                "haze"
+            ],
+            "36": [
+                "shadow_ball"
+            ],
+            "72": [
+                "nasty_plot"
+            ],
+            "12": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "body_slam",
+            "bulldoze",
+            "calm_mind",
+            "crunch",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "foul_play",
+            "giga_impact",
+            "hex",
+            "hyper_beam",
+            "mud_shot",
+            "nasty_plot",
+            "payback",
+            "phantom_force",
+            "protect",
+            "psycho_cut",
+            "rest",
+            "round",
+            "scary_face",
+            "shadow_ball",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "swift",
+            "taunt",
+            "uproar",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 475
+}

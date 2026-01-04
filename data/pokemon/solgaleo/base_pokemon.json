@@ -1,0 +1,158 @@
+{
+    "name": "solgaleo",
+    "display_name": "Solgaleo",
+    "pokedex_number": 791,
+    "types": [
+        "psychic",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 137,
+        "attack": 137,
+        "defense": 107,
+        "special_attack": 113,
+        "special_defense": 89,
+        "speed": 97
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 306,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "full_metal_body",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 3.4,
+    "weight_kg": 230.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "63": [
+                "solar_beam"
+            ],
+            "1": [
+                "cosmic_power",
+                "metal_claw",
+                "noble_roar",
+                "sunsteel_strike",
+                "teleport"
+            ],
+            "35": [
+                "morning_sun"
+            ],
+            "42": [
+                "crunch"
+            ],
+            "14": [
+                "metal_sound"
+            ],
+            "49": [
+                "metal_burst"
+            ],
+            "70": [
+                "flare_blitz"
+            ],
+            "84": [
+                "giga_impact"
+            ],
+            "21": [
+                "zen_headbutt"
+            ],
+            "28": [
+                "flash_cannon"
+            ],
+            "7": [
+                "iron_head"
+            ],
+            "77": [
+                "wide_guard"
+            ],
+            "56": [
+                "wild_charge"
+            ],
+            "0": [
+                "sunsteel_strike"
+            ]
+        },
+        "machine": [
+            "agility",
+            "bulldoze",
+            "calm_mind",
+            "close_combat",
+            "cosmic_power",
+            "crunch",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "flash_cannon",
+            "focus_blast",
+            "future_sight",
+            "giga_impact",
+            "gyro_ball",
+            "heat_crash",
+            "heavy_slam",
+            "helping_hand",
+            "hyper_beam",
+            "hyper_voice",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "light_screen",
+            "mystical_fire",
+            "outrage",
+            "protect",
+            "psychic",
+            "psychic_fangs",
+            "psyshock",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "scary_face",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "solar_beam",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "trick_room",
+            "wild_charge",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "meteor_beam",
+            "steel_beam",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 413
+}

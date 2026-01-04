@@ -1,0 +1,57 @@
+{
+    "name": "basculegion_female",
+    "display_name": "Basculegion Female",
+    "pokedex_number": 10248,
+    "types": [
+        "water",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 120,
+        "attack": 92,
+        "defense": 65,
+        "special_attack": 100,
+        "special_defense": 75,
+        "speed": 78
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 265,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "adaptability",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 3.0,
+    "weight_kg": 110.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

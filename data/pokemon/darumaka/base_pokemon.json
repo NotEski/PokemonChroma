@@ -1,0 +1,140 @@
+{
+    "name": "darumaka",
+    "display_name": "Darumaka",
+    "pokedex_number": 554,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 90,
+        "defense": 45,
+        "special_attack": 15,
+        "special_defense": 45,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 63,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 37.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "28": [
+                "fire_punch"
+            ],
+            "24": [
+                "headbutt"
+            ],
+            "1": [
+                "ember",
+                "tackle"
+            ],
+            "44": [
+                "thrash"
+            ],
+            "8": [
+                "bite"
+            ],
+            "36": [
+                "belly_drum"
+            ],
+            "32": [
+                "uproar"
+            ],
+            "4": [
+                "taunt"
+            ],
+            "48": [
+                "superpower"
+            ],
+            "40": [
+                "flare_blitz"
+            ],
+            "20": [
+                "fire_fang"
+            ],
+            "12": [
+                "incinerate"
+            ],
+            "16": [
+                "work_up"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "dig",
+            "encore",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "fling",
+            "focus_energy",
+            "grass_knot",
+            "gyro_ball",
+            "heat_wave",
+            "mega_kick",
+            "mega_punch",
+            "overheat",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "taunt",
+            "thief",
+            "u_turn",
+            "uproar",
+            "will_o_wisp",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "extrasensory",
+            "flame_wheel",
+            "focus_punch",
+            "hammer_arm",
+            "take_down",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 282
+}

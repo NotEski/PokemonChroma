@@ -1,0 +1,53 @@
+{
+    "name": "gogoat",
+    "display_name": "Gogoat",
+    "pokedex_number": 673,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 123,
+        "attack": 100,
+        "defense": 62,
+        "special_attack": 97,
+        "special_defense": 81,
+        "speed": 68
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 186,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sap_sipper",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "grass_pelt",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 91.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 345
+}

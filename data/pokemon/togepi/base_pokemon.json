@@ -1,0 +1,155 @@
+{
+    "name": "togepi",
+    "display_name": "Togepi",
+    "pokedex_number": 175,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 35,
+        "attack": 20,
+        "defense": 65,
+        "special_attack": 40,
+        "special_defense": 65,
+        "speed": 20
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 49,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "super_luck",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 1.5,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "growl",
+                "pound"
+            ],
+            "32": [
+                "double_edge"
+            ],
+            "24": [
+                "metronome"
+            ],
+            "4": [
+                "sweet_kiss"
+            ],
+            "12": [
+                "charm"
+            ],
+            "36": [
+                "safeguard"
+            ],
+            "44": [
+                "baton_pass"
+            ],
+            "16": [
+                "ancient_power"
+            ],
+            "40": [
+                "follow_me"
+            ],
+            "52": [
+                "wish"
+            ],
+            "20": [
+                "yawn"
+            ],
+            "48": [
+                "last_resort"
+            ],
+            "28": [
+                "after_you"
+            ],
+            "8": [
+                "life_dew"
+            ]
+        },
+        "machine": [
+            "attract",
+            "baton_pass",
+            "body_slam",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "fling",
+            "future_sight",
+            "grass_knot",
+            "helping_hand",
+            "hyper_voice",
+            "light_screen",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "mystical_fire",
+            "nasty_plot",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder_wave",
+            "tri_attack",
+            "trick",
+            "uproar",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "aerial_ace",
+            "extrasensory",
+            "morning_sun",
+            "peck",
+            "present",
+            "psycho_shift"
+        ]
+    },
+    "evolution_line_id": 87
+}

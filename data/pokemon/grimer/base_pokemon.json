@@ -1,0 +1,58 @@
+{
+    "name": "grimer",
+    "display_name": "Grimer",
+    "pokedex_number": 88,
+    "types": [
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 50,
+        "special_attack": 40,
+        "special_defense": 50,
+        "speed": 25
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 65,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "stench",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sticky_hold",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "poison_touch",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 30.0,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 38
+}

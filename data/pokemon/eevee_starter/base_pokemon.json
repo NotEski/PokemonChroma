@@ -1,0 +1,56 @@
+{
+    "name": "eevee_starter",
+    "display_name": "Eevee Starter",
+    "pokedex_number": 10159,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 75,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 85,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 87,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "adaptability",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "anticipation",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 6.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

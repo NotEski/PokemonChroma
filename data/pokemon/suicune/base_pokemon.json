@@ -1,0 +1,144 @@
+{
+    "name": "suicune",
+    "display_name": "Suicune",
+    "pokedex_number": 245,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 75,
+        "defense": 115,
+        "special_attack": 90,
+        "special_defense": 115,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 261,
+    "base_happiness": 35,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 187.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "extreme_speed",
+                "gust",
+                "leer",
+                "mist",
+                "sheer_cold",
+                "water_gun"
+            ],
+            "12": [
+                "bite"
+            ],
+            "24": [
+                "roar"
+            ],
+            "72": [
+                "hydro_pump"
+            ],
+            "54": [
+                "surf"
+            ],
+            "78": [
+                "blizzard"
+            ],
+            "66": [
+                "rain_dance"
+            ],
+            "42": [
+                "crunch"
+            ],
+            "60": [
+                "mirror_coat"
+            ],
+            "48": [
+                "extrasensory"
+            ],
+            "18": [
+                "calm_mind"
+            ],
+            "6": [
+                "water_pulse"
+            ],
+            "36": [
+                "tailwind"
+            ],
+            "30": [
+                "ice_fang"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "brine",
+            "bulldoze",
+            "calm_mind",
+            "crunch",
+            "dig",
+            "dive",
+            "endure",
+            "facade",
+            "giga_impact",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "icy_wind",
+            "iron_head",
+            "iron_tail",
+            "liquidation",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "sandstorm",
+            "scald",
+            "shadow_ball",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "waterfall",
+            "weather_ball",
+            "whirlpool"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 125
+}

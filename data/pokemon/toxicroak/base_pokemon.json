@@ -1,0 +1,158 @@
+{
+    "name": "toxicroak",
+    "display_name": "Toxicroak",
+    "pokedex_number": 454,
+    "types": [
+        "poison",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 83,
+        "attack": 106,
+        "defense": 65,
+        "special_attack": 86,
+        "special_defense": 65,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 172,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "anticipation",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "dry_skin",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "poison_touch",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 44.4,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "mud_slap",
+                "poison_sting",
+                "taunt"
+            ],
+            "36": [
+                "toxic"
+            ],
+            "48": [
+                "sludge_bomb"
+            ],
+            "28": [
+                "swagger"
+            ],
+            "12": [
+                "flatter"
+            ],
+            "16": [
+                "revenge"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "32": [
+                "poison_jab"
+            ],
+            "42": [
+                "nasty_plot"
+            ],
+            "20": [
+                "venoshock"
+            ],
+            "54": [
+                "belch"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "baton_pass",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "cross_poison",
+            "dark_pulse",
+            "dig",
+            "drain_punch",
+            "earthquake",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "gunk_shot",
+            "helping_hand",
+            "hyper_beam",
+            "ice_punch",
+            "icy_wind",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder_punch",
+            "venom_drench",
+            "venoshock",
+            "work_up",
+            "x_scissor"
+        ],
+        "tutor": [
+            "coaching",
+            "corrosive_gas",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 235
+}

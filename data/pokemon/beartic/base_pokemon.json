@@ -1,0 +1,160 @@
+{
+    "name": "beartic",
+    "display_name": "Beartic",
+    "pokedex_number": 614,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 130,
+        "defense": 80,
+        "special_attack": 70,
+        "special_defense": 80,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 177,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "snow_cloak",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "slush_rush",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.6,
+    "weight_kg": 260.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "33": [
+                "thrash"
+            ],
+            "1": [
+                "aqua_jet",
+                "charm",
+                "endure",
+                "fury_swipes",
+                "growl",
+                "icicle_crash",
+                "powder_snow"
+            ],
+            "41": [
+                "blizzard"
+            ],
+            "36": [
+                "rest"
+            ],
+            "21": [
+                "slash"
+            ],
+            "24": [
+                "flail"
+            ],
+            "9": [
+                "icy_wind"
+            ],
+            "27": [
+                "swagger"
+            ],
+            "30": [
+                "hail"
+            ],
+            "51": [
+                "superpower"
+            ],
+            "46": [
+                "sheer_cold"
+            ],
+            "15": [
+                "brine"
+            ],
+            "18": [
+                "frost_breath"
+            ],
+            "0": [
+                "icicle_crash"
+            ],
+            "12": [
+                "play_nice"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_press",
+            "brick_break",
+            "brine",
+            "bulk_up",
+            "bulldoze",
+            "charm",
+            "dig",
+            "dive",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "hail",
+            "heavy_slam",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "ice_punch",
+            "icicle_spear",
+            "icy_wind",
+            "liquidation",
+            "low_kick",
+            "mega_kick",
+            "mega_punch",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "surf",
+            "swords_dance",
+            "taunt",
+            "throat_chop"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 310
+}

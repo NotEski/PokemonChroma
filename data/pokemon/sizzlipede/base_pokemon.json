@@ -1,0 +1,126 @@
+{
+    "name": "sizzlipede",
+    "display_name": "Sizzlipede",
+    "pokedex_number": 850,
+    "types": [
+        "fire",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 45,
+        "special_attack": 50,
+        "special_defense": 50,
+        "speed": 45
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "white_smoke",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 1.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "30": [
+                "slam"
+            ],
+            "5": [
+                "wrap"
+            ],
+            "10": [
+                "bite"
+            ],
+            "1": [
+                "ember",
+                "smokescreen"
+            ],
+            "35": [
+                "fire_spin"
+            ],
+            "15": [
+                "flame_wheel"
+            ],
+            "40": [
+                "crunch"
+            ],
+            "20": [
+                "bug_bite"
+            ],
+            "25": [
+                "coil"
+            ],
+            "50": [
+                "lunge"
+            ],
+            "45": [
+                "fire_lash"
+            ],
+            "55": [
+                "burn_up"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brutal_swing",
+            "bug_buzz",
+            "crunch",
+            "endure",
+            "facade",
+            "fire_spin",
+            "heat_crash",
+            "heat_wave",
+            "leech_life",
+            "power_whip",
+            "protect",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "venoshock"
+        ],
+        "tutor": [
+            "scorching_sands",
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "defense_curl",
+            "knock_off",
+            "rollout",
+            "struggle_bug"
+        ]
+    },
+    "evolution_line_id": 447
+}

@@ -1,0 +1,132 @@
+{
+    "name": "cobalion",
+    "display_name": "Cobalion",
+    "pokedex_number": 638,
+    "types": [
+        "steel",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 91,
+        "attack": 90,
+        "defense": 129,
+        "special_attack": 90,
+        "special_defense": 72,
+        "speed": 108
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 261,
+    "base_happiness": 35,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "justified",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.1,
+    "weight_kg": 250.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "56": [
+                "swords_dance"
+            ],
+            "21": [
+                "double_kick"
+            ],
+            "42": [
+                "take_down"
+            ],
+            "1": [
+                "helping_hand",
+                "leer",
+                "quick_attack",
+                "work_up"
+            ],
+            "7": [
+                "metal_claw"
+            ],
+            "35": [
+                "metal_burst"
+            ],
+            "70": [
+                "close_combat"
+            ],
+            "63": [
+                "iron_head"
+            ],
+            "14": [
+                "quick_guard"
+            ],
+            "28": [
+                "retaliate"
+            ],
+            "49": [
+                "sacred_sword"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "bounce",
+            "brick_break",
+            "calm_mind",
+            "close_combat",
+            "endure",
+            "facade",
+            "false_swipe",
+            "flash_cannon",
+            "focus_blast",
+            "giga_impact",
+            "helping_hand",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "megahorn",
+            "poison_jab",
+            "protect",
+            "reflect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "scary_face",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thunder_wave",
+            "volt_switch",
+            "work_up",
+            "x_scissor",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching",
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 325
+}

@@ -1,0 +1,54 @@
+{
+    "name": "bastiodon",
+    "display_name": "Bastiodon",
+    "pokedex_number": 411,
+    "types": [
+        "rock",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 52,
+        "defense": 168,
+        "special_attack": 47,
+        "special_defense": 138,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 173,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "soundproof",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 149.5,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 212
+}

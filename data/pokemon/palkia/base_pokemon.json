@@ -1,0 +1,151 @@
+{
+    "name": "palkia",
+    "display_name": "Palkia",
+    "pokedex_number": 484,
+    "types": [
+        "water",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 120,
+        "defense": 100,
+        "special_attack": 150,
+        "special_defense": 120,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 306,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 4.2,
+    "weight_kg": 336.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "88": [
+                "hydro_pump"
+            ],
+            "24": [
+                "slash"
+            ],
+            "1": [
+                "scary_face",
+                "water_pulse"
+            ],
+            "8": [
+                "dragon_breath"
+            ],
+            "16": [
+                "ancient_power"
+            ],
+            "40": [
+                "dragon_claw"
+            ],
+            "32": [
+                "aqua_ring"
+            ],
+            "48": [
+                "aura_sphere"
+            ],
+            "64": [
+                "aqua_tail"
+            ],
+            "56": [
+                "power_gem"
+            ],
+            "72": [
+                "earth_power"
+            ],
+            "80": [
+                "spacial_rend"
+            ]
+        },
+        "machine": [
+            "aura_sphere",
+            "avalanche",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "breaking_swipe",
+            "brick_break",
+            "brine",
+            "bulk_up",
+            "bulldoze",
+            "dive",
+            "dragon_claw",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "hail",
+            "heavy_slam",
+            "hydro_pump",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "liquidation",
+            "outrage",
+            "power_gem",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "trick_room",
+            "whirlpool"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat",
+            "scale_shot"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 245
+}

@@ -1,0 +1,149 @@
+{
+    "name": "avalugg",
+    "display_name": "Avalugg",
+    "pokedex_number": 713,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 117,
+        "defense": 184,
+        "special_attack": 44,
+        "special_defense": 46,
+        "speed": 28
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 55,
+    "base_experience_yield": 180,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 505.0,
+    "egg_groups": [
+        "monster",
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "body_slam",
+                "harden",
+                "powder_snow",
+                "rapid_spin",
+                "tackle",
+                "wide_guard"
+            ],
+            "0": [
+                "body_slam"
+            ],
+            "36": [
+                "take_down"
+            ],
+            "46": [
+                "double_edge"
+            ],
+            "21": [
+                "bite"
+            ],
+            "41": [
+                "blizzard"
+            ],
+            "30": [
+                "recover"
+            ],
+            "51": [
+                "skull_bash"
+            ],
+            "9": [
+                "curse"
+            ],
+            "15": [
+                "protect"
+            ],
+            "12": [
+                "icy_wind"
+            ],
+            "33": [
+                "crunch"
+            ],
+            "27": [
+                "iron_defense"
+            ],
+            "18": [
+                "avalanche"
+            ],
+            "24": [
+                "ice_fang"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "earthquake",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "giga_impact",
+            "gyro_ball",
+            "hail",
+            "heavy_slam",
+            "high_horsepower",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "icicle_spear",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "surf"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 366
+}

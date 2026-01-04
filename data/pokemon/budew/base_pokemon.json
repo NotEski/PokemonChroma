@@ -1,0 +1,104 @@
+{
+    "name": "budew",
+    "display_name": "Budew",
+    "pokedex_number": 406,
+    "types": [
+        "grass",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 30,
+        "defense": 35,
+        "special_attack": 50,
+        "special_defense": 70,
+        "speed": 55
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 56,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "poison_point",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 1.2,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "absorb",
+                "growth",
+                "stun_spore",
+                "worry_seed"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bullet_seed",
+            "dazzling_gleam",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "grass_knot",
+            "leaf_storm",
+            "pin_missile",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "seed_bomb",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "solar_beam",
+            "spikes",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "uproar",
+            "venoshock",
+            "weather_ball"
+        ],
+        "tutor": [
+            "grassy_glide"
+        ],
+        "egg_moves": [
+            "cotton_spore",
+            "extrasensory",
+            "life_dew",
+            "razor_leaf",
+            "sleep_powder",
+            "synthesis"
+        ]
+    },
+    "evolution_line_id": 158
+}

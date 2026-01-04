@@ -1,0 +1,151 @@
+{
+    "name": "tyrunt",
+    "display_name": "Tyrunt",
+    "pokedex_number": 696,
+    "types": [
+        "rock",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 58,
+        "attack": 89,
+        "defense": 77,
+        "special_attack": 45,
+        "special_defense": 45,
+        "speed": 48
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 72,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "strong_jaw",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 26.0,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "24": [
+                "stomp"
+            ],
+            "48": [
+                "horn_drill"
+            ],
+            "1": [
+                "tackle",
+                "tail_whip"
+            ],
+            "40": [
+                "thrash"
+            ],
+            "16": [
+                "bite"
+            ],
+            "4": [
+                "roar"
+            ],
+            "44": [
+                "earthquake"
+            ],
+            "28": [
+                "rock_slide"
+            ],
+            "12": [
+                "charm"
+            ],
+            "32": [
+                "crunch"
+            ],
+            "8": [
+                "ancient_power"
+            ],
+            "36": [
+                "dragon_claw"
+            ],
+            "20": [
+                "dragon_tail"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "charm",
+            "close_combat",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_fang",
+            "hyper_voice",
+            "ice_fang",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "outrage",
+            "play_rough",
+            "protect",
+            "psychic_fangs",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "thunder_fang",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "lash_out",
+            "meteor_beam",
+            "scale_shot"
+        ],
+        "egg_moves": [
+            "curse",
+            "poison_fang",
+            "rock_polish",
+            "rock_throw"
+        ]
+    },
+    "evolution_line_id": 357
+}

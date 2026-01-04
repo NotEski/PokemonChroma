@@ -1,0 +1,130 @@
+{
+    "name": "herdier",
+    "display_name": "Herdier",
+    "pokedex_number": 507,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 65,
+        "special_attack": 35,
+        "special_defense": 65,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 130,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sand_rush",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 14.7,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "bite",
+                "leer",
+                "tackle",
+                "work_up"
+            ],
+            "36": [
+                "take_down"
+            ],
+            "54": [
+                "roar"
+            ],
+            "48": [
+                "reversal"
+            ],
+            "30": [
+                "crunch"
+            ],
+            "42": [
+                "helping_hand"
+            ],
+            "60": [
+                "last_resort"
+            ],
+            "66": [
+                "giga_impact"
+            ],
+            "12": [
+                "retaliate"
+            ],
+            "24": [
+                "play_rough"
+            ],
+            "19": [
+                "baby_doll_eyes"
+            ]
+        },
+        "machine": [
+            "attract",
+            "charm",
+            "crunch",
+            "dig",
+            "endure",
+            "facade",
+            "fire_fang",
+            "giga_impact",
+            "helping_hand",
+            "hyper_voice",
+            "ice_fang",
+            "payback",
+            "play_rough",
+            "protect",
+            "psychic_fangs",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "reversal",
+            "rock_tomb",
+            "round",
+            "shadow_ball",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "thunder_fang",
+            "thunder_wave",
+            "thunderbolt",
+            "uproar",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 260
+}

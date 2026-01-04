@@ -1,0 +1,54 @@
+{
+    "name": "bellsprout",
+    "display_name": "Bellsprout",
+    "pokedex_number": 69,
+    "types": [
+        "grass",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 75,
+        "defense": 35,
+        "special_attack": 70,
+        "special_defense": 30,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 60,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 4.0,
+    "egg_groups": [
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 29
+}

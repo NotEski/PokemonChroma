@@ -1,0 +1,155 @@
+{
+    "name": "reuniclus",
+    "display_name": "Reuniclus",
+    "pokedex_number": 579,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 110,
+        "attack": 65,
+        "defense": 75,
+        "special_attack": 125,
+        "special_defense": 85,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 50,
+    "base_experience_yield": 221,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "overcoat",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 20.1,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "12": [
+                "psybeam"
+            ],
+            "1": [
+                "confusion",
+                "endeavor",
+                "hammer_arm",
+                "protect",
+                "recover"
+            ],
+            "40": [
+                "psychic"
+            ],
+            "24": [
+                "light_screen",
+                "reflect"
+            ],
+            "16": [
+                "charm"
+            ],
+            "35": [
+                "pain_split"
+            ],
+            "56": [
+                "future_sight"
+            ],
+            "48": [
+                "skill_swap"
+            ],
+            "0": [
+                "hammer_arm"
+            ],
+            "64": [
+                "wonder_room"
+            ],
+            "20": [
+                "psyshock"
+            ],
+            "28": [
+                "ally_switch"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "charm",
+            "drain_punch",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "flash_cannon",
+            "fling",
+            "focus_blast",
+            "future_sight",
+            "giga_impact",
+            "grass_knot",
+            "guard_swap",
+            "gyro_ball",
+            "helping_hand",
+            "hyper_beam",
+            "ice_punch",
+            "imprison",
+            "iron_defense",
+            "light_screen",
+            "mega_punch",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "superpower",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 294
+}

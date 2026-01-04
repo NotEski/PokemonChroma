@@ -1,0 +1,48 @@
+{
+    "name": "silcoon",
+    "display_name": "Silcoon",
+    "pokedex_number": 266,
+    "types": [
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 35,
+        "defense": 55,
+        "special_attack": 25,
+        "special_defense": 25,
+        "speed": 15
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 72,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "shed_skin",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 10.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 135
+}

@@ -1,0 +1,143 @@
+{
+    "name": "remoraid",
+    "display_name": "Remoraid",
+    "pokedex_number": 223,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 35,
+        "attack": 65,
+        "defense": 35,
+        "special_attack": 65,
+        "special_defense": 35,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 60,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sniper",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 12.0,
+    "egg_groups": [
+        "water1",
+        "water2"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "helping_hand",
+                "water_gun"
+            ],
+            "36": [
+                "hydro_pump"
+            ],
+            "32": [
+                "ice_beam"
+            ],
+            "12": [
+                "psybeam"
+            ],
+            "20": [
+                "bubble_beam"
+            ],
+            "16": [
+                "aurora_beam"
+            ],
+            "44": [
+                "hyper_beam"
+            ],
+            "8": [
+                "focus_energy"
+            ],
+            "24": [
+                "lock_on"
+            ],
+            "28": [
+                "bullet_seed"
+            ],
+            "4": [
+                "water_pulse"
+            ],
+            "40": [
+                "soak"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "blizzard",
+            "bounce",
+            "brine",
+            "bullet_seed",
+            "dive",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "focus_energy",
+            "gunk_shot",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "mud_shot",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "rock_blast",
+            "round",
+            "scald",
+            "screech",
+            "seed_bomb",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "thief",
+            "thunder_wave",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "acid_spray",
+            "flail",
+            "haze",
+            "octazooka",
+            "supersonic",
+            "water_spout"
+        ]
+    },
+    "evolution_line_id": 114
+}

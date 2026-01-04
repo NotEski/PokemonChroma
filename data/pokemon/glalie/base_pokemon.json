@@ -1,0 +1,141 @@
+{
+    "name": "glalie",
+    "display_name": "Glalie",
+    "pokedex_number": 362,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 80,
+        "defense": 80,
+        "special_attack": 80,
+        "special_defense": 80,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 168,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 256.5,
+    "egg_groups": [
+        "fairy",
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "54": [
+                "headbutt"
+            ],
+            "1": [
+                "astonish",
+                "double_team",
+                "freeze_dry",
+                "leer",
+                "powder_snow",
+                "sheer_cold"
+            ],
+            "35": [
+                "bite"
+            ],
+            "68": [
+                "blizzard"
+            ],
+            "20": [
+                "protect"
+            ],
+            "25": [
+                "icy_wind"
+            ],
+            "61": [
+                "crunch"
+            ],
+            "47": [
+                "hail"
+            ],
+            "15": [
+                "ice_shard"
+            ],
+            "40": [
+                "ice_fang"
+            ],
+            "30": [
+                "frost_breath"
+            ],
+            "0": [
+                "freeze_dry"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "dark_pulse",
+            "earthquake",
+            "endure",
+            "facade",
+            "fake_tears",
+            "giga_impact",
+            "gyro_ball",
+            "hail",
+            "hex",
+            "hyper_beam",
+            "ice_beam",
+            "ice_fang",
+            "icicle_spear",
+            "icy_wind",
+            "iron_head",
+            "light_screen",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scary_face",
+            "self_destruct",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "spikes",
+            "substitute",
+            "taunt",
+            "weather_ball"
+        ],
+        "tutor": [
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 186
+}

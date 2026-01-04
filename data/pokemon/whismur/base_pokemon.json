@@ -1,0 +1,129 @@
+{
+    "name": "whismur",
+    "display_name": "Whismur",
+    "pokedex_number": 293,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 64,
+        "attack": 51,
+        "defense": 23,
+        "special_attack": 51,
+        "special_defense": 23,
+        "speed": 28
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 48,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "soundproof",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 16.3,
+    "egg_groups": [
+        "monster",
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "pound"
+            ],
+            "21": [
+                "stomp"
+            ],
+            "25": [
+                "roar"
+            ],
+            "30": [
+                "supersonic"
+            ],
+            "40": [
+                "screech"
+            ],
+            "15": [
+                "rest",
+                "sleep_talk"
+            ],
+            "35": [
+                "uproar"
+            ],
+            "45": [
+                "hyper_voice"
+            ],
+            "10": [
+                "howl"
+            ],
+            "5": [
+                "echoed_voice"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "body_slam",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "fling",
+            "hyper_voice",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "mega_kick",
+            "mega_punch",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "round",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "thunder_punch",
+            "uproar",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "circle_throw",
+            "disarming_voice",
+            "endeavor",
+            "extrasensory",
+            "hammer_arm",
+            "smokescreen",
+            "take_down",
+            "whirlwind"
+        ]
+    },
+    "evolution_line_id": 145
+}

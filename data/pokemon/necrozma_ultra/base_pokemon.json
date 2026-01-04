@@ -1,0 +1,47 @@
+{
+    "name": "necrozma_ultra",
+    "display_name": "Necrozma Ultra",
+    "pokedex_number": 10157,
+    "types": [
+        "psychic",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 97,
+        "attack": 167,
+        "defense": 97,
+        "special_attack": 167,
+        "special_defense": 97,
+        "speed": 129
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 339,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "neuroforce",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 7.5,
+    "weight_kg": 230.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

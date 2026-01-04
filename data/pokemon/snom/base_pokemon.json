@@ -1,0 +1,78 @@
+{
+    "name": "snom",
+    "display_name": "Snom",
+    "pokedex_number": 872,
+    "types": [
+        "ice",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 30,
+        "attack": 25,
+        "defense": 35,
+        "special_attack": 45,
+        "special_defense": 30,
+        "speed": 20
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 37,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "shield_dust",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "ice_scales",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 3.8,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "powder_snow",
+                "struggle_bug"
+            ]
+        },
+        "machine": [
+            "attract",
+            "bug_buzz",
+            "endure",
+            "facade",
+            "icicle_spear",
+            "icy_wind",
+            "protect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute"
+        ],
+        "tutor": [
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "bug_bite",
+            "fairy_wind",
+            "mirror_coat"
+        ]
+    },
+    "evolution_line_id": 455
+}

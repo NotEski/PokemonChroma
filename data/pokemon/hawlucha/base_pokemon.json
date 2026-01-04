@@ -1,0 +1,175 @@
+{
+    "name": "hawlucha",
+    "display_name": "Hawlucha",
+    "pokedex_number": 701,
+    "types": [
+        "fighting",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 78,
+        "attack": 92,
+        "defense": 75,
+        "special_attack": 74,
+        "special_defense": 63,
+        "speed": 118
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 100,
+    "base_experience_yield": 175,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 21.5,
+    "egg_groups": [
+        "flying",
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "40": [
+                "swords_dance"
+            ],
+            "4": [
+                "wing_attack"
+            ],
+            "1": [
+                "hone_claws",
+                "tackle"
+            ],
+            "24": [
+                "submission"
+            ],
+            "48": [
+                "high_jump_kick"
+            ],
+            "56": [
+                "sky_attack"
+            ],
+            "8": [
+                "detect"
+            ],
+            "16": [
+                "encore"
+            ],
+            "32": [
+                "taunt"
+            ],
+            "52": [
+                "endeavor"
+            ],
+            "20": [
+                "feather_dance"
+            ],
+            "12": [
+                "aerial_ace"
+            ],
+            "28": [
+                "bounce"
+            ],
+            "36": [
+                "roost"
+            ],
+            "44": [
+                "flying_press"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "ally_switch",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "body_press",
+            "bounce",
+            "brave_bird",
+            "brick_break",
+            "bulk_up",
+            "close_combat",
+            "dig",
+            "drain_punch",
+            "encore",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fire_punch",
+            "fling",
+            "fly",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "iron_head",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "throat_chop",
+            "thunder_punch",
+            "u_turn",
+            "work_up",
+            "x_scissor",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching",
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "cross_chop",
+            "defog",
+            "entrainment",
+            "feint",
+            "mean_look",
+            "quick_guard"
+        ]
+    },
+    "evolution_line_id": 359
+}

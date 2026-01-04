@@ -1,0 +1,148 @@
+{
+    "name": "decidueye",
+    "display_name": "Decidueye",
+    "pokedex_number": 724,
+    "types": [
+        "grass",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 78,
+        "attack": 107,
+        "defense": 75,
+        "special_attack": 100,
+        "special_defense": 100,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 239,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "long_reach",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 36.6,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "growl",
+                "leaf_storm",
+                "leafage",
+                "phantom_force",
+                "spirit_shackle",
+                "spite",
+                "tackle",
+                "u_turn"
+            ],
+            "9": [
+                "peck"
+            ],
+            "15": [
+                "razor_leaf"
+            ],
+            "20": [
+                "synthesis"
+            ],
+            "51": [
+                "feather_dance"
+            ],
+            "44": [
+                "leaf_blade"
+            ],
+            "25": [
+                "pluck"
+            ],
+            "37": [
+                "sucker_punch"
+            ],
+            "58": [
+                "brave_bird"
+            ],
+            "30": [
+                "nasty_plot"
+            ],
+            "12": [
+                "shadow_sneak"
+            ],
+            "0": [
+                "spirit_shackle"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "air_slash",
+            "attract",
+            "baton_pass",
+            "brave_bird",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "hex",
+            "hurricane",
+            "hyper_beam",
+            "imprison",
+            "leaf_blade",
+            "leaf_storm",
+            "light_screen",
+            "low_sweep",
+            "nasty_plot",
+            "phantom_force",
+            "protect",
+            "psycho_cut",
+            "rest",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "u_turn",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "frenzy_plant",
+            "grass_pledge",
+            "grassy_glide",
+            "poltergeist",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 374
+}

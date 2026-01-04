@@ -1,0 +1,141 @@
+{
+    "name": "buzzwole",
+    "display_name": "Buzzwole",
+    "pokedex_number": 794,
+    "types": [
+        "bug",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 107,
+        "attack": 139,
+        "defense": 139,
+        "special_attack": 53,
+        "special_defense": 53,
+        "speed": 79
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.4,
+    "weight_kg": 333.6,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "35": [
+                "mega_punch"
+            ],
+            "55": [
+                "counter"
+            ],
+            "1": [
+                "harden",
+                "power_up_punch"
+            ],
+            "45": [
+                "focus_energy"
+            ],
+            "30": [
+                "reversal"
+            ],
+            "25": [
+                "endure"
+            ],
+            "50": [
+                "dynamic_punch"
+            ],
+            "15": [
+                "vital_throw"
+            ],
+            "70": [
+                "focus_punch"
+            ],
+            "5": [
+                "taunt"
+            ],
+            "65": [
+                "superpower"
+            ],
+            "20": [
+                "bulk_up"
+            ],
+            "60": [
+                "hammer_arm"
+            ],
+            "10": [
+                "fell_stinger"
+            ],
+            "40": [
+                "lunge"
+            ]
+        },
+        "machine": [
+            "body_slam",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "darkest_lariat",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_energy",
+            "giga_impact",
+            "gyro_ball",
+            "high_horsepower",
+            "ice_punch",
+            "iron_head",
+            "leech_life",
+            "low_sweep",
+            "mega_punch",
+            "outrage",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rest",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "taunt",
+            "thunder_punch",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching",
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 415
+}

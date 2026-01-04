@@ -1,0 +1,133 @@
+{
+    "name": "raichu",
+    "display_name": "Raichu",
+    "pokedex_number": 26,
+    "types": [
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 90,
+        "defense": 55,
+        "special_attack": 90,
+        "special_defense": 80,
+        "speed": 110
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 218,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "static",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "lightning_rod",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 30.0,
+    "egg_groups": [
+        "ground",
+        "fairy"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "0": [
+                "thunder_punch"
+            ],
+            "1": [
+                "agility",
+                "charm",
+                "discharge",
+                "double_team",
+                "electro_ball",
+                "feint",
+                "growl",
+                "light_screen",
+                "nasty_plot",
+                "nuzzle",
+                "play_nice",
+                "quick_attack",
+                "slam",
+                "spark",
+                "sweet_kiss",
+                "tail_whip",
+                "thunder",
+                "thunder_punch",
+                "thunder_shock",
+                "thunder_wave",
+                "thunderbolt"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "charm",
+            "dig",
+            "draining_kiss",
+            "eerie_impulse",
+            "electric_terrain",
+            "electro_ball",
+            "electroweb",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "hyper_beam",
+            "iron_tail",
+            "light_screen",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "pay_day",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "reversal",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "substitute",
+            "surf",
+            "swift",
+            "thief",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "uproar",
+            "volt_switch",
+            "wild_charge"
+        ],
+        "tutor": [
+            "rising_voltage"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 10
+}

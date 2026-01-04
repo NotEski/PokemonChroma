@@ -1,0 +1,156 @@
+{
+    "name": "milotic",
+    "display_name": "Milotic",
+    "pokedex_number": 350,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 60,
+        "defense": 79,
+        "special_attack": 100,
+        "special_defense": 125,
+        "speed": 81
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 2,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 189,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "marvel_scale",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "competitive",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "cute_charm",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 6.2,
+    "weight_kg": 162.0,
+    "egg_groups": [
+        "water1",
+        "dragon"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "flail",
+                "splash",
+                "tackle",
+                "water_gun",
+                "water_pulse",
+                "wrap"
+            ],
+            "52": [
+                "hydro_pump"
+            ],
+            "40": [
+                "surf"
+            ],
+            "28": [
+                "recover"
+            ],
+            "16": [
+                "attract"
+            ],
+            "36": [
+                "safeguard"
+            ],
+            "8": [
+                "twister"
+            ],
+            "44": [
+                "rain_dance"
+            ],
+            "0": [
+                "water_pulse"
+            ],
+            "12": [
+                "aqua_ring"
+            ],
+            "32": [
+                "aqua_tail"
+            ],
+            "48": [
+                "coil"
+            ],
+            "24": [
+                "dragon_tail"
+            ],
+            "4": [
+                "disarming_voice"
+            ],
+            "20": [
+                "life_dew"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "breaking_swipe",
+            "brine",
+            "brutal_swing",
+            "bulldoze",
+            "dive",
+            "dragon_dance",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "giga_impact",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "icy_wind",
+            "imprison",
+            "iron_head",
+            "iron_tail",
+            "light_screen",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "swift",
+            "waterfall",
+            "weather_ball",
+            "whirlpool"
+        ],
+        "tutor": [
+            "flip_turn",
+            "scale_shot",
+            "skitter_smack",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 178
+}

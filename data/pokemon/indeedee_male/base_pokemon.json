@@ -1,0 +1,141 @@
+{
+    "name": "indeedee_male",
+    "display_name": "Indeedee Male",
+    "pokedex_number": 876,
+    "types": [
+        "psychic",
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 65,
+        "defense": 55,
+        "special_attack": 105,
+        "special_defense": 95,
+        "speed": 95
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 166,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "synchronize",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "psychic_surge",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 28.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "15": [
+                "psybeam"
+            ],
+            "35": [
+                "psychic"
+            ],
+            "5": [
+                "encore"
+            ],
+            "20": [
+                "helping_hand"
+            ],
+            "30": [
+                "aromatherapy"
+            ],
+            "40": [
+                "calm_mind"
+            ],
+            "55": [
+                "last_resort"
+            ],
+            "45": [
+                "power_split"
+            ],
+            "25": [
+                "after_you"
+            ],
+            "1": [
+                "play_nice",
+                "stored_power"
+            ],
+            "10": [
+                "disarming_voice"
+            ],
+            "50": [
+                "psychic_terrain"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "future_sight",
+            "helping_hand",
+            "hyper_voice",
+            "imprison",
+            "magic_room",
+            "magical_leaf",
+            "metronome",
+            "mystical_fire",
+            "pay_day",
+            "play_rough",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "rest",
+            "round",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "swift",
+            "tri_attack",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "terrain_pulse"
+        ],
+        "egg_moves": [
+            "extrasensory",
+            "fake_out",
+            "psych_up"
+        ]
+    },
+    "evolution_line_id": null
+}

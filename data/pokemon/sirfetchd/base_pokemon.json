@@ -1,0 +1,136 @@
+{
+    "name": "sirfetchd",
+    "display_name": "Sirfetch\u2019d",
+    "pokedex_number": 865,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 62,
+        "attack": 135,
+        "defense": 95,
+        "special_attack": 68,
+        "special_defense": 82,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 177,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 117.0,
+    "egg_groups": [
+        "flying",
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "45": [
+                "swords_dance"
+            ],
+            "50": [
+                "slam"
+            ],
+            "1": [
+                "first_impression",
+                "fury_cutter",
+                "iron_defense",
+                "leer",
+                "peck",
+                "sand_attack"
+            ],
+            "25": [
+                "detect"
+            ],
+            "15": [
+                "rock_smash"
+            ],
+            "40": [
+                "brick_break"
+            ],
+            "30": [
+                "knock_off"
+            ],
+            "0": [
+                "iron_defense"
+            ],
+            "55": [
+                "leaf_blade"
+            ],
+            "65": [
+                "brave_bird"
+            ],
+            "35": [
+                "defog"
+            ],
+            "60": [
+                "final_gambit"
+            ],
+            "20": [
+                "brutal_swing"
+            ],
+            "70": [
+                "meteor_assault"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "body_slam",
+            "brave_bird",
+            "brick_break",
+            "brutal_swing",
+            "close_combat",
+            "endure",
+            "facade",
+            "focus_energy",
+            "helping_hand",
+            "iron_defense",
+            "leaf_blade",
+            "poison_jab",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_blade",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "throat_chop",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching",
+            "dual_wingbeat",
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 35
+}

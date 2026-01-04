@@ -1,0 +1,154 @@
+{
+    "name": "runerigus",
+    "display_name": "Runerigus",
+    "pokedex_number": 867,
+    "types": [
+        "ground",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 58,
+        "attack": 95,
+        "defense": 145,
+        "special_attack": 50,
+        "special_defense": 105,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 169,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "wandering_spirit",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 66.6,
+    "egg_groups": [
+        "mineral",
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "32": [
+                "slam"
+            ],
+            "12": [
+                "disable"
+            ],
+            "50": [
+                "earthquake"
+            ],
+            "1": [
+                "astonish",
+                "haze",
+                "night_shade",
+                "protect",
+                "scary_face",
+                "shadow_claw"
+            ],
+            "38": [
+                "curse"
+            ],
+            "62": [
+                "destiny_bond"
+            ],
+            "28": [
+                "mean_look"
+            ],
+            "44": [
+                "shadow_ball"
+            ],
+            "0": [
+                "shadow_claw"
+            ],
+            "56": [
+                "guard_split",
+                "power_split"
+            ],
+            "24": [
+                "hex"
+            ],
+            "20": [
+                "crafty_shield"
+            ],
+            "16": [
+                "brutal_swing"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "amnesia",
+            "attract",
+            "body_press",
+            "brutal_swing",
+            "bulldoze",
+            "calm_mind",
+            "dark_pulse",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "giga_impact",
+            "grass_knot",
+            "guard_swap",
+            "hex",
+            "hyper_beam",
+            "imprison",
+            "iron_defense",
+            "nasty_plot",
+            "payback",
+            "phantom_force",
+            "power_swap",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "revenge",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sand_tomb",
+            "sandstorm",
+            "scary_face",
+            "shadow_ball",
+            "shadow_claw",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "taunt",
+            "thief",
+            "toxic_spikes",
+            "trick",
+            "trick_room",
+            "will_o_wisp",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "poltergeist"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 287
+}

@@ -1,0 +1,48 @@
+{
+    "name": "tynamo",
+    "display_name": "Tynamo",
+    "pokedex_number": 602,
+    "types": [
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 35,
+        "attack": 55,
+        "defense": 40,
+        "special_attack": 45,
+        "special_defense": 40,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 55,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 0.3,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 306
+}

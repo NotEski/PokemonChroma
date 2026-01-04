@@ -1,0 +1,150 @@
+{
+    "name": "skarmory",
+    "display_name": "Skarmory",
+    "pokedex_number": 227,
+    "types": [
+        "steel",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 80,
+        "defense": 140,
+        "special_attack": 40,
+        "special_defense": 70,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 25,
+    "base_experience_yield": 163,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 50.5,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "20": [
+                "wing_attack"
+            ],
+            "4": [
+                "sand_attack"
+            ],
+            "8": [
+                "fury_attack"
+            ],
+            "1": [
+                "leer",
+                "peck"
+            ],
+            "36": [
+                "drill_peck"
+            ],
+            "16": [
+                "agility"
+            ],
+            "24": [
+                "slash"
+            ],
+            "44": [
+                "spikes"
+            ],
+            "28": [
+                "steel_wing"
+            ],
+            "12": [
+                "metal_claw"
+            ],
+            "40": [
+                "metal_sound"
+            ],
+            "48": [
+                "iron_defense"
+            ],
+            "52": [
+                "brave_bird"
+            ],
+            "32": [
+                "autotomize"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "body_press",
+            "brave_bird",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "fly",
+            "guard_swap",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "payback",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "spikes",
+            "stealth_rock",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "x_scissor"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "steel_beam"
+        ],
+        "egg_moves": [
+            "air_cutter",
+            "curse",
+            "feint",
+            "night_slash",
+            "roost",
+            "sky_attack",
+            "whirlwind"
+        ]
+    },
+    "evolution_line_id": 117
+}

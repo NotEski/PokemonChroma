@@ -1,0 +1,138 @@
+{
+    "name": "haunter",
+    "display_name": "Haunter",
+    "pokedex_number": 93,
+    "types": [
+        "ghost",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 50,
+        "defense": 45,
+        "special_attack": 115,
+        "special_defense": 55,
+        "speed": 95
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 142,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 0.1,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "confuse_ray",
+                "hypnosis",
+                "lick",
+                "mean_look",
+                "shadow_punch"
+            ],
+            "30": [
+                "night_shade"
+            ],
+            "60": [
+                "dream_eater"
+            ],
+            "20": [
+                "curse"
+            ],
+            "16": [
+                "spite"
+            ],
+            "54": [
+                "destiny_bond"
+            ],
+            "48": [
+                "shadow_ball"
+            ],
+            "0": [
+                "shadow_punch"
+            ],
+            "12": [
+                "payback"
+            ],
+            "36": [
+                "sucker_punch"
+            ],
+            "42": [
+                "dark_pulse"
+            ],
+            "24": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "dark_pulse",
+            "dazzling_gleam",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "fling",
+            "foul_play",
+            "giga_drain",
+            "hex",
+            "ice_punch",
+            "icy_wind",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "scary_face",
+            "self_destruct",
+            "shadow_ball",
+            "shadow_claw",
+            "skill_swap",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "uproar",
+            "venoshock",
+            "will_o_wisp",
+            "wonder_room"
+        ],
+        "tutor": [
+            "corrosive_gas",
+            "poltergeist",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 40
+}

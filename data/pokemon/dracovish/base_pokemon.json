@@ -1,0 +1,140 @@
+{
+    "name": "dracovish",
+    "display_name": "Dracovish",
+    "pokedex_number": 882,
+    "types": [
+        "water",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 90,
+        "defense": 100,
+        "special_attack": 70,
+        "special_defense": 80,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 177,
+    "base_happiness": 50,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "strong_jaw",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sand_rush",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.3,
+    "weight_kg": 215.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "42": [
+                "stomp"
+            ],
+            "1": [
+                "tackle",
+                "water_gun"
+            ],
+            "28": [
+                "bite"
+            ],
+            "49": [
+                "super_fang"
+            ],
+            "7": [
+                "protect"
+            ],
+            "35": [
+                "dragon_breath"
+            ],
+            "56": [
+                "crunch"
+            ],
+            "21": [
+                "ancient_power"
+            ],
+            "70": [
+                "dragon_pulse"
+            ],
+            "77": [
+                "dragon_rush"
+            ],
+            "14": [
+                "brutal_swing"
+            ],
+            "63": [
+                "fishious_rend"
+            ]
+        },
+        "machine": [
+            "body_slam",
+            "brine",
+            "brutal_swing",
+            "bulldoze",
+            "crunch",
+            "dive",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "giga_impact",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_fang",
+            "iron_head",
+            "leech_life",
+            "liquidation",
+            "low_kick",
+            "mega_kick",
+            "outrage",
+            "protect",
+            "psychic_fangs",
+            "rain_dance",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "surf",
+            "waterfall",
+            "whirlpool",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "meteor_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 463
+}

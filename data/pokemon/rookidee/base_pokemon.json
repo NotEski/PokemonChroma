@@ -1,0 +1,128 @@
+{
+    "name": "rookidee",
+    "display_name": "Rookidee",
+    "pokedex_number": 821,
+    "types": [
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 38,
+        "attack": 47,
+        "defense": 35,
+        "special_attack": 33,
+        "special_defense": 35,
+        "speed": 57
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 49,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unnerve",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "big_pecks",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 1.8,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "12": [
+                "fury_attack"
+            ],
+            "1": [
+                "leer",
+                "peck"
+            ],
+            "28": [
+                "drill_peck"
+            ],
+            "24": [
+                "scary_face"
+            ],
+            "32": [
+                "swagger"
+            ],
+            "20": [
+                "taunt"
+            ],
+            "16": [
+                "pluck"
+            ],
+            "36": [
+                "brave_bird"
+            ],
+            "8": [
+                "hone_claws"
+            ],
+            "4": [
+                "power_trip"
+            ]
+        },
+        "machine": [
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "brave_bird",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fly",
+            "focus_energy",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "round",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "u_turn",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "defog",
+            "rock_smash",
+            "roost",
+            "sand_attack",
+            "sky_attack",
+            "spite",
+            "tailwind"
+        ]
+    },
+    "evolution_line_id": 434
+}

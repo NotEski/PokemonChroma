@@ -1,0 +1,128 @@
+{
+    "name": "venipede",
+    "display_name": "Venipede",
+    "pokedex_number": 543,
+    "types": [
+        "bug",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 30,
+        "attack": 45,
+        "defense": 59,
+        "special_attack": 30,
+        "special_defense": 39,
+        "speed": 57
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 52,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "swarm",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 5.3,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "28": [
+                "take_down"
+            ],
+            "44": [
+                "double_edge"
+            ],
+            "1": [
+                "defense_curl",
+                "poison_sting"
+            ],
+            "36": [
+                "toxic"
+            ],
+            "32": [
+                "agility"
+            ],
+            "16": [
+                "screech"
+            ],
+            "8": [
+                "protect"
+            ],
+            "4": [
+                "rollout"
+            ],
+            "12": [
+                "poison_tail"
+            ],
+            "20": [
+                "bug_bite"
+            ],
+            "24": [
+                "venoshock"
+            ],
+            "40": [
+                "venom_drench"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "endure",
+            "facade",
+            "gyro_ball",
+            "hex",
+            "iron_defense",
+            "payback",
+            "pin_missile",
+            "poison_jab",
+            "protect",
+            "rest",
+            "round",
+            "screech",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "solar_beam",
+            "spikes",
+            "substitute",
+            "sunny_day",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [
+            "skitter_smack",
+            "steel_roller"
+        ],
+        "egg_moves": [
+            "bite",
+            "fury_cutter"
+        ]
+    },
+    "evolution_line_id": 277
+}

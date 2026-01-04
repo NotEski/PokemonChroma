@@ -1,0 +1,135 @@
+{
+    "name": "cutiefly",
+    "display_name": "Cutiefly",
+    "pokedex_number": 742,
+    "types": [
+        "bug",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 40,
+        "special_attack": 55,
+        "special_defense": 40,
+        "speed": 84
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "honey_gather",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "shield_dust",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sweet_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.1,
+    "weight_kg": 0.2,
+    "egg_groups": [
+        "bug",
+        "fairy"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "absorb",
+                "fairy_wind"
+            ],
+            "6": [
+                "stun_spore"
+            ],
+            "12": [
+                "sweet_scent"
+            ],
+            "30": [
+                "aromatherapy"
+            ],
+            "48": [
+                "bug_buzz"
+            ],
+            "36": [
+                "switcheroo"
+            ],
+            "54": [
+                "quiver_dance"
+            ],
+            "24": [
+                "struggle_bug"
+            ],
+            "18": [
+                "draining_kiss"
+            ],
+            "42": [
+                "dazzling_gleam"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "ally_switch",
+            "attract",
+            "baton_pass",
+            "bug_buzz",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "helping_hand",
+            "imprison",
+            "leech_life",
+            "light_screen",
+            "magic_room",
+            "play_rough",
+            "protect",
+            "psychic",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "trick",
+            "u_turn",
+            "wonder_room"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": [
+            "aromatic_mist",
+            "moonblast",
+            "sticky_web"
+        ]
+    },
+    "evolution_line_id": 382
+}

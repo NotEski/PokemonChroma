@@ -1,0 +1,150 @@
+{
+    "name": "swoobat",
+    "display_name": "Swoobat",
+    "pokedex_number": 528,
+    "types": [
+        "psychic",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 67,
+        "attack": 57,
+        "defense": 55,
+        "special_attack": 77,
+        "special_defense": 55,
+        "speed": 114
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 149,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "unaware",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "klutz",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "simple",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 10.5,
+    "egg_groups": [
+        "ground",
+        "flying"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "attract",
+                "confusion",
+                "endeavor",
+                "gust"
+            ],
+            "40": [
+                "psychic"
+            ],
+            "30": [
+                "amnesia"
+            ],
+            "50": [
+                "future_sight"
+            ],
+            "20": [
+                "imprison"
+            ],
+            "15": [
+                "air_cutter"
+            ],
+            "45": [
+                "calm_mind"
+            ],
+            "25": [
+                "assurance"
+            ],
+            "35": [
+                "air_slash"
+            ],
+            "55": [
+                "simple_beam"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "air_slash",
+            "ally_switch",
+            "amnesia",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "calm_mind",
+            "charm",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "fly",
+            "future_sight",
+            "giga_drain",
+            "giga_impact",
+            "gyro_ball",
+            "heat_wave",
+            "helping_hand",
+            "hyper_beam",
+            "imprison",
+            "light_screen",
+            "nasty_plot",
+            "protect",
+            "psychic",
+            "psychic_fangs",
+            "psycho_cut",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "steel_wing",
+            "stored_power",
+            "substitute",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_wave",
+            "trick",
+            "trick_room",
+            "u_turn",
+            "uproar",
+            "venom_drench",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 269
+}

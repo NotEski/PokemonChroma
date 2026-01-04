@@ -1,0 +1,56 @@
+{
+    "name": "basculin_white_striped",
+    "display_name": "Basculin White Striped",
+    "pokedex_number": 10247,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 92,
+        "defense": 65,
+        "special_attack": 80,
+        "special_defense": 55,
+        "speed": 98
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 161,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "rattled",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "adaptability",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 18.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

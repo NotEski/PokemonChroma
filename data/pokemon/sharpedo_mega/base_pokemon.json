@@ -1,0 +1,47 @@
+{
+    "name": "sharpedo_mega",
+    "display_name": "Sharpedo Mega",
+    "pokedex_number": 10070,
+    "types": [
+        "water",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 140,
+        "defense": 70,
+        "special_attack": 110,
+        "special_defense": 65,
+        "speed": 105
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 196,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "strong_jaw",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.5,
+    "weight_kg": 130.3,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

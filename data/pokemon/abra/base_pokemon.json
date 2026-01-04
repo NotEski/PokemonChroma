@@ -1,0 +1,116 @@
+{
+    "name": "abra",
+    "display_name": "Abra",
+    "pokedex_number": 63,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 25,
+        "attack": 20,
+        "defense": 15,
+        "special_attack": 105,
+        "special_defense": 55,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 62,
+    "base_happiness": 70,
+    "gender_rate": 2,
+    "abilities": [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 19.5,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "teleport"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "body_slam",
+            "calm_mind",
+            "dazzling_gleam",
+            "drain_punch",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "fling",
+            "foul_play",
+            "grass_knot",
+            "guard_swap",
+            "ice_punch",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunder_wave",
+            "tri_attack",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "confusion",
+            "guard_split",
+            "magic_coat"
+        ]
+    },
+    "evolution_line_id": 27
+}

@@ -1,0 +1,170 @@
+{
+    "name": "kangaskhan",
+    "display_name": "Kangaskhan",
+    "pokedex_number": 115,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 105,
+        "attack": 95,
+        "defense": 80,
+        "special_attack": 40,
+        "special_defense": 80,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 172,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "early_bird",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "scrappy",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.2,
+    "weight_kg": 80.0,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "pound",
+                "tail_whip"
+            ],
+            "16": [
+                "stomp"
+            ],
+            "24": [
+                "headbutt"
+            ],
+            "12": [
+                "bite"
+            ],
+            "4": [
+                "growl"
+            ],
+            "20": [
+                "focus_energy"
+            ],
+            "44": [
+                "reversal"
+            ],
+            "48": [
+                "outrage"
+            ],
+            "40": [
+                "endure"
+            ],
+            "36": [
+                "crunch"
+            ],
+            "8": [
+                "fake_out"
+            ],
+            "52": [
+                "last_resort"
+            ],
+            "28": [
+                "sucker_punch"
+            ],
+            "32": [
+                "double_hit"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "avalanche",
+            "beat_up",
+            "blizzard",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "low_kick",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "thief",
+            "thunder",
+            "thunder_punch",
+            "thunderbolt",
+            "uproar",
+            "whirlpool",
+            "work_up"
+        ],
+        "tutor": [
+            "terrain_pulse"
+        ],
+        "egg_moves": [
+            "circle_throw",
+            "counter",
+            "disable",
+            "double_edge",
+            "endeavor",
+            "hammer_arm"
+        ]
+    },
+    "evolution_line_id": 53
+}

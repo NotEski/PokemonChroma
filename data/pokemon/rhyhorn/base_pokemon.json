@@ -1,0 +1,161 @@
+{
+    "name": "rhyhorn",
+    "display_name": "Rhyhorn",
+    "pokedex_number": 111,
+    "types": [
+        "ground",
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 85,
+        "defense": 95,
+        "special_attack": 30,
+        "special_defense": 30,
+        "speed": 25
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 69,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "lightning_rod",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "reckless",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 115.0,
+    "egg_groups": [
+        "monster",
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "25": [
+                "stomp"
+            ],
+            "15": [
+                "horn_attack"
+            ],
+            "60": [
+                "horn_drill"
+            ],
+            "1": [
+                "tackle",
+                "tail_whip"
+            ],
+            "40": [
+                "take_down"
+            ],
+            "45": [
+                "earthquake"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "55": [
+                "megahorn"
+            ],
+            "30": [
+                "rock_blast"
+            ],
+            "50": [
+                "stone_edge"
+            ],
+            "5": [
+                "smack_down"
+            ],
+            "10": [
+                "bulldoze"
+            ],
+            "35": [
+                "drill_run"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "dragon_pulse",
+            "drill_run",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "flamethrower",
+            "high_horsepower",
+            "ice_beam",
+            "ice_fang",
+            "icy_wind",
+            "iron_tail",
+            "megahorn",
+            "mud_shot",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "reversal",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "thief",
+            "thunder",
+            "thunder_fang",
+            "thunderbolt",
+            "uproar"
+        ],
+        "tutor": [
+            "scorching_sands"
+        ],
+        "egg_moves": [
+            "counter",
+            "curse",
+            "dragon_rush",
+            "guard_split",
+            "metal_burst",
+            "rock_polish",
+            "skull_bash"
+        ]
+    },
+    "evolution_line_id": 50
+}

@@ -1,0 +1,142 @@
+{
+    "name": "copperajah",
+    "display_name": "Copperajah",
+    "pokedex_number": 879,
+    "types": [
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 122,
+        "attack": 130,
+        "defense": 69,
+        "special_attack": 80,
+        "special_defense": 69,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 175,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sheer_force",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "heavy_metal",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 3.0,
+    "weight_kg": 650.0,
+    "egg_groups": [
+        "ground",
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "20": [
+                "stomp"
+            ],
+            "1": [
+                "growl",
+                "heavy_slam",
+                "rock_smash",
+                "rollout",
+                "tackle"
+            ],
+            "37": [
+                "strength"
+            ],
+            "30": [
+                "dig"
+            ],
+            "65": [
+                "superpower"
+            ],
+            "25": [
+                "iron_defense"
+            ],
+            "44": [
+                "iron_head"
+            ],
+            "0": [
+                "heavy_slam"
+            ],
+            "15": [
+                "bulldoze"
+            ],
+            "51": [
+                "play_rough"
+            ],
+            "58": [
+                "high_horsepower"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "dig",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "fling",
+            "giga_impact",
+            "heat_crash",
+            "heavy_slam",
+            "high_horsepower",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "mega_kick",
+            "mud_shot",
+            "outrage",
+            "payback",
+            "play_rough",
+            "power_whip",
+            "protect",
+            "rest",
+            "revenge",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "taunt",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "steel_beam",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 460
+}

@@ -1,0 +1,128 @@
+{
+    "name": "scorbunny",
+    "display_name": "Scorbunny",
+    "pokedex_number": 813,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 71,
+        "defense": 40,
+        "special_attack": 40,
+        "special_defense": 40,
+        "speed": 69
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 62,
+    "base_happiness": 50,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "libero",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 4.5,
+    "egg_groups": [
+        "ground",
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "12": [
+                "double_kick"
+            ],
+            "24": [
+                "headbutt"
+            ],
+            "1": [
+                "growl",
+                "tackle"
+            ],
+            "36": [
+                "double_edge"
+            ],
+            "6": [
+                "ember"
+            ],
+            "28": [
+                "counter"
+            ],
+            "20": [
+                "agility"
+            ],
+            "8": [
+                "quick_attack"
+            ],
+            "32": [
+                "bounce"
+            ],
+            "17": [
+                "flame_charge"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "ally_switch",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "blaze_kick",
+            "bounce",
+            "electro_ball",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "flamethrower",
+            "focus_energy",
+            "gunk_shot",
+            "heat_wave",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mud_shot",
+            "overheat",
+            "protect",
+            "rest",
+            "reversal",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "u_turn",
+            "work_up"
+        ],
+        "tutor": [
+            "fire_pledge"
+        ],
+        "egg_moves": [
+            "high_jump_kick",
+            "sand_attack",
+            "sucker_punch",
+            "super_fang"
+        ]
+    },
+    "evolution_line_id": 431
+}

@@ -1,0 +1,137 @@
+{
+    "name": "bergmite",
+    "display_name": "Bergmite",
+    "pokedex_number": 712,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 69,
+        "defense": 85,
+        "special_attack": 32,
+        "special_defense": 35,
+        "speed": 28
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 99.5,
+    "egg_groups": [
+        "monster",
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "3": [
+                "tackle"
+            ],
+            "36": [
+                "take_down"
+            ],
+            "42": [
+                "double_edge"
+            ],
+            "21": [
+                "bite"
+            ],
+            "39": [
+                "blizzard"
+            ],
+            "30": [
+                "recover"
+            ],
+            "1": [
+                "harden",
+                "rapid_spin"
+            ],
+            "9": [
+                "curse"
+            ],
+            "6": [
+                "powder_snow"
+            ],
+            "15": [
+                "protect"
+            ],
+            "12": [
+                "icy_wind"
+            ],
+            "33": [
+                "crunch"
+            ],
+            "27": [
+                "iron_defense"
+            ],
+            "18": [
+                "avalanche"
+            ],
+            "24": [
+                "ice_fang"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "crunch",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "gyro_ball",
+            "hail",
+            "ice_beam",
+            "ice_fang",
+            "icicle_spear",
+            "icy_wind",
+            "iron_defense",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "surf"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "aurora_veil",
+            "mirror_coat",
+            "mist"
+        ]
+    },
+    "evolution_line_id": 366
+}

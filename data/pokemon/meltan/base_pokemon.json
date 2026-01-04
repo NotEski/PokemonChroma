@@ -1,0 +1,84 @@
+{
+    "name": "meltan",
+    "display_name": "Meltan",
+    "pokedex_number": 808,
+    "types": [
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 46,
+        "attack": 65,
+        "defense": 65,
+        "special_attack": 55,
+        "special_defense": 35,
+        "speed": 34
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 135,
+    "base_happiness": 70,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.2,
+    "weight_kg": 8.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "16": [
+                "headbutt"
+            ],
+            "8": [
+                "tail_whip"
+            ],
+            "1": [
+                "harden",
+                "thunder_shock"
+            ],
+            "24": [
+                "thunder_wave"
+            ],
+            "32": [
+                "acid_armor"
+            ],
+            "40": [
+                "flash_cannon"
+            ]
+        },
+        "machine": [
+            "endure",
+            "facade",
+            "flash_cannon",
+            "gyro_ball",
+            "iron_defense",
+            "protect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "thunder_wave",
+            "thunderbolt"
+        ],
+        "tutor": [
+            "steel_beam"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 428
+}

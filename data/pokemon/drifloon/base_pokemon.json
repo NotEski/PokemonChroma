@@ -1,0 +1,142 @@
+{
+    "name": "drifloon",
+    "display_name": "Drifloon",
+    "pokedex_number": 425,
+    "types": [
+        "ghost",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 50,
+        "defense": 34,
+        "special_attack": 60,
+        "special_defense": 44,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 125,
+    "base_experience_yield": 70,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "aftermath",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "flare_boost",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 1.2,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "fast_then_very_slow",
+    "moves": {
+        "level": {
+            "4": [
+                "gust"
+            ],
+            "1": [
+                "astonish",
+                "minimize"
+            ],
+            "8": [
+                "focus_energy"
+            ],
+            "29": [
+                "self_destruct"
+            ],
+            "44": [
+                "explosion"
+            ],
+            "32": [
+                "destiny_bond"
+            ],
+            "36": [
+                "baton_pass"
+            ],
+            "20": [
+                "shadow_ball"
+            ],
+            "24": [
+                "spit_up",
+                "stockpile",
+                "swallow"
+            ],
+            "40": [
+                "tailwind"
+            ],
+            "12": [
+                "payback"
+            ],
+            "16": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "ally_switch",
+            "amnesia",
+            "attract",
+            "baton_pass",
+            "body_slam",
+            "brutal_swing",
+            "calm_mind",
+            "endure",
+            "facade",
+            "focus_energy",
+            "gyro_ball",
+            "hex",
+            "icy_wind",
+            "payback",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "self_destruct",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "weather_ball",
+            "will_o_wisp"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "clear_smog",
+            "defog",
+            "disable",
+            "haze",
+            "hypnosis",
+            "memento"
+        ]
+    },
+    "evolution_line_id": 219
+}

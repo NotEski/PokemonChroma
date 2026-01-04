@@ -1,0 +1,58 @@
+{
+    "name": "watchog",
+    "display_name": "Watchog",
+    "pokedex_number": 505,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 85,
+        "defense": 69,
+        "special_attack": 60,
+        "special_defense": 69,
+        "speed": 77
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 147,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "illuminate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 27.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 259
+}

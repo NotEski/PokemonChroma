@@ -1,0 +1,137 @@
+{
+    "name": "chinchou",
+    "display_name": "Chinchou",
+    "pokedex_number": 170,
+    "types": [
+        "water",
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 38,
+        "defense": 38,
+        "special_attack": 56,
+        "special_defense": 56,
+        "speed": 67
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 66,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "illuminate",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 12.0,
+    "egg_groups": [
+        "water2"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "40": [
+                "take_down"
+            ],
+            "1": [
+                "supersonic",
+                "water_gun"
+            ],
+            "44": [
+                "hydro_pump"
+            ],
+            "12": [
+                "bubble_beam"
+            ],
+            "8": [
+                "thunder_wave"
+            ],
+            "16": [
+                "confuse_ray"
+            ],
+            "36": [
+                "flail"
+            ],
+            "20": [
+                "spark"
+            ],
+            "24": [
+                "charge"
+            ],
+            "32": [
+                "aqua_ring"
+            ],
+            "28": [
+                "discharge"
+            ],
+            "4": [
+                "electro_ball"
+            ]
+        },
+        "machine": [
+            "agility",
+            "amnesia",
+            "attract",
+            "blizzard",
+            "bounce",
+            "brine",
+            "dazzling_gleam",
+            "dive",
+            "electro_ball",
+            "endure",
+            "facade",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "icy_wind",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scald",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "volt_switch",
+            "waterfall",
+            "whirlpool",
+            "wild_charge"
+        ],
+        "tutor": [
+            "rising_voltage"
+        ],
+        "egg_moves": [
+            "mist",
+            "psybeam",
+            "soak",
+            "water_pulse"
+        ]
+    },
+    "evolution_line_id": 86
+}

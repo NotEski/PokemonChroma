@@ -1,0 +1,132 @@
+{
+    "name": "ninjask",
+    "display_name": "Ninjask",
+    "pokedex_number": 291,
+    "types": [
+        "bug",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 61,
+        "attack": 90,
+        "defense": 45,
+        "special_attack": 50,
+        "special_defense": 50,
+        "speed": 160
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 160,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "speed_boost",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 12.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "aerial_ace",
+                "baton_pass",
+                "dig",
+                "double_team",
+                "false_swipe",
+                "fury_cutter",
+                "harden",
+                "metal_claw",
+                "mud_slap",
+                "sand_attack",
+                "scratch",
+                "screech"
+            ],
+            "57": [
+                "swords_dance"
+            ],
+            "23": [
+                "absorb"
+            ],
+            "15": [
+                "agility"
+            ],
+            "0": [
+                "double_team",
+                "fury_cutter",
+                "screech"
+            ],
+            "36": [
+                "fury_swipes"
+            ],
+            "50": [
+                "slash"
+            ],
+            "43": [
+                "mind_reader"
+            ],
+            "64": [
+                "x_scissor"
+            ],
+            "29": [
+                "bug_bite"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "baton_pass",
+            "bug_buzz",
+            "dig",
+            "endure",
+            "facade",
+            "false_swipe",
+            "giga_drain",
+            "giga_impact",
+            "hyper_beam",
+            "leech_life",
+            "protect",
+            "rest",
+            "round",
+            "sandstorm",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thief",
+            "u_turn",
+            "uproar",
+            "x_scissor"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 144
+}

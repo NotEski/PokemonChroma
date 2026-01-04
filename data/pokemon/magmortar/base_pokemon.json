@@ -1,0 +1,145 @@
+{
+    "name": "magmortar",
+    "display_name": "Magmortar",
+    "pokedex_number": 467,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 95,
+        "defense": 67,
+        "special_attack": 125,
+        "special_defense": 95,
+        "speed": 83
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 30,
+    "base_experience_yield": 243,
+    "base_happiness": 70,
+    "gender_rate": 2,
+    "abilities": [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 68.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "28": [
+                "fire_punch"
+            ],
+            "1": [
+                "ember",
+                "leer",
+                "smog",
+                "smokescreen"
+            ],
+            "46": [
+                "flamethrower"
+            ],
+            "64": [
+                "hyper_beam"
+            ],
+            "40": [
+                "low_kick"
+            ],
+            "20": [
+                "confuse_ray"
+            ],
+            "58": [
+                "fire_blast"
+            ],
+            "16": [
+                "flame_wheel"
+            ],
+            "24": [
+                "scary_face"
+            ],
+            "52": [
+                "sunny_day"
+            ],
+            "34": [
+                "lava_plume"
+            ],
+            "12": [
+                "clear_smog"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "heat_wave",
+            "helping_hand",
+            "hyper_beam",
+            "iron_tail",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "mystical_fire",
+            "overheat",
+            "power_swap",
+            "protect",
+            "psychic",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunderbolt",
+            "uproar",
+            "weather_ball",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 61
+}

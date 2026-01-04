@@ -1,0 +1,132 @@
+{
+    "name": "charmeleon",
+    "display_name": "Charmeleon",
+    "pokedex_number": 5,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 58,
+        "attack": 64,
+        "defense": 58,
+        "special_attack": 80,
+        "special_defense": 65,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 142,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "solar_power",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 19.0,
+    "egg_groups": [
+        "monster",
+        "dragon"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "ember",
+                "growl",
+                "scratch",
+                "smokescreen"
+            ],
+            "30": [
+                "flamethrower"
+            ],
+            "42": [
+                "fire_spin"
+            ],
+            "24": [
+                "slash"
+            ],
+            "37": [
+                "scary_face"
+            ],
+            "12": [
+                "dragon_breath"
+            ],
+            "54": [
+                "flare_blitz"
+            ],
+            "19": [
+                "fire_fang"
+            ],
+            "48": [
+                "inferno"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "attract",
+            "beat_up",
+            "body_slam",
+            "brick_break",
+            "crunch",
+            "dig",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fire_blast",
+            "fire_fang",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "fling",
+            "heat_wave",
+            "helping_hand",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "overheat",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thunder_punch",
+            "weather_ball",
+            "will_o_wisp",
+            "work_up"
+        ],
+        "tutor": [
+            "fire_pledge"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 2
+}

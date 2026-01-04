@@ -1,0 +1,59 @@
+{
+    "name": "spinda",
+    "display_name": "Spinda",
+    "pokedex_number": 327,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 60,
+        "defense": 60,
+        "special_attack": 60,
+        "special_defense": 60,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 126,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "tangled_feet",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "contrary",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 5.0,
+    "egg_groups": [
+        "ground",
+        "humanshape"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 165
+}

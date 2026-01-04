@@ -1,0 +1,136 @@
+{
+    "name": "hippopotas",
+    "display_name": "Hippopotas",
+    "pokedex_number": 449,
+    "types": [
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 68,
+        "attack": 72,
+        "defense": 78,
+        "special_attack": 38,
+        "special_defense": 42,
+        "speed": 32
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 140,
+    "base_experience_yield": 66,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sand_stream",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 49.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "sand_attack",
+                "tackle"
+            ],
+            "28": [
+                "take_down"
+            ],
+            "44": [
+                "double_edge"
+            ],
+            "4": [
+                "bite"
+            ],
+            "32": [
+                "roar"
+            ],
+            "40": [
+                "earthquake"
+            ],
+            "48": [
+                "fissure"
+            ],
+            "16": [
+                "dig"
+            ],
+            "36": [
+                "rest"
+            ],
+            "24": [
+                "sandstorm"
+            ],
+            "20": [
+                "crunch"
+            ],
+            "8": [
+                "yawn"
+            ],
+            "52": [
+                "slack_off"
+            ],
+            "12": [
+                "sand_tomb"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "high_horsepower",
+            "iron_tail",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "rest",
+            "revenge",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "weather_ball"
+        ],
+        "tutor": [
+            "scorching_sands"
+        ],
+        "egg_moves": [
+            "curse",
+            "spit_up",
+            "stockpile",
+            "swallow",
+            "whirlwind"
+        ]
+    },
+    "evolution_line_id": 233
+}

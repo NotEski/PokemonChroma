@@ -1,0 +1,146 @@
+{
+    "name": "tapu_fini",
+    "display_name": "Tapu Fini",
+    "pokedex_number": 788,
+    "types": [
+        "water",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 75,
+        "defense": 115,
+        "special_attack": 95,
+        "special_defense": 130,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 3,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 257,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "misty_surge",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 21.2,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "10": [
+                "haze",
+                "mist"
+            ],
+            "1": [
+                "disarming_voice",
+                "water_gun"
+            ],
+            "65": [
+                "hydro_pump"
+            ],
+            "40": [
+                "surf"
+            ],
+            "5": [
+                "withdraw"
+            ],
+            "50": [
+                "mean_look"
+            ],
+            "45": [
+                "muddy_water"
+            ],
+            "20": [
+                "water_pulse"
+            ],
+            "25": [
+                "brine"
+            ],
+            "15": [
+                "aqua_ring"
+            ],
+            "30": [
+                "defog"
+            ],
+            "70": [
+                "soak"
+            ],
+            "35": [
+                "heal_pulse"
+            ],
+            "75": [
+                "misty_terrain"
+            ],
+            "60": [
+                "moonblast"
+            ],
+            "55": [
+                "natures_madness"
+            ]
+        },
+        "machine": [
+            "blizzard",
+            "brine",
+            "calm_mind",
+            "dazzling_gleam",
+            "dive",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fling",
+            "giga_impact",
+            "grass_knot",
+            "guard_swap",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_defense",
+            "light_screen",
+            "magic_room",
+            "misty_terrain",
+            "muddy_water",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "scald",
+            "shadow_ball",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "stored_power",
+            "substitute",
+            "surf",
+            "taunt",
+            "trick",
+            "waterfall",
+            "whirlpool",
+            "wonder_room"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

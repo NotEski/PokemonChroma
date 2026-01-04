@@ -1,0 +1,143 @@
+{
+    "name": "elgyem",
+    "display_name": "Elgyem",
+    "pokedex_number": 605,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 55,
+        "defense": 55,
+        "special_attack": 85,
+        "special_defense": 55,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 67,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "telepathy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "synchronize",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 9.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "30": [
+                "headbutt"
+            ],
+            "1": [
+                "confusion",
+                "growl"
+            ],
+            "18": [
+                "psybeam"
+            ],
+            "60": [
+                "psychic"
+            ],
+            "12": [
+                "teleport"
+            ],
+            "43": [
+                "recover"
+            ],
+            "6": [
+                "imprison"
+            ],
+            "48": [
+                "calm_mind"
+            ],
+            "36": [
+                "zen_headbutt"
+            ],
+            "24": [
+                "guard_split",
+                "power_split"
+            ],
+            "54": [
+                "wonder_room"
+            ]
+        },
+        "machine": [
+            "agility",
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "cosmic_power",
+            "dark_pulse",
+            "endure",
+            "energy_ball",
+            "facade",
+            "guard_swap",
+            "imprison",
+            "light_screen",
+            "nasty_plot",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "screech",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stored_power",
+            "substitute",
+            "thief",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "uproar",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "meteor_beam"
+        ],
+        "egg_moves": [
+            "astonish",
+            "destiny_bond",
+            "disable",
+            "psych_up"
+        ]
+    },
+    "evolution_line_id": 307
+}

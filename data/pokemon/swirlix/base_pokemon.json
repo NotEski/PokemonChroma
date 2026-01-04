@@ -1,0 +1,132 @@
+{
+    "name": "swirlix",
+    "display_name": "Swirlix",
+    "pokedex_number": 684,
+    "types": [
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 62,
+        "attack": 48,
+        "defense": 66,
+        "special_attack": 59,
+        "special_defense": 57,
+        "speed": 49
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 200,
+    "base_experience_yield": 68,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sweet_veil",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 3.5,
+    "egg_groups": [
+        "fairy"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "sweet_scent",
+                "tackle"
+            ],
+            "21": [
+                "string_shot"
+            ],
+            "24": [
+                "cotton_spore"
+            ],
+            "30": [
+                "wish"
+            ],
+            "39": [
+                "endeavor"
+            ],
+            "9": [
+                "aromatherapy"
+            ],
+            "15": [
+                "fake_tears"
+            ],
+            "27": [
+                "energy_ball"
+            ],
+            "18": [
+                "round"
+            ],
+            "36": [
+                "cotton_guard"
+            ],
+            "12": [
+                "draining_kiss"
+            ],
+            "33": [
+                "play_rough"
+            ],
+            "6": [
+                "fairy_wind"
+            ],
+            "3": [
+                "play_nice"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "flamethrower",
+            "helping_hand",
+            "light_screen",
+            "play_rough",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "thief",
+            "thunderbolt"
+        ],
+        "tutor": [
+            "misty_explosion"
+        ],
+        "egg_moves": [
+            "after_you",
+            "copycat",
+            "sticky_web",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 351
+}

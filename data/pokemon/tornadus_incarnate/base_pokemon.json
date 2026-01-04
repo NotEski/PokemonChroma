@@ -1,0 +1,145 @@
+{
+    "name": "tornadus_incarnate",
+    "display_name": "Tornadus Incarnate",
+    "pokedex_number": 641,
+    "types": [
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 79,
+        "attack": 115,
+        "defense": 70,
+        "special_attack": 125,
+        "special_defense": 80,
+        "speed": 111
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 261,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 63.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "gust"
+            ],
+            "70": [
+                "thrash"
+            ],
+            "5": [
+                "leer"
+            ],
+            "15": [
+                "bite"
+            ],
+            "25": [
+                "agility"
+            ],
+            "10": [
+                "swagger"
+            ],
+            "60": [
+                "rain_dance"
+            ],
+            "40": [
+                "crunch"
+            ],
+            "50": [
+                "uproar"
+            ],
+            "20": [
+                "air_cutter"
+            ],
+            "45": [
+                "extrasensory"
+            ],
+            "55": [
+                "hammer_arm"
+            ],
+            "30": [
+                "tailwind"
+            ],
+            "35": [
+                "air_slash"
+            ],
+            "65": [
+                "hurricane"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "assurance",
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "crunch",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "fling",
+            "fly",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "grass_knot",
+            "heat_wave",
+            "hurricane",
+            "hyper_beam",
+            "icy_wind",
+            "iron_tail",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "revenge",
+            "round",
+            "scary_face",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "superpower",
+            "taunt",
+            "thief",
+            "u_turn",
+            "uproar",
+            "weather_ball"
+        ],
+        "tutor": [
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

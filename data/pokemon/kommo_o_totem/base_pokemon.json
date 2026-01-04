@@ -1,0 +1,57 @@
+{
+    "name": "kommo_o_totem",
+    "display_name": "Kommo O Totem",
+    "pokedex_number": 10146,
+    "types": [
+        "dragon",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 110,
+        "defense": 125,
+        "special_attack": 100,
+        "special_defense": 105,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 270,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "bulletproof",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "soundproof",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.4,
+    "weight_kg": 207.5,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

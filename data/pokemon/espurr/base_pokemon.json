@@ -1,0 +1,128 @@
+{
+    "name": "espurr",
+    "display_name": "Espurr",
+    "pokedex_number": 677,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 62,
+        "attack": 48,
+        "defense": 54,
+        "special_attack": 63,
+        "special_defense": 60,
+        "speed": 68
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 71,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "own_tempo",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 3.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "scratch"
+            ],
+            "21": [
+                "psybeam"
+            ],
+            "9": [
+                "confusion"
+            ],
+            "30": [
+                "light_screen",
+                "reflect"
+            ],
+            "3": [
+                "fake_out"
+            ],
+            "18": [
+                "covet"
+            ],
+            "33": [
+                "psyshock"
+            ],
+            "6": [
+                "disarming_voice"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "dark_pulse",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "helping_hand",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "nasty_plot",
+            "pay_day",
+            "payback",
+            "play_rough",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": [
+            "tickle",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 348
+}

@@ -1,0 +1,145 @@
+{
+    "name": "heatran",
+    "display_name": "Heatran",
+    "pokedex_number": 485,
+    "types": [
+        "fire",
+        "steel"
+    ],
+    "base_stats": {
+        "hp": 91,
+        "attack": 90,
+        "defense": 106,
+        "special_attack": 130,
+        "special_defense": 106,
+        "speed": 77
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 270,
+    "base_happiness": 100,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.7,
+    "weight_kg": 430.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "fire_spin",
+                "leer"
+            ],
+            "24": [
+                "scary_face"
+            ],
+            "6": [
+                "metal_claw"
+            ],
+            "36": [
+                "crunch"
+            ],
+            "12": [
+                "ancient_power"
+            ],
+            "60": [
+                "heat_wave"
+            ],
+            "48": [
+                "metal_sound"
+            ],
+            "54": [
+                "earth_power"
+            ],
+            "18": [
+                "fire_fang"
+            ],
+            "42": [
+                "lava_plume"
+            ],
+            "30": [
+                "iron_head"
+            ],
+            "66": [
+                "stone_edge"
+            ],
+            "72": [
+                "magma_storm"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_press",
+            "body_slam",
+            "bulldoze",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_spin",
+            "flamethrower",
+            "flash_cannon",
+            "giga_impact",
+            "heat_crash",
+            "heat_wave",
+            "heavy_slam",
+            "hyper_beam",
+            "iron_defense",
+            "iron_head",
+            "overheat",
+            "payback",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "self_destruct",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "uproar",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "scorching_sands",
+            "steel_beam",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 246
+}

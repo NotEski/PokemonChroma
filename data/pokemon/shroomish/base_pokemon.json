@@ -1,0 +1,59 @@
+{
+    "name": "shroomish",
+    "display_name": "Shroomish",
+    "pokedex_number": 285,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 60,
+        "attack": 40,
+        "defense": 60,
+        "special_attack": 40,
+        "special_defense": 60,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 59,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "effect_spore",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "poison_heal",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "quick_feet",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 4.5,
+    "egg_groups": [
+        "fairy",
+        "plant"
+    ],
+    "growth_rate": "fast_then_very_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 142
+}

@@ -1,0 +1,148 @@
+{
+    "name": "urshifu_rapid_strike",
+    "display_name": "Urshifu Rapid Strike",
+    "pokedex_number": 10191,
+    "types": [
+        "fighting",
+        "water"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 130,
+        "defense": 100,
+        "special_attack": 63,
+        "special_defense": 60,
+        "speed": 97
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 275,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "unseen_fist",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.9,
+    "weight_kg": 105.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "20": [
+                "headbutt"
+            ],
+            "1": [
+                "aqua_jet",
+                "endure",
+                "focus_energy",
+                "leer",
+                "rock_smash",
+                "surging_strikes"
+            ],
+            "44": [
+                "counter"
+            ],
+            "16": [
+                "scary_face"
+            ],
+            "28": [
+                "detect"
+            ],
+            "40": [
+                "dynamic_punch"
+            ],
+            "52": [
+                "focus_punch"
+            ],
+            "24": [
+                "brick_break"
+            ],
+            "12": [
+                "aerial_ace"
+            ],
+            "32": [
+                "bulk_up"
+            ],
+            "48": [
+                "close_combat"
+            ],
+            "36": [
+                "iron_head"
+            ],
+            "0": [
+                "surging_strikes"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "attract",
+            "aura_sphere",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "brine",
+            "bulk_up",
+            "close_combat",
+            "dig",
+            "dive",
+            "drain_punch",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fire_punch",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "helping_hand",
+            "ice_punch",
+            "iron_defense",
+            "iron_head",
+            "liquidation",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scald",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "superpower",
+            "swift",
+            "taunt",
+            "thunder_punch",
+            "u_turn",
+            "waterfall",
+            "whirlpool",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

@@ -1,0 +1,47 @@
+{
+    "name": "iron_leaves",
+    "display_name": "Iron Leaves",
+    "pokedex_number": 1010,
+    "types": [
+        "grass",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 130,
+        "defense": 88,
+        "special_attack": 70,
+        "special_defense": 108,
+        "speed": 104
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 295,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "quark_drive",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 125.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

@@ -1,0 +1,161 @@
+{
+    "name": "flygon",
+    "display_name": "Flygon",
+    "pokedex_number": 330,
+    "types": [
+        "ground",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 100,
+        "defense": 80,
+        "special_attack": 80,
+        "special_defense": 80,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 234,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 82.0,
+    "egg_groups": [
+        "bug",
+        "dragon"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "bite",
+                "bulldoze",
+                "crunch",
+                "dig",
+                "dragon_breath",
+                "dragon_claw",
+                "dragon_dance",
+                "feint",
+                "fissure",
+                "laser_focus",
+                "sand_attack",
+                "superpower",
+                "supersonic"
+            ],
+            "44": [
+                "earthquake"
+            ],
+            "24": [
+                "screech"
+            ],
+            "12": [
+                "mud_slap"
+            ],
+            "32": [
+                "sandstorm"
+            ],
+            "52": [
+                "uproar"
+            ],
+            "16": [
+                "sand_tomb"
+            ],
+            "0": [
+                "dragon_claw"
+            ],
+            "28": [
+                "bug_buzz"
+            ],
+            "60": [
+                "dragon_rush"
+            ],
+            "38": [
+                "earth_power"
+            ],
+            "20": [
+                "dragon_tail"
+            ],
+            "68": [
+                "boomburst"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "attract",
+            "body_slam",
+            "breaking_swipe",
+            "brutal_swing",
+            "bug_buzz",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "fly",
+            "focus_energy",
+            "giga_drain",
+            "giga_impact",
+            "heat_wave",
+            "hyper_beam",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "mud_shot",
+            "outrage",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swift",
+            "throat_chop",
+            "thunder_punch",
+            "u_turn",
+            "uproar"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat",
+            "scale_shot",
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 166
+}

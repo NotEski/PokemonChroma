@@ -1,0 +1,151 @@
+{
+    "name": "rillaboom",
+    "display_name": "Rillaboom",
+    "pokedex_number": 812,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 125,
+        "defense": 90,
+        "special_attack": 60,
+        "special_defense": 70,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 265,
+    "base_happiness": 50,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "grassy_surge",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.1,
+    "weight_kg": 90.0,
+    "egg_groups": [
+        "ground",
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "branch_poke",
+                "double_hit",
+                "drum_beating",
+                "grassy_terrain",
+                "growl",
+                "noble_roar",
+                "scratch",
+                "taunt"
+            ],
+            "30": [
+                "slam"
+            ],
+            "12": [
+                "razor_leaf"
+            ],
+            "19": [
+                "screech"
+            ],
+            "38": [
+                "uproar"
+            ],
+            "24": [
+                "knock_off"
+            ],
+            "54": [
+                "endeavor"
+            ],
+            "46": [
+                "wood_hammer"
+            ],
+            "62": [
+                "boomburst"
+            ],
+            "0": [
+                "drum_beating"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "assurance",
+            "attract",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "bullet_seed",
+            "darkest_lariat",
+            "drain_punch",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "high_horsepower",
+            "hyper_beam",
+            "hyper_voice",
+            "leaf_storm",
+            "low_kick",
+            "magical_leaf",
+            "mega_kick",
+            "mega_punch",
+            "mud_shot",
+            "protect",
+            "rest",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "u_turn",
+            "uproar",
+            "work_up"
+        ],
+        "tutor": [
+            "frenzy_plant",
+            "grass_pledge",
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 430
+}

@@ -1,0 +1,130 @@
+{
+    "name": "centiskorch",
+    "display_name": "Centiskorch",
+    "pokedex_number": 851,
+    "types": [
+        "fire",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 115,
+        "defense": 65,
+        "special_attack": 90,
+        "special_defense": 90,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 184,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "white_smoke",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 3.0,
+    "weight_kg": 120.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "32": [
+                "slam"
+            ],
+            "1": [
+                "bite",
+                "ember",
+                "inferno",
+                "smokescreen",
+                "wrap"
+            ],
+            "39": [
+                "fire_spin"
+            ],
+            "15": [
+                "flame_wheel"
+            ],
+            "46": [
+                "crunch"
+            ],
+            "20": [
+                "bug_bite"
+            ],
+            "25": [
+                "coil"
+            ],
+            "60": [
+                "lunge"
+            ],
+            "53": [
+                "fire_lash"
+            ],
+            "67": [
+                "burn_up"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brutal_swing",
+            "bug_buzz",
+            "crunch",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "giga_impact",
+            "heat_crash",
+            "heat_wave",
+            "hyper_beam",
+            "leech_life",
+            "mystical_fire",
+            "overheat",
+            "power_whip",
+            "protect",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "thunder_fang",
+            "venoshock",
+            "will_o_wisp",
+            "x_scissor"
+        ],
+        "tutor": [
+            "scorching_sands",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 447
+}

@@ -1,0 +1,138 @@
+{
+    "name": "popplio",
+    "display_name": "Popplio",
+    "pokedex_number": 728,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 54,
+        "defense": 54,
+        "special_attack": 66,
+        "special_defense": 56,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 64,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "liquid_voice",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 7.5,
+    "egg_groups": [
+        "water1",
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "growl",
+                "pound"
+            ],
+            "18": [
+                "sing"
+            ],
+            "3": [
+                "water_gun"
+            ],
+            "36": [
+                "hydro_pump"
+            ],
+            "21": [
+                "bubble_beam"
+            ],
+            "15": [
+                "icy_wind"
+            ],
+            "24": [
+                "encore"
+            ],
+            "30": [
+                "hyper_voice"
+            ],
+            "9": [
+                "aqua_jet"
+            ],
+            "6": [
+                "disarming_voice"
+            ],
+            "27": [
+                "misty_terrain"
+            ],
+            "33": [
+                "moonblast"
+            ],
+            "12": [
+                "baby_doll_eyes"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "amnesia",
+            "attract",
+            "blizzard",
+            "brine",
+            "charm",
+            "dive",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "facade",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "hyper_voice",
+            "ice_beam",
+            "icy_wind",
+            "iron_tail",
+            "misty_terrain",
+            "play_rough",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "uproar",
+            "waterfall",
+            "whirlpool",
+            "wonder_room",
+            "work_up"
+        ],
+        "tutor": [
+            "flip_turn",
+            "triple_axel",
+            "water_pledge"
+        ],
+        "egg_moves": [
+            "aqua_ring",
+            "life_dew",
+            "perish_song"
+        ]
+    },
+    "evolution_line_id": 376
+}

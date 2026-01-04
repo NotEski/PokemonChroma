@@ -1,0 +1,143 @@
+{
+    "name": "calyrex",
+    "display_name": "Calyrex",
+    "pokedex_number": 898,
+    "types": [
+        "psychic",
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 80,
+        "defense": 80,
+        "special_attack": 80,
+        "special_defense": 80,
+        "speed": 80
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 3,
+    "base_experience_yield": 250,
+    "base_happiness": 100,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "unnerve",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 7.7,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "confusion",
+                "growth",
+                "mega_drain",
+                "pound"
+            ],
+            "64": [
+                "leech_seed"
+            ],
+            "80": [
+                "solar_beam"
+            ],
+            "56": [
+                "psychic"
+            ],
+            "16": [
+                "giga_drain"
+            ],
+            "88": [
+                "future_sight"
+            ],
+            "32": [
+                "helping_hand"
+            ],
+            "40": [
+                "aromatherapy"
+            ],
+            "48": [
+                "energy_ball"
+            ],
+            "24": [
+                "psyshock"
+            ],
+            "72": [
+                "heal_pulse"
+            ],
+            "8": [
+                "life_dew"
+            ]
+        },
+        "machine": [
+            "agility",
+            "ally_switch",
+            "baton_pass",
+            "bullet_seed",
+            "calm_mind",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "future_sight",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "guard_swap",
+            "helping_hand",
+            "hyper_beam",
+            "imprison",
+            "leaf_storm",
+            "light_screen",
+            "magic_room",
+            "magical_leaf",
+            "metronome",
+            "pay_day",
+            "pollen_puff",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psyshock",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "speed_swap",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "tri_attack",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 476
+}

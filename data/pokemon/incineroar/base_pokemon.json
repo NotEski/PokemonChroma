@@ -1,0 +1,165 @@
+{
+    "name": "incineroar",
+    "display_name": "Incineroar",
+    "pokedex_number": 727,
+    "types": [
+        "fire",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 115,
+        "defense": 90,
+        "special_attack": 80,
+        "special_defense": 90,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 239,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "intimidate",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 83.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "bulk_up",
+                "cross_chop",
+                "darkest_lariat",
+                "ember",
+                "growl",
+                "lick",
+                "scratch",
+                "throat_chop"
+            ],
+            "20": [
+                "double_kick"
+            ],
+            "51": [
+                "thrash"
+            ],
+            "15": [
+                "bite"
+            ],
+            "9": [
+                "roar"
+            ],
+            "44": [
+                "flamethrower"
+            ],
+            "12": [
+                "fury_swipes"
+            ],
+            "30": [
+                "scary_face"
+            ],
+            "32": [
+                "swagger"
+            ],
+            "58": [
+                "flare_blitz"
+            ],
+            "25": [
+                "fire_fang"
+            ],
+            "0": [
+                "darkest_lariat"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "assurance",
+            "attract",
+            "blaze_kick",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "crunch",
+            "dark_pulse",
+            "darkest_lariat",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_punch",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "heat_crash",
+            "heat_wave",
+            "hyper_beam",
+            "iron_head",
+            "leech_life",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "outrage",
+            "overheat",
+            "pay_day",
+            "protect",
+            "rest",
+            "revenge",
+            "reversal",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "swords_dance",
+            "taunt",
+            "throat_chop",
+            "thunder_punch",
+            "u_turn",
+            "will_o_wisp",
+            "work_up"
+        ],
+        "tutor": [
+            "blast_burn",
+            "burning_jealousy",
+            "fire_pledge",
+            "lash_out",
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 375
+}

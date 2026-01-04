@@ -1,0 +1,137 @@
+{
+    "name": "zapdos_galar",
+    "display_name": "Zapdos Galar",
+    "pokedex_number": 10170,
+    "types": [
+        "fighting",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 125,
+        "defense": 90,
+        "special_attack": 85,
+        "special_defense": 90,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 290,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "defiant",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.6,
+    "weight_kg": 58.2,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "1": [
+                "focus_energy",
+                "peck"
+            ],
+            "35": [
+                "drill_peck"
+            ],
+            "55": [
+                "counter"
+            ],
+            "20": [
+                "agility"
+            ],
+            "10": [
+                "light_screen"
+            ],
+            "70": [
+                "reversal"
+            ],
+            "60": [
+                "detect"
+            ],
+            "25": [
+                "ancient_power"
+            ],
+            "5": [
+                "rock_smash"
+            ],
+            "30": [
+                "brick_break"
+            ],
+            "50": [
+                "bulk_up"
+            ],
+            "15": [
+                "pluck"
+            ],
+            "65": [
+                "close_combat"
+            ],
+            "40": [
+                "quick_guard"
+            ],
+            "45": [
+                "thunderous_kick"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "assurance",
+            "blaze_kick",
+            "bounce",
+            "brave_bird",
+            "brick_break",
+            "bulk_up",
+            "close_combat",
+            "endure",
+            "facade",
+            "fly",
+            "focus_energy",
+            "giga_impact",
+            "hurricane",
+            "hyper_beam",
+            "light_screen",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "payback",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "round",
+            "scary_face",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stomping_tantrum",
+            "substitute",
+            "superpower",
+            "swift",
+            "taunt",
+            "throat_chop",
+            "u_turn"
+        ],
+        "tutor": [
+            "coaching",
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

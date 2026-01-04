@@ -1,0 +1,54 @@
+{
+    "name": "glimmet",
+    "display_name": "Glimmet",
+    "pokedex_number": 969,
+    "types": [
+        "rock",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 48,
+        "attack": 35,
+        "defense": 42,
+        "special_attack": 105,
+        "special_defense": 60,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 70,
+    "base_experience_yield": 70,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "toxic_debris",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "corrosion",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 8.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 508
+}

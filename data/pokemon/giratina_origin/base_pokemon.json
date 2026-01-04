@@ -1,0 +1,138 @@
+{
+    "name": "giratina_origin",
+    "display_name": "Giratina Origin",
+    "pokedex_number": 10007,
+    "types": [
+        "ghost",
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 150,
+        "attack": 120,
+        "defense": 100,
+        "special_attack": 120,
+        "special_defense": 100,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 340,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 6.9,
+    "weight_kg": 650.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {
+            "28": [
+                "slash"
+            ],
+            "35": [
+                "scary_face"
+            ],
+            "84": [
+                "destiny_bond"
+            ],
+            "49": [
+                "pain_split"
+            ],
+            "7": [
+                "dragon_breath"
+            ],
+            "14": [
+                "ancient_power"
+            ],
+            "63": [
+                "dragon_claw"
+            ],
+            "56": [
+                "aura_sphere"
+            ],
+            "70": [
+                "earth_power"
+            ],
+            "42": [
+                "shadow_claw"
+            ],
+            "1": [
+                "defog",
+                "shadow_sneak"
+            ],
+            "77": [
+                "shadow_force"
+            ],
+            "21": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "aura_sphere",
+            "body_slam",
+            "breaking_swipe",
+            "brutal_swing",
+            "bulldoze",
+            "calm_mind",
+            "dark_pulse",
+            "dragon_claw",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fly",
+            "giga_impact",
+            "hex",
+            "hyper_beam",
+            "hyper_voice",
+            "icy_wind",
+            "iron_head",
+            "iron_tail",
+            "outrage",
+            "payback",
+            "phantom_force",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scary_face",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat",
+            "poltergeist"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

@@ -1,0 +1,142 @@
+{
+    "name": "frosmoth",
+    "display_name": "Frosmoth",
+    "pokedex_number": 873,
+    "types": [
+        "ice",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 65,
+        "defense": 60,
+        "special_attack": 125,
+        "special_defense": 90,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 166,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "shield_dust",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "ice_scales",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 42.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "12": [
+                "mist"
+            ],
+            "40": [
+                "blizzard"
+            ],
+            "24": [
+                "aurora_beam"
+            ],
+            "4": [
+                "stun_spore"
+            ],
+            "1": [
+                "attract",
+                "helping_hand",
+                "icy_wind",
+                "powder_snow",
+                "struggle_bug"
+            ],
+            "0": [
+                "icy_wind"
+            ],
+            "28": [
+                "hail"
+            ],
+            "21": [
+                "feather_dance"
+            ],
+            "44": [
+                "tailwind"
+            ],
+            "32": [
+                "bug_buzz"
+            ],
+            "16": [
+                "defog"
+            ],
+            "48": [
+                "wide_guard"
+            ],
+            "52": [
+                "quiver_dance"
+            ],
+            "8": [
+                "infestation"
+            ],
+            "36": [
+                "aurora_veil"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "air_slash",
+            "attract",
+            "avalanche",
+            "blizzard",
+            "bug_buzz",
+            "calm_mind",
+            "dazzling_gleam",
+            "endure",
+            "facade",
+            "giga_drain",
+            "giga_impact",
+            "hail",
+            "helping_hand",
+            "hurricane",
+            "hyper_beam",
+            "ice_beam",
+            "icicle_spear",
+            "icy_wind",
+            "imprison",
+            "leech_life",
+            "light_screen",
+            "play_rough",
+            "protect",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "u_turn",
+            "weather_ball"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "skitter_smack",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 455
+}

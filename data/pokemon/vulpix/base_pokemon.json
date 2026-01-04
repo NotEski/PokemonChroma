@@ -1,0 +1,146 @@
+{
+    "name": "vulpix",
+    "display_name": "Vulpix",
+    "pokedex_number": 37,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 38,
+        "attack": 41,
+        "defense": 40,
+        "special_attack": 50,
+        "special_defense": 65,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 60,
+    "base_happiness": 70,
+    "gender_rate": 6,
+    "abilities": [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "drought",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 9.9,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "ember",
+                "tail_whip"
+            ],
+            "4": [
+                "disable"
+            ],
+            "32": [
+                "flamethrower"
+            ],
+            "40": [
+                "fire_spin"
+            ],
+            "8": [
+                "quick_attack"
+            ],
+            "20": [
+                "confuse_ray"
+            ],
+            "56": [
+                "fire_blast"
+            ],
+            "12": [
+                "spite"
+            ],
+            "44": [
+                "safeguard"
+            ],
+            "24": [
+                "will_o_wisp"
+            ],
+            "36": [
+                "imprison"
+            ],
+            "52": [
+                "grudge"
+            ],
+            "28": [
+                "extrasensory"
+            ],
+            "16": [
+                "incinerate"
+            ],
+            "48": [
+                "inferno"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "body_slam",
+            "dark_pulse",
+            "dig",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_blast",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "foul_play",
+            "heat_wave",
+            "hex",
+            "imprison",
+            "iron_tail",
+            "mystical_fire",
+            "overheat",
+            "payback",
+            "power_swap",
+            "protect",
+            "rest",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "tail_slap",
+            "weather_ball",
+            "will_o_wisp",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "burning_jealousy"
+        ],
+        "egg_moves": [
+            "baby_doll_eyes",
+            "flail",
+            "flame_charge",
+            "howl",
+            "hypnosis",
+            "memento",
+            "roar"
+        ]
+    },
+    "evolution_line_id": 15
+}

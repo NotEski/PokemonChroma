@@ -1,0 +1,58 @@
+{
+    "name": "furret",
+    "display_name": "Furret",
+    "pokedex_number": 162,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 76,
+        "defense": 64,
+        "special_attack": 45,
+        "special_defense": 55,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 145,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 32.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 82
+}

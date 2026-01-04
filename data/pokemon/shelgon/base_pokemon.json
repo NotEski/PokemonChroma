@@ -1,0 +1,124 @@
+{
+    "name": "shelgon",
+    "display_name": "Shelgon",
+    "pokedex_number": 372,
+    "types": [
+        "dragon"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 95,
+        "defense": 100,
+        "special_attack": 60,
+        "special_defense": 50,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 147,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 110.5,
+    "egg_groups": [
+        "dragon"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "15": [
+                "headbutt"
+            ],
+            "67": [
+                "double_edge"
+            ],
+            "1": [
+                "bite",
+                "dragon_breath",
+                "ember",
+                "leer",
+                "protect"
+            ],
+            "53": [
+                "flamethrower"
+            ],
+            "46": [
+                "focus_energy"
+            ],
+            "0": [
+                "protect"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "60": [
+                "outrage"
+            ],
+            "25": [
+                "crunch"
+            ],
+            "33": [
+                "dragon_claw"
+            ],
+            "39": [
+                "zen_headbutt"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "brick_break",
+            "crunch",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "flamethrower",
+            "focus_energy",
+            "hydro_pump",
+            "hyper_voice",
+            "iron_defense",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 191
+}

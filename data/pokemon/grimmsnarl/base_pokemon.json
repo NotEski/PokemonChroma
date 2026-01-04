@@ -1,0 +1,162 @@
+{
+    "name": "grimmsnarl",
+    "display_name": "Grimmsnarl",
+    "pokedex_number": 861,
+    "types": [
+        "dark",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 120,
+        "defense": 65,
+        "special_attack": 95,
+        "special_defense": 75,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 255,
+    "base_happiness": 50,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 61.0,
+    "egg_groups": [
+        "fairy",
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "bite",
+                "bulk_up",
+                "confide",
+                "fake_out",
+                "false_surrender",
+                "flatter",
+                "power_up_punch",
+                "spirit_break"
+            ],
+            "20": [
+                "swagger"
+            ],
+            "28": [
+                "torment"
+            ],
+            "12": [
+                "fake_tears"
+            ],
+            "64": [
+                "hammer_arm"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "35": [
+                "dark_pulse"
+            ],
+            "40": [
+                "nasty_plot"
+            ],
+            "56": [
+                "foul_play"
+            ],
+            "48": [
+                "play_rough"
+            ],
+            "0": [
+                "spirit_break"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "bulk_up",
+            "crunch",
+            "dark_pulse",
+            "darkest_lariat",
+            "dazzling_gleam",
+            "drain_punch",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_punch",
+            "focus_blast",
+            "focus_energy",
+            "foul_play",
+            "giga_impact",
+            "hyper_beam",
+            "ice_punch",
+            "leech_life",
+            "light_screen",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "nasty_plot",
+            "play_rough",
+            "power_swap",
+            "power_whip",
+            "protect",
+            "reflect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "superpower",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder_punch",
+            "thunder_wave",
+            "trick",
+            "uproar",
+            "wonder_room"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "lash_out"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 451
+}

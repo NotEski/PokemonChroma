@@ -1,0 +1,54 @@
+{
+    "name": "revavroom",
+    "display_name": "Revavroom",
+    "pokedex_number": 966,
+    "types": [
+        "steel",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 80,
+        "attack": 119,
+        "defense": 90,
+        "special_attack": 54,
+        "special_defense": 67,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 175,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "overcoat",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "filter",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.8,
+    "weight_kg": 120.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 505
+}

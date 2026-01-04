@@ -1,0 +1,149 @@
+{
+    "name": "smoochum",
+    "display_name": "Smoochum",
+    "pokedex_number": 238,
+    "types": [
+        "ice",
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 30,
+        "defense": 15,
+        "special_attack": 85,
+        "special_defense": 65,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "oblivious",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "forewarn",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "hydration",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 6.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "lick",
+                "pound"
+            ],
+            "28": [
+                "ice_punch"
+            ],
+            "20": [
+                "sing"
+            ],
+            "48": [
+                "blizzard"
+            ],
+            "12": [
+                "confusion"
+            ],
+            "32": [
+                "psychic"
+            ],
+            "4": [
+                "powder_snow"
+            ],
+            "36": [
+                "sweet_kiss"
+            ],
+            "44": [
+                "perish_song"
+            ],
+            "40": [
+                "mean_look"
+            ],
+            "24": [
+                "fake_tears"
+            ],
+            "16": [
+                "covet"
+            ],
+            "8": [
+                "copycat"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "calm_mind",
+            "charm",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fling",
+            "grass_knot",
+            "hail",
+            "helping_hand",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "thief",
+            "trick",
+            "trick_room",
+            "uproar",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "fake_out",
+            "role_play",
+            "wish"
+        ]
+    },
+    "evolution_line_id": 59
+}

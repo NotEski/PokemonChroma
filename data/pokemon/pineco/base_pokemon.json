@@ -1,0 +1,53 @@
+{
+    "name": "pineco",
+    "display_name": "Pineco",
+    "pokedex_number": 204,
+    "types": [
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 65,
+        "defense": 90,
+        "special_attack": 35,
+        "special_defense": 35,
+        "speed": 15
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 58,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 7.2,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 102
+}

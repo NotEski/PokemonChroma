@@ -1,0 +1,155 @@
+{
+    "name": "trevenant",
+    "display_name": "Trevenant",
+    "pokedex_number": 709,
+    "types": [
+        "ghost",
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 85,
+        "attack": 110,
+        "defense": 76,
+        "special_attack": 65,
+        "special_defense": 82,
+        "speed": 56
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 166,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "harvest",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 71.0,
+    "egg_groups": [
+        "plant",
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "branch_poke",
+                "leech_seed",
+                "shadow_claw",
+                "tackle"
+            ],
+            "24": [
+                "growth"
+            ],
+            "12": [
+                "confuse_ray"
+            ],
+            "32": [
+                "curse"
+            ],
+            "48": [
+                "destiny_bond"
+            ],
+            "16": [
+                "will_o_wisp"
+            ],
+            "40": [
+                "ingrain"
+            ],
+            "0": [
+                "shadow_claw"
+            ],
+            "44": [
+                "wood_hammer"
+            ],
+            "20": [
+                "hex"
+            ],
+            "28": [
+                "horn_leech"
+            ],
+            "36": [
+                "phantom_force"
+            ],
+            "52": [
+                "forests_curse"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "brutal_swing",
+            "bulldoze",
+            "calm_mind",
+            "dark_pulse",
+            "dig",
+            "drain_punch",
+            "earthquake",
+            "endure",
+            "energy_ball",
+            "facade",
+            "focus_blast",
+            "foul_play",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "hex",
+            "hyper_beam",
+            "imprison",
+            "leaf_storm",
+            "magical_leaf",
+            "phantom_force",
+            "poison_jab",
+            "protect",
+            "psychic",
+            "reflect",
+            "rest",
+            "rock_slide",
+            "round",
+            "safeguard",
+            "seed_bomb",
+            "shadow_ball",
+            "shadow_claw",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "thief",
+            "trick",
+            "trick_room",
+            "venom_drench",
+            "will_o_wisp",
+            "x_scissor"
+        ],
+        "tutor": [
+            "grassy_glide",
+            "poltergeist",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 364
+}

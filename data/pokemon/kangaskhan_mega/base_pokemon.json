@@ -1,0 +1,46 @@
+{
+    "name": "kangaskhan_mega",
+    "display_name": "Kangaskhan Mega",
+    "pokedex_number": 10039,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 105,
+        "attack": 125,
+        "defense": 100,
+        "special_attack": 60,
+        "special_defense": 100,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 207,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "parental_bond",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.2,
+    "weight_kg": 100.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

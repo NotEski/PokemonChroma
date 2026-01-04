@@ -1,0 +1,136 @@
+{
+    "name": "shellder",
+    "display_name": "Shellder",
+    "pokedex_number": 90,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 30,
+        "attack": 65,
+        "defense": 100,
+        "special_attack": 45,
+        "special_defense": 25,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "shell_armor",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "skill_link",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 4.0,
+    "egg_groups": [
+        "water3"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "tackle",
+                "water_gun"
+            ],
+            "12": [
+                "leer"
+            ],
+            "20": [
+                "supersonic"
+            ],
+            "48": [
+                "hydro_pump"
+            ],
+            "40": [
+                "ice_beam"
+            ],
+            "24": [
+                "aurora_beam"
+            ],
+            "4": [
+                "withdraw"
+            ],
+            "28": [
+                "protect"
+            ],
+            "16": [
+                "whirlpool"
+            ],
+            "36": [
+                "iron_defense"
+            ],
+            "8": [
+                "ice_shard"
+            ],
+            "44": [
+                "shell_smash"
+            ],
+            "32": [
+                "razor_shell"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "brine",
+            "dive",
+            "endure",
+            "facade",
+            "hail",
+            "hydro_pump",
+            "ice_beam",
+            "icicle_spear",
+            "icy_wind",
+            "iron_defense",
+            "liquidation",
+            "mud_shot",
+            "payback",
+            "protect",
+            "rain_dance",
+            "razor_shell",
+            "rest",
+            "rock_blast",
+            "round",
+            "screech",
+            "self_destruct",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "swift",
+            "tri_attack",
+            "whirlpool"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "aqua_ring",
+            "bubble_beam",
+            "life_dew",
+            "water_pulse"
+        ]
+    },
+    "evolution_line_id": 39
+}

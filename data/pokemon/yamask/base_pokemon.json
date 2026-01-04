@@ -1,0 +1,130 @@
+{
+    "name": "yamask",
+    "display_name": "Yamask",
+    "pokedex_number": 562,
+    "types": [
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 38,
+        "attack": 30,
+        "defense": 85,
+        "special_attack": 55,
+        "special_defense": 65,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "mummy",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 1.5,
+    "egg_groups": [
+        "mineral",
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "12": [
+                "disable"
+            ],
+            "8": [
+                "night_shade"
+            ],
+            "4": [
+                "haze"
+            ],
+            "36": [
+                "curse"
+            ],
+            "1": [
+                "astonish",
+                "protect"
+            ],
+            "52": [
+                "destiny_bond"
+            ],
+            "28": [
+                "mean_look"
+            ],
+            "40": [
+                "shadow_ball"
+            ],
+            "16": [
+                "will_o_wisp"
+            ],
+            "32": [
+                "grudge"
+            ],
+            "44": [
+                "dark_pulse"
+            ],
+            "48": [
+                "guard_split",
+                "power_split"
+            ],
+            "24": [
+                "hex"
+            ],
+            "20": [
+                "crafty_shield"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "calm_mind",
+            "dark_pulse",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fake_tears",
+            "hex",
+            "imprison",
+            "iron_defense",
+            "nasty_plot",
+            "payback",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "thief",
+            "toxic_spikes",
+            "trick",
+            "trick_room",
+            "will_o_wisp",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "poltergeist"
+        ],
+        "egg_moves": [
+            "memento"
+        ]
+    },
+    "evolution_line_id": 287
+}

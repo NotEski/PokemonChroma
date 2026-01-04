@@ -1,0 +1,57 @@
+{
+    "name": "sneasel_hisui",
+    "display_name": "Sneasel Hisui",
+    "pokedex_number": 10235,
+    "types": [
+        "fighting",
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 95,
+        "defense": 55,
+        "special_attack": 35,
+        "special_defense": 75,
+        "speed": 115
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 86,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 27.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

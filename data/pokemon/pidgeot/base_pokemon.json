@@ -1,0 +1,59 @@
+{
+    "name": "pidgeot",
+    "display_name": "Pidgeot",
+    "pokedex_number": 18,
+    "types": [
+        "normal",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 83,
+        "attack": 80,
+        "defense": 75,
+        "special_attack": 70,
+        "special_defense": 70,
+        "speed": 101
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 216,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "tangled_feet",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "big_pecks",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 39.5,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 6
+}

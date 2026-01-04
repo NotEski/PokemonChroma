@@ -1,0 +1,147 @@
+{
+    "name": "growlithe",
+    "display_name": "Growlithe",
+    "pokedex_number": 58,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 70,
+        "defense": 45,
+        "special_attack": 70,
+        "special_defense": 50,
+        "speed": 60
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 70,
+    "base_happiness": 70,
+    "gender_rate": 2,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "flash_fire",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "justified",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.7,
+    "weight_kg": 19.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "36": [
+                "take_down"
+            ],
+            "1": [
+                "ember",
+                "leer"
+            ],
+            "8": [
+                "bite"
+            ],
+            "44": [
+                "roar"
+            ],
+            "40": [
+                "flamethrower"
+            ],
+            "20": [
+                "agility"
+            ],
+            "12": [
+                "flame_wheel"
+            ],
+            "52": [
+                "reversal"
+            ],
+            "32": [
+                "crunch"
+            ],
+            "16": [
+                "helping_hand"
+            ],
+            "4": [
+                "howl"
+            ],
+            "56": [
+                "flare_blitz"
+            ],
+            "24": [
+                "fire_fang"
+            ],
+            "28": [
+                "retaliate"
+            ],
+            "48": [
+                "play_rough"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "body_slam",
+            "close_combat",
+            "crunch",
+            "dig",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "heat_wave",
+            "helping_hand",
+            "iron_tail",
+            "outrage",
+            "overheat",
+            "play_rough",
+            "protect",
+            "psychic_fangs",
+            "rest",
+            "retaliate",
+            "reversal",
+            "round",
+            "safeguard",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thief",
+            "wild_charge",
+            "will_o_wisp"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "covet",
+            "double_edge",
+            "double_kick",
+            "morning_sun",
+            "thrash"
+        ]
+    },
+    "evolution_line_id": 25
+}

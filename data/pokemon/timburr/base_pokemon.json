@@ -1,0 +1,149 @@
+{
+    "name": "timburr",
+    "display_name": "Timburr",
+    "pokedex_number": 532,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 80,
+        "defense": 55,
+        "special_attack": 25,
+        "special_defense": 35,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 180,
+    "base_experience_yield": 61,
+    "base_happiness": 70,
+    "gender_rate": 2,
+    "abilities": [
+        {
+            "ability": "guts",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 12.5,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "pound"
+            ],
+            "24": [
+                "slam"
+            ],
+            "4": [
+                "low_kick"
+            ],
+            "8": [
+                "rock_throw"
+            ],
+            "12": [
+                "focus_energy"
+            ],
+            "20": [
+                "rock_slide"
+            ],
+            "28": [
+                "scary_face"
+            ],
+            "32": [
+                "dynamic_punch"
+            ],
+            "48": [
+                "focus_punch"
+            ],
+            "44": [
+                "superpower"
+            ],
+            "16": [
+                "bulk_up"
+            ],
+            "36": [
+                "hammer_arm"
+            ],
+            "40": [
+                "stone_edge"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "brutal_swing",
+            "bulk_up",
+            "dig",
+            "drain_punch",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "grass_knot",
+            "helping_hand",
+            "ice_punch",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "taunt",
+            "thunder_punch",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": [
+            "counter",
+            "defog",
+            "detect",
+            "mach_punch",
+            "power_up_punch",
+            "wide_guard"
+        ]
+    },
+    "evolution_line_id": 272
+}

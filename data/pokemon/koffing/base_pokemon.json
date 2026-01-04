@@ -1,0 +1,145 @@
+{
+    "name": "koffing",
+    "display_name": "Koffing",
+    "pokedex_number": 109,
+    "types": [
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 65,
+        "defense": 95,
+        "special_attack": 60,
+        "special_defense": 45,
+        "speed": 35
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 68,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "neutralizing_gas",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "stench",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 1.0,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "poison_gas",
+                "tackle"
+            ],
+            "36": [
+                "toxic"
+            ],
+            "8": [
+                "smokescreen"
+            ],
+            "24": [
+                "haze"
+            ],
+            "28": [
+                "self_destruct"
+            ],
+            "4": [
+                "smog"
+            ],
+            "20": [
+                "sludge"
+            ],
+            "44": [
+                "explosion"
+            ],
+            "32": [
+                "sludge_bomb"
+            ],
+            "52": [
+                "destiny_bond"
+            ],
+            "48": [
+                "memento"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "12": [
+                "clear_smog"
+            ],
+            "40": [
+                "belch"
+            ]
+        },
+        "machine": [
+            "assurance",
+            "attract",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "gyro_ball",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "screech",
+            "self_destruct",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "taunt",
+            "thief",
+            "thunder",
+            "thunderbolt",
+            "toxic_spikes",
+            "uproar",
+            "venom_drench",
+            "venoshock",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "corrosive_gas"
+        ],
+        "egg_moves": [
+            "curse",
+            "grudge",
+            "pain_split",
+            "psybeam",
+            "spit_up",
+            "spite",
+            "stockpile",
+            "swallow"
+        ]
+    },
+    "evolution_line_id": 49
+}

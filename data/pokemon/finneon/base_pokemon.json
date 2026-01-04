@@ -1,0 +1,58 @@
+{
+    "name": "finneon",
+    "display_name": "Finneon",
+    "pokedex_number": 456,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 49,
+        "attack": 49,
+        "defense": 56,
+        "special_attack": 49,
+        "special_defense": 61,
+        "speed": 66
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 66,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "storm_drain",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "water_veil",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 7.0,
+    "egg_groups": [
+        "water2"
+    ],
+    "growth_rate": "slow_then_very_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 237
+}

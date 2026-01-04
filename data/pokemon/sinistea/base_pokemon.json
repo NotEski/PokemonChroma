@@ -1,0 +1,118 @@
+{
+    "name": "sinistea",
+    "display_name": "Sinistea",
+    "pokedex_number": 854,
+    "types": [
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 45,
+        "defense": 45,
+        "special_attack": 74,
+        "special_defense": 54,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 1,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 62,
+    "base_happiness": 50,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "weak_armor",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.1,
+    "weight_kg": 0.2,
+    "egg_groups": [
+        "mineral",
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "12": [
+                "mega_drain"
+            ],
+            "1": [
+                "astonish",
+                "withdraw"
+            ],
+            "18": [
+                "protect"
+            ],
+            "36": [
+                "giga_drain"
+            ],
+            "48": [
+                "shadow_ball"
+            ],
+            "54": [
+                "memento"
+            ],
+            "30": [
+                "aromatherapy"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "42": [
+                "nasty_plot"
+            ],
+            "60": [
+                "shell_smash"
+            ],
+            "6": [
+                "aromatic_mist"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "baton_pass",
+            "dark_pulse",
+            "endure",
+            "facade",
+            "foul_play",
+            "giga_drain",
+            "hex",
+            "imprison",
+            "metronome",
+            "nasty_plot",
+            "payback",
+            "phantom_force",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rest",
+            "round",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "trick",
+            "will_o_wisp",
+            "wonder_room"
+        ],
+        "tutor": [
+            "poltergeist"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 449
+}

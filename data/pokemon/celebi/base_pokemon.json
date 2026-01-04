@@ -1,0 +1,145 @@
+{
+    "name": "celebi",
+    "display_name": "Celebi",
+    "pokedex_number": 251,
+    "types": [
+        "psychic",
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 100,
+        "defense": 100,
+        "special_attack": 100,
+        "special_defense": 100,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 3,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 270,
+    "base_happiness": 100,
+    "gender_rate": -1,
+    "abilities": [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 5.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "50": [
+                "leech_seed"
+            ],
+            "1": [
+                "confusion",
+                "heal_bell"
+            ],
+            "60": [
+                "recover"
+            ],
+            "100": [
+                "perish_song"
+            ],
+            "20": [
+                "baton_pass"
+            ],
+            "30": [
+                "ancient_power"
+            ],
+            "70": [
+                "future_sight"
+            ],
+            "10": [
+                "magical_leaf"
+            ],
+            "80": [
+                "healing_wish"
+            ],
+            "90": [
+                "leaf_storm"
+            ],
+            "40": [
+                "life_dew"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "aura_sphere",
+            "baton_pass",
+            "calm_mind",
+            "dazzling_gleam",
+            "earth_power",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fling",
+            "future_sight",
+            "giga_drain",
+            "giga_impact",
+            "grass_knot",
+            "grassy_terrain",
+            "helping_hand",
+            "hyper_beam",
+            "imprison",
+            "leaf_blade",
+            "leaf_storm",
+            "light_screen",
+            "magic_room",
+            "magical_leaf",
+            "metronome",
+            "nasty_plot",
+            "pollen_puff",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psycho_cut",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "seed_bomb",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "solar_blade",
+            "stealth_rock",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "thunder_wave",
+            "trick",
+            "trick_room",
+            "u_turn",
+            "uproar",
+            "weather_ball",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "expanding_force",
+            "grassy_glide"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 129
+}

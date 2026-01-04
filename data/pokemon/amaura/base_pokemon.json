@@ -1,0 +1,153 @@
+{
+    "name": "amaura",
+    "display_name": "Amaura",
+    "pokedex_number": 698,
+    "types": [
+        "rock",
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 77,
+        "attack": 59,
+        "defense": 50,
+        "special_attack": 67,
+        "special_defense": 63,
+        "speed": 46
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 72,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "refrigerate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "snow_warning",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 25.2,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "growl",
+                "powder_snow"
+            ],
+            "20": [
+                "mist"
+            ],
+            "40": [
+                "ice_beam"
+            ],
+            "52": [
+                "blizzard"
+            ],
+            "24": [
+                "aurora_beam"
+            ],
+            "56": [
+                "hyper_beam"
+            ],
+            "28": [
+                "thunder_wave"
+            ],
+            "44": [
+                "light_screen"
+            ],
+            "12": [
+                "icy_wind"
+            ],
+            "4": [
+                "encore"
+            ],
+            "8": [
+                "ancient_power"
+            ],
+            "48": [
+                "hail"
+            ],
+            "32": [
+                "nature_power"
+            ],
+            "16": [
+                "round"
+            ],
+            "36": [
+                "freeze_dry"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_slam",
+            "bulldoze",
+            "calm_mind",
+            "dark_pulse",
+            "earth_power",
+            "encore",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "hail",
+            "hyper_beam",
+            "hyper_voice",
+            "ice_beam",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "light_screen",
+            "mud_shot",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "safeguard",
+            "sandstorm",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "stone_edge",
+            "substitute",
+            "thunder_wave",
+            "thunderbolt",
+            "weather_ball",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "meteor_beam"
+        ],
+        "egg_moves": [
+            "aurora_veil",
+            "discharge",
+            "haze",
+            "mirror_coat",
+            "rock_throw",
+            "take_down"
+        ]
+    },
+    "evolution_line_id": 358
+}

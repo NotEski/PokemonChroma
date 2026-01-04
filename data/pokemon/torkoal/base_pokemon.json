@@ -1,0 +1,159 @@
+{
+    "name": "torkoal",
+    "display_name": "Torkoal",
+    "pokedex_number": 324,
+    "types": [
+        "fire"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 85,
+        "defense": 140,
+        "special_attack": 85,
+        "special_defense": 70,
+        "speed": 20
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 90,
+    "base_experience_yield": 165,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "white_smoke",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "drought",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 80.4,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "32": [
+                "body_slam"
+            ],
+            "1": [
+                "ember",
+                "smog"
+            ],
+            "40": [
+                "flamethrower"
+            ],
+            "12": [
+                "smokescreen"
+            ],
+            "4": [
+                "withdraw"
+            ],
+            "52": [
+                "amnesia"
+            ],
+            "20": [
+                "flame_wheel"
+            ],
+            "44": [
+                "curse"
+            ],
+            "24": [
+                "protect"
+            ],
+            "8": [
+                "rapid_spin"
+            ],
+            "48": [
+                "heat_wave"
+            ],
+            "64": [
+                "eruption"
+            ],
+            "36": [
+                "iron_defense"
+            ],
+            "28": [
+                "lava_plume"
+            ],
+            "16": [
+                "clear_smog"
+            ],
+            "60": [
+                "shell_smash"
+            ],
+            "56": [
+                "inferno"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "body_press",
+            "body_slam",
+            "bulldoze",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_spin",
+            "flamethrower",
+            "giga_impact",
+            "gyro_ball",
+            "heat_crash",
+            "heat_wave",
+            "hyper_beam",
+            "iron_defense",
+            "iron_tail",
+            "overheat",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "self_destruct",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "weather_ball",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "burning_jealousy",
+            "scorching_sands"
+        ],
+        "egg_moves": [
+            "ancient_power",
+            "fissure",
+            "flail",
+            "skull_bash",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 163
+}

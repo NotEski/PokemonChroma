@@ -1,0 +1,117 @@
+{
+    "name": "happiny",
+    "display_name": "Happiny",
+    "pokedex_number": 440,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 100,
+        "attack": 5,
+        "defense": 5,
+        "special_attack": 15,
+        "special_defense": 65,
+        "speed": 30
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 130,
+    "base_experience_yield": 110,
+    "base_happiness": 140,
+    "gender_rate": 8,
+    "abilities": [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 24.4,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "copycat",
+                "minimize",
+                "pound"
+            ],
+            "4": [
+                "defense_curl"
+            ],
+            "8": [
+                "sweet_kiss"
+            ],
+            "20": [
+                "charm"
+            ],
+            "16": [
+                "covet"
+            ],
+            "12": [
+                "disarming_voice"
+            ]
+        },
+        "machine": [
+            "attract",
+            "charm",
+            "drain_punch",
+            "endure",
+            "facade",
+            "fire_blast",
+            "flamethrower",
+            "fling",
+            "grass_knot",
+            "hail",
+            "helping_hand",
+            "hyper_voice",
+            "icy_wind",
+            "light_screen",
+            "metronome",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "thunder_wave",
+            "uproar",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "aromatherapy",
+            "gravity",
+            "present",
+            "seismic_toss"
+        ]
+    },
+    "evolution_line_id": 51
+}

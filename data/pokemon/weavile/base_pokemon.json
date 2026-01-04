@@ -1,0 +1,154 @@
+{
+    "name": "weavile",
+    "display_name": "Weavile",
+    "pokedex_number": 461,
+    "types": [
+        "dark",
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 120,
+        "defense": 65,
+        "special_attack": 45,
+        "special_defense": 85,
+        "speed": 125
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 179,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 34.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "agility",
+                "assurance",
+                "beat_up",
+                "ice_shard",
+                "leer",
+                "quick_attack",
+                "revenge",
+                "scratch",
+                "slash",
+                "taunt"
+            ],
+            "54": [
+                "screech"
+            ],
+            "30": [
+                "fury_swipes"
+            ],
+            "24": [
+                "icy_wind"
+            ],
+            "18": [
+                "metal_claw"
+            ],
+            "42": [
+                "fling"
+            ],
+            "66": [
+                "dark_pulse"
+            ],
+            "60": [
+                "night_slash"
+            ],
+            "48": [
+                "nasty_plot"
+            ],
+            "36": [
+                "hone_claws"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "attract",
+            "avalanche",
+            "beat_up",
+            "blizzard",
+            "brick_break",
+            "calm_mind",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "fake_tears",
+            "false_swipe",
+            "fling",
+            "focus_blast",
+            "foul_play",
+            "giga_impact",
+            "hail",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icicle_spear",
+            "icy_wind",
+            "iron_tail",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "nasty_plot",
+            "payback",
+            "poison_jab",
+            "protect",
+            "psycho_cut",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "round",
+            "screech",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "surf",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "whirlpool",
+            "x_scissor"
+        ],
+        "tutor": [
+            "lash_out",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 109
+}

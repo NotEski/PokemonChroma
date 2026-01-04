@@ -1,0 +1,58 @@
+{
+    "name": "sentret",
+    "display_name": "Sentret",
+    "pokedex_number": 161,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 35,
+        "attack": 46,
+        "defense": 34,
+        "special_attack": 35,
+        "special_defense": 45,
+        "speed": 20
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 43,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "frisk",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 6.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 82
+}

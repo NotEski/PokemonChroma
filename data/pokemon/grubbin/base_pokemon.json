@@ -1,0 +1,107 @@
+{
+    "name": "grubbin",
+    "display_name": "Grubbin",
+    "pokedex_number": 736,
+    "types": [
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 47,
+        "attack": 62,
+        "defense": 45,
+        "special_attack": 55,
+        "special_defense": 45,
+        "speed": 46
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 60,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 4.4,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "mud_slap",
+                "vice_grip"
+            ],
+            "15": [
+                "bite"
+            ],
+            "5": [
+                "string_shot"
+            ],
+            "40": [
+                "dig"
+            ],
+            "21": [
+                "spark"
+            ],
+            "35": [
+                "crunch"
+            ],
+            "30": [
+                "x_scissor"
+            ],
+            "10": [
+                "bug_bite"
+            ],
+            "25": [
+                "sticky_web"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "attract",
+            "crunch",
+            "dig",
+            "electroweb",
+            "endure",
+            "facade",
+            "light_screen",
+            "mud_shot",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "thunder_wave",
+            "thunderbolt",
+            "volt_switch",
+            "wild_charge",
+            "x_scissor"
+        ],
+        "tutor": [
+            "rising_voltage",
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "discharge",
+            "harden"
+        ]
+    },
+    "evolution_line_id": 379
+}

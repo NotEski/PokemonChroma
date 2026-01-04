@@ -1,0 +1,140 @@
+{
+    "name": "bunnelby",
+    "display_name": "Bunnelby",
+    "pokedex_number": 659,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 38,
+        "attack": 36,
+        "defense": 38,
+        "special_attack": 32,
+        "special_defense": 36,
+        "speed": 57
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 47,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "cheek_pouch",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "huge_power",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 5.0,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "33": [
+                "swords_dance"
+            ],
+            "18": [
+                "double_kick"
+            ],
+            "3": [
+                "tackle"
+            ],
+            "30": [
+                "take_down"
+            ],
+            "1": [
+                "leer",
+                "mud_slap"
+            ],
+            "36": [
+                "earthquake"
+            ],
+            "24": [
+                "dig"
+            ],
+            "9": [
+                "quick_attack"
+            ],
+            "39": [
+                "super_fang"
+            ],
+            "15": [
+                "flail"
+            ],
+            "27": [
+                "bounce"
+            ],
+            "12": [
+                "mud_shot"
+            ],
+            "21": [
+                "bulldoze"
+            ],
+            "6": [
+                "laser_focus"
+            ]
+        },
+        "machine": [
+            "agility",
+            "attract",
+            "bounce",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "dig",
+            "earthquake",
+            "endure",
+            "facade",
+            "fling",
+            "grass_knot",
+            "iron_head",
+            "iron_tail",
+            "mud_shot",
+            "payback",
+            "protect",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "spikes",
+            "stone_edge",
+            "substitute",
+            "surf",
+            "swords_dance",
+            "thief",
+            "u_turn",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "defense_curl",
+            "rollout"
+        ]
+    },
+    "evolution_line_id": 340
+}

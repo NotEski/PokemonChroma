@@ -1,0 +1,140 @@
+{
+    "name": "lillipup",
+    "display_name": "Lillipup",
+    "pokedex_number": 506,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 45,
+        "attack": 60,
+        "defense": 45,
+        "special_attack": 25,
+        "special_defense": 45,
+        "speed": 55
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 55,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "vital_spirit",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "pickup",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "run_away",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.4,
+    "weight_kg": 4.1,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "tackle"
+            ],
+            "28": [
+                "take_down"
+            ],
+            "8": [
+                "bite"
+            ],
+            "40": [
+                "roar"
+            ],
+            "36": [
+                "reversal"
+            ],
+            "24": [
+                "crunch"
+            ],
+            "32": [
+                "helping_hand"
+            ],
+            "44": [
+                "last_resort"
+            ],
+            "48": [
+                "giga_impact"
+            ],
+            "12": [
+                "retaliate"
+            ],
+            "4": [
+                "work_up"
+            ],
+            "20": [
+                "play_rough"
+            ],
+            "17": [
+                "baby_doll_eyes"
+            ]
+        },
+        "machine": [
+            "attract",
+            "charm",
+            "crunch",
+            "dig",
+            "endure",
+            "facade",
+            "fire_fang",
+            "giga_impact",
+            "helping_hand",
+            "hyper_voice",
+            "ice_fang",
+            "payback",
+            "play_rough",
+            "protect",
+            "psychic_fangs",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "reversal",
+            "rock_tomb",
+            "round",
+            "shadow_ball",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "thunder_fang",
+            "thunder_wave",
+            "thunderbolt",
+            "uproar",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "after_you",
+            "covet",
+            "howl",
+            "lick",
+            "mud_slap",
+            "yawn"
+        ]
+    },
+    "evolution_line_id": 260
+}

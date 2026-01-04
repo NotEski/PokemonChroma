@@ -1,0 +1,54 @@
+{
+    "name": "grotle",
+    "display_name": "Grotle",
+    "pokedex_number": 388,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 89,
+        "defense": 85,
+        "special_attack": 55,
+        "special_defense": 65,
+        "speed": 36
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 142,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 97.0,
+    "egg_groups": [
+        "monster",
+        "plant"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 203
+}

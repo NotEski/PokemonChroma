@@ -1,0 +1,146 @@
+{
+    "name": "frillish",
+    "display_name": "Frillish",
+    "pokedex_number": 592,
+    "types": [
+        "water",
+        "ghost"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 40,
+        "defense": 50,
+        "special_attack": 65,
+        "special_defense": 85,
+        "speed": 40
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 67,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 33.0,
+    "egg_groups": [
+        "indeterminate"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "4": [
+                "poison_sting"
+            ],
+            "1": [
+                "absorb",
+                "water_gun"
+            ],
+            "41": [
+                "hydro_pump"
+            ],
+            "8": [
+                "night_shade"
+            ],
+            "28": [
+                "recover"
+            ],
+            "44": [
+                "destiny_bond"
+            ],
+            "16": [
+                "rain_dance"
+            ],
+            "32": [
+                "shadow_ball"
+            ],
+            "36": [
+                "whirlpool"
+            ],
+            "48": [
+                "water_spout"
+            ],
+            "12": [
+                "water_pulse"
+            ],
+            "24": [
+                "brine"
+            ],
+            "20": [
+                "hex"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "brine",
+            "dark_pulse",
+            "dazzling_gleam",
+            "dive",
+            "endure",
+            "energy_ball",
+            "facade",
+            "giga_drain",
+            "hail",
+            "hex",
+            "hydro_pump",
+            "ice_beam",
+            "icy_wind",
+            "imprison",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "safeguard",
+            "scald",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "substitute",
+            "surf",
+            "taunt",
+            "trick",
+            "trick_room",
+            "waterfall",
+            "whirlpool",
+            "will_o_wisp"
+        ],
+        "tutor": [
+            "poltergeist"
+        ],
+        "egg_moves": [
+            "acid_armor",
+            "bubble_beam",
+            "confuse_ray",
+            "mist",
+            "pain_split",
+            "strength_sap"
+        ]
+    },
+    "evolution_line_id": 301
+}

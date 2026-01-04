@@ -1,0 +1,143 @@
+{
+    "name": "salamence",
+    "display_name": "Salamence",
+    "pokedex_number": 373,
+    "types": [
+        "dragon",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 95,
+        "attack": 135,
+        "defense": 80,
+        "special_attack": 110,
+        "special_defense": 80,
+        "speed": 100
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 270,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "moxie",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 102.6,
+    "egg_groups": [
+        "dragon"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "0": [
+                "fly"
+            ],
+            "1": [
+                "bite",
+                "dragon_breath",
+                "dragon_tail",
+                "ember",
+                "fly",
+                "leer",
+                "protect"
+            ],
+            "15": [
+                "headbutt"
+            ],
+            "73": [
+                "double_edge"
+            ],
+            "55": [
+                "flamethrower"
+            ],
+            "46": [
+                "focus_energy"
+            ],
+            "20": [
+                "scary_face"
+            ],
+            "64": [
+                "outrage"
+            ],
+            "25": [
+                "crunch"
+            ],
+            "33": [
+                "dragon_claw"
+            ],
+            "39": [
+                "zen_headbutt"
+            ]
+        },
+        "machine": [
+            "air_slash",
+            "attract",
+            "body_slam",
+            "breaking_swipe",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "crunch",
+            "dragon_claw",
+            "dragon_dance",
+            "dragon_pulse",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_fang",
+            "flamethrower",
+            "fly",
+            "focus_energy",
+            "giga_impact",
+            "heat_wave",
+            "hurricane",
+            "hydro_pump",
+            "hyper_beam",
+            "hyper_voice",
+            "iron_defense",
+            "iron_tail",
+            "outrage",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "thunder_fang",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "draco_meteor",
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 191
+}

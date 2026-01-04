@@ -1,0 +1,157 @@
+{
+    "name": "skorupi",
+    "display_name": "Skorupi",
+    "pokedex_number": 451,
+    "types": [
+        "poison",
+        "bug"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 50,
+        "defense": 90,
+        "special_attack": 30,
+        "special_defense": 55,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 66,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "battle_armor",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sniper",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 12.0,
+    "egg_groups": [
+        "bug",
+        "water3"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "leer",
+                "poison_sting"
+            ],
+            "30": [
+                "pin_missile"
+            ],
+            "12": [
+                "bite"
+            ],
+            "33": [
+                "toxic"
+            ],
+            "27": [
+                "scary_face"
+            ],
+            "48": [
+                "crunch"
+            ],
+            "24": [
+                "knock_off"
+            ],
+            "9": [
+                "poison_fang"
+            ],
+            "45": [
+                "acupressure"
+            ],
+            "15": [
+                "toxic_spikes"
+            ],
+            "36": [
+                "night_slash"
+            ],
+            "42": [
+                "x_scissor"
+            ],
+            "39": [
+                "cross_poison"
+            ],
+            "18": [
+                "bug_bite"
+            ],
+            "3": [
+                "hone_claws"
+            ],
+            "21": [
+                "venoshock"
+            ],
+            "6": [
+                "fell_stinger"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "attract",
+            "brick_break",
+            "bug_buzz",
+            "cross_poison",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "endure",
+            "facade",
+            "false_swipe",
+            "fling",
+            "iron_tail",
+            "payback",
+            "pin_missile",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "sludge_bomb",
+            "snore",
+            "substitute",
+            "sunny_day",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "toxic_spikes",
+            "venoshock",
+            "x_scissor"
+        ],
+        "tutor": [
+            "skitter_smack"
+        ],
+        "egg_moves": [
+            "confuse_ray",
+            "sand_attack",
+            "slash",
+            "whirlwind"
+        ]
+    },
+    "evolution_line_id": 234
+}

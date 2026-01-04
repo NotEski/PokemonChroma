@@ -1,0 +1,143 @@
+{
+    "name": "sawk",
+    "display_name": "Sawk",
+    "pokedex_number": 539,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 125,
+        "defense": 75,
+        "special_attack": 30,
+        "special_defense": 75,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 163,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 51.0,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "10": [
+                "double_kick"
+            ],
+            "1": [
+                "leer",
+                "rock_smash"
+            ],
+            "40": [
+                "counter"
+            ],
+            "5": [
+                "focus_energy"
+            ],
+            "50": [
+                "reversal"
+            ],
+            "45": [
+                "endure"
+            ],
+            "35": [
+                "brick_break"
+            ],
+            "25": [
+                "bulk_up"
+            ],
+            "55": [
+                "close_combat"
+            ],
+            "20": [
+                "low_sweep"
+            ],
+            "15": [
+                "quick_guard"
+            ],
+            "30": [
+                "retaliate"
+            ]
+        },
+        "machine": [
+            "attract",
+            "brick_break",
+            "bulk_up",
+            "bulldoze",
+            "close_combat",
+            "dig",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "grass_knot",
+            "helping_hand",
+            "ice_punch",
+            "low_kick",
+            "low_sweep",
+            "mega_kick",
+            "mega_punch",
+            "payback",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "scary_face",
+            "sleep_talk",
+            "snore",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "taunt",
+            "throat_chop",
+            "thunder_punch",
+            "work_up",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 275
+}

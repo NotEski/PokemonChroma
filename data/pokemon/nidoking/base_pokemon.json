@@ -1,0 +1,155 @@
+{
+    "name": "nidoking",
+    "display_name": "Nidoking",
+    "pokedex_number": 34,
+    "types": [
+        "poison",
+        "ground"
+    ],
+    "base_stats": {
+        "hp": 81,
+        "attack": 102,
+        "defense": 77,
+        "special_attack": 85,
+        "special_defense": 75,
+        "speed": 85
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 227,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rivalry",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.4,
+    "weight_kg": 62.0,
+    "egg_groups": [
+        "monster",
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "double_kick",
+                "earth_power",
+                "flatter",
+                "focus_energy",
+                "fury_attack",
+                "helping_hand",
+                "horn_attack",
+                "leer",
+                "megahorn",
+                "peck",
+                "poison_jab",
+                "poison_sting",
+                "toxic",
+                "toxic_spikes"
+            ],
+            "0": [
+                "megahorn"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "avalanche",
+            "beat_up",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "dig",
+            "dragon_pulse",
+            "drill_run",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "fling",
+            "focus_blast",
+            "focus_energy",
+            "giga_impact",
+            "helping_hand",
+            "hex",
+            "high_horsepower",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_tail",
+            "mega_kick",
+            "mega_punch",
+            "megahorn",
+            "mud_shot",
+            "outrage",
+            "pay_day",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "shadow_ball",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "smart_strike",
+            "snore",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "surf",
+            "taunt",
+            "thief",
+            "throat_chop",
+            "thunder",
+            "thunder_punch",
+            "thunderbolt",
+            "toxic_spikes",
+            "uproar",
+            "venom_drench",
+            "venoshock",
+            "whirlpool"
+        ],
+        "tutor": [
+            "scorching_sands"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 13
+}

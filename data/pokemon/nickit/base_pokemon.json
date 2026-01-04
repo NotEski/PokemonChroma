@@ -1,0 +1,123 @@
+{
+    "name": "nickit",
+    "display_name": "Nickit",
+    "pokedex_number": 827,
+    "types": [
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 28,
+        "defense": 28,
+        "special_attack": 47,
+        "special_defense": 52,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 1,
+        "speed": 0
+    },
+    "capture_rate": 255,
+    "base_experience_yield": 49,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "stakeout",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 8.9,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "quick_attack",
+                "tail_whip"
+            ],
+            "4": [
+                "beat_up"
+            ],
+            "16": [
+                "assurance"
+            ],
+            "24": [
+                "sucker_punch"
+            ],
+            "28": [
+                "night_slash"
+            ],
+            "20": [
+                "nasty_plot"
+            ],
+            "8": [
+                "hone_claws"
+            ],
+            "36": [
+                "foul_play"
+            ],
+            "32": [
+                "tail_slap"
+            ],
+            "12": [
+                "snarl"
+            ]
+        },
+        "machine": [
+            "agility",
+            "assurance",
+            "attract",
+            "baton_pass",
+            "beat_up",
+            "dig",
+            "endure",
+            "facade",
+            "fake_tears",
+            "foul_play",
+            "mud_shot",
+            "nasty_plot",
+            "play_rough",
+            "protect",
+            "rest",
+            "round",
+            "screech",
+            "sleep_talk",
+            "snarl",
+            "snore",
+            "substitute",
+            "swift",
+            "tail_slap",
+            "taunt",
+            "thief"
+        ],
+        "tutor": [
+            "lash_out"
+        ],
+        "egg_moves": [
+            "howl",
+            "knock_off",
+            "quick_guard",
+            "torment"
+        ]
+    },
+    "evolution_line_id": 436
+}

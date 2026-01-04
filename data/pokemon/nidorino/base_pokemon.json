@@ -1,0 +1,127 @@
+{
+    "name": "nidorino",
+    "display_name": "Nidorino",
+    "pokedex_number": 33,
+    "types": [
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 61,
+        "attack": 72,
+        "defense": 57,
+        "special_attack": 55,
+        "special_defense": 55,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 128,
+    "base_happiness": 70,
+    "gender_rate": 0,
+    "abilities": [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rivalry",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "hustle",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.9,
+    "weight_kg": 19.5,
+    "egg_groups": [
+        "monster",
+        "ground"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "29": [
+                "double_kick"
+            ],
+            "36": [
+                "horn_attack"
+            ],
+            "15": [
+                "fury_attack"
+            ],
+            "1": [
+                "focus_energy",
+                "leer",
+                "peck",
+                "poison_sting"
+            ],
+            "50": [
+                "toxic"
+            ],
+            "57": [
+                "flatter"
+            ],
+            "43": [
+                "helping_hand"
+            ],
+            "22": [
+                "toxic_spikes"
+            ],
+            "64": [
+                "poison_jab"
+            ],
+            "71": [
+                "earth_power"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "beat_up",
+            "blizzard",
+            "body_slam",
+            "dig",
+            "drill_run",
+            "earth_power",
+            "endure",
+            "facade",
+            "focus_energy",
+            "helping_hand",
+            "ice_beam",
+            "iron_tail",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "shadow_claw",
+            "sleep_talk",
+            "sludge_bomb",
+            "smart_strike",
+            "snore",
+            "stomping_tantrum",
+            "substitute",
+            "sunny_day",
+            "thief",
+            "thunder",
+            "thunderbolt",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 13
+}

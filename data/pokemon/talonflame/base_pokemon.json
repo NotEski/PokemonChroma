@@ -1,0 +1,127 @@
+{
+    "name": "talonflame",
+    "display_name": "Talonflame",
+    "pokedex_number": 663,
+    "types": [
+        "fire",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 78,
+        "attack": 81,
+        "defense": 71,
+        "special_attack": 74,
+        "special_defense": 69,
+        "speed": 126
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 3
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 175,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "gale_wings",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.2,
+    "weight_kg": 24.5,
+    "egg_groups": [
+        "flying"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "74": [
+                "fly"
+            ],
+            "1": [
+                "ember",
+                "feint",
+                "flame_charge",
+                "flare_blitz",
+                "growl",
+                "peck",
+                "quick_attack"
+            ],
+            "29": [
+                "agility"
+            ],
+            "15": [
+                "flail"
+            ],
+            "56": [
+                "steel_wing"
+            ],
+            "38": [
+                "aerial_ace"
+            ],
+            "65": [
+                "roost"
+            ],
+            "47": [
+                "tailwind"
+            ],
+            "83": [
+                "brave_bird"
+            ],
+            "22": [
+                "acrobatics"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "attract",
+            "brave_bird",
+            "bulk_up",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_spin",
+            "flamethrower",
+            "flare_blitz",
+            "fly",
+            "giga_impact",
+            "heat_wave",
+            "hurricane",
+            "hyper_beam",
+            "overheat",
+            "protect",
+            "rest",
+            "round",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "steel_wing",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "swords_dance",
+            "taunt",
+            "thief",
+            "u_turn",
+            "will_o_wisp",
+            "work_up"
+        ],
+        "tutor": [
+            "dual_wingbeat"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 341
+}

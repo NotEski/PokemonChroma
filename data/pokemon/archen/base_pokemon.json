@@ -1,0 +1,150 @@
+{
+    "name": "archen",
+    "display_name": "Archen",
+    "pokedex_number": 566,
+    "types": [
+        "rock",
+        "flying"
+    ],
+    "base_stats": {
+        "hp": 55,
+        "attack": 112,
+        "defense": 45,
+        "special_attack": 74,
+        "special_defense": 45,
+        "speed": 70
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 71,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "defeatist",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 0.5,
+    "weight_kg": 9.5,
+    "egg_groups": [
+        "flying",
+        "water3"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "6": [
+                "wing_attack"
+            ],
+            "42": [
+                "thrash"
+            ],
+            "1": [
+                "leer",
+                "quick_attack"
+            ],
+            "3": [
+                "rock_throw"
+            ],
+            "33": [
+                "agility"
+            ],
+            "24": [
+                "rock_slide"
+            ],
+            "27": [
+                "scary_face"
+            ],
+            "9": [
+                "dragon_breath"
+            ],
+            "30": [
+                "crunch"
+            ],
+            "12": [
+                "ancient_power"
+            ],
+            "45": [
+                "endeavor"
+            ],
+            "39": [
+                "dragon_claw"
+            ],
+            "15": [
+                "pluck"
+            ],
+            "36": [
+                "tailwind"
+            ],
+            "21": [
+                "u_turn"
+            ],
+            "18": [
+                "quick_guard"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "ally_switch",
+            "assurance",
+            "attract",
+            "bounce",
+            "bulldoze",
+            "crunch",
+            "dig",
+            "dragon_claw",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "heat_wave",
+            "iron_defense",
+            "iron_tail",
+            "protect",
+            "rest",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sandstorm",
+            "scary_face",
+            "shadow_claw",
+            "sleep_talk",
+            "snore",
+            "stealth_rock",
+            "steel_wing",
+            "stone_edge",
+            "substitute",
+            "swift",
+            "taunt",
+            "u_turn",
+            "uproar",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "lash_out",
+            "meteor_beam"
+        ],
+        "egg_moves": [
+            "bite",
+            "defog",
+            "double_team",
+            "head_smash",
+            "knock_off",
+            "switcheroo"
+        ]
+    },
+    "evolution_line_id": 289
+}

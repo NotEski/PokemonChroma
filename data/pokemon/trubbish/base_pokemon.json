@@ -1,0 +1,142 @@
+{
+    "name": "trubbish",
+    "display_name": "Trubbish",
+    "pokedex_number": 568,
+    "types": [
+        "poison"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 50,
+        "defense": 62,
+        "special_attack": 40,
+        "special_defense": 62,
+        "speed": 65
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 190,
+    "base_experience_yield": 66,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "stench",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "sticky_hold",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "aftermath",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 31.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "poison_gas",
+                "pound"
+            ],
+            "24": [
+                "take_down"
+            ],
+            "30": [
+                "toxic"
+            ],
+            "18": [
+                "sludge"
+            ],
+            "9": [
+                "amnesia"
+            ],
+            "42": [
+                "explosion"
+            ],
+            "27": [
+                "sludge_bomb"
+            ],
+            "37": [
+                "pain_split"
+            ],
+            "21": [
+                "stockpile",
+                "swallow"
+            ],
+            "3": [
+                "recycle"
+            ],
+            "15": [
+                "toxic_spikes"
+            ],
+            "39": [
+                "gunk_shot"
+            ],
+            "6": [
+                "acid_spray"
+            ],
+            "12": [
+                "clear_smog"
+            ],
+            "33": [
+                "belch"
+            ]
+        },
+        "machine": [
+            "amnesia",
+            "attract",
+            "dark_pulse",
+            "drain_punch",
+            "endure",
+            "facade",
+            "giga_drain",
+            "gunk_shot",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "rock_blast",
+            "round",
+            "seed_bomb",
+            "self_destruct",
+            "sleep_talk",
+            "sludge_bomb",
+            "sludge_wave",
+            "snore",
+            "spikes",
+            "substitute",
+            "sunny_day",
+            "thief",
+            "toxic_spikes",
+            "venom_drench",
+            "venoshock"
+        ],
+        "tutor": [
+            "corrosive_gas"
+        ],
+        "egg_moves": [
+            "autotomize",
+            "curse",
+            "haze",
+            "rollout",
+            "sand_attack"
+        ]
+    },
+    "evolution_line_id": 290
+}

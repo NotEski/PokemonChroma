@@ -1,0 +1,53 @@
+{
+    "name": "froakie",
+    "display_name": "Froakie",
+    "pokedex_number": 656,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 41,
+        "attack": 56,
+        "defense": 40,
+        "special_attack": 62,
+        "special_defense": 44,
+        "speed": 71
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 63,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "protean",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 7.0,
+    "egg_groups": [
+        "water1"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 339
+}

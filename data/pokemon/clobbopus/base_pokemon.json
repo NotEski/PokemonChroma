@@ -1,0 +1,125 @@
+{
+    "name": "clobbopus",
+    "display_name": "Clobbopus",
+    "pokedex_number": 852,
+    "types": [
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 50,
+        "attack": 68,
+        "defense": 60,
+        "special_attack": 50,
+        "special_defense": 50,
+        "speed": 32
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 180,
+    "base_experience_yield": 62,
+    "base_happiness": 50,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.6,
+    "weight_kg": 4.0,
+    "egg_groups": [
+        "water1",
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "10": [
+                "bind"
+            ],
+            "1": [
+                "leer",
+                "rock_smash"
+            ],
+            "30": [
+                "submission"
+            ],
+            "40": [
+                "reversal"
+            ],
+            "15": [
+                "detect"
+            ],
+            "35": [
+                "taunt"
+            ],
+            "45": [
+                "superpower"
+            ],
+            "20": [
+                "brick_break"
+            ],
+            "25": [
+                "bulk_up"
+            ],
+            "5": [
+                "feint"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "brick_break",
+            "brine",
+            "bulk_up",
+            "close_combat",
+            "dive",
+            "endure",
+            "facade",
+            "focus_blast",
+            "ice_punch",
+            "liquidation",
+            "mega_punch",
+            "mud_shot",
+            "muddy_water",
+            "payback",
+            "protect",
+            "rest",
+            "retaliate",
+            "revenge",
+            "reversal",
+            "round",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "superpower",
+            "taunt",
+            "waterfall",
+            "work_up"
+        ],
+        "tutor": [
+            "coaching"
+        ],
+        "egg_moves": [
+            "circle_throw",
+            "pain_split",
+            "power_up_punch",
+            "seismic_toss",
+            "soak",
+            "sucker_punch"
+        ]
+    },
+    "evolution_line_id": 448
+}

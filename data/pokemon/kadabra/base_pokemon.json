@@ -1,0 +1,152 @@
+{
+    "name": "kadabra",
+    "display_name": "Kadabra",
+    "pokedex_number": 64,
+    "types": [
+        "psychic"
+    ],
+    "base_stats": {
+        "hp": 40,
+        "attack": 35,
+        "defense": 30,
+        "special_attack": 120,
+        "special_defense": 70,
+        "speed": 105
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 100,
+    "base_experience_yield": 140,
+    "base_happiness": 70,
+    "gender_rate": 2,
+    "abilities": [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.3,
+    "weight_kg": 56.5,
+    "egg_groups": [
+        "humanshape"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "confusion",
+                "disable",
+                "kinesis",
+                "teleport"
+            ],
+            "5": [
+                "psybeam"
+            ],
+            "0": [
+                "confusion"
+            ],
+            "35": [
+                "psychic"
+            ],
+            "25": [
+                "recover"
+            ],
+            "10": [
+                "reflect"
+            ],
+            "45": [
+                "future_sight"
+            ],
+            "40": [
+                "role_play"
+            ],
+            "50": [
+                "calm_mind"
+            ],
+            "20": [
+                "psycho_cut"
+            ],
+            "30": [
+                "psyshock"
+            ],
+            "15": [
+                "ally_switch"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "body_slam",
+            "calm_mind",
+            "dazzling_gleam",
+            "drain_punch",
+            "encore",
+            "endure",
+            "energy_ball",
+            "facade",
+            "fire_punch",
+            "fling",
+            "foul_play",
+            "future_sight",
+            "grass_knot",
+            "guard_swap",
+            "ice_punch",
+            "iron_tail",
+            "light_screen",
+            "magic_room",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "power_swap",
+            "protect",
+            "psychic",
+            "psychic_terrain",
+            "psycho_cut",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "speed_swap",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunder_wave",
+            "tri_attack",
+            "trick",
+            "trick_room",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 27
+}

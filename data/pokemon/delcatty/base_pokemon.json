@@ -1,0 +1,59 @@
+{
+    "name": "delcatty",
+    "display_name": "Delcatty",
+    "pokedex_number": 301,
+    "types": [
+        "normal"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 65,
+        "defense": 65,
+        "special_attack": 55,
+        "special_defense": 55,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 1
+    },
+    "capture_rate": 60,
+    "base_experience_yield": 140,
+    "base_happiness": 70,
+    "gender_rate": 6,
+    "abilities": [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "normalize",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "wonder_skin",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 32.6,
+    "egg_groups": [
+        "ground",
+        "fairy"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 148
+}

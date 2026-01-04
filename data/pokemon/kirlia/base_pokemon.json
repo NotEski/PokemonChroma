@@ -1,0 +1,155 @@
+{
+    "name": "kirlia",
+    "display_name": "Kirlia",
+    "pokedex_number": 281,
+    "types": [
+        "psychic",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 38,
+        "attack": 35,
+        "defense": 35,
+        "special_attack": 65,
+        "special_defense": 55,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 97,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "trace",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.8,
+    "weight_kg": 20.2,
+    "egg_groups": [
+        "humanshape",
+        "indeterminate"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "confusion",
+                "disarming_voice",
+                "double_team",
+                "growl"
+            ],
+            "18": [
+                "psybeam"
+            ],
+            "38": [
+                "psychic"
+            ],
+            "9": [
+                "hypnosis"
+            ],
+            "15": [
+                "teleport"
+            ],
+            "48": [
+                "dream_eater"
+            ],
+            "28": [
+                "charm"
+            ],
+            "53": [
+                "future_sight"
+            ],
+            "33": [
+                "calm_mind"
+            ],
+            "43": [
+                "heal_pulse"
+            ],
+            "12": [
+                "draining_kiss"
+            ],
+            "23": [
+                "life_dew"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "body_slam",
+            "calm_mind",
+            "charm",
+            "dazzling_gleam",
+            "draining_kiss",
+            "encore",
+            "endure",
+            "facade",
+            "fire_punch",
+            "fling",
+            "future_sight",
+            "grass_knot",
+            "helping_hand",
+            "hyper_voice",
+            "ice_punch",
+            "icy_wind",
+            "imprison",
+            "light_screen",
+            "magic_room",
+            "magical_leaf",
+            "mega_kick",
+            "mega_punch",
+            "misty_terrain",
+            "protect",
+            "psychic",
+            "psyshock",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "shadow_ball",
+            "skill_swap",
+            "sleep_talk",
+            "snore",
+            "stored_power",
+            "substitute",
+            "sunny_day",
+            "swift",
+            "taunt",
+            "thief",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "trick",
+            "trick_room",
+            "will_o_wisp",
+            "wonder_room",
+            "zen_headbutt"
+        ],
+        "tutor": [
+            "expanding_force",
+            "triple_axel"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 140
+}

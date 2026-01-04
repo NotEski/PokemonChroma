@@ -1,0 +1,41 @@
+{
+    "name": "emboar_mega",
+    "display_name": "Emboar Mega",
+    "pokedex_number": 10286,
+    "types": [
+        "fire",
+        "fighting"
+    ],
+    "base_stats": {
+        "hp": 110,
+        "attack": 148,
+        "defense": 75,
+        "special_attack": 110,
+        "special_defense": 110,
+        "speed": 75
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": null,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [],
+    "height_m": 1.8,
+    "weight_kg": 180.3,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

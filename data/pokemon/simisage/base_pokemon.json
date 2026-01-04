@@ -1,0 +1,53 @@
+{
+    "name": "simisage",
+    "display_name": "Simisage",
+    "pokedex_number": 512,
+    "types": [
+        "grass"
+    ],
+    "base_stats": {
+        "hp": 75,
+        "attack": 98,
+        "defense": 63,
+        "special_attack": 98,
+        "special_defense": 63,
+        "speed": 101
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 75,
+    "base_experience_yield": 174,
+    "base_happiness": 70,
+    "gender_rate": 1,
+    "abilities": [
+        {
+            "ability": "gluttony",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "overgrow",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 30.5,
+    "egg_groups": [
+        "ground"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 262
+}

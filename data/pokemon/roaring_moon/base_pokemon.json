@@ -1,0 +1,47 @@
+{
+    "name": "roaring_moon",
+    "display_name": "Roaring Moon",
+    "pokedex_number": 1005,
+    "types": [
+        "dragon",
+        "dark"
+    ],
+    "base_stats": {
+        "hp": 105,
+        "attack": 139,
+        "defense": 71,
+        "special_attack": 55,
+        "special_defense": 101,
+        "speed": 119
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 295,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "protosynthesis",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 2.0,
+    "weight_kg": 380.0,
+    "egg_groups": [],
+    "growth_rate": "medium_fast",
+    "moves": {
+        "level": {},
+        "machine": [],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": null
+}

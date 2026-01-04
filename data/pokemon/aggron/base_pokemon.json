@@ -1,0 +1,180 @@
+{
+    "name": "aggron",
+    "display_name": "Aggron",
+    "pokedex_number": 306,
+    "types": [
+        "steel",
+        "rock"
+    ],
+    "base_stats": {
+        "hp": 70,
+        "attack": 110,
+        "defense": 180,
+        "special_attack": 60,
+        "special_defense": 60,
+        "speed": 50
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 239,
+    "base_happiness": 35,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "heavy_metal",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 2.1,
+    "weight_kg": 360.0,
+    "egg_groups": [
+        "monster"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "16": [
+                "headbutt"
+            ],
+            "1": [
+                "harden",
+                "metal_claw",
+                "rock_tomb",
+                "tackle"
+            ],
+            "40": [
+                "take_down"
+            ],
+            "80": [
+                "double_edge"
+            ],
+            "12": [
+                "roar"
+            ],
+            "24": [
+                "rock_slide"
+            ],
+            "20": [
+                "protect"
+            ],
+            "56": [
+                "iron_tail"
+            ],
+            "35": [
+                "metal_sound"
+            ],
+            "64": [
+                "iron_defense"
+            ],
+            "88": [
+                "metal_burst"
+            ],
+            "28": [
+                "iron_head"
+            ],
+            "48": [
+                "autotomize"
+            ],
+            "72": [
+                "heavy_slam"
+            ]
+        },
+        "machine": [
+            "attract",
+            "avalanche",
+            "blizzard",
+            "body_press",
+            "body_slam",
+            "brick_break",
+            "brutal_swing",
+            "bulldoze",
+            "crunch",
+            "dark_pulse",
+            "dig",
+            "dragon_claw",
+            "dragon_pulse",
+            "earth_power",
+            "earthquake",
+            "endure",
+            "facade",
+            "fire_blast",
+            "fire_punch",
+            "flamethrower",
+            "flash_cannon",
+            "fling",
+            "focus_blast",
+            "giga_impact",
+            "heavy_slam",
+            "high_horsepower",
+            "hydro_pump",
+            "hyper_beam",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "iron_defense",
+            "iron_head",
+            "iron_tail",
+            "low_kick",
+            "mega_kick",
+            "mega_punch",
+            "outrage",
+            "payback",
+            "protect",
+            "rain_dance",
+            "rest",
+            "reversal",
+            "rock_blast",
+            "rock_slide",
+            "rock_tomb",
+            "round",
+            "sand_tomb",
+            "sandstorm",
+            "scary_face",
+            "screech",
+            "shadow_claw",
+            "sleep_talk",
+            "smart_strike",
+            "snore",
+            "solar_beam",
+            "stealth_rock",
+            "stomping_tantrum",
+            "stone_edge",
+            "substitute",
+            "sunny_day",
+            "superpower",
+            "surf",
+            "taunt",
+            "thunder",
+            "thunder_punch",
+            "thunder_wave",
+            "thunderbolt",
+            "uproar",
+            "whirlpool"
+        ],
+        "tutor": [
+            "meteor_beam",
+            "steel_beam",
+            "steel_roller"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 151
+}

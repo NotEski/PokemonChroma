@@ -1,0 +1,131 @@
+{
+    "name": "vikavolt",
+    "display_name": "Vikavolt",
+    "pokedex_number": 738,
+    "types": [
+        "bug",
+        "electric"
+    ],
+    "base_stats": {
+        "hp": 77,
+        "attack": 70,
+        "defense": 90,
+        "special_attack": 145,
+        "special_defense": 75,
+        "speed": 43
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 3,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 45,
+    "base_experience_yield": 225,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": false
+        }
+    ],
+    "height_m": 1.5,
+    "weight_kg": 45.0,
+    "egg_groups": [
+        "bug"
+    ],
+    "growth_rate": "medium",
+    "moves": {
+        "level": {
+            "1": [
+                "bug_bite",
+                "charge",
+                "crunch",
+                "dig",
+                "discharge",
+                "iron_defense",
+                "mud_slap",
+                "string_shot",
+                "thunderbolt",
+                "vice_grip",
+                "x_scissor"
+            ],
+            "43": [
+                "guillotine"
+            ],
+            "50": [
+                "fly"
+            ],
+            "15": [
+                "bite"
+            ],
+            "0": [
+                "thunderbolt"
+            ],
+            "57": [
+                "agility"
+            ],
+            "64": [
+                "zap_cannon"
+            ],
+            "23": [
+                "spark"
+            ],
+            "36": [
+                "bug_buzz"
+            ],
+            "29": [
+                "sticky_web"
+            ]
+        },
+        "machine": [
+            "acrobatics",
+            "agility",
+            "air_slash",
+            "attract",
+            "bug_buzz",
+            "crunch",
+            "dig",
+            "eerie_impulse",
+            "electro_ball",
+            "electroweb",
+            "endure",
+            "energy_ball",
+            "facade",
+            "flash_cannon",
+            "fly",
+            "giga_impact",
+            "hyper_beam",
+            "iron_defense",
+            "light_screen",
+            "mud_shot",
+            "poison_jab",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "screech",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "thunder",
+            "thunder_wave",
+            "thunderbolt",
+            "volt_switch",
+            "wild_charge",
+            "x_scissor"
+        ],
+        "tutor": [
+            "dual_wingbeat",
+            "rising_voltage",
+            "skitter_smack"
+        ],
+        "egg_moves": []
+    },
+    "evolution_line_id": 379
+}

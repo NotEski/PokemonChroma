@@ -1,0 +1,124 @@
+{
+    "name": "poliwhirl",
+    "display_name": "Poliwhirl",
+    "pokedex_number": 61,
+    "types": [
+        "water"
+    ],
+    "base_stats": {
+        "hp": 65,
+        "attack": 65,
+        "defense": 65,
+        "special_attack": 50,
+        "special_defense": 50,
+        "speed": 90
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 2
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 135,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "damp",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.0,
+    "weight_kg": 20.0,
+    "egg_groups": [
+        "water1"
+    ],
+    "growth_rate": "medium_slow",
+    "moves": {
+        "level": {
+            "1": [
+                "hypnosis",
+                "mud_shot",
+                "pound",
+                "water_gun"
+            ],
+            "32": [
+                "body_slam"
+            ],
+            "66": [
+                "double_edge"
+            ],
+            "48": [
+                "hydro_pump"
+            ],
+            "18": [
+                "bubble_beam"
+            ],
+            "56": [
+                "belly_drum"
+            ],
+            "24": [
+                "rain_dance"
+            ],
+            "40": [
+                "earth_power"
+            ]
+        },
+        "machine": [
+            "attract",
+            "blizzard",
+            "body_slam",
+            "brick_break",
+            "bulldoze",
+            "dig",
+            "dive",
+            "earth_power",
+            "earthquake",
+            "encore",
+            "endure",
+            "facade",
+            "fling",
+            "hail",
+            "helping_hand",
+            "hydro_pump",
+            "ice_beam",
+            "ice_punch",
+            "icy_wind",
+            "mega_kick",
+            "mega_punch",
+            "metronome",
+            "mud_shot",
+            "muddy_water",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "rest",
+            "round",
+            "scald",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "surf",
+            "thief",
+            "waterfall",
+            "whirlpool"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 26
+}

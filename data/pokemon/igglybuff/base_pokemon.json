@@ -1,0 +1,129 @@
+{
+    "name": "igglybuff",
+    "display_name": "Igglybuff",
+    "pokedex_number": 174,
+    "types": [
+        "normal",
+        "fairy"
+    ],
+    "base_stats": {
+        "hp": 90,
+        "attack": 30,
+        "defense": 15,
+        "special_attack": 40,
+        "special_defense": 20,
+        "speed": 15
+    },
+    "ev_yield": {
+        "hp": 1,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 0,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 170,
+    "base_experience_yield": 42,
+    "base_happiness": 70,
+    "gender_rate": 6,
+    "abilities": [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "competitive",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 0.3,
+    "weight_kg": 1.0,
+    "egg_groups": [
+        "no_eggs"
+    ],
+    "growth_rate": "fast",
+    "moves": {
+        "level": {
+            "1": [
+                "copycat",
+                "pound",
+                "sing"
+            ],
+            "16": [
+                "disable"
+            ],
+            "4": [
+                "defense_curl"
+            ],
+            "8": [
+                "sweet_kiss"
+            ],
+            "20": [
+                "charm"
+            ],
+            "12": [
+                "disarming_voice"
+            ]
+        },
+        "machine": [
+            "attract",
+            "body_slam",
+            "bounce",
+            "charm",
+            "dig",
+            "draining_kiss",
+            "endure",
+            "facade",
+            "fake_tears",
+            "fire_blast",
+            "flamethrower",
+            "fling",
+            "grass_knot",
+            "helping_hand",
+            "hyper_voice",
+            "icy_wind",
+            "light_screen",
+            "mega_kick",
+            "mega_punch",
+            "misty_terrain",
+            "play_rough",
+            "protect",
+            "psychic",
+            "rain_dance",
+            "reflect",
+            "rest",
+            "round",
+            "safeguard",
+            "screech",
+            "shadow_ball",
+            "sleep_talk",
+            "snore",
+            "solar_beam",
+            "substitute",
+            "sunny_day",
+            "thunder_wave",
+            "uproar",
+            "wild_charge",
+            "work_up"
+        ],
+        "tutor": [],
+        "egg_moves": [
+            "covet",
+            "gravity",
+            "heal_pulse",
+            "last_resort",
+            "perish_song",
+            "present",
+            "rollout",
+            "wish"
+        ]
+    },
+    "evolution_line_id": 16
+}

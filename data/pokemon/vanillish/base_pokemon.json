@@ -1,0 +1,121 @@
+{
+    "name": "vanillish",
+    "display_name": "Vanillish",
+    "pokedex_number": 583,
+    "types": [
+        "ice"
+    ],
+    "base_stats": {
+        "hp": 51,
+        "attack": 65,
+        "defense": 65,
+        "special_attack": 80,
+        "special_defense": 75,
+        "speed": 59
+    },
+    "ev_yield": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "special_attack": 2,
+        "special_defense": 0,
+        "speed": 0
+    },
+    "capture_rate": 120,
+    "base_experience_yield": 138,
+    "base_happiness": 70,
+    "gender_rate": 4,
+    "abilities": [
+        {
+            "ability": "ice_body",
+            "slot": 1,
+            "is_hidden": false
+        },
+        {
+            "ability": "snow_cloak",
+            "slot": 2,
+            "is_hidden": false
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": true
+        }
+    ],
+    "height_m": 1.1,
+    "weight_kg": 41.0,
+    "egg_groups": [
+        "mineral"
+    ],
+    "growth_rate": "slow",
+    "moves": {
+        "level": {
+            "1": [
+                "astonish",
+                "harden",
+                "mist",
+                "taunt"
+            ],
+            "44": [
+                "ice_beam"
+            ],
+            "50": [
+                "blizzard"
+            ],
+            "32": [
+                "acid_armor"
+            ],
+            "12": [
+                "icy_wind"
+            ],
+            "38": [
+                "mirror_coat"
+            ],
+            "28": [
+                "uproar"
+            ],
+            "20": [
+                "hail"
+            ],
+            "56": [
+                "sheer_cold"
+            ],
+            "24": [
+                "icicle_spear"
+            ],
+            "16": [
+                "avalanche"
+            ]
+        },
+        "machine": [
+            "ally_switch",
+            "attract",
+            "avalanche",
+            "blizzard",
+            "endure",
+            "facade",
+            "flash_cannon",
+            "hail",
+            "hyper_voice",
+            "ice_beam",
+            "icicle_spear",
+            "icy_wind",
+            "imprison",
+            "iron_defense",
+            "light_screen",
+            "protect",
+            "rain_dance",
+            "rest",
+            "round",
+            "self_destruct",
+            "sleep_talk",
+            "snore",
+            "substitute",
+            "taunt",
+            "uproar"
+        ],
+        "tutor": [],
+        "egg_moves": []
+    },
+    "evolution_line_id": 296
+}
