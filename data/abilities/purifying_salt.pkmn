@@ -1,0 +1,7 @@
+@ability("purifying_salt")  # type: ignore
+class _PurifyingSalt:
+    meta = {
+        "display_name": "Purifying Salt",
+        "description": "Protects from status conditions and halves damage from Ghost-type moves.",
+        "index": 272,
+    }

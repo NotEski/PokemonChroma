@@ -1,0 +1,7 @@
+@ability("iron_barbs")  # type: ignore
+class _IronBarbs:
+    meta = {
+        "display_name": "Iron Barbs",
+        "description": "Damages attacking Pokémon for 1/8 their max HP on contact.",
+        "index": 160,
+    }

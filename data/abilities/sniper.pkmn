@@ -1,0 +1,7 @@
+@ability("sniper")  # type: ignore
+class _Sniper:
+    meta = {
+        "display_name": "Sniper",
+        "description": "Strengthens critical hits to inflict 3× damage rather than 2×.",
+        "index": 97,
+    }

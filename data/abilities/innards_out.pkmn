@@ -1,0 +1,7 @@
+@ability("innards_out")  # type: ignore
+class _InnardsOut:
+    meta = {
+        "display_name": "Innards Out",
+        "description": "When this Pokémon faints from an opponent's move, that opponent takes damage equal to the HP this Pokémon had remaining.",
+        "index": 215,
+    }

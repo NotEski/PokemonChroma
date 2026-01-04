@@ -1,0 +1,7 @@
+@ability("sand_stream")  # type: ignore
+class _SandStream:
+    meta = {
+        "display_name": "Sand Stream",
+        "description": "Summons a sandstorm that lasts indefinitely upon entering battle.",
+        "index": 45,
+    }

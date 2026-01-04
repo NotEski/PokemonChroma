@@ -1,0 +1,7 @@
+@ability("supersweet_syrup")  # type: ignore
+class _SupersweetSyrup:
+    meta = {
+        "display_name": "Supersweet Syrup",
+        "description": "Once per battle, when a Pokémon with Supersweet Syrup enters the battle, it lowers the evasion stat of all adjacent opponents by one stage.",
+        "index": 300,
+    }

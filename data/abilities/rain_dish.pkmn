@@ -1,0 +1,7 @@
+@ability("rain_dish")  # type: ignore
+class _RainDish:
+    meta = {
+        "display_name": "Rain Dish",
+        "description": "Heals for 1/16 max HP after each turn during rain.",
+        "index": 44,
+    }

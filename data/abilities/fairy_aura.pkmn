@@ -1,0 +1,7 @@
+@ability("fairy_aura")  # type: ignore
+class _FairyAura:
+    meta = {
+        "display_name": "Fairy Aura",
+        "description": "Strengthens fairy moves to 1.33× their power for all friendly and opposing Pokémon.",
+        "index": 187,
+    }

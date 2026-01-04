@@ -1,0 +1,7 @@
+@ability("thick_fat")  # type: ignore
+class _ThickFat:
+    meta = {
+        "display_name": "Thick Fat",
+        "description": "Halves damage from fire and ice moves.",
+        "index": 47,
+    }

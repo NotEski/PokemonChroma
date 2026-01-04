@@ -1,0 +1,7 @@
+@ability("embody_aspect")  # type: ignore
+class _EmbodyAspect:
+    meta = {
+        "display_name": "Embody Aspect",
+        "description": "Embody Aspect boosts a particular stat, depending on the form of a Terastallized Ogerpon",
+        "index": 303,
+    }

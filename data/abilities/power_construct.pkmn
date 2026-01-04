@@ -1,0 +1,7 @@
+@ability("power_construct")  # type: ignore
+class _PowerConstruct:
+    meta = {
+        "display_name": "Power Construct",
+        "description": "Transforms 10% or 50% Zygarde into Complete Forme when its HP is below 50%.",
+        "index": 211,
+    }

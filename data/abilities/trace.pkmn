@@ -1,0 +1,7 @@
+@ability("trace")  # type: ignore
+class _Trace:
+    meta = {
+        "display_name": "Trace",
+        "description": "Copies an opponent's ability upon entering battle.",
+        "index": 36,
+    }

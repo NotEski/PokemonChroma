@@ -1,0 +1,7 @@
+@ability("anger_point")  # type: ignore
+class _AngerPoint:
+    meta = {
+        "display_name": "Anger Point",
+        "description": "Raises Attack to the maximum of six stages upon receiving a critical hit.",
+        "index": 83,
+    }

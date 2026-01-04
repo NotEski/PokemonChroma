@@ -1,0 +1,7 @@
+@ability("slush_rush")  # type: ignore
+class _SlushRush:
+    meta = {
+        "display_name": "Slush Rush",
+        "description": "During Hail, this Pokémon has double Speed.",
+        "index": 202,
+    }

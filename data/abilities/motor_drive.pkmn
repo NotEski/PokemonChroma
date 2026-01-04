@@ -1,0 +1,7 @@
+@ability("motor_drive")  # type: ignore
+class _MotorDrive:
+    meta = {
+        "display_name": "Motor Drive",
+        "description": "Absorbs electric moves, raising Speed one stage.",
+        "index": 78,
+    }

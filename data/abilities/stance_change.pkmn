@@ -1,0 +1,7 @@
+@ability("stance_change")  # type: ignore
+class _StanceChange:
+    meta = {
+        "display_name": "Stance Change",
+        "description": "Changes aegislash to Blade Forme before using a damaging move, or Shield Forme before using kings shield.",
+        "index": 176,
+    }

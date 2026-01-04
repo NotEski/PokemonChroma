@@ -1,0 +1,7 @@
+@ability("imposter")  # type: ignore
+class _Imposter:
+    meta = {
+        "display_name": "Imposter",
+        "description": "Transforms upon entering battle.",
+        "index": 150,
+    }

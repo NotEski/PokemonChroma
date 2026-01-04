@@ -1,0 +1,7 @@
+@ability("flare_boost")  # type: ignore
+class _FlareBoost:
+    meta = {
+        "display_name": "Flare Boost",
+        "description": "Increases Special Attack to 1.5× when burned.",
+        "index": 138,
+    }

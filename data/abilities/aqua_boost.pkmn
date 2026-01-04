@@ -1,0 +1,7 @@
+@ability("aqua_boost")  # type: ignore
+class _AquaBoost:
+    meta = {
+        "display_name": "Aqua Boost",
+        "description": "",
+        "index": 10055,
+    }

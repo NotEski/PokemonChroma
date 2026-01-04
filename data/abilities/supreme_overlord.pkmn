@@ -1,0 +1,7 @@
+@ability("supreme_overlord")  # type: ignore
+class _SupremeOverlord:
+    meta = {
+        "display_name": "Supreme Overlord",
+        "description": "Attack and Special Attack are boosted for each party Pokémon that has been defeated.",
+        "index": 293,
+    }

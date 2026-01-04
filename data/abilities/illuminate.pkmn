@@ -1,0 +1,7 @@
+@ability("illuminate")  # type: ignore
+class _Illuminate:
+    meta = {
+        "display_name": "Illuminate",
+        "description": "Doubles the wild encounter rate.",
+        "index": 35,
+    }

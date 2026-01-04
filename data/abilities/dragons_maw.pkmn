@@ -1,0 +1,7 @@
+@ability("dragons_maw")  # type: ignore
+class _DragonsMaw:
+    meta = {
+        "display_name": "Dragon’s Maw",
+        "description": "Powers up Dragon-type moves.",
+        "index": 263,
+    }

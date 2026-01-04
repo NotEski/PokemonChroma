@@ -1,0 +1,7 @@
+@ability("well_baked_body")  # type: ignore
+class _WellBakedBody:
+    meta = {
+        "display_name": "Well-Baked Body",
+        "description": "Immune to Fire-type moves, and Defense is sharply boosted.",
+        "index": 273,
+    }

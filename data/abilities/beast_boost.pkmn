@@ -1,0 +1,7 @@
+@ability("beast_boost")  # type: ignore
+class _BeastBoost:
+    meta = {
+        "display_name": "Beast Boost",
+        "description": "Raises this Pokémon's highest stat by one stage when it faints another Pokémon.",
+        "index": 224,
+    }

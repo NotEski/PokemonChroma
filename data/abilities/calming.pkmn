@@ -1,0 +1,7 @@
+@ability("calming")  # type: ignore
+class _Calming:
+    meta = {
+        "display_name": "Calming",
+        "description": "",
+        "index": 10037,
+    }

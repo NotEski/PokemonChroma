@@ -1,0 +1,7 @@
+@ability("costar")  # type: ignore
+class _Costar:
+    meta = {
+        "display_name": "Costar",
+        "description": "Copies ally's stat changes on entering battle.",
+        "index": 294,
+    }

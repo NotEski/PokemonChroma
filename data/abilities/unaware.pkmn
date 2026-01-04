@@ -1,0 +1,7 @@
+@ability("unaware")  # type: ignore
+class _Unaware:
+    meta = {
+        "display_name": "Unaware",
+        "description": "Ignores other Pokémon's stat modifiers for damage and accuracy calculation.",
+        "index": 109,
+    }

@@ -1,0 +1,7 @@
+@ability("arena_trap")  # type: ignore
+class _ArenaTrap:
+    meta = {
+        "display_name": "Arena Trap",
+        "description": "Prevents opponents from fleeing or switching out. Eluded by flying-types and Pokémon in the air.",
+        "index": 71,
+    }

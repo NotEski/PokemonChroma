@@ -1,0 +1,7 @@
+@ability("merciless")  # type: ignore
+class _Merciless:
+    meta = {
+        "display_name": "Merciless",
+        "description": "This Pokémon's moves critical hit against poisoned targets.",
+        "index": 196,
+    }

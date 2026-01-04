@@ -1,0 +1,7 @@
+@ability("perish_body")  # type: ignore
+class _PerishBody:
+    meta = {
+        "display_name": "Perish Body",
+        "description": "When hit by a move that makes direct contact, the Pokémon and the attacker will faint after three turns unless they switch out of battle.",
+        "index": 253,
+    }

@@ -1,0 +1,7 @@
+@ability("soul_heart")  # type: ignore
+class _SoulHeart:
+    meta = {
+        "display_name": "Soul-Heart",
+        "description": "This Pokémon's Special Attack rises by one stage every time any Pokémon faints.",
+        "index": 220,
+    }

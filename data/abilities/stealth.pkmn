@@ -1,0 +1,7 @@
+@ability("stealth")  # type: ignore
+class _Stealth:
+    meta = {
+        "display_name": "Stealth",
+        "description": "",
+        "index": 10030,
+    }

@@ -1,0 +1,7 @@
+@ability("dancer")  # type: ignore
+class _Dancer:
+    meta = {
+        "display_name": "Dancer",
+        "description": "Whenever another Pokémon uses a dance move, this Pokémon will use the same move immediately afterwards.",
+        "index": 216,
+    }

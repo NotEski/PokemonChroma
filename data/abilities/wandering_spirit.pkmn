@@ -1,0 +1,7 @@
+@ability("wandering_spirit")  # type: ignore
+class _WanderingSpirit:
+    meta = {
+        "display_name": "Wandering Spirit",
+        "description": "Swaps abilities with opponents on contact.",
+        "index": 254,
+    }

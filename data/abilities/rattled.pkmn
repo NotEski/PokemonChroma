@@ -1,0 +1,7 @@
+@ability("rattled")  # type: ignore
+class _Rattled:
+    meta = {
+        "display_name": "Rattled",
+        "description": "Raises Speed one stage upon being hit by a dark, ghost, or bug move.",
+        "index": 155,
+    }

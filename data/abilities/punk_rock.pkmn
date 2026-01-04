@@ -1,0 +1,7 @@
+@ability("punk_rock")  # type: ignore
+class _PunkRock:
+    meta = {
+        "display_name": "Punk Rock",
+        "description": "Boosts sound-based moves and halves damage from the same moves.",
+        "index": 244,
+    }

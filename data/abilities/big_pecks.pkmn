@@ -1,0 +1,7 @@
+@ability("big_pecks")  # type: ignore
+class _BigPecks:
+    meta = {
+        "display_name": "Big Pecks",
+        "description": "Protects against Defense drops.",
+        "index": 145,
+    }

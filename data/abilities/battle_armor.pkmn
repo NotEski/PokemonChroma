@@ -1,0 +1,7 @@
+@ability("battle_armor")  # type: ignore
+class _BattleArmor:
+    meta = {
+        "display_name": "Battle Armor",
+        "description": "Protects against critical hits.",
+        "index": 4,
+    }

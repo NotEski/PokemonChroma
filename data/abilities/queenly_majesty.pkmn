@@ -1,0 +1,7 @@
+@ability("queenly_majesty")  # type: ignore
+class _QueenlyMajesty:
+    meta = {
+        "display_name": "Queenly Majesty",
+        "description": "Opposing Pokémon cannot use priority attacks.",
+        "index": 214,
+    }

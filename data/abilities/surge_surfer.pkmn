@@ -1,0 +1,7 @@
+@ability("surge_surfer")  # type: ignore
+class _SurgeSurfer:
+    meta = {
+        "display_name": "Surge Surfer",
+        "description": "Doubles this Pokémon's Speed on Electric Terrain.",
+        "index": 207,
+    }

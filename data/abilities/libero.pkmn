@@ -1,0 +1,7 @@
+@ability("libero")  # type: ignore
+class _Libero:
+    meta = {
+        "display_name": "Libero",
+        "description": "Libero changes the Pokémon's type to that of its previously used attack.",
+        "index": 236,
+    }

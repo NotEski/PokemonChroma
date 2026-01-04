@@ -1,0 +1,7 @@
+@ability("aftermath")  # type: ignore
+class _Aftermath:
+    meta = {
+        "display_name": "Aftermath",
+        "description": "Damages the attacker for 1/4 its max HP when knocked out by a contact move.",
+        "index": 106,
+    }

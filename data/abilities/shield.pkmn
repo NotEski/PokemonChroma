@@ -1,0 +1,7 @@
+@ability("shield")  # type: ignore
+class _Shield:
+    meta = {
+        "display_name": "Shield",
+        "description": "",
+        "index": 10060,
+    }

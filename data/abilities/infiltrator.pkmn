@@ -1,0 +1,7 @@
+@ability("infiltrator")  # type: ignore
+class _Infiltrator:
+    meta = {
+        "display_name": "Infiltrator",
+        "description": "Bypasses light screen, reflect, and safeguard.",
+        "index": 151,
+    }

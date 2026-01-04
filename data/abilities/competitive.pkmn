@@ -1,0 +1,7 @@
+@ability("competitive")  # type: ignore
+class _Competitive:
+    meta = {
+        "display_name": "Competitive",
+        "description": "Raises Special Attack by two stages upon having any stat lowered.",
+        "index": 172,
+    }

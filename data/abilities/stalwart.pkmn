@@ -1,0 +1,7 @@
+@ability("stalwart")  # type: ignore
+class _Stalwart:
+    meta = {
+        "display_name": "Stalwart",
+        "description": "Ignores moves and abilities that draw in moves.",
+        "index": 242,
+    }

@@ -1,0 +1,7 @@
+@ability("flame_body")  # type: ignore
+class _FlameBody:
+    meta = {
+        "display_name": "Flame Body",
+        "description": "Has a 30% chance of burning attacking Pokémon on contact.",
+        "index": 49,
+    }

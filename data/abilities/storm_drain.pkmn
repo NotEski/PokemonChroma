@@ -1,0 +1,7 @@
+@ability("storm_drain")  # type: ignore
+class _StormDrain:
+    meta = {
+        "display_name": "Storm Drain",
+        "description": "Redirects single-target water moves to this Pokémon where possible. Absorbs Water moves, raising Special Attack one stage.",
+        "index": 114,
+    }

@@ -1,0 +1,7 @@
+@ability("liquid_ooze")  # type: ignore
+class _LiquidOoze:
+    meta = {
+        "display_name": "Liquid Ooze",
+        "description": "Damages opponents using leeching moves for as much as they would heal.",
+        "index": 64,
+    }

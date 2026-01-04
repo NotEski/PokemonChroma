@@ -1,0 +1,7 @@
+@ability("drought")  # type: ignore
+class _Drought:
+    meta = {
+        "display_name": "Drought",
+        "description": "Summons strong sunlight that lasts indefinitely upon entering battle.",
+        "index": 70,
+    }

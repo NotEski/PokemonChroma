@@ -1,0 +1,7 @@
+@ability("zero_to_hero")  # type: ignore
+class _ZeroToHero:
+    meta = {
+        "display_name": "Zero to Hero",
+        "description": "Transforms into its Hero Form when switching out.",
+        "index": 278,
+    }

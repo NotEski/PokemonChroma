@@ -1,0 +1,7 @@
+@ability("electromorphosis")  # type: ignore
+class _Electromorphosis:
+    meta = {
+        "display_name": "Electromorphosis",
+        "description": "When hit by an attack, the power of the next Electric-type move it uses is doubled.",
+        "index": 280,
+    }

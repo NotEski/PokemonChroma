@@ -1,0 +1,7 @@
+@ability("psychic_surge")  # type: ignore
+class _PsychicSurge:
+    meta = {
+        "display_name": "Psychic Surge",
+        "description": "When this Pokémon enters battle, it changes the terrain to Psychic Terrain.",
+        "index": 227,
+    }

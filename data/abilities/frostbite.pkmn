@@ -1,0 +1,7 @@
+@ability("frostbite")  # type: ignore
+class _Frostbite:
+    meta = {
+        "display_name": "Frostbite",
+        "description": "",
+        "index": 10010,
+    }

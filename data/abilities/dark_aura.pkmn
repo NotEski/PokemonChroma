@@ -1,0 +1,7 @@
+@ability("dark_aura")  # type: ignore
+class _DarkAura:
+    meta = {
+        "display_name": "Dark Aura",
+        "description": "Strengthens dark moves to 1.33× their power for all friendly and opposing Pokémon.",
+        "index": 186,
+    }

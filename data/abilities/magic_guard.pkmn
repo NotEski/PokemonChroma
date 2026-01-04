@@ -1,0 +1,7 @@
+@ability("magic_guard")  # type: ignore
+class _MagicGuard:
+    meta = {
+        "display_name": "Magic Guard",
+        "description": "Protects against damage not directly caused by a move.",
+        "index": 98,
+    }

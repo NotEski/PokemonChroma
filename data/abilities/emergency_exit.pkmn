@@ -1,0 +1,7 @@
+@ability("emergency_exit")  # type: ignore
+class _EmergencyExit:
+    meta = {
+        "display_name": "Emergency Exit",
+        "description": "This Pokémon automatically switches out when its HP drops below half.",
+        "index": 194,
+    }

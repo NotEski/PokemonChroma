@@ -1,0 +1,7 @@
+@ability("beads_of_ruin")  # type: ignore
+class _BeadsOfRuin:
+    meta = {
+        "display_name": "Beads of Ruin",
+        "description": "Lowers Special Defense of all Pokémon except itself.",
+        "index": 287,
+    }

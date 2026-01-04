@@ -1,0 +1,7 @@
+@ability("sand_spit")  # type: ignore
+class _SandSpit:
+    meta = {
+        "display_name": "Sand Spit",
+        "description": "Creates a sandstorm when hit by an attack.",
+        "index": 245,
+    }

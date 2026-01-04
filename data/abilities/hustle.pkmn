@@ -1,0 +1,7 @@
+@ability("hustle")  # type: ignore
+class _Hustle:
+    meta = {
+        "display_name": "Hustle",
+        "description": "Strengthens physical moves to inflict 1.5× damage, but decreases their accuracy to 0.8×.",
+        "index": 55,
+    }

@@ -1,0 +1,7 @@
+@ability("warm_blanket")  # type: ignore
+class _WarmBlanket:
+    meta = {
+        "display_name": "Warm Blanket",
+        "description": "",
+        "index": 10016,
+    }

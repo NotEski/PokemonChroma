@@ -1,0 +1,7 @@
+@ability("screen_cleaner")  # type: ignore
+class _ScreenCleaner:
+    meta = {
+        "display_name": "Screen Cleaner",
+        "description": "Nullifies effects of Light Screen, Reflect, and Aurora Veil.",
+        "index": 251,
+    }

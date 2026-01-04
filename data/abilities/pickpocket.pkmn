@@ -1,0 +1,7 @@
+@ability("pickpocket")  # type: ignore
+class _Pickpocket:
+    meta = {
+        "display_name": "Pickpocket",
+        "description": "Steals attacking Pokémon's held items on contact.",
+        "index": 124,
+    }

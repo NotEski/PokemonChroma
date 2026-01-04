@@ -1,0 +1,7 @@
+@ability("rock_head")  # type: ignore
+class _RockHead:
+    meta = {
+        "display_name": "Rock Head",
+        "description": "Protects against recoil damage.",
+        "index": 69,
+    }

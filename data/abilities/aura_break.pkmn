@@ -1,0 +1,7 @@
+@ability("aura_break")  # type: ignore
+class _AuraBreak:
+    meta = {
+        "display_name": "Aura Break",
+        "description": "Makes dark aura and fairy aura weaken moves of their respective types.",
+        "index": 188,
+    }

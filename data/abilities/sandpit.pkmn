@@ -1,0 +1,7 @@
+@ability("sandpit")  # type: ignore
+class _Sandpit:
+    meta = {
+        "display_name": "Sandpit",
+        "description": "",
+        "index": 10019,
+    }

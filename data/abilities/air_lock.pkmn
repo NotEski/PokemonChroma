@@ -1,0 +1,7 @@
+@ability("air_lock")  # type: ignore
+class _AirLock:
+    meta = {
+        "display_name": "Air Lock",
+        "description": "Negates all effects of weather, but does not prevent the weather itself.",
+        "index": 76,
+    }

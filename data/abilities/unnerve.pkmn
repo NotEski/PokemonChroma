@@ -1,0 +1,7 @@
+@ability("unnerve")  # type: ignore
+class _Unnerve:
+    meta = {
+        "display_name": "Unnerve",
+        "description": "Prevents opposing Pokémon from eating held Berries.",
+        "index": 127,
+    }

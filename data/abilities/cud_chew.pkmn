@@ -1,0 +1,7 @@
+@ability("cud_chew")  # type: ignore
+class _CudChew:
+    meta = {
+        "display_name": "Cud Chew",
+        "description": "Causes the Pokémon to reuse an already consumed Berry at the end of the next turn.",
+        "index": 291,
+    }

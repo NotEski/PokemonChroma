@@ -1,0 +1,7 @@
+@ability("sturdy")  # type: ignore
+class _Sturdy:
+    meta = {
+        "display_name": "Sturdy",
+        "description": "Prevents being KOed from full HP, leaving 1 HP instead. Protects against the one-hit KO moves regardless of HP.",
+        "index": 5,
+    }

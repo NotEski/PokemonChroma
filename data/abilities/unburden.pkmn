@@ -1,0 +1,7 @@
+@ability("unburden")  # type: ignore
+class _Unburden:
+    meta = {
+        "display_name": "Unburden",
+        "description": "Doubles Speed upon using or losing a held item.",
+        "index": 84,
+    }

@@ -1,0 +1,7 @@
+@ability("solar_power")  # type: ignore
+class _SolarPower:
+    meta = {
+        "display_name": "Solar Power",
+        "description": "Increases Special Attack to 1.5× but costs 1/8 max HP after each turn during strong sunlight.",
+        "index": 94,
+    }

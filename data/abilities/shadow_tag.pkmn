@@ -1,0 +1,7 @@
+@ability("shadow_tag")  # type: ignore
+class _ShadowTag:
+    meta = {
+        "display_name": "Shadow Tag",
+        "description": "Prevents opponents from fleeing or switching out.",
+        "index": 23,
+    }

@@ -1,0 +1,7 @@
+@ability("super_luck")  # type: ignore
+class _SuperLuck:
+    meta = {
+        "display_name": "Super Luck",
+        "description": "Raises moves' critical hit rates one stage.",
+        "index": 105,
+    }

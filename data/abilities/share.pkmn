@@ -1,0 +1,7 @@
+@ability("share")  # type: ignore
+class _Share:
+    meta = {
+        "display_name": "Share",
+        "description": "",
+        "index": 10047,
+    }

@@ -1,0 +1,7 @@
+@ability("magnet_pull")  # type: ignore
+class _MagnetPull:
+    meta = {
+        "display_name": "Magnet Pull",
+        "description": "Prevents steel opponents from fleeing or switching out.",
+        "index": 42,
+    }

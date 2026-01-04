@@ -1,0 +1,7 @@
+@ability("medic")  # type: ignore
+class _Medic:
+    meta = {
+        "display_name": "Medic",
+        "description": "",
+        "index": 10021,
+    }

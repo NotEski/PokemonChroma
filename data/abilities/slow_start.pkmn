@@ -1,0 +1,7 @@
+@ability("slow_start")  # type: ignore
+class _SlowStart:
+    meta = {
+        "display_name": "Slow Start",
+        "description": "Halves Attack and Speed for five turns upon entering battle.",
+        "index": 112,
+    }

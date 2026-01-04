@@ -1,0 +1,7 @@
+@ability("overcoat")  # type: ignore
+class _Overcoat:
+    meta = {
+        "display_name": "Overcoat",
+        "description": "Protects against damage from weather.",
+        "index": 142,
+    }

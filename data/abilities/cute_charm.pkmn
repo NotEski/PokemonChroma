@@ -1,0 +1,7 @@
+@ability("cute_charm")  # type: ignore
+class _CuteCharm:
+    meta = {
+        "display_name": "Cute Charm",
+        "description": "Has a 30% chance of infatuating attacking Pokémon on contact.",
+        "index": 56,
+    }

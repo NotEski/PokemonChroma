@@ -1,0 +1,7 @@
+@ability("ball_fetch")  # type: ignore
+class _BallFetch:
+    meta = {
+        "display_name": "Ball Fetch",
+        "description": "If the Pokémon is not holding an item, it will fetch the Poké Ball from the first failed throw of the battle.",
+        "index": 237,
+    }

@@ -1,0 +1,7 @@
+@ability("magma_armor")  # type: ignore
+class _MagmaArmor:
+    meta = {
+        "display_name": "Magma Armor",
+        "description": "Prevents freezing.",
+        "index": 40,
+    }

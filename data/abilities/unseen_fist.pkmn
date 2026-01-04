@@ -1,0 +1,7 @@
+@ability("unseen_fist")  # type: ignore
+class _UnseenFist:
+    meta = {
+        "display_name": "Unseen Fist",
+        "description": "Contact moves can strike through Protect/Detect.",
+        "index": 260,
+    }

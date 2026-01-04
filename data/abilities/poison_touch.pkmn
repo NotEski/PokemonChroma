@@ -1,0 +1,7 @@
+@ability("poison_touch")  # type: ignore
+class _PoisonTouch:
+    meta = {
+        "display_name": "Poison Touch",
+        "description": "Has a 30% chance of poisoning target Pokémon upon contact.",
+        "index": 143,
+    }

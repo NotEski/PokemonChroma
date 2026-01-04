@@ -1,0 +1,7 @@
+@ability("receiver")  # type: ignore
+class _Receiver:
+    meta = {
+        "display_name": "Receiver",
+        "description": "When an ally faints, this Pokémon gains its Ability.",
+        "index": 222,
+    }

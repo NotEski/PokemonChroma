@@ -1,0 +1,7 @@
+@ability("limber")  # type: ignore
+class _Limber:
+    meta = {
+        "display_name": "Limber",
+        "description": "Prevents paralysis.",
+        "index": 7,
+    }

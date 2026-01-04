@@ -1,0 +1,7 @@
+@ability("wonder_guard")  # type: ignore
+class _WonderGuard:
+    meta = {
+        "display_name": "Wonder Guard",
+        "description": "Protects against damaging moves that are not super effective.",
+        "index": 25,
+    }

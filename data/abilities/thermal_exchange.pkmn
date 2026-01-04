@@ -1,0 +1,7 @@
+@ability("thermal_exchange")  # type: ignore
+class _ThermalExchange:
+    meta = {
+        "display_name": "Thermal Exchange",
+        "description": "Raises Attack when hit by a Fire-type move. Cannot be burned.",
+        "index": 270,
+    }

@@ -1,0 +1,11 @@
+@ability("guts")  # type: ignore
+class _Guts:
+    meta = {
+        "display_name": "Guts",
+        "description": "Increases Attack to 1.5× with a major status ailment.",
+        "index": 62,
+    }
+    def on_modify_attack(self, attack_damage, attacking_pokemon, defending_pokemon):
+        if len(attacking_pokemon.status_conditions) > 0:
+            return attack_damage * 1.5
+        return attack_damage

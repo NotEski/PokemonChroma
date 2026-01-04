@@ -1,0 +1,7 @@
+@ability("water_bubble")  # type: ignore
+class _WaterBubble:
+    meta = {
+        "display_name": "Water Bubble",
+        "description": "Halves damage from Fire moves, doubles damage of Water moves, and prevents burns.",
+        "index": 199,
+    }

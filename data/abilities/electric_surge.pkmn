@@ -1,0 +1,7 @@
+@ability("electric_surge")  # type: ignore
+class _ElectricSurge:
+    meta = {
+        "display_name": "Electric Surge",
+        "description": "When this Pokémon enters battle, it changes the terrain to Electric Terrain.",
+        "index": 226,
+    }

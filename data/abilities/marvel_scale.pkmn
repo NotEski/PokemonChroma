@@ -1,0 +1,7 @@
+@ability("marvel_scale")  # type: ignore
+class _MarvelScale:
+    meta = {
+        "display_name": "Marvel Scale",
+        "description": "Increases Defense to 1.5× with a major status ailment.",
+        "index": 63,
+    }

@@ -1,0 +1,7 @@
+@ability("good_as_gold")  # type: ignore
+class _GoodAsGold:
+    meta = {
+        "display_name": "Good as Gold",
+        "description": "Gives immunity to status moves.",
+        "index": 283,
+    }

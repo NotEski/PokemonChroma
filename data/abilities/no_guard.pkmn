@@ -1,0 +1,7 @@
+@ability("no_guard")  # type: ignore
+class _NoGuard:
+    meta = {
+        "display_name": "No Guard",
+        "description": "Ensures all moves used by and against the Pokémon hit.",
+        "index": 99,
+    }

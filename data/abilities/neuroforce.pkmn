@@ -1,0 +1,7 @@
+@ability("neuroforce")  # type: ignore
+class _Neuroforce:
+    meta = {
+        "display_name": "Neuroforce",
+        "description": "Increases super-effective damage dealt to 1.25×.",
+        "index": 233,
+    }

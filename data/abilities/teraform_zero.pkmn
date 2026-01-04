@@ -1,0 +1,7 @@
+@ability("teraform_zero")  # type: ignore
+class _TeraformZero:
+    meta = {
+        "display_name": "Teraform Zero",
+        "description": "As soon as Terapagos assumes its Stellar Form, it will immediately neutralize weather and terrain effects.",
+        "index": 306,
+    }

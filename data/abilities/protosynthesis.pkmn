@@ -1,0 +1,7 @@
+@ability("protosynthesis")  # type: ignore
+class _Protosynthesis:
+    meta = {
+        "display_name": "Protosynthesis",
+        "description": "Raises highest stat in harsh sunlight, or if holding Booster Energy.",
+        "index": 281,
+    }

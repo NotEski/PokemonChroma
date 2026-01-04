@@ -1,0 +1,7 @@
+@ability("weak_armor")  # type: ignore
+class _WeakArmor:
+    meta = {
+        "display_name": "Weak Armor",
+        "description": "Raises Speed and lowers Defense by one stage each upon being hit by a physical move.",
+        "index": 133,
+    }

@@ -1,0 +1,7 @@
+@ability("hot_blooded")  # type: ignore
+class _HotBlooded:
+    meta = {
+        "display_name": "Hot Blooded",
+        "description": "",
+        "index": 10020,
+    }

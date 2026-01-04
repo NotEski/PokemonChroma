@@ -1,0 +1,7 @@
+@ability("intimidate")  # type: ignore
+class _Intimidate:
+    meta = {
+        "display_name": "Intimidate",
+        "description": "Lowers opponents' Attack one stage upon entering battle.",
+        "index": 22,
+    }

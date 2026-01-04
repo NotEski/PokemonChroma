@@ -1,0 +1,7 @@
+@ability("strong_jaw")  # type: ignore
+class _StrongJaw:
+    meta = {
+        "display_name": "Strong Jaw",
+        "description": "Strengthens biting moves to 1.5× their power.",
+        "index": 173,
+    }

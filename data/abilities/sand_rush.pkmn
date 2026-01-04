@@ -1,0 +1,7 @@
+@ability("sand_rush")  # type: ignore
+class _SandRush:
+    meta = {
+        "display_name": "Sand Rush",
+        "description": "Doubles Speed during a sandstorm. Protects against sandstorm damage.",
+        "index": 146,
+    }

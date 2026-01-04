@@ -1,0 +1,7 @@
+@ability("poison_puppeteer")  # type: ignore
+class _PoisonPuppeteer:
+    meta = {
+        "display_name": "Poison Puppeteer",
+        "description": "Pokémon poisoned by Pecharunt's moves will also become confused.",
+        "index": 307,
+    }

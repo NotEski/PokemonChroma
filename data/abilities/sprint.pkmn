@@ -1,0 +1,7 @@
+@ability("sprint")  # type: ignore
+class _Sprint:
+    meta = {
+        "display_name": "Sprint",
+        "description": "",
+        "index": 10050,
+    }

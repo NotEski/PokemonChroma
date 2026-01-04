@@ -1,0 +1,7 @@
+@ability("stench")  # type: ignore
+class _Stench:
+    meta = {
+        "display_name": "Stench",
+        "description": "Has a 10% chance of making target Pokémon flinch with each hit.",
+        "index": 1,
+    }

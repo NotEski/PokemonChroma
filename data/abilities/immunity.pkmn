@@ -1,0 +1,7 @@
+@ability("immunity")  # type: ignore
+class _Immunity:
+    meta = {
+        "display_name": "Immunity",
+        "description": "Prevents poison.",
+        "index": 17,
+    }

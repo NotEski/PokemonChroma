@@ -1,0 +1,7 @@
+@ability("simple")  # type: ignore
+class _Simple:
+    meta = {
+        "display_name": "Simple",
+        "description": "Doubles the Pokémon's stat modifiers. These doubled modifiers are still capped at -6 or 6 stages.",
+        "index": 86,
+    }

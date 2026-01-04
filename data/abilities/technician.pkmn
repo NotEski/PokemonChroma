@@ -1,0 +1,7 @@
+@ability("technician")  # type: ignore
+class _Technician:
+    meta = {
+        "display_name": "Technician",
+        "description": "Strengthens moves of 60 base power or less to 1.5× their power.",
+        "index": 101,
+    }

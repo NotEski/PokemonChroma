@@ -1,0 +1,7 @@
+@ability("delta_stream")  # type: ignore
+class _DeltaStream:
+    meta = {
+        "display_name": "Delta Stream",
+        "description": "Creates a mysterious air current, which cannot be replaced and causes moves to never be super effective against Flying Pokémon.",
+        "index": 191,
+    }

@@ -1,0 +1,7 @@
+@ability("toxic_chain")  # type: ignore
+class _ToxicChain:
+    meta = {
+        "display_name": "Toxic Chain",
+        "description": "May cause bad poisoning when the Pokémon hits an opponent with a move.",
+        "index": 302,
+    }

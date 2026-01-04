@@ -1,0 +1,7 @@
+@ability("steam_engine")  # type: ignore
+class _SteamEngine:
+    meta = {
+        "display_name": "Steam Engine",
+        "description": "Boosts the Speed stat drastically when the Pokémon is hit by a Fire- or Water-type move.",
+        "index": 243,
+    }

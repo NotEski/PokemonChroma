@@ -1,0 +1,7 @@
+@ability("fur_coat")  # type: ignore
+class _FurCoat:
+    meta = {
+        "display_name": "Fur Coat",
+        "description": "Halves damage from physical attacks.",
+        "index": 169,
+    }

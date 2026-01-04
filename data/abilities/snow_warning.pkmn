@@ -1,0 +1,7 @@
+@ability("snow_warning")  # type: ignore
+class _SnowWarning:
+    meta = {
+        "display_name": "Snow Warning",
+        "description": "Summons hail that lasts indefinitely upon entering battle.",
+        "index": 117,
+    }

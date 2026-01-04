@@ -1,0 +1,7 @@
+@ability("grass_pelt")  # type: ignore
+class _GrassPelt:
+    meta = {
+        "display_name": "Grass Pelt",
+        "description": "Boosts Defense while grassy terrain is in effect.",
+        "index": 179,
+    }

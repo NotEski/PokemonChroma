@@ -1,0 +1,7 @@
+@ability("commander")  # type: ignore
+class _Commander:
+    meta = {
+        "display_name": "Commander",
+        "description": "Goes inside the mouth of an ally Dondozo if one is on the field.",
+        "index": 279,
+    }

@@ -1,0 +1,7 @@
+@ability("tera_shell")  # type: ignore
+class _TeraShell:
+    meta = {
+        "display_name": "Tera Shell",
+        "description": "All damage-dealing moves that hit the Pokémon when its HP is full will not be very effective.",
+        "index": 305,
+    }

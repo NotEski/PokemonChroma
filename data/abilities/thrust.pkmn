@@ -1,0 +1,7 @@
+@ability("thrust")  # type: ignore
+class _Thrust:
+    meta = {
+        "display_name": "Thrust",
+        "description": "",
+        "index": 10004,
+    }

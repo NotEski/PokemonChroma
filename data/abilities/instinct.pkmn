@@ -1,0 +1,7 @@
+@ability("instinct")  # type: ignore
+class _Instinct:
+    meta = {
+        "display_name": "Instinct",
+        "description": "",
+        "index": 10007,
+    }

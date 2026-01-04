@@ -1,0 +1,7 @@
+@ability("flower_gift")  # type: ignore
+class _FlowerGift:
+    meta = {
+        "display_name": "Flower Gift",
+        "description": "Increases friendly Pokémon's Attack and Special Defense to 1.5× during strong sunlight.",
+        "index": 122,
+    }

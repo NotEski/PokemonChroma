@@ -1,0 +1,7 @@
+@ability("guard_dog")  # type: ignore
+class _GuardDog:
+    meta = {
+        "display_name": "Guard Dog",
+        "description": "Boosts Attack if intimidated, and prevents being forced to switch out.",
+        "index": 275,
+    }

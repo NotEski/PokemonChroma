@@ -1,0 +1,7 @@
+@ability("effect_spore")  # type: ignore
+class _EffectSpore:
+    meta = {
+        "display_name": "Effect Spore",
+        "description": "Has a 30% chance of inflcting either paralysis, poison, or sleep on attacking Pokémon on contact.",
+        "index": 27,
+    }

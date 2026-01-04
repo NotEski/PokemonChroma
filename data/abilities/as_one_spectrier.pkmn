@@ -1,0 +1,7 @@
+@ability("as_one_spectrier")  # type: ignore
+class _AsOneSpectrier:
+    meta = {
+        "display_name": "As One",
+        "description": "",
+        "index": 267,
+    }

@@ -1,0 +1,7 @@
+@ability("swift_swim")  # type: ignore
+class _SwiftSwim:
+    meta = {
+        "display_name": "Swift Swim",
+        "description": "Doubles Speed during rain.",
+        "index": 33,
+    }

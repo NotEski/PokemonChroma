@@ -1,0 +1,7 @@
+@ability("power_spot")  # type: ignore
+class _PowerSpot:
+    meta = {
+        "display_name": "Power Spot",
+        "description": "Just being next to the Pokémon powers up moves.",
+        "index": 249,
+    }

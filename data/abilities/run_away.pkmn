@@ -1,0 +1,7 @@
+@ability("run_away")  # type: ignore
+class _RunAway:
+    meta = {
+        "display_name": "Run Away",
+        "description": "Ensures success fleeing from wild battles.",
+        "index": 50,
+    }

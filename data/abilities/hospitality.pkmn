@@ -1,0 +1,7 @@
+@ability("hospitality")  # type: ignore
+class _Hospitality:
+    meta = {
+        "display_name": "Hospitality",
+        "description": "When a Pokémon with Hospitality enters a battle, it restores HP for an ally by 25%.",
+        "index": 301,
+    }

@@ -1,0 +1,7 @@
+@ability("iron_fist")  # type: ignore
+class _IronFist:
+    meta = {
+        "display_name": "Iron Fist",
+        "description": "Strengthens punch-based moves to 1.2× their power.",
+        "index": 89,
+    }

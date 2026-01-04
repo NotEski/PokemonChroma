@@ -1,0 +1,7 @@
+@ability("oblivious")  # type: ignore
+class _Oblivious:
+    meta = {
+        "display_name": "Oblivious",
+        "description": "Prevents infatuation and protects against captivate.",
+        "index": 12,
+    }

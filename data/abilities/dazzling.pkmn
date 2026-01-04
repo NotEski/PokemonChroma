@@ -1,0 +1,7 @@
+@ability("dazzling")  # type: ignore
+class _Dazzling:
+    meta = {
+        "display_name": "Dazzling",
+        "description": "Opposing Pokémon cannot use priority attacks.",
+        "index": 219,
+    }

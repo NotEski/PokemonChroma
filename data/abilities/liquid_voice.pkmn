@@ -1,0 +1,7 @@
+@ability("liquid_voice")  # type: ignore
+class _LiquidVoice:
+    meta = {
+        "display_name": "Liquid Voice",
+        "description": "Sound-based moves become Water-type.",
+        "index": 204,
+    }

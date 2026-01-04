@@ -1,0 +1,7 @@
+@ability("contrary")  # type: ignore
+class _Contrary:
+    meta = {
+        "display_name": "Contrary",
+        "description": "Inverts stat changes.",
+        "index": 126,
+    }

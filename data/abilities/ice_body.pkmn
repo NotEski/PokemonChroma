@@ -1,0 +1,7 @@
+@ability("ice_body")  # type: ignore
+class _IceBody:
+    meta = {
+        "display_name": "Ice Body",
+        "description": "Heals for 1/16 max HP after each turn during hail. Protects against hail damage.",
+        "index": 115,
+    }

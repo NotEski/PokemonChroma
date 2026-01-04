@@ -1,0 +1,7 @@
+@ability("teravolt")  # type: ignore
+class _Teravolt:
+    meta = {
+        "display_name": "Teravolt",
+        "description": "Bypasses targets' abilities if they could hinder or prevent moves.",
+        "index": 164,
+    }

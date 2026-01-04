@@ -1,0 +1,7 @@
+@ability("magician")  # type: ignore
+class _Magician:
+    meta = {
+        "display_name": "Magician",
+        "description": "Steals the target's held item when the bearer uses a damaging move.",
+        "index": 170,
+    }

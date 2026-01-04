@@ -1,0 +1,7 @@
+@ability("shields_down")  # type: ignore
+class _ShieldsDown:
+    meta = {
+        "display_name": "Shields Down",
+        "description": "Transforms this Minior between Core Form and Meteor Form. Prevents major status ailments and drowsiness while in Meteor Form.",
+        "index": 197,
+    }

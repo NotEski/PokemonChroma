@@ -1,0 +1,7 @@
+@ability("volt_absorb")  # type: ignore
+class _VoltAbsorb:
+    meta = {
+        "display_name": "Volt Absorb",
+        "description": "Absorbs electric moves, healing for 1/4 max HP.",
+        "index": 10,
+    }

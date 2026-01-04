@@ -1,0 +1,7 @@
+@ability("dodge")  # type: ignore
+class _Dodge:
+    meta = {
+        "display_name": "Dodge",
+        "description": "",
+        "index": 10008,
+    }

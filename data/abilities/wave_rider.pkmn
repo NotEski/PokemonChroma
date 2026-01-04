@@ -1,0 +1,7 @@
+@ability("wave_rider")  # type: ignore
+class _WaveRider:
+    meta = {
+        "display_name": "Wave Rider",
+        "description": "",
+        "index": 10002,
+    }

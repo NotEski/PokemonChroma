@@ -1,0 +1,7 @@
+@ability("rivalry")  # type: ignore
+class _Rivalry:
+    meta = {
+        "display_name": "Rivalry",
+        "description": "Increases damage inflicted to 1.25× against Pokémon of the same gender, but decreases damage to 0.75× against the opposite gender.",
+        "index": 79,
+    }

@@ -1,0 +1,7 @@
+@ability("tough_claws")  # type: ignore
+class _ToughClaws:
+    meta = {
+        "display_name": "Tough Claws",
+        "description": "Strengthens moves that make contact to 1.33× their power.",
+        "index": 181,
+    }

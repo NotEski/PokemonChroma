@@ -1,0 +1,7 @@
+@ability("parry")  # type: ignore
+class _Parry:
+    meta = {
+        "display_name": "Parry",
+        "description": "",
+        "index": 10006,
+    }

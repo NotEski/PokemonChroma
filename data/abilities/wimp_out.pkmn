@@ -1,0 +1,7 @@
+@ability("wimp_out")  # type: ignore
+class _WimpOut:
+    meta = {
+        "display_name": "Wimp Out",
+        "description": "This Pokémon automatically switches out when its HP drops below half.",
+        "index": 193,
+    }

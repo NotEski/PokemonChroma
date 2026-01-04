@@ -1,0 +1,7 @@
+@ability("skill_link")  # type: ignore
+class _SkillLink:
+    meta = {
+        "display_name": "Skill Link",
+        "description": "Extends two-to-five-hit moves and triple kick to their full length every time.",
+        "index": 92,
+    }

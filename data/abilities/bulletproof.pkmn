@@ -1,0 +1,7 @@
+@ability("bulletproof")  # type: ignore
+class _Bulletproof:
+    meta = {
+        "display_name": "Bulletproof",
+        "description": "Protects against bullet, ball, and bomb-based moves.",
+        "index": 171,
+    }

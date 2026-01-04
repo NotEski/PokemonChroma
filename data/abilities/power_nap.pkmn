@@ -1,0 +1,7 @@
+@ability("power_nap")  # type: ignore
+class _PowerNap:
+    meta = {
+        "display_name": "Power Nap",
+        "description": "",
+        "index": 10014,
+    }

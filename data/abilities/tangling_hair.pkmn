@@ -1,0 +1,7 @@
+@ability("tangling_hair")  # type: ignore
+class _TanglingHair:
+    meta = {
+        "display_name": "Tangling Hair",
+        "description": "When this Pokémon takes regular damage from a contact move, the attacking Pokémon's Speed lowers by one stage.",
+        "index": 221,
+    }

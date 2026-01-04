@@ -1,0 +1,7 @@
+@ability("orichalcum_pulse")  # type: ignore
+class _OrichalcumPulse:
+    meta = {
+        "display_name": "Orichalcum Pulse",
+        "description": "Turns the sunlight harsh when entering battle, and boosts Attack while active.",
+        "index": 288,
+    }

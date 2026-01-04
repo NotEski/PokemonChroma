@@ -1,0 +1,7 @@
+@ability("run_up")  # type: ignore
+class _RunUp:
+    meta = {
+        "display_name": "Run Up",
+        "description": "",
+        "index": 10056,
+    }

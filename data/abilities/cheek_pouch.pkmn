@@ -1,0 +1,7 @@
+@ability("cheek_pouch")  # type: ignore
+class _CheekPouch:
+    meta = {
+        "display_name": "Cheek Pouch",
+        "description": "Restores HP upon eating a Berry, in addition to the Berry's effect.",
+        "index": 167,
+    }

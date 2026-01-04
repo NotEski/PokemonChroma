@@ -1,0 +1,7 @@
+@ability("forecast")  # type: ignore
+class _Forecast:
+    meta = {
+        "display_name": "Forecast",
+        "description": "Changes castform's type and form to match the weather.",
+        "index": 59,
+    }

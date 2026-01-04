@@ -1,0 +1,7 @@
+@ability("honey_gather")  # type: ignore
+class _HoneyGather:
+    meta = {
+        "display_name": "Honey Gather",
+        "description": "The Pokémon may pick up honey after battle.",
+        "index": 118,
+    }

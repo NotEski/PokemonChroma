@@ -1,0 +1,7 @@
+@ability("steelworker")  # type: ignore
+class _Steelworker:
+    meta = {
+        "display_name": "Steelworker",
+        "description": "This Pokémon's Steel moves have 1.5× power.",
+        "index": 200,
+    }

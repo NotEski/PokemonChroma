@@ -1,0 +1,7 @@
+@ability("explode")  # type: ignore
+class _Explode:
+    meta = {
+        "display_name": "Explode",
+        "description": "",
+        "index": 10045,
+    }

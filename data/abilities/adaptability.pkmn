@@ -1,0 +1,7 @@
+@ability("adaptability")  # type: ignore
+class _Adaptability:
+    meta = {
+        "display_name": "Adaptability",
+        "description": "Increases the same-type attack bonus from 1.5× to 2×.",
+        "index": 91,
+    }

@@ -1,0 +1,7 @@
+@ability("long_reach")  # type: ignore
+class _LongReach:
+    meta = {
+        "display_name": "Long Reach",
+        "description": "This Pokémon's moves do not make contact.",
+        "index": 203,
+    }

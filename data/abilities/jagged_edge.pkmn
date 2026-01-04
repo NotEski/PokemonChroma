@@ -1,0 +1,7 @@
+@ability("jagged_edge")  # type: ignore
+class _JaggedEdge:
+    meta = {
+        "display_name": "Jagged Edge",
+        "description": "",
+        "index": 10009,
+    }

@@ -1,0 +1,7 @@
+@ability("chilling_neigh")  # type: ignore
+class _ChillingNeigh:
+    meta = {
+        "display_name": "Chilling Neigh",
+        "description": "Boosts Attack after knocking out a Pokémon.",
+        "index": 264,
+    }

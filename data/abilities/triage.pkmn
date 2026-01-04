@@ -1,0 +1,7 @@
+@ability("triage")  # type: ignore
+class _Triage:
+    meta = {
+        "display_name": "Triage",
+        "description": "This Pokémon's healing moves have their priority increased by 3.",
+        "index": 205,
+    }

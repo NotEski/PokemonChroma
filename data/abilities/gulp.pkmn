@@ -1,0 +1,7 @@
+@ability("gulp")  # type: ignore
+class _Gulp:
+    meta = {
+        "display_name": "Gulp",
+        "description": "",
+        "index": 10017,
+    }

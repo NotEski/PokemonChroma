@@ -1,0 +1,7 @@
+@ability("defeatist")  # type: ignore
+class _Defeatist:
+    meta = {
+        "display_name": "Defeatist",
+        "description": "Halves Attack and Special Attack at 50% max HP or less.",
+        "index": 129,
+    }

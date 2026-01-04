@@ -1,0 +1,7 @@
+@ability("shadow_dash")  # type: ignore
+class _ShadowDash:
+    meta = {
+        "display_name": "Shadow Dash",
+        "description": "",
+        "index": 10049,
+    }

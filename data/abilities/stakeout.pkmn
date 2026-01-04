@@ -1,0 +1,7 @@
+@ability("stakeout")  # type: ignore
+class _Stakeout:
+    meta = {
+        "display_name": "Stakeout",
+        "description": "This Pokémon's moves have double power against Pokémon that switched in this turn.",
+        "index": 198,
+    }

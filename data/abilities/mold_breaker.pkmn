@@ -1,0 +1,7 @@
+@ability("mold_breaker")  # type: ignore
+class _MoldBreaker:
+    meta = {
+        "display_name": "Mold Breaker",
+        "description": "Bypasses targets' abilities if they could hinder or prevent a move.",
+        "index": 104,
+    }

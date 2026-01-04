@@ -1,0 +1,7 @@
+@ability("mega_launcher")  # type: ignore
+class _MegaLauncher:
+    meta = {
+        "display_name": "Mega Launcher",
+        "description": "Strengthens aura and pulse moves to 1.5× their power.",
+        "index": 178,
+    }

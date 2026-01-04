@@ -1,0 +1,7 @@
+@ability("full_metal_body")  # type: ignore
+class _FullMetalBody:
+    meta = {
+        "display_name": "Full Metal Body",
+        "description": "Other Pokémon cannot lower this Pokémon's stats.",
+        "index": 230,
+    }

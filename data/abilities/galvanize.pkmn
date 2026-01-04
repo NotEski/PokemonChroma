@@ -1,0 +1,7 @@
+@ability("galvanize")  # type: ignore
+class _Galvanize:
+    meta = {
+        "display_name": "Galvanize",
+        "description": "This Pokémon's Normal moves are Electric and have their power increased to 1.2×.",
+        "index": 206,
+    }

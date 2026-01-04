@@ -1,0 +1,7 @@
+@ability("omnipotent")  # type: ignore
+class _Omnipotent:
+    meta = {
+        "display_name": "Omnipotent",
+        "description": "",
+        "index": 10046,
+    }

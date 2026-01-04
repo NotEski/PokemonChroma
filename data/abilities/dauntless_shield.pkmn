@@ -1,0 +1,7 @@
+@ability("dauntless_shield")  # type: ignore
+class _DauntlessShield:
+    meta = {
+        "display_name": "Dauntless Shield",
+        "description": "Boosts Defense in battle.",
+        "index": 235,
+    }

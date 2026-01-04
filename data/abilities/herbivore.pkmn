@@ -1,0 +1,7 @@
+@ability("herbivore")  # type: ignore
+class _Herbivore:
+    meta = {
+        "display_name": "Herbivore",
+        "description": "",
+        "index": 10018,
+    }

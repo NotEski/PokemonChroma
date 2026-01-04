@@ -1,0 +1,7 @@
+@ability("opportunist")  # type: ignore
+class _Opportunist:
+    meta = {
+        "display_name": "Opportunist",
+        "description": "Copies stat boosts by the opponent.",
+        "index": 290,
+    }

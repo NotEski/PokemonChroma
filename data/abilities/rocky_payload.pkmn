@@ -1,0 +1,7 @@
+@ability("rocky_payload")  # type: ignore
+class _RockyPayload:
+    meta = {
+        "display_name": "Rocky Payload",
+        "description": "Powers up Rock-type moves.",
+        "index": 276,
+    }

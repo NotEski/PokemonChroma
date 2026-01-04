@@ -1,0 +1,7 @@
+@ability("flame_boost")  # type: ignore
+class _FlameBoost:
+    meta = {
+        "display_name": "Flame Boost",
+        "description": "",
+        "index": 10054,
+    }

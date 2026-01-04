@@ -1,0 +1,7 @@
+@ability("gorilla_tactics")  # type: ignore
+class _GorillaTactics:
+    meta = {
+        "display_name": "Gorilla Tactics",
+        "description": "Boosts the Pokémon's Attack stat but only allows the use of the first selected move.",
+        "index": 255,
+    }

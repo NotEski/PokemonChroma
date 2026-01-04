@@ -1,0 +1,7 @@
+@ability("snow_cloak")  # type: ignore
+class _SnowCloak:
+    meta = {
+        "display_name": "Snow Cloak",
+        "description": "Increases evasion to 1.25× during hail. Protects against hail damage.",
+        "index": 81,
+    }

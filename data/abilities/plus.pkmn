@@ -1,0 +1,7 @@
+@ability("plus")  # type: ignore
+class _Plus:
+    meta = {
+        "display_name": "Plus",
+        "description": "Increases Special Attack to 1.5× when a friendly Pokémon has plus or minus.",
+        "index": 57,
+    }

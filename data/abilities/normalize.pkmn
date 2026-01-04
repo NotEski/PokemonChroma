@@ -1,0 +1,7 @@
+@ability("normalize")  # type: ignore
+class _Normalize:
+    meta = {
+        "display_name": "Normalize",
+        "description": "Makes the Pokémon's moves all act normal-type.",
+        "index": 96,
+    }

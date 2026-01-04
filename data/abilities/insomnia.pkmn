@@ -1,0 +1,7 @@
+@ability("insomnia")  # type: ignore
+class _Insomnia:
+    meta = {
+        "display_name": "Insomnia",
+        "description": "Prevents sleep.",
+        "index": 15,
+    }

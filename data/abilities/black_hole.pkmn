@@ -1,0 +1,7 @@
+@ability("black_hole")  # type: ignore
+class _BlackHole:
+    meta = {
+        "display_name": "Black Hole",
+        "description": "",
+        "index": 10048,
+    }

@@ -1,0 +1,7 @@
+@ability("rks_system")  # type: ignore
+class _RksSystem:
+    meta = {
+        "display_name": "RKS System",
+        "description": "Changes this Pokémon's type to match its held Memory.",
+        "index": 225,
+    }

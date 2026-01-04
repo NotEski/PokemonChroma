@@ -1,0 +1,7 @@
+@ability("moody")  # type: ignore
+class _Moody:
+    meta = {
+        "display_name": "Moody",
+        "description": "Raises a random stat two stages and lowers another one stage after each turn.",
+        "index": 141,
+    }

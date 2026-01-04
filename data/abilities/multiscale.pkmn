@@ -1,0 +1,7 @@
+@ability("multiscale")  # type: ignore
+class _Multiscale:
+    meta = {
+        "display_name": "Multiscale",
+        "description": "Halves damage taken from full HP.",
+        "index": 136,
+    }

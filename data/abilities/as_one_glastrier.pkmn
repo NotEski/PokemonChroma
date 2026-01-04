@@ -1,0 +1,7 @@
+@ability("as_one_glastrier")  # type: ignore
+class _AsOneGlastrier:
+    meta = {
+        "display_name": "As One",
+        "description": "",
+        "index": 266,
+    }

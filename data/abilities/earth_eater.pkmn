@@ -1,0 +1,7 @@
+@ability("earth_eater")  # type: ignore
+class _EarthEater:
+    meta = {
+        "display_name": "Earth Eater",
+        "description": "Restores HP when hit by a Ground-type move.",
+        "index": 297,
+    }

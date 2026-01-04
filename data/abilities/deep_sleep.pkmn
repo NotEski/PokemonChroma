@@ -1,0 +1,7 @@
+@ability("deep_sleep")  # type: ignore
+class _DeepSleep:
+    meta = {
+        "display_name": "Deep Sleep",
+        "description": "",
+        "index": 10013,
+    }

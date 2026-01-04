@@ -1,0 +1,7 @@
+@ability("mimicry")  # type: ignore
+class _Mimicry:
+    meta = {
+        "display_name": "Mimicry",
+        "description": "Changes type depending on the terrain.",
+        "index": 250,
+    }

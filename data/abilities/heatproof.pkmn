@@ -1,0 +1,7 @@
+@ability("heatproof")  # type: ignore
+class _Heatproof:
+    meta = {
+        "display_name": "Heatproof",
+        "description": "Halves damage from fire moves and burns.",
+        "index": 85,
+    }

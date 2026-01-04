@@ -1,0 +1,7 @@
+@ability("inner_focus")  # type: ignore
+class _InnerFocus:
+    meta = {
+        "display_name": "Inner Focus",
+        "description": "Prevents flinching.",
+        "index": 39,
+    }

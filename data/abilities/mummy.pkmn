@@ -1,0 +1,7 @@
+@ability("mummy")  # type: ignore
+class _Mummy:
+    meta = {
+        "display_name": "Mummy",
+        "description": "Changes attacking Pokémon's abilities to Mummy on contact.",
+        "index": 152,
+    }

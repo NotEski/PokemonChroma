@@ -1,0 +1,7 @@
+@ability("lingering_aroma")  # type: ignore
+class _LingeringAroma:
+    meta = {
+        "display_name": "Lingering Aroma",
+        "description": "Contact changes the attacker's Ability to Lingering Aroma.",
+        "index": 268,
+    }

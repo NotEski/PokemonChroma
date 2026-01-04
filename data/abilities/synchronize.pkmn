@@ -1,0 +1,7 @@
+@ability("synchronize")  # type: ignore
+class _Synchronize:
+    meta = {
+        "display_name": "Synchronize",
+        "description": "Copies burns, paralysis, and poison received onto the Pokémon that inflicted them.",
+        "index": 28,
+    }

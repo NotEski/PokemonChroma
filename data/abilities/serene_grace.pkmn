@@ -1,0 +1,7 @@
+@ability("serene_grace")  # type: ignore
+class _SereneGrace:
+    meta = {
+        "display_name": "Serene Grace",
+        "description": "Doubles the chance of moves' extra effects occurring.",
+        "index": 32,
+    }

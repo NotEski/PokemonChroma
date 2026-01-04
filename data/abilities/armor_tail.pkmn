@@ -1,0 +1,7 @@
+@ability("armor_tail")  # type: ignore
+class _ArmorTail:
+    meta = {
+        "display_name": "Armor Tail",
+        "description": "Prevents the opponent from using any moves that have priority, such as Quick Attack.",
+        "index": 296,
+    }

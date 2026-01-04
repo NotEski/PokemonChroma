@@ -1,0 +1,7 @@
+@ability("mirror_armor")  # type: ignore
+class _MirrorArmor:
+    meta = {
+        "display_name": "Mirror Armor",
+        "description": "Reflects any stat-lowering effects.",
+        "index": 240,
+    }

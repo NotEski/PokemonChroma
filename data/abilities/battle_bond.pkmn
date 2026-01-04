@@ -1,0 +1,7 @@
+@ability("battle_bond")  # type: ignore
+class _BattleBond:
+    meta = {
+        "display_name": "Battle Bond",
+        "description": "Transforms this Pokémon into Ash-Greninja after fainting an opponent. Water Shuriken's power is 20 and always hits three times.",
+        "index": 210,
+    }

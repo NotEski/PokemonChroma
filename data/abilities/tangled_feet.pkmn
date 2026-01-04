@@ -1,0 +1,7 @@
+@ability("tangled_feet")  # type: ignore
+class _TangledFeet:
+    meta = {
+        "display_name": "Tangled Feet",
+        "description": "Doubles evasion when confused.",
+        "index": 77,
+    }

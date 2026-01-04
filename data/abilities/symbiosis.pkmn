@@ -1,0 +1,7 @@
+@ability("symbiosis")  # type: ignore
+class _Symbiosis:
+    meta = {
+        "display_name": "Symbiosis",
+        "description": "Passes the bearer's held item to an ally when the ally uses up its item.",
+        "index": 180,
+    }

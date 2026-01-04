@@ -1,0 +1,7 @@
+@ability("tinted_lens")  # type: ignore
+class _TintedLens:
+    meta = {
+        "display_name": "Tinted Lens",
+        "description": "Doubles damage inflicted with not-very-effective moves.",
+        "index": 110,
+    }

@@ -1,0 +1,7 @@
+@ability("sponge")  # type: ignore
+class _Sponge:
+    meta = {
+        "display_name": "Sponge",
+        "description": "",
+        "index": 10026,
+    }

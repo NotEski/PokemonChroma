@@ -1,0 +1,7 @@
+@ability("mood_maker")  # type: ignore
+class _MoodMaker:
+    meta = {
+        "display_name": "Mood Maker",
+        "description": "",
+        "index": 10041,
+    }

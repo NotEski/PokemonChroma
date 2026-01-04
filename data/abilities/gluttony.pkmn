@@ -1,0 +1,7 @@
+@ability("gluttony")  # type: ignore
+class _Gluttony:
+    meta = {
+        "display_name": "Gluttony",
+        "description": "Makes the Pokémon eat any held Berry triggered by low HP below 1/2 its max HP.",
+        "index": 82,
+    }

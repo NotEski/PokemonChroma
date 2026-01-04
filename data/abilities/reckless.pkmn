@@ -1,0 +1,7 @@
+@ability("reckless")  # type: ignore
+class _Reckless:
+    meta = {
+        "display_name": "Reckless",
+        "description": "Strengthens recoil moves to 1.2× their power.",
+        "index": 120,
+    }

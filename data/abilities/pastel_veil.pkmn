@@ -1,0 +1,7 @@
+@ability("pastel_veil")  # type: ignore
+class _PastelVeil:
+    meta = {
+        "display_name": "Pastel Veil",
+        "description": "Prevents the Pokémon and its allies from being poisoned.",
+        "index": 257,
+    }

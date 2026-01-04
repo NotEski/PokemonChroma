@@ -1,0 +1,7 @@
+@ability("shell_armor")  # type: ignore
+class _ShellArmor:
+    meta = {
+        "display_name": "Shell Armor",
+        "description": "Protects against critical hits.",
+        "index": 75,
+    }

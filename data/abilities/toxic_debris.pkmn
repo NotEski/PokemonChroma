@@ -1,0 +1,7 @@
+@ability("toxic_debris")  # type: ignore
+class _ToxicDebris:
+    meta = {
+        "display_name": "Toxic Debris",
+        "description": "Scatters poison spikes at the feet of the opposing team when the Pokémon takes damage from physical moves.",
+        "index": 295,
+    }

@@ -1,0 +1,7 @@
+@ability("chlorophyll")  # type: ignore
+class _Chlorophyll:
+    meta = {
+        "display_name": "Chlorophyll",
+        "description": "Doubles Speed during strong sunlight.",
+        "index": 34,
+    }

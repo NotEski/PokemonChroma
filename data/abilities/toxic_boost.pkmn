@@ -1,0 +1,7 @@
+@ability("toxic_boost")  # type: ignore
+class _ToxicBoost:
+    meta = {
+        "display_name": "Toxic Boost",
+        "description": "Increases Attack to 1.5× when poisoned.",
+        "index": 137,
+    }

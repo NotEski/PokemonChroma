@@ -1,0 +1,7 @@
+@ability("huge_power")  # type: ignore
+class _HugePower:
+    meta = {
+        "display_name": "Huge Power",
+        "description": "Doubles Attack in battle.",
+        "index": 37,
+    }

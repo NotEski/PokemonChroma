@@ -1,0 +1,7 @@
+@ability("primordial_sea")  # type: ignore
+class _PrimordialSea:
+    meta = {
+        "display_name": "Primordial Sea",
+        "description": "Creates heavy rain, which has all the properties of Rain Dance, cannot be replaced, and causes damaging Fire moves to fail.",
+        "index": 189,
+    }

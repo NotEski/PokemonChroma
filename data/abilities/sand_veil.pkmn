@@ -1,0 +1,7 @@
+@ability("sand_veil")  # type: ignore
+class _SandVeil:
+    meta = {
+        "display_name": "Sand Veil",
+        "description": "Increases evasion to 1.25× during a sandstorm. Protects against sandstorm damage.",
+        "index": 8,
+    }

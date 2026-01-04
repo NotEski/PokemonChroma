@@ -1,0 +1,7 @@
+@ability("anger_shell")  # type: ignore
+class _AngerShell:
+    meta = {
+        "display_name": "Anger Shell",
+        "description": "When the Pokémon's HP drops below half, Anger Shell lowers its Defense and Special Defense but its Attack, Special Attack and Speed are raised.",
+        "index": 271,
+    }

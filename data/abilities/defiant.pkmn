@@ -1,0 +1,7 @@
+@ability("defiant")  # type: ignore
+class _Defiant:
+    meta = {
+        "display_name": "Defiant",
+        "description": "Raises Attack two stages upon having any stat lowered.",
+        "index": 128,
+    }

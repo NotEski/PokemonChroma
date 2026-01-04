@@ -1,0 +1,7 @@
+@ability("seed_sower")  # type: ignore
+class _SeedSower:
+    meta = {
+        "display_name": "Seed Sower",
+        "description": "Turns the ground into Grassy Terrain when the Pokémon is hit by an attack.",
+        "index": 269,
+    }

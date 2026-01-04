@@ -1,0 +1,7 @@
+@ability("flower_veil")  # type: ignore
+class _FlowerVeil:
+    meta = {
+        "display_name": "Flower Veil",
+        "description": "Protects friendly grass Pokémon from having their stats lowered by other Pokémon.",
+        "index": 166,
+    }

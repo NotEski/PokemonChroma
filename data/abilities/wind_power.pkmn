@@ -1,0 +1,7 @@
+@ability("wind_power")  # type: ignore
+class _WindPower:
+    meta = {
+        "display_name": "Wind Power",
+        "description": "When hit by a wind move, the power of the next Electric-type move it uses is doubled.",
+        "index": 277,
+    }

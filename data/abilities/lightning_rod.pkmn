@@ -1,0 +1,7 @@
+@ability("lightning_rod")  # type: ignore
+class _LightningRod:
+    meta = {
+        "display_name": "Lightning Rod",
+        "description": "Redirects single-target electric moves to this Pokémon where possible. Absorbs Electric moves, raising Special Attack one stage.",
+        "index": 31,
+    }

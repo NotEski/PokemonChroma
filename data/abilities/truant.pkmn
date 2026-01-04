@@ -1,0 +1,7 @@
+@ability("truant")  # type: ignore
+class _Truant:
+    meta = {
+        "display_name": "Truant",
+        "description": "Skips every second turn.",
+        "index": 54,
+    }

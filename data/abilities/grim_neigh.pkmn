@@ -1,0 +1,7 @@
+@ability("grim_neigh")  # type: ignore
+class _GrimNeigh:
+    meta = {
+        "display_name": "Grim Neigh",
+        "description": "Boosts Special Attack after knocking out a Pokémon.",
+        "index": 265,
+    }

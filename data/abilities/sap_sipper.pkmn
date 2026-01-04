@@ -1,0 +1,7 @@
+@ability("sap_sipper")  # type: ignore
+class _SapSipper:
+    meta = {
+        "display_name": "Sap Sipper",
+        "description": "Absorbs grass moves, raising Attack one stage.",
+        "index": 157,
+    }

@@ -1,0 +1,7 @@
+@ability("speed_boost")  # type: ignore
+class _SpeedBoost:
+    meta = {
+        "display_name": "Speed Boost",
+        "description": "Raises Speed one stage after each turn.",
+        "index": 3,
+    }

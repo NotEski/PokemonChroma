@@ -1,0 +1,7 @@
+@ability("moxie")  # type: ignore
+class _Moxie:
+    meta = {
+        "display_name": "Moxie",
+        "description": "Raises Attack one stage upon KOing a Pokémon.",
+        "index": 153,
+    }

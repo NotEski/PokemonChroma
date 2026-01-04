@@ -1,0 +1,7 @@
+@ability("last_bastion")  # type: ignore
+class _LastBastion:
+    meta = {
+        "display_name": "Last Bastion",
+        "description": "",
+        "index": 10029,
+    }

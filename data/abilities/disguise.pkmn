@@ -1,0 +1,7 @@
+@ability("disguise")  # type: ignore
+class _Disguise:
+    meta = {
+        "display_name": "Disguise",
+        "description": "Prevents the first instance of battle damage.",
+        "index": 209,
+    }

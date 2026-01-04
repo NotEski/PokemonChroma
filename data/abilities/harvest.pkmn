@@ -1,0 +1,7 @@
+@ability("harvest")  # type: ignore
+class _Harvest:
+    meta = {
+        "display_name": "Harvest",
+        "description": "Has a 50% chance of restoring a used Berry after each turn if the Pokémon has held no items in the meantime.",
+        "index": 139,
+    }

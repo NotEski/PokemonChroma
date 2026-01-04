@@ -1,0 +1,7 @@
+@ability("hunger_switch")  # type: ignore
+class _HungerSwitch:
+    meta = {
+        "display_name": "Hunger Switch",
+        "description": "Causes Morpeko to change its form each turn, alternating between Full Belly Mode and Hangry Mode",
+        "index": 258,
+    }

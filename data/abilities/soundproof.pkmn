@@ -1,0 +1,7 @@
+@ability("soundproof")  # type: ignore
+class _Soundproof:
+    meta = {
+        "display_name": "Soundproof",
+        "description": "Protects against sound-based moves.",
+        "index": 43,
+    }

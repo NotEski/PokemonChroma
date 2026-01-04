@@ -1,0 +1,7 @@
+@ability("levitate")  # type: ignore
+class _Levitate:
+    meta = {
+        "display_name": "Levitate",
+        "description": "Evades ground moves.",
+        "index": 26,
+    }

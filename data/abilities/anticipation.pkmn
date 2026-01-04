@@ -1,0 +1,7 @@
+@ability("anticipation")  # type: ignore
+class _Anticipation:
+    meta = {
+        "display_name": "Anticipation",
+        "description": "Notifies all trainers upon entering battle if an opponent has a super-effective move, self destruct, explosion, or a one-hit KO move.",
+        "index": 107,
+    }

@@ -1,0 +1,7 @@
+@ability("pressure")  # type: ignore
+class _Pressure:
+    meta = {
+        "display_name": "Pressure",
+        "description": "Increases the PP cost of moves targetting the Pokémon by one.",
+        "index": 46,
+    }

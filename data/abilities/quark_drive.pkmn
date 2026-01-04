@@ -1,0 +1,7 @@
+@ability("quark_drive")  # type: ignore
+class _QuarkDrive:
+    meta = {
+        "display_name": "Quark Drive",
+        "description": "Raises highest stat on Electric Terrain, or if holding Booster Energy.",
+        "index": 282,
+    }

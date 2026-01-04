@@ -1,0 +1,7 @@
+@ability("sequence")  # type: ignore
+class _Sequence:
+    meta = {
+        "display_name": "Sequence",
+        "description": "",
+        "index": 10033,
+    }

@@ -1,0 +1,7 @@
+@ability("corrosion")  # type: ignore
+class _Corrosion:
+    meta = {
+        "display_name": "Corrosion",
+        "description": "This Pokémon can inflict poison on Poison and Steel Pokémon.",
+        "index": 212,
+    }

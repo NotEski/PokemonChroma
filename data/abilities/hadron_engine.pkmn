@@ -1,0 +1,7 @@
+@ability("hadron_engine")  # type: ignore
+class _HadronEngine:
+    meta = {
+        "display_name": "Hadron Engine",
+        "description": "Creates an Electric Terrain when entering battle, and boosts Special Attack while active.",
+        "index": 289,
+    }

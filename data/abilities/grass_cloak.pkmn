@@ -1,0 +1,7 @@
+@ability("grass_cloak")  # type: ignore
+class _GrassCloak:
+    meta = {
+        "display_name": "Grass Cloak",
+        "description": "",
+        "index": 10034,
+    }

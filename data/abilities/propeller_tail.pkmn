@@ -1,0 +1,7 @@
+@ability("propeller_tail")  # type: ignore
+class _PropellerTail:
+    meta = {
+        "display_name": "Propeller Tail",
+        "description": "Ignores moves and abilities that draw in moves.",
+        "index": 239,
+    }

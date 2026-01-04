@@ -1,0 +1,7 @@
+@ability("quick_draw")  # type: ignore
+class _QuickDraw:
+    meta = {
+        "display_name": "Quick Draw",
+        "description": "Enables the Pokémon to move first occasionally.",
+        "index": 259,
+    }

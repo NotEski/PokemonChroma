@@ -1,0 +1,7 @@
+@ability("heavy_metal")  # type: ignore
+class _HeavyMetal:
+    meta = {
+        "display_name": "Heavy Metal",
+        "description": "Doubles the Pokémon's weight.",
+        "index": 134,
+    }

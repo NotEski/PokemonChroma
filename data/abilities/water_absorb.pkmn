@@ -1,0 +1,7 @@
+@ability("water_absorb")  # type: ignore
+class _WaterAbsorb:
+    meta = {
+        "display_name": "Water Absorb",
+        "description": "Absorbs water moves, healing for 1/4 max HP.",
+        "index": 11,
+    }

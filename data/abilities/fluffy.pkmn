@@ -1,0 +1,7 @@
+@ability("fluffy")  # type: ignore
+class _Fluffy:
+    meta = {
+        "display_name": "Fluffy",
+        "description": "Damage from contact moves is halved. Damage from Fire moves is doubled.",
+        "index": 218,
+    }

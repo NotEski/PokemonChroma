@@ -1,0 +1,7 @@
+@ability("mycelium_might")  # type: ignore
+class _MyceliumMight:
+    meta = {
+        "display_name": "Mycelium Might",
+        "description": "Status moves go last, but are not affected by the opponent's ability.",
+        "index": 298,
+    }

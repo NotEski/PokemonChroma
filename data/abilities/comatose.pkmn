@@ -1,0 +1,7 @@
+@ability("comatose")  # type: ignore
+class _Comatose:
+    meta = {
+        "display_name": "Comatose",
+        "description": "This Pokémon always acts as though it were Asleep.",
+        "index": 213,
+    }

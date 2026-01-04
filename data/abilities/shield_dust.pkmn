@@ -1,0 +1,7 @@
+@ability("shield_dust")  # type: ignore
+class _ShieldDust:
+    meta = {
+        "display_name": "Shield Dust",
+        "description": "Protects against incoming moves' extra effects.",
+        "index": 19,
+    }

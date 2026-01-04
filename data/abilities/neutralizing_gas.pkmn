@@ -1,0 +1,7 @@
+@ability("neutralizing_gas")  # type: ignore
+class _NeutralizingGas:
+    meta = {
+        "display_name": "Neutralizing Gas",
+        "description": "Neutralizes abilities of all Pokémon in battle.",
+        "index": 256,
+    }

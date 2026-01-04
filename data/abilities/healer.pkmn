@@ -1,0 +1,7 @@
+@ability("healer")  # type: ignore
+class _Healer:
+    meta = {
+        "display_name": "Healer",
+        "description": "Has a 30% chance of curing each adjacent ally of any major status ailment after each turn.",
+        "index": 131,
+    }

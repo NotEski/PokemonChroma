@@ -1,0 +1,7 @@
+@ability("stamina")  # type: ignore
+class _Stamina:
+    meta = {
+        "display_name": "Stamina",
+        "description": "Raises this Pokémon's Defense by one stage when it takes damage from a move.",
+        "index": 192,
+    }

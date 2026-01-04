@@ -1,0 +1,7 @@
+@ability("cursed_body")  # type: ignore
+class _CursedBody:
+    meta = {
+        "display_name": "Cursed Body",
+        "description": "Has a 30% chance of Disabling any move that hits the Pokémon.",
+        "index": 130,
+    }

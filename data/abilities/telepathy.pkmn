@@ -1,0 +1,7 @@
+@ability("telepathy")  # type: ignore
+class _Telepathy:
+    meta = {
+        "display_name": "Telepathy",
+        "description": "Protects against friendly Pokémon's damaging moves.",
+        "index": 140,
+    }

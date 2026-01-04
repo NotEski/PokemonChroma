@@ -1,0 +1,7 @@
+@ability("gale_wings")  # type: ignore
+class _GaleWings:
+    meta = {
+        "display_name": "Gale Wings",
+        "description": "Raises flying moves' priority by one stage.",
+        "index": 177,
+    }

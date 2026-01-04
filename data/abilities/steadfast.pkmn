@@ -1,0 +1,7 @@
+@ability("steadfast")  # type: ignore
+class _Steadfast:
+    meta = {
+        "display_name": "Steadfast",
+        "description": "Raises Speed one stage upon flinching.",
+        "index": 80,
+    }

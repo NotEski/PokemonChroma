@@ -1,0 +1,7 @@
+@ability("tablets_of_ruin")  # type: ignore
+class _TabletsOfRuin:
+    meta = {
+        "display_name": "Tablets of Ruin",
+        "description": "Lowers Attack of all Pokémon except itself.",
+        "index": 286,
+    }

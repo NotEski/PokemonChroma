@@ -1,0 +1,7 @@
+@ability("cotton_down")  # type: ignore
+class _CottonDown:
+    meta = {
+        "display_name": "Cotton Down",
+        "description": "When Ignores moves and abilities that draw in moves.",
+        "index": 238,
+    }

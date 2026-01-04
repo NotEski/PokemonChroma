@@ -1,0 +1,7 @@
+@ability("water_veil")  # type: ignore
+class _WaterVeil:
+    meta = {
+        "display_name": "Water Veil",
+        "description": "Prevents burns.",
+        "index": 41,
+    }

@@ -1,0 +1,7 @@
+@ability("vessel_of_ruin")  # type: ignore
+class _VesselOfRuin:
+    meta = {
+        "display_name": "Vessel of Ruin",
+        "description": "Lowers Special Attack of all Pokémon except itself.",
+        "index": 284,
+    }

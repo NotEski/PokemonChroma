@@ -1,0 +1,7 @@
+@ability("early_bird")  # type: ignore
+class _EarlyBird:
+    meta = {
+        "display_name": "Early Bird",
+        "description": "Makes sleep pass twice as quickly.",
+        "index": 48,
+    }

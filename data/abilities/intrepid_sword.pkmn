@@ -1,0 +1,7 @@
+@ability("intrepid_sword")  # type: ignore
+class _IntrepidSword:
+    meta = {
+        "display_name": "Intrepid Sword",
+        "description": "Boosts Attack in battle.",
+        "index": 234,
+    }

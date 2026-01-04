@@ -1,0 +1,7 @@
+@ability("shackle")  # type: ignore
+class _Shackle:
+    meta = {
+        "display_name": "Shackle",
+        "description": "",
+        "index": 10058,
+    }

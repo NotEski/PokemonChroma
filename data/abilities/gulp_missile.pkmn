@@ -1,0 +1,7 @@
+@ability("gulp_missile")  # type: ignore
+class _GulpMissile:
+    meta = {
+        "display_name": "Gulp Missile",
+        "description": "If a Cramorant with Gulp Missile uses Surf or Dive, it catches prey and changes its form depending on its remaining HP.",
+        "index": 241,
+    }

@@ -1,0 +1,7 @@
+@ability("wonder_skin")  # type: ignore
+class _WonderSkin:
+    meta = {
+        "display_name": "Wonder Skin",
+        "description": "Lowers incoming non-damaging moves' base accuracy to exactly 50%.",
+        "index": 147,
+    }

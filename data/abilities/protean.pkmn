@@ -1,0 +1,7 @@
+@ability("protean")  # type: ignore
+class _Protean:
+    meta = {
+        "display_name": "Protean",
+        "description": "Changes the bearer's type to match each move it uses.",
+        "index": 168,
+    }

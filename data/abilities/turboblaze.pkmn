@@ -1,0 +1,7 @@
+@ability("turboblaze")  # type: ignore
+class _Turboblaze:
+    meta = {
+        "display_name": "Turboblaze",
+        "description": "Bypasses targets' abilities if they could hinder or prevent moves.",
+        "index": 163,
+    }

@@ -1,0 +1,7 @@
+@ability("interference")  # type: ignore
+class _Interference:
+    meta = {
+        "display_name": "Interference",
+        "description": "",
+        "index": 10040,
+    }

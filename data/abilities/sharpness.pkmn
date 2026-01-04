@@ -1,0 +1,7 @@
+@ability("sharpness")  # type: ignore
+class _Sharpness:
+    meta = {
+        "display_name": "Sharpness",
+        "description": "Powers up slicing moves.",
+        "index": 292,
+    }

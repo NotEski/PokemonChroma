@@ -1,0 +1,7 @@
+@ability("klutz")  # type: ignore
+class _Klutz:
+    meta = {
+        "display_name": "Klutz",
+        "description": "Prevents the Pokémon from using its held item in battle.",
+        "index": 103,
+    }

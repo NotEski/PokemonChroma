@@ -1,0 +1,7 @@
+@ability("lunchbox")  # type: ignore
+class _Lunchbox:
+    meta = {
+        "display_name": "Lunchbox",
+        "description": "",
+        "index": 10023,
+    }

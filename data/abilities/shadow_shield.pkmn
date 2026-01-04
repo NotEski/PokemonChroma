@@ -1,0 +1,7 @@
+@ability("shadow_shield")  # type: ignore
+class _ShadowShield:
+    meta = {
+        "display_name": "Shadow Shield",
+        "description": "When this Pokémon has full HP, regular damage from moves is halved.",
+        "index": 231,
+    }

@@ -1,0 +1,7 @@
+@ability("tera_shift")  # type: ignore
+class _TeraShift:
+    meta = {
+        "display_name": "Tera Shift",
+        "description": "When Terapagos enters the battle, it turns into its Terastal Form until the end of the battle.",
+        "index": 304,
+    }

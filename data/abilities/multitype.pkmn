@@ -1,0 +1,7 @@
+@ability("multitype")  # type: ignore
+class _Multitype:
+    meta = {
+        "display_name": "Multitype",
+        "description": "Changes arceus's type and form to match its held Plate.",
+        "index": 121,
+    }

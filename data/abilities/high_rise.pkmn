@@ -1,0 +1,7 @@
+@ability("high_rise")  # type: ignore
+class _HighRise:
+    meta = {
+        "display_name": "High-rise",
+        "description": "",
+        "index": 10052,
+    }

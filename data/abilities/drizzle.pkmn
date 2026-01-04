@@ -1,0 +1,7 @@
+@ability("drizzle")  # type: ignore
+class _Drizzle:
+    meta = {
+        "display_name": "Drizzle",
+        "description": "Summons rain that lasts indefinitely upon entering battle.",
+        "index": 2,
+    }

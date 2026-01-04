@@ -1,0 +1,7 @@
+@ability("cloud_nine")  # type: ignore
+class _CloudNine:
+    meta = {
+        "display_name": "Cloud Nine",
+        "description": "Negates all effects of weather, but does not prevent the weather itself.",
+        "index": 13,
+    }

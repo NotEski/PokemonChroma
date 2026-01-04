@@ -1,0 +1,7 @@
+@ability("life_force")  # type: ignore
+class _LifeForce:
+    meta = {
+        "display_name": "Life Force",
+        "description": "",
+        "index": 10022,
+    }

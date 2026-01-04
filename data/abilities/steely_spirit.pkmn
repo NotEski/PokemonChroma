@@ -1,0 +1,7 @@
+@ability("steely_spirit")  # type: ignore
+class _SteelySpirit:
+    meta = {
+        "display_name": "Steely Spirit",
+        "description": "Powers up ally Pokémon's Steel-type moves.",
+        "index": 252,
+    }

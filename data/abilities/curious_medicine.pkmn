@@ -1,0 +1,7 @@
+@ability("curious_medicine")  # type: ignore
+class _CuriousMedicine:
+    meta = {
+        "display_name": "Curious Medicine",
+        "description": "Resets all stat changes upon entering battlefield.",
+        "index": 261,
+    }

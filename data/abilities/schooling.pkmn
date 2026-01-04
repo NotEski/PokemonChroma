@@ -1,0 +1,7 @@
+@ability("schooling")  # type: ignore
+class _Schooling:
+    meta = {
+        "display_name": "Schooling",
+        "description": "Wishiwashi becomes Schooling Form when its HP is 25% or higher.",
+        "index": 208,
+    }

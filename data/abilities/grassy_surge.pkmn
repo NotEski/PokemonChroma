@@ -1,0 +1,7 @@
+@ability("grassy_surge")  # type: ignore
+class _GrassySurge:
+    meta = {
+        "display_name": "Grassy Surge",
+        "description": "When this Pokémon enters battle, it changes the terrain to Grassy Terrain.",
+        "index": 229,
+    }

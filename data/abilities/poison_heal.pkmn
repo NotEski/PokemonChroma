@@ -1,0 +1,7 @@
+@ability("poison_heal")  # type: ignore
+class _PoisonHeal:
+    meta = {
+        "display_name": "Poison Heal",
+        "description": "Heals for 1/8 max HP after each turn when poisoned in place of damage.",
+        "index": 90,
+    }

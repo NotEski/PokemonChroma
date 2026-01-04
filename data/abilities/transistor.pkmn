@@ -1,0 +1,7 @@
+@ability("transistor")  # type: ignore
+class _Transistor:
+    meta = {
+        "display_name": "Transistor",
+        "description": "Powers up Electric-type moves.",
+        "index": 262,
+    }

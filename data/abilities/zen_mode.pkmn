@@ -1,0 +1,7 @@
+@ability("zen_mode")  # type: ignore
+class _ZenMode:
+    meta = {
+        "display_name": "Zen Mode",
+        "description": "Changes darmanitan's form after each turn depending on its HP: Zen Mode below 50% max HP, and Standard Mode otherwise.",
+        "index": 161,
+    }

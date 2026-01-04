@@ -1,0 +1,7 @@
+@ability("bad_dreams")  # type: ignore
+class _BadDreams:
+    meta = {
+        "display_name": "Bad Dreams",
+        "description": "Damages sleeping opponents for 1/8 their max HP after each turn.",
+        "index": 123,
+    }

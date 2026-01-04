@@ -1,0 +1,7 @@
+@ability("ice_scales")  # type: ignore
+class _IceScales:
+    meta = {
+        "display_name": "Ice Scales",
+        "description": "Halves damage from Special moves.",
+        "index": 246,
+    }

@@ -1,0 +1,7 @@
+@ability("sword_of_ruin")  # type: ignore
+class _SwordOfRuin:
+    meta = {
+        "display_name": "Sword of Ruin",
+        "description": "Lowers Defense of all Pokémon except itself.",
+        "index": 285,
+    }

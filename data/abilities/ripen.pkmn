@@ -1,0 +1,7 @@
+@ability("ripen")  # type: ignore
+class _Ripen:
+    meta = {
+        "display_name": "Ripen",
+        "description": "Doubles the effect of berries.",
+        "index": 247,
+    }

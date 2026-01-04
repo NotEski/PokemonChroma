@@ -1,0 +1,7 @@
+@ability("damp")  # type: ignore
+class _Damp:
+    meta = {
+        "display_name": "Damp",
+        "description": "Prevents self destruct, explosion, and aftermath from working while the Pokémon is in battle.",
+        "index": 6,
+    }

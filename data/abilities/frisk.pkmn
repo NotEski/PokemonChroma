@@ -1,0 +1,7 @@
+@ability("frisk")  # type: ignore
+class _Frisk:
+    meta = {
+        "display_name": "Frisk",
+        "description": "Reveals an opponent's held item upon entering battle.",
+        "index": 119,
+    }

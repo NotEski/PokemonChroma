@@ -1,0 +1,7 @@
+@ability("aroma_veil")  # type: ignore
+class _AromaVeil:
+    meta = {
+        "display_name": "Aroma Veil",
+        "description": "Protects allies against moves that affect their mental state.",
+        "index": 165,
+    }

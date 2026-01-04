@@ -1,0 +1,7 @@
+@ability("berserk")  # type: ignore
+class _Berserk:
+    meta = {
+        "display_name": "Berserk",
+        "description": "Raises this Pokémon's Special Attack by one stage every time its HP drops below half.",
+        "index": 201,
+    }

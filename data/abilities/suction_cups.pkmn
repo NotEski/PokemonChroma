@@ -1,0 +1,7 @@
+@ability("suction_cups")  # type: ignore
+class _SuctionCups:
+    meta = {
+        "display_name": "Suction Cups",
+        "description": "Prevents being forced out of battle by other Pokémon's moves.",
+        "index": 21,
+    }

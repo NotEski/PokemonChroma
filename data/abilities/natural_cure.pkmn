@@ -1,0 +1,7 @@
+@ability("natural_cure")  # type: ignore
+class _NaturalCure:
+    meta = {
+        "display_name": "Natural Cure",
+        "description": "Cures any major status ailment upon switching out.",
+        "index": 30,
+    }

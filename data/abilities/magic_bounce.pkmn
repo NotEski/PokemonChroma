@@ -1,0 +1,7 @@
+@ability("magic_bounce")  # type: ignore
+class _MagicBounce:
+    meta = {
+        "display_name": "Magic Bounce",
+        "description": "Reflects most non-damaging moves back at their user.",
+        "index": 156,
+    }

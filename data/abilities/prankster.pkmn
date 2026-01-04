@@ -1,0 +1,7 @@
+@ability("prankster")  # type: ignore
+class _Prankster:
+    meta = {
+        "display_name": "Prankster",
+        "description": "Raises non-damaging moves' priority by one stage.",
+        "index": 158,
+    }

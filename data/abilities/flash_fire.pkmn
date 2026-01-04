@@ -1,0 +1,7 @@
+@ability("flash_fire")  # type: ignore
+class _FlashFire:
+    meta = {
+        "display_name": "Flash Fire",
+        "description": "Protects against fire moves. Once one has been blocked, the Pokémon's own Fire moves inflict 1.5× damage until it leaves battle.",
+        "index": 18,
+    }

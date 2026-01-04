@@ -1,0 +1,7 @@
+@ability("gooey")  # type: ignore
+class _Gooey:
+    meta = {
+        "display_name": "Gooey",
+        "description": "Lowers attacking Pokémon's Speed by one stage on contact.",
+        "index": 183,
+    }

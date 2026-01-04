@@ -1,0 +1,7 @@
+@ability("quick_feet")  # type: ignore
+class _QuickFeet:
+    meta = {
+        "display_name": "Quick Feet",
+        "description": "Increases Speed to 1.5× with a major status ailment.",
+        "index": 95,
+    }

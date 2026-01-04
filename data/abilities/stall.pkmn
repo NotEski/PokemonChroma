@@ -1,0 +1,7 @@
+@ability("stall")  # type: ignore
+class _Stall:
+    meta = {
+        "display_name": "Stall",
+        "description": "Makes the Pokémon move last within its move's priority bracket.",
+        "index": 100,
+    }

@@ -1,0 +1,7 @@
+@ability("parental_bond")  # type: ignore
+class _ParentalBond:
+    meta = {
+        "display_name": "Parental Bond",
+        "description": "Lets the bearer hit twice with damaging moves. The second hit has half power.",
+        "index": 185,
+    }

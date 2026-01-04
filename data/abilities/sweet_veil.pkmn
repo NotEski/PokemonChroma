@@ -1,0 +1,7 @@
+@ability("sweet_veil")  # type: ignore
+class _SweetVeil:
+    meta = {
+        "display_name": "Sweet Veil",
+        "description": "Prevents friendly Pokémon from sleeping.",
+        "index": 175,
+    }

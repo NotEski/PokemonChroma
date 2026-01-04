@@ -1,0 +1,7 @@
+@ability("water_compaction")  # type: ignore
+class _WaterCompaction:
+    meta = {
+        "display_name": "Water Compaction",
+        "description": "Raises this Pokémon's Defense by two stages when it's hit by a Water move.",
+        "index": 195,
+    }

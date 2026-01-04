@@ -1,0 +1,7 @@
+@ability("shed_skin")  # type: ignore
+class _ShedSkin:
+    meta = {
+        "display_name": "Shed Skin",
+        "description": "Has a 33% chance of curing any major status ailment after each turn.",
+        "index": 61,
+    }

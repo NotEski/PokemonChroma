@@ -1,0 +1,7 @@
+@ability("leaf_guard")  # type: ignore
+class _LeafGuard:
+    meta = {
+        "display_name": "Leaf Guard",
+        "description": "Protects against major status ailments during strong sunlight.",
+        "index": 102,
+    }

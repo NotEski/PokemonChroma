@@ -1,0 +1,7 @@
+@ability("vital_spirit")  # type: ignore
+class _VitalSpirit:
+    meta = {
+        "display_name": "Vital Spirit",
+        "description": "Prevents sleep.",
+        "index": 72,
+    }

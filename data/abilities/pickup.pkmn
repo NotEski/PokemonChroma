@@ -1,0 +1,7 @@
+@ability("pickup")  # type: ignore
+class _Pickup:
+    meta = {
+        "display_name": "Pickup",
+        "description": "Picks up other Pokémon's used and Flung held items. May also pick up an item after battle.",
+        "index": 53,
+    }

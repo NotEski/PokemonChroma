@@ -1,0 +1,7 @@
+@ability("mountaineer")  # type: ignore
+class _Mountaineer:
+    meta = {
+        "display_name": "Mountaineer",
+        "description": "",
+        "index": 10001,
+    }

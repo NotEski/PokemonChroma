@@ -1,0 +1,7 @@
+@ability("desolate_land")  # type: ignore
+class _DesolateLand:
+    meta = {
+        "display_name": "Desolate Land",
+        "description": "Creates extremely harsh sunlight, which has all the properties of Sunny Day, cannot be replaced, and causes damaging Water moves to fail.",
+        "index": 190,
+    }

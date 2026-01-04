@@ -1,0 +1,7 @@
+@ability("scrappy")  # type: ignore
+class _Scrappy:
+    meta = {
+        "display_name": "Scrappy",
+        "description": "Lets the Pokémon's normal and fighting moves hit ghost Pokémon.",
+        "index": 113,
+    }

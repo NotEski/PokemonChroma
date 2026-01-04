@@ -1,0 +1,7 @@
+@ability("conqueror")  # type: ignore
+class _Conqueror:
+    meta = {
+        "display_name": "Conqueror",
+        "description": "",
+        "index": 10057,
+    }

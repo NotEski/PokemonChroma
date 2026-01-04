@@ -1,0 +1,7 @@
+@ability("forewarn")  # type: ignore
+class _Forewarn:
+    meta = {
+        "display_name": "Forewarn",
+        "description": "Reveals the opponents' strongest move upon entering battle.",
+        "index": 108,
+    }

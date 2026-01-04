@@ -1,0 +1,7 @@
+@ability("prism_armor")  # type: ignore
+class _PrismArmor:
+    meta = {
+        "display_name": "Prism Armor",
+        "description": "Reduces super-effective damage to 0.75×.",
+        "index": 232,
+    }

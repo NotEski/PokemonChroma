@@ -1,0 +1,7 @@
+@ability("solid_rock")  # type: ignore
+class _SolidRock:
+    meta = {
+        "display_name": "Solid Rock",
+        "description": "Decreases damage taken from super-effective moves by 1/4.",
+        "index": 116,
+    }

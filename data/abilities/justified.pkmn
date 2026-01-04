@@ -1,0 +1,7 @@
+@ability("justified")  # type: ignore
+class _Justified:
+    meta = {
+        "display_name": "Justified",
+        "description": "Raises Attack one stage upon taking damage from a dark move.",
+        "index": 154,
+    }
