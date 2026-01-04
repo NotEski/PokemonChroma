@@ -1,0 +1,6 @@
+@field_effect("trick_room")
+class TrickRoom:
+    meta = {
+        "display_name": "Trick Room",
+        "default_duration": 5,  # lasts for 5 turns
+    }
