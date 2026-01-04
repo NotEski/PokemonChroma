@@ -1,0 +1,920 @@
+====================================================================================================
+POKEMON MOVE EFFECTS ANALYSIS REPORT
+====================================================================================================
+
+Total Unique Short Effects: 416
+
+
+====================================================================================================
+SECTION 1: ALL SHORT EFFECTS
+====================================================================================================
+
+(416 unique effects)
+
+  1. Adds ghost to the target’s types.
+  2. Adds grass to the target’s types.
+  3. After inflicting damage, causes all Normal-type moves to become Electric-type for the remainder of the turn.
+  4. All Pokémon’s Defense and Special Defense are swapped for 5 turns.
+  5. Allows the trainer to switch out the user and pass effects along to its replacement.
+  6. Ally’s next move inflicts half more damage.
+  7. Always scores a critical hit.
+  8. Averages Attack and Special Attack with the target.
+  9. Averages Defense and Special Defense with the target.
+ 10. Badly poisons the target, inflicting more damage every turn.
+ 11. Blocks damaging attacks and damages attacking Pokémon for 1/8 their max HP.
+ 12. Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+ 13. Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+ 14. Burns the target.
+ 15. Calculates damage with the target’s attacking stat.
+ 16. Can only be used after all of the user’s other moves have been used.
+ 17. Can only be used after the user has eaten a berry.
+ 18. Can only be used as the first move after the user enters battle.
+ 19. Can only be used as the first move after the user enters battle.  Causes the target to flinch.
+ 20. Cannot be disrupted by abilities.
+ 21. Cannot lower the target’s HP below 1.
+ 22. Carries the target high into the air, dodging all attacks against either, and drops it next turn.
+ 23. Causes a one-hit KO.
+ 24. Causes damage when opposing Pokémon switch in.
+ 25. Changes all normal moves to electric moves for the rest of the turn.
+ 26. Changes the target’s ability to Insomnia.
+ 27. Changes the target’s ability to Simple.
+ 28. Changes the target’s move’s type to electric if it hasn’t moved yet this turn.
+ 29. Changes the target’s type to Water.
+ 30. Changes the terrain to Psychic Terrain after inflicting damage.
+ 31. Changes the user’s type to a random type either resistant or immune to the last move used against it.
+ 32. Changes the weather to Shadow Sky for five turns.
+ 33. Changes the weather to a hailstorm for five turns.
+ 34. Changes the weather to a sandstorm for five turns.
+ 35. Changes the weather to rain for five turns.
+ 36. Changes the weather to sunny for five turns.
+ 37. Cleanses the user of a burn, paralysis, or poison.
+ 38. Confuses the target.
+ 39. Copies the target’s ability.
+ 40. Copies the target’s last used move.
+ 41. Copies the user’s ability onto the target.
+ 42. Covers the opposing field, lowering opponents’ Speed by one stage upon switching in.
+ 43. Cures the entire party of major status effects after inflicting damage.
+ 44. Cures the entire party of major status effects.
+ 45. Cures the target of a major status ailment and heals the user for 50% of its max HP.
+ 46. Cures the target of burns.
+ 47. Damages opponents, but heals allies for 50% of their max HP.
+ 48. Damages the target for 75% of its remaining HP.
+ 49. Deals both fighting and flying-type damage.
+ 50. Deals splash damage to Pokémon next to the target.
+ 51. Destroys Reflect and Light Screen.
+ 52. Destroys the target’s held berry.
+ 53. Disables moves and immunities that involve flying or levitating for five turns.
+ 54. Disables the target’s last used move for 1-8 turns.
+ 55. Discards the user’s stat changes and copies the target’s.
+ 56. Does nothing.
+ 57. Doubles prize money.
+ 58. Drains 75% of the damage inflicted to heal the user.
+ 59. Drains half the damage inflicted to heal the user.
+ 60. Ends wild battles.  Forces trainers to switch Pokémon.
+ 61. Ensures that the user’s next move will hit the target.
+ 62. Exchanges the user’s Speed with the target’s.
+ 63. Explodes if the target uses a fire move this turn, damaging it for 1/4 its max HP and preventing the move.
+ 64. For five turns, heals all Pokémon on the ground for 1/16 max HP each turn and strengthens their grass moves to 1.5× their power.
+ 65. For five turns, prevents all Pokémon on the ground from sleeping and strengthens their electric moves to 1.5× their power.
+ 66. For five turns, protects all Pokémon on the ground from major status ailments and confusion, and halves the power of incoming dragon moves.
+ 67. For five turns, slower Pokémon will act before faster Pokémon.
+ 68. For the next few turns, the target can only use damaging moves.
+ 69. For three turns, friendly Pokémon have doubled Speed.
+ 70. Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.
+ 71. Forces the target to have no Evade, and allows it to be hit by Normal and Fighting moves even if it’s a Ghost.
+ 72. Forces the target to have no evasion, and allows it to be hit by Psychic moves even if it’s Dark.
+ 73. Forces the target to repeat its last used move every turn for 2 to 6 turns.
+ 74. Forces the target to repeat its last used move.
+ 75. Forces the target’s opponents to aim at the target for the rest of the turn.
+ 76. Frees the user from binding moves, removes Leech Seed, and blows away Spikes.
+ 77. Ghosts pay half their max HP to hurt the target every turn.  Others decrease Speed but raise Attack and Defense.
+ 78. Gives the user’s held item to the target.
+ 79. Grants the user protection for the rest of the turn and poisons any Pokémon that tries to use a contact move on it.
+ 80. Grounds the target, and hits even Flying-type or levitating Pokémon.
+ 81. Guarantees a critical hit with the user’s next move.
+ 82. Halves HP of all Pokémon on the field.  Must recharge
+ 83. Halves all Electric-type damage.
+ 84. Halves all Fire-type damage.
+ 85. Has a 10% chance to burn the target and a 10% chance to make the target flinch.
+ 86. Has a 10% chance to burn the target.
+ 87. Has a 10% chance to burn the target.  Lets frozen Pokémon thaw themselves.
+ 88. Has a 10% chance to confuse the target.
+ 89. Has a 10% chance to freeze the target and a 10% chance to make the target flinch.
+ 90. Has a 10% chance to freeze the target.
+ 91. Has a 10% chance to lower the target’s Attack by one stage.
+ 92. Has a 10% chance to lower the target’s Special Defense by one stage.
+ 93. Has a 10% chance to lower the target’s Speed by one stage.
+ 94. Has a 10% chance to make the target flinch.
+ 95. Has a 10% chance to paralyze the target and a 10% chance to make the target flinch.
+ 96. Has a 10% chance to paralyze the target.
+ 97. Has a 10% chance to poison the target.
+ 98. Has a 10% chance to put the target to sleep.
+ 99. Has a 10% chance to raise all of the user’s stats by one stage.
+100. Has a 10% chance to raise the user’s Attack by one stage.
+101. Has a 10% chance to raise the user’s Defense by one stage.
+102. Has a 100% chance to burn the target.
+103. Has a 100% chance to confuse the target.
+104. Has a 100% chance to lower the target’s Special Attack by one stage.
+105. Has a 100% chance to lower the target’s Speed by one stage.
+106. Has a 100% chance to lower the target’s accuracy by one stage.
+107. Has a 100% chance to paralyze the target.
+108. Has a 20% chance to burn the target.
+109. Has a 20% chance to burn, freeze, or paralyze the target.
+110. Has a 20% chance to confuse the target.
+111. Has a 20% chance to lower the target’s Defense by one stage.
+112. Has a 20% chance to lower the target’s Special Defense by one stage.
+113. Has a 20% chance to make the target flinch.
+114. Has a 20% chance to paralyze the target.
+115. Has a 20% chance to raise the user’s Attack by one stage.
+116. Has a 30% chance to burn the target.
+117. Has a 30% chance to confuse the target.
+118. Has a 30% chance to inflict a status effect which depends upon the terrain.
+119. Has a 30% chance to lower the target’s Defense by one stage.
+120. Has a 30% chance to lower the target’s Special Attack by one stage.
+121. Has a 30% chance to lower the target’s accuracy by one stage.
+122. Has a 30% chance to make the target flinch.
+123. Has a 30% chance to make the target flinch.  Only works if the user is sleeping.
+124. Has a 30% chance to paralyze the target.
+125. Has a 30% chance to poison the target.
+126. Has a 40% chance to lower the target’s Special Defense by two stages.
+127. Has a 40% chance to lower the target’s accuracy by one stage.
+128. Has a 40% chance to poison the target.
+129. Has a 50% chance to badly poison the target.
+130. Has a 50% chance to burn the target.  Lets frozen Pokémon thaw themselves.
+131. Has a 50% chance to lower the target’s Defense by one stage.
+132. Has a 50% chance to lower the target’s Special Attack by one stage.
+133. Has a 50% chance to lower the target’s Special Defense by one stage.
+134. Has a 50% chance to lower the target’s accuracy by one stage.
+135. Has a 50% chance to raise the user’s Defense by two stages for each target hit.
+136. Has a 50% chance to raise the user’s Special Attack by one stage.
+137. Has a 70% chance to raise the user’s Special Attack by one stage.
+138. Has a higher chance to confuse the target when the recorded sound is louder.
+139. Has an increased chance for a critical hit and a 10% chance to burn the target.
+140. Has an increased chance for a critical hit and a 10% chance to poison the target.
+141. Has an increased chance for a critical hit in Hyper Mode.
+142. Has an increased chance for a critical hit.
+143. Has double power against Pokémon that have less than half their max HP remaining.
+144. Has double power against, and can hit, Pokémon attempting to switch out.
+145. Has double power if a friendly Pokémon fainted last turn.
+146. Has double power if it’s used more than once per turn.
+147. Has double power if the target has a major status ailment.
+148. Has double power if the user has no held item.
+149. Has double power if the user’s last move failed.
+150. Has the same type as the user.
+151. Heals the target for half its max HP.
+152. Heals the target for ½ its max HP, or ⅔ on Grassy Terrain.
+153. Heals the user by half its max HP.
+154. Heals the user by half its max HP.  Affected by weather.
+155. Heals the user by the target’s current Attack stat and lowers the target’s Attack by one stage.
+156. Heals the user for half the total damage dealt to all targets.
+157. Heals the user for ½ its max HP, or ⅔ during a sandstorm.
+158. Hits 2-5 times in one turn.
+159. Hits 2–5 times.
+160. Hits any Pokémon that shares a type with the user.
+161. Hits every turn for 2-3 turns, then confuses the user.
+162. Hits once for every conscious Pokémon the trainer has.
+163. Hits the target two turns later.
+164. Hits three times, increasing power by 100% with each successful hit.
+165. Hits through Protect and Detect.
+166. Hits twice in one turn, with a 100% chance to make the target flinch.
+167. Hits twice in one turn.
+168. Hits twice in the same turn.  Has a 20% chance to poison the target.
+169. If target has a berry, inflicts double damage and uses the berry.
+170. If the target is asleep, has double power and wakes it up.
+171. If the target is paralyzed, inflicts double damage and cures the paralysis.
+172. If the user faints this turn, the PP of the move that fainted it drops to 0.
+173. If the user faints this turn, the target automatically will, too.
+174. If the user is hit after using this move, its Attack rises by one stage.
+175. If the user is holding a appropriate plate or drive, the damage inflicted will match it.
+176. If the user misses, it takes half the damage it would have inflicted in recoil.
+177. If the user takes damage before attacking, the attack is canceled.
+178. If there be weather, this move has doubled power and the weather’s type.
+179. Ignores and destroys protection effects.
+180. Ignores the target’s stat modifiers.
+181. Immediately ends wild battles.  Forces trainers to switch Pokémon.
+182. Immediately ends wild battles.  No effect otherwise.
+183. Increases the user’s chance to score a critical hit.
+184. Inflicts 20 points of damage.
+185. Inflicts 40 points of damage.
+186. Inflicts a burn on any Pokémon that makes contact before the attack.
+187. Inflicts damage and removes any terrain present on the battlefield.
+188. Inflicts damage based on the target’s Defense, not Special Defense.
+189. Inflicts damage between 50% and 150% of the user’s level.
+190. Inflicts damage equal to half the target’s HP.
+191. Inflicts damage equal to the user’s level.
+192. Inflicts damage equal to the user’s remaining HP.  User faints.
+193. Inflicts damage to all opposing Pokémon and increases the user’s Attack, Defense, Special Attack, Special Defense, and Speed by one stage each.
+194. Inflicts damage using either Attack or Special Attack stat, whichever is higher.
+195. Inflicts damage, and the user takes damage equal to half of its max HP, rounded up.
+196. Inflicts double damage if the target is Poisoned.
+197. Inflicts double damage if the user takes damage before attacking this turn.
+198. Inflicts more damage to heavier targets, with a maximum of 120 power.
+199. Inflicts more damage when the user has less HP remaining, with a maximum of 200 power.
+200. Inflicts more damage when the user has more HP remaining, with a maximum of 150 power.
+201. Inflicts regular damage and can hit Bounce and Fly users.
+202. Inflicts regular damage and can hit Dig users.
+203. Inflicts regular damage and can hit Dive users.
+204. Inflicts regular damage and can hit Pokémon in the air.
+205. Inflicts regular damage with no additional effect.
+206. Inflicts regular damage.
+207. Inflicts regular damage.  Raises the user’s Speed by one stage.
+208. Inflicts twice the damage the user received from the last physical hit it took.
+209. Inflicts twice the damage the user received from the last special hit it took.
+210. Inverts the target’s stat modifiers.
+211. Lowers all targets’ Attack and Special Attack by one stage.  Makes the user switch out.
+212. Lowers the PP of the target’s last used move by 4.
+213. Lowers the target’s Attack and Defense by one stage.
+214. Lowers the target’s Attack and Special Attack by one stage.
+215. Lowers the target’s Attack and Special Attack by two stages.  User faints.
+216. Lowers the target’s Attack by one stage after inflicting damage.
+217. Lowers the target’s Attack by one stage.
+218. Lowers the target’s Attack by two stages.
+219. Lowers the target’s Attack, Special Attack, and Speed by one stage if it is poisoned.
+220. Lowers the target’s Defense by one stage after inflicting damage.
+221. Lowers the target’s Defense by one stage.
+222. Lowers the target’s Defense by two stages.
+223. Lowers the target’s HP to equal the user’s.
+224. Lowers the target’s Special Attack by one stage.
+225. Lowers the target’s Special Attack by two stages if it’s the opposite gender.
+226. Lowers the target’s Special Attack by two stages.
+227. Lowers the target’s Special Defense by two stages.
+228. Lowers the target’s Speed by one stage.
+229. Lowers the target’s Speed by two stages.
+230. Lowers the target’s accuracy by one stage.
+231. Lowers the target’s evasion by one stage.
+232. Lowers the target’s evasion by one stage.  Removes field effects from the enemy field.
+233. Lowers the target’s evasion by two stages.
+234. Lowers the user’s Attack and Defense by one stage after inflicting damage.
+235. Lowers the user’s Defense and Special Defense by one stage after inflicting damage.
+236. Lowers the user’s Defense by one stage after inflicting damage.
+237. Lowers the user’s Defense, Special Defense, and Speed by one stage each.
+238. Lowers the user’s Special Attack by two stages after inflicting damage.
+239. Lowers user’s Speed by one stage.
+240. Makes the target act last this turn.
+241. Makes the target act next this turn.
+242. Moves have 100% accuracy against the target for three turns.
+243. Negates held items for five turns.
+244. Never misses.
+245. Nullifies target’s ability until it leaves battle.
+246. Nullifies the target’s ability if it moves earlier.
+247. Only inflicts damage if the user was hit by a physical move this turn.
+248. Only works if the target is about to use a damaging move.
+249. Only works on sleeping Pokémon.  Drains half the damage inflicted to heal the user.
+250. Paralyzes the target.
+251. Permanently becomes the target’s last used move.
+252. Poisons the target and lowers its Speed by one stage.
+253. Poisons the target.
+254. Power and type depend on the held berry.
+255. Power and type depend upon user’s IVs.  Power can range from 30 to 70.
+256. Power doubles every turn this move is used in succession after the first, maxing out after five turns.
+257. Power doubles every turn this move is used in succession after the first, resetting after five turns.
+258. Power doubles if user is burned, paralyzed, or poisoned.
+259. Power increases against targets with more HP remaining, up to a maximum of 121 power.
+260. Power increases against targets with more raised stats, up to a maximum of 200.
+261. Power increases as happiness decreases, up to a maximum of 102.
+262. Power increases by 100% for each consecutive use by any friendly Pokémon, to a maximum of 200.
+263. Power increases when this move has less PP, up to a maximum of 200.
+264. Power increases with happiness, up to a maximum of 102.
+265. Power is 100 times the amount of energy Stockpiled.
+266. Power is doubled if the target has already moved this turn.
+267. Power is doubled if the target has already received damage this turn.
+268. Power is higher the more the user’s stats have been raised, to a maximum of 31×.
+269. Power is higher when the user has greater Speed than the target, up to a maximum of 150.
+270. Power is higher when the user weighs more than the target, up to a maximum of 120.
+271. Power raises when the user has lower Speed, up to a maximum of 150.
+272. Power varies randomly from 10 to 150.
+273. Prevents all Pokémon from fleeing or switching out during the next turn.
+274. Prevents any moves from hitting the user this turn.
+275. Prevents any multi-target moves from hitting friendly Pokémon this turn.
+276. Prevents any priority moves from hitting friendly Pokémon this turn.
+277. Prevents target from restoring its HP for five turns.
+278. Prevents the target from fleeing and inflicts damage for 2-5 turns.
+279. Prevents the target from leaving battle and inflicts 1/16 its max HP in damage for 2-5 turns.
+280. Prevents the target from leaving battle.
+281. Prevents the target from scoring critical hits for five turns.
+282. Prevents the target from using any moves that the user also knows.
+283. Prevents the target from using sound-based moves for two turns.
+284. Prevents the target from using the same move twice in a row.
+285. Prevents the user from leaving battle.  User regains 1/16 of its max HP every turn.
+286. Prevents the user’s HP from lowering below 1 this turn.
+287. Protects Pokémon on the ground from priority moves and increases the power of their  Psychic moves by 50%.
+288. Protects all friendly Pokémon from damaging moves.  Only works on the first turn after the user is sent out.
+289. Protects all friendly Pokémon from non-damaging moves.
+290. Protects the user’s field from major status ailments and confusion for five turns.
+291. Protects the user’s stats from being changed by enemy moves.
+292. Puts the target to sleep.
+293. Raises a selected ally’s Special Defense by one stage.
+294. Raises all of the user’s stats by two stages.
+295. Raises one of a friendly Pokémon’s stats at random by two stages.
+296. Raises the Attack and Special Attack of all friendly Pokémon with plus or minus by one stage.
+297. Raises the Attack and Special Attack of all grass Pokémon in battle.
+298. Raises the Defense and Special Defense of all friendly Pokémon with plus or minus by one stage.
+299. Raises the Defense of all grass Pokémon in battle.
+300. Raises the target’s Attack by two stages and confuses the target.
+301. Raises the target’s Special Attack by one stage and confuses the target.
+302. Raises the user’s Attack and Defense by one stage.
+303. Raises the user’s Attack and Special Attack by one stage each.
+304. Raises the user’s Attack and Special Attack by one stage.
+305. Raises the user’s Attack and Speed by one stage.
+306. Raises the user’s Attack and accuracy by one stage.
+307. Raises the user’s Attack by one stage after inflicting damage.
+308. Raises the user’s Attack by one stage and its Speed by two stages.
+309. Raises the user’s Attack by one stage.
+310. Raises the user’s Attack by two stages if it KOs the target.
+311. Raises the user’s Attack by two stages.
+312. Raises the user’s Attack, Defense, and accuracy by one stage each.
+313. Raises the user’s Defense and Special Defense by one stage.
+314. Raises the user’s Defense by one stage.
+315. Raises the user’s Defense by one stage.  User charges for one turn before attacking.
+316. Raises the user’s Defense by three stages.
+317. Raises the user’s Defense by two stages.
+318. Raises the user’s Special Attack and Special Defense by one stage.
+319. Raises the user’s Special Attack by three stages.
+320. Raises the user’s Special Attack by two stages.
+321. Raises the user’s Special Attack, Special Defense, and Speed by one stage each.
+322. Raises the user’s Special Defense by one stage.  User’s Electric moves have doubled power next turn.
+323. Raises the user’s Special Defense by two stages.
+324. Raises the user’s Speed by two stages and halves the user’s weight.
+325. Raises the user’s Speed by two stages.
+326. Raises the user’s evasion by one stage.
+327. Raises the user’s evasion by two stages.
+328. Raises user’s Attack, Special Attack, and Speed by two stages.  Lower user’s Defense and Special Defense by one stage.
+329. Raises user’s Defense by one stage.
+330. Randomly inflicts damage with power from 40 to 120 or heals the target for 1/4 its max HP.
+331. Randomly selects and uses any move in the game.
+332. Randomly selects and uses one of the trainer’s other Pokémon’s moves.
+333. Randomly uses one of the user’s other three moves.  Only works if the user is sleeping.
+334. Recovers 1/4 HP after one Stockpile, 1/2 HP after two Stockpiles, or full HP after three Stockpiles.
+335. Redirects the target’s single-target effects to the user for this turn.
+336. Reduces damage five turns, but must be used during hail.
+337. Reduces damage from physical attacks by half.
+338. Reduces damage from special attacks by 50% for five turns.
+339. Reflects back the first effect move used on the user this turn.
+340. Removes Light Screen, Reflect, and Safeguard.
+341. Removes all of the target’s stat modifiers.
+342. Removes any immunity to Ground damage.
+343. Removes the user’s fire type after inflicting damage.
+344. Requires a turn to charge before attacking.
+345. Requires a turn to charge before attacking.  Has a 30% chance to burn the target.
+346. Requires a turn to charge before attacking.  Has a 30% chance to paralyze the target.
+347. Resets all Pokémon’s stats, accuracy, and evasion.
+348. Restores 1/16 of the user’s max HP each turn.
+349. Scatters Spikes, hurting opposing Pokémon that switch in.
+350. Scatters money on the ground worth five times the user’s level.
+351. Scatters poisoned spikes, poisoning opposing Pokémon that switch in.
+352. Seeds the target after inflicting damage.
+353. Seeds the target, stealing HP from it every turn.
+354. Sets Light Screen on the user’s side of the field after inflicting damage.
+355. Sets Reflect on the user’s side of the field after inflicting damage.
+356. Sets the user’s and targets’s HP to the average of their current HP.
+357. Steals the target’s move, if it’s self-targeted.
+358. Steals the target’s stat increases, then inflicts damage.
+359. Stores energy up to three times for use with Spit Up and Swallow.
+360. Strikes back at the last Pokémon to hit the user this turn with 1.5× the damage.
+361. Super-effective against water.
+362. Takes one turn to charge, then raises the user’s Special Attack, Special Defense, and Speed by two stages.
+363. Takes the target’s item.
+364. Target cannot use held items.
+365. Target drops its held item.
+366. Target falls in love if it has the opposite gender, and has a 50% chance to refuse attacking the user.
+367. Target loses 1/4 its max HP every turn as long as it’s asleep.
+368. Target sleeps at the end of the next turn.
+369. Throws held item at the target; power depends on the item.
+370. Transfers 1/4 of the user’s max HP into a doll, protecting the user from further damage or status changes until it breaks.
+371. Transfers the user’s major status effect to the target.
+372. Traps the target.
+373. User and target both faint after three turns.
+374. User and target swap abilities.
+375. User and target swap items.
+376. User and target swap stat changes.
+377. User becomes a copy of the target until it leaves battle.
+378. User becomes the target’s type.
+379. User bounces high into the air, dodging all attacks, and hits next turn.
+380. User charges for one turn before attacking.  Has a 30% chance to make the target flinch.
+381. User digs underground, dodging all attacks, and hits next turn.
+382. User dives underwater, dodging all attacks, and hits next turn.
+383. User faints, and its replacement is fully healed.
+384. User faints.
+385. User faints.  Its replacement has its HP fully restored and any major status effect removed.
+386. User flies high into the air, dodging all attacks, and hits next turn.
+387. User foregoes its next turn to recharge.
+388. User is immune to Ground moves and effects for five turns.
+389. User must switch out after attacking.
+390. User pays half its max HP to max out its Attack.
+391. User receives 1/2 its HP in recoil.
+392. User receives 1/2 the damage inflicted in recoil.
+393. User receives 1/3 the damage inflicted in recoil.
+394. User receives 1/4 the damage it inflicts in recoil.
+395. User recovers the item it last used up.
+396. User sleeps for two turns, completely healing itself.
+397. User swaps Attack and Defense.
+398. User swaps Attack and Special Attack changes with the target.
+399. User swaps Defense and Special Defense changes with the target.
+400. User switches places with the friendly Pokémon opposite it.
+401. User takes 1/3 the damage inflicted in recoil.  Has a 10% chance to burn the target.
+402. User takes 1/3 the damage inflicted in recoil.  Has a 10% chance to paralyze the target.
+403. User takes 1/4 its max HP in recoil.
+404. User vanishes, dodging all attacks, and hits next turn.  Hits through Protect and Detect.
+405. User waits for two turns, then hits back for twice the damage it took.
+406. User will recover half its max HP at the end of the next turn.
+407. User’s type changes to match the terrain.
+408. User’s type changes to the type of one of its moves at random.
+409. Uses a move which depends upon the terrain.
+410. Uses the target’s last used move.
+411. Uses the target’s move against it before it attacks, with power increased by half.
+412. With Fire Pledge, damages opposing Pokémon for 1/8 their max HP every turn for four turns.
+413. With Fusion Bolt, inflicts double damage.
+414. With Fusion Flare, inflicts double damage.
+415. With Grass Pledge, halves opposing Pokémon’s Speed for four turns.
+416. With Water Pledge, doubles the effect chance of friendly Pokémon’s moves for four turns.
+
+
+====================================================================================================
+SECTION 2: REQUIRED FUNCTIONS FOR MOVE IMPLEMENTATION
+====================================================================================================
+
+The following functions would need to be implemented to handle all move effects:
+
+
+RAISE_STATS (77 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that raise stats mechanics
+Example effects:
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Cannot be disrupted by abilities.
+  • Covers the opposing field, lowering opponents’ Speed by one stage upon switching in.
+  ... and 74 more
+
+LOWER_STATS (61 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that lower stats mechanics
+Example effects:
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Cannot lower the target’s HP below 1.
+  ... and 58 more
+
+STATUS_CONDITION (60 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that status condition mechanics
+Example effects:
+  • Badly poisons the target, inflicting more damage every turn.
+  • Burns the target.
+  • Cleanses the user of a burn, paralysis, or poison.
+  ... and 57 more
+
+MULTI_TURN (48 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that multi turn mechanics
+Example effects:
+  • After inflicting damage, causes all Normal-type moves to become Electric-type for the remainder of the turn.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Can only be used after all of the user’s other moves have been used.
+  ... and 45 more
+
+CONDITIONAL (42 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that conditional mechanics
+Example effects:
+  • Changes the target’s move’s type to electric if it hasn’t moved yet this turn.
+  • Explodes if the target uses a fire move this turn, damaging it for 1/4 its max HP and preventing the move.
+  • Forces the target to have no Evade, and allows it to be hit by Normal and Fighting moves even if it’s a Ghost.
+  ... and 39 more
+
+DAMAGE_SCALE (37 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that damage scale mechanics
+Example effects:
+  • Badly poisons the target, inflicting more damage every turn.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Heals the user for half the total damage dealt to all targets.
+  ... and 34 more
+
+WEATHER (28 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that weather mechanics
+Example effects:
+  • Allows the trainer to switch out the user and pass effects along to its replacement.
+  • Changes the terrain to Psychic Terrain after inflicting damage.
+  • Changes the weather to Shadow Sky for five turns.
+  ... and 25 more
+
+HEALING (25 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that healing mechanics
+Example effects:
+  • Cures the entire party of major status effects after inflicting damage.
+  • Cures the entire party of major status effects.
+  • Cures the target of a major status ailment and heals the user for 50% of its max HP.
+  ... and 22 more
+
+STAT_SWAP (22 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that stat swap mechanics
+Example effects:
+  • All Pokémon’s Defense and Special Defense are swapped for 5 turns.
+  • Allows the trainer to switch out the user and pass effects along to its replacement.
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  ... and 19 more
+
+PROTECT (17 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that protect mechanics
+Example effects:
+  • Blocks damaging attacks and damages attacking Pokémon for 1/8 their max HP.
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  • Changes the user’s type to a random type either resistant or immune to the last move used against it.
+  ... and 14 more
+
+FIELD_EFFECT (15 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that field effect mechanics
+Example effects:
+  • Changes the terrain to Psychic Terrain after inflicting damage.
+  • Covers the opposing field, lowering opponents’ Speed by one stage upon switching in.
+  • Frees the user from binding moves, removes Leech Seed, and blows away Spikes.
+  ... and 12 more
+
+SWITCH (14 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that switch mechanics
+Example effects:
+  • Allows the trainer to switch out the user and pass effects along to its replacement.
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  • Causes damage when opposing Pokémon switch in.
+  ... and 11 more
+
+ITEM (13 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that item mechanics
+Example effects:
+  • Can only be used after the user has eaten a berry.
+  • Destroys the target’s held berry.
+  • Gives the user’s held item to the target.
+  ... and 10 more
+
+ACCURACY (11 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that accuracy mechanics
+Example effects:
+  • Has a 100% chance to lower the target’s accuracy by one stage.
+  • Has a 30% chance to lower the target’s accuracy by one stage.
+  • Has a 40% chance to lower the target’s accuracy by one stage.
+  ... and 8 more
+
+RECOIL (11 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that recoil mechanics
+Example effects:
+  • If the user misses, it takes half the damage it would have inflicted in recoil.
+  • If the user takes damage before attacking, the attack is canceled.
+  • Inflicts damage, and the user takes damage equal to half of its max HP, rounded up.
+  ... and 8 more
+
+FLINCH (10 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that flinch mechanics
+Example effects:
+  • Can only be used as the first move after the user enters battle.  Causes the target to flinch.
+  • Has a 10% chance to burn the target and a 10% chance to make the target flinch.
+  • Has a 10% chance to freeze the target and a 10% chance to make the target flinch.
+  ... and 7 more
+
+EVASION (9 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that evasion mechanics
+Example effects:
+  • Forces the target to have no evasion, and allows it to be hit by Psychic moves even if it’s Dark.
+  • If the user misses, it takes half the damage it would have inflicted in recoil.
+  • Lowers the target’s evasion by one stage.
+  ... and 6 more
+
+PRIORITY (8 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that priority mechanics
+Example effects:
+  • Can only be used as the first move after the user enters battle.
+  • Can only be used as the first move after the user enters battle.  Causes the target to flinch.
+  • Power doubles every turn this move is used in succession after the first, maxing out after five turns.
+  ... and 5 more
+
+CONTACT (6 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that contact mechanics
+Example effects:
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  • Grants the user protection for the rest of the turn and poisons any Pokémon that tries to use a contact move on it.
+  • Inflicts a burn on any Pokémon that makes contact before the attack.
+  ... and 3 more
+
+ABILITY (6 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that ability mechanics
+Example effects:
+  • Changes the target’s ability to Insomnia.
+  • Changes the target’s ability to Simple.
+  • Copies the target’s ability.
+  ... and 3 more
+
+TYPE_CHANGE (5 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that type change mechanics
+Example effects:
+  • Permanently becomes the target’s last used move.
+  • User becomes a copy of the target until it leaves battle.
+  • User becomes the target’s type.
+  ... and 2 more
+
+DRAIN (4 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that drain mechanics
+Example effects:
+  • Drains 75% of the damage inflicted to heal the user.
+  • Drains half the damage inflicted to heal the user.
+  • Frees the user from binding moves, removes Leech Seed, and blows away Spikes.
+  ... and 1 more
+
+TRAP (2 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that trap mechanics
+Example effects:
+  • Frees the user from binding moves, removes Leech Seed, and blows away Spikes.
+  • Traps the target.
+
+FORCED_MOVE (1 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that forced move mechanics
+Example effects:
+  • Forced to use this move for several turns.  Pokémon cannot fall asleep in that time.
+
+SUBSTITUTE (1 effects)
+--------------------------------------------------------------------------------
+Purpose: Handle moves that substitute mechanics
+Example effects:
+  • User becomes a copy of the target until it leaves battle.
+
+
+====================================================================================================
+SECTION 3: REQUIRED VARIABLES TO TRACK
+====================================================================================================
+
+The following variables would need to be tracked during battle:
+
+
+TARGET_TRACKING (318 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Adds ghost to the target’s types.
+  • Adds grass to the target’s types.
+  • Allows the trainer to switch out the user and pass effects along to its replacement.
+  ... and 315 more
+
+STAT_CHANGES (129 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Cannot be disrupted by abilities.
+  ... and 126 more
+
+STATUS_CONDITION (66 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Badly poisons the target, inflicting more damage every turn.
+  • Burns the target.
+  • Changes the target’s ability to Insomnia.
+  ... and 63 more
+
+HEALING_PERCENTAGE (51 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Blocks damaging attacks and damages attacking Pokémon for 1/8 their max HP.
+  • Cannot lower the target’s HP below 1.
+  • Cures the entire party of major status effects after inflicting damage.
+  ... and 48 more
+
+TURN_COUNTER (48 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • After inflicting damage, causes all Normal-type moves to become Electric-type for the remainder of the turn.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Can only be used after all of the user’s other moves have been used.
+  ... and 45 more
+
+HIT_COUNT (48 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Always scores a critical hit.
+  • Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
+  • Causes a one-hit KO.
+  ... and 45 more
+
+FIELD_EFFECTS (31 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Allows the trainer to switch out the user and pass effects along to its replacement.
+  • Changes the terrain to Psychic Terrain after inflicting damage.
+  • Changes the weather to Shadow Sky for five turns.
+  ... and 28 more
+
+PREVIOUS_STATE (27 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Changes the user’s type to a random type either resistant or immune to the last move used against it.
+  • Copies the target’s last used move.
+  • Disables the target’s last used move for 1-8 turns.
+  ... and 24 more
+
+TYPE_TRACKING (21 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Adds ghost to the target’s types.
+  • Adds grass to the target’s types.
+  • After inflicting damage, causes all Normal-type moves to become Electric-type for the remainder of the turn.
+  ... and 18 more
+
+ACCURACY_EVASION (17 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Forces the target to have no evasion, and allows it to be hit by Psychic moves even if it’s Dark.
+  • Has a 100% chance to lower the target’s accuracy by one stage.
+  • Has a 30% chance to lower the target’s accuracy by one stage.
+  ... and 14 more
+
+DRAIN_RECOIL (15 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Drains 75% of the damage inflicted to heal the user.
+  • Drains half the damage inflicted to heal the user.
+  • Frees the user from binding moves, removes Leech Seed, and blows away Spikes.
+  ... and 12 more
+
+ITEM_TRACKING (13 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Can only be used after the user has eaten a berry.
+  • Destroys the target’s held berry.
+  • Gives the user’s held item to the target.
+  ... and 10 more
+
+DAMAGE_TAKEN (9 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Drains 75% of the damage inflicted to heal the user.
+  • Drains half the damage inflicted to heal the user.
+  • Heals the user for half the total damage dealt to all targets.
+  ... and 6 more
+
+PRIORITY_TRACKING (8 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Can only be used as the first move after the user enters battle.
+  • Can only be used as the first move after the user enters battle.  Causes the target to flinch.
+  • Power doubles every turn this move is used in succession after the first, maxing out after five turns.
+  ... and 5 more
+
+ABILITY_TRACKING (6 effects)
+--------------------------------------------------------------------------------
+Example effects that need this:
+  • Changes the target’s ability to Insomnia.
+  • Changes the target’s ability to Simple.
+  • Copies the target’s ability.
+  ... and 3 more
+
+
+====================================================================================================
+SECTION 4: SUMMARY & RECOMMENDATIONS
+====================================================================================================
+
+FUNCTION SUMMARY:
+- Total unique function categories needed: 25
+- Most common: raise_stats (77 effects)
+
+VARIABLE SUMMARY:
+- Total unique variable types to track: 15
+- Most critical: target_tracking (318 effects)
+
+ALREADY IDENTIFIED VARIABLES (from requirements):
+✓ status_condition - Applied to affected pokemon
+✓ field_effects - Persistent environmental changes
+✓ drain_recoil - Damage scaling mechanics
+✓ healing_percentage - HP restoration calculations
+
+ADDITIONAL VARIABLES NEEDED:
+
+  • target_tracking: 318 effects require this
+  • stat_changes: 129 effects require this
+  • turn_counter: 48 effects require this
+  • hit_count: 48 effects require this
+  • previous_state: 27 effects require this
+  • type_tracking: 21 effects require this
+  • accuracy_evasion: 17 effects require this
+  • item_tracking: 13 effects require this
+  • damage_taken: 9 effects require this
+  • priority_tracking: 8 effects require this
+  • ability_tracking: 6 effects require this
+
+
+====================================================================================================
+SECTION 5: DETAILED FUNCTION BREAKDOWN
+====================================================================================================
+
+• ABILITY
+  Description: Interact with abilities
+  Effects affected: 6
+
+• ACCURACY
+  Description: Guarantee hit regardless of accuracy/evasion
+  Effects affected: 11
+
+• CONDITIONAL
+  Description: Execute based on conditions (weather, terrain, stat values, etc.)
+  Effects affected: 42
+
+• CONTACT
+  Description: Handle contact-based move mechanics
+  Effects affected: 6
+
+• DAMAGE_SCALE
+  Description: Calculate scaled damage (based on HP %, level, opponent damage, etc.)
+  Effects affected: 37
+
+• DRAIN
+  Description: Drain a percentage of damage dealt to heal the user
+  Effects affected: 4
+
+• EVASION
+  Description: Modify accuracy or evasion
+  Effects affected: 9
+
+• FIELD_EFFECT
+  Description: Set/remove field/terrain effects (spikes, stealth rock, trick room, etc.)
+  Effects affected: 15
+
+• FLINCH
+  Description: Cause flinching (pokemon loses turn)
+  Effects affected: 10
+
+• FORCED_MOVE
+  Description: Force pokemon to use specific move
+  Effects affected: 1
+
+• HEALING
+  Description: Restore HP (fixed amount or percentage)
+  Effects affected: 25
+
+• ITEM
+  Description: Interact with held items
+  Effects affected: 13
+
+• LOWER_STATS
+  Description: Decrease pokemon stats
+  Effects affected: 61
+
+• MULTI_TURN
+  Description: Handle multi-turn moves (charge, then attack)
+  Effects affected: 48
+
+• PRIORITY
+  Description: Handle priority mechanics
+  Effects affected: 8
+
+• PROTECT
+  Description: Block/protect from damage or effects
+  Effects affected: 17
+
+• RAISE_STATS
+  Description: Increase pokemon stats (Attack, Defense, Speed, etc.)
+  Effects affected: 77
+
+• RECOIL
+  Description: Inflict recoil damage to the user
+  Effects affected: 11
+
+• STAT_SWAP
+  Description: Swap, copy, or exchange stats between pokemon
+  Effects affected: 22
+
+• STATUS_CONDITION
+  Description: Apply/remove status conditions (burn, freeze, paralyze, sleep, etc.)
+  Effects affected: 60
+
+• SUBSTITUTE
+  Description: Create substitute or dummy
+  Effects affected: 1
+
+• SWITCH
+  Description: Force switch or allow switch
+  Effects affected: 14
+
+• TRAP
+  Description: Trap pokemon preventing switch-out
+  Effects affected: 2
+
+• TYPE_CHANGE
+  Description: Change a pokemon's type
+  Effects affected: 5
+
+• WEATHER
+  Description: Set/remove weather effects (rain, hail, sandstorm, sunny, etc.)
+  Effects affected: 28

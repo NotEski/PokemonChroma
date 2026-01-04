@@ -32,6 +32,7 @@ class BattleConfig(BaseModel):
     is_wild: bool = Field(default=False)
     can_escape: bool = Field(default=False)
     terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
+    grant_exp: bool = Field(default=True)
 
 class BattleState(BaseModel):
     turn_number: int = Field(default=0)

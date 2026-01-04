@@ -3,6 +3,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 from typing import List, Optional
 from .types import PokemonType
 from .move_tags import *
+from math import floor
 
 
 class DamageClass(Enum):
@@ -82,7 +83,10 @@ class BaseMove(BaseModel):
 
     accuracy: Optional[int] = 100
     power: Optional[int] = 100
-    pp: int = Field(ge=1, le=40, default=15)
+    base_pp: int = Field(ge=1, le=255, default=15)
+    max_pp_inc_one: int = 0
+    max_pp_inc_two: int = 0
+    max_pp_int_three: int = 0
 
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
     priority: int = Field(default=0)  # Move priority
@@ -91,6 +95,15 @@ class BaseMove(BaseModel):
 
     move_tags: Optional[List[MoveTag]] = None  # Additional tags for the move
     
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.display_name == "":
+            self.display_name = self.name.replace("-", " ").title()
+
+        self.max_pp_inc_one = floor(self.base_pp * 1.2)
+        self.max_pp_inc_two = floor(self.base_pp * 1.4)
+        self.max_pp_int_three = floor(self.base_pp * 1.6)
+        
 
     def on_use(self, attacker, defender, battle_state):
         """Called when the move is used."""
@@ -109,6 +122,9 @@ class BaseMove(BaseModel):
         Returns the damage amount as an integer.
         """
         return None
+    
+
+
     
     def has_tag(self, tag_type: MoveTag) -> bool:
         if self.move_tags is None:
@@ -147,7 +163,6 @@ class BaseMove(BaseModel):
             return
         self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
 
-
     @property
     def physical(self) -> bool:
         return self.damage_class == DamageClass.PHYSICAL
@@ -157,7 +172,6 @@ class BaseMove(BaseModel):
     @property
     def status(self) -> bool:
         return self.damage_class == DamageClass.STATUS
-    
     @property
     def requires_charge(self) -> bool:
         return self.has_tag(ChargeMove)
@@ -243,7 +257,37 @@ class BaseMove(BaseModel):
 
 class Move(BaseModel):
     current_pp: int
+    max_pp: int = Field(default=0)
     base_move: BaseMove
+
+    pp_incremented_amount: int = 0
+    
+    def __init__(self, **data):
+        super().__init__(**data)
+        if self.max_pp == 0:
+            self.max_pp = self.base_move.base_pp
+        if self.current_pp > self.max_pp:
+            self.current_pp = self.max_pp
+
+    def increment_pp(self) -> None:
+        if self.pp_incremented_amount >= 3:
+            return  # Cannot increase PP further
+        self.pp_incremented_amount += 1
+        if self.pp_incremented_amount == 1:
+            self.max_pp = self.base_move.max_pp_inc_one
+        elif self.pp_incremented_amount == 2:
+            self.max_pp = self.base_move.max_pp_inc_two
+        elif self.pp_incremented_amount == 3:
+            self.max_pp = self.base_move.max_pp_int_three
+
+        # Ensure current PP does not exceed new max PP
+        if self.current_pp > self.max_pp:
+            self.current_pp = self.max_pp
+    def maximize_pp(self) -> None:
+        self.pp_incremented_amount = 3
+        self.max_pp = self.base_move.max_pp_int_three
+        if self.current_pp > self.max_pp:
+            self.current_pp = self.max_pp
 
 #region Move property getters
     @property
@@ -268,8 +312,11 @@ class Move(BaseModel):
     def accuracy(self) -> Optional[int]:
         return self.base_move.accuracy
     @property
-    def pp(self) -> int:
-        return self.base_move.pp
+    def current_pp(self) -> int:
+        return self.current_pp
+    @property
+    def base_pp(self) -> int:
+        return self.base_move.base_pp
     @property
     def target(self) -> MoveTarget:
         return self.base_move.target
@@ -279,6 +326,21 @@ class Move(BaseModel):
     @property
     def makes_contact(self) -> bool:
         return self.base_move.makes_contact
+    @property
+    def is_multi_hit(self) -> bool:
+        return self.base_move.is_multi_hit
+    @property
+    def min_hits(self) -> int:
+        multi_hit_tag: MultiHitMove = self.base_move.get_tag(MultiHitMove)
+        if multi_hit_tag:
+            return min(multi_hit_tag.hits.keys())
+        return 1
+    @property
+    def max_hits(self) -> int:
+        multi_hit_tag: MultiHitMove = self.base_move.get_tag(MultiHitMove)
+        if multi_hit_tag:
+            return max(multi_hit_tag.hits.keys())
+        return 1
     
     
     
@@ -300,7 +362,7 @@ class MoveSet(BaseModel):
         for move in moves:
             if not (isinstance(move, BaseMove)):
                 raise ValueError("Each move must be a BaseMove object.")
-            self.moves[move.index] = Move(current_pp=move.pp, base_move=move)
+            self.moves[move.index] = Move(current_pp=move.base_pp, base_move=move)
 
         self._set_initial_move_order()
 
@@ -354,3 +416,7 @@ class MoveSet(BaseModel):
             if move.base_move.name == name:
                 return move
         return None
+    
+    def restore_all_pp(self):
+        for move in self.moves.values():
+            move.current_pp = move.max_pp

@@ -124,7 +124,7 @@ class BattleMon(BaseModel):
 
 
     # Pokemon Battled for experience tracking
-    pokemon_battled: List[Pokemon] = Field(default_factory=list)
+    pokemon_battled: List[BattleMon] = Field(default_factory=list)
 
     def __post_init__(self, **data):
         super().__init__(**data)
@@ -199,9 +199,7 @@ class BattleMon(BaseModel):
     def modify_stat_stage(self, stat: Stat, stages: int):
         self.stat_stages.adjust_stat_stage(stat, stages)
 
-    def add_pokemon_battled(self, pokemon: Pokemon|BattleMon):
-        if isinstance(pokemon, BattleMon):
-            pokemon = pokemon.pokemon_reference
+    def add_pokemon_battled(self, pokemon: BattleMon):
         if pokemon not in self.pokemon_battled:
             self.pokemon_battled.append(pokemon)
 
@@ -476,6 +474,10 @@ class Pokemon(BaseModel):
         if self.current_hp > self.max_hp:
             self.current_hp = self.max_hp
         # Other stats are already recalculated as needed
+
+    def heal_full(self):
+        self.current_hp = self.max_hp
+        self.move_set.restore_all_pp()
 
     #region Pokemon stats Proxy Properties
     @property

@@ -19,7 +19,7 @@ from tkinter import ttk
 
 
 def simulate_sample_battle():
-    pikachu_moveset = moveset_from_names(["fissure", "trick_room", "volt_tackle", "quick_attack"])
+    pikachu_moveset = moveset_from_names(["sketch", "toxic", "absorb", "quick_attack"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
     pikachu_base = pokemon_repository.get("pikachu")
@@ -35,7 +35,7 @@ def simulate_sample_battle():
     eevee.held_item = item_repository.get("eviolite")
 
 
-    marshtomp_moveset = moveset_from_names(["mud_slap", "water_gun", "rock_throw", "instakill"])
+    marshtomp_moveset = moveset_from_names(["tail_whip", "arm_thrust", "rock_throw", "instakill"])
     marshtomp_base = pokemon_repository.get("marshtomp")
     marshtomp = Pokemon(pokemon_base=marshtomp_base, level=50, move_set=marshtomp_moveset)
     marshtomp.nickname = "Marshy"
@@ -415,7 +415,7 @@ class BattleInspectorWindow:
 
         # Create a button for each move, aligned horizontally
         for move in pokemon.move_set.moves.values():
-            button_text = f"{move.name}\nPP {move.current_pp}/{move.pp}"
+            button_text = f"{move.name}\nPP {move.current_pp}/{move.max_pp}"
             button = ttk.Button(
                 moves_container,
                 text=button_text,
@@ -563,6 +563,7 @@ def launch_battle_inspector():
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
 # pickachu_eevee_battle_example()
+
 
 launch_battle_inspector()
 

@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel, Field
 
 from .status_conditions import StatusCondition
@@ -81,8 +82,7 @@ class MirrorMove(MoveTag):
 
 
 class MultiHitMove(MoveTag):
-    min_hits: int
-    max_hits: int
+    hits: Optional[dict[int, int]] = None  # Dictionary with 'hit_amount' and 'weight' for multi-hit moves e.g. {2: 35, 3: 35, 4: 15, 5: 15} for moves that hit 2-5 times
 
 
 class MultiTurnMove(MoveTag):
@@ -159,4 +159,3 @@ class TerrainMove(MoveTag):
 
 class WeatherMove(MoveTag):
     weather: BattleWeather
-    duration_turns: int  # Number of turns the weather will last

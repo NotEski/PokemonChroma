@@ -4,7 +4,7 @@ from shared.pokemon.move import BaseMove, MoveCategory, MoveCategoryCategories
 from shared.pokemon.pokemon import BattleMon, StatStages
 from shared.battle.battle_header import *
 from shared.battle.battle_logs import BattleLogManager
-from shared.battle.type_effectiveness import EffectivenessLevel, get_attack_multiplier, get_effectiveness_level
+from shared.battle.type_effectiveness import EffectivenessLevel, get_attack_multiplier, get_effectiveness_level, effectiveness_message
 from shared.battle.opponent import Opponent
 from shared.battle.position_manager import BattlePosition
 from shared.pokemon.types import PokemonType
@@ -15,6 +15,8 @@ from .damage_calculator import calculate_damage, calculate_critical_hit
 from .speed_calculator import calculate_speed
 from .escape_calculator import calculate_escape_success
 from .calculate_accuracy import calculate_accuracy, calculate_accuracy_hit
+from .calculate_experience import calculate_experience
+from .multihit_check import multihit_check
 import random
 
 
@@ -451,10 +453,11 @@ class BattleManager(BaseModel):
             accuracy_check = 100.0
         else:
             accuracy_check = calculate_accuracy(used_move.base_move, user_pokemon, target_pokemon, self.battle_state)
+        damage = 0
+        effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
 
         if not calculate_accuracy_hit(accuracy_check):
-            damage = 0
-            effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
+            
             target_positions.clear()
 
         description_list = []
@@ -464,6 +467,7 @@ class BattleManager(BaseModel):
         is_critical = False
 
         for target_position in target_positions:
+
             target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
             all_target_pokemon.append(target_pokemon)
 
@@ -473,9 +477,17 @@ class BattleManager(BaseModel):
 
             effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
             damage = 0
+            total_damage = 0
 
-            if used_move.category in MoveCategoryCategories.DAMAGE_MOVES:
-                effectiveness_level, damage = self.process_damage_move(user_pokemon, target_pokemon, used_move.base_move, is_critical)
+            # Calc multihit here if applicable
+            num_hits = multihit_check(used_move.base_move, user_pokemon, target_pokemon)
+
+            for _ in range(0, num_hits):
+                if used_move.category in MoveCategoryCategories.DAMAGE_MOVES:
+                    effectiveness_level, damage = self.process_damage_move(user_pokemon, target_pokemon, used_move.base_move, is_critical)
+                    total_damage += damage
+            if num_hits > 1:
+                description_list.append(f"Hit {num_hits} time(s)!")
             
             if used_move.category in MoveCategoryCategories.STATUS_MOVES:
                 self.process_status_move(user_pokemon, target_pokemon, used_move.base_move)
@@ -494,9 +506,15 @@ class BattleManager(BaseModel):
             
             if used_move.base_move.has_tag(DrainMove):
                 self.process_drain_move(user_pokemon, damage, used_move.base_move)
+            
+            if used_move.base_move.has_tag(WeatherMove):
+                weather = used_move.base_move.get_tag(WeatherMove).weather
+                # run check here for item that extends weather duration
+                self.battle_state.set_weather(weather, turns=5)
+                description_list.append(f"The weather changed to {weather}!")
 
         if effectiveness_level != EffectivenessLevel.NORMAL_EFFECTIVE:
-            description_list.append(f"It's {effectiveness_level.value.replace('_', ' ')}!")
+            description_list.append(effectiveness_message(effectiveness_level))
 
 
 
@@ -535,7 +553,7 @@ class BattleManager(BaseModel):
 
         # If damage is less than or equal to 0, it means no damage was dealt (e.g., immune)
         if damage <= 0:
-            return EffectivenessLevel.NO_EFFECT
+            return EffectivenessLevel.NO_EFFECT, 0
         
         # Apply effectiveness message
         target.current_hp -= damage
@@ -583,8 +601,9 @@ class BattleManager(BaseModel):
             self.position_manager.add_hazard(position, hazard, layers)
 
     def process_healing_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
-        """Process a healing move."""
-        pass
+        heal_percentage = move.get_tag(HealMove).heal_percentage
+        heal_amount = target.max_hp * heal_percentage // 100
+        target.current_hp = min(target.calculate_max_hp(), target.current_hp + heal_amount)
 
     def process_ohko_move(self, target: BattleMon):
         """Process a one-hit KO move."""
@@ -623,6 +642,18 @@ class BattleManager(BaseModel):
                 # check which opponent the pokemon belongs to
                 opponent = self.get_opponent_from_position(position)
                 fainted_pokemon = self.position_manager.get_pokemon_at_position(position)
+
+                # for now just get the pokemon opposite the fainted pokemon
+                battled_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
+                victorious_pokemon = battled_pokemon
+                if self.battle_config.grant_exp:
+                    experience_gained = calculate_experience(
+                        defeated_pokemon=fainted_pokemon,
+                        victorious_pokemon=battled_pokemon
+                    )
+
+                    print (f"{victorious_pokemon.nickname} gained {experience_gained} experience points!")
+
                 self.battle_log.pokemon_fainted(
                     fainted_pokemon=fainted_pokemon,
                     pokemon_position=position,

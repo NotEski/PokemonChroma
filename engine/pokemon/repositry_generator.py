@@ -25,6 +25,7 @@ from engine.pokemon.repository import (
 from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
+from shared.battle.weather import BattleWeather
 
 
 
@@ -185,7 +186,23 @@ def move(move_name: str):
                     field_effect_turns = field_effect_obj.default_duration
                 move_tags.append(FieldEffectMove(field_effect=field_effect_obj, turns=field_effect_turns))
 
+        # Multi-hit
+        multi_hit: dict|tuple = dsl_cls.__dict__.get("multi_hit", None)
+        if multi_hit is not None:
+            if isinstance(multi_hit, tuple):
+                # Convert list to dict with equal weights
+                min_hit = min(multi_hit)
+                max_hit = max(multi_hit)
+                for i in range(min_hit, max_hit + 1):
+                    multi_hit = {i: 1 for i in range(min_hit, max_hit + 1)}
+            move_tags.append(MultiHitMove(hits=multi_hit))
 
+
+        # Weather
+        if "weather" in dsl_cls.__dict__:
+            weather: BattleWeather = BattleWeather(dsl_cls.__dict__.get("weather", None))
+            move_tags.append(WeatherMove(weather=weather))
+            
 
         # Generate BaseMove
         base_move = BaseMove(
@@ -197,7 +214,7 @@ def move(move_name: str):
             category=category,
             accuracy=accuracy,
             power=power,
-            pp=pp,
+            base_pp=pp,
             target=target,
             priority=priority,
             move_tags=move_tags
