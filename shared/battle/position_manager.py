@@ -10,6 +10,7 @@ import random
 class BattlePositionManager(BaseModel):
     positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
     actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
+    all_actions: dict[int, dict[BattlePosition, BattleAction]] = Field(default_factory=dict)
     future_actions: dict[int, dict[BattlePosition, BattleAction]] = Field(default_factory=dict)
     switch_turn_actions: dict[BattlePosition, SwitchAction|SkipTurnAction] = Field(default_factory=dict)
     field_effects: dict[BattlePosition, dict[EntryHazard|FieldEffect, int]] = Field(default_factory=dict)
@@ -122,7 +123,7 @@ class BattlePositionManager(BaseModel):
         raise ValueError("No pokemon registered at the given position.")
     
     def get_opponent_teams(self, team_id: int) -> list[int]:
-        return [tid for tid in range(1, self.teams_count + 1) if tid != team_id]
+        return [tid for tid in range(0, self.teams_count) if tid != team_id]
     
     def add_hazard(self, position: BattlePosition, hazard: EntryHazard, layers: int):
         if position not in self.field_effects:
@@ -150,6 +151,18 @@ class BattlePositionManager(BaseModel):
             del self.field_effects[position][effect]
             if not self.field_effects[position]:
                 del self.field_effects[position]
+
+    def updated_battled_pokemon(self):
+        for position, pokemon in self.positions.items():
+            team_id, pokemon_index = position
+            # Get the pokemon on the other team
+            # Add all the battled pokemon to the pokemon's battled pokemon list
+            opponent_team_ids = self.get_opponent_teams(team_id)
+            for opponent_team_id in opponent_team_ids:
+                for opponent_position in self.list_registered_positions():
+                    if opponent_position.team_id == opponent_team_id:
+                        opponent_pokemon = self.get_pokemon_at_position(opponent_position)
+                        pokemon.add_pokemon_battled(opponent_pokemon)
 
     def decrement_field_effects(self):
         # Decrement duration of all field effects and remove those that expire
@@ -226,14 +239,3 @@ class BattlePositionManager(BaseModel):
         else:
             raise ValueError("Unsupported move target type.")
 
-    def updated_battled_pokemon(self):
-        for position, pokemon in self.positions.items():
-            team_id, pokemon_index = position
-            # Get the pokemon on the other team
-            # Add all the battled pokemon to the pokemon's battled pokemon list
-            opponent_team_ids = self.get_opponent_teams(team_id)
-            for opponent_team_id in opponent_team_ids:
-                for opponent_position in self.list_registered_positions():
-                    if opponent_position.team_id == opponent_team_id:
-                        opponent_pokemon = self.get_pokemon_at_position(opponent_position)
-                        pokemon.add_pokemon_battled(opponent_pokemon)

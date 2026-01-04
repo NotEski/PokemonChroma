@@ -100,7 +100,7 @@ These cover the majority of move mechanics:
     - Use/consume items
     - Example: "Gives the user's held item to the target"
 
-14. **RECOIL** (11 effects)
+14. **RECOIL** (11 effects) - **DONE**
     - Inflict recoil damage to user
     - Percentage or fixed amount
     - Conditional recoil
@@ -176,7 +176,7 @@ These cover the majority of move mechanics:
    - Example: "For five turns..." mechanics
 
 6. **HIT_COUNT** (48 effects)
-   - Multi-hit move tracking (2-5 hits)
+   - Multi-hit move tracking (2-5 hits) - **DONE**
    - Consecutive hit tracking
    - Power scaling with hits
    - Example: "Hits 2-5 times in one turn"

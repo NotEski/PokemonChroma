@@ -83,15 +83,13 @@ class BaseMove(BaseModel):
 
     accuracy: Optional[int] = 100
     power: Optional[int] = 100
-    base_pp: int = Field(ge=1, le=255, default=15)
+    base_pp: int = Field(default=15)
     max_pp_inc_one: int = 0
     max_pp_inc_two: int = 0
-    max_pp_int_three: int = 0
+    max_pp_inc_three: int = 0
 
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
     priority: int = Field(default=0)  # Move priority
-
-    makes_contact: bool = Field(default=False)
 
     move_tags: Optional[List[MoveTag]] = None  # Additional tags for the move
     
@@ -102,7 +100,7 @@ class BaseMove(BaseModel):
 
         self.max_pp_inc_one = floor(self.base_pp * 1.2)
         self.max_pp_inc_two = floor(self.base_pp * 1.4)
-        self.max_pp_int_three = floor(self.base_pp * 1.6)
+        self.max_pp_inc_three = floor(self.base_pp * 1.6)
         
 
     def on_use(self, attacker, defender, battle_state):

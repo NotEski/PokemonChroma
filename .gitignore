@@ -52,9 +52,22 @@ desktop.ini
 /assets/*
 
 # Ignore the files in pokeapi_database
-pokeapi_database/
-temp_assets/
-data/
-AdvancedAI/
+database_download/pokeapi_database
+temp_assets/*
+
+# Ignore Advanced AI System files
+AdvancedAI/Advanced AI System/*
+
+# Data files
+data/abilities/*
+data/evolution_lines/*
+data/field_effects/*
+data/hazards/*
+data/items/*
+data/moves/*
+data/pokemon/*
+data/status/*
+
+
 
 *.sqlite

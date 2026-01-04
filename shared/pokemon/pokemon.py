@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from random import randint
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import Dict, List, Optional
 from enum import Enum
 
 from .types import PokemonType
-from .move import MoveSet
+from .move import MoveSet, BaseMove
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
@@ -100,6 +100,30 @@ class StatStages(BaseModel):
             self.critical_hit_stage = max(-6, min(6, self.critical_hit_stage + stages))
 
 
+class BattleMonBattleState(BaseModel):
+    # Stat Stages
+    stat_stages: StatStages = Field(default_factory=StatStages)
+    
+    # Status Conditions
+    status_conditions: dict[StatusCondition, dict] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
+
+    # Extra and Excluded Types added from moves, items, abilities, etc.
+    extra_types: List[PokemonType] = Field(default_factory=list)
+    excluded_types: List[PokemonType] = Field(default_factory=list)
+
+    # Turns in battle
+    turns_in_battle: int = Field(ge=0, default=0)
+
+    # Flinch next turn
+    flinch_next_turn: bool = Field(default=False)
+
+    # Disabled Moves
+    disabled_moves: Dict[int, int] = Field(default_factory=dict)  # list of move indices that are disabled and the remaining turns they are disabled for
+
+    # Previously Used Moves
+    last_used_moves: List[BaseMove] = Field(default_factory=list)
+
+
 class BattleMon(BaseModel):
     """
     The BattleMon class represents a Pokémon's state during battle.
@@ -113,15 +137,10 @@ class BattleMon(BaseModel):
     current_hp: int = Field(ge=0, default=0)
     max_hp: int = Field(ge=1, default=0)
 
-    stat_stages: StatStages = Field(default_factory=StatStages)
-
+    battle_state: BattleMonBattleState = Field(default_factory=BattleMonBattleState)
     
     # Battle Postion
     current_position: Optional[BattlePosition] = Field(default=None)  # (team_id, pokemon_index)
-
-    # Status Conditions
-    status_conditions: dict[StatusCondition, dict] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
-
 
     # Pokemon Battled for experience tracking
     pokemon_battled: List[BattleMon] = Field(default_factory=list)
@@ -195,7 +214,7 @@ class BattleMon(BaseModel):
                 self.pokemon_base = mega_evo.mega_evolved_form
             elif self.pokemon_reference.held_item == mega_evo.required_item:
                 self.pokemon_base = mega_evo.mega_evolved_form
-    
+
     def modify_stat_stage(self, stat: Stat, stages: int):
         self.stat_stages.adjust_stat_stage(stat, stages)
 
@@ -203,12 +222,87 @@ class BattleMon(BaseModel):
         if pokemon not in self.pokemon_battled:
             self.pokemon_battled.append(pokemon)
 
+    def add_extra_type(self, pokemon_type: PokemonType):
+        if pokemon_type not in self.extra_types:
+            self.extra_types.append(pokemon_type)
+
+    def remove_type(self, pokemon_type: PokemonType):
+        if pokemon_type in self.extra_types:
+            self.extra_types.remove(pokemon_type)
+        elif pokemon_type not in self.excluded_types:
+            self.excluded_types.append(pokemon_type)
+
+    def disable_move(self, move_index: int, turns: int):
+        self.disabled_moves[move_index] = turns
+
+    def add_previous_move_used(self, move: BaseMove):
+        self.battle_state.last_used_moves.append(move)
+
+#region BattleState Proxy Properties
+    @property
+    def stat_stages(self) -> StatStages:
+        return self.battle_state.stat_stages
+    @stat_stages.setter
+    def stat_stages(self, value: StatStages):
+        self.battle_state.stat_stages = value
+    @property
+    def status_conditions(self) -> dict[StatusCondition, dict]:
+        return self.battle_state.status_conditions
+    @property
+    def extra_types(self) -> List[PokemonType]:
+        return self.battle_state.extra_types
+    @property
+    def excluded_types(self) -> List[PokemonType]:
+        return self.battle_state.excluded_types
+    @property
+    def turns_in_battle(self) -> int:
+        return self.battle_state.turns_in_battle
+    @turns_in_battle.setter
+    def turns_in_battle(self, value: int):
+        self.battle_state.turns_in_battle = value
+    @property
+    def flinch_next_turn(self) -> bool:
+        return self.battle_state.flinch_next_turn
+    @flinch_next_turn.setter
+    def flinch_next_turn(self, value: bool):
+        self.battle_state.flinch_next_turn = value
+    @property
+    def previous_move_used(self) -> Optional[BaseMove]:
+        return self.battle_state.previous_move_used
+    @previous_move_used.setter
+    def previous_move_used(self, value: Optional[BaseMove]):
+        self.battle_state.previous_move_used = value
+    @property
+    def last_move_used(self) -> Optional[BaseMove]:
+        if len(self.battle_state.last_moves_used) == 0:
+            return None
+        return self.battle_state.last_moves_used[-1]
+    @property
+    def last_damage_taken(self) -> int:
+        return self.battle_state.last_damage_taken
+    @last_damage_taken.setter
+    def last_damage_taken(self, value: int):
+        self.battle_state.last_damage_taken = value
+    @property
+    def disabled_moves(self) -> dict[int, int]:
+        return self.battle_state.disabled_moves
+    @disabled_moves.setter
+    def disabled_moves(self, value: dict[int, int]):
+        self.battle_state.disabled_moves = value
+#endregion
 
 
 #region Pokemon Base Proxy Properties
     @property
     def types(self) -> List[PokemonType]:
-        return self.pokemon_base.types
+        all_types: list[PokemonType] = []
+    
+        all_types.extend(self.pokemon_base.types)
+        all_types.extend(self.extra_types)
+        for excluded_type in self.excluded_types:
+            if excluded_type in all_types:
+                all_types.remove(excluded_type)
+        return all_types
 #endregion
 
 #region Pokemon stats Proxy Properties

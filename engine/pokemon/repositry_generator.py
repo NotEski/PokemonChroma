@@ -187,7 +187,7 @@ def move(move_name: str):
                 move_tags.append(FieldEffectMove(field_effect=field_effect_obj, turns=field_effect_turns))
 
         # Multi-hit
-        multi_hit: dict|tuple = dsl_cls.__dict__.get("multi_hit", None)
+        multi_hit: dict|tuple|bool = dsl_cls.__dict__.get("multi_hit", None)
         if multi_hit is not None:
             if isinstance(multi_hit, tuple):
                 # Convert list to dict with equal weights
@@ -195,7 +195,12 @@ def move(move_name: str):
                 max_hit = max(multi_hit)
                 for i in range(min_hit, max_hit + 1):
                     multi_hit = {i: 1 for i in range(min_hit, max_hit + 1)}
-            move_tags.append(MultiHitMove(hits=multi_hit))
+            elif isinstance(multi_hit, bool) and multi_hit is True:
+                move_tags.append(MultiHitMove()) # Use default weights if just true
+
+            if not isinstance(multi_hit, bool): # If not just True, as the default weights will be used and the custom weights have now been processed
+                    move_tags.append(MultiHitMove(hits=multi_hit))
+                
 
 
         # Weather
@@ -388,6 +393,7 @@ safe_namespace = {
         "get_move": get_move,
         "get_ability": get_ability,
         "get_item": get_item,
+        "get_type": PokemonType,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):

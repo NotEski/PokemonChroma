@@ -17,14 +17,11 @@ SECTION 1: ALL SHORT EFFECTS
   4. All Pokémon’s Defense and Special Defense are swapped for 5 turns.
   5. Allows the trainer to switch out the user and pass effects along to its replacement.
   6. Ally’s next move inflicts half more damage.
-  7. Always scores a critical hit.
   8. Averages Attack and Special Attack with the target.
   9. Averages Defense and Special Defense with the target.
- 10. Badly poisons the target, inflicting more damage every turn.
  11. Blocks damaging attacks and damages attacking Pokémon for 1/8 their max HP.
  12. Blocks damaging attacks and lowers attacking Pokémon’s Attack by two stages on contact.  Switches Aegislash to Shield Forme.
  13. Boosts the user’s Speed and lowers their Defense by one stage after inflicting damage two to five times in a row.
- 14. Burns the target.
  15. Calculates damage with the target’s attacking stat.
  16. Can only be used after all of the user’s other moves have been used.
  17. Can only be used after the user has eaten a berry.
@@ -33,7 +30,6 @@ SECTION 1: ALL SHORT EFFECTS
  20. Cannot be disrupted by abilities.
  21. Cannot lower the target’s HP below 1.
  22. Carries the target high into the air, dodging all attacks against either, and drops it next turn.
- 23. Causes a one-hit KO.
  24. Causes damage when opposing Pokémon switch in.
  25. Changes all normal moves to electric moves for the rest of the turn.
  26. Changes the target’s ability to Insomnia.
@@ -42,13 +38,7 @@ SECTION 1: ALL SHORT EFFECTS
  29. Changes the target’s type to Water.
  30. Changes the terrain to Psychic Terrain after inflicting damage.
  31. Changes the user’s type to a random type either resistant or immune to the last move used against it.
- 32. Changes the weather to Shadow Sky for five turns.
- 33. Changes the weather to a hailstorm for five turns.
- 34. Changes the weather to a sandstorm for five turns.
- 35. Changes the weather to rain for five turns.
- 36. Changes the weather to sunny for five turns.
  37. Cleanses the user of a burn, paralysis, or poison.
- 38. Confuses the target.
  39. Copies the target’s ability.
  40. Copies the target’s last used move.
  41. Copies the user’s ability onto the target.
@@ -66,10 +56,7 @@ SECTION 1: ALL SHORT EFFECTS
  53. Disables moves and immunities that involve flying or levitating for five turns.
  54. Disables the target’s last used move for 1-8 turns.
  55. Discards the user’s stat changes and copies the target’s.
- 56. Does nothing.
  57. Doubles prize money.
- 58. Drains 75% of the damage inflicted to heal the user.
- 59. Drains half the damage inflicted to heal the user.
  60. Ends wild battles.  Forces trainers to switch Pokémon.
  61. Ensures that the user’s next move will hit the target.
  62. Exchanges the user’s Speed with the target’s.
@@ -96,18 +83,13 @@ SECTION 1: ALL SHORT EFFECTS
  83. Halves all Electric-type damage.
  84. Halves all Fire-type damage.
  85. Has a 10% chance to burn the target and a 10% chance to make the target flinch.
- 86. Has a 10% chance to burn the target.
  87. Has a 10% chance to burn the target.  Lets frozen Pokémon thaw themselves.
- 88. Has a 10% chance to confuse the target.
  89. Has a 10% chance to freeze the target and a 10% chance to make the target flinch.
- 90. Has a 10% chance to freeze the target.
  91. Has a 10% chance to lower the target’s Attack by one stage.
  92. Has a 10% chance to lower the target’s Special Defense by one stage.
  93. Has a 10% chance to lower the target’s Speed by one stage.
  94. Has a 10% chance to make the target flinch.
  95. Has a 10% chance to paralyze the target and a 10% chance to make the target flinch.
- 96. Has a 10% chance to paralyze the target.
- 97. Has a 10% chance to poison the target.
  98. Has a 10% chance to put the target to sleep.
  99. Has a 10% chance to raise all of the user’s stats by one stage.
 100. Has a 10% chance to raise the user’s Attack by one stage.
@@ -117,14 +99,12 @@ SECTION 1: ALL SHORT EFFECTS
 104. Has a 100% chance to lower the target’s Special Attack by one stage.
 105. Has a 100% chance to lower the target’s Speed by one stage.
 106. Has a 100% chance to lower the target’s accuracy by one stage.
-107. Has a 100% chance to paralyze the target.
 108. Has a 20% chance to burn the target.
 109. Has a 20% chance to burn, freeze, or paralyze the target.
 110. Has a 20% chance to confuse the target.
 111. Has a 20% chance to lower the target’s Defense by one stage.
 112. Has a 20% chance to lower the target’s Special Defense by one stage.
 113. Has a 20% chance to make the target flinch.
-114. Has a 20% chance to paralyze the target.
 115. Has a 20% chance to raise the user’s Attack by one stage.
 116. Has a 30% chance to burn the target.
 117. Has a 30% chance to confuse the target.
@@ -134,12 +114,8 @@ SECTION 1: ALL SHORT EFFECTS
 121. Has a 30% chance to lower the target’s accuracy by one stage.
 122. Has a 30% chance to make the target flinch.
 123. Has a 30% chance to make the target flinch.  Only works if the user is sleeping.
-124. Has a 30% chance to paralyze the target.
-125. Has a 30% chance to poison the target.
 126. Has a 40% chance to lower the target’s Special Defense by two stages.
 127. Has a 40% chance to lower the target’s accuracy by one stage.
-128. Has a 40% chance to poison the target.
-129. Has a 50% chance to badly poison the target.
 130. Has a 50% chance to burn the target.  Lets frozen Pokémon thaw themselves.
 131. Has a 50% chance to lower the target’s Defense by one stage.
 132. Has a 50% chance to lower the target’s Special Attack by one stage.
@@ -310,21 +286,7 @@ SECTION 1: ALL SHORT EFFECTS
 297. Raises the Attack and Special Attack of all grass Pokémon in battle.
 298. Raises the Defense and Special Defense of all friendly Pokémon with plus or minus by one stage.
 299. Raises the Defense of all grass Pokémon in battle.
-300. Raises the target’s Attack by two stages and confuses the target.
-301. Raises the target’s Special Attack by one stage and confuses the target.
-302. Raises the user’s Attack and Defense by one stage.
-303. Raises the user’s Attack and Special Attack by one stage each.
-304. Raises the user’s Attack and Special Attack by one stage.
-305. Raises the user’s Attack and Speed by one stage.
-306. Raises the user’s Attack and accuracy by one stage.
-307. Raises the user’s Attack by one stage after inflicting damage.
-308. Raises the user’s Attack by one stage and its Speed by two stages.
-309. Raises the user’s Attack by one stage.
 310. Raises the user’s Attack by two stages if it KOs the target.
-311. Raises the user’s Attack by two stages.
-312. Raises the user’s Attack, Defense, and accuracy by one stage each.
-313. Raises the user’s Defense and Special Defense by one stage.
-314. Raises the user’s Defense by one stage.
 315. Raises the user’s Defense by one stage.  User charges for one turn before attacking.
 316. Raises the user’s Defense by three stages.
 317. Raises the user’s Defense by two stages.

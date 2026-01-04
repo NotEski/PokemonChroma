@@ -1,13 +1,13 @@
 from engine.pokemon.repositry_generator import initialize_repositories
 from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
-from engine.battle.battle_example import moveset_from_names, pickachu_eevee_battle_example
+from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.battle_header import BattleSwitchType, BattleType, BattleConfig
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent
 from shared.trainer.trainer import Trainer
 from shared.pokemon.pokemon import PokemonTeam, Pokemon
-from shared.battle.battle_actions import MoveAction
+from shared.battle.battle_actions import MoveAction, SkipTurnAction
 
 import os
 import traceback
@@ -19,7 +19,7 @@ from tkinter import ttk
 
 
 def simulate_sample_battle():
-    pikachu_moveset = moveset_from_names(["sketch", "toxic", "absorb", "quick_attack"])
+    pikachu_moveset = moveset_from_names(["sketch", "toxic", "sunny_day", "disable"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
     pikachu_base = pokemon_repository.get("pikachu")
@@ -35,7 +35,7 @@ def simulate_sample_battle():
     eevee.held_item = item_repository.get("eviolite")
 
 
-    marshtomp_moveset = moveset_from_names(["tail_whip", "arm_thrust", "rock_throw", "instakill"])
+    marshtomp_moveset = moveset_from_names(["tail_whip", "arm_thrust", "struggle", "instakill"])
     marshtomp_base = pokemon_repository.get("marshtomp")
     marshtomp = Pokemon(pokemon_base=marshtomp_base, level=50, move_set=marshtomp_moveset)
     marshtomp.nickname = "Marshy"
@@ -80,8 +80,6 @@ class BattleInspectorWindow:
         self.log_box = None
         self.opponents = {}
         self.battle_manager = None
-        self.active_team_id = 1
-        self.position_to_coords = {}
 
         self._build_layout()
         self.refresh()
@@ -96,6 +94,8 @@ class BattleInspectorWindow:
         ttk.Button(controls, text="End Turn", command=self.end_turn).pack(side="left", padx=(8, 0))
         self.turn_label = ttk.Label(controls, text="Turn: 1")
         self.turn_label.pack(side="left", padx=12)
+        self.weather_label = ttk.Label(controls, text="Weather: None")
+        self.weather_label.pack(side="left", padx=12)
 
         body = ttk.Frame(self.root)
         body.pack(fill="both", expand=True, padx=10, pady=10)
@@ -129,6 +129,9 @@ class BattleInspectorWindow:
         buttons_1.columnconfigure(0, weight=1)
         self.team_panels["move_buttons_frame_0"] = buttons_1
         ttk.Button(team1_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(0)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
+        self.team_panels["skip_switch_button_0"] = ttk.Button(team1_move_frame, text="Skip Switch", command=lambda: self.skip_switch(0))
+        self.team_panels["skip_switch_button_0"].grid(row=0, column=2, padx=6, pady=5, sticky="n")
+        self.team_panels["skip_switch_button_0"].grid_remove()
 
         # Team 2 moves
         team2_move_frame = ttk.LabelFrame(move_frame, text="Team 2 Moves")
@@ -139,6 +142,9 @@ class BattleInspectorWindow:
         buttons_2.columnconfigure(0, weight=1)
         self.team_panels["move_buttons_frame_1"] = buttons_2
         ttk.Button(team2_move_frame, text="Switch", command=lambda: self.switch_selected_pokemon(1)).grid(row=0, column=1, padx=6, pady=5, sticky="n")
+        self.team_panels["skip_switch_button_1"] = ttk.Button(team2_move_frame, text="Skip Switch", command=lambda: self.skip_switch(1))
+        self.team_panels["skip_switch_button_1"].grid(row=0, column=2, padx=6, pady=5, sticky="n")
+        self.team_panels["skip_switch_button_1"].grid_remove()
 
         # Right side panel with logs and team info
         right_panel = ttk.Frame(body)
@@ -187,7 +193,6 @@ class BattleInspectorWindow:
             return
 
         self.battle_field_canvas.delete("all")
-        self.position_to_coords = {}
 
         canvas_width = int(self.battle_field_canvas.cget("width"))
         canvas_height = int(self.battle_field_canvas.cget("height"))
@@ -230,8 +235,6 @@ class BattleInspectorWindow:
 
             center_x = cell_x + cell_width / 2
             center_y = cell_y + cell_height / 2
-
-            self.position_to_coords[position] = (center_x, center_y)
 
             # Draw cell background
             self.battle_field_canvas.create_rectangle(
@@ -384,12 +387,12 @@ class BattleInspectorWindow:
         battle_manager, opponent_1, opponent_2 = simulate_sample_battle()
         self.battle_manager = battle_manager
         self.opponents = {0: opponent_1, 1: opponent_2}
-        self.active_team_id = 0
         self._draw_battle_field()
         self._render_all_rosters()
         self._update_move_selector()
         self._render_logs()
         self._update_turn_label()
+        self._update_weather_label()
 
     def _update_move_selector(self):
         """Refresh move buttons for both teams."""
@@ -403,15 +406,30 @@ class BattleInspectorWindow:
         pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
 
         moves_container = self.team_panels.get(f"move_buttons_frame_{team_id}")
+        skip_button = self.team_panels.get(f"skip_switch_button_{team_id}")
+        
         if not moves_container or pokemon is None:
             if moves_container:
                 for widget in moves_container.winfo_children():
                     widget.destroy()
+            if skip_button:
+                skip_button.grid_remove()
             return
 
         # Clear existing buttons
         for widget in moves_container.winfo_children():
             widget.destroy()
+
+        # Check if we're in a switch turn and if this position does NOT have a fainted pokemon
+        is_switch_turn = self.battle_manager.battle_state.switch_turn if self.battle_manager else False
+        has_fainted_pokemon = self.battle_manager.position_manager.check_fainted(position) if self.battle_manager else False
+        
+        # Show/hide Skip Switch button (only for teams without fainted pokemon during switch turns)
+        if skip_button:
+            if is_switch_turn and not has_fainted_pokemon:
+                skip_button.grid()
+            else:
+                skip_button.grid_remove()
 
         # Create a button for each move, aligned horizontally
         for move in pokemon.move_set.moves.values():
@@ -483,6 +501,34 @@ class BattleInspectorWindow:
         self._render_all_rosters()
         self._update_move_selector()
 
+    def skip_switch(self, team_id: int):
+        """Skip the switch turn for a team that does NOT have a fainted pokemon."""
+        if self.battle_manager is None:
+            return
+
+        position = BattlePosition(team_id=team_id, pokemon_index=0)
+
+        # Verify we're in a switch turn and this position does NOT have a fainted pokemon
+        if not self.battle_manager.battle_state.switch_turn:
+            print("Skip Switch error: Not currently in a switch turn.")
+            return
+
+        if self.battle_manager.position_manager.check_fainted(position):
+            print("Skip Switch error: This position has a fainted pokemon and must switch.")
+            return
+
+        try:
+            print(f"Skipping switch turn for Team {team_id}")
+            self.battle_manager.submit_action(SkipTurnAction(position=position))
+        except Exception:
+            traceback.print_exc()
+            return
+
+        self._draw_battle_field()
+        self._render_logs()
+        self._render_all_rosters()
+        self._update_move_selector()
+
     def end_turn(self):
         if self.battle_manager is None:
             return
@@ -500,35 +546,31 @@ class BattleInspectorWindow:
         self._draw_battle_field()
         self._render_logs()
         self._update_turn_label()
+        self._update_weather_label()
         self._render_all_rosters()
         self._update_move_selector()
-
-    def give_burn(self, team_id: int):
-        if self.battle_manager is None:
-            return
-        position = BattlePosition(team_id=team_id, pokemon_index=1)
-        pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
-        if pokemon is None:
-            print("Give Burn error: No pokemon at this position.")
-            return
-
-        burn = status_repository.get("freeze")
-        if burn is None:
-            print("Give Burn error: 'burn' status not found in repository.")
-            return
-
-        try:
-            pokemon.status_conditions[burn] = 0
-        except Exception:
-            traceback.print_exc()
-            return
-
-        self._draw_battle_field()
 
     def _update_turn_label(self):
         """Update the turn counter label."""
         if self.battle_manager:
             self.turn_label.config(text=f"Turn: {self.battle_manager.battle_state.turn_number}")
+
+    def _update_weather_label(self):
+        """Update the weather label with currently active weather."""
+        if self.battle_manager:
+            weather = self.battle_manager.battle_state.weather_turns.weather
+            remaining_turns = self.battle_manager.battle_state.weather_turns.remaining_turns
+            
+            if weather.value is None:
+                self.weather_label.config(text="Weather: None")
+            else:
+                weather_name = weather.value.replace("_", " ").title()
+                if remaining_turns > 0:
+                    self.weather_label.config(text=f"Weather: {weather_name} ({remaining_turns} turns)")
+                else:
+                    self.weather_label.config(text=f"Weather: {weather_name}")
+        else:
+            self.weather_label.config(text="Weather: None")
 
     def _render_logs(self):
         """Render battle logs to the log box."""
@@ -562,11 +604,6 @@ def launch_battle_inspector():
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
-# pickachu_eevee_battle_example()
-
+print(status_repository.list())
 
 launch_battle_inspector()
-
-
-# app = Application()
-# app.run()

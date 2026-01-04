@@ -115,9 +115,7 @@ class BattleManager(BaseModel):
         return self.position_manager.get_position_action(position) is not None
     
     def _has_fainted(self, position: BattlePosition) -> bool:
-        print ("Checking fainted for position:", position)
         output = self.position_manager.check_fainted(position)
-        print("Fainted status:", output)
         return output
     
     def get_switch_turn(self) -> bool:
@@ -137,6 +135,11 @@ class BattleManager(BaseModel):
                 user_position=action.position,
                 new_pokemon=action.switch_in_pokemon
             )
+        elif isinstance(action, SkipTurnAction) and self.battle_state.switch_turn:
+            # check if the position has a fainted pokemon, if so, do not allow skip
+            if self._has_fainted(action.position):
+                raise ValueError("Cannot skip turn with a fainted Pokémon.")
+            self.position_manager.add_position_action(action.position, action)
         elif self.battle_state.switch_turn:
             raise ValueError("Cannot submit non-switch actions during a switch turn.")
         elif isinstance(action, MoveAction):
@@ -174,7 +177,7 @@ class BattleManager(BaseModel):
         user_pokemon = self.position_manager.get_pokemon_at_position(user_position)
         move = user_pokemon.move_set.moves[move_index]
 
-        if move.current_pp <= 0:
+        if move.current_pp <= 0 and move.max_pp >= 1:
             raise ValueError(f"{user_pokemon.nickname} has no PP left for {move.name}!")
 
         self.position_manager.add_position_action(user_position, MoveAction(move_index=move_index, position=user_position, target_position=target_position))
@@ -440,14 +443,23 @@ class BattleManager(BaseModel):
         if used_move is None:
             raise ValueError("Move not found in user's move set.")
         
-        used_move.current_pp -= 1
+        # Is the move disabled?
+        if action.move_index in user_pokemon.disabled_moves:
+            self.battle_log.misc(
+                description=f"{user_pokemon.nickname} tried to use a disabled move and failed!"
+            )
+            return
+        
+        user_pokemon.add_previous_move_used(used_move.base_move)
+
+        if used_move.max_pp >= 1: 
+            used_move.current_pp -= 1
 
         target_positions = self.position_manager.get_target_positions(
             user_position=position,
             move_target=used_move.target,
             selected_position=action.target_position
         )
-
 
         if used_move.accuracy is None:
             accuracy_check = 100.0
@@ -516,8 +528,6 @@ class BattleManager(BaseModel):
         if effectiveness_level != EffectivenessLevel.NORMAL_EFFECTIVE:
             description_list.append(effectiveness_message(effectiveness_level))
 
-
-
             # if target_pokemon.current_hp <= 0:
             #     self.battle_log.pokemon_fainted(
             #         fainted_pokemon=target_pokemon,
@@ -572,10 +582,23 @@ class BattleManager(BaseModel):
     def process_status_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
         """Process a status move."""
         if move.has_tag(StatusConditionMove):
-            status_condition = move.get_tag(StatusConditionMove).status_condition
-            if status_condition is not None:
-                target.add_status_condition(status_condition, status_condition._default_data_factory())
+            status_condition: StatusCondition = move.get_tag(StatusConditionMove).status_condition
+            print ("Applying status condition:", status_condition)
+            if status_condition is None:
+                return
+            if status_condition.name == "disable":
+                self.process_disable_move(target, move_index=user.last_used_moves[-1].index, turns=4)
+                return
+            target.add_status_condition(status_condition, status_condition._default_data_factory())
 
+    def process_disable_move(self, target: BattleMon, move_index: int, turns: int):
+        last_move_used = target.last_used_moves[-1] if target.last_used_moves else None
+        if last_move_used is None:
+            return
+        move_index = last_move_used.index
+        target.disable_move(move_index, turns=4)
+        return
+    
     def process_stat_change_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
         """Process a stat-changing move."""
         if move.has_tag(StatChangeMove):
