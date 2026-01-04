@@ -1,0 +1,14 @@
+@move("heat_crash")  # type: ignore
+class _HeatCrash:
+    meta = {
+        "display_name": "Heat Crash",
+        "type": "fire",
+        "index": 535,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "non_sky_battle"]

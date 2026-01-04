@@ -1,0 +1,15 @@
+@move("quick_guard")  # type: ignore
+class _QuickGuard:
+    meta = {
+        "display_name": "Quick Guard",
+        "type": "fighting",
+        "index": 501,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "users_field",
+        "priority": 3,
+    }
+    flags = ["snatch"]

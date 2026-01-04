@@ -1,0 +1,14 @@
+@move("fury_attack")  # type: ignore
+class _FuryAttack:
+    meta = {
+        "display_name": "Fury Attack",
+        "type": "normal",
+        "index": 31,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 15,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

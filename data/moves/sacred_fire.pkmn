@@ -1,0 +1,17 @@
+@move("sacred_fire")  # type: ignore
+class _SacredFire:
+    meta = {
+        "display_name": "Sacred Fire",
+        "type": "fire",
+        "index": 221,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 95,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "defrost"]
+    status_condition = {
+        "burn": 50,
+    }

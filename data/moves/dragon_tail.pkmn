@@ -1,0 +1,15 @@
+@move("dragon_tail")  # type: ignore
+class _DragonTail:
+    meta = {
+        "display_name": "Dragon Tail",
+        "type": "dragon",
+        "index": 525,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": -6,
+    }
+    flags = ["contact", "protect", "mirror"]

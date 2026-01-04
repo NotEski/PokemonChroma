@@ -1,0 +1,14 @@
+@move("aqua_ring")  # type: ignore
+class _AquaRing:
+    meta = {
+        "display_name": "Aqua Ring",
+        "type": "water",
+        "index": 392,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]

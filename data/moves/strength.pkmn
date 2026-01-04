@@ -1,0 +1,14 @@
+@move("strength")  # type: ignore
+class _Strength:
+    meta = {
+        "display_name": "Strength",
+        "type": "normal",
+        "index": 70,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

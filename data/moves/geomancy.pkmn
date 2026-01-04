@@ -1,0 +1,17 @@
+@move("geomancy")  # type: ignore
+class _Geomancy:
+    meta = {
+        "display_name": "Geomancy",
+        "type": "fairy",
+        "index": 601,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["charge", "non_sky_battle"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "special_attack", "change": 2, "chance": 100}, {"stat": "special_defense", "change": 2, "chance": 100}, {"stat": "speed", "change": 2, "chance": 100}],
+    }

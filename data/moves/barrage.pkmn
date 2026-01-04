@@ -1,0 +1,14 @@
+@move("barrage")  # type: ignore
+class _Barrage:
+    meta = {
+        "display_name": "Barrage",
+        "type": "normal",
+        "index": 140,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 15,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "ballistics"]

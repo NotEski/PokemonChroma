@@ -1,0 +1,14 @@
+@move("lock_on")  # type: ignore
+class _LockOn:
+    meta = {
+        "display_name": "Lock-On",
+        "type": "normal",
+        "index": 199,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

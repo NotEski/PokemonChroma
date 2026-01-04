@@ -1,0 +1,14 @@
+@move("bestow")  # type: ignore
+class _Bestow:
+    meta = {
+        "display_name": "Bestow",
+        "type": "normal",
+        "index": 516,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["mirror", "authentic"]

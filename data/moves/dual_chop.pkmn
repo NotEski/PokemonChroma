@@ -1,0 +1,14 @@
+@move("dual_chop")  # type: ignore
+class _DualChop:
+    meta = {
+        "display_name": "Dual Chop",
+        "type": "dragon",
+        "index": 530,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 40,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

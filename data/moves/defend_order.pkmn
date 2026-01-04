@@ -1,0 +1,17 @@
+@move("defend_order")  # type: ignore
+class _DefendOrder:
+    meta = {
+        "display_name": "Defend Order",
+        "type": "bug",
+        "index": 455,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
+    }

@@ -1,0 +1,14 @@
+@move("shadow_force")  # type: ignore
+class _ShadowForce:
+    meta = {
+        "display_name": "Shadow Force",
+        "type": "ghost",
+        "index": 467,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "mirror"]

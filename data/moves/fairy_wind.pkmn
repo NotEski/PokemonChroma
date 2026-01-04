@@ -1,0 +1,14 @@
+@move("fairy_wind")  # type: ignore
+class _FairyWind:
+    meta = {
+        "display_name": "Fairy Wind",
+        "type": "fairy",
+        "index": 584,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

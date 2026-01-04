@@ -1,0 +1,14 @@
+@move("explosion")  # type: ignore
+class _Explosion:
+    meta = {
+        "display_name": "Explosion",
+        "type": "normal",
+        "index": 153,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 250,
+        "pp": 5,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]

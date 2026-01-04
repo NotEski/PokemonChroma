@@ -1,0 +1,17 @@
+@move("embargo")  # type: ignore
+class _Embargo:
+    meta = {
+        "display_name": "Embargo",
+        "type": "dark",
+        "index": 373,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "embargo": 0,
+    }

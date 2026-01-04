@@ -1,0 +1,14 @@
+@move("boomburst")  # type: ignore
+class _Boomburst:
+    meta = {
+        "display_name": "Boomburst",
+        "type": "normal",
+        "index": 586,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 140,
+        "pp": 10,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

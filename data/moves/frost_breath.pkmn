@@ -1,0 +1,15 @@
+@move("frost_breath")  # type: ignore
+class _FrostBreath:
+    meta = {
+        "display_name": "Frost Breath",
+        "type": "ice",
+        "index": 524,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 48

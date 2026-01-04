@@ -1,0 +1,15 @@
+@move("razor_wind")  # type: ignore
+class _RazorWind:
+    meta = {
+        "display_name": "Razor Wind",
+        "type": "normal",
+        "index": 13,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["charge", "protect", "mirror"]
+    critical_hit_rate = 8

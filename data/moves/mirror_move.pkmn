@@ -1,0 +1,13 @@
+@move("mirror_move")  # type: ignore
+class _MirrorMove:
+    meta = {
+        "display_name": "Mirror Move",
+        "type": "flying",
+        "index": 119,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

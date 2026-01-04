@@ -1,0 +1,15 @@
+@move("quick_attack")  # type: ignore
+class _QuickAttack:
+    meta = {
+        "display_name": "Quick Attack",
+        "type": "normal",
+        "index": 98,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["contact", "protect", "mirror"]

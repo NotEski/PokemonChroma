@@ -1,0 +1,14 @@
+@move("horn_drill")  # type: ignore
+class _HornDrill:
+    meta = {
+        "display_name": "Horn Drill",
+        "type": "normal",
+        "index": 32,
+        "damage_class": "physical",
+        "category": "ohko",
+        "accuracy": 30,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

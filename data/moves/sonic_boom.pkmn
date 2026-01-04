@@ -1,0 +1,14 @@
+@move("sonic_boom")  # type: ignore
+class _SonicBoom:
+    meta = {
+        "display_name": "Sonic Boom",
+        "type": "normal",
+        "index": 49,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

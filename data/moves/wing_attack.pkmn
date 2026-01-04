@@ -1,0 +1,14 @@
+@move("wing_attack")  # type: ignore
+class _WingAttack:
+    meta = {
+        "display_name": "Wing Attack",
+        "type": "flying",
+        "index": 17,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 35,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "distance"]

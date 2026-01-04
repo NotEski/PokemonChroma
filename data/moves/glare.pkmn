@@ -1,0 +1,17 @@
+@move("glare")  # type: ignore
+class _Glare:
+    meta = {
+        "display_name": "Glare",
+        "type": "normal",
+        "index": 137,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "paralysis": 0,
+    }

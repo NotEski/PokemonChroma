@@ -1,0 +1,18 @@
+@move("flare_blitz")  # type: ignore
+class _FlareBlitz:
+    meta = {
+        "display_name": "Flare Blitz",
+        "type": "fire",
+        "index": 394,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "defrost"]
+    status_condition = {
+        "burn": 10,
+    }
+    drain = -33

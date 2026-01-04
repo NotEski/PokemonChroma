@@ -1,0 +1,17 @@
+@move("nightmare")  # type: ignore
+class _Nightmare:
+    meta = {
+        "display_name": "Nightmare",
+        "type": "ghost",
+        "index": 171,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "nightmare": 0,
+    }

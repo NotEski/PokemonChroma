@@ -1,0 +1,14 @@
+@move("dive")  # type: ignore
+class _Dive:
+    meta = {
+        "display_name": "Dive",
+        "type": "water",
+        "index": 291,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "protect", "mirror", "non_sky_battle"]

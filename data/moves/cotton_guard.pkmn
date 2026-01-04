@@ -1,0 +1,17 @@
+@move("cotton_guard")  # type: ignore
+class _CottonGuard:
+    meta = {
+        "display_name": "Cotton Guard",
+        "type": "grass",
+        "index": 538,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "defense", "change": 3, "chance": 100}],
+    }

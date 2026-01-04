@@ -1,0 +1,17 @@
+@move("tail_glow")  # type: ignore
+class _TailGlow:
+    meta = {
+        "display_name": "Tail Glow",
+        "type": "bug",
+        "index": 294,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "special_attack", "change": 3, "chance": 100}],
+    }

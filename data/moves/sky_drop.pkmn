@@ -1,0 +1,14 @@
+@move("sky_drop")  # type: ignore
+class _SkyDrop:
+    meta = {
+        "display_name": "Sky Drop",
+        "type": "flying",
+        "index": 507,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "protect", "mirror", "gravity", "distance"]

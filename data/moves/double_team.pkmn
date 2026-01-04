@@ -1,0 +1,17 @@
+@move("double_team")  # type: ignore
+class _DoubleTeam:
+    meta = {
+        "display_name": "Double Team",
+        "type": "normal",
+        "index": 104,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "evasion", "change": 1, "chance": 100}],
+    }

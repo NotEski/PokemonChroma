@@ -1,0 +1,15 @@
+@move("needle_arm")  # type: ignore
+class _NeedleArm:
+    meta = {
+        "display_name": "Needle Arm",
+        "type": "grass",
+        "index": 302,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 30

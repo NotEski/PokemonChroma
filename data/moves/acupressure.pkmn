@@ -1,0 +1,13 @@
+@move("acupressure")  # type: ignore
+class _Acupressure:
+    meta = {
+        "display_name": "Acupressure",
+        "type": "normal",
+        "index": 367,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user_or_ally",
+    }

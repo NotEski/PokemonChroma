@@ -1,0 +1,15 @@
+@move("counter")  # type: ignore
+class _Counter:
+    meta = {
+        "display_name": "Counter",
+        "type": "fighting",
+        "index": 68,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "specific_move",
+        "priority": -5,
+    }
+    flags = ["contact", "protect"]

@@ -1,0 +1,14 @@
+@move("payback")  # type: ignore
+class _Payback:
+    meta = {
+        "display_name": "Payback",
+        "type": "dark",
+        "index": 371,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

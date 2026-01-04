@@ -1,0 +1,15 @@
+@move("rage_powder")  # type: ignore
+class _RagePowder:
+    meta = {
+        "display_name": "Rage Powder",
+        "type": "bug",
+        "index": 476,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+        "priority": 2,
+    }
+    flags = ["powder"]

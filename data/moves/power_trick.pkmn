@@ -1,0 +1,14 @@
+@move("power_trick")  # type: ignore
+class _PowerTrick:
+    meta = {
+        "display_name": "Power Trick",
+        "type": "psychic",
+        "index": 379,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch"]

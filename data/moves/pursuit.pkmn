@@ -1,0 +1,14 @@
+@move("pursuit")  # type: ignore
+class _Pursuit:
+    meta = {
+        "display_name": "Pursuit",
+        "type": "dark",
+        "index": 228,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

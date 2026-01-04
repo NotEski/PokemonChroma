@@ -1,0 +1,14 @@
+@move("imprison")  # type: ignore
+class _Imprison:
+    meta = {
+        "display_name": "Imprison",
+        "type": "psychic",
+        "index": 286,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "authentic"]

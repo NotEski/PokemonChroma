@@ -1,0 +1,17 @@
+@move("ominous_wind")  # type: ignore
+class _OminousWind:
+    meta = {
+        "display_name": "Ominous Wind",
+        "type": "ghost",
+        "index": 466,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "hp", "change": 1, "chance": 10}, {"stat": "attack", "change": 1, "chance": 10}, {"stat": "defense", "change": 1, "chance": 10}, {"stat": "special_attack", "change": 1, "chance": 10}, {"stat": "special_defense", "change": 1, "chance": 10}, {"stat": "speed", "change": 1, "chance": 10}],
+    }

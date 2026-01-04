@@ -1,0 +1,14 @@
+@move("pay_day")  # type: ignore
+class _PayDay:
+    meta = {
+        "display_name": "Pay Day",
+        "type": "normal",
+        "index": 6,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

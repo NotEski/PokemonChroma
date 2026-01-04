@@ -1,0 +1,14 @@
+@move("follow_me")  # type: ignore
+class _FollowMe:
+    meta = {
+        "display_name": "Follow Me",
+        "type": "normal",
+        "index": 266,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+        "priority": 2,
+    }

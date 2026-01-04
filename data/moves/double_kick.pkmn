@@ -1,0 +1,14 @@
+@move("double_kick")  # type: ignore
+class _DoubleKick:
+    meta = {
+        "display_name": "Double Kick",
+        "type": "fighting",
+        "index": 24,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 30,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

@@ -1,0 +1,15 @@
+@move("submission")  # type: ignore
+class _Submission:
+    meta = {
+        "display_name": "Submission",
+        "type": "fighting",
+        "index": 66,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 80,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -25

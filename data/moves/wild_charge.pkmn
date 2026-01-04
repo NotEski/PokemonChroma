@@ -1,0 +1,15 @@
+@move("wild_charge")  # type: ignore
+class _WildCharge:
+    meta = {
+        "display_name": "Wild Charge",
+        "type": "electric",
+        "index": 528,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -25

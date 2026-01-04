@@ -1,0 +1,14 @@
+@move("thrash")  # type: ignore
+class _Thrash:
+    meta = {
+        "display_name": "Thrash",
+        "type": "normal",
+        "index": 37,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "random_opponent",
+    }
+    flags = ["contact", "protect", "mirror"]

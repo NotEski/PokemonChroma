@@ -1,0 +1,18 @@
+@move("thunder_fang")  # type: ignore
+class _ThunderFang:
+    meta = {
+        "display_name": "Thunder Fang",
+        "type": "electric",
+        "index": 422,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 95,
+        "power": 65,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "bite"]
+    status_condition = {
+        "paralysis": 10,
+    }
+    flinch_chance = 10

@@ -1,0 +1,17 @@
+@move("psycho_boost")  # type: ignore
+class _PsychoBoost:
+    meta = {
+        "display_name": "Psycho Boost",
+        "type": "psychic",
+        "index": 354,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 90,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

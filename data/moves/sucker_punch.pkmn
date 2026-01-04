@@ -1,0 +1,15 @@
+@move("sucker_punch")  # type: ignore
+class _SuckerPunch:
+    meta = {
+        "display_name": "Sucker Punch",
+        "type": "dark",
+        "index": 389,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 5,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["contact", "protect", "mirror"]

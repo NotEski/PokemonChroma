@@ -1,0 +1,13 @@
+@move("baton_pass")  # type: ignore
+class _BatonPass:
+    meta = {
+        "display_name": "Baton Pass",
+        "type": "normal",
+        "index": 226,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 40,
+        "target": "user",
+    }

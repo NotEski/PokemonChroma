@@ -1,0 +1,13 @@
+@move("rain_dance")  # type: ignore
+class _RainDance:
+    meta = {
+        "display_name": "Rain Dance",
+        "type": "water",
+        "index": 240,
+        "damage_class": "status",
+        "category": "whole_field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "entire_field",
+    }

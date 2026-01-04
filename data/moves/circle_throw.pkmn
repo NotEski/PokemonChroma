@@ -1,0 +1,15 @@
+@move("circle_throw")  # type: ignore
+class _CircleThrow:
+    meta = {
+        "display_name": "Circle Throw",
+        "type": "fighting",
+        "index": 509,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": -6,
+    }
+    flags = ["contact", "protect", "mirror"]

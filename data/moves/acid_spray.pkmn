@@ -1,0 +1,17 @@
+@move("acid_spray")  # type: ignore
+class _AcidSpray:
+    meta = {
+        "display_name": "Acid Spray",
+        "type": "poison",
+        "index": 491,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "ballistics"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
+    }

@@ -1,0 +1,15 @@
+@move("stomp")  # type: ignore
+class _Stomp:
+    meta = {
+        "display_name": "Stomp",
+        "type": "normal",
+        "index": 23,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "non_sky_battle"]
+    flinch_chance = 30

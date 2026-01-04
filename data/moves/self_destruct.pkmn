@@ -1,0 +1,14 @@
+@move("self_destruct")  # type: ignore
+class _SelfDestruct:
+    meta = {
+        "display_name": "Self-Destruct",
+        "type": "normal",
+        "index": 120,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 200,
+        "pp": 5,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]

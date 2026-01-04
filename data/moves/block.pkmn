@@ -1,0 +1,14 @@
+@move("block")  # type: ignore
+class _Block:
+    meta = {
+        "display_name": "Block",
+        "type": "normal",
+        "index": 335,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["reflectable", "mirror"]

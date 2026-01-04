@@ -1,0 +1,18 @@
+@move("blaze_kick")  # type: ignore
+class _BlazeKick:
+    meta = {
+        "display_name": "Blaze Kick",
+        "type": "fire",
+        "index": 299,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 90,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "burn": 10,
+    }
+    critical_hit_rate = 8

@@ -1,0 +1,14 @@
+@move("feint_attack")  # type: ignore
+class _FeintAttack:
+    meta = {
+        "display_name": "Feint Attack",
+        "type": "dark",
+        "index": 185,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

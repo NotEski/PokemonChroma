@@ -1,0 +1,14 @@
+@move("water_spout")  # type: ignore
+class _WaterSpout:
+    meta = {
+        "display_name": "Water Spout",
+        "type": "water",
+        "index": 323,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 5,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]

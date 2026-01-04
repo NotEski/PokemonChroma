@@ -1,0 +1,15 @@
+@move("synthesis")  # type: ignore
+class _Synthesis:
+    meta = {
+        "display_name": "Synthesis",
+        "type": "grass",
+        "index": 235,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

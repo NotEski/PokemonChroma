@@ -1,0 +1,15 @@
+@move("leech_life")  # type: ignore
+class _LeechLife:
+    meta = {
+        "display_name": "Leech Life",
+        "type": "bug",
+        "index": 141,
+        "damage_class": "physical",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 20,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "heal"]
+    drain = 50

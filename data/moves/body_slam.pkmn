@@ -1,0 +1,17 @@
+@move("body_slam")  # type: ignore
+class _BodySlam:
+    meta = {
+        "display_name": "Body Slam",
+        "type": "normal",
+        "index": 34,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 85,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "non_sky_battle"]
+    status_condition = {
+        "paralysis": 30,
+    }

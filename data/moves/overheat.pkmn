@@ -1,0 +1,17 @@
+@move("overheat")  # type: ignore
+class _Overheat:
+    meta = {
+        "display_name": "Overheat",
+        "type": "fire",
+        "index": 315,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 90,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

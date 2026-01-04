@@ -1,0 +1,15 @@
+@move("morning_sun")  # type: ignore
+class _MorningSun:
+    meta = {
+        "display_name": "Morning Sun",
+        "type": "normal",
+        "index": 234,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

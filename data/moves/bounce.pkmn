@@ -1,0 +1,17 @@
+@move("bounce")  # type: ignore
+class _Bounce:
+    meta = {
+        "display_name": "Bounce",
+        "type": "flying",
+        "index": 340,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 85,
+        "power": 85,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "protect", "mirror", "gravity", "distance"]
+    status_condition = {
+        "paralysis": 30,
+    }

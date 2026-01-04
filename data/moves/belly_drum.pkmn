@@ -1,0 +1,14 @@
+@move("belly_drum")  # type: ignore
+class _BellyDrum:
+    meta = {
+        "display_name": "Belly Drum",
+        "type": "normal",
+        "index": 187,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch"]

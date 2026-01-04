@@ -1,0 +1,14 @@
+@move("judgment")  # type: ignore
+class _Judgment:
+    meta = {
+        "display_name": "Judgment",
+        "type": "normal",
+        "index": 449,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

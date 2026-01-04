@@ -1,0 +1,14 @@
+@move("sacred_sword")  # type: ignore
+class _SacredSword:
+    meta = {
+        "display_name": "Sacred Sword",
+        "type": "fighting",
+        "index": 533,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

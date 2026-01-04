@@ -1,0 +1,14 @@
+@move("flying_press")  # type: ignore
+class _FlyingPress:
+    meta = {
+        "display_name": "Flying Press",
+        "type": "fighting",
+        "index": 560,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "gravity", "distance", "non_sky_battle"]

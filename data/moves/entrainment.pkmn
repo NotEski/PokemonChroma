@@ -1,0 +1,14 @@
+@move("entrainment")  # type: ignore
+class _Entrainment:
+    meta = {
+        "display_name": "Entrainment",
+        "type": "normal",
+        "index": 494,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

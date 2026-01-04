@@ -1,0 +1,14 @@
+@move("comet_punch")  # type: ignore
+class _CometPunch:
+    meta = {
+        "display_name": "Comet Punch",
+        "type": "normal",
+        "index": 4,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 18,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch"]

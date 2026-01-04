@@ -1,0 +1,15 @@
+@move("roost")  # type: ignore
+class _Roost:
+    meta = {
+        "display_name": "Roost",
+        "type": "flying",
+        "index": 355,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

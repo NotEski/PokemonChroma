@@ -1,0 +1,17 @@
+@move("tickle")  # type: ignore
+class _Tickle:
+    meta = {
+        "display_name": "Tickle",
+        "type": "normal",
+        "index": 321,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "defense", "change": -1, "chance": 100}],
+    }

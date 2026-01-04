@@ -1,0 +1,15 @@
+@move("focus_punch")  # type: ignore
+class _FocusPunch:
+    meta = {
+        "display_name": "Focus Punch",
+        "type": "fighting",
+        "index": 264,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": -3,
+    }
+    flags = ["contact", "protect", "punch"]

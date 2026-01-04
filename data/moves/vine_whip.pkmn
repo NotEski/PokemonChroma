@@ -1,0 +1,14 @@
+@move("vine_whip")  # type: ignore
+class _VineWhip:
+    meta = {
+        "display_name": "Vine Whip",
+        "type": "grass",
+        "index": 22,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 45,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

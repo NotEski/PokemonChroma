@@ -1,0 +1,14 @@
+@move("cut")  # type: ignore
+class _Cut:
+    meta = {
+        "display_name": "Cut",
+        "type": "normal",
+        "index": 15,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 50,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

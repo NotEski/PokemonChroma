@@ -1,0 +1,15 @@
+@move("air_slash")  # type: ignore
+class _AirSlash:
+    meta = {
+        "display_name": "Air Slash",
+        "type": "flying",
+        "index": 403,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 75,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "distance"]
+    flinch_chance = 30

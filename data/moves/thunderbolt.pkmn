@@ -1,0 +1,17 @@
+@move("thunderbolt")  # type: ignore
+class _Thunderbolt:
+    meta = {
+        "display_name": "Thunderbolt",
+        "type": "electric",
+        "index": 85,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "paralysis": 10,
+    }

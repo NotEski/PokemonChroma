@@ -1,0 +1,14 @@
+@move("taunt")  # type: ignore
+class _Taunt:
+    meta = {
+        "display_name": "Taunt",
+        "type": "dark",
+        "index": 269,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic", "mental"]

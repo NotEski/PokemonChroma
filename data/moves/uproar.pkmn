@@ -1,0 +1,14 @@
+@move("uproar")  # type: ignore
+class _Uproar:
+    meta = {
+        "display_name": "Uproar",
+        "type": "normal",
+        "index": 253,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "random_opponent",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

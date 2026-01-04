@@ -1,0 +1,14 @@
+@move("stored_power")  # type: ignore
+class _StoredPower:
+    meta = {
+        "display_name": "Stored Power",
+        "type": "psychic",
+        "index": 500,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 20,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,14 @@
+@move("psych_up")  # type: ignore
+class _PsychUp:
+    meta = {
+        "display_name": "Psych Up",
+        "type": "normal",
+        "index": 244,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["authentic"]

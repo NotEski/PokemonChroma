@@ -1,0 +1,14 @@
+@move("night_shade")  # type: ignore
+class _NightShade:
+    meta = {
+        "display_name": "Night Shade",
+        "type": "ghost",
+        "index": 101,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

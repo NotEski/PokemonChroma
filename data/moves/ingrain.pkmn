@@ -1,0 +1,17 @@
+@move("ingrain")  # type: ignore
+class _Ingrain:
+    meta = {
+        "display_name": "Ingrain",
+        "type": "grass",
+        "index": 275,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch", "non_sky_battle"]
+    status_condition = {
+        "ingrain": 0,
+    }

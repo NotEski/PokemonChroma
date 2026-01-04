@@ -1,0 +1,14 @@
+@move("electro_ball")  # type: ignore
+class _ElectroBall:
+    meta = {
+        "display_name": "Electro Ball",
+        "type": "electric",
+        "index": 486,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "ballistics"]

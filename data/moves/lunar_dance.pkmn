@@ -1,0 +1,14 @@
+@move("lunar_dance")  # type: ignore
+class _LunarDance:
+    meta = {
+        "display_name": "Lunar Dance",
+        "type": "psychic",
+        "index": 461,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal", "heal_exception"]

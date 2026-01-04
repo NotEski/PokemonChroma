@@ -1,0 +1,17 @@
+@move("metal_sound")  # type: ignore
+class _MetalSound:
+    meta = {
+        "display_name": "Metal Sound",
+        "type": "steel",
+        "index": 319,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 85,
+        "power": None,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
+    }

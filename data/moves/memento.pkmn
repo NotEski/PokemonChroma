@@ -1,0 +1,14 @@
+@move("memento")  # type: ignore
+class _Memento:
+    meta = {
+        "display_name": "Memento",
+        "type": "dark",
+        "index": 262,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

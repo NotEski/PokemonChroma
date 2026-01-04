@@ -1,0 +1,15 @@
+@move("roar")  # type: ignore
+class _Roar:
+    meta = {
+        "display_name": "Roar",
+        "type": "normal",
+        "index": 46,
+        "damage_class": "status",
+        "category": "force_switch",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": -6,
+    }
+    flags = ["reflectable", "mirror", "sound", "authentic"]

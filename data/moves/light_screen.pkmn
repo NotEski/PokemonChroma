@@ -1,0 +1,14 @@
+@move("light_screen")  # type: ignore
+class _LightScreen:
+    meta = {
+        "display_name": "Light Screen",
+        "type": "psychic",
+        "index": 113,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

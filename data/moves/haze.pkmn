@@ -1,0 +1,14 @@
+@move("haze")  # type: ignore
+class _Haze:
+    meta = {
+        "display_name": "Haze",
+        "type": "ice",
+        "index": 114,
+        "damage_class": "status",
+        "category": "whole_field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "entire_field",
+    }
+    flags = ["authentic"]

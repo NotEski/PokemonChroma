@@ -1,0 +1,14 @@
+@move("hidden_power")  # type: ignore
+class _HiddenPower:
+    meta = {
+        "display_name": "Hidden Power",
+        "type": "normal",
+        "index": 237,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

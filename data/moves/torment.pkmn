@@ -1,0 +1,17 @@
+@move("torment")  # type: ignore
+class _Torment:
+    meta = {
+        "display_name": "Torment",
+        "type": "dark",
+        "index": 259,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic", "mental"]
+    status_condition = {
+        "torment": 0,
+    }

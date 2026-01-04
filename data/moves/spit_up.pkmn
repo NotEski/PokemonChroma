@@ -1,0 +1,14 @@
+@move("spit_up")  # type: ignore
+class _SpitUp:
+    meta = {
+        "display_name": "Spit Up",
+        "type": "normal",
+        "index": 255,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect"]

@@ -1,0 +1,15 @@
+@move("aeroblast")  # type: ignore
+class _Aeroblast:
+    meta = {
+        "display_name": "Aeroblast",
+        "type": "flying",
+        "index": 177,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "distance"]
+    critical_hit_rate = 8

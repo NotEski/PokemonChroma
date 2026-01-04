@@ -1,0 +1,14 @@
+@move("gyro_ball")  # type: ignore
+class _GyroBall:
+    meta = {
+        "display_name": "Gyro Ball",
+        "type": "steel",
+        "index": 360,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "ballistics"]

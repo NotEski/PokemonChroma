@@ -1,0 +1,14 @@
+@move("mist")  # type: ignore
+class _Mist:
+    meta = {
+        "display_name": "Mist",
+        "type": "ice",
+        "index": 54,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

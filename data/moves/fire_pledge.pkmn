@@ -1,0 +1,14 @@
+@move("fire_pledge")  # type: ignore
+class _FirePledge:
+    meta = {
+        "display_name": "Fire Pledge",
+        "type": "fire",
+        "index": 519,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

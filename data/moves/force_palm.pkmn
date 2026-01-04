@@ -1,0 +1,17 @@
+@move("force_palm")  # type: ignore
+class _ForcePalm:
+    meta = {
+        "display_name": "Force Palm",
+        "type": "fighting",
+        "index": 395,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "paralysis": 30,
+    }

@@ -1,0 +1,14 @@
+@move("thousand_arrows")  # type: ignore
+class _ThousandArrows:
+    meta = {
+        "display_name": "Thousand Arrows",
+        "type": "ground",
+        "index": 614,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

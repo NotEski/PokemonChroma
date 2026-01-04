@@ -1,0 +1,14 @@
+@move("sky_uppercut")  # type: ignore
+class _SkyUppercut:
+    meta = {
+        "display_name": "Sky Uppercut",
+        "type": "fighting",
+        "index": 327,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 85,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch"]

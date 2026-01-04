@@ -1,0 +1,17 @@
+@move("ancient_power")  # type: ignore
+class _AncientPower:
+    meta = {
+        "display_name": "Ancient Power",
+        "type": "rock",
+        "index": 246,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "hp", "change": 1, "chance": 10}, {"stat": "attack", "change": 1, "chance": 10}, {"stat": "defense", "change": 1, "chance": 10}, {"stat": "special_attack", "change": 1, "chance": 10}, {"stat": "special_defense", "change": 1, "chance": 10}, {"stat": "speed", "change": 1, "chance": 10}],
+    }

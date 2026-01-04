@@ -1,0 +1,14 @@
+@move("topsy_turvy")  # type: ignore
+class _TopsyTurvy:
+    meta = {
+        "display_name": "Topsy-Turvy",
+        "type": "dark",
+        "index": 576,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

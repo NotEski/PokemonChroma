@@ -1,0 +1,17 @@
+@move("relic_song")  # type: ignore
+class _RelicSong:
+    meta = {
+        "display_name": "Relic Song",
+        "type": "normal",
+        "index": 547,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]
+    status_condition = {
+        "sleep": 10,
+    }

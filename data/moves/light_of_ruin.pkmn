@@ -1,0 +1,15 @@
+@move("light_of_ruin")  # type: ignore
+class _LightOfRuin:
+    meta = {
+        "display_name": "Light of Ruin",
+        "type": "fairy",
+        "index": 617,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    drain = -50

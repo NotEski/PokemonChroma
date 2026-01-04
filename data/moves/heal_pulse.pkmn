@@ -1,0 +1,15 @@
+@move("heal_pulse")  # type: ignore
+class _HealPulse:
+    meta = {
+        "display_name": "Heal Pulse",
+        "type": "psychic",
+        "index": 505,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "distance", "heal", "pulse"]
+    healing = 50

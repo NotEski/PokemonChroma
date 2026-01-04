@@ -1,0 +1,15 @@
+@move("dream_eater")  # type: ignore
+class _DreamEater:
+    meta = {
+        "display_name": "Dream Eater",
+        "type": "psychic",
+        "index": 138,
+        "damage_class": "special",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "heal"]
+    drain = 50

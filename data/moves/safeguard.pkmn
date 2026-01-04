@@ -1,0 +1,14 @@
+@move("safeguard")  # type: ignore
+class _Safeguard:
+    meta = {
+        "display_name": "Safeguard",
+        "type": "normal",
+        "index": 219,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 25,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

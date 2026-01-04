@@ -1,0 +1,15 @@
+@move("shadow_sneak")  # type: ignore
+class _ShadowSneak:
+    meta = {
+        "display_name": "Shadow Sneak",
+        "type": "ghost",
+        "index": 425,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["contact", "protect", "mirror"]

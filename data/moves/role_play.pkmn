@@ -1,0 +1,14 @@
+@move("role_play")  # type: ignore
+class _RolePlay:
+    meta = {
+        "display_name": "Role Play",
+        "type": "psychic",
+        "index": 272,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["authentic"]

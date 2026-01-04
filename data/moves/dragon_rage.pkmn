@@ -1,0 +1,14 @@
+@move("dragon_rage")  # type: ignore
+class _DragonRage:
+    meta = {
+        "display_name": "Dragon Rage",
+        "type": "dragon",
+        "index": 82,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,15 @@
+@move("snatch")  # type: ignore
+class _Snatch:
+    meta = {
+        "display_name": "Snatch",
+        "type": "dark",
+        "index": 289,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+        "priority": 4,
+    }
+    flags = ["authentic"]

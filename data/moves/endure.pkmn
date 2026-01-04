@@ -1,0 +1,14 @@
+@move("endure")  # type: ignore
+class _Endure:
+    meta = {
+        "display_name": "Endure",
+        "type": "normal",
+        "index": 203,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+        "priority": 4,
+    }

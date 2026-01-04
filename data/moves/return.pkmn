@@ -1,0 +1,14 @@
+@move("return")  # type: ignore
+class _Return:
+    meta = {
+        "display_name": "Return",
+        "type": "normal",
+        "index": 216,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

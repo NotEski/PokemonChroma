@@ -1,0 +1,17 @@
+@move("yawn")  # type: ignore
+class _Yawn:
+    meta = {
+        "display_name": "Yawn",
+        "type": "normal",
+        "index": 281,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "yawn": 0,
+    }

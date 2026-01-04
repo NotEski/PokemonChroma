@@ -1,0 +1,14 @@
+@move("thief")  # type: ignore
+class _Thief:
+    meta = {
+        "display_name": "Thief",
+        "type": "dark",
+        "index": 168,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

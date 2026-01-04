@@ -1,0 +1,17 @@
+@move("mist_ball")  # type: ignore
+class _MistBall:
+    meta = {
+        "display_name": "Mist Ball",
+        "type": "psychic",
+        "index": 296,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 50}],
+    }

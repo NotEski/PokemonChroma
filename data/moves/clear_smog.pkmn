@@ -1,0 +1,14 @@
+@move("clear_smog")  # type: ignore
+class _ClearSmog:
+    meta = {
+        "display_name": "Clear Smog",
+        "type": "poison",
+        "index": 499,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 50,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,15 @@
+@move("spacial_rend")  # type: ignore
+class _SpacialRend:
+    meta = {
+        "display_name": "Spacial Rend",
+        "type": "dragon",
+        "index": 460,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

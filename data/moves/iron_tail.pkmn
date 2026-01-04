@@ -1,0 +1,17 @@
+@move("iron_tail")  # type: ignore
+class _IronTail:
+    meta = {
+        "display_name": "Iron Tail",
+        "type": "steel",
+        "index": 231,
+        "damage_class": "physical",
+        "category": "damage_lower",
+        "accuracy": 75,
+        "power": 100,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 30}],
+    }

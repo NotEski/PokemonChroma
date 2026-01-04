@@ -1,0 +1,14 @@
+@move("aqua_tail")  # type: ignore
+class _AquaTail:
+    meta = {
+        "display_name": "Aqua Tail",
+        "type": "water",
+        "index": 401,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

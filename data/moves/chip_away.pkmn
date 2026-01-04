@@ -1,0 +1,14 @@
+@move("chip_away")  # type: ignore
+class _ChipAway:
+    meta = {
+        "display_name": "Chip Away",
+        "type": "normal",
+        "index": 498,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

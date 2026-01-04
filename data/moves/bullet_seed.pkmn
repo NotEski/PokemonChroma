@@ -1,0 +1,14 @@
+@move("bullet_seed")  # type: ignore
+class _BulletSeed:
+    meta = {
+        "display_name": "Bullet Seed",
+        "type": "grass",
+        "index": 331,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 25,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "ballistics"]

@@ -1,0 +1,14 @@
+@move("reflect_type")  # type: ignore
+class _ReflectType:
+    meta = {
+        "display_name": "Reflect Type",
+        "type": "normal",
+        "index": 513,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "authentic"]

@@ -1,0 +1,17 @@
+@move("rototiller")  # type: ignore
+class _Rototiller:
+    meta = {
+        "display_name": "Rototiller",
+        "type": "ground",
+        "index": 563,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "all_pokemon",
+    }
+    flags = ["distance", "non_sky_battle"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}],
+    }

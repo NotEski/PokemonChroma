@@ -1,0 +1,14 @@
+@move("mimic")  # type: ignore
+class _Mimic:
+    meta = {
+        "display_name": "Mimic",
+        "type": "normal",
+        "index": 102,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "authentic"]

@@ -1,0 +1,17 @@
+@move("sludge_wave")  # type: ignore
+class _SludgeWave:
+    meta = {
+        "display_name": "Sludge Wave",
+        "type": "poison",
+        "index": 482,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 95,
+        "pp": 10,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "poison": 10,
+    }

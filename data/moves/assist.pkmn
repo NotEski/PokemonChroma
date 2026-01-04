@@ -1,0 +1,13 @@
+@move("assist")  # type: ignore
+class _Assist:
+    meta = {
+        "display_name": "Assist",
+        "type": "normal",
+        "index": 274,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }

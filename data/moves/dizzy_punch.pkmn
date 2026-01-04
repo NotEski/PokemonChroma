@@ -1,0 +1,17 @@
+@move("dizzy_punch")  # type: ignore
+class _DizzyPunch:
+    meta = {
+        "display_name": "Dizzy Punch",
+        "type": "normal",
+        "index": 146,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch"]
+    status_condition = {
+        "confusion": 20,
+    }

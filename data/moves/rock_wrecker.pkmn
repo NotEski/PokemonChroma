@@ -1,0 +1,14 @@
+@move("rock_wrecker")  # type: ignore
+class _RockWrecker:
+    meta = {
+        "display_name": "Rock Wrecker",
+        "type": "rock",
+        "index": 439,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror"]

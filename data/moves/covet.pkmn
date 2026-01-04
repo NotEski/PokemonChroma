@@ -1,0 +1,14 @@
+@move("covet")  # type: ignore
+class _Covet:
+    meta = {
+        "display_name": "Covet",
+        "type": "normal",
+        "index": 343,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

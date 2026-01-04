@@ -1,0 +1,14 @@
+@move("pluck")  # type: ignore
+class _Pluck:
+    meta = {
+        "display_name": "Pluck",
+        "type": "flying",
+        "index": 365,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "distance"]

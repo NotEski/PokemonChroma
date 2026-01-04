@@ -1,0 +1,14 @@
+@move("hyper_voice")  # type: ignore
+class _HyperVoice:
+    meta = {
+        "display_name": "Hyper Voice",
+        "type": "normal",
+        "index": 304,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

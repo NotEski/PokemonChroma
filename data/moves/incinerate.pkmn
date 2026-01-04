@@ -1,0 +1,14 @@
+@move("incinerate")  # type: ignore
+class _Incinerate:
+    meta = {
+        "display_name": "Incinerate",
+        "type": "fire",
+        "index": 510,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]

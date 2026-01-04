@@ -1,0 +1,17 @@
+@move("bulldoze")  # type: ignore
+class _Bulldoze:
+    meta = {
+        "display_name": "Bulldoze",
+        "type": "ground",
+        "index": 523,
+        "damage_class": "physical",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

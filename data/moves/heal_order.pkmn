@@ -1,0 +1,15 @@
+@move("heal_order")  # type: ignore
+class _HealOrder:
+    meta = {
+        "display_name": "Heal Order",
+        "type": "bug",
+        "index": 456,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

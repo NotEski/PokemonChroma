@@ -1,0 +1,17 @@
+@move("electroweb")  # type: ignore
+class _Electroweb:
+    meta = {
+        "display_name": "Electroweb",
+        "type": "electric",
+        "index": 527,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 95,
+        "power": 55,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

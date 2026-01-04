@@ -1,0 +1,14 @@
+@move("echoed_voice")  # type: ignore
+class _EchoedVoice:
+    meta = {
+        "display_name": "Echoed Voice",
+        "type": "normal",
+        "index": 497,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

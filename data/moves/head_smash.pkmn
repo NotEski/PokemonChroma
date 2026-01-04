@@ -1,0 +1,15 @@
+@move("head_smash")  # type: ignore
+class _HeadSmash:
+    meta = {
+        "display_name": "Head Smash",
+        "type": "rock",
+        "index": 457,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -50

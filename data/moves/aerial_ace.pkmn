@@ -1,0 +1,14 @@
+@move("aerial_ace")  # type: ignore
+class _AerialAce:
+    meta = {
+        "display_name": "Aerial Ace",
+        "type": "flying",
+        "index": 332,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "distance"]

@@ -1,0 +1,13 @@
+@move("precipice_blades")  # type: ignore
+class _PrecipiceBlades:
+    meta = {
+        "display_name": "Precipice Blades",
+        "type": "ground",
+        "index": 619,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 120,
+        "pp": 10,
+        "target": "all_opponents",
+    }

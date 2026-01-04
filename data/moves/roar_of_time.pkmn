@@ -1,0 +1,14 @@
+@move("roar_of_time")  # type: ignore
+class _RoarOfTime:
+    meta = {
+        "display_name": "Roar of Time",
+        "type": "dragon",
+        "index": 459,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror"]

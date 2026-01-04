@@ -1,0 +1,17 @@
+@move("leaf_storm")  # type: ignore
+class _LeafStorm:
+    meta = {
+        "display_name": "Leaf Storm",
+        "type": "grass",
+        "index": 437,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 90,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

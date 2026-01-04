@@ -1,0 +1,14 @@
+@move("seed_bomb")  # type: ignore
+class _SeedBomb:
+    meta = {
+        "display_name": "Seed Bomb",
+        "type": "grass",
+        "index": 402,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "ballistics"]

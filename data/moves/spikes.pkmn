@@ -1,0 +1,14 @@
+@move("spikes")  # type: ignore
+class _Spikes:
+    meta = {
+        "display_name": "Spikes",
+        "type": "ground",
+        "index": 191,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "opponents_field",
+    }
+    flags = ["reflectable", "non_sky_battle"]

@@ -1,0 +1,17 @@
+@move("bubble")  # type: ignore
+class _Bubble:
+    meta = {
+        "display_name": "Bubble",
+        "type": "water",
+        "index": 145,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 10}],
+    }

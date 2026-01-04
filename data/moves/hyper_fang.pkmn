@@ -1,0 +1,15 @@
+@move("hyper_fang")  # type: ignore
+class _HyperFang:
+    meta = {
+        "display_name": "Hyper Fang",
+        "type": "normal",
+        "index": 158,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 10

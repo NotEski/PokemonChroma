@@ -1,0 +1,17 @@
+@move("mud_slap")  # type: ignore
+class _MudSlap:
+    meta = {
+        "display_name": "Mud-Slap",
+        "type": "ground",
+        "index": 189,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 20,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
+    }

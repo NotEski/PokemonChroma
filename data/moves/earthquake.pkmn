@@ -1,0 +1,14 @@
+@move("earthquake")  # type: ignore
+class _Earthquake:
+    meta = {
+        "display_name": "Earthquake",
+        "type": "ground",
+        "index": 89,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

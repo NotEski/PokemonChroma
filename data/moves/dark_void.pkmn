@@ -1,0 +1,17 @@
+@move("dark_void")  # type: ignore
+class _DarkVoid:
+    meta = {
+        "display_name": "Dark Void",
+        "type": "dark",
+        "index": 464,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 80,
+        "power": None,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "sleep": 0,
+    }

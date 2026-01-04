@@ -1,0 +1,14 @@
+@move("heal_bell")  # type: ignore
+class _HealBell:
+    meta = {
+        "display_name": "Heal Bell",
+        "type": "normal",
+        "index": 215,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user_and_allies",
+    }
+    flags = ["snatch", "sound", "distance", "authentic"]

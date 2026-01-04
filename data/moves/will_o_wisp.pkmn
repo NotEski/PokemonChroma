@@ -1,0 +1,17 @@
+@move("will_o_wisp")  # type: ignore
+class _WillOWisp:
+    meta = {
+        "display_name": "Will-O-Wisp",
+        "type": "fire",
+        "index": 261,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 85,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "burn": 0,
+    }

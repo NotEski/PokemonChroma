@@ -1,0 +1,15 @@
+@move("dragon_rush")  # type: ignore
+class _DragonRush:
+    meta = {
+        "display_name": "Dragon Rush",
+        "type": "dragon",
+        "index": 407,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 75,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 20

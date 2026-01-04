@@ -1,0 +1,15 @@
+@move("twister")  # type: ignore
+class _Twister:
+    meta = {
+        "display_name": "Twister",
+        "type": "dragon",
+        "index": 239,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    flinch_chance = 20

@@ -1,0 +1,14 @@
+@move("present")  # type: ignore
+class _Present:
+    meta = {
+        "display_name": "Present",
+        "type": "normal",
+        "index": 217,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

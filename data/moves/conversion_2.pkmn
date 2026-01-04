@@ -1,0 +1,14 @@
+@move("conversion_2")  # type: ignore
+class _Conversion2:
+    meta = {
+        "display_name": "Conversion 2",
+        "type": "normal",
+        "index": 176,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["authentic"]

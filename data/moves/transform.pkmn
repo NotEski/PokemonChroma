@@ -1,0 +1,13 @@
+@move("transform")  # type: ignore
+class _Transform:
+    meta = {
+        "display_name": "Transform",
+        "type": "normal",
+        "index": 144,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

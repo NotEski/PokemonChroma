@@ -1,0 +1,14 @@
+@move("round")  # type: ignore
+class _Round:
+    meta = {
+        "display_name": "Round",
+        "type": "normal",
+        "index": 496,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

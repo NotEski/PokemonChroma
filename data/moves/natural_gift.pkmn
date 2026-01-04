@@ -1,0 +1,14 @@
+@move("natural_gift")  # type: ignore
+class _NaturalGift:
+    meta = {
+        "display_name": "Natural Gift",
+        "type": "normal",
+        "index": 363,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

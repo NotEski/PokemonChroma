@@ -1,0 +1,14 @@
+@move("pain_split")  # type: ignore
+class _PainSplit:
+    meta = {
+        "display_name": "Pain Split",
+        "type": "normal",
+        "index": 220,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

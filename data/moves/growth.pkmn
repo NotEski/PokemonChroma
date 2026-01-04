@@ -1,0 +1,17 @@
+@move("growth")  # type: ignore
+class _Growth:
+    meta = {
+        "display_name": "Growth",
+        "type": "normal",
+        "index": 74,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}],
+    }

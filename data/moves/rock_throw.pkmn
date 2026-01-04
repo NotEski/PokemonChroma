@@ -1,0 +1,14 @@
+@move("rock_throw")  # type: ignore
+class _RockThrow:
+    meta = {
+        "display_name": "Rock Throw",
+        "type": "rock",
+        "index": 88,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 50,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

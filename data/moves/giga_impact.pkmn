@@ -1,0 +1,14 @@
+@move("giga_impact")  # type: ignore
+class _GigaImpact:
+    meta = {
+        "display_name": "Giga Impact",
+        "type": "normal",
+        "index": 416,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "recharge", "protect", "mirror"]

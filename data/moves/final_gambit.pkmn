@@ -1,0 +1,14 @@
+@move("final_gambit")  # type: ignore
+class _FinalGambit:
+    meta = {
+        "display_name": "Final Gambit",
+        "type": "fighting",
+        "index": 515,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect"]

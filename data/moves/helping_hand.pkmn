@@ -1,0 +1,15 @@
+@move("helping_hand")  # type: ignore
+class _HelpingHand:
+    meta = {
+        "display_name": "Helping Hand",
+        "type": "normal",
+        "index": 270,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "ally",
+        "priority": 5,
+    }
+    flags = ["authentic"]

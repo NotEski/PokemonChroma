@@ -1,0 +1,14 @@
+@move("fury_swipes")  # type: ignore
+class _FurySwipes:
+    meta = {
+        "display_name": "Fury Swipes",
+        "type": "normal",
+        "index": 154,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 18,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

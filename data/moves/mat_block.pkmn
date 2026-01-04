@@ -1,0 +1,14 @@
+@move("mat_block")  # type: ignore
+class _MatBlock:
+    meta = {
+        "display_name": "Mat Block",
+        "type": "fighting",
+        "index": 561,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "users_field",
+    }
+    flags = ["snatch", "non_sky_battle"]

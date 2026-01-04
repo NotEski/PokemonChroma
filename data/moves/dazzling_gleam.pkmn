@@ -1,0 +1,14 @@
+@move("dazzling_gleam")  # type: ignore
+class _DazzlingGleam:
+    meta = {
+        "display_name": "Dazzling Gleam",
+        "type": "fairy",
+        "index": 605,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]

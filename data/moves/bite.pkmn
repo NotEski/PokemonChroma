@@ -1,0 +1,15 @@
+@move("bite")  # type: ignore
+class _Bite:
+    meta = {
+        "display_name": "Bite",
+        "type": "dark",
+        "index": 44,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "bite"]
+    flinch_chance = 30

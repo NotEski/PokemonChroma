@@ -1,0 +1,17 @@
+@move("ice_burn")  # type: ignore
+class _IceBurn:
+    meta = {
+        "display_name": "Ice Burn",
+        "type": "ice",
+        "index": 554,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 90,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["charge", "protect", "mirror"]
+    status_condition = {
+        "burn": 30,
+    }

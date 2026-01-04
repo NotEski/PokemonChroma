@@ -1,0 +1,17 @@
+@move("venom_drench")  # type: ignore
+class _VenomDrench:
+    meta = {
+        "display_name": "Venom Drench",
+        "type": "poison",
+        "index": 599,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}, {"stat": "speed", "change": -1, "chance": 100}],
+    }

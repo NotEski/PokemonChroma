@@ -1,0 +1,17 @@
+@move("charge_beam")  # type: ignore
+class _ChargeBeam:
+    meta = {
+        "display_name": "Charge Beam",
+        "type": "electric",
+        "index": 451,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 90,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 70}],
+    }

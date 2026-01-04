@@ -1,0 +1,14 @@
+@move("spiky_shield")  # type: ignore
+class _SpikyShield:
+    meta = {
+        "display_name": "Spiky Shield",
+        "type": "grass",
+        "index": 596,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+        "priority": 4,
+    }

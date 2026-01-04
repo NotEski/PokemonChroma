@@ -1,0 +1,15 @@
+@move("parabolic_charge")  # type: ignore
+class _ParabolicCharge:
+    meta = {
+        "display_name": "Parabolic Charge",
+        "type": "electric",
+        "index": 570,
+        "damage_class": "special",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 20,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror", "heal"]
+    drain = 50

@@ -1,0 +1,14 @@
+@move("hydro_cannon")  # type: ignore
+class _HydroCannon:
+    meta = {
+        "display_name": "Hydro Cannon",
+        "type": "water",
+        "index": 308,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror"]

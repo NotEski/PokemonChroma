@@ -1,0 +1,15 @@
+@move("stone_edge")  # type: ignore
+class _StoneEdge:
+    meta = {
+        "display_name": "Stone Edge",
+        "type": "rock",
+        "index": 444,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

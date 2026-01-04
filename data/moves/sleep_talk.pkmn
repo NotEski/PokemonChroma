@@ -1,0 +1,13 @@
+@move("sleep_talk")  # type: ignore
+class _SleepTalk:
+    meta = {
+        "display_name": "Sleep Talk",
+        "type": "normal",
+        "index": 214,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }

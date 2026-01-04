@@ -1,0 +1,15 @@
+@move("brave_bird")  # type: ignore
+class _BraveBird:
+    meta = {
+        "display_name": "Brave Bird",
+        "type": "flying",
+        "index": 413,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "distance"]
+    drain = -33

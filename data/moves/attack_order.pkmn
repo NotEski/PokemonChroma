@@ -1,0 +1,15 @@
+@move("attack_order")  # type: ignore
+class _AttackOrder:
+    meta = {
+        "display_name": "Attack Order",
+        "type": "bug",
+        "index": 454,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

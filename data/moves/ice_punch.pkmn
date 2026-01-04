@@ -1,0 +1,17 @@
+@move("ice_punch")  # type: ignore
+class _IcePunch:
+    meta = {
+        "display_name": "Ice Punch",
+        "type": "ice",
+        "index": 8,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch"]
+    status_condition = {
+        "freeze": 10,
+    }

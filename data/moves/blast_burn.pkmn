@@ -1,0 +1,14 @@
+@move("blast_burn")  # type: ignore
+class _BlastBurn:
+    meta = {
+        "display_name": "Blast Burn",
+        "type": "fire",
+        "index": 307,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror"]

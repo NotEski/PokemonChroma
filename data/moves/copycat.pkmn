@@ -1,0 +1,13 @@
+@move("copycat")  # type: ignore
+class _Copycat:
+    meta = {
+        "display_name": "Copycat",
+        "type": "normal",
+        "index": 383,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }

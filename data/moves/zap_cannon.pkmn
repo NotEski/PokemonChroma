@@ -1,0 +1,17 @@
+@move("zap_cannon")  # type: ignore
+class _ZapCannon:
+    meta = {
+        "display_name": "Zap Cannon",
+        "type": "electric",
+        "index": 192,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 50,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "paralysis": 100,
+    }

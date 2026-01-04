@@ -1,0 +1,14 @@
+@move("quash")  # type: ignore
+class _Quash:
+    meta = {
+        "display_name": "Quash",
+        "type": "dark",
+        "index": 511,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

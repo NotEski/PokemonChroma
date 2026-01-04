@@ -1,0 +1,14 @@
+@move("tackle")  # type: ignore
+class _Tackle:
+    meta = {
+        "display_name": "Tackle",
+        "type": "normal",
+        "index": 33,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 35,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

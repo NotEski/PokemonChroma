@@ -1,0 +1,14 @@
+@move("disarming_voice")  # type: ignore
+class _DisarmingVoice:
+    meta = {
+        "display_name": "Disarming Voice",
+        "type": "fairy",
+        "index": 574,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 40,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]

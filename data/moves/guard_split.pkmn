@@ -1,0 +1,14 @@
+@move("guard_split")  # type: ignore
+class _GuardSplit:
+    meta = {
+        "display_name": "Guard Split",
+        "type": "psychic",
+        "index": 470,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect"]

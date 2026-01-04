@@ -1,0 +1,15 @@
+@move("mirror_coat")  # type: ignore
+class _MirrorCoat:
+    meta = {
+        "display_name": "Mirror Coat",
+        "type": "psychic",
+        "index": 243,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "specific_move",
+        "priority": -5,
+    }
+    flags = ["protect"]

@@ -1,0 +1,16 @@
+@move("sky_attack")  # type: ignore
+class _SkyAttack:
+    meta = {
+        "display_name": "Sky Attack",
+        "type": "flying",
+        "index": 143,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["charge", "protect", "mirror", "distance"]
+    critical_hit_rate = 8
+    flinch_chance = 30

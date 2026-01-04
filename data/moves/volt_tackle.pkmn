@@ -1,0 +1,18 @@
+@move("volt_tackle")  # type: ignore
+class _VoltTackle:
+    meta = {
+        "display_name": "Volt Tackle",
+        "type": "electric",
+        "index": 344,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "paralysis": 10,
+    }
+    drain = -33

@@ -1,0 +1,15 @@
+@move("razor_leaf")  # type: ignore
+class _RazorLeaf:
+    meta = {
+        "display_name": "Razor Leaf",
+        "type": "grass",
+        "index": 75,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 55,
+        "pp": 25,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

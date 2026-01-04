@@ -1,0 +1,17 @@
+@move("screech")  # type: ignore
+class _Screech:
+    meta = {
+        "display_name": "Screech",
+        "type": "normal",
+        "index": 103,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 85,
+        "power": None,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -2, "chance": 100}],
+    }

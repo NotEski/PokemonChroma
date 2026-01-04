@@ -1,0 +1,17 @@
+@move("sing")  # type: ignore
+class _Sing:
+    meta = {
+        "display_name": "Sing",
+        "type": "normal",
+        "index": 47,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 55,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
+    status_condition = {
+        "sleep": 0,
+    }

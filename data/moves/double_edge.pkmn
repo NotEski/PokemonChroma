@@ -1,0 +1,15 @@
+@move("double_edge")  # type: ignore
+class _DoubleEdge:
+    meta = {
+        "display_name": "Double-Edge",
+        "type": "normal",
+        "index": 38,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -33

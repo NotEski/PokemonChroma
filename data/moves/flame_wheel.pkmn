@@ -1,0 +1,17 @@
+@move("flame_wheel")  # type: ignore
+class _FlameWheel:
+    meta = {
+        "display_name": "Flame Wheel",
+        "type": "fire",
+        "index": 172,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "defrost"]
+    status_condition = {
+        "burn": 10,
+    }

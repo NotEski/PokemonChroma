@@ -1,0 +1,17 @@
+@move("aurora_beam")  # type: ignore
+class _AuroraBeam:
+    meta = {
+        "display_name": "Aurora Beam",
+        "type": "ice",
+        "index": 62,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 10}],
+    }

@@ -1,0 +1,17 @@
+@move("howl")  # type: ignore
+class _Howl:
+    meta = {
+        "display_name": "Howl",
+        "type": "normal",
+        "index": 336,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 40,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}],
+    }

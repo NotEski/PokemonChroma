@@ -1,0 +1,17 @@
+@move("sweet_kiss")  # type: ignore
+class _SweetKiss:
+    meta = {
+        "display_name": "Sweet Kiss",
+        "type": "fairy",
+        "index": 186,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 75,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "confusion": 0,
+    }

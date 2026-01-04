@@ -1,0 +1,17 @@
+@move("cotton_spore")  # type: ignore
+class _CottonSpore:
+    meta = {
+        "display_name": "Cotton Spore",
+        "type": "grass",
+        "index": 178,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 40,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "reflectable", "mirror", "powder"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -2, "chance": 100}],
+    }

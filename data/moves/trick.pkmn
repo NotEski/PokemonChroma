@@ -1,0 +1,14 @@
+@move("trick")  # type: ignore
+class _Trick:
+    meta = {
+        "display_name": "Trick",
+        "type": "psychic",
+        "index": 271,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

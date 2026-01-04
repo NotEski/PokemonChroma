@@ -1,0 +1,14 @@
+@move("forests_curse")  # type: ignore
+class _ForestsCurse:
+    meta = {
+        "display_name": "Forest's Curse",
+        "type": "grass",
+        "index": 571,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

@@ -1,0 +1,15 @@
+@move("bone_club")  # type: ignore
+class _BoneClub:
+    meta = {
+        "display_name": "Bone Club",
+        "type": "ground",
+        "index": 125,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    flinch_chance = 10

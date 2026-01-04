@@ -1,0 +1,14 @@
+@move("shell_smash")  # type: ignore
+class _ShellSmash:
+    meta = {
+        "display_name": "Shell Smash",
+        "type": "normal",
+        "index": 504,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "user",
+    }
+    flags = ["snatch"]

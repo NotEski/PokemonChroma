@@ -1,0 +1,17 @@
+@move("sweet_scent")  # type: ignore
+class _SweetScent:
+    meta = {
+        "display_name": "Sweet Scent",
+        "type": "normal",
+        "index": 230,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "evasion", "change": -2, "chance": 100}],
+    }

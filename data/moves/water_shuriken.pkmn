@@ -1,0 +1,15 @@
+@move("water_shuriken")  # type: ignore
+class _WaterShuriken:
+    meta = {
+        "display_name": "Water Shuriken",
+        "type": "water",
+        "index": 594,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 15,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["protect", "mirror"]

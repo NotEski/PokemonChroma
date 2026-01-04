@@ -1,0 +1,17 @@
+@move("signal_beam")  # type: ignore
+class _SignalBeam:
+    meta = {
+        "display_name": "Signal Beam",
+        "type": "bug",
+        "index": 324,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "confusion": 10,
+    }

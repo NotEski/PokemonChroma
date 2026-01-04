@@ -1,0 +1,14 @@
+@move("synchronoise")  # type: ignore
+class _Synchronoise:
+    meta = {
+        "display_name": "Synchronoise",
+        "type": "psychic",
+        "index": 485,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]

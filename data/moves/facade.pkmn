@@ -1,0 +1,14 @@
+@move("facade")  # type: ignore
+class _Facade:
+    meta = {
+        "display_name": "Facade",
+        "type": "normal",
+        "index": 263,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

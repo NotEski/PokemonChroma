@@ -1,0 +1,14 @@
+@move("phantom_force")  # type: ignore
+class _PhantomForce:
+    meta = {
+        "display_name": "Phantom Force",
+        "type": "ghost",
+        "index": 566,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "mirror"]

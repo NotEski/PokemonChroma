@@ -1,0 +1,17 @@
+@move("night_daze")  # type: ignore
+class _NightDaze:
+    meta = {
+        "display_name": "Night Daze",
+        "type": "dark",
+        "index": 539,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 95,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 40}],
+    }

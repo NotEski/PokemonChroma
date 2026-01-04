@@ -1,0 +1,15 @@
+@move("milk_drink")  # type: ignore
+class _MilkDrink:
+    meta = {
+        "display_name": "Milk Drink",
+        "type": "normal",
+        "index": 208,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

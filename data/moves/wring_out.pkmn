@@ -1,0 +1,14 @@
+@move("wring_out")  # type: ignore
+class _WringOut:
+    meta = {
+        "display_name": "Wring Out",
+        "type": "normal",
+        "index": 378,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

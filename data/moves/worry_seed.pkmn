@@ -1,0 +1,14 @@
+@move("worry_seed")  # type: ignore
+class _WorrySeed:
+    meta = {
+        "display_name": "Worry Seed",
+        "type": "grass",
+        "index": 388,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

@@ -1,0 +1,17 @@
+@move("moonblast")  # type: ignore
+class _Moonblast:
+    meta = {
+        "display_name": "Moonblast",
+        "type": "fairy",
+        "index": 585,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 95,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 30}],
+    }

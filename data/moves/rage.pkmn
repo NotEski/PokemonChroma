@@ -1,0 +1,14 @@
+@move("rage")  # type: ignore
+class _Rage:
+    meta = {
+        "display_name": "Rage",
+        "type": "normal",
+        "index": 99,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 20,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

@@ -1,0 +1,17 @@
+@move("sludge")  # type: ignore
+class _Sludge:
+    meta = {
+        "display_name": "Sludge",
+        "type": "poison",
+        "index": 124,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "poison": 30,
+    }

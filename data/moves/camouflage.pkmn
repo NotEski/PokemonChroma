@@ -1,0 +1,14 @@
+@move("camouflage")  # type: ignore
+class _Camouflage:
+    meta = {
+        "display_name": "Camouflage",
+        "type": "normal",
+        "index": 293,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]

@@ -1,0 +1,17 @@
+@move("inferno")  # type: ignore
+class _Inferno:
+    meta = {
+        "display_name": "Inferno",
+        "type": "fire",
+        "index": 517,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 50,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "burn": 100,
+    }

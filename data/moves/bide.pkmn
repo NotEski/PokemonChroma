@@ -1,0 +1,15 @@
+@move("bide")  # type: ignore
+class _Bide:
+    meta = {
+        "display_name": "Bide",
+        "type": "normal",
+        "index": 117,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+        "priority": 1,
+    }
+    flags = ["contact", "protect"]

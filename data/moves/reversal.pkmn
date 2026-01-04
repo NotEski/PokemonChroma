@@ -1,0 +1,14 @@
+@move("reversal")  # type: ignore
+class _Reversal:
+    meta = {
+        "display_name": "Reversal",
+        "type": "fighting",
+        "index": 179,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

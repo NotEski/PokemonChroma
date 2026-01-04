@@ -1,0 +1,15 @@
+@move("soft_boiled")  # type: ignore
+class _SoftBoiled:
+    meta = {
+        "display_name": "Soft-Boiled",
+        "type": "normal",
+        "index": 135,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

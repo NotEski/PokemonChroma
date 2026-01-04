@@ -1,0 +1,13 @@
+@move("dragon_ascent")  # type: ignore
+class _DragonAscent:
+    meta = {
+        "display_name": "Dragon Ascent",
+        "type": "flying",
+        "index": 620,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

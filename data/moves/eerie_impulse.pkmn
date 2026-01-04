@@ -1,0 +1,17 @@
+@move("eerie_impulse")  # type: ignore
+class _EerieImpulse:
+    meta = {
+        "display_name": "Eerie Impulse",
+        "type": "electric",
+        "index": 598,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

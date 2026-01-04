@@ -1,0 +1,13 @@
+@move("doom_desire")  # type: ignore
+class _DoomDesire:
+    meta = {
+        "display_name": "Doom Desire",
+        "type": "steel",
+        "index": 353,
+        "damage_class": "special",
+        "category": "unique",
+        "accuracy": 100,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,14 @@
+@move("guillotine")  # type: ignore
+class _Guillotine:
+    meta = {
+        "display_name": "Guillotine",
+        "type": "normal",
+        "index": 12,
+        "damage_class": "physical",
+        "category": "ohko",
+        "accuracy": 30,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

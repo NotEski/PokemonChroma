@@ -1,0 +1,14 @@
+@move("smack_down")  # type: ignore
+class _SmackDown:
+    meta = {
+        "display_name": "Smack Down",
+        "type": "rock",
+        "index": 479,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

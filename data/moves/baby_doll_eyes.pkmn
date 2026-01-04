@@ -1,0 +1,18 @@
+@move("baby_doll_eyes")  # type: ignore
+class _BabyDollEyes:
+    meta = {
+        "display_name": "Baby-Doll Eyes",
+        "type": "fairy",
+        "index": 608,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 30,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

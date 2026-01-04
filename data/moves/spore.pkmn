@@ -1,0 +1,17 @@
+@move("spore")  # type: ignore
+class _Spore:
+    meta = {
+        "display_name": "Spore",
+        "type": "grass",
+        "index": 147,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "powder"]
+    status_condition = {
+        "sleep": 0,
+    }

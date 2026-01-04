@@ -1,0 +1,14 @@
+@move("substitute")  # type: ignore
+class _Substitute:
+    meta = {
+        "display_name": "Substitute",
+        "type": "normal",
+        "index": 164,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "non_sky_battle"]

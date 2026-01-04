@@ -1,0 +1,17 @@
+@move("ice_beam")  # type: ignore
+class _IceBeam:
+    meta = {
+        "display_name": "Ice Beam",
+        "type": "ice",
+        "index": 58,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "freeze": 10,
+    }

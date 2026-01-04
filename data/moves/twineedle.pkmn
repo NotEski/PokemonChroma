@@ -1,0 +1,17 @@
+@move("twineedle")  # type: ignore
+class _Twineedle:
+    meta = {
+        "display_name": "Twineedle",
+        "type": "bug",
+        "index": 41,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 25,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "poison": 20,
+    }

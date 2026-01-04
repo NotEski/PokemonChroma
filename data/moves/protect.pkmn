@@ -1,0 +1,14 @@
+@move("protect")  # type: ignore
+class _Protect:
+    meta = {
+        "display_name": "Protect",
+        "type": "normal",
+        "index": 182,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+        "priority": 4,
+    }

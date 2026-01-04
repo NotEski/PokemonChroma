@@ -1,0 +1,17 @@
+@move("confusion")  # type: ignore
+class _Confusion:
+    meta = {
+        "display_name": "Confusion",
+        "type": "psychic",
+        "index": 93,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "confusion": 10,
+    }

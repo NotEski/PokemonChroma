@@ -1,0 +1,14 @@
+@move("scratch")  # type: ignore
+class _Scratch:
+    meta = {
+        "display_name": "Scratch",
+        "type": "normal",
+        "index": 10,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 35,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

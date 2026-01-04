@@ -1,0 +1,15 @@
+@move("rolling_kick")  # type: ignore
+class _RollingKick:
+    meta = {
+        "display_name": "Rolling Kick",
+        "type": "fighting",
+        "index": 27,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 30

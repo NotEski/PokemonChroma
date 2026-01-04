@@ -1,0 +1,14 @@
+@move("stockpile")  # type: ignore
+class _Stockpile:
+    meta = {
+        "display_name": "Stockpile",
+        "type": "normal",
+        "index": 254,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]

@@ -1,0 +1,17 @@
+@move("attract")  # type: ignore
+class _Attract:
+    meta = {
+        "display_name": "Attract",
+        "type": "normal",
+        "index": 213,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic", "mental"]
+    status_condition = {
+        "infatuation": 0,
+    }

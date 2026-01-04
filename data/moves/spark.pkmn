@@ -1,0 +1,17 @@
+@move("spark")  # type: ignore
+class _Spark:
+    meta = {
+        "display_name": "Spark",
+        "type": "electric",
+        "index": 209,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "paralysis": 30,
+    }

@@ -1,0 +1,14 @@
+@move("destiny_bond")  # type: ignore
+class _DestinyBond:
+    meta = {
+        "display_name": "Destiny Bond",
+        "type": "ghost",
+        "index": 194,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user",
+    }
+    flags = ["authentic"]

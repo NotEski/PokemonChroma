@@ -1,0 +1,14 @@
+@move("foul_play")  # type: ignore
+class _FoulPlay:
+    meta = {
+        "display_name": "Foul Play",
+        "type": "dark",
+        "index": 492,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 95,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

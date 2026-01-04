@@ -1,0 +1,14 @@
+@move("sketch")  # type: ignore
+class _Sketch:
+    meta = {
+        "display_name": "Sketch",
+        "type": "normal",
+        "index": 166,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }
+    flags = ["authentic"]

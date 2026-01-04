@@ -1,0 +1,14 @@
+@move("petal_blizzard")  # type: ignore
+class _PetalBlizzard:
+    meta = {
+        "display_name": "Petal Blizzard",
+        "type": "grass",
+        "index": 572,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]

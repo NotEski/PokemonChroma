@@ -1,0 +1,17 @@
+@move("confuse_ray")  # type: ignore
+class _ConfuseRay:
+    meta = {
+        "display_name": "Confuse Ray",
+        "type": "ghost",
+        "index": 109,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "confusion": 0,
+    }

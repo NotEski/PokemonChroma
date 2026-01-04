@@ -1,0 +1,15 @@
+@move("air_cutter")  # type: ignore
+class _AirCutter:
+    meta = {
+        "display_name": "Air Cutter",
+        "type": "flying",
+        "index": 314,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 60,
+        "pp": 25,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

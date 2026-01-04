@@ -1,0 +1,15 @@
+@move("take_down")  # type: ignore
+class _TakeDown:
+    meta = {
+        "display_name": "Take Down",
+        "type": "normal",
+        "index": 36,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 90,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -25

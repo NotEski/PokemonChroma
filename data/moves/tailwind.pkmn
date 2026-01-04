@@ -1,0 +1,14 @@
+@move("tailwind")  # type: ignore
+class _Tailwind:
+    meta = {
+        "display_name": "Tailwind",
+        "type": "flying",
+        "index": 366,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

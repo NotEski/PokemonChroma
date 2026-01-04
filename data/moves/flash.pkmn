@@ -1,0 +1,17 @@
+@move("flash")  # type: ignore
+class _Flash:
+    meta = {
+        "display_name": "Flash",
+        "type": "normal",
+        "index": 148,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
+    }

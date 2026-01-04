@@ -1,0 +1,15 @@
+@move("drill_run")  # type: ignore
+class _DrillRun:
+    meta = {
+        "display_name": "Drill Run",
+        "type": "ground",
+        "index": 529,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    critical_hit_rate = 8

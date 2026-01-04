@@ -1,0 +1,15 @@
+@move("karate_chop")  # type: ignore
+class _KarateChop:
+    meta = {
+        "display_name": "Karate Chop",
+        "type": "fighting",
+        "index": 2,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    critical_hit_rate = 8

@@ -1,0 +1,14 @@
+@move("grassy_terrain")  # type: ignore
+class _GrassyTerrain:
+    meta = {
+        "display_name": "Grassy Terrain",
+        "type": "grass",
+        "index": 580,
+        "damage_class": "status",
+        "category": "whole_field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "entire_field",
+    }
+    flags = ["non_sky_battle"]

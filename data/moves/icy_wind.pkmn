@@ -1,0 +1,17 @@
+@move("icy_wind")  # type: ignore
+class _IcyWind:
+    meta = {
+        "display_name": "Icy Wind",
+        "type": "ice",
+        "index": 196,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 95,
+        "power": 55,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

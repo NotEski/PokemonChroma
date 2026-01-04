@@ -1,0 +1,14 @@
+@move("fell_stinger")  # type: ignore
+class _FellStinger:
+    meta = {
+        "display_name": "Fell Stinger",
+        "type": "bug",
+        "index": 565,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 30,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

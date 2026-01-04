@@ -1,0 +1,14 @@
+@move("recycle")  # type: ignore
+class _Recycle:
+    meta = {
+        "display_name": "Recycle",
+        "type": "normal",
+        "index": 278,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch"]

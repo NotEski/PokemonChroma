@@ -1,0 +1,15 @@
+@move("dark_pulse")  # type: ignore
+class _DarkPulse:
+    meta = {
+        "display_name": "Dark Pulse",
+        "type": "dark",
+        "index": 399,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "distance", "pulse"]
+    flinch_chance = 20

@@ -1,0 +1,15 @@
+@move("powder")  # type: ignore
+class _Powder:
+    meta = {
+        "display_name": "Powder",
+        "type": "bug",
+        "index": 600,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic", "powder"]

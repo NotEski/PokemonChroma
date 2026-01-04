@@ -1,0 +1,14 @@
+@move("reflect")  # type: ignore
+class _Reflect:
+    meta = {
+        "display_name": "Reflect",
+        "type": "psychic",
+        "index": 115,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

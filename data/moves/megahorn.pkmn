@@ -1,0 +1,14 @@
+@move("megahorn")  # type: ignore
+class _Megahorn:
+    meta = {
+        "display_name": "Megahorn",
+        "type": "bug",
+        "index": 224,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

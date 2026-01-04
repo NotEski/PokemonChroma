@@ -1,0 +1,15 @@
+@move("aqua_jet")  # type: ignore
+class _AquaJet:
+    meta = {
+        "display_name": "Aqua Jet",
+        "type": "water",
+        "index": 453,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["contact", "protect", "mirror"]

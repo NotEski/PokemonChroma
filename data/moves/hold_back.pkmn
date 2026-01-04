@@ -1,0 +1,14 @@
+@move("hold_back")  # type: ignore
+class _HoldBack:
+    meta = {
+        "display_name": "Hold Back",
+        "type": "normal",
+        "index": 610,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

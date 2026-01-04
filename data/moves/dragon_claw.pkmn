@@ -1,0 +1,14 @@
+@move("dragon_claw")  # type: ignore
+class _DragonClaw:
+    meta = {
+        "display_name": "Dragon Claw",
+        "type": "dragon",
+        "index": 337,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

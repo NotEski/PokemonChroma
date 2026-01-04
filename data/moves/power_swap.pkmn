@@ -1,0 +1,14 @@
+@move("power_swap")  # type: ignore
+class _PowerSwap:
+    meta = {
+        "display_name": "Power Swap",
+        "type": "psychic",
+        "index": 384,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "authentic"]

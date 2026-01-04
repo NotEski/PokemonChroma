@@ -1,0 +1,17 @@
+@move("charm")  # type: ignore
+class _Charm:
+    meta = {
+        "display_name": "Charm",
+        "type": "fairy",
+        "index": 204,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -2, "chance": 100}],
+    }

@@ -1,0 +1,14 @@
+@move("double_hit")  # type: ignore
+class _DoubleHit:
+    meta = {
+        "display_name": "Double Hit",
+        "type": "normal",
+        "index": 458,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 35,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

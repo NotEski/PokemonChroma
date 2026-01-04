@@ -1,0 +1,15 @@
+@move("whirlwind")  # type: ignore
+class _Whirlwind:
+    meta = {
+        "display_name": "Whirlwind",
+        "type": "normal",
+        "index": 18,
+        "damage_class": "status",
+        "category": "force_switch",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+        "priority": -6,
+    }
+    flags = ["reflectable", "mirror", "authentic"]

@@ -1,0 +1,13 @@
+@move("origin_pulse")  # type: ignore
+class _OriginPulse:
+    meta = {
+        "display_name": "Origin Pulse",
+        "type": "water",
+        "index": 618,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 110,
+        "pp": 10,
+        "target": "all_opponents",
+    }

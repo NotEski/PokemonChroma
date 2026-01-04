@@ -1,0 +1,14 @@
+@move("super_fang")  # type: ignore
+class _SuperFang:
+    meta = {
+        "display_name": "Super Fang",
+        "type": "normal",
+        "index": 162,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

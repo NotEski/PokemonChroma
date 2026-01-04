@@ -1,0 +1,14 @@
+@move("ice_ball")  # type: ignore
+class _IceBall:
+    meta = {
+        "display_name": "Ice Ball",
+        "type": "ice",
+        "index": 301,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 30,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "ballistics"]

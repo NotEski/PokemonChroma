@@ -1,0 +1,14 @@
+@move("spider_web")  # type: ignore
+class _SpiderWeb:
+    meta = {
+        "display_name": "Spider Web",
+        "type": "bug",
+        "index": 169,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

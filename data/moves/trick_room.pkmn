@@ -1,0 +1,18 @@
+@move("trick_room")  # type: ignore
+class _TrickRoom:
+    meta = {
+        "display_name": "Trick Room",
+        "type": "psychic",
+        "index": 433,
+        "damage_class": "status",
+        "category": "whole_field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "entire_field",
+        "priority": -7,
+    }
+    flags = ["mirror"]
+    field_effect = {
+        "trick_room": 5
+    }

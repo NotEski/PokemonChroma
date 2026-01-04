@@ -1,0 +1,17 @@
+@move("crunch")  # type: ignore
+class _Crunch:
+    meta = {
+        "display_name": "Crunch",
+        "type": "dark",
+        "index": 242,
+        "damage_class": "physical",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "bite"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 20}],
+    }

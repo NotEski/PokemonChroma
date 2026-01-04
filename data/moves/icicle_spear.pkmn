@@ -1,0 +1,14 @@
+@move("icicle_spear")  # type: ignore
+class _IcicleSpear:
+    meta = {
+        "display_name": "Icicle Spear",
+        "type": "ice",
+        "index": 333,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 25,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,17 @@
+@move("thunder_wave")  # type: ignore
+class _ThunderWave:
+    meta = {
+        "display_name": "Thunder Wave",
+        "type": "electric",
+        "index": 86,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "paralysis": 0,
+    }

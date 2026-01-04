@@ -1,0 +1,14 @@
+@move("bug_bite")  # type: ignore
+class _BugBite:
+    meta = {
+        "display_name": "Bug Bite",
+        "type": "bug",
+        "index": 450,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

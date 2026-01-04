@@ -1,0 +1,14 @@
+@move("stealth_rock")  # type: ignore
+class _StealthRock:
+    meta = {
+        "display_name": "Stealth Rock",
+        "type": "rock",
+        "index": 446,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "opponents_field",
+    }
+    flags = ["reflectable"]

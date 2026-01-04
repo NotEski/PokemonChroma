@@ -1,0 +1,17 @@
+@move("ember")  # type: ignore
+class _Ember:
+    meta = {
+        "display_name": "Ember",
+        "type": "fire",
+        "index": 52,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 25,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "burn": 10,
+    }

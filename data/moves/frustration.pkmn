@@ -1,0 +1,14 @@
+@move("frustration")  # type: ignore
+class _Frustration:
+    meta = {
+        "display_name": "Frustration",
+        "type": "normal",
+        "index": 218,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

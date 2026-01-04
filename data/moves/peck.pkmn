@@ -1,0 +1,14 @@
+@move("peck")  # type: ignore
+class _Peck:
+    meta = {
+        "display_name": "Peck",
+        "type": "flying",
+        "index": 64,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 35,
+        "pp": 35,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "distance"]

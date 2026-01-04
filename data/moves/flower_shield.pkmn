@@ -1,0 +1,17 @@
+@move("flower_shield")  # type: ignore
+class _FlowerShield:
+    meta = {
+        "display_name": "Flower Shield",
+        "type": "fairy",
+        "index": 579,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "all_pokemon",
+    }
+    flags = ["distance"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 100}],
+    }

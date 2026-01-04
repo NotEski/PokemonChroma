@@ -1,0 +1,14 @@
+@move("telekinesis")  # type: ignore
+class _Telekinesis:
+    meta = {
+        "display_name": "Telekinesis",
+        "type": "psychic",
+        "index": 477,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "gravity"]

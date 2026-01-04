@@ -1,0 +1,14 @@
+@move("spite")  # type: ignore
+class _Spite:
+    meta = {
+        "display_name": "Spite",
+        "type": "ghost",
+        "index": 180,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic"]

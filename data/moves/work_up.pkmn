@@ -1,0 +1,17 @@
+@move("work_up")  # type: ignore
+class _WorkUp:
+    meta = {
+        "display_name": "Work Up",
+        "type": "normal",
+        "index": 526,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}],
+    }

@@ -1,0 +1,14 @@
+@move("conversion")  # type: ignore
+class _Conversion:
+    meta = {
+        "display_name": "Conversion",
+        "type": "normal",
+        "index": 160,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user",
+    }
+    flags = ["snatch"]

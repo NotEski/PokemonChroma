@@ -1,0 +1,14 @@
+@move("lands_wrath")  # type: ignore
+class _LandsWrath:
+    meta = {
+        "display_name": "Land's Wrath",
+        "type": "ground",
+        "index": 616,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

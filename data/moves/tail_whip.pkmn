@@ -1,0 +1,17 @@
+@move("tail_whip")  # type: ignore
+class _TailWhip:
+    meta = {
+        "display_name": "Tail Whip",
+        "type": "normal",
+        "index": 39,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 30,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
+    }

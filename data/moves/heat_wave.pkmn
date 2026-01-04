@@ -1,0 +1,17 @@
+@move("heat_wave")  # type: ignore
+class _HeatWave:
+    meta = {
+        "display_name": "Heat Wave",
+        "type": "fire",
+        "index": 257,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 90,
+        "power": 95,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "burn": 10,
+    }

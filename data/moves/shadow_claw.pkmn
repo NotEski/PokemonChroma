@@ -1,0 +1,15 @@
+@move("shadow_claw")  # type: ignore
+class _ShadowClaw:
+    meta = {
+        "display_name": "Shadow Claw",
+        "type": "ghost",
+        "index": 421,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    critical_hit_rate = 8

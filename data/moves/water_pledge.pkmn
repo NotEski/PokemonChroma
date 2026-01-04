@@ -1,0 +1,14 @@
+@move("water_pledge")  # type: ignore
+class _WaterPledge:
+    meta = {
+        "display_name": "Water Pledge",
+        "type": "water",
+        "index": 518,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

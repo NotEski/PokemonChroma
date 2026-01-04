@@ -1,0 +1,13 @@
+@move("future_sight")  # type: ignore
+class _FutureSight:
+    meta = {
+        "display_name": "Future Sight",
+        "type": "psychic",
+        "index": 248,
+        "damage_class": "special",
+        "category": "unique",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

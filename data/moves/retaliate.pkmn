@@ -1,0 +1,14 @@
+@move("retaliate")  # type: ignore
+class _Retaliate:
+    meta = {
+        "display_name": "Retaliate",
+        "type": "normal",
+        "index": 514,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

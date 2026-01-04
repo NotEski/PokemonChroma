@@ -1,0 +1,14 @@
+@move("simple_beam")  # type: ignore
+class _SimpleBeam:
+    meta = {
+        "display_name": "Simple Beam",
+        "type": "normal",
+        "index": 493,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

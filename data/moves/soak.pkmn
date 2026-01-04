@@ -1,0 +1,14 @@
+@move("soak")  # type: ignore
+class _Soak:
+    meta = {
+        "display_name": "Soak",
+        "type": "water",
+        "index": 487,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

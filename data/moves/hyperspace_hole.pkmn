@@ -1,0 +1,14 @@
+@move("hyperspace_hole")  # type: ignore
+class _HyperspaceHole:
+    meta = {
+        "display_name": "Hyperspace Hole",
+        "type": "psychic",
+        "index": 593,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 80,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["mirror", "authentic"]

@@ -1,0 +1,15 @@
+@move("extreme_speed")  # type: ignore
+class _ExtremeSpeed:
+    meta = {
+        "display_name": "Extreme Speed",
+        "type": "normal",
+        "index": 245,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 5,
+        "target": "selected_pokemon",
+        "priority": 2,
+    }
+    flags = ["contact", "protect", "mirror"]

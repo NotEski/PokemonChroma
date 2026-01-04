@@ -1,0 +1,14 @@
+@move("grass_pledge")  # type: ignore
+class _GrassPledge:
+    meta = {
+        "display_name": "Grass Pledge",
+        "type": "grass",
+        "index": 520,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

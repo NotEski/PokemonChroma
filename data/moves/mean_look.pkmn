@@ -1,0 +1,14 @@
+@move("mean_look")  # type: ignore
+class _MeanLook:
+    meta = {
+        "display_name": "Mean Look",
+        "type": "normal",
+        "index": 212,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["reflectable", "mirror"]

@@ -1,0 +1,17 @@
+@move("discharge")  # type: ignore
+class _Discharge:
+    meta = {
+        "display_name": "Discharge",
+        "type": "electric",
+        "index": 435,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "paralysis": 30,
+    }

@@ -1,0 +1,17 @@
+@move("bolt_strike")  # type: ignore
+class _BoltStrike:
+    meta = {
+        "display_name": "Bolt Strike",
+        "type": "electric",
+        "index": 550,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 85,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "paralysis": 20,
+    }

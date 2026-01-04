@@ -1,0 +1,17 @@
+@move("magma_storm")  # type: ignore
+class _MagmaStorm:
+    meta = {
+        "display_name": "Magma Storm",
+        "type": "fire",
+        "index": 463,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 75,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "trap": 100,
+    }

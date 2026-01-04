@@ -1,0 +1,14 @@
+@move("trick_or_treat")  # type: ignore
+class _TrickOrTreat:
+    meta = {
+        "display_name": "Trick-or-Treat",
+        "type": "ghost",
+        "index": 567,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]

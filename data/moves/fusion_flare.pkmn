@@ -1,0 +1,14 @@
+@move("fusion_flare")  # type: ignore
+class _FusionFlare:
+    meta = {
+        "display_name": "Fusion Flare",
+        "type": "fire",
+        "index": 558,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "defrost"]

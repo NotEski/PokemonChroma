@@ -1,0 +1,13 @@
+@move("happy_hour")  # type: ignore
+class _HappyHour:
+    meta = {
+        "display_name": "Happy Hour",
+        "type": "normal",
+        "index": 603,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "users_field",
+    }

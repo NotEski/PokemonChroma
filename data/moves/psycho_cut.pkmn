@@ -1,0 +1,15 @@
+@move("psycho_cut")  # type: ignore
+class _PsychoCut:
+    meta = {
+        "display_name": "Psycho Cut",
+        "type": "psychic",
+        "index": 427,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    critical_hit_rate = 8

@@ -1,0 +1,14 @@
+@move("punishment")  # type: ignore
+class _Punishment:
+    meta = {
+        "display_name": "Punishment",
+        "type": "dark",
+        "index": 386,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

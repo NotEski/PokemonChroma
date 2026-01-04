@@ -1,0 +1,17 @@
+@move("poison_fang")  # type: ignore
+class _PoisonFang:
+    meta = {
+        "display_name": "Poison Fang",
+        "type": "poison",
+        "index": 305,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "bite"]
+    status_condition = {
+        "poison": 50,
+    }

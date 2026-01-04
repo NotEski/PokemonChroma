@@ -1,0 +1,14 @@
+@move("belch")  # type: ignore
+class _Belch:
+    meta = {
+        "display_name": "Belch",
+        "type": "poison",
+        "index": 562,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect"]

@@ -1,0 +1,14 @@
+@move("detect")  # type: ignore
+class _Detect:
+    meta = {
+        "display_name": "Detect",
+        "type": "fighting",
+        "index": 197,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user",
+        "priority": 4,
+    }

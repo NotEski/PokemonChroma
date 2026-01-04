@@ -1,0 +1,14 @@
+@move("dig")  # type: ignore
+class _Dig:
+    meta = {
+        "display_name": "Dig",
+        "type": "ground",
+        "index": 91,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "protect", "mirror", "non_sky_battle"]

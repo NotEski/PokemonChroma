@@ -1,0 +1,15 @@
+@move("feint")  # type: ignore
+class _Feint:
+    meta = {
+        "display_name": "Feint",
+        "type": "normal",
+        "index": 364,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 30,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": 2,
+    }
+    flags = ["mirror"]

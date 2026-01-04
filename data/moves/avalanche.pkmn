@@ -1,0 +1,15 @@
+@move("avalanche")  # type: ignore
+class _Avalanche:
+    meta = {
+        "display_name": "Avalanche",
+        "type": "ice",
+        "index": 419,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": -4,
+    }
+    flags = ["contact", "protect", "mirror"]

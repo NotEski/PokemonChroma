@@ -1,0 +1,17 @@
+@move("supersonic")  # type: ignore
+class _Supersonic:
+    meta = {
+        "display_name": "Supersonic",
+        "type": "normal",
+        "index": 48,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 55,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
+    status_condition = {
+        "confusion": 0,
+    }

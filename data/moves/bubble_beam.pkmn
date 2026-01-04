@@ -1,0 +1,17 @@
+@move("bubble_beam")  # type: ignore
+class _BubbleBeam:
+    meta = {
+        "display_name": "Bubble Beam",
+        "type": "water",
+        "index": 61,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 10}],
+    }

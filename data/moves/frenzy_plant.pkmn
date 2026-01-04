@@ -1,0 +1,14 @@
+@move("frenzy_plant")  # type: ignore
+class _FrenzyPlant:
+    meta = {
+        "display_name": "Frenzy Plant",
+        "type": "grass",
+        "index": 338,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror", "non_sky_battle"]

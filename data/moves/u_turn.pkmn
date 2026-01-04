@@ -1,0 +1,14 @@
+@move("u_turn")  # type: ignore
+class _UTurn:
+    meta = {
+        "display_name": "U-turn",
+        "type": "bug",
+        "index": 369,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "pivot"]

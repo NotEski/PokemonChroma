@@ -1,0 +1,16 @@
+@move("fake_out")  # type: ignore
+class _FakeOut:
+    meta = {
+        "display_name": "Fake Out",
+        "type": "normal",
+        "index": 252,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": 3,
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 100

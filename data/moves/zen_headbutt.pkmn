@@ -1,0 +1,15 @@
+@move("zen_headbutt")  # type: ignore
+class _ZenHeadbutt:
+    meta = {
+        "display_name": "Zen Headbutt",
+        "type": "psychic",
+        "index": 428,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 20

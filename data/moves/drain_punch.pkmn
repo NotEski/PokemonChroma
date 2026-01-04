@@ -1,0 +1,15 @@
+@move("drain_punch")  # type: ignore
+class _DrainPunch:
+    meta = {
+        "display_name": "Drain Punch",
+        "type": "fighting",
+        "index": 409,
+        "damage_class": "physical",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch", "heal"]
+    drain = 50

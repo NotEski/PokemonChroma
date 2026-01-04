@@ -1,0 +1,15 @@
+@move("snore")  # type: ignore
+class _Snore:
+    meta = {
+        "display_name": "Snore",
+        "type": "normal",
+        "index": 173,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "sound", "authentic"]
+    flinch_chance = 30

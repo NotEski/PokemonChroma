@@ -1,0 +1,14 @@
+@move("jump_kick")  # type: ignore
+class _JumpKick:
+    meta = {
+        "display_name": "Jump Kick",
+        "type": "fighting",
+        "index": 26,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "gravity"]

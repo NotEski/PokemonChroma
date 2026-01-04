@@ -1,0 +1,13 @@
+@move("instakill")  # type: ignore
+class instakill:
+    meta = {
+        "display_name": "Insta-Kill",
+        "type": "normal",
+        "index": 6969,
+        "damage_class": "physical",
+        "category": "ohko",
+        "accuracy": None,
+        "power": None,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }

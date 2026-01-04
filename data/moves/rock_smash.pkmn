@@ -1,0 +1,17 @@
+@move("rock_smash")  # type: ignore
+class _RockSmash:
+    meta = {
+        "display_name": "Rock Smash",
+        "type": "fighting",
+        "index": 249,
+        "damage_class": "physical",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 50}],
+    }

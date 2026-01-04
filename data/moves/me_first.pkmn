@@ -1,0 +1,14 @@
+@move("me_first")  # type: ignore
+class _MeFirst:
+    meta = {
+        "display_name": "Me First",
+        "type": "normal",
+        "index": 382,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon_me_first",
+    }
+    flags = ["protect", "authentic"]

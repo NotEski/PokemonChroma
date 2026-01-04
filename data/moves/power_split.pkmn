@@ -1,0 +1,14 @@
+@move("power_split")  # type: ignore
+class _PowerSplit:
+    meta = {
+        "display_name": "Power Split",
+        "type": "psychic",
+        "index": 471,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect"]

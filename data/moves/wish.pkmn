@@ -1,0 +1,14 @@
+@move("wish")  # type: ignore
+class _Wish:
+    meta = {
+        "display_name": "Wish",
+        "type": "normal",
+        "index": 273,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal", "heal_exception"]

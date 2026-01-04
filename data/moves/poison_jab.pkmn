@@ -1,0 +1,17 @@
+@move("poison_jab")  # type: ignore
+class _PoisonJab:
+    meta = {
+        "display_name": "Poison Jab",
+        "type": "poison",
+        "index": 398,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    status_condition = {
+        "poison": 30,
+    }

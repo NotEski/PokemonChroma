@@ -1,0 +1,14 @@
+@move("rest")  # type: ignore
+class _Rest:
+    meta = {
+        "display_name": "Rest",
+        "type": "psychic",
+        "index": 156,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal", "heal_exception"]

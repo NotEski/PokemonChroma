@@ -1,0 +1,18 @@
+@move("fire_fang")  # type: ignore
+class _FireFang:
+    meta = {
+        "display_name": "Fire Fang",
+        "type": "fire",
+        "index": 424,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 95,
+        "power": 65,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "bite"]
+    status_condition = {
+        "burn": 10,
+    }
+    flinch_chance = 10

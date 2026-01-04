@@ -1,0 +1,14 @@
+@move("sticky_web")  # type: ignore
+class _StickyWeb:
+    meta = {
+        "display_name": "Sticky Web",
+        "type": "bug",
+        "index": 564,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "opponents_field",
+    }
+    flags = ["reflectable"]

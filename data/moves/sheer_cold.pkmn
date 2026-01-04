@@ -1,0 +1,14 @@
+@move("sheer_cold")  # type: ignore
+class _SheerCold:
+    meta = {
+        "display_name": "Sheer Cold",
+        "type": "ice",
+        "index": 329,
+        "damage_class": "special",
+        "category": "ohko",
+        "accuracy": 30,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,14 @@
+@move("skull_bash")  # type: ignore
+class _SkullBash:
+    meta = {
+        "display_name": "Skull Bash",
+        "type": "normal",
+        "index": 130,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 130,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "charge", "protect", "mirror"]

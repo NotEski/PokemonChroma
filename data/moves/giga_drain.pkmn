@@ -1,0 +1,15 @@
+@move("giga_drain")  # type: ignore
+class _GigaDrain:
+    meta = {
+        "display_name": "Giga Drain",
+        "type": "grass",
+        "index": 202,
+        "damage_class": "special",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "heal"]
+    drain = 50

@@ -1,0 +1,15 @@
+@move("swallow")  # type: ignore
+class _Swallow:
+    meta = {
+        "display_name": "Swallow",
+        "type": "normal",
+        "index": 256,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 25

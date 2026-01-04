@@ -1,0 +1,14 @@
+@move("magnet_rise")  # type: ignore
+class _MagnetRise:
+    meta = {
+        "display_name": "Magnet Rise",
+        "type": "electric",
+        "index": 393,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "gravity"]

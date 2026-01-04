@@ -1,0 +1,14 @@
+@move("endeavor")  # type: ignore
+class _Endeavor:
+    meta = {
+        "display_name": "Endeavor",
+        "type": "normal",
+        "index": 283,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

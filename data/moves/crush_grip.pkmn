@@ -1,0 +1,14 @@
+@move("crush_grip")  # type: ignore
+class _CrushGrip:
+    meta = {
+        "display_name": "Crush Grip",
+        "type": "normal",
+        "index": 462,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

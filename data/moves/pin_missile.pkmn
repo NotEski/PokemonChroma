@@ -1,0 +1,14 @@
+@move("pin_missile")  # type: ignore
+class _PinMissile:
+    meta = {
+        "display_name": "Pin Missile",
+        "type": "bug",
+        "index": 42,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 25,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

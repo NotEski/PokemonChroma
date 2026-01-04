@@ -1,0 +1,15 @@
+@move("head_charge")  # type: ignore
+class _HeadCharge:
+    meta = {
+        "display_name": "Head Charge",
+        "type": "normal",
+        "index": 543,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    drain = -25

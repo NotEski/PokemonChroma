@@ -1,0 +1,14 @@
+@move("encore")  # type: ignore
+class _Encore:
+    meta = {
+        "display_name": "Encore",
+        "type": "normal",
+        "index": 227,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": 100,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic", "mental"]

@@ -1,0 +1,13 @@
+@move("celebrate")  # type: ignore
+class _Celebrate:
+    meta = {
+        "display_name": "Celebrate",
+        "type": "normal",
+        "index": 606,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 40,
+        "target": "user",
+    }

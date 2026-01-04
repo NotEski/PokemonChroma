@@ -1,0 +1,14 @@
+@move("swift")  # type: ignore
+class _Swift:
+    meta = {
+        "display_name": "Swift",
+        "type": "normal",
+        "index": 129,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 60,
+        "pp": 20,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]

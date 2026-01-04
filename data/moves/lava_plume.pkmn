@@ -1,0 +1,17 @@
+@move("lava_plume")  # type: ignore
+class _LavaPlume:
+    meta = {
+        "display_name": "Lava Plume",
+        "type": "fire",
+        "index": 436,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "burn": 30,
+    }

@@ -1,0 +1,17 @@
+@move("hypnosis")  # type: ignore
+class _Hypnosis:
+    meta = {
+        "display_name": "Hypnosis",
+        "type": "psychic",
+        "index": 95,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 60,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    status_condition = {
+        "sleep": 0,
+    }

@@ -1,0 +1,14 @@
+@move("solar_beam")  # type: ignore
+class _SolarBeam:
+    meta = {
+        "display_name": "Solar Beam",
+        "type": "grass",
+        "index": 76,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["charge", "protect", "mirror"]

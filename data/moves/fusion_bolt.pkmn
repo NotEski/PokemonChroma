@@ -1,0 +1,14 @@
+@move("fusion_bolt")  # type: ignore
+class _FusionBolt:
+    meta = {
+        "display_name": "Fusion Bolt",
+        "type": "electric",
+        "index": 559,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

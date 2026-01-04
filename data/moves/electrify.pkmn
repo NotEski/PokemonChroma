@@ -1,0 +1,14 @@
+@move("electrify")  # type: ignore
+class _Electrify:
+    meta = {
+        "display_name": "Electrify",
+        "type": "electric",
+        "index": 582,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

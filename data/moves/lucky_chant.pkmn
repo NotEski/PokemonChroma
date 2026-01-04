@@ -1,0 +1,14 @@
+@move("lucky_chant")  # type: ignore
+class _LuckyChant:
+    meta = {
+        "display_name": "Lucky Chant",
+        "type": "normal",
+        "index": 381,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "users_field",
+    }
+    flags = ["snatch"]

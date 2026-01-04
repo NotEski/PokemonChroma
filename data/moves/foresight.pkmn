@@ -1,0 +1,17 @@
+@move("foresight")  # type: ignore
+class _Foresight:
+    meta = {
+        "display_name": "Foresight",
+        "type": "normal",
+        "index": 193,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": None,
+        "power": None,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic"]
+    status_condition = {
+        "no_type_immunity": 0,
+    }

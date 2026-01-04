@@ -1,0 +1,14 @@
+@move("curse")  # type: ignore
+class _Curse:
+    meta = {
+        "display_name": "Curse",
+        "type": "ghost",
+        "index": 174,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "specific_move",
+    }
+    flags = ["authentic"]

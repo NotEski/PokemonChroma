@@ -1,0 +1,14 @@
+@move("tri_attack")  # type: ignore
+class _TriAttack:
+    meta = {
+        "display_name": "Tri Attack",
+        "type": "normal",
+        "index": 161,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

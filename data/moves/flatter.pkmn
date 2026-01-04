@@ -1,0 +1,20 @@
+@move("flatter")  # type: ignore
+class _Flatter:
+    meta = {
+        "display_name": "Flatter",
+        "type": "dark",
+        "index": 260,
+        "damage_class": "status",
+        "category": "swagger",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 100}],
+    }
+    status_condition = {
+        "confusion": 0,
+    }

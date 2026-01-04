@@ -1,0 +1,14 @@
+@move("trump_card")  # type: ignore
+class _TrumpCard:
+    meta = {
+        "display_name": "Trump Card",
+        "type": "normal",
+        "index": 376,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

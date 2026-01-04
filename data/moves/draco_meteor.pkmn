@@ -1,0 +1,17 @@
+@move("draco_meteor")  # type: ignore
+class _DracoMeteor:
+    meta = {
+        "display_name": "Draco Meteor",
+        "type": "dragon",
+        "index": 434,
+        "damage_class": "special",
+        "category": "damage_raise",
+        "accuracy": 90,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

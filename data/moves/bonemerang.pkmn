@@ -1,0 +1,14 @@
+@move("bonemerang")  # type: ignore
+class _Bonemerang:
+    meta = {
+        "display_name": "Bonemerang",
+        "type": "ground",
+        "index": 155,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

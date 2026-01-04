@@ -1,0 +1,14 @@
+@move("magnitude")  # type: ignore
+class _Magnitude:
+    meta = {
+        "display_name": "Magnitude",
+        "type": "ground",
+        "index": 222,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 30,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

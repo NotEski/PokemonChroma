@@ -1,0 +1,17 @@
+@move("thunder_shock")  # type: ignore
+class _ThunderShock:
+    meta = {
+        "display_name": "Thunder Shock",
+        "type": "electric",
+        "index": 84,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "paralysis": 10,
+    }

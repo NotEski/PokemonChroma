@@ -1,0 +1,17 @@
+@move("dragon_breath")  # type: ignore
+class _DragonBreath:
+    meta = {
+        "display_name": "Dragon Breath",
+        "type": "dragon",
+        "index": 225,
+        "damage_class": "special",
+        "category": "damage_status",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "paralysis": 30,
+    }

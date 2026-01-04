@@ -1,0 +1,15 @@
+@move("slack_off")  # type: ignore
+class _SlackOff:
+    meta = {
+        "display_name": "Slack Off",
+        "type": "normal",
+        "index": 303,
+        "damage_class": "status",
+        "category": "heal",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    flags = ["snatch", "heal"]
+    healing = 50

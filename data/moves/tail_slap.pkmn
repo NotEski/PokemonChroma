@@ -1,0 +1,14 @@
+@move("tail_slap")  # type: ignore
+class _TailSlap:
+    meta = {
+        "display_name": "Tail Slap",
+        "type": "normal",
+        "index": 541,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 25,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

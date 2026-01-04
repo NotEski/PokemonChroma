@@ -1,0 +1,17 @@
+@move("sharpen")  # type: ignore
+class _Sharpen:
+    meta = {
+        "display_name": "Sharpen",
+        "type": "normal",
+        "index": 159,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}],
+    }

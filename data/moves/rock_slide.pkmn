@@ -1,0 +1,15 @@
+@move("rock_slide")  # type: ignore
+class _RockSlide:
+    meta = {
+        "display_name": "Rock Slide",
+        "type": "rock",
+        "index": 157,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 75,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror"]
+    flinch_chance = 30

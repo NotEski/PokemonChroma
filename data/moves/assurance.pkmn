@@ -1,0 +1,14 @@
+@move("assurance")  # type: ignore
+class _Assurance:
+    meta = {
+        "display_name": "Assurance",
+        "type": "dark",
+        "index": 372,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

@@ -1,0 +1,14 @@
+@move("defog")  # type: ignore
+class _Defog:
+    meta = {
+        "display_name": "Defog",
+        "type": "flying",
+        "index": 432,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "authentic"]

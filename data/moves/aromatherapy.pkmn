@@ -1,0 +1,14 @@
+@move("aromatherapy")  # type: ignore
+class _Aromatherapy:
+    meta = {
+        "display_name": "Aromatherapy",
+        "type": "grass",
+        "index": 312,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user_and_allies",
+    }
+    flags = ["snatch", "distance"]

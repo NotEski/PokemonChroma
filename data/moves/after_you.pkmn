@@ -1,0 +1,14 @@
+@move("after_you")  # type: ignore
+class _AfterYou:
+    meta = {
+        "display_name": "After You",
+        "type": "normal",
+        "index": 495,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["authentic"]

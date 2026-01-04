@@ -1,0 +1,13 @@
+@move("metronome")  # type: ignore
+class _Metronome:
+    meta = {
+        "display_name": "Metronome",
+        "type": "normal",
+        "index": 118,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }

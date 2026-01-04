@@ -1,0 +1,14 @@
+@move("metal_burst")  # type: ignore
+class _MetalBurst:
+    meta = {
+        "display_name": "Metal Burst",
+        "type": "steel",
+        "index": 368,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "specific_move",
+    }
+    flags = ["protect", "mirror"]

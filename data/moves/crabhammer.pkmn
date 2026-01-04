@@ -1,0 +1,15 @@
+@move("crabhammer")  # type: ignore
+class _Crabhammer:
+    meta = {
+        "display_name": "Crabhammer",
+        "type": "water",
+        "index": 152,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    critical_hit_rate = 8

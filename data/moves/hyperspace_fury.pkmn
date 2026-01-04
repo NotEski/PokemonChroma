@@ -1,0 +1,13 @@
+@move("hyperspace_fury")  # type: ignore
+class _HyperspaceFury:
+    meta = {
+        "display_name": "Hyperspace Fury",
+        "type": "dark",
+        "index": 621,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

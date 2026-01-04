@@ -1,0 +1,14 @@
+@move("psyshock")  # type: ignore
+class _Psyshock:
+    meta = {
+        "display_name": "Psyshock",
+        "type": "psychic",
+        "index": 473,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

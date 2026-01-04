@@ -1,0 +1,14 @@
+@move("thousand_waves")  # type: ignore
+class _ThousandWaves:
+    meta = {
+        "display_name": "Thousand Waves",
+        "type": "ground",
+        "index": 615,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flags = ["protect", "mirror", "non_sky_battle"]

@@ -1,0 +1,14 @@
+@move("hyper_beam")  # type: ignore
+class _HyperBeam:
+    meta = {
+        "display_name": "Hyper Beam",
+        "type": "normal",
+        "index": 63,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["recharge", "protect", "mirror"]

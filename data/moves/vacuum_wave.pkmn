@@ -1,0 +1,15 @@
+@move("vacuum_wave")  # type: ignore
+class _VacuumWave:
+    meta = {
+        "display_name": "Vacuum Wave",
+        "type": "fighting",
+        "index": 410,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["protect", "mirror"]

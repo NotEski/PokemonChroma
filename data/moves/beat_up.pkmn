@@ -1,0 +1,14 @@
+@move("beat_up")  # type: ignore
+class _BeatUp:
+    meta = {
+        "display_name": "Beat Up",
+        "type": "dark",
+        "index": 251,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

@@ -1,0 +1,20 @@
+@move("swagger")  # type: ignore
+class _Swagger:
+    meta = {
+        "display_name": "Swagger",
+        "type": "normal",
+        "index": 207,
+        "damage_class": "status",
+        "category": "swagger",
+        "accuracy": 90,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 2, "chance": 100}],
+    }
+    status_condition = {
+        "confusion": 0,
+    }

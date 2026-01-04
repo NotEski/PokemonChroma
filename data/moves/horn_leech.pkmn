@@ -1,0 +1,15 @@
+@move("horn_leech")  # type: ignore
+class _HornLeech:
+    meta = {
+        "display_name": "Horn Leech",
+        "type": "grass",
+        "index": 532,
+        "damage_class": "physical",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "heal"]
+    drain = 50

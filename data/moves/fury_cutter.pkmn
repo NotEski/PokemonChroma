@@ -1,0 +1,14 @@
+@move("fury_cutter")  # type: ignore
+class _FuryCutter:
+    meta = {
+        "display_name": "Fury Cutter",
+        "type": "bug",
+        "index": 210,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

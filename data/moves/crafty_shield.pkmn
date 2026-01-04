@@ -1,0 +1,14 @@
+@move("crafty_shield")  # type: ignore
+class _CraftyShield:
+    meta = {
+        "display_name": "Crafty Shield",
+        "type": "fairy",
+        "index": 578,
+        "damage_class": "status",
+        "category": "field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "users_field",
+        "priority": 3,
+    }

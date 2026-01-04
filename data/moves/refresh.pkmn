@@ -1,0 +1,14 @@
+@move("refresh")  # type: ignore
+class _Refresh:
+    meta = {
+        "display_name": "Refresh",
+        "type": "normal",
+        "index": 287,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]

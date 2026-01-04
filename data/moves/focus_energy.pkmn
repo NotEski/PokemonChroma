@@ -1,0 +1,14 @@
+@move("focus_energy")  # type: ignore
+class _FocusEnergy:
+    meta = {
+        "display_name": "Focus Energy",
+        "type": "normal",
+        "index": 116,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user",
+    }
+    flags = ["snatch"]

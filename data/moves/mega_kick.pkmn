@@ -1,0 +1,14 @@
+@move("mega_kick")  # type: ignore
+class _MegaKick:
+    meta = {
+        "display_name": "Mega Kick",
+        "type": "normal",
+        "index": 25,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 75,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]

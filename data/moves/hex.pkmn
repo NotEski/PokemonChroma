@@ -1,0 +1,14 @@
+@move("hex")  # type: ignore
+class _Hex:
+    meta = {
+        "display_name": "Hex",
+        "type": "ghost",
+        "index": 506,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]

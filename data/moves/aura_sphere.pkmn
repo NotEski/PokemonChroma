@@ -1,0 +1,14 @@
+@move("aura_sphere")  # type: ignore
+class _AuraSphere:
+    meta = {
+        "display_name": "Aura Sphere",
+        "type": "fighting",
+        "index": 396,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 80,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "distance", "pulse", "ballistics"]

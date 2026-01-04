@@ -1,0 +1,15 @@
+@move("ice_shard")  # type: ignore
+class _IceShard:
+    meta = {
+        "display_name": "Ice Shard",
+        "type": "ice",
+        "index": 420,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 30,
+        "target": "selected_pokemon",
+        "priority": 1,
+    }
+    flags = ["protect", "mirror"]

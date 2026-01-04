@@ -1,0 +1,17 @@
+@move("noble_roar")  # type: ignore
+class _NobleRoar:
+    meta = {
+        "display_name": "Noble Roar",
+        "type": "normal",
+        "index": 568,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": 100,
+        "power": None,
+        "pp": 30,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}],
+    }

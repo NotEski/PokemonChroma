@@ -1,0 +1,17 @@
+@move("dynamic_punch")  # type: ignore
+class _DynamicPunch:
+    meta = {
+        "display_name": "Dynamic Punch",
+        "type": "fighting",
+        "index": 223,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 50,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "punch"]
+    status_condition = {
+        "confusion": 100,
+    }

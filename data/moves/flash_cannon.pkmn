@@ -1,0 +1,17 @@
+@move("flash_cannon")  # type: ignore
+class _FlashCannon:
+    meta = {
+        "display_name": "Flash Cannon",
+        "type": "steel",
+        "index": 430,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
+    }

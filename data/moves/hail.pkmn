@@ -1,0 +1,13 @@
+@move("hail")  # type: ignore
+class _Hail:
+    meta = {
+        "display_name": "Hail",
+        "type": "ice",
+        "index": 258,
+        "damage_class": "status",
+        "category": "whole_field_effect",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "entire_field",
+    }

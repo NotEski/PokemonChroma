@@ -1,0 +1,17 @@
+@move("swords_dance")  # type: ignore
+class _SwordsDance:
+    meta = {
+        "display_name": "Swords Dance",
+        "type": "normal",
+        "index": 14,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user",
+    }
+    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 2, "chance": 100}],
+    }

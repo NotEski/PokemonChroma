@@ -1,0 +1,17 @@
+@move("freeze_shock")  # type: ignore
+class _FreezeShock:
+    meta = {
+        "display_name": "Freeze Shock",
+        "type": "ice",
+        "index": 553,
+        "damage_class": "physical",
+        "category": "damage_status",
+        "accuracy": 90,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["charge", "protect", "mirror"]
+    status_condition = {
+        "paralysis": 30,
+    }

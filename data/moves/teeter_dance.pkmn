@@ -1,0 +1,17 @@
+@move("teeter_dance")  # type: ignore
+class _TeeterDance:
+    meta = {
+        "display_name": "Teeter Dance",
+        "type": "normal",
+        "index": 298,
+        "damage_class": "status",
+        "category": "status",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "all_other_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    status_condition = {
+        "confusion": 0,
+    }

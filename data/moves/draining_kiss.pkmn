@@ -1,0 +1,15 @@
+@move("draining_kiss")  # type: ignore
+class _DrainingKiss:
+    meta = {
+        "display_name": "Draining Kiss",
+        "type": "fairy",
+        "index": 577,
+        "damage_class": "special",
+        "category": "damage_heal",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror", "heal"]
+    drain = 75

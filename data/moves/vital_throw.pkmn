@@ -1,0 +1,15 @@
+@move("vital_throw")  # type: ignore
+class _VitalThrow:
+    meta = {
+        "display_name": "Vital Throw",
+        "type": "fighting",
+        "index": 233,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+        "priority": -1,
+    }
+    flags = ["contact", "protect", "mirror"]

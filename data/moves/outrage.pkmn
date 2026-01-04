@@ -1,0 +1,14 @@
+@move("outrage")  # type: ignore
+class _Outrage:
+    meta = {
+        "display_name": "Outrage",
+        "type": "dragon",
+        "index": 200,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "random_opponent",
+    }
+    flags = ["contact", "protect", "mirror"]

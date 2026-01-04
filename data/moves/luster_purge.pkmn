@@ -1,0 +1,17 @@
+@move("luster_purge")  # type: ignore
+class _LusterPurge:
+    meta = {
+        "display_name": "Luster Purge",
+        "type": "psychic",
+        "index": 295,
+        "damage_class": "special",
+        "category": "damage_lower",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 50}],
+    }

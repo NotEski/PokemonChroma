@@ -1,0 +1,14 @@
+@move("ally_switch")  # type: ignore
+class _AllySwitch:
+    meta = {
+        "display_name": "Ally Switch",
+        "type": "psychic",
+        "index": 502,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "user",
+        "priority": 1,
+    }

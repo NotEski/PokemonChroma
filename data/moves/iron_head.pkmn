@@ -1,0 +1,15 @@
+@move("iron_head")  # type: ignore
+class _IronHead:
+    meta = {
+        "display_name": "Iron Head",
+        "type": "steel",
+        "index": 442,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flags = ["contact", "protect", "mirror"]
+    flinch_chance = 30

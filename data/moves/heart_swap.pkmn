@@ -1,0 +1,14 @@
+@move("heart_swap")  # type: ignore
+class _HeartSwap:
+    meta = {
+        "display_name": "Heart Swap",
+        "type": "psychic",
+        "index": 391,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flags = ["protect", "mirror", "authentic"]

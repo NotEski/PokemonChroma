@@ -1,0 +1,13 @@
+@move("nature_power")  # type: ignore
+class _NaturePower:
+    meta = {
+        "display_name": "Nature Power",
+        "type": "normal",
+        "index": 267,
+        "damage_class": "status",
+        "category": "unique",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

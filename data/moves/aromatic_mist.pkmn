@@ -1,0 +1,17 @@
+@move("aromatic_mist")  # type: ignore
+class _AromaticMist:
+    meta = {
+        "display_name": "Aromatic Mist",
+        "type": "fairy",
+        "index": 597,
+        "damage_class": "status",
+        "category": "net_good_stats",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "ally",
+    }
+    flags = ["authentic"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "special_defense", "change": 1, "chance": 100}],
+    }
