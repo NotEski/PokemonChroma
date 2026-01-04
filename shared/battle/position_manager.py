@@ -16,7 +16,6 @@ class BattlePositionManager(BaseModel):
     teams_count: int = 2
     pokemon_per_team: int = 1
 
-
     def get_valid_positions(self) -> list[BattlePosition]:
         valid_positions = []
         for team_id in range(0, self.teams_count):
@@ -226,3 +225,15 @@ class BattlePositionManager(BaseModel):
 
         else:
             raise ValueError("Unsupported move target type.")
+
+    def updated_battled_pokemon(self):
+        for position, pokemon in self.positions.items():
+            team_id, pokemon_index = position
+            # Get the pokemon on the other team
+            # Add all the battled pokemon to the pokemon's battled pokemon list
+            opponent_team_ids = self.get_opponent_teams(team_id)
+            for opponent_team_id in opponent_team_ids:
+                for opponent_position in self.list_registered_positions():
+                    if opponent_position.team_id == opponent_team_id:
+                        opponent_pokemon = self.get_pokemon_at_position(opponent_position)
+                        pokemon.add_pokemon_battled(opponent_pokemon)

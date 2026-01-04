@@ -122,6 +122,10 @@ class BattleMon(BaseModel):
     # Status Conditions
     status_conditions: dict[StatusCondition, dict] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
 
+
+    # Pokemon Battled for experience tracking
+    pokemon_battled: List[Pokemon] = Field(default_factory=list)
+
     def __post_init__(self, **data):
         super().__init__(**data)
 
@@ -194,6 +198,13 @@ class BattleMon(BaseModel):
     
     def modify_stat_stage(self, stat: Stat, stages: int):
         self.stat_stages.adjust_stat_stage(stat, stages)
+
+    def add_pokemon_battled(self, pokemon: Pokemon|BattleMon):
+        if isinstance(pokemon, BattleMon):
+            pokemon = pokemon.pokemon_reference
+        if pokemon not in self.pokemon_battled:
+            self.pokemon_battled.append(pokemon)
+
 
 
 #region Pokemon Base Proxy Properties
@@ -281,6 +292,12 @@ class BattleMon(BaseModel):
         return self.pokemon_reference.held_item
     
     @property
+    def held_item_str(self) -> str:
+        if self.held_item is None:
+            return "none"
+        return self.held_item.name
+    
+    @property
     def individual_values(self) -> IndividualValues:
         return self.pokemon_reference.individual_values
     
@@ -323,6 +340,7 @@ class Pokemon(BaseModel):
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
+
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
     # for all battle related status conditions, they should be stored in BattleMon

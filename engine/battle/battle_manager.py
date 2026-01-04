@@ -213,6 +213,8 @@ class BattleManager(BaseModel):
             self.battle_state.turn_number += 1
         else:
             self.position_manager.load_switch_turn_actions()
+        
+        self.position_manager.updated_battled_pokemon()
 
     def end_turn(self):    
         if self.position_manager.get_missing_actions() != []:
@@ -455,7 +457,8 @@ class BattleManager(BaseModel):
             effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
             target_positions.clear()
 
-        
+        description_list = []
+        description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")        
 
         all_target_pokemon: list[BattleMon] = []
         is_critical = False
@@ -469,10 +472,10 @@ class BattleManager(BaseModel):
             is_critical = calculate_critical_hit(user_pokemon, base_move)
 
             effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
-
+            damage = 0
 
             if used_move.category in MoveCategoryCategories.DAMAGE_MOVES:
-                effectiveness_level = self.process_damage_move(user_pokemon, target_pokemon, used_move.base_move, is_critical)
+                effectiveness_level, damage = self.process_damage_move(user_pokemon, target_pokemon, used_move.base_move, is_critical)
             
             if used_move.category in MoveCategoryCategories.STATUS_MOVES:
                 self.process_status_move(user_pokemon, target_pokemon, used_move.base_move)
@@ -488,6 +491,13 @@ class BattleManager(BaseModel):
 
             if used_move.category == MoveCategory.OHKO:
                 self.process_ohko_move(target_pokemon)
+            
+            if used_move.base_move.has_tag(DrainMove):
+                self.process_drain_move(user_pokemon, damage, used_move.base_move)
+
+        if effectiveness_level != EffectivenessLevel.NORMAL_EFFECTIVE:
+            description_list.append(f"It's {effectiveness_level.value.replace('_', ' ')}!")
+
 
 
             # if target_pokemon.current_hp <= 0:
@@ -497,6 +507,8 @@ class BattleManager(BaseModel):
             #         trainer=self.get_opponent_from_position(self.position_manager.get_position_of_pokemon(target_pokemon)),
             #         description=f"{target_pokemon.nickname} has fainted!"
             #     )
+        
+        description =  "\n".join(description_list)
 
         self.battle_log.move_used(
             move_name=used_move.base_move,
@@ -505,11 +517,10 @@ class BattleManager(BaseModel):
             damage_dealt=100,
             is_critical=is_critical,
             status_condition_applied=None,
-            move_effectiveness=effectiveness_level,
-            description="description goes here!"
+            description=description
         )
 
-    def process_damage_move(self, user: BattleMon, target: BattleMon, move: BaseMove, is_critical: bool) -> EffectivenessLevel:
+    def process_damage_move(self, user: BattleMon, target: BattleMon, move: BaseMove, is_critical: bool) -> tuple[EffectivenessLevel, int]:
         """Process a damage-dealing move. Only called if the move is a damage move. Moves can also call other methods as needed for additional effects."""
         effectiveness_multiplier = get_attack_multiplier(move.type, target.types)
         effectiveness_level = get_effectiveness_level(effectiveness_multiplier)
@@ -538,7 +549,7 @@ class BattleManager(BaseModel):
             for ability in user_abilities:
                 ability.on_contact(target, user)
 
-        return effectiveness_level
+        return (effectiveness_level, damage)
 
     def process_status_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
         """Process a status move."""
@@ -578,6 +589,10 @@ class BattleManager(BaseModel):
     def process_ohko_move(self, target: BattleMon):
         """Process a one-hit KO move."""
         target.current_hp = 0
+
+    def process_drain_move(self, user: BattleMon, damage_dealt: int, move: BaseMove):
+        heal_amount = damage_dealt * move.get_tag(DrainMove).drain_percentage // 100
+        user.current_hp = min(user.calculate_max_hp(), user.current_hp + heal_amount)
 
     def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon):
         description_list = []
@@ -625,5 +640,8 @@ class BattleManager(BaseModel):
             self.taking_actions = True
             self.battle_state.switch_turn = True
             for position in list_of_non_fainted_positions:
-                self.position_manager.add_switch_turn_action(position, SkipTurnAction(position=position))
+                # check if battle switch type is switch or set. if set we skip their switch turn
+                if self.battle_config.battle_switch_type == BattleSwitchType.SET:
+                    self.position_manager.add_switch_turn_action(position, SkipTurnAction(position=position))
+                    
     # endregion

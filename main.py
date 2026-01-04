@@ -2,7 +2,7 @@ from engine.pokemon.repositry_generator import initialize_repositories
 from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
 from engine.battle.battle_example import moveset_from_names, pickachu_eevee_battle_example
 from engine.battle.battle_manager import BattleManager
-from shared.battle.battle_header import BattleType, BattleConfig
+from shared.battle.battle_header import BattleSwitchType, BattleType, BattleConfig
 from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent
 from shared.trainer.trainer import Trainer
@@ -54,7 +54,7 @@ def simulate_sample_battle():
     opponent_1 = TrainerOpponent(trainer=trainer_1)
     opponent_2 = TrainerOpponent(trainer=trainer_2)
 
-    battle_manager = BattleManager(teams=[opponent_1, opponent_2], battle_config=BattleConfig(battle_type=BattleType.SINGLE, is_wild=False))
+    battle_manager = BattleManager(teams=[opponent_1, opponent_2], battle_config=BattleConfig(battle_type=BattleType.SINGLE, is_wild=False, battle_switch_type=BattleSwitchType.SWITCH))
     battle_manager.init_battle()
     battle_manager.start_turn()
 

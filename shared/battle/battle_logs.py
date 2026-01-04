@@ -38,7 +38,6 @@ class BattleLogMoveUsed(BattleLogEntry):
     damage_dealt: int = Field(default=0)
     is_critical: bool = Field(default=False)
     status_condition_applied: Optional[StatusCondition] = Field(default=None)  # e.g., "burn", "paralysis", etc.
-    move_effectiveness: EffectivenessLevel = Field(default=EffectivenessLevel.NORMAL_EFFECTIVE)
     log_type: Literal[BattleLogType.MOVE_USED] = BattleLogType.MOVE_USED
 
 class BattleLogMoveUsedData(TypedDict):
