@@ -1,0 +1,18 @@
+@hazard("toxic_spikes")
+class ToxicSpikes:
+    display_name = "Toxic Spikes"
+
+    def on_entry(self, pokemon, layer_count: int):
+        if layer_count == 0:
+            return  # No effect if there are no layers
+
+        if pokemon.has_type("flying") or pokemon.has_ability("levitate"):
+            return  # No effect on Flying-type or Levitate ability
+
+        if pokemon.has_ability("immunity"):
+            return  # No effect on Immunity ability
+
+        if layer_count == 1:
+            pokemon.apply_status("poisoned")
+        elif layer_count >= 2:
+            pokemon.apply_status("badly_poisoned")
