@@ -1,0 +1,13 @@
+{
+    "name": "hi_tech_earbuds",
+    "display_name": "Hi-tech Earbuds",
+    "index": 1313,
+    "description": "Strange earbuds that allow you to freely control the volume of various sounds.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

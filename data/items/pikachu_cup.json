@@ -1,0 +1,13 @@
+{
+    "name": "pikachu_cup",
+    "display_name": "Pikachu Cup",
+    "index": 2060,
+    "description": "",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

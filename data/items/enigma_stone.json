@@ -1,0 +1,13 @@
+{
+    "name": "enigma_stone",
+    "display_name": "Enigma Stone",
+    "index": 470,
+    "description": "S: Summons Latias H: Summons Latios.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

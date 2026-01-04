@@ -1,0 +1,13 @@
+{
+    "name": "b&w_grass_tablecloth",
+    "display_name": "B&W Grass Tablecloth",
+    "index": 2068,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

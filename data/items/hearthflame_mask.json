@@ -1,0 +1,13 @@
+{
+    "name": "hearthflame_mask",
+    "display_name": "Hearthflame Mask",
+    "index": 2107,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

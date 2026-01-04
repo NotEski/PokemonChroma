@@ -1,0 +1,15 @@
+{
+    "name": "iapapa_berry",
+    "display_name": "Iapapa Berry",
+    "index": 140,
+    "description": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike sour flavor.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "picky_healing",
+    "held_by_pokemon": []
+}

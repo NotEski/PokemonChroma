@@ -1,0 +1,25 @@
+{
+    "name": "black_sludge",
+    "display_name": "Black Sludge",
+    "index": 258,
+    "description": "Held: Poison-type holder recovers 1/16 (6.25%) max HP each turn. Non-Poison-Types take 1/8 (12.5%) max HP damage.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "croagunk",
+        "garbodor",
+        "grimer",
+        "grimer_alola",
+        "muk",
+        "muk_alola",
+        "toxicroak",
+        "trubbish"
+    ]
+}

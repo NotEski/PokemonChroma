@@ -1,0 +1,13 @@
+{
+    "name": "shiny_charm",
+    "display_name": "Shiny Charm",
+    "index": 675,
+    "description": "Raises the chance of finding a shiny Pok\u00e9mon.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

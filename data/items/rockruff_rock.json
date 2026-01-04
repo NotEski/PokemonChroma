@@ -1,0 +1,13 @@
+{
+    "name": "rockruff_rock",
+    "display_name": "Rockruff Rock",
+    "index": 1875,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

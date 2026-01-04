@@ -1,0 +1,17 @@
+{
+    "name": "snowball",
+    "display_name": "Snowball",
+    "index": 689,
+    "description": "Held: If the holder is hit by a damaging Ice move, raises its Attack by one stage.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "ninetales_alola",
+        "snorunt",
+        "vulpix_alola"
+    ]
+}

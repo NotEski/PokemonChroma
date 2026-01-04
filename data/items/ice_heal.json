@@ -1,0 +1,19 @@
+{
+    "name": "ice_heal",
+    "display_name": "Ice Heal",
+    "index": 20,
+    "description": "Cures freezing.",
+    "cost": 200,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

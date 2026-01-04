@@ -1,0 +1,16 @@
+{
+    "name": "lax_incense",
+    "display_name": "Lax Incense",
+    "index": 232,
+    "description": "Held: Holder\u2019s evasion is increased by 5%. Breeding: Wobbuffet begets a Wynaut Egg.",
+    "cost": 5000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 100,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

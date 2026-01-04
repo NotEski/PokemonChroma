@@ -1,0 +1,13 @@
+{
+    "name": "tm49",
+    "display_name": "TM49",
+    "index": 353,
+    "description": "Teaches Echoed Voice to a compatible Pok\u00e9mon. (Gen IV & III: Snatch Gen II: Fury Cutter Gen I: Tri Attack)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,26 @@
+{
+    "name": "quick_claw",
+    "display_name": "Quick Claw",
+    "index": 194,
+    "description": "Held: Holder has a 3/16 (18.75%) chance to move first.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "meowth",
+        "meowth_alola",
+        "persian",
+        "persian_alola",
+        "sandshrew",
+        "sandslash",
+        "sneasel",
+        "weavile",
+        "zangoose"
+    ]
+}

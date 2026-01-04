@@ -1,0 +1,13 @@
+{
+    "name": "aloraichium_z_held",
+    "display_name": "Aloraichium Z",
+    "index": 844,
+    "description": "Held: Allows Alola Raichu to upgrade Thunderbolt into Stoked Sparksurfer.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

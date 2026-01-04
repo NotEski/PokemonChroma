@@ -1,0 +1,13 @@
+{
+    "name": "rotom_catalog",
+    "display_name": "Rotom Catalog",
+    "index": 1329,
+    "description": "A catalog of devices that Rotom like. Use the catalog to have Rotom hop in and out of the various devices listed within.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

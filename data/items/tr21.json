@@ -1,0 +1,13 @@
+{
+    "name": "tr21",
+    "display_name": "TR21",
+    "index": 1209,
+    "description": "An all-out attack that becomes more powerful the less HP the user has.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

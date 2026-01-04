@@ -1,0 +1,17 @@
+{
+    "name": "icy_rock",
+    "display_name": "Icy Rock",
+    "index": 259,
+    "description": "Held: Hail by the holder lasts 8 rounds instead of 5.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 40,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

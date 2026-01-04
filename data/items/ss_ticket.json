@@ -1,0 +1,13 @@
+{
+    "name": "ss_ticket",
+    "display_name": "S.S. Ticket",
+    "index": 433,
+    "description": "Ticket for a ship. (RSE: S.S. Tidal LF: S.S. Anne HG: S.S. Aqua)",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "data_card_20",
+    "display_name": "Data Card 20",
+    "index": 505,
+    "description": "Records the number of times the trainer has come in last place overall in the Pok\u00e9athlon over wireless.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "data_cards",
+    "held_by_pokemon": []
+}

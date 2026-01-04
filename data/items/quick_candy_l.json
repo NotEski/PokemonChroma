@@ -1,0 +1,13 @@
+{
+    "name": "quick_candy_l",
+    "display_name": "Quick Candy L",
+    "index": 1051,
+    "description": "A big candy that is packed with energy. When given to a Pok\u00e9mon at Lv. 30 or higher, it will increase that Pok\u00e9mon\u2019s Speed stat.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "data_card_13",
+    "display_name": "Data Card 13",
+    "index": 498,
+    "description": "Records the number of times the trainer\u2019s Pok\u00e9mon have defeated themselves in the Pok\u00e9athlon.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "data_cards",
+    "held_by_pokemon": []
+}

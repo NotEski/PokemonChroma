@@ -1,0 +1,13 @@
+{
+    "name": "ability_urge",
+    "display_name": "Ability Urge",
+    "index": 652,
+    "description": "Forcibly activates a friendly Pok\u00e9mon\u2019s ability.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

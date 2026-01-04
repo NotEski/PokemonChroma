@@ -1,0 +1,13 @@
+{
+    "name": "incinium_z_held",
+    "display_name": "Incinium Z",
+    "index": 840,
+    "description": "Held: Allows Incineroar to upgrade Darkest Lariat into Malicious Moonsault.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

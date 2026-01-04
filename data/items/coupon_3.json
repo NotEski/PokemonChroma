@@ -1,0 +1,13 @@
+{
+    "name": "coupon_3",
+    "display_name": "Coupon 3",
+    "index": 439,
+    "description": "The last of three tickets used to obtain a Pok\u00e9tch.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

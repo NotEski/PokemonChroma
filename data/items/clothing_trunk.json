@@ -1,0 +1,13 @@
+{
+    "name": "clothing_trunk",
+    "display_name": "Clothing Trunk",
+    "index": 1011,
+    "description": "A very light trunk that can carry clothing for you and your Pok\u00e9mon.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,15 @@
+{
+    "name": "soul_dew",
+    "display_name": "Soul Dew",
+    "index": 202,
+    "description": "Raises Latias and Latios\u2019s Special Attack and Special Defense by 50%.",
+    "cost": 0,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

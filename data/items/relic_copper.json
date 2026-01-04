@@ -1,0 +1,13 @@
+{
+    "name": "relic_copper",
+    "display_name": "Relic Copper",
+    "index": 625,
+    "description": "Sell to Villa Owner for 1000 Pok\u00e9dollars.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

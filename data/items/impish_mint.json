@@ -1,0 +1,13 @@
+{
+    "name": "impish_mint",
+    "display_name": "Impish Mint",
+    "index": 1294,
+    "description": "When a Pok\u00e9mon smells this mint, its Defense will grow more easily, but its Sp. Atk will grow more slowly.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "nature_mints",
+    "held_by_pokemon": []
+}

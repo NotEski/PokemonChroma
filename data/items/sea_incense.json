@@ -1,0 +1,16 @@
+{
+    "name": "sea_incense",
+    "display_name": "Sea Incense",
+    "index": 231,
+    "description": "Held: Water-Type moves from holder do 20% more damage. Breeding: Marill or Azumarill beget an Azurill Egg.",
+    "cost": 2000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 90,
+    "category": "type_enhancement",
+    "held_by_pokemon": []
+}

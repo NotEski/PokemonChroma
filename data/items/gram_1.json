@@ -1,0 +1,13 @@
+{
+    "name": "gram_1",
+    "display_name": "Gram 1",
+    "index": 664,
+    "description": "Part of a sidequest to obtain tm89.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "dna_splicers",
+    "display_name": "DNA Splicers",
+    "index": 671,
+    "description": "Fuses Kyurem with Reshiram or Zekrom, or splits them apart again.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

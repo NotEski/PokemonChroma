@@ -1,0 +1,13 @@
+{
+    "name": "mewnium_z_held",
+    "display_name": "Mewnium Z",
+    "index": 847,
+    "description": "Held: Allows Mew to upgrade Psychic into Genesis Supernova.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

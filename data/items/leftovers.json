@@ -1,0 +1,19 @@
+{
+    "name": "leftovers",
+    "display_name": "Leftovers",
+    "index": 211,
+    "description": "Held: Restores 1/16 (6.25%) holder\u2019s max HP at the end of each turn.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "munchlax",
+        "snorlax"
+    ]
+}

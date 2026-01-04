@@ -1,0 +1,13 @@
+{
+    "name": "tr75",
+    "display_name": "TR75",
+    "index": 1263,
+    "description": "The user stabs the target from below with sharpened stones. Critical hits land more easily.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

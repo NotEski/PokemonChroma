@@ -1,0 +1,17 @@
+{
+    "name": "stick",
+    "display_name": "Leek",
+    "index": 236,
+    "description": "Raises Farfetch\u2019d\u2019s critical hit ratio by two stages.",
+    "cost": 1000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "farfetchd"
+    ]
+}

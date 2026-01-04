@@ -1,0 +1,13 @@
+{
+    "name": "rotom_bike_glistening_black",
+    "display_name": "Rotom Bike",
+    "index": 1637,
+    "description": "This bike can do a turbo boost and run on the water using Rotom\u2019s power. It\u2019s a glistening black that shines reddish-black.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "mewtwonite_y",
+    "display_name": "Mewtwonite Y",
+    "index": 702,
+    "description": "Held: Allows Mewtwo to Mega Evolve into Mega Mewtwo Y.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

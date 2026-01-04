@@ -1,0 +1,16 @@
+{
+    "name": "luck_incense",
+    "display_name": "Luck Incense",
+    "index": 296,
+    "description": "Held: Doubles the money earned from a battle. Does not stack with Amulet Coin. Breeding: Chansey and Blissey beget a Happiny Egg.",
+    "cost": 11000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 51,
+    "category": "training",
+    "held_by_pokemon": []
+}

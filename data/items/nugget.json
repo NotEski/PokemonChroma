@@ -1,0 +1,19 @@
+{
+    "name": "nugget",
+    "display_name": "Nugget",
+    "index": 92,
+    "description": "Sell for 5000 Pok\u00e9dollars, or to Ore Collector for 10000 Pok\u00e9dollars.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "garbodor",
+        "grimer",
+        "meowth",
+        "muk",
+        "trubbish"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "heart_scale",
+    "display_name": "Heart Scale",
+    "index": 93,
+    "description": "No effect. Can be traded for prior Level-up moves.",
+    "cost": 100,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": [
+        "luvdisc"
+    ]
+}

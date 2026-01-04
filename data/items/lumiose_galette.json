@@ -1,0 +1,13 @@
+{
+    "name": "lumiose_galette",
+    "display_name": "Lumiose Galette",
+    "index": 728,
+    "description": "Cures all major status ailments and confusion.",
+    "cost": 350,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

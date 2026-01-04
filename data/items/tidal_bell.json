@@ -1,0 +1,13 @@
+{
+    "name": "tidal_bell",
+    "display_name": "Tidal Bell",
+    "index": 485,
+    "description": "Allows Kimono-girls to summon Lugia.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

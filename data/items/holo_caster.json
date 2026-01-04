@@ -1,0 +1,13 @@
+{
+    "name": "holo_caster",
+    "display_name": "Holo Caster",
+    "index": 734,
+    "description": "Displays cutscene conversations as the plot advances.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

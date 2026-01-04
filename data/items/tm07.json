@@ -1,0 +1,13 @@
+{
+    "name": "tm07",
+    "display_name": "TM07",
+    "index": 311,
+    "description": "Teaches Hail to a compatible Pok\u00e9mon. (Gen II: Zap Cannon Gen I: Horn Drill)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

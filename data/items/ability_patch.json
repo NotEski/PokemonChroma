@@ -1,0 +1,13 @@
+{
+    "name": "ability_patch",
+    "display_name": "Ability Patch",
+    "index": 1657,
+    "description": "A patch that allows a Pok\u00e9mon with a regular Ability to have a rare Ability.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

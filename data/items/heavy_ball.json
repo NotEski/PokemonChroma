@@ -1,0 +1,13 @@
+{
+    "name": "heavy_ball",
+    "display_name": "Heavy Ball",
+    "index": 452,
+    "description": "Has flat bonus or penalty to catch rate depending on weight class of target. Made from Blk Apricorn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "apricorn_balls",
+    "held_by_pokemon": []
+}

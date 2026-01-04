@@ -1,0 +1,19 @@
+{
+    "name": "elixir",
+    "display_name": "Elixir",
+    "index": 40,
+    "description": "Restores 10 PP for each move.",
+    "cost": 3000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "pp_recovery",
+    "held_by_pokemon": []
+}

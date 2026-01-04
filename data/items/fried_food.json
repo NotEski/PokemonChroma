@@ -1,0 +1,13 @@
+{
+    "name": "fried_food",
+    "display_name": "Fried Food",
+    "index": 1158,
+    "description": "One of the many ingredients that can be used for cooking at your camp. It\u2019s been a while since it was fried, so it\u2019s gotten greasy.",
+    "cost": 150,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

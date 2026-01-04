@@ -1,0 +1,13 @@
+{
+    "name": "power_plant_pass",
+    "display_name": "Power Plant Pass",
+    "index": 740,
+    "description": "Permits entry to the Kalos Power Plant.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

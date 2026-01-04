@@ -1,0 +1,13 @@
+{
+    "name": "tapunium_z_held",
+    "display_name": "Tapunium Z",
+    "index": 842,
+    "description": "Held: Allows the Tapus to upgrade Nature\u2019s Madness into Guardian of Alola.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

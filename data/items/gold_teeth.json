@@ -1,0 +1,13 @@
+{
+    "name": "gold_teeth",
+    "display_name": "Gold Teeth",
+    "index": 546,
+    "description": "The Safari Zone Warden\u2019s dentures. Trade for HM04 (Strength).",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "pixie_plate",
+    "display_name": "Pixie Plate",
+    "index": 684,
+    "description": "Held: Fairy-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Fairy.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "plates",
+    "held_by_pokemon": []
+}

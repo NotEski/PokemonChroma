@@ -1,0 +1,13 @@
+{
+    "name": "lycanium_z_held",
+    "display_name": "Lycanium Z",
+    "index": 971,
+    "description": "XXX new effect for lycanium-z--held",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

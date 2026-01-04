@@ -1,0 +1,13 @@
+{
+    "name": "sonias_book",
+    "display_name": "Sonia\u2019s Book",
+    "index": 1328,
+    "description": "Professor Sonia\u2019s published writings. Her new discoveries about the Galar region\u2019s legends are recorded in this enjoyable read.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

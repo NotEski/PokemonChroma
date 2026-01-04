@@ -1,0 +1,20 @@
+{
+    "name": "magnet",
+    "display_name": "Magnet",
+    "index": 219,
+    "description": "Held: Electric-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "magneton",
+        "nosepass",
+        "probopass"
+    ]
+}

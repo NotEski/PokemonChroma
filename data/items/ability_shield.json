@@ -1,0 +1,13 @@
+{
+    "name": "ability_shield",
+    "display_name": "Ability Shield",
+    "index": 1697,
+    "description": "",
+    "cost": 20000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "mark_charm",
+    "display_name": "Mark Charm",
+    "index": 1640,
+    "description": "A mysterious and unique charm that increases the chance of finding a Pok\u00e9mon with a mark.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

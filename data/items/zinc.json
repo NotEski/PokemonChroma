@@ -1,0 +1,19 @@
+{
+    "name": "zinc",
+    "display_name": "Zinc",
+    "index": 52,
+    "description": "Raises Special Defense and happiness.",
+    "cost": 10000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

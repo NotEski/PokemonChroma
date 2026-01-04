@@ -1,0 +1,13 @@
+{
+    "name": "old_sea_map",
+    "display_name": "Old Sea Map",
+    "index": 562,
+    "description": "Allows access to Faraway Island and Mew. Unreleased outside of Japan.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

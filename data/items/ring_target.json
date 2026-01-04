@@ -1,0 +1,13 @@
+{
+    "name": "ring_target",
+    "display_name": "Ring Target",
+    "index": 586,
+    "description": "Held: Negates the holder\u2019s type immunities. Ability immunities are not removed.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

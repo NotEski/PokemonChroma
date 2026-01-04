@@ -1,0 +1,13 @@
+{
+    "name": "pal_pad",
+    "display_name": "Pal Pad",
+    "index": 414,
+    "description": "Use to record Friend Codes and check your own.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

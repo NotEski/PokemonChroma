@@ -1,0 +1,13 @@
+{
+    "name": "hm05",
+    "display_name": "HM05",
+    "index": 401,
+    "description": "Teaches Waterfall to a compatible Pok\u00e9mon. (HS: Whirlpool DPP: Defog Gen III & II & I: Flash)",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

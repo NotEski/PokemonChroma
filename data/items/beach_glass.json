@@ -1,0 +1,13 @@
+{
+    "name": "beach_glass",
+    "display_name": "Beach Glass",
+    "index": 1028,
+    "description": "A piece of colored glass. Waves have rounded its edges. It\u2019s slightly rough to the touch.",
+    "cost": 800,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

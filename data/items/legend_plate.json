@@ -1,0 +1,13 @@
+{
+    "name": "legend_plate",
+    "display_name": "Legend Plate",
+    "index": 1664,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plates",
+    "held_by_pokemon": []
+}

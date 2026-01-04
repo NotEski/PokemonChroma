@@ -1,0 +1,23 @@
+{
+    "name": "leppa_berry",
+    "display_name": "Leppa Berry",
+    "index": 131,
+    "description": "Held: Consumed when a move runs out of PP to restore its PP by 10.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "clefable",
+        "clefairy",
+        "cleffa",
+        "delcatty",
+        "mime_jr",
+        "mr_mime",
+        "skitty"
+    ]
+}

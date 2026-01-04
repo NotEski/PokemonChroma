@@ -1,0 +1,13 @@
+{
+    "name": "tri_pass",
+    "display_name": "Tri-Pass",
+    "index": 553,
+    "description": "Grants access to the first three Sevii Islands.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

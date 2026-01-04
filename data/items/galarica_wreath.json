@@ -1,0 +1,13 @@
+{
+    "name": "galarica_wreath",
+    "display_name": "Galarica Wreath",
+    "index": 1643,
+    "description": "A wreath made from woven-together Galarica Twigs. Placing it on the head of a Galarian Slowpoke makes the Pok\u00e9mon very happy.",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

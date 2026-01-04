@@ -1,0 +1,13 @@
+{
+    "name": "max_mushrooms",
+    "display_name": "Max Mushrooms",
+    "index": 1631,
+    "description": "Mushrooms that have the power of changing Dynamax forms. They boost all stats of a Pok\u00e9mon during battle.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "stat_boosts",
+    "held_by_pokemon": []
+}

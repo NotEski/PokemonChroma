@@ -1,0 +1,13 @@
+{
+    "name": "left_poke_ball",
+    "display_name": "Left Pok\u00e9 Ball",
+    "index": 994,
+    "description": "XXX new effect for left-poke-ball",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

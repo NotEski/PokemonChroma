@@ -1,0 +1,13 @@
+{
+    "name": "tr48",
+    "display_name": "TR48",
+    "index": 1236,
+    "description": "The user tenses its muscles to bulk up its body, raising both its Attack and Defense stats.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

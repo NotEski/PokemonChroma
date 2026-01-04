@@ -1,0 +1,19 @@
+{
+    "name": "big_pearl",
+    "display_name": "Big Pearl",
+    "index": 89,
+    "description": "Sell for 3750 Pok\u00e9dollars, or to Ore Collector for 7500 Pok\u00e9dollars.",
+    "cost": 8000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "clamperl",
+        "cloyster",
+        "gulpin",
+        "shellder",
+        "swalot"
+    ]
+}

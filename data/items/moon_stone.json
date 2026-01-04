@@ -1,0 +1,22 @@
+{
+    "name": "moon_stone",
+    "display_name": "Moon Stone",
+    "index": 81,
+    "description": "Evolves a Clefairy into Clefable, a Jigglypuff into Wigglytuff, a Munna into Musharna, a Nidorina into Nidoqueen, a Nidorino into Nidoking, or a Skitty into Delcatty.",
+    "cost": 3000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": [
+        "clefable",
+        "clefairy",
+        "cleffa",
+        "jigglypuff",
+        "lunatone",
+        "wigglytuff"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "unown_report",
+    "display_name": "Unown Report",
+    "index": 471,
+    "description": "Keeps track of Unown types caught.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "roseli_berry",
+    "display_name": "Roseli Berry",
+    "index": 723,
+    "description": "Held: Consumed when struck by a super-effective Fairy-type attack to halve the damage.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "type_protection",
+    "held_by_pokemon": []
+}

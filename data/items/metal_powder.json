@@ -1,0 +1,17 @@
+{
+    "name": "metal_powder",
+    "display_name": "Metal Powder",
+    "index": 234,
+    "description": "Raises Ditto\u2019s Defense and Special Defense by 50%. The boost is lost after transforming.",
+    "cost": 1000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "ditto"
+    ]
+}

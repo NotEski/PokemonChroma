@@ -1,0 +1,13 @@
+{
+    "name": "fast_ball",
+    "display_name": "Fast Ball",
+    "index": 453,
+    "description": "4\u00d7 effectiveness on Pok\u00e9mon with 100 or greater base speed. (Gen II: Roaming or Fleeing Pok\u00e9mon). Made from Wht Apricorn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "apricorn_balls",
+    "held_by_pokemon": []
+}

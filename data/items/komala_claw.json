@@ -1,0 +1,13 @@
+{
+    "name": "komala_claw",
+    "display_name": "Komala Claw",
+    "index": 1884,
+    "description": "",
+    "cost": 100,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

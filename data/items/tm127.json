@@ -1,0 +1,13 @@
+{
+    "name": "tm127",
+    "display_name": "TM127",
+    "index": 1970,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

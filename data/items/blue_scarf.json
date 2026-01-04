@@ -1,0 +1,15 @@
+{
+    "name": "blue_scarf",
+    "display_name": "Blue Scarf",
+    "index": 238,
+    "description": "Raises the holder\u2019s Beauty while in a contest.",
+    "cost": 100,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "scarves",
+    "held_by_pokemon": []
+}

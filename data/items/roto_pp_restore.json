@@ -1,0 +1,13 @@
+{
+    "name": "roto_pp_restore",
+    "display_name": "Roto PP Restore",
+    "index": 1003,
+    "description": "XXX new effect for roto-pp-restore",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

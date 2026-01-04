@@ -1,0 +1,13 @@
+{
+    "name": "genius_wing",
+    "display_name": "Genius Feather",
+    "index": 609,
+    "description": "Increases Special Attack effort by 1.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

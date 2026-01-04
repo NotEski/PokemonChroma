@@ -1,0 +1,13 @@
+{
+    "name": "tr29",
+    "display_name": "TR29",
+    "index": 1217,
+    "description": "The user switches places with a party Pok\u00e9mon in waiting and passes along any stat changes.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

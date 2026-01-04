@@ -1,0 +1,13 @@
+{
+    "name": "gold_leaf",
+    "display_name": "Gold Leaf",
+    "index": 1029,
+    "description": "A mysterious gold leaf. No trees with this leaf have been found yet.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

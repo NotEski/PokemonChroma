@@ -1,0 +1,16 @@
+{
+    "name": "power_belt",
+    "display_name": "Power Belt",
+    "index": 267,
+    "description": "Held: Holder gains 4 Defense effort values, but has halved Speed in battle.",
+    "cost": 3000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 70,
+    "baby_trigger_for": null,
+    "category": "effort_training",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "leaf_letter_eevee",
+    "display_name": "Leaf Letter",
+    "index": 1034,
+    "description": "A letter written on a leaf. Something is written using Eevee\u2019s footprints.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

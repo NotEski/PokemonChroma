@@ -1,0 +1,13 @@
+{
+    "name": "health_wing",
+    "display_name": "Health Feather",
+    "index": 606,
+    "description": "Increases HP effort by 1.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

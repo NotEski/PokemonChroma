@@ -1,0 +1,13 @@
+{
+    "name": "pack_of_potatoes",
+    "display_name": "Pack of Potatoes",
+    "index": 1155,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Potatoes help mellow out a spicy taste, to make a dish more mild.",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

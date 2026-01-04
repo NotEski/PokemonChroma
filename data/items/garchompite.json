@@ -1,0 +1,13 @@
+{
+    "name": "garchompite",
+    "display_name": "Garchompite",
+    "index": 722,
+    "description": "Held: Allows Garchomp to Mega Evolve into Mega Garchomp.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

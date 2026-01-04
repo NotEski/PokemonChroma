@@ -1,0 +1,16 @@
+{
+    "name": "pretty_wing",
+    "display_name": "Pretty Feather",
+    "index": 612,
+    "description": "Sell for 100 Pok\u00e9dollars.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "pelipper",
+        "wingull"
+    ]
+}

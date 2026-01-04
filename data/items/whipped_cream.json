@@ -1,0 +1,13 @@
+{
+    "name": "whipped_cream",
+    "display_name": "Whipped Cream",
+    "index": 1713,
+    "description": "",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

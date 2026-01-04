@@ -1,0 +1,13 @@
+{
+    "name": "dark_stone",
+    "display_name": "Dark Stone",
+    "index": 658,
+    "description": "Summons Zekrom for the final battle against N.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "gardevoirite",
+    "display_name": "Gardevoirite",
+    "index": 696,
+    "description": "Held: Allows Gardevoir to Mega Evolve into Mega Gardevoir.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

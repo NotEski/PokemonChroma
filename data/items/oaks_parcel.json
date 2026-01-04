@@ -1,0 +1,13 @@
+{
+    "name": "oaks_parcel",
+    "display_name": "Oak\u2019s Parcel",
+    "index": 543,
+    "description": "Trade to Prof. Oak for a Pok\u00e9dex.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

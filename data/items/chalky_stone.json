@@ -1,0 +1,13 @@
+{
+    "name": "chalky_stone",
+    "display_name": "Chalky Stone",
+    "index": 1025,
+    "description": "A small whitish stone picked up at the edge of the road.",
+    "cost": 60,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

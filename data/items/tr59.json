@@ -1,0 +1,13 @@
+{
+    "name": "tr59",
+    "display_name": "TR59",
+    "index": 1247,
+    "description": "The user slams a barrage of hard-shelled seeds down on the target from above.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "striped_bottle",
+    "display_name": "Striped Bottle",
+    "index": 2019,
+    "description": "",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

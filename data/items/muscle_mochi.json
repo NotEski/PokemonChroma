@@ -1,0 +1,13 @@
+{
+    "name": "muscle_mochi",
+    "display_name": "Muscle Mochi",
+    "index": 2113,
+    "description": "",
+    "cost": 125,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

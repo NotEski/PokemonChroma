@@ -1,0 +1,13 @@
+{
+    "name": "band_autograph",
+    "display_name": "Band Autograph",
+    "index": 1327,
+    "description": "It\u2019s signed by all members of the Galar region\u2019s most charismatic band, the Maximizers.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

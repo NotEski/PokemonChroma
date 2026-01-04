@@ -1,0 +1,13 @@
+{
+    "name": "gengarite",
+    "display_name": "Gengarite",
+    "index": 695,
+    "description": "Held: Allows Gengar to Mega Evolve into Mega Gengar.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

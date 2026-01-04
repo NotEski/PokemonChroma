@@ -1,0 +1,13 @@
+{
+    "name": "absolite",
+    "display_name": "Absolite",
+    "index": 716,
+    "description": "Held: Allows Absol to Mega Evolve into Mega Absol.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

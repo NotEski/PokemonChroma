@@ -1,0 +1,13 @@
+{
+    "name": "eject_pack",
+    "display_name": "Eject Pack",
+    "index": 1177,
+    "description": "An item to be held by a Pok\u00e9mon. When the holder\u2019s stats are lowered, it will be switched out of battle.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

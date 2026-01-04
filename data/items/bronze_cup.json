@@ -1,0 +1,13 @@
+{
+    "name": "bronze_cup",
+    "display_name": "Bronze Cup",
+    "index": 2083,
+    "description": "",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

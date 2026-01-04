@@ -1,0 +1,13 @@
+{
+    "name": "silver_pinap_berry",
+    "display_name": "Silver Pinap Berry",
+    "index": 1018,
+    "description": "A Berry that makes you more likely to get an item when given to Pok\u00e9mon you\u2019re trying to catch.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "catching_bonus",
+    "held_by_pokemon": []
+}

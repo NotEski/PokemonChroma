@@ -1,0 +1,13 @@
+{
+    "name": "flower_sweet",
+    "display_name": "Flower Sweet",
+    "index": 1171,
+    "description": "A flower-shaped sweet. When a Milcery holds this, it spins around happily.",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

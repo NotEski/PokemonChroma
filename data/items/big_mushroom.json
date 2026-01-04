@@ -1,0 +1,22 @@
+{
+    "name": "big_mushroom",
+    "display_name": "Big Mushroom",
+    "index": 87,
+    "description": "Fire Red and Leaf Green: Trade for prior Level-up moves. Sell for 2500 Pok\u00e9dollars, or to Hungry Maid for 5000 Pok\u00e9dollars.",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "amoonguss",
+        "breloom",
+        "foongus",
+        "morelull",
+        "paras",
+        "parasect",
+        "shiinotic",
+        "shroomish"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "shellos_mucus",
+    "display_name": "Shellos Mucus",
+    "index": 1829,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

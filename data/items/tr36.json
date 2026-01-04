@@ -1,0 +1,13 @@
+{
+    "name": "tr36",
+    "display_name": "TR36",
+    "index": 1224,
+    "description": "The user attacks by exhaling hot breath on opposing Pok\u00e9mon. This may also leave those Pok\u00e9mon with a burn.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 95,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

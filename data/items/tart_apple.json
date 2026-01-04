@@ -1,0 +1,13 @@
+{
+    "name": "tart_apple",
+    "display_name": "Tart Apple",
+    "index": 1175,
+    "description": "A peculiar apple that can make a certain species of Pok\u00e9mon evolve. It\u2019s exceptionally tart.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

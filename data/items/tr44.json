@@ -1,0 +1,13 @@
+{
+    "name": "tr44",
+    "display_name": "TR44",
+    "index": 1232,
+    "description": "The user absorbs a mystical power from space to raise its Defense and Sp. Def stats.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

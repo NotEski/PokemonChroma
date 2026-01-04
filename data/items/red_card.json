@@ -1,0 +1,13 @@
+{
+    "name": "red_card",
+    "display_name": "Red Card",
+    "index": 585,
+    "description": "Held: When the holder takes damage from a move, the opponent switches out for another random party Pok\u00e9mon. Consumed after use.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

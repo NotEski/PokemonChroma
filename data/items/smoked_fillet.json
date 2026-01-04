@@ -1,0 +1,13 @@
+{
+    "name": "smoked_fillet",
+    "display_name": "Smoked Fillet",
+    "index": 1742,
+    "description": "",
+    "cost": 330,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

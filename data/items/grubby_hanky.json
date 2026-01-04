@@ -1,0 +1,13 @@
+{
+    "name": "grubby_hanky",
+    "display_name": "Grubby Hanky",
+    "index": 677,
+    "description": "Appears in the Caf\u00e9 Warehouse on Sunday; return to the customer with a Patrat on Thursday.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

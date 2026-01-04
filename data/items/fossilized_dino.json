@@ -1,0 +1,13 @@
+{
+    "name": "fossilized_dino",
+    "display_name": "Fossilized Dino",
+    "index": 1166,
+    "description": "The fossil of an ancient Pok\u00e9mon that once lived in the sea. What it looked like is a mystery.",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

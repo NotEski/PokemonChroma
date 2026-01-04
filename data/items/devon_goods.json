@@ -1,0 +1,13 @@
+{
+    "name": "devon_goods",
+    "display_name": "Devon Goods",
+    "index": 530,
+    "description": "Contains mechanical parts to be delivered to Captain Stern.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

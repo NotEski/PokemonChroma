@@ -1,0 +1,13 @@
+{
+    "name": "sceptilite",
+    "display_name": "Sceptilite",
+    "index": 794,
+    "description": "Held: Allows Sceptile to Mega Evolve into Mega Sceptile.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

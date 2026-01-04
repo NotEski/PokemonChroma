@@ -1,0 +1,24 @@
+{
+    "name": "light_clay",
+    "display_name": "Light Clay",
+    "index": 246,
+    "description": "Held: Light Screen and Reflect used by the holder last 8 rounds instead of 5.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "baltoy",
+        "claydol",
+        "golett",
+        "golurk",
+        "mudbray",
+        "mudsdale"
+    ]
+}

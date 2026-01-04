@@ -1,0 +1,13 @@
+{
+    "name": "reset_urge",
+    "display_name": "Reset Urge",
+    "index": 655,
+    "description": "Resets a friendly Pok\u00e9mon\u2019s stat changes.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

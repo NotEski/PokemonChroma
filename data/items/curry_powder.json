@@ -1,0 +1,13 @@
+{
+    "name": "curry_powder",
+    "display_name": "Curry Powder",
+    "index": 1758,
+    "description": "",
+    "cost": 450,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

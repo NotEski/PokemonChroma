@@ -1,0 +1,13 @@
+{
+    "name": "dunsparce_scales",
+    "display_name": "Dunsparce Scales",
+    "index": 1790,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

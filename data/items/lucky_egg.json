@@ -1,0 +1,21 @@
+{
+    "name": "lucky_egg",
+    "display_name": "Lucky Egg",
+    "index": 208,
+    "description": "Held: Increases EXP earned in battle by 50%.",
+    "cost": 10000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": [
+        "blissey",
+        "chansey",
+        "happiny",
+        "pelipper"
+    ]
+}

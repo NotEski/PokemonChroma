@@ -1,0 +1,13 @@
+{
+    "name": "wishing_star",
+    "display_name": "Wishing Star",
+    "index": 1140,
+    "description": "A stone found in the Galar region with a mysterious power. It\u2019s said that your dreams come true if you find one.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

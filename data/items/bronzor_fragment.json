@@ -1,0 +1,13 @@
+{
+    "name": "bronzor_fragment",
+    "display_name": "Bronzor Fragment",
+    "index": 1832,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

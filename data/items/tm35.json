@@ -1,0 +1,13 @@
+{
+    "name": "tm35",
+    "display_name": "TM35",
+    "index": 339,
+    "description": "Teaches Flamethrower to a compatible Pok\u00e9mon. (Gen II: Sleep Talk Gen I: Metronome)",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

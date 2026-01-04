@@ -1,0 +1,13 @@
+{
+    "name": "fire_memory",
+    "display_name": "Fire Memory",
+    "index": 910,
+    "description": "Held: Changes Silvally to its Fire form. Changes Multi-Attack\u2019s type to Fire.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

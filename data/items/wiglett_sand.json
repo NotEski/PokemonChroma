@@ -1,0 +1,13 @@
+{
+    "name": "wiglett_sand",
+    "display_name": "Wiglett Sand",
+    "index": 1912,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

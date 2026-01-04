@@ -1,0 +1,16 @@
+{
+    "name": "choice_specs",
+    "display_name": "Choice Specs",
+    "index": 274,
+    "description": "Held: Increases Special Attack by 50%, but restricts the holder to only one move.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "choice",
+    "held_by_pokemon": []
+}

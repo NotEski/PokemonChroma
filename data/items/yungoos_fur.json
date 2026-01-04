@@ -1,0 +1,13 @@
+{
+    "name": "yungoos_fur",
+    "display_name": "Yungoos Fur",
+    "index": 1872,
+    "description": "",
+    "cost": 60,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

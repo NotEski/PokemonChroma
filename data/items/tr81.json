@@ -1,0 +1,13 @@
+{
+    "name": "tr81",
+    "display_name": "TR81",
+    "index": 1269,
+    "description": "The user turns the target\u2019s power against it. The higher the target\u2019s Attack stat, the greater the damage it deals.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 95,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

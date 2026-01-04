@@ -1,0 +1,23 @@
+{
+    "name": "dragon_scale",
+    "display_name": "Dragon Scale",
+    "index": 212,
+    "description": "Traded on a Seadra: Holder evolves into Kingdra.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": [
+        "bagon",
+        "dragonair",
+        "dragonite",
+        "dratini",
+        "horsea",
+        "kingdra",
+        "salamence",
+        "seadra",
+        "shelgon"
+    ]
+}

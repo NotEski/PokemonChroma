@@ -1,0 +1,13 @@
+{
+    "name": "heavy_duty_boots",
+    "display_name": "Heavy-Duty Boots",
+    "index": 1178,
+    "description": "These boots prevent the effects of traps set on the battlefield.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

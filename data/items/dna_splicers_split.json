@@ -1,0 +1,13 @@
+{
+    "name": "dna_splicers_split",
+    "display_name": "DNA Splicers",
+    "index": 925,
+    "description": "XXX new effect for dna-splicers--split",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

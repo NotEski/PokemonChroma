@@ -1,0 +1,13 @@
+{
+    "name": "data_card_22",
+    "display_name": "Data Card 22",
+    "index": 507,
+    "description": "Records the number of times the trainer has come in last across all Pok\u00e9athlon events.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "data_cards",
+    "held_by_pokemon": []
+}

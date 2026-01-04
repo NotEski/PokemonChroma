@@ -1,0 +1,13 @@
+{
+    "name": "dragon_memory",
+    "display_name": "Dragon Memory",
+    "index": 916,
+    "description": "Held: Changes Silvally to its Dragon form. Changes Multi-Attack\u2019s type to Dragon.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

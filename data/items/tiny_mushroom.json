@@ -1,0 +1,22 @@
+{
+    "name": "tiny_mushroom",
+    "display_name": "Tiny Mushroom",
+    "index": 86,
+    "description": "Fire Red and Leaf Green: Trade two for prior Level-up moves. Sell for 250 Pok\u00e9dollars, or to Hungry Maid for 500 Pok\u00e9dollars.",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "amoonguss",
+        "breloom",
+        "foongus",
+        "morelull",
+        "paras",
+        "parasect",
+        "shiinotic",
+        "shroomish"
+    ]
+}

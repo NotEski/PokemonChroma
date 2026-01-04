@@ -1,0 +1,13 @@
+{
+    "name": "pineapple",
+    "display_name": "Pineapple",
+    "index": 1755,
+    "description": "",
+    "cost": 250,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

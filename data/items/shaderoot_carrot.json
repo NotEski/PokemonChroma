@@ -1,0 +1,13 @@
+{
+    "name": "shaderoot_carrot",
+    "display_name": "Shaderoot Carrot",
+    "index": 1654,
+    "description": "Produce that the King of Bountiful Harvests\u2019 beloved steed likes to eat. It grew in a gloomy field.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

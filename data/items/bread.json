@@ -1,0 +1,13 @@
+{
+    "name": "bread",
+    "display_name": "Bread",
+    "index": 1148,
+    "description": "One of the many ingredients that can be used for cooking at your camp. An indispensable tool for mopping up that extra curry left on your plate.",
+    "cost": 150,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

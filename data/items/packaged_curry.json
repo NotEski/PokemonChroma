@@ -1,0 +1,13 @@
+{
+    "name": "packaged_curry",
+    "display_name": "Packaged Curry",
+    "index": 1318,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Using packaged curry helps make sure there are no slipups when cooking.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

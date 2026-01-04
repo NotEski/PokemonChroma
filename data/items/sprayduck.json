@@ -1,0 +1,13 @@
+{
+    "name": "sprayduck",
+    "display_name": "Sprayduck",
+    "index": 425,
+    "description": "Used to water berries.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

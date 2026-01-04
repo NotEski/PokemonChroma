@@ -1,0 +1,13 @@
+{
+    "name": "oranguru_fur",
+    "display_name": "Oranguru Fur",
+    "index": 1881,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

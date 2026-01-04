@@ -1,0 +1,13 @@
+{
+    "name": "clear_bell",
+    "display_name": "Clear Bell",
+    "index": 474,
+    "description": "HS: Allows Kimono-girls to summon Ho-oh. C: Summons Suicune to the Tin Tower.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

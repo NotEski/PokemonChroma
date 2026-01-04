@@ -1,0 +1,13 @@
+{
+    "name": "maranga_berry",
+    "display_name": "Maranga Berry",
+    "index": 725,
+    "description": "Held: When the holder is hit by a special move, increases its Special Defense by one stage.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "other",
+    "held_by_pokemon": []
+}

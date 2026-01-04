@@ -1,0 +1,13 @@
+{
+    "name": "bronze_bottle",
+    "display_name": "Bronze Bottle",
+    "index": 2081,
+    "description": "",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

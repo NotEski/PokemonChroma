@@ -1,0 +1,24 @@
+{
+    "name": "dragon_fang",
+    "display_name": "Dragon Fang",
+    "index": 227,
+    "description": "Held: Dragon-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 70,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "bagon",
+        "dragonair",
+        "dragonite",
+        "druddigon",
+        "salamence",
+        "salamence_mega",
+        "shelgon"
+    ]
+}

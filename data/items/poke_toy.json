@@ -1,0 +1,13 @@
+{
+    "name": "poke_toy",
+    "display_name": "Pok\u00e9 Toy",
+    "index": 618,
+    "description": "Ends a wild battle.",
+    "cost": 100,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "spelunking",
+    "held_by_pokemon": []
+}

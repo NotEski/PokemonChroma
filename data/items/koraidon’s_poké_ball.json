@@ -1,0 +1,13 @@
+{
+    "name": "koraidon\u2019s_pok\u00e9_ball",
+    "display_name": "Koraidon\u2019s Pok\u00e9 Ball",
+    "index": 1667,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

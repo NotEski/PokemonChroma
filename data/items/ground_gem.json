@@ -1,0 +1,13 @@
+{
+    "name": "ground_gem",
+    "display_name": "Ground Gem",
+    "index": 598,
+    "description": "Held: When the holder uses a damaging ground-type move, the move has 1.5\u00d7 power and this item is consumed.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "jewels",
+    "held_by_pokemon": []
+}

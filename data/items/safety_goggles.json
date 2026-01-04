@@ -1,0 +1,13 @@
+{
+    "name": "safety_goggles",
+    "display_name": "Safety Goggles",
+    "index": 690,
+    "description": "Held: Prevents damage from powder moves and the damage from Hail and Sandstorm.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

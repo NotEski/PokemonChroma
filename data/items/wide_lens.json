@@ -1,0 +1,20 @@
+{
+    "name": "wide_lens",
+    "display_name": "Wide Lens",
+    "index": 242,
+    "description": "Held: Provides a 1/10 (10%) boost in accuracy to the holder.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "sableye",
+        "yanma",
+        "yanmega"
+    ]
+}

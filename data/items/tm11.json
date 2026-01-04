@@ -1,0 +1,13 @@
+{
+    "name": "tm11",
+    "display_name": "TM11",
+    "index": 315,
+    "description": "Teaches Sunny Day to a compatible Pok\u00e9mon. (Gen I: BubbleBeam)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

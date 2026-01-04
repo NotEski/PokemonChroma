@@ -1,0 +1,13 @@
+{
+    "name": "kangaskhanite",
+    "display_name": "Kangaskhanite",
+    "index": 714,
+    "description": "Held: Allows Kangaskhan to Mega Evolve into Mega Kangaskhan.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

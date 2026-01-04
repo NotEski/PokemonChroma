@@ -1,0 +1,13 @@
+{
+    "name": "swampertite",
+    "display_name": "Swampertite",
+    "index": 793,
+    "description": "Held: Allows Swampert to Mega Evolve into Mega Swampert.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,26 @@
+{
+    "name": "kings_rock",
+    "display_name": "King\u2019s Rock",
+    "index": 198,
+    "description": "Held: Damaging moves gain a 10% chance to make their target flinch. Traded on a Poliwhirl: Holder evolves into Politoed. Traded on a Slowpoke: Holder evolves into Slowking.",
+    "cost": 5000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "flinch",
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "hariyama",
+        "hawlucha",
+        "politoed",
+        "poliwhirl",
+        "poliwrath",
+        "slowbro",
+        "slowbro_mega",
+        "slowking",
+        "slowpoke"
+    ]
+}

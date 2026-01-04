@@ -1,0 +1,13 @@
+{
+    "name": "happiny_dust",
+    "display_name": "Happiny Dust",
+    "index": 1834,
+    "description": "",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

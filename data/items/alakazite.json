@@ -1,0 +1,13 @@
+{
+    "name": "alakazite",
+    "display_name": "Alakazite",
+    "index": 718,
+    "description": "Held: Allows Alakazam to Mega Evolve into Mega Alakazam.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

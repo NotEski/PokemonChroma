@@ -1,0 +1,13 @@
+{
+    "name": "clever_wing",
+    "display_name": "Clever Feather",
+    "index": 610,
+    "description": "Increases Special Defense effort by 1.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

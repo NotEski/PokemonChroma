@@ -1,0 +1,24 @@
+{
+    "name": "absorb_bulb",
+    "display_name": "Absorb Bulb",
+    "index": 588,
+    "description": "Held: Raises the holder\u2019s Special Attack by one stage when it takes Water-type damage.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "bellossom",
+        "cottonee",
+        "gloom",
+        "lilligant",
+        "oddish",
+        "petilil",
+        "roselia",
+        "roserade",
+        "vileplume",
+        "whimsicott"
+    ]
+}

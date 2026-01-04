@@ -1,0 +1,13 @@
+{
+    "name": "legendary_clue_1",
+    "display_name": "Legendary Clue 1",
+    "index": 1644,
+    "description": "A clue about the King of Bountiful Harvests. It\u2019s written by Peony, and an old photo is attached to it.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

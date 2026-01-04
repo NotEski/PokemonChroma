@@ -1,0 +1,13 @@
+{
+    "name": "rocky_helmet",
+    "display_name": "Rocky Helmet",
+    "index": 583,
+    "description": "Held: When the holder is hit by a contact move, the attacking Pok\u00e9mon takes 1/6 its max HP in damage.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "max_repel",
+    "display_name": "Max Repel",
+    "index": 77,
+    "description": "For 250 steps, prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon.",
+    "cost": 900,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "spelunking",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "mysticticket",
+    "display_name": "MysticTicket",
+    "index": 556,
+    "description": "Allows access to Navel Rock and Lugia or Ho-oh.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

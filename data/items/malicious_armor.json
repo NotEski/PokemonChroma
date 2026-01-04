@@ -1,0 +1,13 @@
+{
+    "name": "malicious_armor",
+    "display_name": "Malicious Armor",
+    "index": 1677,
+    "description": "",
+    "cost": 750,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

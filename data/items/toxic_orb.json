@@ -1,0 +1,18 @@
+{
+    "name": "toxic_orb",
+    "display_name": "Toxic Orb",
+    "index": 249,
+    "description": "Held: Inflicts Toxic on the holder at the end of the turn. Activates after Poison damage would occur.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "badly_poison",
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "bad_held_items",
+    "held_by_pokemon": [
+        "muk"
+    ]
+}

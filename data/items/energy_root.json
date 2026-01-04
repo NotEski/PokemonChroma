@@ -1,0 +1,19 @@
+{
+    "name": "energy_root",
+    "display_name": "Energy Root",
+    "index": 35,
+    "description": "Restores 200 HP, but lowers happiness.",
+    "cost": 1200,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

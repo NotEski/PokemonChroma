@@ -1,0 +1,15 @@
+{
+    "name": "root_fossil",
+    "display_name": "Root Fossil",
+    "index": 99,
+    "description": "Can be revived into a Lileep.",
+    "cost": 7000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

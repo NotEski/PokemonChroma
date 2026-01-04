@@ -1,0 +1,16 @@
+{
+    "name": "full_incense",
+    "display_name": "Full Incense",
+    "index": 293,
+    "description": "Held: Holder moves last in its priority bracket. Breeding: Snorlax begets a Munchlax Egg.",
+    "cost": 5000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 72,
+    "category": "bad_held_items",
+    "held_by_pokemon": []
+}

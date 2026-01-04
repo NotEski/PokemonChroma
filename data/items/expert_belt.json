@@ -1,0 +1,19 @@
+{
+    "name": "expert_belt",
+    "display_name": "Expert Belt",
+    "index": 245,
+    "description": "Held: Holder\u2019s Super Effective moves do 20% extra damage.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "sawk",
+        "throh"
+    ]
+}

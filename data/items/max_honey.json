@@ -1,0 +1,13 @@
+{
+    "name": "max_honey",
+    "display_name": "Max Honey",
+    "index": 1630,
+    "description": "Honey that Dynamax Vespiquen produces. Adding this honey to Max Soup makes the taste very smooth. It also has the same effect as a Max Revive.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "revival",
+    "held_by_pokemon": []
+}

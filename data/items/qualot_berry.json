@@ -1,0 +1,13 @@
+{
+    "name": "qualot_berry",
+    "display_name": "Qualot Berry",
+    "index": 148,
+    "description": "Drops Defense Effort Values by 10 and raises happiness.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "effort_drop",
+    "held_by_pokemon": []
+}

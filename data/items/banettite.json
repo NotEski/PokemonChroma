@@ -1,0 +1,13 @@
+{
+    "name": "banettite",
+    "display_name": "Banettite",
+    "index": 707,
+    "description": "Held: Allows Banette to Mega Evolve into Mega Banette.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

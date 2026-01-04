@@ -1,0 +1,13 @@
+{
+    "name": "galactic_key",
+    "display_name": "Galactic Key",
+    "index": 417,
+    "description": "Grants access to Galactic HQ in Veilstone City.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

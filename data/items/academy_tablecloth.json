@@ -1,0 +1,13 @@
+{
+    "name": "academy_tablecloth",
+    "display_name": "Academy Tablecloth",
+    "index": 2026,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

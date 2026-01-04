@@ -1,0 +1,19 @@
+{
+    "name": "blue_flute",
+    "display_name": "Blue Flute",
+    "index": 65,
+    "description": "Cures sleep.",
+    "cost": 20,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "flutes",
+    "held_by_pokemon": []
+}

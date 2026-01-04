@@ -1,0 +1,21 @@
+{
+    "name": "deep_sea_tooth",
+    "display_name": "Deep Sea Tooth",
+    "index": 203,
+    "description": "Doubles Clamperl\u2019s Special Attack. Traded on a Clamperl: Holder evolves into Huntail.",
+    "cost": 2000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "basculin_red_striped",
+        "carvanha",
+        "huntail",
+        "sharpedo",
+        "sharpedo_mega"
+    ]
+}

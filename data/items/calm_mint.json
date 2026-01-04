@@ -1,0 +1,13 @@
+{
+    "name": "calm_mint",
+    "display_name": "Calm Mint",
+    "index": 1301,
+    "description": "When a Pok\u00e9mon smells this mint, its Sp. Def will grow more easily, but its Attack will grow more slowly.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "nature_mints",
+    "held_by_pokemon": []
+}

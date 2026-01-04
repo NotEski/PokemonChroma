@@ -1,0 +1,13 @@
+{
+    "name": "tr02",
+    "display_name": "TR02",
+    "index": 1190,
+    "description": "The target is scorched with an intense blast of fire. This may also leave the target with a burn.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

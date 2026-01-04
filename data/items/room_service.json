@@ -1,0 +1,13 @@
+{
+    "name": "room_service",
+    "display_name": "Room Service",
+    "index": 1180,
+    "description": "An item to be held by a Pok\u00e9mon. Lowers Speed when Trick Room takes effect.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

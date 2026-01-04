@@ -1,0 +1,13 @@
+{
+    "name": "stantler_hair",
+    "display_name": "Stantler Hair",
+    "index": 1798,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "tr55",
+    "display_name": "TR55",
+    "index": 1243,
+    "description": "The user cloaks itself in fire and charges the target. This also damages the user quite a lot. This attack may leave the target with a burn.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 120,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

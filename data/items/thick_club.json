@@ -1,0 +1,20 @@
+{
+    "name": "thick_club",
+    "display_name": "Thick Club",
+    "index": 235,
+    "description": "Doubles Cubone or Marowak\u2019s Attack.",
+    "cost": 1000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "cubone",
+        "marowak",
+        "marowak_alola",
+        "marowak_totem"
+    ]
+}

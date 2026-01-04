@@ -1,0 +1,13 @@
+{
+    "name": "tr98",
+    "display_name": "TR98",
+    "index": 1286,
+    "description": "The user slams into the target using a full-force blast of water. This may also lower the target\u2019s Defense stat.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 85,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

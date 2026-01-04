@@ -1,0 +1,13 @@
+{
+    "name": "tr15",
+    "display_name": "TR15",
+    "index": 1203,
+    "description": "The target is attacked with an intense blast of all-consuming fire. This may also leave the target with a burn.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 110,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

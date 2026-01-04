@@ -1,0 +1,21 @@
+{
+    "name": "moomoo_milk",
+    "display_name": "Moomoo Milk",
+    "index": 33,
+    "description": "Restores 100 HP.",
+    "cost": 600,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": [
+        "miltank"
+    ]
+}

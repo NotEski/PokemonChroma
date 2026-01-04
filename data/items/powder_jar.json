@@ -1,0 +1,13 @@
+{
+    "name": "powder_jar",
+    "display_name": "Powder Jar",
+    "index": 558,
+    "description": "Stores Berry Powder made using a Berry Crusher.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

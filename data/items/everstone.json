@@ -1,0 +1,24 @@
+{
+    "name": "everstone",
+    "display_name": "Everstone",
+    "index": 206,
+    "description": "Held: Prevents level-based evolution from occuring.",
+    "cost": 3000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": [
+        "boldore",
+        "geodude",
+        "gigalith",
+        "golem",
+        "graveler",
+        "roggenrola"
+    ]
+}

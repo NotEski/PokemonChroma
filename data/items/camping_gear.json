@@ -1,0 +1,13 @@
+{
+    "name": "camping_gear",
+    "display_name": "Camping Gear",
+    "index": 1160,
+    "description": "Everything you need to set up a tent and get cooking in a Wild Area or at a camping spot.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "fishing_rod",
+    "display_name": "Fishing Rod",
+    "index": 879,
+    "description": "Allows the player to fish for Pok\u00e9mon.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

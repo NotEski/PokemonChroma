@@ -1,0 +1,13 @@
+{
+    "name": "n_solarizer_split",
+    "display_name": "N-Solarizer",
+    "index": 991,
+    "description": "XXX new effect for n-solarizer--split",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

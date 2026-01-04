@@ -1,0 +1,13 @@
+{
+    "name": "dream_ball",
+    "display_name": "Dream Ball",
+    "index": 617,
+    "description": "Catches Pok\u00e9mon found in the Dream World.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "special_balls",
+    "held_by_pokemon": []
+}

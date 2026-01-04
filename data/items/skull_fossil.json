@@ -1,0 +1,15 @@
+{
+    "name": "skull_fossil",
+    "display_name": "Skull Fossil",
+    "index": 105,
+    "description": "Can be revived into a Cranidos.",
+    "cost": 7000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

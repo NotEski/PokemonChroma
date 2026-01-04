@@ -1,0 +1,13 @@
+{
+    "name": "fossilized_bird",
+    "display_name": "Fossilized Bird",
+    "index": 1163,
+    "description": "The fossil of an ancient Pok\u00e9mon that once soared through the sky. What it looked like is a mystery.",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

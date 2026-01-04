@@ -1,0 +1,19 @@
+{
+    "name": "comet_shard",
+    "display_name": "Comet Shard",
+    "index": 624,
+    "description": "Sell to Ore Collector for 60000 Pok\u00e9dollars.",
+    "cost": 25000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "clefable",
+        "clefairy",
+        "cleffa",
+        "lunatone",
+        "solrock"
+    ]
+}

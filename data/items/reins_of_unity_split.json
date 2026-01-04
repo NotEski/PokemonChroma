@@ -1,0 +1,13 @@
+{
+    "name": "reins_of_unity_split",
+    "display_name": "Reins of Unity",
+    "index": 1642,
+    "description": "Reins that people presented to the king. They enable those who are connected to communicate with each other. The reins separate Calyrex and its beloved steed.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

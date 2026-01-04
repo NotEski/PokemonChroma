@@ -1,0 +1,16 @@
+{
+    "name": "soothe_bell",
+    "display_name": "Soothe Bell",
+    "index": 195,
+    "description": "Held: Doubles the happiness earned by the holder.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": []
+}

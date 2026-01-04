@@ -1,0 +1,13 @@
+{
+    "name": "bitter_herba_mystica",
+    "display_name": "Bitter Herba Mystica",
+    "index": 1722,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "swinub_hair",
+    "display_name": "Swinub Hair",
+    "index": 2135,
+    "description": "",
+    "cost": 35,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

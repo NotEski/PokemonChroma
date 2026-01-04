@@ -1,0 +1,19 @@
+{
+    "name": "lava_cookie",
+    "display_name": "Lava Cookie",
+    "index": 42,
+    "description": "Cures any status ailment and confusion.",
+    "cost": 350,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "legendary_clue_2",
+    "display_name": "Legendary Clue 2",
+    "index": 1645,
+    "description": "A clue about the legend of giants. It\u2019s written by Peony and has unique drawings.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

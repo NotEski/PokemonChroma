@@ -1,0 +1,13 @@
+{
+    "name": "x_sp_def_6",
+    "display_name": "X Sp. Def 6",
+    "index": 648,
+    "description": "Raises Special Defense by six stages in battle. Wonder Launcher only.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

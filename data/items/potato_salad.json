@@ -1,0 +1,13 @@
+{
+    "name": "potato_salad",
+    "display_name": "Potato Salad",
+    "index": 1749,
+    "description": "",
+    "cost": 110,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

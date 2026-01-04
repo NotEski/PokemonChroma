@@ -1,0 +1,13 @@
+{
+    "name": "fairy_memory",
+    "display_name": "Fairy Memory",
+    "index": 918,
+    "description": "Held: Changes Silvally to its Fairy form. Changes Multi-Attack\u2019s type to Fairy.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

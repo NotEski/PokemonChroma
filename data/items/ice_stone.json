@@ -1,0 +1,13 @@
+{
+    "name": "ice_stone",
+    "display_name": "Ice Stone",
+    "index": 885,
+    "description": "Evolves an Alola Sandshrew into Alola Sandslash or an Alola Vulpix into Alola Ninetales.",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

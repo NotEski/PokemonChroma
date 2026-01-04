@@ -1,0 +1,13 @@
+{
+    "name": "sewaddle_leaf",
+    "display_name": "Sewaddle Leaf",
+    "index": 2147,
+    "description": "",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,17 @@
+{
+    "name": "magmarizer",
+    "display_name": "Magmarizer",
+    "index": 300,
+    "description": "Traded on a Magmar: Holder evolves into Magmortar.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": [
+        "magby",
+        "magmar",
+        "magmortar"
+    ]
+}

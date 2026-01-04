@@ -1,0 +1,13 @@
+{
+    "name": "devon_scope",
+    "display_name": "Devon Scope",
+    "index": 542,
+    "description": "Allows spotting of invisible Kecleon.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

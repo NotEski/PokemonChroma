@@ -1,0 +1,13 @@
+{
+    "name": "clear_amulet",
+    "display_name": "Clear Amulet",
+    "index": 1698,
+    "description": "",
+    "cost": 30000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

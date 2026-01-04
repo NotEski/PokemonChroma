@@ -1,0 +1,13 @@
+{
+    "name": "galarica_twig",
+    "display_name": "Galarica Twig",
+    "index": 1632,
+    "description": "A twig from a species of tree called Galarica that grows in certain areas around the Galar region. It\u2019s a material for an accessory for a certain Pok\u00e9mon.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

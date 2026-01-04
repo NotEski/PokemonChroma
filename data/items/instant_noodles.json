@@ -1,0 +1,13 @@
+{
+    "name": "instant_noodles",
+    "display_name": "Instant Noodles",
+    "index": 1320,
+    "description": "One of the many ingredients that can be used for cooking at your camp. It has a junk-food sort of taste, but it goes well with curry.",
+    "cost": 150,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

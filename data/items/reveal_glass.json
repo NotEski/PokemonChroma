@@ -1,0 +1,13 @@
+{
+    "name": "reveal_glass",
+    "display_name": "Reveal Glass",
+    "index": 681,
+    "description": "Switches Tornadus, Thundurus, and Landorus between Incarnate and Therian Forme.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

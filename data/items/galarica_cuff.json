@@ -1,0 +1,13 @@
+{
+    "name": "galarica_cuff",
+    "display_name": "Galarica Cuff",
+    "index": 1633,
+    "description": "A cuff made from woven-together Galarica Twigs. Giving it to Galarian Slowpoke makes the Pok\u00e9mon very happy.",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

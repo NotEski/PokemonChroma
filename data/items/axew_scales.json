@@ -1,0 +1,13 @@
+{
+    "name": "axew_scales",
+    "display_name": "Axew Scales",
+    "index": 1852,
+    "description": "",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

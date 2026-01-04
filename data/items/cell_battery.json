@@ -1,0 +1,20 @@
+{
+    "name": "cell_battery",
+    "display_name": "Cell Battery",
+    "index": 589,
+    "description": "Held: Raises the holder\u2019s Attack by one stage when it takes Electric-type damage.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "charjabug",
+        "geodude_alola",
+        "golem_alola",
+        "graveler_alola",
+        "minun",
+        "plusle"
+    ]
+}

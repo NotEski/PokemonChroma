@@ -1,0 +1,13 @@
+{
+    "name": "blunder_policy",
+    "display_name": "Blunder Policy",
+    "index": 1179,
+    "description": "Raises Speed sharply when a Pok\u00e9mon misses with a move because of accuracy.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

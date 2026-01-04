@@ -1,0 +1,13 @@
+{
+    "name": "tm39",
+    "display_name": "TM39",
+    "index": 343,
+    "description": "Teaches Rock Tomb to a compatible Pok\u00e9mon. (Gen II & I: Swift)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

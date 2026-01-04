@@ -1,0 +1,21 @@
+{
+    "name": "sticky_barb",
+    "display_name": "Sticky Barb",
+    "index": 265,
+    "description": "Held: Holder takes 1/8 (12.5%) its max HP at the end of each turn. When the holder is hit by a contact move, the attacking Pok\u00e9mon takes 1/8 its max HP in damage and receive the item if not holding one.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "bad_held_items",
+    "held_by_pokemon": [
+        "cacnea",
+        "cacturne",
+        "ferroseed",
+        "ferrothorn"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "boost_mulch",
+    "display_name": "Boost Mulch",
+    "index": 693,
+    "description": "Causes soil to dry out in 4 hours.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

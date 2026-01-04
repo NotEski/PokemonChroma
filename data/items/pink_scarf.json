@@ -1,0 +1,15 @@
+{
+    "name": "pink_scarf",
+    "display_name": "Pink Scarf",
+    "index": 239,
+    "description": "Raises the holder\u2019s Cuteness while in a contest.",
+    "cost": 100,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "scarves",
+    "held_by_pokemon": []
+}

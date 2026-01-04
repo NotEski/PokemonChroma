@@ -1,0 +1,13 @@
+{
+    "name": "mega_ring",
+    "display_name": "Mega Ring",
+    "index": 739,
+    "description": "Allows the player\u2019s Pok\u00e9mon to Mega Evolve.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

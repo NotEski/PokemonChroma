@@ -1,0 +1,13 @@
+{
+    "name": "large_leek",
+    "display_name": "Large Leek",
+    "index": 1152,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Whether this is the kind of vegetable stalk that Farfetch\u2019d like is unknown.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "auspicious_armor",
+    "display_name": "Auspicious Armor",
+    "index": 2045,
+    "description": "",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

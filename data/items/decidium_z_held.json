@@ -1,0 +1,13 @@
+{
+    "name": "decidium_z_held",
+    "display_name": "Decidium Z",
+    "index": 839,
+    "description": "Held: Allows Decidueye to upgrade Spirit Shackle into Sinister Arrow Raid.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

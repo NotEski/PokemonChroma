@@ -1,0 +1,13 @@
+{
+    "name": "tr05",
+    "display_name": "TR05",
+    "index": 1193,
+    "description": "The target is struck with an icy-cold beam of energy. This may also leave the target frozen.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

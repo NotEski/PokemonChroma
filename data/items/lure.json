@@ -1,0 +1,13 @@
+{
+    "name": "lure",
+    "display_name": "Lure",
+    "index": 1036,
+    "description": "A glass bottle of perfume that makes rare Pok\u00e9mon more likely to appear.",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "spelunking",
+    "held_by_pokemon": []
+}

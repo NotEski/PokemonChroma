@@ -1,0 +1,13 @@
+{
+    "name": "moon_flute",
+    "display_name": "Moon Flute",
+    "index": 894,
+    "description": "Evolves Nebby into Lunala when used at the Altar of the Moone.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

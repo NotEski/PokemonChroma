@@ -1,0 +1,19 @@
+{
+    "name": "iron_ball",
+    "display_name": "Iron Ball",
+    "index": 255,
+    "description": "Held: Holder\u2019s Speed is halved. Negates all Ground-type immunities, and makes Flying-types take neutral damage from Ground-type moves. Arena Trap. Spikes, and Toxic Spikes affect the holder.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 130,
+    "baby_trigger_for": null,
+    "category": "bad_held_items",
+    "held_by_pokemon": [
+        "mawile"
+    ]
+}

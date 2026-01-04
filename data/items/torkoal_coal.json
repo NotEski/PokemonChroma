@@ -1,0 +1,13 @@
+{
+    "name": "torkoal_coal",
+    "display_name": "Torkoal Coal",
+    "index": 1811,
+    "description": "",
+    "cost": 140,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

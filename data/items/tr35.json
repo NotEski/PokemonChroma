@@ -1,0 +1,13 @@
+{
+    "name": "tr35",
+    "display_name": "TR35",
+    "index": 1223,
+    "description": "The user attacks in an uproar for three turns. During that time, no Pok\u00e9mon can fall asleep.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

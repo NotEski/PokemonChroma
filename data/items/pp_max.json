@@ -1,0 +1,19 @@
+{
+    "name": "pp_max",
+    "display_name": "PP Max",
+    "index": 53,
+    "description": "Raises a move\u2019s max PP by 60%.",
+    "cost": 10000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

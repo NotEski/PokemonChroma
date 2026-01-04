@@ -1,0 +1,13 @@
+{
+    "name": "gooey_mulch",
+    "display_name": "Gooey Mulch",
+    "index": 98,
+    "description": "Berries regrow from dead plants an increased number of times.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

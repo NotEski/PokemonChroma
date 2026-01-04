@@ -1,0 +1,13 @@
+{
+    "name": "bottle_cap",
+    "display_name": "Bottle Cap",
+    "index": 836,
+    "description": "Trade to Mr. Hyper to maximize one of a Pok\u00e9mon\u2019s genes.",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

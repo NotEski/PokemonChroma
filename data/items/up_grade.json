@@ -1,0 +1,15 @@
+{
+    "name": "up_grade",
+    "display_name": "Upgrade",
+    "index": 229,
+    "description": "Traded on a Porygon: Holder evolves into Porygon2.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": [
+        "porygon2"
+    ]
+}

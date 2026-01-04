@@ -1,0 +1,13 @@
+{
+    "name": "enigmatic_card",
+    "display_name": "Enigmatic Card",
+    "index": 895,
+    "description": "Unlocks Looker\u2019s motel room on Route 8.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

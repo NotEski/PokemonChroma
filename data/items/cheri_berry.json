@@ -1,0 +1,22 @@
+{
+    "name": "cheri_berry",
+    "display_name": "Cheri Berry",
+    "index": 126,
+    "description": "Held: Consumed when paralyzed to cure paralysis.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "blitzle",
+        "crabominable",
+        "emolga",
+        "glameow",
+        "purugly",
+        "zebstrika"
+    ]
+}

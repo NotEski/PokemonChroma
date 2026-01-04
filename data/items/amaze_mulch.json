@@ -1,0 +1,13 @@
+{
+    "name": "amaze_mulch",
+    "display_name": "Amaze Mulch",
+    "index": 694,
+    "description": "Increases the total number of Berries by 2, increases the chance of Berry mutation, and causes soil to dry out in 4 hours.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

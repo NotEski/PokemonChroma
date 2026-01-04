@@ -1,0 +1,13 @@
+{
+    "name": "smoke_poke_tail",
+    "display_name": "Smoke-Poke Tail",
+    "index": 1151,
+    "description": "One of the many ingredients that can be used for cooking at your camp. When a Slowpoke\u2019s tail falls off, it grows back quickly.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

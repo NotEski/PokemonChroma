@@ -1,0 +1,13 @@
+{
+    "name": "tm83",
+    "display_name": "TM83",
+    "index": 387,
+    "description": "Teaches Work Up to a compatible Pok\u00e9mon. (Gen IV: Natural Gift)",
+    "cost": 100000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

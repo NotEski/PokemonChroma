@@ -1,0 +1,17 @@
+{
+    "name": "sun_stone",
+    "display_name": "Sun Stone",
+    "index": 80,
+    "description": "Evolves a Cottonee into Whimsicott, a Gloom into Bellossom, a Petilil into Lilligant, or a Sunkern into Sunflora.",
+    "cost": 3000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": [
+        "solrock"
+    ]
+}

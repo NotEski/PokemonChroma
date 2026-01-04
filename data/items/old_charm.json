@@ -1,0 +1,13 @@
+{
+    "name": "old_charm",
+    "display_name": "Old Charm",
+    "index": 416,
+    "description": "Trade to Cynthia\u2019s grandmother in Celestic Town for HM04 (Surf).",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "resist_wing",
+    "display_name": "Resist Feather",
+    "index": 608,
+    "description": "Increases Defense effort by 1.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

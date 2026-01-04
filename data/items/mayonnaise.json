@@ -1,0 +1,13 @@
+{
+    "name": "mayonnaise",
+    "display_name": "Mayonnaise",
+    "index": 1704,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

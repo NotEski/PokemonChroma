@@ -1,0 +1,15 @@
+{
+    "name": "leaf_stone",
+    "display_name": "Leaf Stone",
+    "index": 85,
+    "description": "Evolves an Exeggcute into Exeggutor, a Gloom into Vileplume, a Nuzleaf into Shiftry, a Pansage into Simisage, or a Weepinbell into Victreebel.",
+    "cost": 3000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "syrupy_apple",
+    "display_name": "Syrupy Apple",
+    "index": 2109,
+    "description": "",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

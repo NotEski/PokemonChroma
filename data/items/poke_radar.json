@@ -1,0 +1,13 @@
+{
+    "name": "poke_radar",
+    "display_name": "Pok\u00e9 Radar",
+    "index": 408,
+    "description": "Use to track down rare or shiny Pok\u00e9mon. 50 steps to recharge.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

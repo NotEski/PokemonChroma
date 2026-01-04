@@ -1,0 +1,13 @@
+{
+    "name": "tiny_bamboo_shoot",
+    "display_name": "Tiny Bamboo Shoot",
+    "index": 1673,
+    "description": "",
+    "cost": 375,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

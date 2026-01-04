@@ -1,0 +1,16 @@
+{
+    "name": "focus_sash",
+    "display_name": "Focus Sash",
+    "index": 252,
+    "description": "Held: Holder survives any single-hit attack at 1 HP if at max HP, then the item is consumed.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

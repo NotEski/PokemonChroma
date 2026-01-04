@@ -1,0 +1,25 @@
+{
+    "name": "aspear_berry",
+    "display_name": "Aspear Berry",
+    "index": 130,
+    "description": "Held: Consumed when frozen to cure frozen.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "beartic",
+        "crabrawler",
+        "cubchoo",
+        "dewgong",
+        "jynx",
+        "piloswine",
+        "seel",
+        "smoochum",
+        "swinub"
+    ]
+}

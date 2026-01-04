@@ -1,0 +1,13 @@
+{
+    "name": "tr17",
+    "display_name": "TR17",
+    "index": 1205,
+    "description": "The user temporarily empties its mind to forget its concerns. This sharply raises the user\u2019s Sp. Def stat.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

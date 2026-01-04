@@ -1,0 +1,16 @@
+{
+    "name": "rose_incense",
+    "display_name": "Rose Incense",
+    "index": 295,
+    "description": "Held: Grass-Type moves from holder do 20% more damage. Breeding: Roselia or Roserade beget a Budew Egg.",
+    "cost": 2000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 158,
+    "category": "type_enhancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,18 @@
+{
+    "name": "balm_mushroom",
+    "display_name": "Balm Mushroom",
+    "index": 621,
+    "description": "Sell to Hungry Maid for 25000 Pok\u00e9dollars.",
+    "cost": 15000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "amoonguss",
+        "foongus",
+        "paras",
+        "parasect"
+    ]
+}

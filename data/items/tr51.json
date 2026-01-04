@@ -1,0 +1,13 @@
+{
+    "name": "tr51",
+    "display_name": "TR51",
+    "index": 1239,
+    "description": "The user vigorously performs a mystic, powerful dance that raises its Attack and Speed stats.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

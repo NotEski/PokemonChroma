@@ -1,0 +1,13 @@
+{
+    "name": "eject_button",
+    "display_name": "Eject Button",
+    "index": 590,
+    "description": "Held: When the holder takes damage from a move, it switches out for a party Pok\u00e9mon of the Trainer\u2019s choice.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

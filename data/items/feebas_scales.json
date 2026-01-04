@@ -1,0 +1,13 @@
+{
+    "name": "feebas_scales",
+    "display_name": "Feebas Scales",
+    "index": 2143,
+    "description": "",
+    "cost": 35,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

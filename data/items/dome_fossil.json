@@ -1,0 +1,15 @@
+{
+    "name": "dome_fossil",
+    "display_name": "Dome Fossil",
+    "index": 102,
+    "description": "Can be revived into a Kabuto.",
+    "cost": 7000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

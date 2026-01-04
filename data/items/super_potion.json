@@ -1,0 +1,19 @@
+{
+    "name": "super_potion",
+    "display_name": "Super Potion",
+    "index": 26,
+    "description": "Restores 50 HP.",
+    "cost": 700,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

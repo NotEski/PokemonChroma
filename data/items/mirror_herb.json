@@ -1,0 +1,13 @@
+{
+    "name": "mirror_herb",
+    "display_name": "Mirror Herb",
+    "index": 1699,
+    "description": "",
+    "cost": 30000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

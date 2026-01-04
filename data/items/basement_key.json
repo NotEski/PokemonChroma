@@ -1,0 +1,13 @@
+{
+    "name": "basement_key",
+    "display_name": "Basement Key",
+    "index": 476,
+    "description": "HS: Key to the tunnel under Goldenrod City. Gen III: Key to New Mauville.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

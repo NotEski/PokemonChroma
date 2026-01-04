@@ -1,0 +1,13 @@
+{
+    "name": "purple_nectar",
+    "display_name": "Purple Nectar",
+    "index": 892,
+    "description": "Changes Oricorio to Sensu Style.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "rotom_bike_water_mode",
+    "display_name": "Rotom Bike",
+    "index": 1324,
+    "description": "This bike can be combined with the Pok\u00e9mon Rotom to not only do a turbo boost but also run on the water.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

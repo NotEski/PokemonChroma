@@ -1,0 +1,13 @@
+{
+    "name": "ability_capsule",
+    "display_name": "Ability Capsule",
+    "index": 685,
+    "description": "Switches a Pok\u00e9mon between its two possible (non-Hidden) Abilities.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

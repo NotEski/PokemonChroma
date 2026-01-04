@@ -1,0 +1,16 @@
+{
+    "name": "rock_incense",
+    "display_name": "Rock Incense",
+    "index": 292,
+    "description": "Held: Rock-Type moves from holder do 20% more damage. Breeding: Sudowoodo begets a Bonsly Egg.",
+    "cost": 2000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 91,
+    "category": "type_enhancement",
+    "held_by_pokemon": []
+}

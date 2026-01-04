@@ -1,0 +1,13 @@
+{
+    "name": "pamtre_berry",
+    "display_name": "Pamtre Berry",
+    "index": 157,
+    "description": "Used for creating Pok\u00e9Blocks and Poffins.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "baking_only",
+    "held_by_pokemon": []
+}

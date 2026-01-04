@@ -1,0 +1,13 @@
+{
+    "name": "hm07",
+    "display_name": "HM07",
+    "index": 403,
+    "description": "Teaches a move to a compatible Pok\u00e9mon. (Gen IV & III & II: Waterfall)",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

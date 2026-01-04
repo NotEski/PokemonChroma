@@ -1,0 +1,13 @@
+{
+    "name": "mienfoo_claw",
+    "display_name": "Mienfoo Claw",
+    "index": 2150,
+    "description": "",
+    "cost": 40,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

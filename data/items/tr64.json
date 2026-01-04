@@ -1,0 +1,13 @@
+{
+    "name": "tr64",
+    "display_name": "TR64",
+    "index": 1252,
+    "description": "The user heightens its mental focus and unleashes its power. This may also lower the target\u2019s Sp. Def stat.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 120,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

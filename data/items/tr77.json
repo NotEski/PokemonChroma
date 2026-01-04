@@ -1,0 +1,13 @@
+{
+    "name": "tr77",
+    "display_name": "TR77",
+    "index": 1265,
+    "description": "The user snares the target with grass and trips it. The heavier the target, the greater the move\u2019s power.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

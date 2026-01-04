@@ -1,0 +1,13 @@
+{
+    "name": "relic_silver",
+    "display_name": "Relic Silver",
+    "index": 626,
+    "description": "Sell to Villa Owner 5000 Pok\u00e9dollars.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

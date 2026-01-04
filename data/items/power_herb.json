@@ -1,0 +1,20 @@
+{
+    "name": "power_herb",
+    "display_name": "Power Herb",
+    "index": 248,
+    "description": "Held: Both turns of a two-turn charge move happen at once. Consumed upon use.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "nuzleaf",
+        "seedot",
+        "shiftry"
+    ]
+}

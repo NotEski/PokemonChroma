@@ -1,0 +1,13 @@
+{
+    "name": "holo_caster_green",
+    "display_name": "Holo Caster",
+    "index": 928,
+    "description": "XXX new effect for holo-caster--green",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

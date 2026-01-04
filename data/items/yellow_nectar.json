@@ -1,0 +1,13 @@
+{
+    "name": "yellow_nectar",
+    "display_name": "Yellow Nectar",
+    "index": 890,
+    "description": "Changes Oricorio to Pom-Pom Style.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

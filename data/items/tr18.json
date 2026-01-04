@@ -1,0 +1,13 @@
+{
+    "name": "tr18",
+    "display_name": "TR18",
+    "index": 1206,
+    "description": "The user drains the target\u2019s blood. The user\u2019s HP is restored by half the damage taken by the target.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

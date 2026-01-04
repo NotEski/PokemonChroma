@@ -1,0 +1,13 @@
+{
+    "name": "poisonium_z_held",
+    "display_name": "Poisonium Z",
+    "index": 824,
+    "description": "Held: Allows a Pok\u00e9mon to use the Z-move equivalents of its Poison moves.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "glimmet_crystal",
+    "display_name": "Glimmet Crystal",
+    "index": 1933,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,18 @@
+{
+    "name": "cherish_ball",
+    "display_name": "Cherish Ball",
+    "index": 16,
+    "description": "Tries to catch a wild Pok\u00e9mon.",
+    "cost": 0,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle"
+    ],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "special_balls",
+    "held_by_pokemon": []
+}

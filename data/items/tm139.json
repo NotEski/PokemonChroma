@@ -1,0 +1,13 @@
+{
+    "name": "tm139",
+    "display_name": "TM139",
+    "index": 1982,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "salad_mix",
+    "display_name": "Salad Mix",
+    "index": 1157,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The assortment of vegetables looks quite appealing and healthy.",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

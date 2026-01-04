@@ -1,0 +1,13 @@
+{
+    "name": "tr23",
+    "display_name": "TR23",
+    "index": 1211,
+    "description": "The user lays a trap of spikes at the opposing team\u2019s feet. The trap hurts Pok\u00e9mon that switch into battle.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

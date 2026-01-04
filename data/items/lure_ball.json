@@ -1,0 +1,13 @@
+{
+    "name": "lure_ball",
+    "display_name": "Lure Ball",
+    "index": 449,
+    "description": "3\u00d7 effectiveness while fishing. Made from Blu Apricorn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "apricorn_balls",
+    "held_by_pokemon": []
+}

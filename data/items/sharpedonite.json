@@ -1,0 +1,13 @@
+{
+    "name": "sharpedonite",
+    "display_name": "Sharpedonite",
+    "index": 800,
+    "description": "Held: Allows Sharpedo to Mega Evolve into Mega Sharpedo.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

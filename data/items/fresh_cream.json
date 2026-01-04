@@ -1,0 +1,13 @@
+{
+    "name": "fresh_cream",
+    "display_name": "Fresh Cream",
+    "index": 1317,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Add some whipped cream to a spicy curry to give it some sweetness.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

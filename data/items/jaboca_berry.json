@@ -1,0 +1,15 @@
+{
+    "name": "jaboca_berry",
+    "display_name": "Jaboca Berry",
+    "index": 188,
+    "description": "Held: Consumed to deal 1/8 attacker\u2019s max HP when holder is struck by a physical attack.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "other",
+    "held_by_pokemon": []
+}

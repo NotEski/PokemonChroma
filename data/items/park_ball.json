@@ -1,0 +1,13 @@
+{
+    "name": "park_ball",
+    "display_name": "Park Ball",
+    "index": 456,
+    "description": "Catches Pok\u00e9mon in the Pal Park every time.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "standard_balls",
+    "held_by_pokemon": []
+}

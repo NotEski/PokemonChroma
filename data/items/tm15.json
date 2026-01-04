@@ -1,0 +1,13 @@
+{
+    "name": "tm15",
+    "display_name": "TM15",
+    "index": 319,
+    "description": "Teaches Hyper Beam to a compatible Pok\u00e9mon.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

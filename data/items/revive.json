@@ -1,0 +1,22 @@
+{
+    "name": "revive",
+    "display_name": "Revive",
+    "index": 28,
+    "description": "Revives with half HP.",
+    "cost": 2000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "underground",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "revival",
+    "held_by_pokemon": [
+        "zigzagoon"
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "odd_incense",
+    "display_name": "Odd Incense",
+    "index": 291,
+    "description": "Held: Psychic-Type moves from holder do 20% more damage. Breeding: Mr. Mime begets a Mime Jr. Egg.",
+    "cost": 2000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": 57,
+    "category": "type_enhancement",
+    "held_by_pokemon": []
+}

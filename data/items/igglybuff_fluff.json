@@ -1,0 +1,13 @@
+{
+    "name": "igglybuff_fluff",
+    "display_name": "Igglybuff Fluff",
+    "index": 1782,
+    "description": "",
+    "cost": 60,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

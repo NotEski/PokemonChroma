@@ -1,0 +1,13 @@
+{
+    "name": "tropical_shell",
+    "display_name": "Tropical Shell",
+    "index": 1032,
+    "description": "A beautiful white shell that may have drifted from a sea in a warm region.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

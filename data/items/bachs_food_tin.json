@@ -1,0 +1,13 @@
+{
+    "name": "bachs_food_tin",
+    "display_name": "Bach\u2019s Food Tin",
+    "index": 1146,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The tinned food that Bach sells is curiously popular in Galar.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

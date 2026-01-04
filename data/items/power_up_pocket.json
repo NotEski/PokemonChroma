@@ -1,0 +1,13 @@
+{
+    "name": "power_up_pocket",
+    "display_name": "Power-Up Pocket",
+    "index": 1010,
+    "description": "- - -",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

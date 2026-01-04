@@ -1,0 +1,13 @@
+{
+    "name": "poke_flute",
+    "display_name": "Pok\u00e9 Flute",
+    "index": 544,
+    "description": "Use to awaken sleeping Pok\u00e9mon, including Snorlax on roads.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

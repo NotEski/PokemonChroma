@@ -1,0 +1,13 @@
+{
+    "name": "dark_memory",
+    "display_name": "Dark Memory",
+    "index": 917,
+    "description": "Held: Changes Silvally to its Dark form. Changes Multi-Attack\u2019s type to Dark.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

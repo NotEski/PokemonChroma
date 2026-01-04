@@ -1,0 +1,13 @@
+{
+    "name": "love_ball",
+    "display_name": "Love Ball",
+    "index": 455,
+    "description": "8\u00d7 effectiveness on opposite sex, same species targets of the Active Pok\u00e9mon. Made from Pnk Apricorn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "apricorn_balls",
+    "held_by_pokemon": []
+}

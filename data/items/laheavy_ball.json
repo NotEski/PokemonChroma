@@ -1,0 +1,13 @@
+{
+    "name": "laheavy_ball",
+    "display_name": "Heavy Ball",
+    "index": 2223,
+    "description": "Doesn't fly far, but is more effective if the Pok\u00e9mon hasn't noticed the player.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "standard_balls",
+    "held_by_pokemon": []
+}

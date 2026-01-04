@@ -1,0 +1,13 @@
+{
+    "name": "works_key",
+    "display_name": "Works Key",
+    "index": 415,
+    "description": "Grants access to Valley Windworks.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

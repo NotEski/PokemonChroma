@@ -1,0 +1,13 @@
+{
+    "name": "lock_capsule",
+    "display_name": "Lock Capsule",
+    "index": 513,
+    "description": "Contains TM95 (Snarl).",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

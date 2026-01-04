@@ -1,0 +1,13 @@
+{
+    "name": "precooked_burger",
+    "display_name": "Precooked Burger",
+    "index": 1321,
+    "description": "One of the many ingredients that can be used for cooking at your camp. If you\u2019re unsure about what to cook, you can\u2019t go wrong with some burger.",
+    "cost": 150,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

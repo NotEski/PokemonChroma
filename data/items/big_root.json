@@ -1,0 +1,19 @@
+{
+    "name": "big_root",
+    "display_name": "Big Root",
+    "index": 273,
+    "description": "Held: Increases HP recovered from draining moves, Ingrain, and Aqua Ring by 3/10 (30%).",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "cradily",
+        "lileep"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "fried_fillet",
+    "display_name": "Fried Fillet",
+    "index": 1743,
+    "description": "",
+    "cost": 360,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

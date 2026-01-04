@@ -1,0 +1,13 @@
+{
+    "name": "relic_statue",
+    "display_name": "Relic Statue",
+    "index": 630,
+    "description": "Sell to Villa Owner 200000 Pok\u00e9dollars.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

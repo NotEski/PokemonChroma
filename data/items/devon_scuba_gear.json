@@ -1,0 +1,13 @@
+{
+    "name": "devon_scuba_gear",
+    "display_name": "Devon Scuba Gear",
+    "index": 779,
+    "description": "Worn by the player while underwater.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

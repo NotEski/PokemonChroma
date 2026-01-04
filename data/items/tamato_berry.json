@@ -1,0 +1,13 @@
+{
+    "name": "tamato_berry",
+    "display_name": "Tamato Berry",
+    "index": 151,
+    "description": "Drops Speed Effort Values by 10 and raises happiness.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "effort_drop",
+    "held_by_pokemon": []
+}

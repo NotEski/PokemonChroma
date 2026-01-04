@@ -1,0 +1,19 @@
+{
+    "name": "full_restore",
+    "display_name": "Full Restore",
+    "index": 23,
+    "description": "Restores HP to full and cures any status ailment and confusion.",
+    "cost": 3000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

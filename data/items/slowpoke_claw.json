@@ -1,0 +1,13 @@
+{
+    "name": "slowpoke_claw",
+    "display_name": "Slowpoke Claw",
+    "index": 1768,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

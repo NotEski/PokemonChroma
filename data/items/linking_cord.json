@@ -1,0 +1,18 @@
+{
+    "name": "linking_cord",
+    "display_name": "Linking Cord",
+    "index": 2160,
+    "description": "Allows a Pokemon whose evolution is usually triggered by trading to evolve",
+    "cost": 8000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

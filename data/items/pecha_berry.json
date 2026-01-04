@@ -1,0 +1,37 @@
+{
+    "name": "pecha_berry",
+    "display_name": "Pecha Berry",
+    "index": 128,
+    "description": "Held: Consumed when poisoned to cure poison.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "buneary",
+        "delcatty",
+        "gumshoos",
+        "gumshoos_totem",
+        "lopunny",
+        "mightyena",
+        "palpitoad",
+        "poochyena",
+        "raticate_alola",
+        "raticate_totem_alola",
+        "rattata_alola",
+        "scolipede",
+        "seismitoad",
+        "skitty",
+        "skuntank",
+        "stunky",
+        "tympole",
+        "venipede",
+        "whirlipede",
+        "wurmple",
+        "yungoos"
+    ]
+}

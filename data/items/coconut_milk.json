@@ -1,0 +1,13 @@
+{
+    "name": "coconut_milk",
+    "display_name": "Coconut Milk",
+    "index": 1319,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The refined sweetness of this coconut milk makes it quite popular.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

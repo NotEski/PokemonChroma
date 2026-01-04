@@ -1,0 +1,13 @@
+{
+    "name": "grubbin_thread",
+    "display_name": "Grubbin Thread",
+    "index": 2154,
+    "description": "",
+    "cost": 25,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

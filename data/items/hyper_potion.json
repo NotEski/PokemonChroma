@@ -1,0 +1,19 @@
+{
+    "name": "hyper_potion",
+    "display_name": "Hyper Potion",
+    "index": 25,
+    "description": "Restores 200 HP.",
+    "cost": 1500,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

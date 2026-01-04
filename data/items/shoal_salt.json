@@ -1,0 +1,15 @@
+{
+    "name": "shoal_salt",
+    "display_name": "Shoal Salt",
+    "index": 70,
+    "description": "No effect. Gen III: Trade four and four Shoal Shells for a Shell Bell.",
+    "cost": 20,
+    "attributes": [
+        "countable"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

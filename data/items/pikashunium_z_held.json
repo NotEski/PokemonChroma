@@ -1,0 +1,13 @@
+{
+    "name": "pikashunium_z_held",
+    "display_name": "Pikashunium Z",
+    "index": 877,
+    "description": "Held: Allows cap-wearing Pikachu to upgrade Thunderbolt into 10,000,000 Volt Thunderbolt.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "small_bouquet",
+    "display_name": "Small Bouquet",
+    "index": 1035,
+    "description": "A small bouquet that was made with heart and soul for a single Trainer.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

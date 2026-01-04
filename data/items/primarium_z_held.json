@@ -1,0 +1,13 @@
+{
+    "name": "primarium_z_held",
+    "display_name": "Primarium Z",
+    "index": 841,
+    "description": "Held: Allows Primarina to upgrade Sparkling Aria into Oceanic Operetta.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

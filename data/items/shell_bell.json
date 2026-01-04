@@ -1,0 +1,16 @@
+{
+    "name": "shell_bell",
+    "display_name": "Shell Bell",
+    "index": 230,
+    "description": "Held: Holder receives 1/8 of the damage it deals when attacking.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

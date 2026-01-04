@@ -1,0 +1,13 @@
+{
+    "name": "ampharosite",
+    "display_name": "Ampharosite",
+    "index": 697,
+    "description": "Held: Allows Ampharos to Mega Evolve into Mega Ampharos.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

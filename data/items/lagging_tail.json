@@ -1,0 +1,20 @@
+{
+    "name": "lagging_tail",
+    "display_name": "Lagging Tail",
+    "index": 256,
+    "description": "Held: Holder moves last in its priority bracket.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "bad_held_items",
+    "held_by_pokemon": [
+        "lickilicky",
+        "lickitung",
+        "slowpoke"
+    ]
+}

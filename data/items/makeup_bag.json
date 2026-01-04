@@ -1,0 +1,13 @@
+{
+    "name": "makeup_bag",
+    "display_name": "Makeup Bag",
+    "index": 763,
+    "description": "Allows the player to change their lipstick color.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

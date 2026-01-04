@@ -1,0 +1,13 @@
+{
+    "name": "academy_bottle",
+    "display_name": "Academy Bottle",
+    "index": 2016,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

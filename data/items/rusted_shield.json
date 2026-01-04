@@ -1,0 +1,13 @@
+{
+    "name": "rusted_shield",
+    "display_name": "Rusted Shield",
+    "index": 1162,
+    "description": "It is said that a hero used this shield to halt a terrible disaster in ancient times. But it\u2019s grown rusty and worn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

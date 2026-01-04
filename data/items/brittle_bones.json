@@ -1,0 +1,13 @@
+{
+    "name": "brittle_bones",
+    "display_name": "Brittle Bones",
+    "index": 1154,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The taste boiled off from the bones is sure to give a dish a light umami taste.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

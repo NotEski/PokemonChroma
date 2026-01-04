@@ -1,0 +1,13 @@
+{
+    "name": "wooden_crown",
+    "display_name": "Wooden Crown",
+    "index": 1649,
+    "description": "A mysterious object made of wood. Part of it seems to be chipped. Maybe it\u2019s meant to be part of something.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

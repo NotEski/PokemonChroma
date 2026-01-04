@@ -1,0 +1,13 @@
+{
+    "name": "sun_flute",
+    "display_name": "Sun Flute",
+    "index": 893,
+    "description": "Evolves Nebby into Solgaleo when used at the Altar of the Sunne.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,19 @@
+{
+    "name": "energy_powder",
+    "display_name": "Energy Powder",
+    "index": 34,
+    "description": "Restores 50 HP, but lowers happiness.",
+    "cost": 500,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

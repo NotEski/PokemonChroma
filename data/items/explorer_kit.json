@@ -1,0 +1,13 @@
+{
+    "name": "explorer_kit",
+    "display_name": "Explorer Kit",
+    "index": 405,
+    "description": "Allows visiting the Underground.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

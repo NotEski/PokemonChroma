@@ -1,0 +1,13 @@
+{
+    "name": "snorlium_z_held",
+    "display_name": "Snorlium Z",
+    "index": 845,
+    "description": "Held: Allows Snorlax to upgrade Giga Impact into Pulverizing Pancake.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

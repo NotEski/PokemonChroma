@@ -1,0 +1,13 @@
+{
+    "name": "brave_mint",
+    "display_name": "Brave Mint",
+    "index": 1292,
+    "description": "When a Pok\u00e9mon smells this mint, its Attack will grow more easily, but its Speed will grow more slowly.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "nature_mints",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "pass_orb",
+    "display_name": "Pass Orb",
+    "index": 616,
+    "description": "Activates Pass Powers.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

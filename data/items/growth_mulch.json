@@ -1,0 +1,13 @@
+{
+    "name": "growth_mulch",
+    "display_name": "Growth Mulch",
+    "index": 95,
+    "description": "Growing time of berries is reduced, but the soil dries out faster.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

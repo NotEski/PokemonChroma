@@ -1,0 +1,13 @@
+{
+    "name": "mixed_mushrooms",
+    "display_name": "Mixed Mushrooms",
+    "index": 1150,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The chewy texture of the mushrooms transforms any dish they\u2019re added to.",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

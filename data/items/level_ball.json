@@ -1,0 +1,13 @@
+{
+    "name": "level_ball",
+    "display_name": "Level Ball",
+    "index": 450,
+    "description": "Success rate based off of fraction target Pok\u00e9mon is of user\u2019s Pok\u00e9mon. Made from Red Apricorn.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "apricorn_balls",
+    "held_by_pokemon": []
+}

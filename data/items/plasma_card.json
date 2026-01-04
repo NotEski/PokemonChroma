@@ -1,0 +1,13 @@
+{
+    "name": "plasma_card",
+    "display_name": "Plasma Card",
+    "index": 676,
+    "description": "Required to progress in the Plasma Frigate.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

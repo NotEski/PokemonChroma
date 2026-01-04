@@ -1,0 +1,13 @@
+{
+    "name": "bluk_berry",
+    "display_name": "Bluk Berry",
+    "index": 142,
+    "description": "Used for creating Pok\u00e9Blocks and Poffins.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "baking_only",
+    "held_by_pokemon": []
+}

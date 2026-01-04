@@ -1,0 +1,19 @@
+{
+    "name": "full_heal",
+    "display_name": "Full Heal",
+    "index": 27,
+    "description": "Cures any status ailment and confusion.",
+    "cost": 400,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

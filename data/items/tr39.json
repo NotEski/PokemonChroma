@@ -1,0 +1,13 @@
+{
+    "name": "tr39",
+    "display_name": "TR39",
+    "index": 1227,
+    "description": "The user attacks the target with great power. However, this also lowers the user\u2019s Attack and Defense stats.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 120,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

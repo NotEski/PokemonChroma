@@ -1,0 +1,13 @@
+{
+    "name": "boiled_egg",
+    "display_name": "Boiled Egg",
+    "index": 1159,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Even just one boiled egg can really enhance a dish.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

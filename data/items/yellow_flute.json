@@ -1,0 +1,18 @@
+{
+    "name": "yellow_flute",
+    "display_name": "Yellow Flute",
+    "index": 66,
+    "description": "Cures confusion.",
+    "cost": 20,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "flutes",
+    "held_by_pokemon": []
+}

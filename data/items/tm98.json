@@ -1,0 +1,13 @@
+{
+    "name": "tm98",
+    "display_name": "TM98",
+    "index": 747,
+    "description": "Teaches a Pok\u00e9mon TM98.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

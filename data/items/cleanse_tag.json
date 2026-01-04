@@ -1,0 +1,18 @@
+{
+    "name": "cleanse_tag",
+    "display_name": "Cleanse Tag",
+    "index": 201,
+    "description": "Prevents wild encounters of level lower than your party\u2019s lead Pok\u00e9mon.",
+    "cost": 5000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": [
+        "chimecho",
+        "chingling"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "rawst_berry",
+    "display_name": "Rawst Berry",
+    "index": 129,
+    "description": "Held: Consumed when burned to cure a burn.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "arcanine",
+        "camerupt",
+        "darmanitan_standard",
+        "darmanitan_zen",
+        "darumaka",
+        "growlithe",
+        "magby",
+        "magmar",
+        "ninetales",
+        "numel",
+        "toucannon",
+        "vulpix"
+    ]
+}

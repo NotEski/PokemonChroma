@@ -1,0 +1,13 @@
+{
+    "name": "duskull_fragment",
+    "display_name": "Duskull Fragment",
+    "index": 2144,
+    "description": "",
+    "cost": 40,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

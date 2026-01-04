@@ -1,0 +1,13 @@
+{
+    "name": "pinap_berry",
+    "display_name": "Pinap Berry",
+    "index": 145,
+    "description": "Used for creating Pok\u00e9Blocks and Poffins.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "baking_only",
+    "held_by_pokemon": []
+}

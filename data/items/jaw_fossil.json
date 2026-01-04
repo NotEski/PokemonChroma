@@ -1,0 +1,13 @@
+{
+    "name": "jaw_fossil",
+    "display_name": "Jaw Fossil",
+    "index": 729,
+    "description": "Can be revived into a Tyrunt.",
+    "cost": 7000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

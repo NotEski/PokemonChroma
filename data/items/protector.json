@@ -1,0 +1,13 @@
+{
+    "name": "protector",
+    "display_name": "Protector",
+    "index": 298,
+    "description": "Traded on a Rhydon: Holder evolves into Rhyperior.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

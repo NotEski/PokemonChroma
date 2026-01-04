@@ -1,0 +1,13 @@
+{
+    "name": "big_malasada",
+    "display_name": "Big Malasada",
+    "index": 888,
+    "description": "Cures major status ailments and confusion.",
+    "cost": 350,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

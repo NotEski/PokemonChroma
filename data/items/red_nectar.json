@@ -1,0 +1,13 @@
+{
+    "name": "red_nectar",
+    "display_name": "Red Nectar",
+    "index": 889,
+    "description": "Changes Oricorio to Baile Style.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

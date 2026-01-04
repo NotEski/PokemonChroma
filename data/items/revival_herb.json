@@ -1,0 +1,19 @@
+{
+    "name": "revival_herb",
+    "display_name": "Revival Herb",
+    "index": 37,
+    "description": "Revives with full HP, but lowers happiness.",
+    "cost": 2800,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "revival",
+    "held_by_pokemon": []
+}

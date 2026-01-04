@@ -1,0 +1,13 @@
+{
+    "name": "basement_key_new_mauville",
+    "display_name": "Basement Key",
+    "index": 931,
+    "description": "XXX new effect for basement-key--new-mauville",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,17 @@
+{
+    "name": "damp_rock",
+    "display_name": "Damp Rock",
+    "index": 262,
+    "description": "Held: Rain Dance by the holder lasts 8 rounds instead of 5.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

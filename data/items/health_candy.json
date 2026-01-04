@@ -1,0 +1,13 @@
+{
+    "name": "health_candy",
+    "display_name": "Health Candy",
+    "index": 1040,
+    "description": "A candy that is packed with energy. When given to a Pok\u00e9mon, it will increase that Pok\u00e9mon\u2019s HP.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

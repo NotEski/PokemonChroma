@@ -1,0 +1,22 @@
+{
+    "name": "max_revive",
+    "display_name": "Max Revive",
+    "index": 29,
+    "description": "Revives with full HP.",
+    "cost": 4000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "underground",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "revival",
+    "held_by_pokemon": [
+        "linoone"
+    ]
+}

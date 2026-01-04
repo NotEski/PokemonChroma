@@ -1,0 +1,13 @@
+{
+    "name": "plume_fossil",
+    "display_name": "Plume Fossil",
+    "index": 614,
+    "description": "Can be revived into an archen.",
+    "cost": 7000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "dex_completion",
+    "held_by_pokemon": []
+}

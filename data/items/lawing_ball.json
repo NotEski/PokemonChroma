@@ -1,0 +1,13 @@
+{
+    "name": "lawing_ball",
+    "display_name": "Wing Ball",
+    "index": 2227,
+    "description": "Can be thrown further than a Feather Ball. Is more effective for catching Pok\u00e9mon that fly high in the air.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "standard_balls",
+    "held_by_pokemon": []
+}

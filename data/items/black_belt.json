@@ -1,0 +1,20 @@
+{
+    "name": "black_belt",
+    "display_name": "Black Belt",
+    "index": 218,
+    "description": "Held: Fighting-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "makuhita",
+        "sawk",
+        "throh"
+    ]
+}

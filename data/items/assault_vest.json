@@ -1,0 +1,13 @@
+{
+    "name": "assault_vest",
+    "display_name": "Assault Vest",
+    "index": 683,
+    "description": "Raises the holder\u2019s Special Defense to 1.5\u00d7. Prevents the holder from selecting a status move.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

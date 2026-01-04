@@ -1,0 +1,13 @@
+{
+    "name": "pawmi_fur",
+    "display_name": "Pawmi Fur",
+    "index": 1926,
+    "description": "",
+    "cost": 100,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

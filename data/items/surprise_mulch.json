@@ -1,0 +1,13 @@
+{
+    "name": "surprise_mulch",
+    "display_name": "Surprise Mulch",
+    "index": 692,
+    "description": "Increases the chance of Berry mutation.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

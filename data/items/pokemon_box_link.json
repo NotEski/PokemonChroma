@@ -1,0 +1,13 @@
+{
+    "name": "pokemon_box_link",
+    "display_name": "Pok\u00e9mon Box Link",
+    "index": 1139,
+    "description": "A device that allows you to access the Pok\u00e9mon storage system. There are some places where it won\u2019t work.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

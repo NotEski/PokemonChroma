@@ -1,0 +1,20 @@
+{
+    "name": "bright_powder",
+    "display_name": "Bright Powder",
+    "index": 190,
+    "description": "Held: Increases the holder\u2019s evasion by 1/9 (11 1/9%).",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "illumise",
+        "volbeat",
+        "wurmple"
+    ]
+}

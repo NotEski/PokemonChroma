@@ -1,0 +1,13 @@
+{
+    "name": "griseous_orb",
+    "display_name": "Griseous Orb",
+    "index": 442,
+    "description": "Boosts the damage from Giratina\u2019s Dragon-type and Ghost-type moves by 20%, and transforms it into Origin Forme.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

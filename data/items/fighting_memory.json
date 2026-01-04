@@ -1,0 +1,13 @@
+{
+    "name": "fighting_memory",
+    "display_name": "Fighting Memory",
+    "index": 902,
+    "description": "Held: Changes Silvally to its Fighting form. Changes Multi-Attack\u2019s type to Fighting.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

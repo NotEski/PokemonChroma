@@ -1,0 +1,13 @@
+{
+    "name": "dynamax_crystal_uma4660",
+    "display_name": "\u2605UMa4660",
+    "index": 1403,
+    "description": "An item that causes [VAR (0000)] to appear from the Watchtower Lair in the Wild Area until the end of the day.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "dynamax_crystals",
+    "held_by_pokemon": []
+}

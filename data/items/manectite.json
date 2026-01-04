@@ -1,0 +1,13 @@
+{
+    "name": "manectite",
+    "display_name": "Manectite",
+    "index": 721,
+    "description": "Held: Allows Manectric to Mega Evolve into Mega Manectric.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

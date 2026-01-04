@@ -1,0 +1,15 @@
+{
+    "name": "yellow_scarf",
+    "display_name": "Yellow Scarf",
+    "index": 241,
+    "description": "Raises the holder\u2019s Toughness while in a contest.",
+    "cost": 100,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "scarves",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "burn_drive",
+    "display_name": "Burn Drive",
+    "index": 565,
+    "description": "Grants Genesect a red, Fire-type Techno Blast.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 70,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

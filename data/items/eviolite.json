@@ -1,0 +1,13 @@
+{
+    "name": "eviolite",
+    "display_name": "Eviolite",
+    "index": 581,
+    "description": "Held: Holder has 1.5\u00d7 Defense and Special Defense, as long as it\u2019s not fully evolved.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 40,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

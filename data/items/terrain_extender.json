@@ -1,0 +1,13 @@
+{
+    "name": "terrain_extender",
+    "display_name": "Terrain Extender",
+    "index": 896,
+    "description": "Held: Extends the holder\u2019s Terrain effects to 8 turns.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

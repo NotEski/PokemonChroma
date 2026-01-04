@@ -1,0 +1,13 @@
+{
+    "name": "herbed_sausage",
+    "display_name": "Herbed Sausage",
+    "index": 1739,
+    "description": "",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

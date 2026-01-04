@@ -1,0 +1,13 @@
+{
+    "name": "serious_mint",
+    "display_name": "Serious Mint",
+    "index": 1309,
+    "description": "When a Pok\u00e9mon smells this mint, all of its stats will grow at an equal rate.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "nature_mints",
+    "held_by_pokemon": []
+}

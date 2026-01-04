@@ -1,0 +1,21 @@
+{
+    "name": "sacred_ash",
+    "display_name": "Sacred Ash",
+    "index": 44,
+    "description": "Revives all fainted Pok\u00e9mon with full HP.",
+    "cost": 50000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "revival",
+    "held_by_pokemon": [
+        "ho_oh"
+    ]
+}

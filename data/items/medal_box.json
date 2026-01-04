@@ -1,0 +1,13 @@
+{
+    "name": "medal_box",
+    "display_name": "Medal Box",
+    "index": 670,
+    "description": "Holds medals recieved in the medal rally.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

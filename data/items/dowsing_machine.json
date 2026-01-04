@@ -1,0 +1,13 @@
+{
+    "name": "dowsing_machine",
+    "display_name": "Dowsing Machine",
+    "index": 465,
+    "description": "Use to find hidden items on the field. AKA Itemfinder.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

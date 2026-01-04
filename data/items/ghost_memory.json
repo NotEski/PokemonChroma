@@ -1,0 +1,13 @@
+{
+    "name": "ghost_memory",
+    "display_name": "Ghost Memory",
+    "index": 908,
+    "description": "Held: Changes Silvally to its Ghost form. Changes Multi-Attack\u2019s type to Ghost.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "memories",
+    "held_by_pokemon": []
+}

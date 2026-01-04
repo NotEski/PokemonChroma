@@ -1,0 +1,13 @@
+{
+    "name": "pasta",
+    "display_name": "Pasta",
+    "index": 1149,
+    "description": "One of the many ingredients that can be used for cooking at your camp. These flour noodles make for a surprisingly good match with curry.",
+    "cost": 150,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

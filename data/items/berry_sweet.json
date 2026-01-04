@@ -1,0 +1,13 @@
+{
+    "name": "berry_sweet",
+    "display_name": "Berry Sweet",
+    "index": 1169,
+    "description": "A berry-shaped sweet. When a Milcery holds this, it spins around happily.",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

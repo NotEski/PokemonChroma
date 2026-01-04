@@ -1,0 +1,13 @@
+{
+    "name": "hm08",
+    "display_name": "HM08",
+    "index": 404,
+    "description": "Teaches a move to a compatible Pok\u00e9mon. (Gen IV: Rock Climb Gen III: Dive)",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,21 @@
+{
+    "name": "lum_berry",
+    "display_name": "Lum Berry",
+    "index": 134,
+    "description": "Held: Consumed to cure any status condition or confusion.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "celebi",
+        "chikorita",
+        "mew",
+        "shaymin_land",
+        "shaymin_sky"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "lens_case",
+    "display_name": "Lens Case",
+    "index": 737,
+    "description": "Allows the player to change their eye color.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

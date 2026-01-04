@@ -1,0 +1,13 @@
+{
+    "name": "stable_mulch",
+    "display_name": "Stable Mulch",
+    "index": 97,
+    "description": "Berries stay on the plant for longer than their usual time.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "mulch",
+    "held_by_pokemon": []
+}

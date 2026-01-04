@@ -1,0 +1,13 @@
+{
+    "name": "glalitite",
+    "display_name": "Glalitite",
+    "index": 804,
+    "description": "Held: Allows Glalie to Mega Evolve into Mega Glalie.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

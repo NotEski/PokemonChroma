@@ -1,0 +1,13 @@
+{
+    "name": "x_attack_3",
+    "display_name": "X Attack 3",
+    "index": 644,
+    "description": "Raises Attack by three stages in battle. Wonder Launcher only.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

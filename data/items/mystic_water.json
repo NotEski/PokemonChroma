@@ -1,0 +1,27 @@
+{
+    "name": "mystic_water",
+    "display_name": "Mystic Water",
+    "index": 220,
+    "description": "Held: Water-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "araquanid",
+        "araquanid_totem",
+        "castform",
+        "castform_rainy",
+        "castform_snowy",
+        "castform_sunny",
+        "dewpider",
+        "goldeen",
+        "lapras",
+        "seaking"
+    ]
+}

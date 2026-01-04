@@ -1,0 +1,17 @@
+{
+    "name": "spooky_plate",
+    "display_name": "Spooky Plate",
+    "index": 287,
+    "description": "Held: Ghost-Type moves from holder do 20% more damage. Changes Arceus\u2019s and Judgment\u2019s type to Ghost.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "plates",
+    "held_by_pokemon": []
+}

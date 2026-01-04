@@ -1,0 +1,13 @@
+{
+    "name": "kee_berry",
+    "display_name": "Kee Berry",
+    "index": 724,
+    "description": "Held: When the holder is hit by a physical move, increases its Defense by one stage.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "other",
+    "held_by_pokemon": []
+}

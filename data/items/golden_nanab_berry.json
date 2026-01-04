@@ -1,0 +1,13 @@
+{
+    "name": "golden_nanab_berry",
+    "display_name": "Golden Nanab Berry",
+    "index": 1017,
+    "description": "A Berry that calms wild Pok\u00e9mon you\u2019re trying to catch drastically when given to them.",
+    "cost": 5000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "catching_bonus",
+    "held_by_pokemon": []
+}

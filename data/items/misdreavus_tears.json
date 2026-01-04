@@ -1,0 +1,13 @@
+{
+    "name": "misdreavus_tears",
+    "display_name": "Misdreavus Tears",
+    "index": 1787,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

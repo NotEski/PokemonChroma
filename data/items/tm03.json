@@ -1,0 +1,13 @@
+{
+    "name": "tm03",
+    "display_name": "TM03",
+    "index": 307,
+    "description": "Teaches Psyshock to a compatible Pok\u00e9mon. (Gen IV & III: Water Pulse Gen II: Curse Gen I: Swords Dance)",
+    "cost": 50000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

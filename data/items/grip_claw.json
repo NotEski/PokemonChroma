@@ -1,0 +1,23 @@
+{
+    "name": "grip_claw",
+    "display_name": "Grip Claw",
+    "index": 263,
+    "description": "Held: Holder\u2019s multi-turn trapping moves last 5 turns.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "sandshrew",
+        "sandshrew_alola",
+        "sandslash",
+        "sandslash_alola",
+        "sneasel",
+        "weavile"
+    ]
+}

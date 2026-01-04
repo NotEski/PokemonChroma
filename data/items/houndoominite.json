@@ -1,0 +1,13 @@
+{
+    "name": "houndoominite",
+    "display_name": "Houndoominite",
+    "index": 705,
+    "description": "Held: Allows Houndoom to Mega Evolve into Mega Houndoom.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

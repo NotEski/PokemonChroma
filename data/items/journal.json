@@ -1,0 +1,13 @@
+{
+    "name": "journal",
+    "display_name": "Journal",
+    "index": 410,
+    "description": "Records prior significant activities the player took.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

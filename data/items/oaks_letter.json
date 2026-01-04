@@ -1,0 +1,13 @@
+{
+    "name": "oaks_letter",
+    "display_name": "Oak\u2019s Letter",
+    "index": 429,
+    "description": "Allows access to Seabreak path, Flower Paradise, and Shaymin.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

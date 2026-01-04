@@ -1,0 +1,13 @@
+{
+    "name": "carbink_jewel",
+    "display_name": "Carbink Jewel",
+    "index": 2152,
+    "description": "",
+    "cost": 50,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

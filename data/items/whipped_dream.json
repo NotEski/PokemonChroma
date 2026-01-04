@@ -1,0 +1,13 @@
+{
+    "name": "whipped_dream",
+    "display_name": "Whipped Dream",
+    "index": 686,
+    "description": "Traded on a Swirlix: Holder evolves into Slurpuff.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

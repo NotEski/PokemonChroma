@@ -1,0 +1,13 @@
+{
+    "name": "roto_stick",
+    "display_name": "Roto Stick",
+    "index": 2100,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

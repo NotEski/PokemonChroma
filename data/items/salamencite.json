@@ -1,0 +1,13 @@
+{
+    "name": "salamencite",
+    "display_name": "Salamencite",
+    "index": 810,
+    "description": "Held: Allows Salamence to Mega Evolve into Mega Salamence.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

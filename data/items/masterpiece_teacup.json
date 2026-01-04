@@ -1,0 +1,13 @@
+{
+    "name": "masterpiece_teacup",
+    "display_name": "Masterpiece Teacup",
+    "index": 2111,
+    "description": "",
+    "cost": 9500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

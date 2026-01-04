@@ -1,0 +1,28 @@
+{
+    "name": "star_piece",
+    "display_name": "Star Piece",
+    "index": 91,
+    "description": "Platinum: Trade for one of each color Shard. Black and White: Trade for PP Up. Sell for 4900 Pok\u00e9dollars, or to Ore Collector for 9800 Pok\u00e9dollars.",
+    "cost": 12000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "jirachi",
+        "meloetta_aria",
+        "meloetta_pirouette",
+        "minior_blue_meteor",
+        "minior_green_meteor",
+        "minior_indigo_meteor",
+        "minior_orange_meteor",
+        "minior_red_meteor",
+        "minior_violet_meteor",
+        "minior_yellow_meteor",
+        "starmie",
+        "staryu"
+    ]
+}

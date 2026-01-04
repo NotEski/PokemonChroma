@@ -1,0 +1,15 @@
+{
+    "name": "petaya_berry",
+    "display_name": "Petaya Berry",
+    "index": 181,
+    "description": "Held: Consumed at 1/4 max HP to boost Special Attack.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "in_a_pinch",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "tm_case",
+    "display_name": "TM Case",
+    "index": 550,
+    "description": "Holds TMs.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,18 @@
+{
+    "name": "flame_orb",
+    "display_name": "Flame Orb",
+    "index": 250,
+    "description": "Held: Inflicts Burn on the holder at the end of the turn. Activates after Burn damage would occur.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "burn",
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "bad_held_items",
+    "held_by_pokemon": [
+        "heatmor"
+    ]
+}

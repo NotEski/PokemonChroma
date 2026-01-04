@@ -1,0 +1,13 @@
+{
+    "name": "rule_book",
+    "display_name": "Rule Book",
+    "index": 407,
+    "description": "List of battle types and their rules.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

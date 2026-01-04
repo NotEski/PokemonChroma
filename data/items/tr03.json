@@ -1,0 +1,13 @@
+{
+    "name": "tr03",
+    "display_name": "TR03",
+    "index": 1191,
+    "description": "The target is blasted by a huge volume of water launched under great pressure.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 110,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

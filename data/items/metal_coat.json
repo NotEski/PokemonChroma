@@ -1,0 +1,29 @@
+{
+    "name": "metal_coat",
+    "display_name": "Metal Coat",
+    "index": 210,
+    "description": "Held: Steel-Type moves from holder do 20% more damage.",
+    "cost": 2000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "beldum",
+        "bronzong",
+        "bronzor",
+        "magnemite",
+        "magneton",
+        "magnezone",
+        "metagross",
+        "metagross_mega",
+        "metang",
+        "skarmory",
+        "steelix",
+        "steelix_mega"
+    ]
+}

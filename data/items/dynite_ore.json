@@ -1,0 +1,13 @@
+{
+    "name": "dynite_ore",
+    "display_name": "Dynite Ore",
+    "index": 1655,
+    "description": "Mysterious ore that can be obtained in the Max Lair. Something good will happen if you give it to a collector in the Crown Tundra.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

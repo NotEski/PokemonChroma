@@ -1,0 +1,25 @@
+{
+    "name": "mental_herb",
+    "display_name": "Mental Herb",
+    "index": 196,
+    "description": "Held: Consumed to cure infatuation. Gen V: Also removes Taunt, Encore, Torment, Disable, and Cursed Body.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "herb_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "leavanny",
+        "lombre",
+        "lotad",
+        "ludicolo",
+        "pancham",
+        "pangoro",
+        "sewaddle",
+        "swadloon"
+    ]
+}

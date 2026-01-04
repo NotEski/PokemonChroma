@@ -1,0 +1,15 @@
+{
+    "name": "adamant_orb",
+    "display_name": "Adamant Orb",
+    "index": 112,
+    "description": "Boosts the damage from Dialga\u2019s Dragon-type and Steel-type moves by 20%.",
+    "cost": 0,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

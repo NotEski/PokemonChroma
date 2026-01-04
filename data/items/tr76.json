@@ -1,0 +1,13 @@
+{
+    "name": "tr76",
+    "display_name": "TR76",
+    "index": 1264,
+    "description": "The user lays a trap of levitating stones around the opposing team. The trap hurts opposing Pok\u00e9mon that switch into battle.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

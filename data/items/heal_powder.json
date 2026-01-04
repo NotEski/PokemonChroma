@@ -1,0 +1,19 @@
+{
+    "name": "heal_powder",
+    "display_name": "Heal Powder",
+    "index": 36,
+    "description": "Cures any status ailment, but lowers happiness.",
+    "cost": 300,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

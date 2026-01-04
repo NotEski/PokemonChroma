@@ -1,0 +1,13 @@
+{
+    "name": "mewtwo_candy",
+    "display_name": "Mewtwo Candy",
+    "index": 1134,
+    "description": "A candy that is packed with energy. When given to certain Pok\u00e9mon, it will increase all their stats at once.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "species_candies",
+    "held_by_pokemon": []
+}

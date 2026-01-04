@@ -1,0 +1,13 @@
+{
+    "name": "eon_ticket",
+    "display_name": "Eon Ticket",
+    "index": 534,
+    "description": "Provides access to Southern Island and Latias or Latios.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

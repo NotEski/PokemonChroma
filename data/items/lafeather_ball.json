@@ -1,0 +1,13 @@
+{
+    "name": "lafeather_ball",
+    "display_name": "Feather Ball",
+    "index": 2226,
+    "description": "Can be thrown further than a regular Pok\u00e9 Ball. Is more effective for catching Pok\u00e9mon that fly high in the air.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "standard_balls",
+    "held_by_pokemon": []
+}

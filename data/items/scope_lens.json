@@ -1,0 +1,16 @@
+{
+    "name": "scope_lens",
+    "display_name": "Scope Lens",
+    "index": 209,
+    "description": "Held: Raises the holder\u2019s critical hit ratio by one stage.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

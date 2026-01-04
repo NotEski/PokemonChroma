@@ -1,0 +1,33 @@
+{
+    "name": "hard_stone",
+    "display_name": "Hard Stone",
+    "index": 215,
+    "description": "Held: Rock-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 100,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "aggron",
+        "aggron_mega",
+        "aron",
+        "boldore",
+        "corsola",
+        "crustle",
+        "dwebble",
+        "gigalith",
+        "golem",
+        "graveler",
+        "lairon",
+        "nosepass",
+        "onix",
+        "probopass",
+        "roggenrola"
+    ]
+}

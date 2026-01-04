@@ -1,0 +1,13 @@
+{
+    "name": "tm31",
+    "display_name": "TM31",
+    "index": 335,
+    "description": "Teaches Brick Break to a compatible Pok\u00e9mon. (Gen II: Mud-Slap Gen I: Mimic)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

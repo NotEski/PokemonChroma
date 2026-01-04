@@ -1,0 +1,31 @@
+{
+    "name": "persim_berry",
+    "display_name": "Persim Berry",
+    "index": 133,
+    "description": "Held: Consumed when confused to cure confusion.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "drampa",
+        "duosion",
+        "girafarig",
+        "gothita",
+        "gothitelle",
+        "gothorita",
+        "grumpig",
+        "kecleon",
+        "palpitoad",
+        "reuniclus",
+        "seismitoad",
+        "seviper",
+        "solosis",
+        "spoink",
+        "tympole"
+    ]
+}

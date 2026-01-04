@@ -1,0 +1,13 @@
+{
+    "name": "magical_heart_pick",
+    "display_name": "Magical Heart Pick",
+    "index": 2089,
+    "description": "",
+    "cost": 600,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

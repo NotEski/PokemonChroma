@@ -1,0 +1,16 @@
+{
+    "name": "amulet_coin",
+    "display_name": "Amulet Coin",
+    "index": 200,
+    "description": "Held: Doubles the money earned from a battle. Does not stack with Luck Incense.",
+    "cost": 10000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": []
+}

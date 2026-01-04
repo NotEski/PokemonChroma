@@ -1,0 +1,13 @@
+{
+    "name": "old_letter",
+    "display_name": "Old Letter",
+    "index": 1326,
+    "description": "A letter entrusted to you by a girl, to be delivered to a boy. Strangely, it looks old to you.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "x_sp_def_3",
+    "display_name": "X Sp. Def 3",
+    "index": 642,
+    "description": "Raises Special Defense by three stages in battle. Wonder Launcher only.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "spiritomb_fragment",
+    "display_name": "Spiritomb Fragment",
+    "index": 1835,
+    "description": "",
+    "cost": 240,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

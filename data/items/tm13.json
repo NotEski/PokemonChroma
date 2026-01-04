@@ -1,0 +1,13 @@
+{
+    "name": "tm13",
+    "display_name": "TM13",
+    "index": 317,
+    "description": "Teaches Ice Beam to a compatible Pok\u00e9mon. (Gen II: Snore)",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

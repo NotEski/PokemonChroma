@@ -1,0 +1,13 @@
+{
+    "name": "mimikium_z_held",
+    "display_name": "Mimikium Z",
+    "index": 970,
+    "description": "XXX new effect for mimikium-z--held",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

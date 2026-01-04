@@ -1,0 +1,13 @@
+{
+    "name": "medichamite",
+    "display_name": "Medichamite",
+    "index": 704,
+    "description": "Held: Allows Medicham to Mega Evolve into Mega Medicham.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,17 @@
+{
+    "name": "pearl",
+    "display_name": "Pearl",
+    "index": 88,
+    "description": "Sell for 700 Pok\u00e9dollars, or to Ore Collector for 1400 Pok\u00e9dollars.",
+    "cost": 2000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": [
+        "clamperl",
+        "cloyster",
+        "shellder"
+    ]
+}

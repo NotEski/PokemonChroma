@@ -1,0 +1,13 @@
+{
+    "name": "teal_mask",
+    "display_name": "Teal Mask",
+    "index": 2102,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

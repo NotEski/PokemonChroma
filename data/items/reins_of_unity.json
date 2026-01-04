@@ -1,0 +1,13 @@
+{
+    "name": "reins_of_unity",
+    "display_name": "Reins of Unity",
+    "index": 1658,
+    "description": "Cords that shine when you hold them up to the light. The people of old times presented these to the King of Bountiful Harvests to express their gratitude.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

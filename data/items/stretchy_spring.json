@@ -1,0 +1,13 @@
+{
+    "name": "stretchy_spring",
+    "display_name": "Stretchy Spring",
+    "index": 1024,
+    "description": "A thin small spring. It\u2019s totally stretched out, and what it\u2019s used for is unknown.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

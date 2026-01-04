@@ -1,0 +1,19 @@
+{
+    "name": "pp_up",
+    "display_name": "PP Up",
+    "index": 51,
+    "description": "Raises a move\u2019s max PP by 20%.",
+    "cost": 10000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

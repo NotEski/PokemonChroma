@@ -1,0 +1,15 @@
+{
+    "name": "air_balloon",
+    "display_name": "Air Balloon",
+    "index": 584,
+    "description": "Held: Grants immunity to Ground-type moves, Spikes, and Toxic Spikes. Consumed when the holder takes damage from a move.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "drifblim"
+    ]
+}

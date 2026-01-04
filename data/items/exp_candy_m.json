@@ -1,0 +1,13 @@
+{
+    "name": "exp_candy_m",
+    "display_name": "Exp. Candy M",
+    "index": 1184,
+    "description": "A candy that is packed with energy. When consumed, it will grant a single Pok\u00e9mon a moderate amount of Exp. Points.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "vitamins",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "ss_ticket_letsgo",
+    "display_name": "S.S. Ticket",
+    "index": 1021,
+    "description": "The ticket required to board the S.S. Anne. It has a drawing of a ship on it.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

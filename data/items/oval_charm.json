@@ -1,0 +1,13 @@
+{
+    "name": "oval_charm",
+    "display_name": "Oval Charm",
+    "index": 674,
+    "description": "Doubles the chance of two Pok\u00e9mon producing an egg at the daycare every 255 steps.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

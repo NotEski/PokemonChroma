@@ -1,0 +1,13 @@
+{
+    "name": "eevium_z_held",
+    "display_name": "Eevium Z",
+    "index": 846,
+    "description": "Held: Allows Eevee to upgrade Last Resort into Extreme Evoboost.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

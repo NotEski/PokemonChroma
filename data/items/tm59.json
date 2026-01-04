@@ -1,0 +1,13 @@
+{
+    "name": "tm59",
+    "display_name": "TM59",
+    "index": 363,
+    "description": "Teaches Incinerate to a compatible Pok\u00e9mon. (Gen IV: Dragon Pulse)",
+    "cost": 100000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

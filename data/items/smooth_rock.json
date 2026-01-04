@@ -1,0 +1,17 @@
+{
+    "name": "smooth_rock",
+    "display_name": "Smooth Rock",
+    "index": 260,
+    "description": "Held: Sandstorm by the holder lasts 8 rounds instead of 5.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active",
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

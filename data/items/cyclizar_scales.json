@@ -1,0 +1,13 @@
+{
+    "name": "cyclizar_scales",
+    "display_name": "Cyclizar Scales",
+    "index": 1925,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

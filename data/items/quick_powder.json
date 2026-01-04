@@ -1,0 +1,17 @@
+{
+    "name": "quick_powder",
+    "display_name": "Quick Powder",
+    "index": 251,
+    "description": "Doubles Ditto\u2019s Speed when held. The boost is lost after transforming.",
+    "cost": 1000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "ditto"
+    ]
+}

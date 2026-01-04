@@ -1,0 +1,13 @@
+{
+    "name": "rm_1_key",
+    "display_name": "Rm. 1 Key",
+    "index": 538,
+    "description": "Unlocks room 1 on the Abandoned Ship.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

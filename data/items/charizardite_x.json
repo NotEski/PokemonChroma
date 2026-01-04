@@ -1,0 +1,13 @@
+{
+    "name": "charizardite_x",
+    "display_name": "Charizardite X",
+    "index": 699,
+    "description": "Held: Allows Charizard to Mega Evolve into Mega Charizard X.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "red_flag_pick",
+    "display_name": "Red-Flag Pick",
+    "index": 2038,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

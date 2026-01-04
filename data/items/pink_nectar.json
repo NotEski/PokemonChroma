@@ -1,0 +1,13 @@
+{
+    "name": "pink_nectar",
+    "display_name": "Pink Nectar",
+    "index": 891,
+    "description": "Changes Oricorio to Pa\u2019u Style.",
+    "cost": 300,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

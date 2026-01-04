@@ -1,0 +1,13 @@
+{
+    "name": "shalour_sable",
+    "display_name": "Shalour Sable",
+    "index": 765,
+    "description": "Cures any major status ailment and confusion.",
+    "cost": 350,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

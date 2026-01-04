@@ -1,0 +1,13 @@
+{
+    "name": "lagigaton_ball",
+    "display_name": "Gigaton Ball",
+    "index": 2225,
+    "description": "Upgraded version of the Leaden Ball. Doesn't fly far, but is more effective if the Pok\u00e9mon hasn't noticed the player.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "standard_balls",
+    "held_by_pokemon": []
+}

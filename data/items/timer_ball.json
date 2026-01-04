@@ -1,0 +1,18 @@
+{
+    "name": "timer_ball",
+    "display_name": "Timer Ball",
+    "index": 10,
+    "description": "Tries to catch a wild Pok\u00e9mon. Success rate increases by 0.1\u00d7 (Gen V: 0.3\u00d7) every turn, to a max of 4\u00d7.",
+    "cost": 1000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle"
+    ],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "special_balls",
+    "held_by_pokemon": []
+}

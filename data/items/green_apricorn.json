@@ -1,0 +1,13 @@
+{
+    "name": "green_apricorn",
+    "display_name": "Green Apricorn",
+    "index": 461,
+    "description": "Used to make a Friend Ball.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "apricorn_box",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,15 @@
+{
+    "name": "misty_seed",
+    "display_name": "Misty Seed",
+    "index": 900,
+    "description": "Held: Consumed on Misty Terrain and raises the holder\u2019s Special Defense by one stage.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "comfey"
+    ]
+}

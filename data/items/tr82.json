@@ -1,0 +1,13 @@
+{
+    "name": "tr82",
+    "display_name": "TR82",
+    "index": 1270,
+    "description": "The user attacks the target with stored power. The more the user\u2019s stats are raised, the greater the move\u2019s power.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

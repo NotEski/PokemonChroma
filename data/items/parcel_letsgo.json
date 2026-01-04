@@ -1,0 +1,13 @@
+{
+    "name": "parcel_letsgo",
+    "display_name": "Parcel",
+    "index": 1022,
+    "description": "A parcel to be delivered to Professor Oak from Viridian City\u2019s Pok\u00e9 Mart.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

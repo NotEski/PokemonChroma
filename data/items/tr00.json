@@ -1,0 +1,13 @@
+{
+    "name": "tr00",
+    "display_name": "TR00",
+    "index": 1188,
+    "description": "A frenetic dance to uplift the fighting spirit. This sharply raises the user\u2019s Attack stat.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

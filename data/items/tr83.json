@@ -1,0 +1,13 @@
+{
+    "name": "tr83",
+    "display_name": "TR83",
+    "index": 1271,
+    "description": "The user teleports using a strange power and switches places with one of its allies.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

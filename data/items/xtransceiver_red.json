@@ -1,0 +1,13 @@
+{
+    "name": "xtransceiver_red",
+    "display_name": "Xtransceiver",
+    "index": 922,
+    "description": "XXX new effect for xtranceiver--red",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

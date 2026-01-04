@@ -1,0 +1,13 @@
+{
+    "name": "strange_souvenir",
+    "display_name": "Strange Souvenir",
+    "index": 727,
+    "description": "Vendor trash.",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

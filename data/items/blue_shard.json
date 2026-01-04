@@ -1,0 +1,17 @@
+{
+    "name": "blue_shard",
+    "display_name": "Blue Shard",
+    "index": 73,
+    "description": "No effect. Can be traded for items or moves.",
+    "cost": 1000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": [
+        "clamperl"
+    ]
+}

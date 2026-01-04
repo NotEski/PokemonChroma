@@ -1,0 +1,13 @@
+{
+    "name": "armorite_ore",
+    "display_name": "Armorite Ore",
+    "index": 1639,
+    "description": "Rare ore that can be obtained on the Isle of Armor. Something good will happen if you give it to a collector on the Isle of Armor.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "binding_band",
+    "display_name": "Binding Band",
+    "index": 587,
+    "description": "Held: Doubles the per-turn damage of multi-turn trapping moves.",
+    "cost": 4000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "wishing_piece",
+    "display_name": "Wishing Piece",
+    "index": 1310,
+    "description": "Throw one into a Pok\u00e9mon Den to attract a wild Dynamax Pok\u00e9mon.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 50,
+    "baby_trigger_for": null,
+    "category": "collectibles",
+    "held_by_pokemon": []
+}

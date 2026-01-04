@@ -1,0 +1,13 @@
+{
+    "name": "black_augurite",
+    "display_name": "Black Augurite",
+    "index": 10001,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

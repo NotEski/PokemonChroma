@@ -1,0 +1,13 @@
+{
+    "name": "strawberry_sweet",
+    "display_name": "Strawberry Sweet",
+    "index": 1167,
+    "description": "A strawberry-shaped sweet. When a Milcery holds this, it will spin around happily.",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

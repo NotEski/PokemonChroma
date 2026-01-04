@@ -1,0 +1,13 @@
+{
+    "name": "legendary_clue_3",
+    "display_name": "Legendary Clue 3",
+    "index": 1646,
+    "description": "A clue about the legend of bird Pok\u00e9mon. It\u2019s written by Peony and has a unique drawing.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

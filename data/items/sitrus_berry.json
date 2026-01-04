@@ -1,0 +1,27 @@
+{
+    "name": "sitrus_berry",
+    "display_name": "Sitrus Berry",
+    "index": 135,
+    "description": "Held: Consumed at 1/2 max HP to recover 1/4 max HP.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "audino",
+        "audino_mega",
+        "bibarel",
+        "furret",
+        "gulpin",
+        "linoone",
+        "raticate",
+        "swalot",
+        "teddiursa",
+        "trumbeak",
+        "ursaring"
+    ]
+}

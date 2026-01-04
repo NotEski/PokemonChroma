@@ -1,0 +1,13 @@
+{
+    "name": "tr32",
+    "display_name": "TR32",
+    "index": 1220,
+    "description": "The user crunches up the target with sharp fangs. This may also lower the target\u2019s Defense stat.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

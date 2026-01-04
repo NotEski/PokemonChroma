@@ -1,0 +1,13 @@
+{
+    "name": "tr71",
+    "display_name": "TR71",
+    "index": 1259,
+    "description": "The user whips up a storm of leaves around the target. The attack\u2019s recoil harshly lowers the user\u2019s Sp. Atk stat.",
+    "cost": 16000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 130,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

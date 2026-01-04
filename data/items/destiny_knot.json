@@ -1,0 +1,16 @@
+{
+    "name": "destiny_knot",
+    "display_name": "Destiny Knot",
+    "index": 257,
+    "description": "Held: Infatuates opposing Pok\u00e9mon when holder is inflicted with infatuation.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

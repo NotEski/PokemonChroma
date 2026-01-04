@@ -1,0 +1,36 @@
+{
+    "name": "poison_barb",
+    "display_name": "Poison Barb",
+    "index": 222,
+    "description": "Held: Poison-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "poison",
+    "fling_power": 70,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "arbok",
+        "beedrill",
+        "beedrill_mega",
+        "budew",
+        "cacnea",
+        "cacturne",
+        "drapion",
+        "mareanie",
+        "qwilfish",
+        "roselia",
+        "roserade",
+        "scolipede",
+        "skorupi",
+        "tentacool",
+        "tentacruel",
+        "toxapex",
+        "venipede",
+        "vespiquen",
+        "whirlipede"
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "name": "oran_berry",
+    "display_name": "Oran Berry",
+    "index": 132,
+    "description": "Held: Consumed at 1/2 max HP to recover 10 HP.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "audino",
+        "audino_mega",
+        "bibarel",
+        "furret",
+        "gulpin",
+        "igglybuff",
+        "jigglypuff",
+        "linoone",
+        "panpour",
+        "pansage",
+        "pansear",
+        "pichu",
+        "pikachu",
+        "pikipek",
+        "raichu",
+        "raticate",
+        "sentret",
+        "shuckle",
+        "simipour",
+        "simisage",
+        "simisear",
+        "swalot",
+        "teddiursa",
+        "ursaring",
+        "wigglytuff",
+        "zigzagoon"
+    ]
+}

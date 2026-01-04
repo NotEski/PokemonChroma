@@ -1,0 +1,13 @@
+{
+    "name": "tm119",
+    "display_name": "TM119",
+    "index": 1962,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

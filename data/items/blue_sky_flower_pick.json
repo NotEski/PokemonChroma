@@ -1,0 +1,13 @@
+{
+    "name": "blue_sky_flower_pick",
+    "display_name": "Blue-Sky Flower Pick",
+    "index": 2091,
+    "description": "",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

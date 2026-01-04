@@ -1,0 +1,13 @@
+{
+    "name": "passimian_fur",
+    "display_name": "Passimian Fur",
+    "index": 1882,
+    "description": "",
+    "cost": 120,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "venusaurite",
+    "display_name": "Venusaurite",
+    "index": 698,
+    "description": "Held: Allows Venusaur to Mega Evolve into Mega Venusaur.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

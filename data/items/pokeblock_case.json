@@ -1,0 +1,13 @@
+{
+    "name": "pokeblock_case",
+    "display_name": "Pok\u00e9block Case",
+    "index": 532,
+    "description": "Holds Pok\u00e9blocks.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

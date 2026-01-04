@@ -1,0 +1,19 @@
+{
+    "name": "max_ether",
+    "display_name": "Max Ether",
+    "index": 39,
+    "description": "Restores PP to full for one move.",
+    "cost": 2000,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "pp_recovery",
+    "held_by_pokemon": []
+}

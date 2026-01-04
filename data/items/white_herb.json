@@ -1,0 +1,16 @@
+{
+    "name": "white_herb",
+    "display_name": "White Herb",
+    "index": 191,
+    "description": "Held: Resets all lowered stats to normal at end of turn. Consumed after use.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": "herb_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

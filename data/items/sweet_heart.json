@@ -1,0 +1,13 @@
+{
+    "name": "sweet_heart",
+    "display_name": "Sweet Heart",
+    "index": 567,
+    "description": "Restores 20 HP.",
+    "cost": 3000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

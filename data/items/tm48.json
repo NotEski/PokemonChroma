@@ -1,0 +1,13 @@
+{
+    "name": "tm48",
+    "display_name": "TM48",
+    "index": 352,
+    "description": "Teaches Round to a compatible Pok\u00e9mon. (Gen IV & III: Skill Swap Gen II: Fire Punch Gen I: Rock Slide)",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

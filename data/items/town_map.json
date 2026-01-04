@@ -1,0 +1,13 @@
+{
+    "name": "town_map",
+    "display_name": "Town Map",
+    "index": 419,
+    "description": "Use to see the overworld map.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

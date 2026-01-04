@@ -1,0 +1,13 @@
+{
+    "name": "radiant_petal",
+    "display_name": "Radiant Petal",
+    "index": 1650,
+    "description": "A single petal that the King of Bountiful Harvests gave you. It radiates faint light.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

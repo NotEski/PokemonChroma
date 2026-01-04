@@ -1,0 +1,13 @@
+{
+    "name": "tin_of_beans",
+    "display_name": "Tin of Beans",
+    "index": 1147,
+    "description": "One of the many ingredients that can be used for cooking at your camp. When simmered, the beans suffuse a dish with their mild flavor.",
+    "cost": 400,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

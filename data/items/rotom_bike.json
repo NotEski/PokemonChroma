@@ -1,0 +1,13 @@
+{
+    "name": "rotom_bike",
+    "display_name": "Rotom Bike",
+    "index": 1143,
+    "description": "This bike can be combined with the Pok\u00e9mon Rotom to use a turbo boost.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

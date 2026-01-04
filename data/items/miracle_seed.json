@@ -1,0 +1,25 @@
+{
+    "name": "miracle_seed",
+    "display_name": "Miracle Seed",
+    "index": 216,
+    "description": "Held: Grass-Type moves from holder do 20% more damage.",
+    "cost": 1000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "type_enhancement",
+    "held_by_pokemon": [
+        "cherrim",
+        "cherubi",
+        "fomantis",
+        "gourgeist_super",
+        "lurantis",
+        "lurantis_totem",
+        "maractus",
+        "pumpkaboo_super"
+    ]
+}

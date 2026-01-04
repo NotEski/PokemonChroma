@@ -1,0 +1,15 @@
+{
+    "name": "green_scarf",
+    "display_name": "Green Scarf",
+    "index": 240,
+    "description": "Raises the holder\u2019s Smartness while in a contest.",
+    "cost": 100,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "scarves",
+    "held_by_pokemon": []
+}

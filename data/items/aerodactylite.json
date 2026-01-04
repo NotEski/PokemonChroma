@@ -1,0 +1,13 @@
+{
+    "name": "aerodactylite",
+    "display_name": "Aerodactylite",
+    "index": 711,
+    "description": "Held: Allows Aerodactyl to Mega Evolve into Mega Aerodactyl.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

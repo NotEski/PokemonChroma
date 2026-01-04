@@ -1,0 +1,19 @@
+{
+    "name": "max_potion",
+    "display_name": "Max Potion",
+    "index": 24,
+    "description": "Restores HP to full.",
+    "cost": 2500,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

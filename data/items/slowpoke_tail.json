@@ -1,0 +1,13 @@
+{
+    "name": "slowpoke_tail",
+    "display_name": "Slowpoke Tail",
+    "index": 473,
+    "description": "A tasty tail that sells for a high price.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

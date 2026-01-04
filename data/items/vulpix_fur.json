@@ -1,0 +1,13 @@
+{
+    "name": "vulpix_fur",
+    "display_name": "Vulpix Fur",
+    "index": 2122,
+    "description": "",
+    "cost": 35,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

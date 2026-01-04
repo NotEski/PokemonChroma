@@ -1,0 +1,13 @@
+{
+    "name": "hawlucha_down",
+    "display_name": "Hawlucha Down",
+    "index": 1866,
+    "description": "",
+    "cost": 100,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "super_rod",
+    "display_name": "Super Rod",
+    "index": 424,
+    "description": "Used to catch Pok\u00e9mon in bodies of water.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

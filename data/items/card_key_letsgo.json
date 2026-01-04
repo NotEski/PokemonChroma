@@ -1,0 +1,13 @@
+{
+    "name": "card_key_letsgo",
+    "display_name": "Card Key",
+    "index": 1023,
+    "description": "A card key that unlocks doors in Silph Co.\u2019s head office in Saffron City.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

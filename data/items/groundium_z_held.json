@@ -1,0 +1,13 @@
+{
+    "name": "groundium_z_held",
+    "display_name": "Groundium Z",
+    "index": 825,
+    "description": "Held: Allows a Pok\u00e9mon to use the Z-move equivalents of its Ground moves.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "z_crystals",
+    "held_by_pokemon": []
+}

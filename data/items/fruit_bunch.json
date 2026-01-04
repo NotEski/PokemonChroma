@@ -1,0 +1,13 @@
+{
+    "name": "fruit_bunch",
+    "display_name": "Fruit Bunch",
+    "index": 1314,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The syrupy fruits give off a strong tropical feel.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

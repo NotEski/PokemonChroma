@@ -1,0 +1,13 @@
+{
+    "name": "tm192",
+    "display_name": "TM192",
+    "index": 2181,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

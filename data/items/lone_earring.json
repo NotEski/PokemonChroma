@@ -1,0 +1,13 @@
+{
+    "name": "lone_earring",
+    "display_name": "Lone Earring",
+    "index": 1027,
+    "description": "A single earring that somebody dropped.",
+    "cost": 600,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

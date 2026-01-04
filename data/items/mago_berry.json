@@ -1,0 +1,15 @@
+{
+    "name": "mago_berry",
+    "display_name": "Mago Berry",
+    "index": 138,
+    "description": "Held: Consumed at 1/2 max HP to restore 1/8 max HP. Confuses Pok\u00e9mon that dislike sweet flavor.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "picky_healing",
+    "held_by_pokemon": []
+}

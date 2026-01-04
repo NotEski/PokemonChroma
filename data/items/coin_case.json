@@ -1,0 +1,13 @@
+{
+    "name": "coin_case",
+    "display_name": "Coin Case",
+    "index": 421,
+    "description": "Holds coins for the Game Corner.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

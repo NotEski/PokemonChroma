@@ -1,0 +1,13 @@
+{
+    "name": "discount_coupon",
+    "display_name": "Discount Coupon",
+    "index": 726,
+    "description": "Can be used at a boutique for a 50% discount. Consumed once used.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "loot",
+    "held_by_pokemon": []
+}

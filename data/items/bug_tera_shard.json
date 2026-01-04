@@ -1,0 +1,13 @@
+{
+    "name": "bug_tera_shard",
+    "display_name": "Bug Tera Shard",
+    "index": 1689,
+    "description": "",
+    "cost": 500,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tera_shard",
+    "held_by_pokemon": []
+}

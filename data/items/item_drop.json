@@ -1,0 +1,13 @@
+{
+    "name": "item_drop",
+    "display_name": "Item Drop",
+    "index": 653,
+    "description": "Forces a friendly Pok\u00e9mon to drop its held item.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

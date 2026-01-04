@@ -1,0 +1,13 @@
+{
+    "name": "moomoo_cheese",
+    "display_name": "Moomoo Cheese",
+    "index": 1315,
+    "description": "One of the many ingredients that can be used for cooking at your camp. Melted cheese can really give a curry some richness.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

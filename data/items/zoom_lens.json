@@ -1,0 +1,16 @@
+{
+    "name": "zoom_lens",
+    "display_name": "Zoom Lens",
+    "index": 253,
+    "description": "Held: Provides a 1/5 (20%) boost in accuracy if the holder moves after the target.",
+    "cost": 4000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

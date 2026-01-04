@@ -1,0 +1,16 @@
+{
+    "name": "exp_share",
+    "display_name": "Exp. Share",
+    "index": 193,
+    "description": "Held: Half the experience from a battle is split between Pok\u00e9mon holding this item.",
+    "cost": 0,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "training",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "acro_bike",
+    "display_name": "Acro Bike",
+    "index": 528,
+    "description": "More maneuverable than the Mach Bike, and allows hopping along rails.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

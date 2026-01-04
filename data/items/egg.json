@@ -1,0 +1,13 @@
+{
+    "name": "egg",
+    "display_name": "Egg",
+    "index": 1744,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

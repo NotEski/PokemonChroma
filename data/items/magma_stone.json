@@ -1,0 +1,13 @@
+{
+    "name": "magma_stone",
+    "display_name": "Magma Stone",
+    "index": 435,
+    "description": "Magma is sealed inside.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

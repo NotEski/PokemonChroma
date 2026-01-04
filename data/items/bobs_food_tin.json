@@ -1,0 +1,13 @@
+{
+    "name": "bobs_food_tin",
+    "display_name": "Bob\u2019s Food Tin",
+    "index": 1145,
+    "description": "One of the many ingredients that can be used for cooking at your camp. The tinned food that Bob sells is curiously popular in Galar.",
+    "cost": 950,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

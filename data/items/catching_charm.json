@@ -1,0 +1,13 @@
+{
+    "name": "catching_charm",
+    "display_name": "Catching Charm",
+    "index": 1325,
+    "description": "Holding it is said to increase the chance of getting a critical catch. Curiously, the charm doesn\u2019t shake much.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

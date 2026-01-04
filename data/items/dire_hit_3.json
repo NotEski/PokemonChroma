@@ -1,0 +1,13 @@
+{
+    "name": "dire_hit_3",
+    "display_name": "Dire Hit 3",
+    "index": 656,
+    "description": "Raises critical hit rate by three stages in battle. Wonder Launcher only.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "miracle_shooter",
+    "held_by_pokemon": []
+}

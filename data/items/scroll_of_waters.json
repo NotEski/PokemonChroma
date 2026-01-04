@@ -1,0 +1,13 @@
+{
+    "name": "scroll_of_waters",
+    "display_name": "Scroll of Waters",
+    "index": 1676,
+    "description": "",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

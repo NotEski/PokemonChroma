@@ -1,0 +1,13 @@
+{
+    "name": "key_to_room_4",
+    "display_name": "Key to Room 4",
+    "index": 775,
+    "description": "Unlocks the door to Room 4 in Sea Mauville.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

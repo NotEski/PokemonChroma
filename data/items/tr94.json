@@ -1,0 +1,13 @@
+{
+    "name": "tr94",
+    "display_name": "TR94",
+    "index": 1282,
+    "description": "The user fiercely attacks the target using its entire body.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 95,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

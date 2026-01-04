@@ -1,0 +1,13 @@
+{
+    "name": "aggronite",
+    "display_name": "Aggronite",
+    "index": 706,
+    "description": "Held: Allows Aggron to Mega Evolve into Mega Aggron.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

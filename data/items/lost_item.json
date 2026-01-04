@@ -1,0 +1,13 @@
+{
+    "name": "lost_item",
+    "display_name": "Lost Item",
+    "index": 478,
+    "description": "A Pok\u00e9 Doll lost by the Copycat who lives in Saffron City. Trade for a Pass.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "tr01",
+    "display_name": "TR01",
+    "index": 1189,
+    "description": "The user drops onto the target with its full body weight. This may also leave the target with paralysis.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 85,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

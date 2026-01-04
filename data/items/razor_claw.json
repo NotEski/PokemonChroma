@@ -1,0 +1,21 @@
+{
+    "name": "razor_claw",
+    "display_name": "Razor Claw",
+    "index": 303,
+    "description": "Held: Raises the holder\u2019s critical hit ratio by one stage. Held by a Sneasel while levelling up at night: Holder evolves into Weavile.",
+    "cost": 5000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": [
+        "hakamo_o",
+        "jangmo_o",
+        "kommo_o",
+        "kommo_o_totem"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "houndour_fang",
+    "display_name": "Houndour Fang",
+    "index": 1796,
+    "description": "",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

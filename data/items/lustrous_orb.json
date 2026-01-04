@@ -1,0 +1,15 @@
+{
+    "name": "lustrous_orb",
+    "display_name": "Lustrous Orb",
+    "index": 113,
+    "description": "Boosts the damage from Palkia\u2019s Dragon-type and Water-type moves by 20%.",
+    "cost": 0,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 60,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": []
+}

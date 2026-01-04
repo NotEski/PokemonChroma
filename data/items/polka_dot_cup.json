@@ -1,0 +1,13 @@
+{
+    "name": "polka_dot_cup",
+    "display_name": "Polka-Dot Cup",
+    "index": 2024,
+    "description": "",
+    "cost": 800,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "picnic",
+    "held_by_pokemon": []
+}

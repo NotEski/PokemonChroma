@@ -1,0 +1,21 @@
+{
+    "name": "deep_sea_scale",
+    "display_name": "Deep Sea Scale",
+    "index": 204,
+    "description": "Doubles Clamperl\u2019s Special Defense. Traded on a Clamperl: Holder evolves into Gorebyss.",
+    "cost": 2000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "species_specific",
+    "held_by_pokemon": [
+        "basculin_blue_striped",
+        "chinchou",
+        "gorebyss",
+        "lanturn",
+        "relicanth"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "name": "tm89",
+    "display_name": "TM89",
+    "index": 393,
+    "description": "Teaches U-turn to a compatible Pok\u00e9mon.",
+    "cost": 20000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "dropped_item",
+    "display_name": "Dropped Item",
+    "index": 679,
+    "description": "Returned to Curtis or Yancy as part of a sidequest.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

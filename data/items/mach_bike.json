@@ -1,0 +1,13 @@
+{
+    "name": "mach_bike",
+    "display_name": "Mach Bike",
+    "index": 527,
+    "description": "Faster than the Acro Bike, and can ride up sandy slopes and across cracked floors.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

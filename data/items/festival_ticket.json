@@ -1,0 +1,13 @@
+{
+    "name": "festival_ticket",
+    "display_name": "Festival Ticket",
+    "index": 881,
+    "description": "Hosts a mission in Festival Plaza.",
+    "cost": 10,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

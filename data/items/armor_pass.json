@@ -1,0 +1,13 @@
+{
+    "name": "armor_pass",
+    "display_name": "Armor Pass",
+    "index": 1635,
+    "description": "A pass to go to the Isle of Armor. Show it to the rail staff at Wedgehurst Station.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,19 @@
+{
+    "name": "soda_pop",
+    "display_name": "Soda Pop",
+    "index": 31,
+    "description": "Restores 60 HP.",
+    "cost": 300,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle",
+        "usable_overworld"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "healing",
+    "held_by_pokemon": []
+}

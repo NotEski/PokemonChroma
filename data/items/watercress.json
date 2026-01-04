@@ -1,0 +1,13 @@
+{
+    "name": "watercress",
+    "display_name": "Watercress",
+    "index": 1760,
+    "description": "",
+    "cost": 270,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "rainbow_wing",
+    "display_name": "Rainbow Wing",
+    "index": 482,
+    "description": "Summons Ho-Oh at the top of the Bell Tower.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "vs_seeker",
+    "display_name": "Vs. Seeker",
+    "index": 420,
+    "description": "Allows rebattling of on-screen trainers. 100 steps to recharge.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

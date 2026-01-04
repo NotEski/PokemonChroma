@@ -1,0 +1,13 @@
+{
+    "name": "tr11",
+    "display_name": "TR11",
+    "index": 1199,
+    "description": "The target is hit by a strong telekinetic force. This may also lower the target\u2019s Sp. Def stat.",
+    "cost": 10000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 90,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

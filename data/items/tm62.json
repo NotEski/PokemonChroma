@@ -1,0 +1,13 @@
+{
+    "name": "tm62",
+    "display_name": "TM62",
+    "index": 366,
+    "description": "Teaches Acrobatics to a compatible Pok\u00e9mon. (Gen IV: Silver Wind)",
+    "cost": 30000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

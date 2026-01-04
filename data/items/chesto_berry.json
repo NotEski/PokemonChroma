@@ -1,0 +1,25 @@
+{
+    "name": "chesto_berry",
+    "display_name": "Chesto Berry",
+    "index": 127,
+    "description": "Held: Consumed when asleep to cure sleep.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": "berry_effect",
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "medicine",
+    "held_by_pokemon": [
+        "cinccino",
+        "exploud",
+        "loudred",
+        "mimikyu_disguised",
+        "mimikyu_totem_disguised",
+        "minccino",
+        "snorlax",
+        "spinda",
+        "whismur"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "name": "charti_berry",
+    "display_name": "Charti Berry",
+    "index": 172,
+    "description": "Held: Consumed when struck by a super-effective Rock-type attack to halve the damage.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "type_protection",
+    "held_by_pokemon": [
+        "swellow",
+        "taillow"
+    ]
+}

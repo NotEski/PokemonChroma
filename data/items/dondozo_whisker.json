@@ -1,0 +1,13 @@
+{
+    "name": "dondozo_whisker",
+    "display_name": "Dondozo Whisker",
+    "index": 1913,
+    "description": "",
+    "cost": 160,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "crown_pass",
+    "display_name": "Crown Pass",
+    "index": 1648,
+    "description": "A pass to go to the Crown Tundra. Show it to the rail staff at Wedgehurst Station.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

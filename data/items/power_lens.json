@@ -1,0 +1,16 @@
+{
+    "name": "power_lens",
+    "display_name": "Power Lens",
+    "index": 268,
+    "description": "Held: Holder gains 4 Special Attack effort values, but has halved Speed in battle.",
+    "cost": 3000,
+    "attributes": [
+        "holdable",
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 70,
+    "baby_trigger_for": null,
+    "category": "effort_training",
+    "held_by_pokemon": []
+}

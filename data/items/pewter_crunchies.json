@@ -1,0 +1,13 @@
+{
+    "name": "pewter_crunchies",
+    "display_name": "Pewter Crunchies",
+    "index": 1039,
+    "description": "Pewter City\u2019s famous crunchy snack. They can be used to heal all status conditions of a single Pok\u00e9mon.",
+    "cost": 250,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "status_cures",
+    "held_by_pokemon": []
+}

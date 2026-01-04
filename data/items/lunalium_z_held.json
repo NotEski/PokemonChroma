@@ -1,0 +1,13 @@
+{
+    "name": "lunalium_z_held",
+    "display_name": "Lunalium Z",
+    "index": 968,
+    "description": "XXX new effect for lunalium-z--held",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

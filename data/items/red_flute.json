@@ -1,0 +1,18 @@
+{
+    "name": "red_flute",
+    "display_name": "Red Flute",
+    "index": 67,
+    "description": "Cures attraction.",
+    "cost": 20,
+    "attributes": [
+        "consumable",
+        "countable",
+        "holdable",
+        "usable_in_battle"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "flutes",
+    "held_by_pokemon": []
+}

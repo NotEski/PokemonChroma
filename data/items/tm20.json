@@ -1,0 +1,13 @@
+{
+    "name": "tm20",
+    "display_name": "TM20",
+    "index": 324,
+    "description": "Teaches Safeguard to a compatible Pok\u00e9mon. (Gen II: Endure Gen I: Rage)",
+    "cost": 100000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

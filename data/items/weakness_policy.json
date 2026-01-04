@@ -1,0 +1,13 @@
+{
+    "name": "weakness_policy",
+    "display_name": "Weakness Policy",
+    "index": 682,
+    "description": "Held: When the holder is hit by a super effective move, its Attack and Special Attack raise by two stages.",
+    "cost": 1000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "held_items",
+    "held_by_pokemon": []
+}

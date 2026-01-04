@@ -1,0 +1,13 @@
+{
+    "name": "fancy_apple",
+    "display_name": "Fancy Apple",
+    "index": 1153,
+    "description": "One of the many ingredients that can be used for cooking at your camp. An apple chosen above others. It has spectacular form and a brilliant sheen.",
+    "cost": 2200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 20,
+    "baby_trigger_for": null,
+    "category": "curry_ingredients",
+    "held_by_pokemon": []
+}

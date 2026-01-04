@@ -1,0 +1,15 @@
+{
+    "name": "fire_stone",
+    "display_name": "Fire Stone",
+    "index": 82,
+    "description": "Evolves an Eevee into Flareon, a Growlithe into Arcanine, a Pansear into Simisear, or a Vulpix into Ninetales.",
+    "cost": 3000,
+    "attributes": [
+        "underground"
+    ],
+    "fling_effect": null,
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "evolution",
+    "held_by_pokemon": []
+}

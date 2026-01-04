@@ -1,0 +1,13 @@
+{
+    "name": "razz_berry",
+    "display_name": "Razz Berry",
+    "index": 141,
+    "description": "Used for creating Pok\u00e9Blocks and Poffins.",
+    "cost": 200,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "baking_only",
+    "held_by_pokemon": []
+}

@@ -1,0 +1,13 @@
+{
+    "name": "autograph",
+    "display_name": "Autograph",
+    "index": 1006,
+    "description": "The autograph you got from the Vermilion City Gym Leader, Lt. Surge. He wrote, \u201cGood luck!\u201d",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

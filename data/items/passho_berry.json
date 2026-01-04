@@ -1,0 +1,20 @@
+{
+    "name": "passho_berry",
+    "display_name": "Passho Berry",
+    "index": 162,
+    "description": "Held: Consumed when struck by a super-effective Water-type attack to halve the damage.",
+    "cost": 80,
+    "attributes": [
+        "holdable_active"
+    ],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "type_protection",
+    "held_by_pokemon": [
+        "donphan",
+        "pansear",
+        "phanpy",
+        "simisear"
+    ]
+}

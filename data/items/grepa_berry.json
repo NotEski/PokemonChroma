@@ -1,0 +1,13 @@
+{
+    "name": "grepa_berry",
+    "display_name": "Grepa Berry",
+    "index": 150,
+    "description": "Drops Special Defense Effort Values by 10 and raises happiness.",
+    "cost": 80,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 10,
+    "baby_trigger_for": null,
+    "category": "effort_drop",
+    "held_by_pokemon": []
+}

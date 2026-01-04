@@ -1,0 +1,13 @@
+{
+    "name": "suite_key",
+    "display_name": "Suite Key",
+    "index": 428,
+    "description": "Opens a locked building in the Lakeside Resort.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "event_items",
+    "held_by_pokemon": []
+}

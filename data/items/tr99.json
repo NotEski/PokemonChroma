@@ -1,0 +1,13 @@
+{
+    "name": "tr99",
+    "display_name": "TR99",
+    "index": 1287,
+    "description": "The user attacks by slamming its body into the target. The higher the user\u2019s Defense, the more damage it can inflict on the target.",
+    "cost": 6000,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "all_machines",
+    "held_by_pokemon": []
+}

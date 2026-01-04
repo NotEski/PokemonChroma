@@ -1,0 +1,13 @@
+{
+    "name": "gb_sounds",
+    "display_name": "GB Sounds",
+    "index": 484,
+    "description": "Use to listen to GameBoy era audio.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

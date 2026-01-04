@@ -1,0 +1,13 @@
+{
+    "name": "blastoisinite",
+    "display_name": "Blastoisinite",
+    "index": 700,
+    "description": "Held: Allows Blastoise to Mega Evolve into Mega Blastoise.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 80,
+    "baby_trigger_for": null,
+    "category": "mega_stones",
+    "held_by_pokemon": []
+}

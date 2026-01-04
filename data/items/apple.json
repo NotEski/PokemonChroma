@@ -1,0 +1,13 @@
+{
+    "name": "apple",
+    "display_name": "Apple",
+    "index": 1753,
+    "description": "",
+    "cost": 130,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "sandwich_ingredients",
+    "held_by_pokemon": []
+}

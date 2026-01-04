@@ -1,0 +1,13 @@
+{
+    "name": "geodude_fragment",
+    "display_name": "Geodude Fragment",
+    "index": 2125,
+    "description": "",
+    "cost": 30,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "tm_materials",
+    "held_by_pokemon": []
+}

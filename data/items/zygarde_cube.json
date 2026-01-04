@@ -1,0 +1,13 @@
+{
+    "name": "zygarde_cube",
+    "display_name": "Zygarde Cube",
+    "index": 884,
+    "description": "Contains collected Zygarde cells/cores. Can teach Zygarde moves.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "gameplay",
+    "held_by_pokemon": []
+}

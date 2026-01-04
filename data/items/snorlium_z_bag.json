@@ -1,0 +1,13 @@
+{
+    "name": "snorlium_z_bag",
+    "display_name": "Snorlium Z",
+    "index": 963,
+    "description": "XXX new effect for snorlium-z--bag",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}

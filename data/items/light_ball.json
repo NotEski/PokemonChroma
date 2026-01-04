@@ -1,0 +1,14 @@
+{
+    "name": "light_ball",
+    "display_name": "Light Ball",
+    "index": 213,
+    "description": "Doubles Pikachu\u2019s Attack and Special Attack. Breed on Pikachu or Raichu: Pichu Egg will have Volt Tackle.",
+    "cost": 1000,
+    "attributes": [
+        "holdable"
+    ],
+    "fling_effect": "paralyze",
+    "fling_power": 30,
+    "baby_trigger_for": null,
+    "category": "species_specific"
+}

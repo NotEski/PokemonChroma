@@ -1,0 +1,13 @@
+{
+    "name": "carrot_seeds",
+    "display_name": "Carrot Seeds",
+    "index": 1656,
+    "description": "Seeds to plant in a field. The kind of carrot you\u2019ll get is determined by which field you plant the seeds in.",
+    "cost": 20,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "plot_advancement",
+    "held_by_pokemon": []
+}

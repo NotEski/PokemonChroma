@@ -1,0 +1,13 @@
+{
+    "name": "common_stone",
+    "display_name": "Common Stone",
+    "index": 762,
+    "description": "Unknown.",
+    "cost": 0,
+    "attributes": [],
+    "fling_effect": null,
+    "fling_power": 0,
+    "baby_trigger_for": null,
+    "category": "unused",
+    "held_by_pokemon": []
+}
