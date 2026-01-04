@@ -58,8 +58,5 @@ temp_assets/*
 # Ignore Advanced AI System files
 AdvancedAI/Advanced AI System/*
 
-# Data files
-
-
 
 *.sqlite
