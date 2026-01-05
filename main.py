@@ -604,6 +604,4 @@ def launch_battle_inspector():
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
-print(status_repository.list())
-
 launch_battle_inspector()

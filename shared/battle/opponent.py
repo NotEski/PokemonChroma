@@ -1,7 +1,6 @@
 # Opponent script
 
 from pydantic import BaseModel, ConfigDict
-from abc import abstractmethod
 from typing import List
 
 from shared.pokemon.pokemon import Pokemon
@@ -19,7 +18,6 @@ class Opponent(BaseModel):
         super().__init__(**data)
         self.generate_battlemons()
 
-    @abstractmethod
     def get_all_pokemons(self) -> List[Pokemon]:
         pass
 
@@ -47,8 +45,7 @@ class Opponent(BaseModel):
         for battlemon in self.get_all_battlemons():
             if not battlemon.is_fainted:
                 return battlemon
-            
-    @abstractmethod
+
     def get_trainer(self) -> Trainer:
         pass
 
