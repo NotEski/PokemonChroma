@@ -601,6 +601,9 @@ def launch_battle_inspector():
     window = BattleInspectorWindow()
     window.run()
 
+from engine.rendering.window_ai import main as rendering_main
+
+rendering_main()
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 

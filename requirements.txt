@@ -2,5 +2,4 @@ pydantic
 requests
 pyinstaller
 pytest
-ursina
 panda3d==1.10.15

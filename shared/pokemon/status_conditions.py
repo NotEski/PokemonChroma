@@ -11,9 +11,6 @@ class StatusCondition(BaseModel):
 
     def __hash__(self):
         return hash(self.name)
-    
-    def _default_data_factory(self):
-        return dict()
 
     def on_inflicted(self, pokemon):
         """Called when the status condition is inflicted on a Pokémon."""

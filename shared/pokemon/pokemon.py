@@ -185,7 +185,6 @@ class BattleMon(BaseModel):
         if status_to_remove:
             del self.status_conditions[status_to_remove]
 
-    
 
     def set_position(self, position: BattlePosition):
         self.current_position = position
@@ -411,6 +410,8 @@ class BattleMon(BaseModel):
     
     @property
     def tera_type(self) -> PokemonType:
+        # This will need to be updated to be changeable to the specific pokemon from the use of
+        # terra shards to change the terra type of the pokemon and will need to be stored in the Pokemon class
         return self.pokemon_reference.terra_type
 #endregion
 
@@ -433,11 +434,12 @@ class Pokemon(BaseModel):
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
 
+    terra_type: PokemonType = Field(default=None)
+
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
     # for all battle related status conditions, they should be stored in BattleMon
     external_status_condition: Optional[StatusCondition] = Field(default=None)
-
 
     battlemon: Optional[BattleMon] = Field(default=None)
 
@@ -552,7 +554,7 @@ class Pokemon(BaseModel):
     def level_up(self, levels: int = 1):
         self.level += levels
         self.recalculate_health()
-    
+
     def evolve_pokemon(self, new_base_pokemon: PokemonBase):
         self.pokemon_base = new_base_pokemon
         self.recalculate_health()
@@ -594,6 +596,12 @@ class Pokemon(BaseModel):
     def stat_speed(self) -> int:
         return self.calculate_stat(Stat.SPEED)
     
+    @property
+    def get_terra_type(self) -> PokemonType:
+        if self.terra_type is None:
+            return self.pokemon_base.types[0]
+        return self.terra_type
+
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0
