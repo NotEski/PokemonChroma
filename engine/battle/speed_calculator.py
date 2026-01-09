@@ -40,7 +40,7 @@ def calculate_speed(pokemon: BattleMon) -> int:
 
 
     # multiply speed (last used in step 3) by modifier, divide by 4096, and round to nearest but ties round DOWN
-    pokemon_speed = (pokemon_speed * modifier) // 4096
+    pokemon_speed = round((pokemon_speed * modifier) // 4096)
 
     # if paralyzed and not Quick Feet, multiply speed by 0.5 (G7) or 0.25 (G5-6), and round down
 
