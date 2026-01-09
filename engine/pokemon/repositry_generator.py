@@ -5,6 +5,7 @@ import json
 import builtins
 from random import randint
 import os
+from typing import Any, final
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
@@ -199,9 +200,8 @@ def move(move_name: str):
                 move_tags.append(MultiHitMove()) # Use default weights if just true
 
             if not isinstance(multi_hit, bool): # If not just True, as the default weights will be used and the custom weights have now been processed
-                    move_tags.append(MultiHitMove(hits=multi_hit))
+                 move_tags.append(MultiHitMove(hits=multi_hit)) # type: ignore
                 
-
 
         # Weather
         if "weather" in dsl_cls.__dict__:
@@ -442,7 +442,7 @@ def load_dsl_files_from_directory(file_path: str):
     except Exception as e:
         print(f"Unexpected error loading {file_path}: {e}")
 
-def get_field(meta: dict, field_name: str, field_type, required: bool = True, default=None):
+def get_field(meta: dict, field_name: str, field_type, required: bool = True, default=None) -> Any:
     if field_name not in meta:
         if required:
             raise ValueError(f"Field '{field_name}' is required in meta.")

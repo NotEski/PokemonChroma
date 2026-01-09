@@ -131,7 +131,7 @@ class PokemonAbilities(BaseModel):
                 active_abilities.append(ability[0])
         return active_abilities
 
-    def list_abilities_by_slot(self) -> dict:
+    def list_abilities_by_slot(self) -> dict[AbilitySlot, Optional[list[Ability, bool]]]:
         return {
             AbilitySlot.PRIMARY: self.primary,
             AbilitySlot.SECONDARY: self.secondary,
@@ -139,13 +139,19 @@ class PokemonAbilities(BaseModel):
         }
 
     def has_ability(self, ability_name: str) -> bool:
-        for ability in self.list_abilities_by_slot().values():
+        abilities = self.list_abilities_by_slot().values()
+        if abilities is None:
+            return False
+        for ability in abilities:
             if ability and ability[0].name.lower() == ability_name.lower():
                 return True
         return False
 
     def has_active_ability(self, ability_name: str) -> bool:
-        for ability in self.list_abilities_by_slot().values():
+        abilities = self.list_abilities_by_slot().values()
+        if abilities is None:
+            return False
+        for ability in abilities:
             if ability and ability[0].name.lower() == ability_name.lower() and ability[1]:
                 return True
         return False
