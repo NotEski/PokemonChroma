@@ -1,6 +1,6 @@
 from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field, model_validator
-from typing import List, Optional
+from typing import List, Optional, Type, Any
 from .types import PokemonType
 from .move_tags import *
 from math import floor
@@ -124,7 +124,7 @@ class BaseMove(BaseModel):
 
 
     
-    def has_tag(self, tag_type: MoveTag) -> bool:
+    def has_tag(self, tag_type: Type[MoveTag]) -> bool:
         if self.move_tags is None:
             return False
         for tag in self.move_tags:
@@ -132,17 +132,17 @@ class BaseMove(BaseModel):
                 return True
         return False
     
-    def get_tag(self, tag_type: MoveTag) -> Optional[MoveTag]:
+    def get_tag(self, tag_type: Type[MoveTag]) -> Optional[Any]:
         if self.move_tags is None:
             return None
         if isinstance(tag_type, StatChangeMove):
             raise ValueError("For StatChangeMove use get_stat_change_tag() instead.")
         for tag in self.move_tags:
             if isinstance(tag, tag_type):
-                return tag
+               return tag
         return None
     
-    def get_stat_change_tags(self, tag_type: StatChangeMove) -> List[StatChangeMove]:
+    def get_stat_change_tags(self, tag_type: Type[StatChangeMove]) -> List[StatChangeMove]:
         if self.move_tags is None:
             return []
         stat_change_tags = []
@@ -156,7 +156,7 @@ class BaseMove(BaseModel):
             self.move_tags = []
         self.move_tags.append(tag)
     
-    def remove_tag(self, tag_type: MoveTag):
+    def remove_tag(self, tag_type: Type[MoveTag]):
         if self.move_tags is None:
             return
         self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
@@ -310,9 +310,6 @@ class Move(BaseModel):
     def accuracy(self) -> Optional[int]:
         return self.base_move.accuracy
     @property
-    def current_pp(self) -> int:
-        return self.current_pp
-    @property
     def base_pp(self) -> int:
         return self.base_move.base_pp
     @property
@@ -323,19 +320,19 @@ class Move(BaseModel):
         return self.base_move.priority
     @property
     def makes_contact(self) -> bool:
-        return self.base_move.makes_contact
+        return self.base_move.has_tag(ContactMove)
     @property
     def is_multi_hit(self) -> bool:
         return self.base_move.is_multi_hit
     @property
     def min_hits(self) -> int:
-        multi_hit_tag: MultiHitMove = self.base_move.get_tag(MultiHitMove)
+        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove)
         if multi_hit_tag:
             return min(multi_hit_tag.hits.keys())
         return 1
     @property
     def max_hits(self) -> int:
-        multi_hit_tag: MultiHitMove = self.base_move.get_tag(MultiHitMove)
+        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove)
         if multi_hit_tag:
             return max(multi_hit_tag.hits.keys())
         return 1
