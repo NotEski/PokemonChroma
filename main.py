@@ -15,6 +15,10 @@ import tkinter as tk
 from tkinter import ttk
 
 
+from engine.window.window import launch_game_window
+from shared.world.test_world_gen import test_tile_based_world_generation
+
+
 # Tkinter battle inspector helpers
 
 
@@ -603,5 +607,9 @@ def launch_battle_inspector():
 
 
 initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
+
+test_tile_based_world_generation()
+
+launch_game_window()
 
 launch_battle_inspector()

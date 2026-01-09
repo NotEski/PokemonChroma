@@ -9,7 +9,8 @@ from ..trainer.trainer import Trainer
 from .battle_header import *
 
 
-class Opponent(ABC):
+class Opponent(BaseModel):
+    model_config = ConfigDict(arbitrary_types_allowed=True)
     escape_attempts: int = 0
 
     battlemons: List[BattleMon] = []
@@ -18,7 +19,6 @@ class Opponent(ABC):
         super().__init__(**data)
         self.generate_battlemons()
 
-    @abstractmethod
     def get_all_pokemons(self) -> List[Pokemon]:
         pass
 
@@ -48,7 +48,6 @@ class Opponent(ABC):
                 return battlemon
         return None
 
-    @abstractmethod
     def get_trainer(self) -> Trainer:
         pass
 
