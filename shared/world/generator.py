@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from .world_structure import WorldStructure, Node, Edge, Tile, TileDefinitions
+from .world_structure import NavigationMesh, WorldStructure, Node, Edge, Tile, TileDefinitions
 
 
 
@@ -14,6 +14,7 @@ class WorldGenerator(ABC):
     def generate_world(self) -> WorldStructure:
         """Generate and return a world mesh."""
         pass
+
 
 class TestGenerateFromTiles(WorldGenerator):
     """Tile-based world generation (RPG Maker style).
@@ -63,7 +64,22 @@ class TestGenerateFromTiles(WorldGenerator):
         world_structure.width = x_max - x_min + 1
         world_structure.height = y_max - y_min + 1
 
+        self.generate_navigation_mesh(world_structure.tiles)
+
         return world_structure
+    
+
+
+
+    def generate_navigation_mesh(self, walkable_tiles: List[Tile]):
+        navigation_mesh = NavigationMesh()
+        # Implementation for generating navigation mesh from walkable tiles
+        
+        # this will be present in the metadata of normal maps but for the test we will generate it here
+        
+
+        return navigation_mesh
+    
 
 class GenerateFromTiles(WorldGenerator):
     """Tile-based world generation (RPG Maker style).

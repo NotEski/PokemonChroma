@@ -610,6 +610,6 @@ initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
 
 test_tile_based_world_generation()
 
-launch_game_window()
+# launch_game_window()
 
 launch_battle_inspector()
