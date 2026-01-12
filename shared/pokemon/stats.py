@@ -13,12 +13,12 @@ class Stat(Enum):
     CRITICAL_HIT = "critical_hit"
 
 class BaseStats(BaseModel):
-    hp: int = Field(ge=1, le=255)
-    attack: int = Field(ge=1, le=255)
-    defense: int = Field(ge=1, le=255)
-    special_attack: int = Field(ge=1, le=255)
-    special_defense: int = Field(ge=1, le=255)
-    speed: int = Field(ge=1, le=255)
+    hp: int = Field(default=50, ge=1, le=255)
+    attack: int = Field(default=50, ge=1, le=255)
+    defense: int = Field(default=50, ge=1, le=255)
+    special_attack: int = Field(default=50, ge=1, le=255)
+    special_defense: int = Field(default=50, ge=1, le=255)
+    speed: int = Field(default=50, ge=1, le=255)
 
 class IndividualValues(BaseModel):
     hp: int = Field(ge=0, le=31, default=0)
@@ -36,12 +36,12 @@ class EffortValues(BaseModel):
     special_defense: int = Field(ge=0, le=252, default=0)
     speed: int = Field(ge=0, le=252, default=0)
 
-    @model_validator(mode="after")
+    @model_validator(mode="after") # type: ignore
     def validate_total_evs(self) -> bool:
         total = sum([self.hp, self.attack, self.defense, self.special_attack, self.special_defense, self.speed])
         if total > 510:
             raise ValueError("Total EVs cannot exceed 510.")
-        return self
+        return self # type: ignore
 
 class EffortYield(BaseModel):
     hp: int = Field(ge=0, default=0)

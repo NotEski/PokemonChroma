@@ -3,8 +3,6 @@ from shared.items.pokeball import Pokeball
 from engine.pokemon.repository import status_repository
 from random import randint
 
-import time
-
 status_condition_big_bonus = [
     status_repository.get("sleep"),
     status_repository.get("freeze"),

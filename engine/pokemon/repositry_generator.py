@@ -5,14 +5,14 @@ import json
 import builtins
 from random import randint
 import os
-from typing import Any, final
+from typing import Any, Optional, List, TypeVar, Callable
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
 from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory
 from shared.pokemon.move_tags import *
 from shared.pokemon.status_conditions import StatusCondition
-from shared.pokemon.pokemon import PokemonBase, GrowthRate, EggGroup
+from shared.pokemon.pokemon import PokemonBase, BattleMon, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
 from engine.pokemon.repository import (
     pokemon_repository,
@@ -27,8 +27,11 @@ from shared.pokemon.types import PokemonType
 from shared.pokemon.stats import BaseStats, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
 from shared.battle.weather import BattleWeather
+from shared.battle.battle_header import BattleState
 
 
+# TypeVar for class decorators
+T = TypeVar('T', bound=type)
 
 
 class DSLParseError(Exception):
@@ -36,85 +39,89 @@ class DSLParseError(Exception):
 
 
 def move(move_name: str):
-    def decorator(dsl_cls):
-        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+    def decorator(dsl_cls: T) -> T:
+
+        name = move_name.lower()
+
+        meta: dict[str, Any] = dsl_cls.__dict__.get("meta", {})
 
         # Display Name
-        display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=move_name.capitalize())
+        display_name: str = get_field(meta, "display_name", str, required=False, default=move_name.capitalize())
         # Index
-        index = get_field(dsl_cls.meta, "index", int)
+        index: int = get_field(meta, "index", int)
         # Type
-        move_type = get_field(dsl_cls.meta, "type", PokemonType)
+        move_type: PokemonType = get_field(meta, "type", PokemonType)
         # Damage Class
-        damage_class = get_field(dsl_cls.meta, "damage_class", DamageClass)
+        damage_class: DamageClass = get_field(meta, "damage_class", DamageClass)
         # Category
-        category = get_field(dsl_cls.meta, "category", MoveCategory)
+        category: MoveCategory = get_field(meta, "category", MoveCategory)
         # Accuracy
-        accuracy = get_field(dsl_cls.meta, "accuracy", int, required=False, default=None)
+        accuracy: Optional[int] = get_field(meta, "accuracy", int, required=False, default=None)
         # Power
-        power = get_field(dsl_cls.meta, "power", int, required=False, default=None)
+        power: Optional[int] = get_field(meta, "power", int, required=False, default=None)
         # PP
-        pp = get_field(dsl_cls.meta, "pp", int, required=False, default=15)
+        pp: int = get_field(meta, "pp", int, required=False, default=15)
         # Target
-        target = get_field(dsl_cls.meta, "target", MoveTarget, required=False, default=MoveTarget.SELECTED_POKEMON)
+        target: MoveTarget = get_field(meta, "target", MoveTarget, required=False, default=MoveTarget.SELECTED_POKEMON)
         # Priority
-        priority = get_field(dsl_cls.meta, "priority", int, required=False, default=0)
+        priority: int = get_field(meta, "priority", int, required=False, default=0)
 
         # Below are MoveTags specific fields
 
-        move_tags = []
+        move_tags: List[MoveTag] = []
         healing_flag = None
         heal_exception = False
-        dsl_cls.flags = dsl_cls.__dict__.get("flags", None)
-        if dsl_cls.flags is not None:
-            for flag in dsl_cls.flags:
-                match flag:
-                    case "contact":
-                        move_tags.append(ContactMove())
-                    case "charge":
-                        move_tags.append(ChargeMove())
-                    case "recharge":
-                        move_tags.append(RechargeMove())
-                    case "protect":
-                        move_tags.append(ProtectMove())
-                    case "reflectable":
-                        move_tags.append(ReflectableMove())
-                    case "snatch":
-                        move_tags.append(SnatchMove())
-                    case "mirror":
-                        move_tags.append(MirrorMove())
-                    case "punch":
-                        move_tags.append(PunchMove())
-                    case "sound":
-                        move_tags.append(SoundMove())
-                    case "gravity":
-                        move_tags.append(GravityMove())
-                    case "defrost":
-                        move_tags.append(DefrostMove())
-                    case "distance":
-                        move_tags.append(DistanceMove())
-                    case "heal":
-                        # Set a value that needs to be true by the end of decorator
-                        # This will be set by healing or positive drain
-                        healing_flag = False
-                    case "authentic":
-                        move_tags.append(AuthenticMove())
-                    case "powder":
-                        move_tags.append(PowderMove())
-                    case "bite":
-                        move_tags.append(BiteMove())
-                    case "pulse":
-                        move_tags.append(PulseMove())
-                    case "ballistics":
-                        move_tags.append(BallisticsMove())
-                    case "mental":
-                        move_tags.append(MentalMove())
-                    case "non-sky-battle":
-                        move_tags.append(NonSkyBattleMove())
-                    case "pivot":
-                        move_tags.append(PivotMove())
-                    case "heal_exception":
-                        heal_exception = True
+        flags: List[str] = dsl_cls.__dict__.get("flags", [])
+        for flag in flags:
+            match flag:
+                case "contact":
+                    move_tags.append(ContactMove())
+                case "charge":
+                    move_tags.append(ChargeMove())
+                case "recharge":
+                    move_tags.append(RechargeMove())
+                case "protect":
+                    move_tags.append(ProtectMove())
+                case "reflectable":
+                    move_tags.append(ReflectableMove())
+                case "snatch":
+                    move_tags.append(SnatchMove())
+                case "mirror":
+                    move_tags.append(MirrorMove())
+                case "punch":
+                    move_tags.append(PunchMove())
+                case "sound":
+                    move_tags.append(SoundMove())
+                case "gravity":
+                    move_tags.append(GravityMove())
+                case "defrost":
+                    move_tags.append(DefrostMove())
+                case "distance":
+                    move_tags.append(DistanceMove())
+                case "heal":
+                    # Set a value that needs to be true by the end of decorator
+                    # This will be set by healing or positive drain
+                    healing_flag = False
+                case "authentic":
+                    move_tags.append(AuthenticMove())
+                case "powder":
+                    move_tags.append(PowderMove())
+                case "bite":
+                    move_tags.append(BiteMove())
+                case "pulse":
+                    move_tags.append(PulseMove())
+                case "ballistics":
+                    move_tags.append(BallisticsMove())
+                case "mental":
+                    move_tags.append(MentalMove())
+                case "non_sky_battle":
+                    move_tags.append(NonSkyBattleMove())
+                case "pivot":
+                    move_tags.append(PivotMove())
+                case "heal_exception":
+                    heal_exception = True
+                case _:
+                    raise ValueError(f"Move '{move_name}' has unknown flag '{flag}'.")
 
         # Critical Hit Rate
         critical_hit_rate = dsl_cls.__dict__.get("critical_hit_rate", None)
@@ -134,17 +141,16 @@ def move(move_name: str):
             move_tags.append(FlinchMove(chance=flinch_chance))
 
         # Status Condition and chance
-        status_condition = dsl_cls.__dict__.get("status_condition", None)
+        status_condition: Optional[dict[str, int]] = dsl_cls.__dict__.get("status_condition", {})
         if status_condition is not None:
-            if isinstance(status_condition, dict):
-                for sc_name, sc_chance in status_condition.items():
+            if not isinstance(status_condition, dict): # type: ignore - Sanity check
+                raise ValueError(f"Move '{move_name}' has invalid status_condition definition. {type(status_condition)} found, dict expected.")
+            for sc_name, sc_chance in status_condition.items():
                     status_condition_obj = get_status_condition(sc_name)
                     move_tags.append(StatusConditionMove(
                         status_condition=status_condition_obj,
                         chance=sc_chance
                     ))
-            else:
-                raise ValueError(f"Move '{move_name}' has invalid status_condition definition. {type(status_condition)} found, dict expected.")
         
         # Healing
         healing = dsl_cls.__dict__.get("healing", None)
@@ -167,17 +173,19 @@ def move(move_name: str):
                     move_tags.append(stat_change)
 
         # Hazard
-        hazard: dict = dsl_cls.__dict__.get("hazard", None)
+        hazard: Optional[dict[str, int]] = dsl_cls.__dict__.get("hazard", None)
         if hazard is not None:
             for hazard_name, layers_added in hazard.items():
                 harard_obj = hazard_repository.get(hazard_name)
+                if harard_obj is None:
+                    raise ValueError(f"Move '{move_name}' hazard '{hazard_name}' not found in repository.")
                 move_tags.append(EntryHazardMove(entry_hazard=harard_obj, layers=layers_added))
 
         if healing_flag is not None and healing_flag is False and not heal_exception:
             raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")
         
         # Field Effect
-        field_effect: dict = dsl_cls.__dict__.get("field_effect", None)
+        field_effect: Optional[dict[str, int|Any]] = dsl_cls.__dict__.get("field_effect", None)
         if field_effect is not None:
             for field_effect_name, field_effect_turns in field_effect.items():
                 field_effect_obj = field_effect_repository.get(field_effect_name)
@@ -188,13 +196,13 @@ def move(move_name: str):
                 move_tags.append(FieldEffectMove(field_effect=field_effect_obj, turns=field_effect_turns))
 
         # Multi-hit
-        multi_hit: dict|tuple|bool = dsl_cls.__dict__.get("multi_hit", None)
+        multi_hit: Optional[dict[int, int|float]|tuple[int, int]|bool] = dsl_cls.__dict__.get("multi_hit", None)
         if multi_hit is not None:
             if isinstance(multi_hit, tuple):
                 # Convert list to dict with equal weights
                 min_hit = min(multi_hit)
                 max_hit = max(multi_hit)
-                for i in range(min_hit, max_hit + 1):
+                for _ in range(min_hit, max_hit + 1):
                     multi_hit = {i: 1 for i in range(min_hit, max_hit + 1)}
             elif isinstance(multi_hit, bool) and multi_hit is True:
                 move_tags.append(MultiHitMove()) # Use default weights if just true
@@ -211,7 +219,7 @@ def move(move_name: str):
 
         # Generate BaseMove
         base_move = BaseMove(
-            name=move_name,
+            name=name,
             display_name=display_name,
             index=index,
             type=move_type,
@@ -226,52 +234,52 @@ def move(move_name: str):
         )
 
         if hasattr(dsl_cls, "on_use"):
-            dsl_method = dsl_cls.on_use
-            base_move.on_use = lambda attacker, defender, battle_state: dsl_method(base_move, attacker, defender, battle_state)
+            dsl_method: Callable[[BaseMove, BattleMon, BattleMon, BattleState], None] = dsl_cls.on_use # type: ignore
+            base_move.on_use = lambda attacker, defender, battle_state: dsl_method(dsl_cls, attacker, defender, battle_state) # type: ignore
         if hasattr(dsl_cls, "on_hit"):
-            dsl_method = dsl_cls.on_hit
-            base_move.on_hit = lambda: dsl_method(base_move)
+            dsl_method: Callable[[BaseMove], None] = dsl_cls.on_hit # type: ignore
+            base_move.on_hit = lambda: dsl_method(dsl_cls) # type: ignore
         if hasattr(dsl_cls, "before_use"):
-            dsl_method = dsl_cls.before_use
-            base_move.before_use = lambda: dsl_method(base_move)
+            dsl_method: Callable[[BaseMove], None] = dsl_cls.before_use # type: ignore
+            base_move.before_use = lambda: dsl_method(dsl_cls) # type: ignore
         if hasattr(dsl_cls, "damage_calculation"):
-            dsl_method = dsl_cls.damage_calculation
-            base_move.damage_calculation = lambda attacker, defender: dsl_method(base_move, attacker, defender)
+            dsl_method: Callable[[BaseMove, BattleMon, BattleMon], int] = dsl_cls.damage_calculation # type: ignore
+            base_move.damage_calculation = lambda attacker, defender: dsl_method(dsl_cls, attacker, defender) # type: ignore
 
         move_repository.create(base_move)
         return dsl_cls
     return decorator
 
 def status(status_name: str):
-    def decorator(dsl_cls):
-        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+    def decorator(dsl_cls: T) -> T:
+        meta = dsl_cls.__dict__.get("meta", {})
         dsl_cls.default_data = dsl_cls.__dict__.get("default_data", {})
         status_condition = StatusCondition(
             name=status_name,
-            display_name=dsl_cls.meta.get("display_name", status_name.capitalize()),
-            mutual_exclusive=dsl_cls.meta.get("mutual_exclusive", False),
+            display_name=meta.get("display_name", status_name.capitalize()),
+            mutual_exclusive=meta.get("mutual_exclusive", False),
             default_data=dsl_cls.default_data
             )
 
         if hasattr(dsl_cls, "on_inflicted"):
-            dsl_method = dsl_cls.on_inflicted
-            status_condition.on_inflicted = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            dsl_method: Callable[[StatusCondition, BattleMon], None] = dsl_cls.on_inflicted # type: ignore
+            status_condition.on_inflicted = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon) # type: ignore
 
         if hasattr(dsl_cls, "on_turn_start"):
-            dsl_method = dsl_cls.on_turn_start
-            status_condition.on_turn_start = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            dsl_method: Callable[[StatusCondition, BattleMon], None] = dsl_cls.on_turn_start # type: ignore
+            status_condition.on_turn_start = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon) # type: ignore
 
         if hasattr(dsl_cls, "on_turn_end"):
-            dsl_method = dsl_cls.on_turn_end
-            status_condition.on_turn_end = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            dsl_method: Callable[[StatusCondition, BattleMon], None] = dsl_cls.on_turn_end # type: ignore
+            status_condition.on_turn_end = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon) # type: ignore
             
         if hasattr(dsl_cls, "on_switch_out"):
-            dsl_method = dsl_cls.on_switch_out
-            status_condition.on_switch_out = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            dsl_method: Callable[[StatusCondition, BattleMon], None] = dsl_cls.on_switch_out # type: ignore
+            status_condition.on_switch_out = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon) # type: ignore
 
         if hasattr(dsl_cls, "can_move"):
-            dsl_method = dsl_cls.can_move
-            status_condition.can_move = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon)
+            dsl_method: Callable[[StatusCondition, BattleMon], bool] = dsl_cls.can_move # type: ignore
+            status_condition.can_move = lambda pokemon, method=dsl_method: method(dsl_cls, pokemon) # type: ignore
         
 
         status_repository.create(status_condition)
@@ -279,13 +287,13 @@ def status(status_name: str):
     return decorator
 
 def hazard(hazard_name: str):
-    def decorator(dsl_cls):
-        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
-        display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=hazard_name.capitalize())
+    def decorator(dsl_cls: T) -> T:
+        meta = dsl_cls.__dict__.get("meta", {})
+        display_name = get_field(meta, "display_name", str, required=False, default=hazard_name.capitalize())
         hazard = EntryHazard(name=hazard_name, display_name=display_name)
         if hasattr(dsl_cls, "on_entry"):
-            dsl_method = dsl_cls.on_entry
-            hazard.on_entry = lambda pokemon, layer_count, method=dsl_method: method(dsl_cls, pokemon, layer_count)
+            dsl_method: Callable[[EntryHazard, BattleMon, int], None] = dsl_cls.on_entry # type: ignore
+            hazard.on_entry = lambda pokemon, layer_count, method=dsl_method: method(dsl_cls, pokemon, layer_count) # type: ignore
         try:
             hazard_repository.create(hazard)
         except ValueError:
@@ -294,10 +302,10 @@ def hazard(hazard_name: str):
     return decorator
 
 def field_effect(field_effect_name: str):
-    def decorator(dsl_cls):
-        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
-        display_name = get_field(dsl_cls.meta, "display_name", str, required=False, default=field_effect_name.capitalize())
-        duration = get_field(dsl_cls.meta, "default_duration", int, required=True)
+    def decorator(dsl_cls: T) -> T:
+        meta = dsl_cls.__dict__.get("meta", {})
+        display_name = get_field(meta, "display_name", str, required=False, default=field_effect_name.capitalize())
+        duration = get_field(meta, "default_duration", int, required=True)
 
         field_effect = FieldEffect(
             name=field_effect_name,
@@ -306,34 +314,34 @@ def field_effect(field_effect_name: str):
         )
 
         if hasattr(dsl_cls, "on_apply"):
-            dsl_method = dsl_cls.on_apply
-            field_effect.on_apply = lambda position, method=dsl_method: method(dsl_cls, position)
+            dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_apply # type: ignore
+            field_effect.on_apply = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
         if hasattr(dsl_cls, "on_remove"):
-            dsl_method = dsl_cls.on_remove
-            field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position)
+            dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_remove # type: ignore
+            field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
         if hasattr(dsl_cls, "on_stat_calculation"):
-            dsl_method = dsl_cls.on_stat_calculation
-            field_effect.on_stat_calculation = lambda pokemon, stat, method=dsl_method: method(dsl_cls, pokemon, stat)
+            dsl_method: Callable[[FieldEffect, BattleMon, str], None] = dsl_cls.on_stat_calculation # type: ignore
+            field_effect.on_stat_calculation = lambda pokemon, stat, method=dsl_method: method(dsl_cls, pokemon, stat) # type: ignore
 
         field_effect_repository.create(field_effect)
         return dsl_cls
     return decorator
 
 def item(item_name: str):
-    def decorator(dsl_cls):
+    def decorator(dsl_cls: T) -> T:
         # Code goes here for registering items
         return dsl_cls
     return decorator
 
 def ability(ability_name: str):
-    def decorator(dsl_cls):
-        dsl_cls.meta = dsl_cls.__dict__.get("meta", {})
+    def decorator(dsl_cls: T) -> T:
+        meta = dsl_cls.__dict__.get("meta", {})
         ability = Ability(
             name=ability_name,
-            display_name=dsl_cls.meta.get("display_name", ability_name.capitalize()),
-            description=dsl_cls.meta.get("description", ""),
+            display_name=meta.get("display_name", ability_name.capitalize()),
+            description=meta.get("description", ""),
         )
         ability_repository.create(ability)
         return dsl_cls
@@ -363,7 +371,7 @@ def get_item(item_name: str) -> Item:
         raise ValueError(f"Item '{item_name}' not found in item repository.")
     return item
 
-safe_namespace = {
+safe_namespace: dict[str, Any|dict[str, Any]] = {
         "__builtins__": {
             "__build_class__": builtins.__build_class__,
             "__import__": builtins.__import__,
@@ -459,7 +467,7 @@ def load_dsl_files_from_directory(file_path: str):
     except Exception as e:
         print(f"Unexpected error loading {file_path}: {e}")
 
-def get_field(meta: dict, field_name: str, field_type, required: bool = True, default=None) -> Any:
+def get_field(meta: dict[str, Any], field_name: str, field_type: Any, required: bool = True, default: Optional[Any] = None) -> Any:
     if field_name not in meta:
         if required:
             raise ValueError(f"Field '{field_name}' is required in meta.")
@@ -477,14 +485,14 @@ def get_field(meta: dict, field_name: str, field_type, required: bool = True, de
 
 
 # ============================================================================
-# Pokemon
+# Pokemon TODO update this to the pkmn system
 # ============================================================================
 
-def json_to_pokemon_base(json_data: dict) -> PokemonBase:
+def json_to_pokemon_base(json_data: dict[str, Any]) -> PokemonBase:
     if json_data.get("base_experience_yield", 64) is None:
         json_data["base_experience_yield"] = 64
 
-    compiled_abilities = []
+    compiled_abilities: list[PokemonBaseAbility] = []
     for ability_entry in json_data.get("abilities", []):
         ability_name = ability_entry["ability"]
         ability_slot_str = ability_entry.get("slot", 1)
@@ -532,7 +540,7 @@ def generate_pokemon_repository_from_json(file_path: str):
 # Item
 # ============================================================================
 
-def json_to_item(json_data: dict) -> Item:
+def json_to_item(json_data: dict[str, Any]) -> Item:
     return Item(
         name=json_data["name"],
         display_name=json_data["display_name"],

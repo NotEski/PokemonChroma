@@ -15,7 +15,7 @@ class PronounEnum(str, Enum):
     THEY_THEM = ["they/them", "they", "them", "theirs"]
     CUSTOM = ["custom", "custom", "custom", "custom"]
 
-    def to_pronoun_mixin(self, custom_pronouns: Optional[dict] = None) -> PronounMixin:
+    def to_pronoun_mixin(self, custom_pronouns: Optional[dict[str, str]] = None) -> PronounMixin:
         if self == PronounEnum.CUSTOM and custom_pronouns:
             return PronounMixin(
                 subject_pronoun=custom_pronouns.get("subject_pronoun", "they"),
@@ -30,7 +30,7 @@ class PronounEnum(str, Enum):
             )
 
 
-class OriginalTrainer(object):
+class OriginalTrainer(BaseModel):
     name: str
     unique_id: str
     pronouns: Optional[PronounMixin] = None
@@ -47,8 +47,8 @@ class Trainer(BaseModel):
 
     trainer_type: Optional[str] = None  # e.g., "Ace Trainer", "Gym Leader", etc.
 
-    def __init__(self, **data):
-        if 'unique_id' not in data or data['unique_id'] is None:
+    def __init__(self, **data): # type: ignore
+        if 'unique_id' not in data or data['unique_id'] == None:
             data['unique_id'] = str(uuid.uuid4())
         data['id_number'] = self.calculate_id_number(data['unique_id'])
         super().__init__(**data)

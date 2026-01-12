@@ -50,7 +50,7 @@ def calculate_damage(attacking_pokemon: BattleMon, defending_pokemon: BattleMon,
 def _get_level_modifier(level: int) -> float:
     return (2 * level) / 5 + 2
 
-def _get_power_modifier(move) -> float:
+def _get_power_modifier(move: BaseMove) -> float:
     return move.power if move.power is not None else 0
 
 def _get_attack_stat_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> int:
@@ -112,7 +112,7 @@ def _get_glaive_rush_modifier(is_under_effect: bool) -> float:
         return 2.0
     return 1.0
 
-def _get_critical_modifier(is_critical_hit) -> float:
+def _get_critical_modifier(is_critical_hit: bool) -> float:
     if is_critical_hit:
         return 1.5
     return 1.0

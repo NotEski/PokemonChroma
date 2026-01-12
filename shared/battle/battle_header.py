@@ -31,7 +31,7 @@ class BattleConfig(BaseModel):
     battle_switch_type: BattleSwitchType = Field(default=BattleSwitchType.SET)
     is_wild: bool = Field(default=False)
     can_escape: bool = Field(default=False)
-    terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
+    terrain: Optional[BattleTerrain] = None  # e.g., "grassy", "electric", etc.
     grant_exp: bool = Field(default=True)
 
 class BattleState(BaseModel):
@@ -40,11 +40,11 @@ class BattleState(BaseModel):
     switch_turn: bool = Field(default=False)  # Indicates if the current turn is a switch turn
 
     weather_turns: WeatherTurns = Field(default_factory=lambda: WeatherTurns(weather=BattleWeather.NONE, remaining_turns=-1))  # e.g., (BattleWeather.RAIN, 5) means rain for 5 more turns
-    terrain: BattleTerrain = None  # e.g., "grassy", "electric", etc.
+    terrain: Optional[BattleTerrain] = None  # e.g., "grassy", "electric", etc.
 
     position_manager_ref: Optional[BattlePositionManager] = None  # Reference to the PositionManager managing the battle positions
 
-    battle_log: List[BattleLogEntry] = Field(default_factory=list)  # Log of battle events
+    battle_log: List[BattleLogEntry] = []  # Log of battle events
 
     def set_weather(self, weather: BattleWeather, turns: int = 5):
         self.weather_turns.weather = weather
@@ -60,7 +60,7 @@ class BattleState(BaseModel):
     def get_all_active_pokemon(self) -> List[BattleMon]:
         if self.position_manager_ref is None:
             raise ValueError("Position manager reference is not set in BattleState.")
-        active_pokemon = []
+        active_pokemon: List[BattleMon] = []
         for position in self.position_manager_ref.get_valid_positions():
             pokemon = self.position_manager_ref.get_pokemon_at_position(position)
             if pokemon is not None and not pokemon.is_fainted:

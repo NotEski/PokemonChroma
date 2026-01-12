@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import Dict, TypeVar, Generic
+from typing import Dict, Optional, TypeVar, Generic
 
 from shared.pokemon.hazard import EntryHazard
 from shared.pokemon.pokemon import PokemonBase
@@ -17,12 +17,17 @@ class BaseRepository(BaseModel, Generic[T]):
     items: Dict[str, T] = Field(default_factory=dict)
 
     def create(self, item: T, force: bool = False):
-        key = item.name.lower()
+        if not hasattr(item, "name"):
+            raise ValueError("Item must have a 'name' attribute.")
+        elif not isinstance(item.name, str): # type: ignore
+            raise ValueError("Item 'name' attribute must be of type str.")
+        
+        key: str = item.name.lower() # type: ignore
         if key in self.items and not force:
-            raise ValueError(f"{type(item).__name__} with name '{item.name}' already exists.")
+            raise ValueError(f"{type(item).__name__} with name '{item.name}' already exists.") # type: ignore
         self.items[key] = item
 
-    def get(self, key: str) -> T:
+    def get(self, key: str) -> Optional[T]:
         return self.items.get(str(key).lower())
 
     def get_index_by_name(self, name: str) -> str:
@@ -43,7 +48,7 @@ class BaseRepository(BaseModel, Generic[T]):
 
 class BaseSingleton(Generic[T]):
     """Generic singleton pattern implementation."""
-    _instance: T = None
+    _instance: Optional[T] = None
 
     @classmethod
     def get_instance(cls) -> T:
@@ -66,13 +71,13 @@ class PokemonRepository(BaseRepository[PokemonBase]):
 
 
 class MoveRepository(BaseRepository[BaseMove]):
-    def get(self, key: str|int) -> T:
+    def get(self, key: str|int) -> Optional[BaseMove]:
         if isinstance(key, int):
             for move in self.items.values():
                 if move.index == key:
                     return move
             return None
-        elif isinstance(key, str):
+        elif isinstance(key, str): # type: ignore
             return self.items.get(str(key).lower())
         else:
             raise ValueError("Key must be a string (name) or integer (index).")

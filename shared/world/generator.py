@@ -5,10 +5,6 @@ from .world_structure import NavigationMesh, WorldStructure, Node, Edge, Tile, T
 
 
 
-
-
-
-
 class WorldGenerator(ABC):
     @abstractmethod
     def generate_world(self) -> WorldStructure:

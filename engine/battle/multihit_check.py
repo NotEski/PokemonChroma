@@ -3,17 +3,16 @@ from shared.pokemon.move_tags import MultiHitMove
 from shared.pokemon.pokemon import BattleMon
 from random import choices
 
-
 def multihit_check(move: BaseMove, attacker: BattleMon, target: BattleMon) -> int:
     """Check the amount of times a multi-hit move will hit."""
     # sanity check
-    if not move.is_multi_hit:
+    multimove_tag = move.get_tag(MultiHitMove)
+
+    if not move.is_multi_hit or multimove_tag is None:
         return 1
     
     # Run checks for abilities or items that may affect multi-hit moves here
     # e.g. Skill Link, etc.
-    
-    multimove_tag = move.get_tag(MultiHitMove)
 
     weights = multimove_tag.hits
 

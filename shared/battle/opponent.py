@@ -1,7 +1,7 @@
 # Opponent script
 
 from abc import ABC, abstractmethod
-from pydantic import BaseModel, ConfigDict
+from pydantic import ConfigDict
 from typing import List
 
 from shared.pokemon.pokemon import Pokemon
@@ -9,18 +9,25 @@ from ..trainer.trainer import Trainer
 from .battle_header import *
 
 
-class Opponent(BaseModel):
+# TODO : Combine them into the one class theres no reason to have separate ones
+
+class Opponent(ABC):
     model_config = ConfigDict(arbitrary_types_allowed=True)
     escape_attempts: int = 0
 
     battlemons: List[BattleMon] = []
 
-    def __init__(self, **data):
+    def __init__(self, **data): # type: ignore
         super().__init__(**data)
         self.generate_battlemons()
 
     def get_all_pokemons(self) -> List[Pokemon]:
-        pass
+        pokemon: List[Pokemon] = []
+        for battlemon in self.battlemons:
+            pokemon_ref = battlemon.pokemon_reference
+            if not pokemon_ref: continue
+            pokemon.append(pokemon_ref)
+        return pokemon
 
     def get_battlemon_by_index(self, index: int) -> BattleMon:
         return self.battlemons[index]
@@ -48,14 +55,12 @@ class Opponent(BaseModel):
                 return battlemon
         return None
 
+    @abstractmethod
     def get_trainer(self) -> Trainer:
         pass
 
 class TrainerOpponent(Opponent):
     trainer: Trainer
-
-    def get_all_pokemons(self) -> List[Pokemon]:
-        return self.trainer.team.get_all_pokemons()
     
     def get_trainer(self) -> Trainer:
         return self.trainer
@@ -63,8 +68,5 @@ class TrainerOpponent(Opponent):
 class WildPokemonOpponent(Opponent):
     pokemon: Pokemon
 
-    def get_all_pokemons(self) -> List[Pokemon]:
-        return [self.pokemon]
-    
     def get_trainer(self) -> Trainer:
-        return Trainer(name="Wild Pokémon Trainer", team=None)
+        raise NotImplementedError("Wild Pokémon opponents do not have a trainer.")

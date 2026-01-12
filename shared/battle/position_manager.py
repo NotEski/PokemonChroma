@@ -1,4 +1,5 @@
-from pydantic import BaseModel, Field
+from typing import Optional
+from pydantic import BaseModel
 from shared.battle.battle_actions import BattleAction, EscapeAction, SkipTurnAction, SwitchAction
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.position import BattlePosition
@@ -8,17 +9,17 @@ from shared.battle.field_effect import FieldEffect
 import random
 
 class BattlePositionManager(BaseModel):
-    positions: dict[tuple[int, int], BattleMon] = Field(default_factory=dict)
-    actions: dict[BattlePosition, BattleAction] = Field(default_factory=dict)
-    all_actions: dict[int, dict[BattlePosition, BattleAction]] = Field(default_factory=dict)
-    future_actions: dict[int, dict[BattlePosition, BattleAction]] = Field(default_factory=dict)
-    switch_turn_actions: dict[BattlePosition, SwitchAction|SkipTurnAction] = Field(default_factory=dict)
-    field_effects: dict[BattlePosition, dict[EntryHazard|FieldEffect, int]] = Field(default_factory=dict)
+    positions: dict[tuple[int, int], BattleMon] = {}
+    actions: dict[BattlePosition, BattleAction] = {}
+    all_actions: dict[int, dict[BattlePosition, BattleAction]] = {}
+    future_actions: dict[int, dict[BattlePosition, BattleAction]] = {}
+    switch_turn_actions: dict[BattlePosition, SwitchAction|SkipTurnAction] = {}
+    field_effects: dict[BattlePosition, dict[EntryHazard|FieldEffect, int]] = {}
     teams_count: int = 2
     pokemon_per_team: int = 1
 
     def get_valid_positions(self) -> list[BattlePosition]:
-        valid_positions = []
+        valid_positions: list[BattlePosition] = []
         for team_id in range(0, self.teams_count):
             for pokemon_index in range(0, self.pokemon_per_team):
                 valid_positions.append(BattlePosition(team_id=team_id, pokemon_index=pokemon_index))
@@ -33,13 +34,13 @@ class BattlePositionManager(BaseModel):
         return position in valid_positions
     
     def get_missing_actions(self) -> list[BattlePosition]:
-        missing_positions = []
+        missing_positions: list[BattlePosition] = []
         for position in self.list_registered_positions():
             if position not in self.actions:
                 missing_positions.append(position)
         return missing_positions
 
-    def get_pokemon_at_position(self, position: BattlePosition) -> BattleMon:
+    def get_pokemon_at_position(self, position: BattlePosition) -> Optional[BattleMon]:
         return self.positions.get((position.team_id, position.pokemon_index))
 
     def position_actions(self):
@@ -89,7 +90,7 @@ class BattlePositionManager(BaseModel):
         if position in self.actions:
             del self.actions[position]
     
-    def get_position_action(self, position: BattlePosition) -> BattleAction:
+    def get_position_action(self, position: BattlePosition) -> Optional[BattleAction]:
         return self.actions.get(position)
     
     def clear_position_actions(self):
@@ -154,7 +155,7 @@ class BattlePositionManager(BaseModel):
 
     def updated_battled_pokemon(self):
         for position, pokemon in self.positions.items():
-            team_id, pokemon_index = position
+            team_id = position[0]
             # Get the pokemon on the other team
             # Add all the battled pokemon to the pokemon's battled pokemon list
             opponent_team_ids = self.get_opponent_teams(team_id)
@@ -162,14 +163,15 @@ class BattlePositionManager(BaseModel):
                 for opponent_position in self.list_registered_positions():
                     if opponent_position.team_id == opponent_team_id:
                         opponent_pokemon = self.get_pokemon_at_position(opponent_position)
-                        pokemon.add_pokemon_battled(opponent_pokemon)
+                        if opponent_pokemon:
+                            pokemon.add_pokemon_battled(opponent_pokemon)
 
     def decrement_field_effects(self):
         # Decrement duration of all field effects and remove those that expire
         # Exclude entry hazards from this process
         for position in list(self.field_effects.keys()):
-            effects_to_remove = []
-            for effect, duration in self.field_effects[position].items():
+            effects_to_remove: list[FieldEffect] = []
+            for effect in self.field_effects[position].keys():
                 if isinstance(effect, FieldEffect):
                     self.field_effects[position][effect] -= 1
                     if self.field_effects[position][effect] <= 0:
@@ -179,7 +181,7 @@ class BattlePositionManager(BaseModel):
             if not self.field_effects[position]:
                 del self.field_effects[position]
 
-    def get_target_positions(self, user_position: BattlePosition, move_target: MoveTarget, selected_position: BattlePosition = None) -> list[BattlePosition]:
+    def get_target_positions(self, user_position: BattlePosition, move_target: MoveTarget, selected_position: Optional[BattlePosition] = None) -> list[BattlePosition]:
         # For simplicity, only implement single target opponent logic
         if move_target == MoveTarget.ALL_ALLIES:
             team_id = user_position.team_id
@@ -217,7 +219,8 @@ class BattlePositionManager(BaseModel):
 
         elif move_target == MoveTarget.SELECTED_POKEMON:
             target_position = selected_position
-            return [target_position]
+            if target_position:
+                return [target_position]
         
         elif move_target == MoveTarget.SPECIFIC_MOVE:
             # from what I understand this usually targets the pokemon that hit the user last
@@ -229,13 +232,14 @@ class BattlePositionManager(BaseModel):
 
         elif move_target == MoveTarget.USER_OR_ALLY:
             # Return the user after a check for validity
-            if user_position.team_id == selected_position.team_id:
+            if selected_position and user_position.team_id == selected_position.team_id:
                 return [selected_position]
-            return ValueError("Selected position is not the user or an ally.")
+            raise ValueError("Selected position is not the user or an ally.")
 
         elif move_target in [MoveTarget.USER, MoveTarget.USERS_FIELD]:
             return [user_position]
 
         else:
             raise ValueError("Unsupported move target type.")
-
+        
+        return []
