@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List, Literal, Optional, TypedDict, Unpack, NotRequired
+from typing import List, Optional, TypedDict, Unpack, NotRequired
 from enum import Enum
 
 from shared.pokemon.pokemon import BattleMon
@@ -34,11 +34,11 @@ class BattleLogEntry(BaseModel):
 class BattleLogMoveUsed(BattleLogEntry):
     move_name: Optional[BaseMove] = Field(default=None)
     user_pokemon: BattleMon
-    target_pokemon: Optional[List[BattleMon]] = Field(default_factory=list)
+    target_pokemon: Optional[List[BattleMon]] = []
     damage_dealt: int = Field(default=0)
     is_critical: bool = Field(default=False)
     status_condition_applied: Optional[StatusCondition] = Field(default=None)  # e.g., "burn", "paralysis", etc.
-    log_type: Literal[BattleLogType.MOVE_USED] = BattleLogType.MOVE_USED
+    log_type: BattleLogType = BattleLogType.MOVE_USED
 
 class BattleLogMoveUsedData(TypedDict):
     move_name: BaseMove
@@ -55,7 +55,7 @@ class BattleLogPokemonFainted(BattleLogEntry):
     fainted_pokemon: BattleMon
     pokemon_position: BattlePosition
     trainer: Trainer
-    log_type: Literal[BattleLogType.POKEMON_FAINTED] = BattleLogType.POKEMON_FAINTED
+    log_type: BattleLogType = BattleLogType.POKEMON_FAINTED
 
 class BattleLogPokemonFaintedData(TypedDict):
     fainted_pokemon: BattleMon
@@ -68,7 +68,7 @@ class BattleLogPokemonSwitchIn(BattleLogEntry):
     switched_in_pokemon: BattleMon
     posistion: BattlePosition
     trainer: Trainer
-    log_type: Literal[BattleLogType.POKEMON_SWITCH_IN] = BattleLogType.POKEMON_SWITCH_IN
+    log_type: BattleLogType = BattleLogType.POKEMON_SWITCH_IN
 
 class BattleLogPokemonSwitchInData(TypedDict):
     switched_in_pokemon: BattleMon
@@ -78,7 +78,7 @@ class BattleLogPokemonSwitchInData(TypedDict):
 
 class BattleLogBattleStart(BattleLogEntry):
     trainers: List[Trainer]
-    log_type: Literal[BattleLogType.BATTLE_START] = BattleLogType.BATTLE_START
+    log_type: BattleLogType = BattleLogType.BATTLE_START
     
 class BattleLogBattleStartData(TypedDict):
     trainers: List[Trainer]
@@ -86,7 +86,7 @@ class BattleLogBattleStartData(TypedDict):
 
 class BattleLogTurnStart(BattleLogEntry):
     turn_number: int
-    log_type: Literal[BattleLogType.TURN_START] = BattleLogType.TURN_START
+    log_type: BattleLogType = BattleLogType.TURN_START
 
 class BattleLogTurnStartData(TypedDict):
     turn_number: int
@@ -95,7 +95,7 @@ class BattleLogTurnStartData(TypedDict):
 
 class BattleLogBattleEnd(BattleLogEntry):
     winning_trainer: Optional[Trainer]
-    log_type: Literal[BattleLogType.BATTLE_END] = BattleLogType.BATTLE_END
+    log_type: BattleLogType = BattleLogType.BATTLE_END
 
 class BattleLogBattleEndData(TypedDict):
     winning_trainer: NotRequired[Trainer]
@@ -103,7 +103,7 @@ class BattleLogBattleEndData(TypedDict):
 
 
 class BattleLogManager(BaseModel):
-    logs: List['BattleLogEntry'] = Field(default_factory=list)
+    logs: List['BattleLogEntry'] = []
 
     def add_log(self, log_entry: 'BattleLogEntry'):
         self.logs.append(log_entry)
@@ -123,7 +123,7 @@ class BattleLogManager(BaseModel):
         self.add_log(log)
 
     def move_used(self, **data: Unpack[BattleLogMoveUsedData]):
-        log = BattleLogMoveUsed(**data)
+        log = BattleLogMoveUsed(**data) # type: ignore
         self.add_log(log)
 
     def pokemon_fainted(self, **data: Unpack[BattleLogPokemonFaintedData]):

@@ -21,7 +21,7 @@ class GenderRate(Enum):
 
 
 def calculate_gender(rate: GenderRate) -> Gender:
-    if rate == -1:
+    if rate == GenderRate.GENDERLESS:
         return Gender.NONE
     roll = randint(1, 100)
     if roll <= (8 - rate.value) * 12.5:

@@ -1,9 +1,14 @@
 from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field, model_validator
-from typing import List, Optional, Type, Any
+from typing import List, Optional, Type, Any, TYPE_CHECKING
+
 from .types import PokemonType
 from .move_tags import *
 from math import floor
+
+if TYPE_CHECKING:
+    from shared.pokemon.pokemon import BattleMon
+    from shared.battle.battle_header import BattleState
 
 
 class DamageClass(Enum):
@@ -74,16 +79,16 @@ class BaseMove(BaseModel):
     model_config = ConfigDict(extra='allow')
     
     name: str
-    display_name: str = Field(default="")
+    display_name: str = ""
     index: int
 
     type: PokemonType
-    damage_class: DamageClass = Field(default=DamageClass.PHYSICAL)
-    category: MoveCategory = Field(default=MoveCategory.DAMAGE)
+    damage_class: DamageClass = DamageClass.PHYSICAL
+    category: MoveCategory = MoveCategory.DAMAGE
 
     accuracy: Optional[int] = 100
     power: Optional[int] = 100
-    base_pp: int = Field(default=15)
+    base_pp: int = 15
     max_pp_inc_one: int = 0
     max_pp_inc_two: int = 0
     max_pp_inc_three: int = 0
@@ -91,9 +96,9 @@ class BaseMove(BaseModel):
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
     priority: int = Field(default=0)  # Move priority
 
-    move_tags: Optional[List[MoveTag]] = None  # Additional tags for the move
+    move_tags: Optional[List[MoveTag]]  # Additional tags for the move
     
-    def __init__(self, **data):
+    def __init__(self, **data): # type: ignore
         super().__init__(**data)
         if self.display_name == "":
             self.display_name = self.name.replace("-", " ").title()
@@ -103,7 +108,7 @@ class BaseMove(BaseModel):
         self.max_pp_inc_three = floor(self.base_pp * 1.6)
         
 
-    def on_use(self, attacker, defender, battle_state):
+    def on_use(self, attacker: "BattleMon", defender: "BattleMon", battle_state: "BattleState") -> Optional[bool]:
         """Called when the move is used."""
         return None
 
@@ -115,7 +120,7 @@ class BaseMove(BaseModel):
         """Called before the move is used."""
         return None
 
-    def damage_calculation(self, attacker, defender) -> int:
+    def damage_calculation(self, attacker: "BattleMon", defender: "BattleMon") -> Optional[int]:
         """Calculate damage dealt by the move instead of using standard formula. e.g. 50% of target's max HP
         Returns the damage amount as an integer.
         """
@@ -145,7 +150,7 @@ class BaseMove(BaseModel):
     def get_stat_change_tags(self, tag_type: Type[StatChangeMove]) -> List[StatChangeMove]:
         if self.move_tags is None:
             return []
-        stat_change_tags = []
+        stat_change_tags: List[StatChangeMove] = []
         for tag in self.move_tags:
             if isinstance(tag, tag_type):
                 stat_change_tags.append(tag)
@@ -254,13 +259,20 @@ class BaseMove(BaseModel):
 
 
 class Move(BaseModel):
+    """
+
+    Args:
+        current_pp: int: Current PP of the move
+        max_pp: int: Maximum PP of the move
+        base_move: BaseMove: The base move data
+    """
     current_pp: int
     max_pp: int = Field(default=0)
     base_move: BaseMove
 
     pp_incremented_amount: int = 0
     
-    def __init__(self, **data):
+    def __init__(self, **data): # type: ignore
         super().__init__(**data)
         if self.max_pp == 0:
             self.max_pp = self.base_move.base_pp
@@ -276,14 +288,14 @@ class Move(BaseModel):
         elif self.pp_incremented_amount == 2:
             self.max_pp = self.base_move.max_pp_inc_two
         elif self.pp_incremented_amount == 3:
-            self.max_pp = self.base_move.max_pp_int_three
+            self.max_pp = self.base_move.max_pp_inc_three
 
         # Ensure current PP does not exceed new max PP
         if self.current_pp > self.max_pp:
             self.current_pp = self.max_pp
     def maximize_pp(self) -> None:
         self.pp_incremented_amount = 3
-        self.max_pp = self.base_move.max_pp_int_three
+        self.max_pp = self.base_move.max_pp_inc_three
         if self.current_pp > self.max_pp:
             self.current_pp = self.max_pp
 
@@ -345,19 +357,19 @@ class Move(BaseModel):
 
 class MoveSet(BaseModel):
     # this will store move objects in a dict of the move index, and then the move and its current pp
-    moves: dict[int, Move] = Field(default_factory=dict)
-    moveset_order: List[int] = Field(default_factory=list)
+    moves: dict[int, Move] = {}
+    moveset_order: List[int] = []
 
-    def __init__(self, moves: Optional[List[BaseMove]] = None, **data):
+    def __init__(self, moves: Optional[List[BaseMove]] = None, **data): # type: ignore
         super().__init__(**data)
         
         if not isinstance(moves, list):
             if moves is None: moves = []
             else:             moves = [moves]
         for move in moves:
-            if not (isinstance(move, BaseMove)):
+            if not isinstance(move, BaseMove): # type: ignore - Sanity check
                 raise ValueError("Each move must be a BaseMove object.")
-            self.moves[move.index] = Move(current_pp=move.base_pp, base_move=move)
+            self.moves[move.index] = Move(current_pp=move.base_pp, base_move=move) # type: ignore
 
         self._set_initial_move_order()
 
@@ -380,7 +392,7 @@ class MoveSet(BaseModel):
         return self.moves.get(index, None)
     
     def list_moves(self) -> List[Move]:
-        move_list = []
+        move_list: List[Move] = []
         for move_index in self.moveset_order:
             move = self.moves.get(move_index, None)
             if move:
@@ -396,7 +408,7 @@ class MoveSet(BaseModel):
 
     def add_move(self, move: Move):
         if len(self.moves) < 4:
-            self.moves.append(move)
+            self.moves[move.base_move.index] = move
         else:
             raise ValueError("A Pokémon can only know up to 4 moves.")
     

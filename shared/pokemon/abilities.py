@@ -1,6 +1,11 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from enum import Enum
 from pydantic import BaseModel, ConfigDict
+
+if TYPE_CHECKING:
+    from shared.pokemon.pokemon import BattleMon
+    from shared.pokemon.move import BaseMove
+
 
 class Ability(BaseModel):
     model_config = ConfigDict(extra='allow')
@@ -20,39 +25,39 @@ class Ability(BaseModel):
     def __hash__(self):
         return hash(self.name)
     
-    def on_before_move(self, pokemon, move, target) -> Optional[bool]:
+    def on_before_move(self, pokemon: "BattleMon", move: "BaseMove", target: "BattleMon") -> Optional[bool]:
         """Called before the Pokémon uses a move."""
         return None
     
-    def on_escape_attempt(self, pokemon) -> Optional[bool]:
+    def on_escape_attempt(self, pokemon: "BattleMon") -> Optional[bool]:
         """Called when the Pokémon attempts to escape from battle. for Eevee Run Away ability"""
         return None
     
-    def on_enemy_escape_attempt(self, pokemon) -> Optional[bool]:
+    def on_enemy_escape_attempt(self, pokemon: "BattleMon") -> Optional[bool]:
         """Called when an enemy Pokémon attempts to escape from battle."""
         return None
 
-    def on_switch_in(self, pokemon) -> None:
+    def on_switch_in(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon switches in."""
         pass
 
-    def on_switch_out(self, pokemon) -> None:
+    def on_switch_out(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon switches out."""
         pass
 
-    def on_faint(self, pokemon) -> None:
+    def on_faint(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon faints."""
         pass
 
-    def on_damage_taken(self, pokemon, damage) -> Optional[int]:
+    def on_damage_taken(self, pokemon: "BattleMon", damage: int) -> Optional[int]:
         """Called when the Pokémon takes damage."""
         return None
     
-    def on_contact(self, pokemon, attacker) -> None:
+    def on_contact(self, pokemon: "BattleMon", attacker: "BattleMon") -> None:
         """Called when the Pokémon is hit by a contact move."""
         pass
 
-    def accuracy_modifier(self, user, opponent, move) -> float:
+    def accuracy_modifier(self, user: "BattleMon", opponent: "BattleMon", move: "BaseMove") -> float:
         """Modify the accuracy of moves used by the Pokémon."""
         return 1.0
     
@@ -68,113 +73,122 @@ class PokemonBaseAbility(BaseModel):
     is_hidden: bool = False
     slot: AbilitySlot
 
+# TODO, abliity management system need to be updated cause a list doesnt make sense for ability slot to have one
 class PokemonAbilities(BaseModel):
-    primary: Optional[list[Ability, bool]] = None
-    secondary: Optional[list[Ability, bool]] = None
-    hidden: Optional[list[Ability, bool]] = None
-
-    def update_ability_slot(self, slot: AbilitySlot, ability: Ability, active: bool = True):
-        if slot == AbilitySlot.PRIMARY:
-            self.primary = [ability, active]
-        elif slot == AbilitySlot.SECONDARY:
-            self.secondary = [ability, active]
-        elif slot == AbilitySlot.HIDDEN:
-            self.hidden = [ability, active]
-        else:
-            raise ValueError(f"Invalid ability slot: {slot}")
+    abilities: dict[Ability, bool] = {
+    }
+    slots: dict[AbilitySlot, Optional[Ability]] = {
+        AbilitySlot.PRIMARY: None,
+        AbilitySlot.SECONDARY: None,
+        AbilitySlot.HIDDEN: None
+    }
     
-    def reset_ability_active_states(self):
-        if self.primary:
-            self.primary[1] = True
-        if self.secondary:
-            self.secondary[1] = True
-        if self.hidden:
-            self.hidden[1] = True
-
-    def activate_ability(self, slot: AbilitySlot):
-        if slot == AbilitySlot.PRIMARY and self.primary:
-            self.primary[1] = True
-        elif slot == AbilitySlot.SECONDARY and self.secondary:
-            self.secondary[1] = True
-        elif slot == AbilitySlot.HIDDEN and self.hidden:
-            self.hidden[1] = True
-        
-    def deactivate_ability(self, slot: AbilitySlot):
-        if slot == AbilitySlot.PRIMARY and self.primary:
-            self.primary[1] = False
-        elif slot == AbilitySlot.SECONDARY and self.secondary:
-            self.secondary[1] = False
-        elif slot == AbilitySlot.HIDDEN and self.hidden:
-            self.hidden[1] = False
-
-    def get_ability_by_slot(self, slot: AbilitySlot) -> Optional[Ability]:
-        if slot == AbilitySlot.PRIMARY:
-            return self.primary[0]
-        elif slot == AbilitySlot.SECONDARY:
-            return self.secondary[0]
-        elif slot == AbilitySlot.HIDDEN:
-            return self.hidden[0]
-        else:
-            return None
-
-    def get_all_abilities(self) -> list[Ability]:
-        all_abilities = []
-        for ability in self.list_abilities_by_slot().values():
-            if ability:
-                all_abilities.append(ability[0])
-        return all_abilities
-
-    def get_all_active_abilities(self) -> list[Ability]:
-        active_abilities = []
-        for ability in self.list_abilities_by_slot().values():
-            if ability and ability[1]:  # Check if ability is active
-                active_abilities.append(ability[0])
-        return active_abilities
-
-    def list_abilities_by_slot(self) -> dict[AbilitySlot, Optional[list[Ability, bool]]]:
+    def list_abilities_by_slot(self) -> dict[AbilitySlot, Ability|None]:
         return {
             AbilitySlot.PRIMARY: self.primary,
             AbilitySlot.SECONDARY: self.secondary,
             AbilitySlot.HIDDEN: self.hidden
         }
 
+    def reset_ability_active_states(self):
+        if self.primary:
+            self.abilities[self.primary] = True
+        if self.secondary:
+            self.abilities[self.secondary] = True
+        if self.hidden:
+            self.abilities[self.hidden] = True
+
+    def activate_ability(self, slot: AbilitySlot):
+        if slot == AbilitySlot.PRIMARY and self.primary:
+            self.abilities[self.primary] = True
+        elif slot == AbilitySlot.SECONDARY and self.secondary:
+            self.abilities[self.secondary] = True
+        elif slot == AbilitySlot.HIDDEN and self.hidden:
+            self.abilities[self.hidden] = True
+        
+    def deactivate_ability(self, slot: AbilitySlot):
+        if slot == AbilitySlot.PRIMARY and self.primary:
+            self.abilities[self.primary] = False
+        elif slot == AbilitySlot.SECONDARY and self.secondary:
+            self.abilities[self.secondary] = False
+        elif slot == AbilitySlot.HIDDEN and self.hidden:
+            self.abilities[self.hidden] = False
+
+    def get_ability_by_slot(self, slot: AbilitySlot) -> Optional[Ability]:
+        return self.slots.get(slot)
+
+    def get_all_abilities(self) -> list[Ability]:
+        return list(self.abilities.keys())
+
+    def get_all_active_abilities(self) -> list[Ability]:
+        active_abilities: list[Ability] = []
+        for ability, is_active in self.abilities.items():
+            if is_active:
+                active_abilities.append(ability)
+        return active_abilities
+
     def has_ability(self, ability_name: str) -> bool:
         abilities = self.list_abilities_by_slot().values()
-        if abilities is None:
-            return False
         for ability in abilities:
-            if ability and ability[0].name.lower() == ability_name.lower():
+            if not ability: continue
+            if ability.name.lower() == ability_name.lower():
                 return True
         return False
 
     def has_active_ability(self, ability_name: str) -> bool:
         abilities = self.list_abilities_by_slot().values()
-        if abilities is None:
-            return False
         for ability in abilities:
-            if ability and ability[0].name.lower() == ability_name.lower() and ability[1]:
-                return True
+            if not ability: continue
+            if ability.name.lower() == ability_name.lower():
+                if self.abilities.get(ability):
+                    return True
         return False
 
     def has_any_ability(self, ability_names: list[str]) -> bool:
         for ability in ability_names:
             if self.has_ability(ability):
                 return True
+        return False
 
     @property
-    def primary_ability(self) -> Optional[Ability]:
+    def primary(self) -> Optional[Ability]:
+        return self.slots.get(AbilitySlot.PRIMARY)
+    
+    @primary.setter
+    def primary(self, value: Optional[Ability]):
         if self.primary:
-            return self.primary[0]
-        return None
+            del self.abilities[self.primary]
+        if value is None:
+            self.slots[AbilitySlot.PRIMARY] = None
+            return
+        self.slots[AbilitySlot.PRIMARY] = value
+        self.abilities[value] = True
+        
     
     @property
-    def secondary_ability(self) -> Optional[Ability]:
+    def secondary(self) -> Optional[Ability]:
+        return self.slots.get(AbilitySlot.SECONDARY)
+    
+    @secondary.setter
+    def secondary(self, value: Optional[Ability]):
         if self.secondary:
-            return self.secondary[0]
-        return None
+            del self.abilities[self.secondary]
+        if value is None:
+            self.slots[AbilitySlot.SECONDARY] = None
+            return
+        self.slots[AbilitySlot.SECONDARY] = value
+        self.abilities[value] = True
     
     @property
-    def hidden_ability(self) -> Optional[Ability]:
+    def hidden(self) -> Optional[Ability]:
+        return self.slots.get(AbilitySlot.HIDDEN)
+    
+    @hidden.setter
+    def hidden(self, value: Optional[Ability]):
         if self.hidden:
-            return self.hidden[0]
-        return None
+            del self.abilities[self.hidden]
+        if value is None:
+            self.slots[AbilitySlot.HIDDEN] = None
+            return
+        self.slots[AbilitySlot.HIDDEN] = value
+        self.abilities[value] = True

@@ -1,7 +1,10 @@
 from pydantic import BaseModel, Field
-from typing import Optional, List
+from typing import Optional, List, TYPE_CHECKING
 from enum import Enum
 
+if TYPE_CHECKING:
+    from shared.pokemon.pokemon import BattleMon
+    from shared.pokemon.move import BaseMove
 
 class ItemAttribute(Enum):
     CONSUMABLE = "consumable"
@@ -95,42 +98,42 @@ class Item(BaseModel):
     index: int
     description: str
     cost: int = Field(ge=0, default=0)
-    attributes: List[ItemAttribute] = Field(default_factory=list)
+    attributes: List[ItemAttribute] = []
     fling_effect: Optional[ItemFlingEffect] = None
     fling_power: Optional[int] = None
     baby_trigger_for: Optional[int] = None
     category: ItemCategory
-    held_by_pokemon: List[str] = Field(default_factory=list)
+    held_by_pokemon: List[str] = []
     pocket: Optional[ItemPocket] = None
 
-    def after_move_effect(self, pokemon, move, target) -> None:
+    def after_move_effect(self, pokemon: "BattleMon", move: "BaseMove", target: "BattleMon") -> None:
         """Called after the Pokémon uses a move."""
         pass
 
-    def on_consume(self, pokemon) -> None:
+    def on_consume(self, pokemon: "BattleMon") -> None:
         """Called when the item is consumed by the Pokémon."""
         pass
 
-    def on_switch_in(self, pokemon) -> None:
+    def on_switch_in(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon switches in."""
         pass
 
-    def on_switch_out(self, pokemon) -> None:
+    def on_switch_out(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon switches out."""
         pass
 
-    def on_faint(self, pokemon) -> None:
+    def on_faint(self, pokemon: "BattleMon") -> None:
         """Called when the Pokémon faints."""
         pass
 
-    def on_damage_taken(self, pokemon, damage) -> Optional[int]:
+    def on_damage_taken(self, pokemon: "BattleMon", damage: int) -> Optional[int]:
         """Called when the Pokémon takes damage."""
         return None
     
-    def on_contact(self, pokemon, attacker) -> None:
+    def on_contact(self, pokemon: "BattleMon", attacker: "BattleMon") -> None:
         """Called when the Pokémon is hit by a contact move."""
         pass
 
-    def modify_stat(self, pokemon, stat_name: str, amount: int) -> Optional[int]:
+    def modify_stat(self, pokemon: "BattleMon", stat_name: str, amount: int) -> Optional[int]:
         """Modify the specified stat of the Pokémon."""
         return None

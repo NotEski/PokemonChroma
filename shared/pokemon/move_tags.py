@@ -1,4 +1,3 @@
-from typing import Optional
 from pydantic import BaseModel, Field
 
 from .status_conditions import StatusCondition
@@ -82,7 +81,7 @@ class MirrorMove(MoveTag):
 
 
 class MultiHitMove(MoveTag):
-    hits: dict[int, int]  # Dictionary with 'hit_amount' and 'weight' for multi-hit moves e.g. {2: 35, 3: 35, 4: 15, 5: 15} for moves that hit 2-5 times
+    hits: dict[int, int] = { 2: 35, 3: 35, 4: 15, 5: 15 } # Dictionary with 'hit_amount' and 'weight' for multi-hit moves e.g. {2: 35, 3: 35, 4: 15, 5: 15} for moves that hit 2-5 times
 
 
 class MultiTurnMove(MoveTag):
