@@ -114,7 +114,7 @@ def move(move_name: str):
                     move_tags.append(BallisticsMove())
                 case "mental":
                     move_tags.append(MentalMove())
-                case "non-sky-battle":
+                case "non_sky_battle":
                     move_tags.append(NonSkyBattleMove())
                 case "pivot":
                     move_tags.append(PivotMove())

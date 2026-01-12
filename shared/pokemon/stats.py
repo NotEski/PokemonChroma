@@ -13,12 +13,12 @@ class Stat(Enum):
     CRITICAL_HIT = "critical_hit"
 
 class BaseStats(BaseModel):
-    hp: int = Field(ge=1, le=255)
-    attack: int = Field(ge=1, le=255)
-    defense: int = Field(ge=1, le=255)
-    special_attack: int = Field(ge=1, le=255)
-    special_defense: int = Field(ge=1, le=255)
-    speed: int = Field(ge=1, le=255)
+    hp: int = Field(default=50, ge=1, le=255)
+    attack: int = Field(default=50, ge=1, le=255)
+    defense: int = Field(default=50, ge=1, le=255)
+    special_attack: int = Field(default=50, ge=1, le=255)
+    special_defense: int = Field(default=50, ge=1, le=255)
+    speed: int = Field(default=50, ge=1, le=255)
 
 class IndividualValues(BaseModel):
     hp: int = Field(ge=0, le=31, default=0)

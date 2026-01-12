@@ -49,20 +49,20 @@ class MegaEvolution(BaseModel):
     required_item: Optional[Item] = None
 
 class PokemonBase(BaseModel):
-    name: str
-    display_name: str = Field(default="")
+    name: str = Field(default="none")
+    display_name: str = Field(default="None")
     types: List[PokemonType]
     base_stats: BaseStats
     pokedex_number: int
     ev_yield: EffortYield = Field(default_factory=EffortYield)
-    abilities: list[PokemonBaseAbility] = Field(default_factory=list)
+    abilities: list[PokemonBaseAbility] = []
 
     base_experience_yield: int = Field(default=64)
     gender_rate: GenderRate = Field(default=GenderRate.EQUAL)
     capture_rate: int = Field(ge=0, le=255, default=45)
     base_happiness: int = Field(ge=0, le=255, default=70)
     growth_rate: GrowthRate = Field(default=GrowthRate.MEDIUM)
-    egg_groups: List[EggGroup] = Field(default_factory=list)
+    egg_groups: List[EggGroup] = []
 
     height: float = Field(ge=0.0, default=1.0)  # in meters
     weight: float = Field(ge=0.0, default=1.0)  # in kilograms
@@ -130,8 +130,8 @@ class BattleMon(BaseModel):
     Including almost everything that can change during battle. including BasePokemon reference for mega evolutions etc.
     """
 
-    pokemon_reference: Optional[Pokemon] = Field(default=None)  # reference to the original Pokemon object outside of battle
-    pokemon_base: Optional[PokemonBase] = Field(default=None) # editable during battle to allow for mega evolutions, terastallization, etc.
+    pokemon_reference: Pokemon  # reference to the original Pokemon object outside of battle
+    pokemon_base: Optional[PokemonBase] = None # editable during battle to allow for mega evolutions, terastallization, etc.
 
     move_set: MoveSet = Field(default_factory=MoveSet)
     current_hp: int = Field(ge=0, default=0)
@@ -140,22 +140,23 @@ class BattleMon(BaseModel):
     battle_state: BattleMonBattleState = Field(default_factory=BattleMonBattleState)
     
     # Battle Postion
-    current_position: Optional[BattlePosition] = Field(default=None)  # (team_id, pokemon_index)
+    current_position: Optional[BattlePosition] = None  # (team_id, pokemon_index)
 
     # Pokemon Battled for experience tracking
-    pokemon_battled: List[BattleMon] = Field(default_factory=list)
+    pokemon_battled: List[BattleMon] = []
 
-    def __post_init__(self, **data):
+    def __post_init__(self, **data): # type: ignore
         super().__init__(**data)
 
         # Initialize base_pokemon from pokemon_reference if not provided
-        if self.pokemon_base is None and self.pokemon_reference is not None:
+        if self.pokemon_base is None:
             self.pokemon_base = self.pokemon_reference.pokemon_base
+
         # Initialize move_set from pokemon_reference if not provided
-        if not self.move_set.moves and self.pokemon_reference is not None:
+        if not self.move_set.moves:
             self.move_set = self.pokemon_reference.move_set
         # Initialize max_hp and current_hp if not provided
-        if self.max_hp == 0 and self.pokemon_reference is not None:
+        if self.max_hp == 0:
             self.max_hp = self.pokemon_reference.max_hp
         if self.current_hp == 0:
             self.current_hp = self.max_hp
@@ -409,7 +410,7 @@ class BattleMon(BaseModel):
         return self.pokemon_reference.shiny
     
     @property
-    def tera_type(self) -> PokemonType:
+    def terra_type(self) -> PokemonType:
         # This will need to be updated to be changeable to the specific pokemon from the use of
         # terra shards to change the terra type of the pokemon and will need to be stored in the Pokemon class
         return self.pokemon_reference.terra_type
@@ -417,24 +418,22 @@ class BattleMon(BaseModel):
 
 
 class Pokemon(BaseModel):
-    pokemon_base: PokemonBase
+    pokemon_base: PokemonBase = Field(default_factory=PokemonBase)
     nickname: str = Field(default="")
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)
     max_hp: int = Field(ge=1, default=0)
-    shiny: bool = Field(default=None)
-    gender: Gender = Field(default=None)
-    individual_values: IndividualValues = Field(default=None)
+    shiny: bool = Field(default=False)
+    gender: Gender = Field(default=Gender.NONE)
+    individual_values: IndividualValues = Field(default_factory=IndividualValues)
     effort_values: EffortValues = Field(default_factory=EffortValues)
-    terra_type: PokemonType = Field(default=None)
-    nature: Nature = Field(default=None)
+    terra_type: PokemonType = Field(default=PokemonType.NORMAL)
+    nature: Nature = Field(default=Nature.HARDY)
     move_set: MoveSet = Field(default_factory=MoveSet)
     abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
     friendship: int = Field(ge=0, le=255, default=70)
     experience: int = Field(ge=0, default=0)
     held_item: Optional[Item] = Field(default=None)
-
-    terra_type: PokemonType = Field(default=None)
 
 
     # NOTE FOR OUTSIDE OF BATTLE ONLY
@@ -443,15 +442,16 @@ class Pokemon(BaseModel):
 
     battlemon: Optional[BattleMon] = Field(default=None)
 
-    def __init__(self, **data):
+    def __init__(self, generate=True, **data): # type: ignore
         super().__init__(**data)
         # calc values based on personality value
         if hasattr(self, "_initialized"):
             return
-        self._calc_gender()
-        self._calc_nature()
-        self._calc_individual_values()
-        self._calc_shiny()
+        if generate:
+            self._calc_gender()
+            self._calc_nature()
+            self._calc_individual_values()
+            self._calc_shiny()
 
         self.max_hp = generic_calculate_stat(self.pokemon_base, self.effort_values, self.individual_values, self.nature, self.level, Stat.HP)
         self.current_hp = self.max_hp
@@ -460,8 +460,6 @@ class Pokemon(BaseModel):
         self._initialized = True
 
     def _calc_gender(self):
-        if self.gender is not None:
-            return
         rate = self.pokemon_base.gender_rate
         if rate == GenderRate.GENDERLESS:
             self.gender = Gender.NONE
@@ -469,14 +467,10 @@ class Pokemon(BaseModel):
         self.gender = Gender.MALE if randint(0, 7) <= rate.value else Gender.FEMALE
 
     def _calc_nature(self):
-        if self.nature is not None:
-            return
         nature_index = randint(0, 24)
         self.nature = Nature(list(Nature)[nature_index])
 
     def _calc_individual_values(self):
-        if self.individual_values:
-            return
         self.individual_values = IndividualValues()
 
         self.individual_values.hp = randint(0, 31)
@@ -487,12 +481,12 @@ class Pokemon(BaseModel):
         self.individual_values.special_defense = randint(0, 31)
 
     def _calc_shiny(self):
-        if self.shiny is not None:
-            return
         self.shiny = (randint(0, 8191) < 1) # 1 in 8192 chance
 
 
-    def _get_current_position(self) -> BattlePosition:
+    def _get_current_position(self) -> Optional[BattlePosition]:
+        if self.battlemon is None:
+            return None
         return self.battlemon.current_position
 
 
@@ -503,11 +497,11 @@ class Pokemon(BaseModel):
         return generic_calculate_stat(self.pokemon_base, self.effort_values, self.individual_values, self.nature, self.level, stat)
 
 
-    def create_move_action(self, move: str, target_position: BattlePosition = None) -> MoveAction:
+    def create_move_action(self, move: str, target_position: Optional[BattlePosition] = None) -> MoveAction:
         current_position = self._get_current_position()        
         # get the move object from the pokemon with name or index provided
 
-        if not isinstance(move, str):
+        if not isinstance(move, str): # type: ignore - Sanity check
             raise ValueError("Move must be a the name as string")
 
         move_obj = self.move_set.get_move_by_name(move)

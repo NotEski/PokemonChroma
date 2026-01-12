@@ -20,14 +20,14 @@ from .multihit_check import multihit_check
 import random
 
 
-class BattleManager(BaseModel):
+class BattleManager:
     position_manager: BattlePositionManager = Field(default_factory=BattlePositionManager)
     battle_config: BattleConfig = Field(default_factory=BattleConfig)
     battle_state: BattleState = Field(default_factory=BattleState)
     taking_actions: bool = Field(default=False)
     battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
     active_battle: bool = Field(default=True)
-    teams: dict[int, Opponent]|List[Opponent] = Field(default_factory=dict)
+    teams: dict[int, Opponent]|List[Opponent] = {}
 
 
     def __init__(self, **data):
@@ -490,6 +490,8 @@ class BattleManager(BaseModel):
             effectiveness_level = EffectivenessLevel.NORMAL_EFFECTIVE
             damage = 0
             total_damage = 0
+
+            # TODO Struggle Move needs special handling here to skip PP check and deduction
 
             # Calc multihit here if applicable
             num_hits = multihit_check(used_move.base_move, user_pokemon, target_pokemon)

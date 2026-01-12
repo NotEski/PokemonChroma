@@ -3,6 +3,7 @@ from .stats import Stat
 from typing import Optional
 
 class Nature(Enum):
+    NONE = ("none", None, None)
     HARDY = ("hardy", None, None)
     LONELY = ("lonely", Stat.ATTACK, Stat.DEFENSE)
     BRAVE = ("brave", Stat.ATTACK, Stat.SPEED)

@@ -1,6 +1,6 @@
 # battle example
 
-from engine.pokemon.repository import pokemon_repository, ability_repository, move_repository, item_repository
+from engine.pokemon.repository import pokemon_repository, move_repository, item_repository
 
 from engine.battle.battle_manager import BattleManager
 from shared.battle.position_manager import BattlePosition
