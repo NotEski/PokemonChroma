@@ -1,6 +1,6 @@
 from shared.pokemon.pokemon import BattleMon
 from shared.items.pokeball import Pokeball
-from engine.pokemon.repository import status_repository
+from engine.repositories.repository import status_repository
 from random import randint
 
 status_condition_big_bonus = [

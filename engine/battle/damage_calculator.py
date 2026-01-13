@@ -2,7 +2,7 @@ import random
 from shared.pokemon.move import BaseMove
 from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.types import PokemonType
-from engine.pokemon.repository import status_repository
+from engine.repositories.repository import status_repository
 from shared.pokemon.move import DamageClass
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.battle.type_effectiveness import get_attack_multiplier

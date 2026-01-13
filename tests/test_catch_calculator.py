@@ -2,7 +2,7 @@
 import pytest
 from unittest.mock import patch
 from shared.pokemon.pokemon import Pokemon
-from engine.pokemon.repository import status_repository
+from engine.repositories.repository import status_repository
 from shared.items.pokeball import Pokeball
 from engine.battle.catch_calculator import (
     calculate_catch_probability,

@@ -2,7 +2,7 @@ import random
 from shared.pokemon.move import BaseMove, DamageClass
 from shared.pokemon.pokemon import BattleMon
 from shared.battle.battle_header import BattleState, BattleWeather
-from engine.pokemon.repository import status_repository
+from engine.repositories.repository import status_repository
 
 
 def calculate_accuracy(base_move: BaseMove, user: BattleMon, target: BattleMon, battle_state: BattleState) -> float:

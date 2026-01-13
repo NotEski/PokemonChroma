@@ -15,7 +15,7 @@ from shared.pokemon.move_tags import *
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, BattleMon, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
-from engine.pokemon.repository import (
+from engine.repositories.repository import (
     pokemon_repository,
     ability_repository,
     move_repository,

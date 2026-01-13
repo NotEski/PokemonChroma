@@ -16,12 +16,10 @@
 # - Pivot Moves (U-turn, Volt Switch, Flip Turn, etc.)
 #===============================================================================
 
-from engine.pokemon.repository import move_repository
+from .repository import move_repository
 from shared.pokemon.move import BaseMove, MoveCategory, MoveTarget
 from shared.pokemon.move_tags import *
 
-
-# this will need to be a singleton class
 
 
 class MoveCategories:

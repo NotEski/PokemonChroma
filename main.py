@@ -1,5 +1,5 @@
-from engine.pokemon.repositry_generator import initialize_repositories
-from engine.pokemon.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
+from engine.repositories.repositry_generator import initialize_repositories
+from engine.repositories.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
 from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.battle_header import BattleSwitchType, BattleType, BattleConfig

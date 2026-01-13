@@ -9,7 +9,7 @@ from panda3d.core import (
     WindowProperties
 )
 
-from engine.pokemon.repositry_generator import initialize_repositories
+from engine.repositories.repositry_generator import initialize_repositories
 
 from .player_controller import PlayerController
 
@@ -60,6 +60,10 @@ class GameWindow(ShowBase):
 
     def enable_mouse(self) -> None:
         self.enableMouse()
+
+    @property
+    def is_mouse_enabled(self) -> bool:
+        return self.mouseWatcherNode.hasMouse()
 
 
 
