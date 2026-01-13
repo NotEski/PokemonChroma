@@ -74,6 +74,11 @@ class MoveTarget(Enum):
     USER = "user"
     USERS_FIELD = "users_field"
 
+class OnUseReturns(Enum):
+    SUCCESS = "success"
+    FAIL = "fail"
+    NO_EFFECT = "no_effect"
+
 
 class BaseMove(BaseModel):
     model_config = ConfigDict(extra='allow')
@@ -127,7 +132,9 @@ class BaseMove(BaseModel):
         return None
     
 
-
+    def move_factory(self):
+        """Creates a new instance of the move."""
+        return Move(current_pp=self.base_pp, base_move=self)
     
     def has_tag(self, tag_type: Type[MoveTag]) -> bool:
         if self.move_tags is None:

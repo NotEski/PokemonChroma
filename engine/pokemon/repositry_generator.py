@@ -375,6 +375,7 @@ def get_item(item_name: str) -> Item:
 safe_namespace: dict[str, Any|dict[str, Any]] = {
         "__builtins__": {
             "__build_class__": builtins.__build_class__,
+            "__import__": builtins.__import__,
             "__name__": str,
             "dict": dict,
             "list": list,
@@ -407,28 +408,44 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
 
 def validate_dsl_code_strict(source: str, filename: str):
     tree = ast.parse(source, filename=filename)
+
+    ALLOWED_IMPORT_MODULES = (
+        "shared.pokemon.pokemon",
+        "shared.pokemon.move",
+        "shared.pokemon.status_conditions",
+        "shared.pokemon.abilities",
+        "shared.pokemon.items",
+        "shared.pokemon.hazard",
+    )
+
+    BLOCKED_CALLS = {
+        "open", "exec", "eval",
+        "compile", "globals", "locals", "vars"
+        }
+    BLOCKED_MODULES = {
+        "os", "sys", "subprocess", "pathlib",
+        "importlib"
+        }
+
     for node in ast.walk(tree):
         if isinstance(node, (ast.Import, ast.ImportFrom)):
-            raise DSLParseError(
-                f"Imports not allowed in {filename}. "
-                f"Move definitions must be self-contained."
-            )
+            if node.module:
+                if not any(node.module.startswith(allowed) for allowed in ALLOWED_IMPORT_MODULES):
+                    raise DSLParseError(
+                        f"Imports not allowed in {filename}. "
+                        f"Move definitions must be self-contained."
+                    )
         
         if isinstance(node, ast.Call):
             if isinstance(node.func, ast.Name):
-                blocked_calls = {
-                    "open", "exec", "eval", "__import__",
-                    "compile", "globals", "locals", "vars"
-                }
-                if node.func.id in blocked_calls:
+                if node.func.id in BLOCKED_CALLS:
                     raise DSLParseError(
                         f"Use of '{node.func.id}' is not allowed in {filename}."
                     )
             # Block os.*, sys.*, subprocess.*
             if isinstance(node.func, ast.Attribute):
                 if isinstance(node.func.value, ast.Name):
-                    blocked_modules = {"os", "sys", "subprocess", "pathlib", "importlib"}
-                    if node.func.value.id in blocked_modules:
+                    if node.func.value.id in BLOCKED_MODULES:
                         raise DSLParseError(
                             f"Access to '{node.func.value.id}' not allowed in {filename}"
                         )

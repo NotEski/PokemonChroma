@@ -240,6 +240,12 @@ class BattleMon(BaseModel):
     def add_previous_move_used(self, move: BaseMove):
         self.battle_state.last_used_moves.append(move)
 
+    def get_move_slot(self, move: BaseMove) -> Optional[int]:
+        for index, m in enumerate(self.move_set.moves):
+            if m == move:
+                return index
+        return None
+
 #region BattleState Proxy Properties
     @property
     def stat_stages(self) -> StatStages:

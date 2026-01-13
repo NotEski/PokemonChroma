@@ -3,15 +3,13 @@
 # a section will contain everything u puntil the loading spots
 
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from enum import Enum
 
 from panda3d.core import (
     Geom,
     Vec3
 )
-
-
 
 class Vector3(BaseModel):
     x: float
@@ -51,11 +49,16 @@ class Node(BaseModel):
     @z.setter
     def z(self, value: float) -> None:
         self.position.z = value
-    
+
 class Edge(BaseModel):
     """A connection between two nodes in the navigation network."""
     from_node: Node
+    shape: list[Vector3] = Field(default_factory=list) # if empty, the shape is a linear connection between the nodes
     to_node: Node
+
+    def generate_shape(self):
+        pass
+
 
 class Tile(BaseModel):
     """A single tile in the world grid."""

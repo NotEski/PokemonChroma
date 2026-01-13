@@ -612,6 +612,6 @@ def launch_battle_inspector():
 
 test_tile_based_world_generation()
 
-launch_game_window()
+# launch_game_window()
 
 launch_battle_inspector()

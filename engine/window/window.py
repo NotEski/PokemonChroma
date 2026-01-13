@@ -13,6 +13,11 @@ from engine.pokemon.repositry_generator import initialize_repositories
 
 from .player_controller import PlayerController
 
+
+from panda3d.core import loadPrcFileData
+loadPrcFileData("", "sync-video false")
+
+
 class GameWindow(ShowBase):
     def __init__(self) -> None:
         super().__init__()
@@ -55,8 +60,6 @@ class GameWindow(ShowBase):
 
     def enable_mouse(self) -> None:
         self.enableMouse()
-
-
 
 
 
