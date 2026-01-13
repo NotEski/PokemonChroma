@@ -13,7 +13,7 @@ status_condition_small_bonus = [
     status_repository.get("poison"),
 ]
 
-def calculate_catch_probability(pokemon: BattleMon, pokeball: Pokeball) -> float:
+def calculate_catch_probability(pokemon: BattleMon, pokeball: Pokeball) -> int:
 
     if pokeball.name == "Master Ball":
         return 65537  # Guaranteed catch (above max shake chance)

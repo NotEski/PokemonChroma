@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from random import randint
 from pydantic import BaseModel, Field
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 from enum import Enum
 
 from .types import PokemonType
@@ -105,11 +105,11 @@ class BattleMonBattleState(BaseModel):
     stat_stages: StatStages = Field(default_factory=StatStages)
     
     # Status Conditions
-    status_conditions: dict[StatusCondition, dict] = Field(default_factory=dict)  # e.g., "burn", "poison", etc. with turns present
+    status_conditions: dict[StatusCondition, dict[str, Any]] = {}  # e.g., "burn", "poison", etc. with turns present
 
     # Extra and Excluded Types added from moves, items, abilities, etc.
-    extra_types: List[PokemonType] = Field(default_factory=list)
-    excluded_types: List[PokemonType] = Field(default_factory=list)
+    extra_types: List[PokemonType] = []
+    excluded_types: List[PokemonType] = []
 
     # Turns in battle
     turns_in_battle: int = Field(ge=0, default=0)
@@ -118,10 +118,10 @@ class BattleMonBattleState(BaseModel):
     flinch_next_turn: bool = Field(default=False)
 
     # Disabled Moves
-    disabled_moves: Dict[int, int] = Field(default_factory=dict)  # list of move indices that are disabled and the remaining turns they are disabled for
+    disabled_moves: Dict[int, int] = {}  # list of move indices that are disabled and the remaining turns they are disabled for
 
     # Previously Used Moves
-    last_used_moves: List[BaseMove] = Field(default_factory=list)
+    last_used_moves: List[BaseMove] = []
 
 
 class BattleMon(BaseModel):
@@ -131,7 +131,7 @@ class BattleMon(BaseModel):
     """
 
     pokemon_reference: Pokemon  # reference to the original Pokemon object outside of battle
-    pokemon_base: Optional[PokemonBase] = None # editable during battle to allow for mega evolutions, terastallization, etc.
+    pokemon_base: PokemonBase # editable during battle to allow for mega evolutions, terastallization, etc.
 
     move_set: MoveSet = Field(default_factory=MoveSet)
     current_hp: int = Field(ge=0, default=0)
@@ -145,12 +145,14 @@ class BattleMon(BaseModel):
     # Pokemon Battled for experience tracking
     pokemon_battled: List[BattleMon] = []
 
-    def __post_init__(self, **data): # type: ignore
+    def __post_init__(self, pokemon_base: PokemonBase = None, **data): # type: ignore
         super().__init__(**data)
 
         # Initialize base_pokemon from pokemon_reference if not provided
-        if self.pokemon_base is None:
+        if not pokemon_base:
             self.pokemon_base = self.pokemon_reference.pokemon_base
+        else:
+            self.pokemon_base = pokemon_base
 
         # Initialize move_set from pokemon_reference if not provided
         if not self.move_set.moves:
@@ -246,7 +248,7 @@ class BattleMon(BaseModel):
     def stat_stages(self, value: StatStages):
         self.battle_state.stat_stages = value
     @property
-    def status_conditions(self) -> dict[StatusCondition, dict]:
+    def status_conditions(self) -> dict[StatusCondition, dict[str, Any]]:
         return self.battle_state.status_conditions
     @property
     def extra_types(self) -> List[PokemonType]:

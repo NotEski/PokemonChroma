@@ -1,11 +1,15 @@
 from typing import Optional
 
+from engine.main import application_root
+
 from direct.showbase.ShowBase import ShowBase
 
 from panda3d.core import (
     Geom,
     WindowProperties
 )
+
+from engine.pokemon.repositry_generator import initialize_repositories
 
 from .player_controller import PlayerController
 
@@ -21,6 +25,8 @@ class GameWindow(ShowBase):
         self.player_controller.enable_control()
 
         self.accept("escape", self.userExit)
+
+        initialize_repositories(application_root)
 
     def get_win(self) -> bool:
         if self.win is not None: 

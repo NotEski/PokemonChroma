@@ -25,32 +25,26 @@ def calculate_speed(pokemon: BattleMon) -> int:
 
     # if ability is Slow Start and has not expired yet, multiply modifier by 0.5
 
-
     # if item is Quick Powder and species is Ditto (not transformed), multiply modifier by 2
-
 
     # if item is Choice Scarf, multiply modifier by 1.5
 
     # if item is Iron Ball, Macho Brace, or a Power EV item, multiply modifier by 0.5
 
-
     # if Tailwind is in effect on this side, multiply modifier by 2
 
     # if pledge swamp is in effect on this side, multiply modifier by 1.5
-
 
     # multiply speed (last used in step 3) by modifier, divide by 4096, and round to nearest but ties round DOWN
     pokemon_speed = round((pokemon_speed * modifier) // 4096)
 
     # if paralyzed and not Quick Feet, multiply speed by 0.5 (G7) or 0.25 (G5-6), and round down
 
-
     # if speed > 10000, set speed to 10000
     if pokemon_speed > 10000:
         pokemon_speed = 10000
 
     # if Trick Room is active, set speed to (10000 - speed)
-
 
     # if speed > 8191, set speed to (speed - 8192)
     if pokemon_speed > 8191:

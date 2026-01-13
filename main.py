@@ -10,6 +10,7 @@ from shared.pokemon.pokemon import PokemonTeam, Pokemon
 from shared.battle.battle_actions import MoveAction, SkipTurnAction
 
 import os
+import sys
 import traceback
 import tkinter as tk
 from tkinter import ttk
@@ -606,7 +607,8 @@ def launch_battle_inspector():
     window.run()
 
 
-initialize_repositories(os.path.dirname(os.path.abspath(__file__)))
+# Get application root: use __file__ if available (dev), else sys.executable (bundled)
+
 
 test_tile_based_world_generation()
 

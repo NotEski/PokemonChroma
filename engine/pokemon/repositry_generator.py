@@ -5,6 +5,7 @@ import json
 import builtins
 from random import randint
 import os
+import sys
 from typing import Any, Optional, List, TypeVar, Callable
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
@@ -635,4 +636,3 @@ def initialize_repositories(application_root_path: str):
             print (f"Loading Item Repo         - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             generate_item_repository_from_json(file_path)
     print()
-
