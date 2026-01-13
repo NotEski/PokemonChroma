@@ -4,7 +4,8 @@ from typing import Dict, Optional, TypeVar, Generic
 from shared.pokemon.hazard import EntryHazard
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
-from shared.pokemon.move import BaseMove
+from shared.pokemon.move import BaseMove, MoveCategory, MoveTarget
+from shared.pokemon.move_tags import *
 from shared.items.items import Item
 from shared.pokemon.status_conditions import StatusCondition
 from shared.battle.field_effect import FieldEffect
@@ -81,8 +82,60 @@ class MoveRepository(BaseRepository[BaseMove]):
             return self.items.get(str(key).lower())
         else:
             raise ValueError("Key must be a string (name) or integer (index).")
+        
+    @property
+    def categories(self) -> "MoveCategories":
+        """Lazy-load move categories on first access."""
+        if self._categories is None:
+            self._categories = MoveCategories()
+            self._categories.build_all_categories()
+        return self._categories
 
+    def refresh_categories(self):
+        """Refresh move categories."""
+        self._categories = MoveCategories()
+        self._categories.build_all_categories()
 
+    @property
+    def priority_moves(self) -> dict[BaseMove, int]:
+        return self.categories.priority_moves
+    @property
+    def setup_moves(self) -> dict[BaseMove, list[StatChangeMove]]:
+        return self.categories.setup_moves
+    @property
+    def hazard_moves(self) -> dict[BaseMove, int | None]:
+        return self.categories.hazard_moves
+    @property
+    def healing_moves(self) -> dict[BaseMove, int | None]:
+        return self.categories.healing_moves
+    @property
+    def ohko_moves(self) -> list[BaseMove]:
+        return self.categories.ohko_moves
+    @property
+    def spread_moves(self) -> list[BaseMove]:
+        return self.categories.spread_moves
+    @property
+    def protect_moves(self) -> list[BaseMove]:
+        return self.categories.protect_moves
+    @property
+    def status_moves(self) -> list[BaseMove]:
+        return self.categories.status_moves
+    @property
+    def screen_moves(self) -> list[BaseMove]:
+        return self.categories.screen_moves
+    @property
+    def weather_moves(self) -> list[BaseMove]:
+        return self.categories.weather_moves
+    @property
+    def terrain_moves(self) -> list[BaseMove]:
+        return self.categories.terrain_moves
+    @property
+    def pivot_moves(self) -> list[BaseMove]:
+        return self.categories.pivot_moves
+    @property
+    def damaging_moves(self) -> dict[BaseMove]:
+        return self.categories.damaging_moves
+    
 class PokemonAbilityRepository(BaseRepository[Ability]):
     pass
 
@@ -104,7 +157,6 @@ class PokemonRepositorySingleton(BaseSingleton[PokemonRepository]):
     @classmethod
     def _create_instance(cls) -> PokemonRepository:
         return PokemonRepository()
-
 
 class MoveRepositorySingleton(BaseSingleton[MoveRepository]):
     @classmethod
@@ -136,6 +188,144 @@ class FieldEffectRepositorySingleton(BaseSingleton[FieldEffectRepository]):
     @classmethod
     def _create_instance(cls) -> FieldEffectRepository:
         return FieldEffectRepository()
+
+
+class MoveCategories:
+    """
+    Categorizes all Moves for intelligent AI decisions
+    
+    Categories:
+    - Priority Moves (Quick Attack, Aqua Jet, Mach Punch, etc.)
+    - Setup Moves (Swords Dance, Nasty Plot, Dragon Dance, etc.)
+    - Hazard Moves (Stealth Rock, Spikes, Sticky Web, etc.)
+    - Healing Moves (Roost, Recover, Synthesis, etc.)
+    - OHKO Moves (Fissure, Guillotine, Sheer Cold, etc.)
+    - Spread Moves (Earthquake, Surf, Rock Slide, etc.)
+    - Protect Moves (Protect, Detect, Spiky Shield, etc.)
+    - Status Moves (Will-O-Wisp, Thunder Wave, Toxic, etc.)
+    - Screen Moves (Light Screen, Reflect, Aurora Veil, etc.)
+    - Weather Moves (Rain Dance, Sunny Day, Sandstorm, etc.)
+    - Terrain Moves (Electric Terrain, Grassy Terrain, etc.)
+    - Pivot Moves (U-turn, Volt Switch, Flip Turn, etc.)
+    """
+
+    priority_moves: dict[BaseMove, int] = {} # set of move indexes with priority other than 0
+    setup_moves: dict[BaseMove, list[StatChangeMove]] = {}
+    hazard_moves: dict[BaseMove, None] = {}
+    healing_moves: dict[BaseMove, None] = {}
+    ohko_moves: list[BaseMove] = []
+    spread_moves: list[BaseMove] = []
+    protect_moves: list[BaseMove] = []
+    status_moves: list[BaseMove] = []
+    screen_moves: list[BaseMove] = []
+    weather_moves: list[BaseMove] = []
+    terrain_moves: list[BaseMove] = []
+    pivot_moves: list[BaseMove] = []
+    damaging_moves: dict[BaseMove] = []
+
+
+    def build_priority_moves(self):
+        """Build the set of priority move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.priority != 0:
+                self.priority_moves[move] = move.priority
+    
+    def build_setup_moves(self):
+        """Build the set of setup move categories from move repo."""
+        for move in move_repository.items.values():
+            stat_changes = []
+            for effect in move.move_tags:
+                if isinstance(effect, StatChangeMove):
+                    stat_changes.append(effect)
+            if stat_changes:
+                self.setup_moves[move] = stat_changes
+
+    def build_hazard_moves(self):
+        """Build the set of hazard move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(EntryHazardMove):
+                self.hazard_moves[move] = None
+
+    def build_healing_moves(self):
+        """Build the set of healing move categories from move repo."""
+        for move in move_repository.items.values():
+            stat_changes = []
+            if move.has_tag(HealMove):
+                stat_changes.append(move)
+            elif move.has_tag(DrainMove) and move.get_tag(DrainMove)[0].drain_percentage > 0:
+                stat_changes.append(move)
+            if stat_changes:
+                self.healing_moves[move] = stat_changes
+
+    def build_ohko_moves(self):
+        """Build the set of OHKO move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.is_ohko:
+                self.ohko_moves.append(move)
+
+    def build_spread_moves(self):
+        """Build the set of spread move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.target in [MoveTarget.ALL_OPPONENTS, MoveTarget.ALL_OTHER_POKEMON, MoveTarget.ALL_POKEMON]:
+                self.spread_moves.append(move)
+
+    def build_protect_moves(self):
+        """Build the set of protect move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(ProtectMove):
+                self.protect_moves.append(move)
+
+    def build_status_moves(self):
+        """Build the set of status move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.is_status_condition_move:
+                self.status_moves.append(move)
+
+    def build_screen_moves(self):
+        """Build the set of screen move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(ScreenMove):
+                self.screen_moves.append(move)
+
+    def build_weather_moves(self):
+        """Build the set of weather move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(WeatherMove):
+                self.weather_moves.append(move)
+
+    def build_terrain_moves(self):
+        """Build the set of terrain move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(TerrainMove):
+                self.terrain_moves.append(move)
+
+    def build_pivot_moves(self):
+        """Build the set of pivot move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.has_tag(PivotMove):
+                self.pivot_moves.append(move)
+
+    def build_damaging_moves(self):
+        """Build the set of damaging move categories from move repo."""
+        for move in move_repository.items.values():
+            if move.category in [MoveCategory.DAMAGE, MoveCategory.DAMAGE_HEAL, MoveCategory.DAMAGE_STATUS, MoveCategory.DAMAGE_LOWER, MoveCategory.DAMAGE_RAISE]:
+                self.damaging_moves.append(move)
+
+    def build_all_categories(self):
+        """Build all move categories."""
+        self.build_priority_moves()
+        self.build_setup_moves()
+        self.build_hazard_moves()
+        self.build_healing_moves()
+        self.build_ohko_moves()
+        self.build_spread_moves()
+        self.build_protect_moves()
+        self.build_status_moves()
+        self.build_screen_moves()
+        self.build_weather_moves()
+        self.build_terrain_moves()
+        self.build_pivot_moves()
+
 
 # Module-level instances
 pokemon_repository = PokemonRepositorySingleton.get_instance()
