@@ -1,17 +1,16 @@
 # Opponent script
 
-from abc import ABC, abstractmethod
-from pydantic import ConfigDict
+from pydantic import ConfigDict, BaseModel
 from typing import List
 
-from shared.pokemon.pokemon import Pokemon
+from shared.pokemon.pokemon import Pokemon, BattleMon
 from ..trainer.trainer import Trainer
 from .battle_header import *
 
 
 # TODO : Combine them into the one class theres no reason to have separate ones
 
-class Opponent(ABC):
+class Opponent(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
     escape_attempts: int = 0
 
@@ -55,9 +54,11 @@ class Opponent(ABC):
                 return battlemon
         return None
 
-    @abstractmethod
     def get_trainer(self) -> Trainer:
-        pass
+        return Trainer(
+            name="Wild Pokémon",
+            team=[],
+        )
 
 class TrainerOpponent(Opponent):
     trainer: Trainer
@@ -67,6 +68,3 @@ class TrainerOpponent(Opponent):
     
 class WildPokemonOpponent(Opponent):
     pokemon: Pokemon
-
-    def get_trainer(self) -> Trainer:
-        raise NotImplementedError("Wild Pokémon opponents do not have a trainer.")

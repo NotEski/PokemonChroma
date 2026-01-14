@@ -19,7 +19,7 @@ class BattleAction(BaseModel):
 class MoveAction(BattleAction):
     action_type: ActionType = Field(default=ActionType.MOVE)
     move_index: int
-    target_position: Optional[BattlePosition] = Field(default=None)
+    target_position: BattlePosition
 
 class SwitchAction(BattleAction):
     action_type: ActionType = Field(default=ActionType.SWITCH)

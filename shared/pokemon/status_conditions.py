@@ -35,3 +35,7 @@ class StatusCondition(BaseModel):
     def can_move(self, pokemon: "BattleMon") -> bool:
         """Determine if the Pokémon can move this turn with this status condition."""
         return True
+    
+    def default_data_factory(self) -> dict[str, Any]:
+        """Factory method to create default data for the status condition."""
+        return self.default_data.copy()

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from typing import Dict, Optional, List
 from shared.battle.battle_actions import BattleAction, SwitchAction, MoveAction, EscapeAction, SkipTurnAction
 from shared.pokemon.move import BaseMove, MoveCategory, MoveCategoryCategories
 from shared.pokemon.pokemon import BattleMon, StatStages
@@ -21,28 +21,32 @@ import random
 
 
 class BattleManager:
-    position_manager: BattlePositionManager = Field(default_factory=BattlePositionManager)
-    battle_config: BattleConfig = Field(default_factory=BattleConfig)
-    battle_state: BattleState = Field(default_factory=BattleState)
-    taking_actions: bool = Field(default=False)
-    battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
-    active_battle: bool = Field(default=True)
+    position_manager: BattlePositionManager = BattlePositionManager()
+    battle_config: BattleConfig = BattleConfig()
+    battle_state: BattleState = BattleState()
+    taking_actions: bool = False
+    battle_log: BattleLogManager = BattleLogManager()
+    active_battle: bool = True
     teams: dict[int, Opponent] = {}
 
 
-    def __init__(self, **data):
-        if isinstance(data["teams"], list):
+    def __init__(self,
+                 teams: Dict[int, Opponent] | List[Opponent],
+                 battle_config: Optional[BattleConfig] = None ):
+        if battle_config:
+            self.battle_config = battle_config
+        if isinstance(teams, list):
             teams_dict = {}
-            for index, team in enumerate(data["teams"]):
+            for index, team in enumerate(teams):
                 teams_dict[index] = team
             self.teams = teams_dict
-        elif isinstance(data["teams"], dict):
-            # validate keys are 0, 1, 2, ...
-            len_keys = len(data["teams"].keys())
-            for i in range(0, len_keys):
-                if i not in data["teams"]:
-                    raise ValueError("Teams dictionary keys must be sequential integers starting from 0.")
-        super().__init__(**data)
+        else:
+            self.teams = teams
+        # validate keys are 0, 1, 2, ...
+        len_keys = len(self.teams.keys())
+        for i in range(0, len_keys):
+            if i not in self.teams:
+                raise ValueError("Teams dictionary keys must be sequential integers starting from 0.")
 
         if len(self.teams) != 2: # only support 2 teams for now. probably will only ever need 2 teams
             raise ValueError("There must be exactly 2 teams for a battle.")
@@ -57,8 +61,6 @@ class BattleManager:
             self.position_manager.pokemon_per_team = 3
 
         self.battle_state.position_manager_ref = self.position_manager
-
-        print (self.position_manager.list_unregistered_positions())
 
 
     # region Abstract Methods
@@ -77,8 +79,11 @@ class BattleManager:
 
         for team_id in range(0, self.position_manager.teams_count):
             for pokemon_index in range(0, self.position_manager.pokemon_per_team):
+                pokemon = self.teams[team_id].get_active_battlemon()
+                if not pokemon:
+                    raise ValueError(f"Team {team_id} does not have enough active Pokémon for the battle.")
                 self.position_manager.register_pokemon(
-                    pokemon=self.teams[team_id].get_active_battlemon(),
+                    pokemon=pokemon,
                     team_index=team_id,
                     pokemon_index=pokemon_index
                 )
@@ -88,18 +93,17 @@ class BattleManager:
             if isinstance(action, EscapeAction):
                 escaping_pokemon = self.position_manager.get_pokemon_at_position(position)
                 enemy_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
-
+                if not escaping_pokemon or not enemy_pokemon:
+                    continue
                 success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
                     self.battle_log.battle_end(
-                        winning_trainer=None,
                         description=f"{escaping_pokemon.nickname} successfully escaped!"
                     )
                     self.end_battle()
                     return
                 else:
                     self.battle_log.misc(
-                        escaping_pokemon=escaping_pokemon,
                         description=f"{escaping_pokemon.nickname} failed to escape!"
                     )
 
@@ -133,7 +137,7 @@ class BattleManager:
         if isinstance(action, SwitchAction):
             self.switch_pokemon(
                 user_position=action.position,
-                new_pokemon=action.switch_in_pokemon
+                new_pokemon_index=action.switch_in_pokemon_index
             )
         elif isinstance(action, SkipTurnAction) and self.battle_state.switch_turn:
             # check if the position has a fainted pokemon, if so, do not allow skip
@@ -143,10 +147,13 @@ class BattleManager:
         elif self.battle_state.switch_turn:
             raise ValueError("Cannot submit non-switch actions during a switch turn.")
         elif isinstance(action, MoveAction):
+            target_position = action.target_position
+            if not target_position:
+                raise ValueError("Target position must be specified for move actions.")
             self.use_move(
                 user_position=action.position,
                 move_index=action.move_index,
-                target_position=action.target_position
+                target_position=target_position
             )
         else:
             raise ValueError("Invalid action type submitted.")
@@ -168,13 +175,12 @@ class BattleManager:
         if self._has_actioned(user_position): return
         if self._has_fainted(user_position): return
 
-        if not isinstance(move_index, int):
-            raise ValueError("Invalid move type.")
-
-        if move_index not in self.position_manager.get_pokemon_at_position(user_position).move_set.moves:
-            raise ValueError("Invalid move index.")
-
         user_pokemon = self.position_manager.get_pokemon_at_position(user_position)
+        if not user_pokemon:
+            raise ValueError("No Pokémon found at the given user position.")
+        if move_index not in user_pokemon.move_set.moves:
+            raise ValueError("Invalid move index.")
+        
         move = user_pokemon.move_set.moves[move_index]
 
         if move.current_pp <= 0 and move.max_pp >= 1:
@@ -277,7 +283,6 @@ class BattleManager:
 
     def end_battle(self):
         self.battle_log.battle_end(
-            winning_trainer=None,
             description="The battle has ended"
         )
         self.active_battle = False
@@ -288,8 +293,6 @@ class BattleManager:
         self.clear_non_standard_variables()
         self.position_manager.clear()
         self.taking_actions = False
-        self.battle_config = None
-        self.battle_state = None
     # endregion
 
     # region Turn Order
@@ -303,8 +306,10 @@ class BattleManager:
         speed_dict: dict[BattlePosition, int] = {}
 
         for position in self.position_manager.position_actions().keys():
-            pokemon = self.position_manager.get_pokemon_at_position(position)
-            speed = calculate_speed(pokemon)
+            user_pokemon = self.position_manager.get_pokemon_at_position(position)
+            if not user_pokemon:
+                continue
+            speed = calculate_speed(user_pokemon)
             speed_dict[position] = speed
 
         # Generate stable random tiebreakers
@@ -315,7 +320,7 @@ class BattleManager:
             key=lambda item: (item[1], tiebreakers[item[0]]), 
             reverse=True
         )
-        return [position for position, speed in sorted_positions]
+        return [position for position, _ in sorted_positions]
 
     def calculate_turn_order(self, turn_order: list[BattlePosition]) -> list[BattlePosition]:
         marked_turn_order: dict[int, BattlePosition] = {}
@@ -332,6 +337,8 @@ class BattleManager:
             action = self.position_manager.get_position_action(position)
             if isinstance(action, MoveAction):
                 user_pokemon = self.position_manager.get_pokemon_at_position(position)
+                if not user_pokemon:
+                    continue
                 move = user_pokemon.move_set.moves.get(action.move_index)
                 if move is not None:
                     priority = move.priority
@@ -366,7 +373,7 @@ class BattleManager:
                 self.battle_log.pokemon_switch_in(
                     switched_in_pokemon=new_pokemon,
                     posistion=position,
-                    trainer=self.teams[position.team_id].trainer,
+                    opponent=self.teams[position.team_id],
                     description=f"{new_pokemon.nickname} was switched in!"
                 )
 
@@ -385,7 +392,7 @@ class BattleManager:
                     continue
                 elif pokemon.abilities.has_any_ability(["snow_cloak", "ice_body", "forecast", "magic_guard", "overcoat"]):
                     continue
-                elif pokemon.held_item.name in ["safety_goggles"]:
+                elif pokemon.held_item and pokemon.held_item.name in ["safety_goggles"]:
                     continue
                 damage = max(1, pokemon.calculate_max_hp() // 16)
                 pokemon.current_hp -= damage
@@ -398,7 +405,7 @@ class BattleManager:
                     continue
                 elif pokemon.abilities.has_any_ability(["sand_veil", "sand_rush", "sand_force", "magic_guard", "overcoat"]):
                     continue
-                elif pokemon.held_item.name in ["safety_goggles"]:
+                elif pokemon.held_item and pokemon.held_item.name in ["safety_goggles"]:
                     continue
                 damage = max(1, pokemon.calculate_max_hp() // 16)
                 pokemon.current_hp -= damage
@@ -423,16 +430,21 @@ class BattleManager:
 
     def process_move(self, position: BattlePosition):
         action = self.position_manager.get_position_action(position)
+        if not action: return
         if not isinstance(action, MoveAction): return
+
+        user_pokemon = self.position_manager.get_pokemon_at_position(position)
+        if not user_pokemon:
+            raise ValueError("No Pokémon found at the given user position.")
 
         if self.position_manager.check_fainted(position):
             self.battle_log.misc(
-                description=f"{self.position_manager.get_pokemon_at_position(position).nickname} is fainted and cannot move!"
+                description=f"{user_pokemon.nickname} is fainted and cannot move!"
             )
             return  # skip fainted pokemon
-
-        user_pokemon = self.position_manager.get_pokemon_at_position(position)
         target_pokemon = self.position_manager.get_pokemon_at_position(action.target_position)
+        if not target_pokemon:
+            raise ValueError("No Pokémon found at the given target position.")
 
         user_pokemon_status_conditions = list(user_pokemon.status_conditions.keys())
         can_move = self._can_move_check(user_pokemon_status_conditions, user_pokemon)
@@ -472,7 +484,7 @@ class BattleManager:
             
             target_positions.clear()
 
-        description_list = []
+        description_list: list[str] = []
         description_list.append(f"{user_pokemon.nickname} used {used_move.name}!")        
 
         all_target_pokemon: list[BattleMon] = []
@@ -481,6 +493,8 @@ class BattleManager:
         for target_position in target_positions:
 
             target_pokemon = self.position_manager.get_pokemon_at_position(target_position)
+            if not target_pokemon:
+                continue
             all_target_pokemon.append(target_pokemon)
 
             base_move = used_move.base_move
@@ -522,7 +536,8 @@ class BattleManager:
                 self.process_drain_move(user_pokemon, damage, used_move.base_move)
             
             if used_move.base_move.has_tag(WeatherMove):
-                weather = used_move.base_move.get_tag(WeatherMove).weather
+                weather_move: WeatherMove = used_move.base_move.get_tag(WeatherMove) # type: ignore
+                weather = weather_move.weather
                 # run check here for item that extends weather duration
                 self.battle_state.set_weather(weather, turns=5)
                 description_list.append(f"The weather changed to {weather}!")
@@ -546,7 +561,6 @@ class BattleManager:
             target_pokemon=all_target_pokemon,
             damage_dealt=100,
             is_critical=is_critical,
-            status_condition_applied=None,
             description=description
         )
 
@@ -584,17 +598,25 @@ class BattleManager:
     def process_status_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
         """Process a status move."""
         if move.has_tag(StatusConditionMove):
-            status_condition: StatusCondition = move.get_tag(StatusConditionMove).status_condition
+            status_condition_move: StatusConditionMove = move.get_tag(StatusConditionMove) # type: ignore
+            status_condition = status_condition_move.status_condition
             print ("Applying status condition:", status_condition)
-            if status_condition is None:
+
+            if status_condition is None: # type: ignore
+                print ("No status condition found in move tag.")
                 return
+            previous_move = user.previous_move_used
+            if not previous_move:
+                print ("No previous move found for user.")
+                return
+
             if status_condition.name == "disable":
-                self.process_disable_move(target, move_index=user.last_used_moves[-1].index, turns=4)
+                self.process_disable_move(target, move_index=previous_move.index, turns=4)
                 return
-            target.add_status_condition(status_condition, status_condition._default_data_factory())
+            target.add_status_condition(status_condition, status_condition.default_data_factory())
 
     def process_disable_move(self, target: BattleMon, move_index: int, turns: int):
-        last_move_used = target.last_used_moves[-1] if target.last_used_moves else None
+        last_move_used = target.previous_move_used if target.previous_move_used else None
         if last_move_used is None:
             return
         move_index = last_move_used.index
@@ -617,16 +639,19 @@ class BattleManager:
         """Process a field-effect move."""
 
         if move.has_tag(FieldEffectMove):
-            field_effect = move.get_tag(FieldEffectMove).field_effect
-            turns = move.get_tag(FieldEffectMove).turns
+            field_effect_move: FieldEffectMove = move.get_tag(FieldEffectMove) # type: ignore
+            field_effect = field_effect_move.field_effect
+            turns = field_effect_move.turns
             self.position_manager.add_field_effect(position, field_effect, turns)
         if move.has_tag(EntryHazardMove):
-            hazard = move.get_tag(EntryHazardMove).entry_hazard
-            layers = move.get_tag(EntryHazardMove).layers
+            entry_hazard_move: EntryHazardMove = move.get_tag(EntryHazardMove) # type: ignore
+            hazard = entry_hazard_move.entry_hazard
+            layers = entry_hazard_move.layers
             self.position_manager.add_hazard(position, hazard, layers)
 
     def process_healing_move(self, user: BattleMon, target: BattleMon, move: BaseMove):
-        heal_percentage = move.get_tag(HealMove).heal_percentage
+        heal_move: HealMove = move.get_tag(HealMove) # type: ignore
+        heal_percentage = heal_move.heal_percentage
         heal_amount = target.max_hp * heal_percentage // 100
         target.current_hp = min(target.calculate_max_hp(), target.current_hp + heal_amount)
 
@@ -635,22 +660,19 @@ class BattleManager:
         target.current_hp = 0
 
     def process_drain_move(self, user: BattleMon, damage_dealt: int, move: BaseMove):
-        heal_amount = damage_dealt * move.get_tag(DrainMove).drain_percentage // 100
+        drain_move: DrainMove = move.get_tag(DrainMove) # type: ignore
+        heal_amount = damage_dealt * drain_move.drain_percentage // 100
         user.current_hp = min(user.calculate_max_hp(), user.current_hp + heal_amount)
 
-    def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon):
-        description_list = []
+    def _move_start_of_turn_effects(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon) -> list[str]:
+        description_list: list[str] = []
         for status_condition in status_conditions:
-            if not isinstance(status_condition, StatusCondition):
-                continue
             status_condition.on_turn_start(user_pokemon)
         return description_list
     
     def _can_move_check(self, status_conditions: list[StatusCondition], user_pokemon: BattleMon) -> bool:
         can_move = True
         for status_condition in status_conditions:
-            if not isinstance(status_condition, StatusCondition):
-                continue
             if not status_condition.can_move(user_pokemon):
                 can_move = False
         return can_move
@@ -667,9 +689,13 @@ class BattleManager:
                 # check which opponent the pokemon belongs to
                 opponent = self.get_opponent_from_position(position)
                 fainted_pokemon = self.position_manager.get_pokemon_at_position(position)
-
+                if not fainted_pokemon:
+                    continue
                 # for now just get the pokemon opposite the fainted pokemon
                 battled_pokemon = self.position_manager.get_pokemon_at_position(self.get_opposite_position_from_position(position))
+                if not battled_pokemon:
+                    continue
+                
                 victorious_pokemon = battled_pokemon
                 if self.battle_config.grant_exp:
                     experience_gained = calculate_experience(
@@ -682,7 +708,7 @@ class BattleManager:
                 self.battle_log.pokemon_fainted(
                     fainted_pokemon=fainted_pokemon,
                     pokemon_position=position,
-                    trainer=opponent.get_trainer(),
+                    opponent=opponent,
                     description=f"{fainted_pokemon.nickname} has fainted!"
                 )
                 # check if the opponent has usable pokemons

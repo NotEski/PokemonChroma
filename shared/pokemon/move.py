@@ -111,6 +111,9 @@ class BaseMove(BaseModel):
         self.max_pp_inc_one = floor(self.base_pp * 1.2)
         self.max_pp_inc_two = floor(self.base_pp * 1.4)
         self.max_pp_inc_three = floor(self.base_pp * 1.6)
+
+    def __hash__(self):
+        return hash(self.index)
         
 
     def on_use(self, attacker: "BattleMon", defender: "BattleMon", battle_state: "BattleState") -> Optional[bool]:

@@ -2,10 +2,10 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, TypedDict, Unpack, NotRequired
 from enum import Enum
 
+from shared.battle.opponent import Opponent
 from shared.pokemon.pokemon import BattleMon
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import BaseMove
-from shared.trainer.trainer import Trainer
 from shared.battle.type_effectiveness import EffectivenessLevel
 from shared.battle.position_manager import BattlePosition
 
@@ -21,7 +21,6 @@ class BattleLogType(Enum):
     POKEMON_FAINTED = "pokemon_fainted"
     BATTLE_END = "battle_end"
     UNDEFINED = "undefined"
-
 
 class BattleLogEntry(BaseModel):
     """
@@ -50,38 +49,37 @@ class BattleLogMoveUsedData(TypedDict):
     move_effectiveness: NotRequired[EffectivenessLevel]
     description: NotRequired[str]
 
-
 class BattleLogPokemonFainted(BattleLogEntry):
     fainted_pokemon: BattleMon
     pokemon_position: BattlePosition
-    trainer: Trainer
+    opponent: Opponent
     log_type: BattleLogType = BattleLogType.POKEMON_FAINTED
 
 class BattleLogPokemonFaintedData(TypedDict):
     fainted_pokemon: BattleMon
     pokemon_position: BattlePosition
-    trainer: Trainer
+    opponent: Opponent
     description: NotRequired[str]
 
 
 class BattleLogPokemonSwitchIn(BattleLogEntry):
     switched_in_pokemon: BattleMon
     posistion: BattlePosition
-    trainer: Trainer
+    opponent: Opponent
     log_type: BattleLogType = BattleLogType.POKEMON_SWITCH_IN
 
 class BattleLogPokemonSwitchInData(TypedDict):
     switched_in_pokemon: BattleMon
     posistion: BattlePosition
-    trainer: Trainer
+    opponent: Opponent
     description: NotRequired[str]
 
 class BattleLogBattleStart(BattleLogEntry):
-    trainers: List[Trainer]
+    opponents: List[Opponent]
     log_type: BattleLogType = BattleLogType.BATTLE_START
     
 class BattleLogBattleStartData(TypedDict):
-    trainers: List[Trainer]
+    opponents: List[Opponent]
     description: NotRequired[str]
 
 class BattleLogTurnStart(BattleLogEntry):
@@ -92,13 +90,12 @@ class BattleLogTurnStartData(TypedDict):
     turn_number: int
     description: NotRequired[str]
 
-
 class BattleLogBattleEnd(BattleLogEntry):
-    winning_trainer: Optional[Trainer]
+    winning_trainer: Optional[Opponent]
     log_type: BattleLogType = BattleLogType.BATTLE_END
 
 class BattleLogBattleEndData(TypedDict):
-    winning_trainer: NotRequired[Trainer]
+    winning_trainer: NotRequired[Opponent]
     description: NotRequired[str]
 
 

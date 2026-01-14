@@ -67,7 +67,7 @@ class PokemonBase(BaseModel):
     height: float = Field(ge=0.0, default=1.0)  # in meters
     weight: float = Field(ge=0.0, default=1.0)  # in kilograms
 
-    mega_evolutions: Optional[List[MegaEvolution]] = Field(default=None)
+    mega_evolutions: List[MegaEvolution] = []
 
 
 class StatStages(BaseModel):
@@ -123,6 +123,9 @@ class BattleMonBattleState(BaseModel):
     # Previously Used Moves
     last_used_moves: List[BaseMove] = []
 
+    damage_taken_this_turn: int = Field(ge=0, default=0)
+    last_damage_taken: int = Field(ge=0, default=0)
+
 
 class BattleMon(BaseModel):
     """
@@ -167,7 +170,7 @@ class BattleMon(BaseModel):
     def mutual_exclusive_status_conditions(self) -> List[StatusCondition]:
         return [status for status in self.status_conditions.keys() if status.mutual_exclusive]
 
-    def add_status_condition(self, status: StatusCondition, status_data: dict):
+    def add_status_condition(self, status: StatusCondition, status_data: dict[str, Any]):
         if status in self.status_conditions:
             return  # Status condition already present
 
@@ -276,15 +279,10 @@ class BattleMon(BaseModel):
         self.battle_state.flinch_next_turn = value
     @property
     def previous_move_used(self) -> Optional[BaseMove]:
-        return self.battle_state.previous_move_used
+        return self.battle_state.last_used_moves[-1] if self.battle_state.last_used_moves else None
     @previous_move_used.setter
-    def previous_move_used(self, value: Optional[BaseMove]):
-        self.battle_state.previous_move_used = value
-    @property
-    def last_move_used(self) -> Optional[BaseMove]:
-        if len(self.battle_state.last_moves_used) == 0:
-            return None
-        return self.battle_state.last_moves_used[-1]
+    def previous_move_used(self, value: BaseMove):
+        self.battle_state.last_used_moves.append(value)
     @property
     def last_damage_taken(self) -> int:
         return self.battle_state.last_damage_taken
@@ -495,7 +493,7 @@ class Pokemon(BaseModel):
         self.shiny = (randint(0, 8191) < 1) # 1 in 8192 chance
 
 
-    def _get_current_position(self) -> Optional[BattlePosition]:
+    def get_current_position(self) -> Optional[BattlePosition]:
         if self.battlemon is None:
             return None
         return self.battlemon.current_position
@@ -509,7 +507,9 @@ class Pokemon(BaseModel):
 
 
     def create_move_action(self, move: str, target_position: Optional[BattlePosition] = None) -> MoveAction:
-        current_position = self._get_current_position()        
+        current_position = self.get_current_position()
+        if current_position is None:
+            raise ValueError("Pokemon is not currently in a battle position.")
         # get the move object from the pokemon with name or index provided
 
         if not isinstance(move, str): # type: ignore - Sanity check
@@ -521,16 +521,21 @@ class Pokemon(BaseModel):
         move_index = move_obj.index
 
         if target_position is None:
-            return MoveAction(position=current_position, move_index=move_index)
+            raise ValueError("Target position must be provided for move action.")
+            # return MoveAction(position=current_position, move_index=move_index)
         return MoveAction(position=current_position, move_index=move_index, target_position=target_position)
 
     def create_item_action(self, item: Item) -> UseItemAction:
-        current_position = self._get_current_position()
-        return UseItemAction(position=current_position, item=item)
+        current_position = self.get_current_position()
+        if current_position is None:
+            raise ValueError("Pokemon is not currently in a battle position.")
+        return UseItemAction(position=current_position, item_name=item.name)
 
     def create_switch_action(self, switch_position: BattlePosition) -> SwitchAction:
-        current_position = self._get_current_position()
-        return SwitchAction(position=current_position, switch_position=switch_position)
+        current_position = self.get_current_position()
+        if current_position is None:
+            raise ValueError("Pokemon is not currently in a battle position.")
+        return SwitchAction(position=current_position, switch_in_pokemon_index=switch_position.pokemon_index)
 
     def get_base_stat(self, stat_name: str) -> int:
         return getattr(self.pokemon_base.base_stats, stat_name)
@@ -603,8 +608,6 @@ class Pokemon(BaseModel):
     
     @property
     def get_terra_type(self) -> PokemonType:
-        if self.terra_type is None:
-            return self.pokemon_base.types[0]
         return self.terra_type
 
     @property
@@ -615,7 +618,7 @@ class Pokemon(BaseModel):
 
 
 class PokemonTeam(BaseModel):
-    pokemons: List[Pokemon] = Field(min_items=1, max_items=6)
+    pokemons: List[Pokemon] = Field(min_items=1, max_items=6, default=[]) # pyright: ignore
 
     def get_all_pokemons(self) -> List[Pokemon]:
         return self.pokemons

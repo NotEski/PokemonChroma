@@ -42,13 +42,19 @@ def pickachu_eevee_battle_example():
 
     battle_manager.start_turn()
 
-    pikachu_opponent = battle_manager.position_manager.get_direct_opponent_position(ashes_pickachu._get_current_position())
+    pikachu_position = ashes_pickachu.get_current_position()
+    if not pikachu_position:
+        raise ValueError("Ash's Pikachu does not have a position in the battle.")
+    pikachu_opponent = battle_manager.position_manager.get_direct_opponent_position(pikachu_position)
     quick_attack_action = ashes_pickachu.create_move_action(
         move="tackle",
         target_position=pikachu_opponent
     )
 
-    eevee_opponent = battle_manager.position_manager.get_direct_opponent_position(wild_pokemon._get_current_position())
+    wild_pokemon_position = wild_pokemon.get_current_position()
+    if not wild_pokemon_position:
+        raise ValueError("Wild Pokémon does not have a position in the battle.")
+    eevee_opponent = battle_manager.position_manager.get_direct_opponent_position(wild_pokemon_position)
     wild_pokemon_action = wild_pokemon.create_move_action(
         move="quick_attack",
         target_position=eevee_opponent
