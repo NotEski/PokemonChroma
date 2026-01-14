@@ -71,7 +71,7 @@ class BattleManager:
         return self.position_manager.get_direct_opponent_position(position)
 
     def clear_all_stat_stages(self):
-        for pokemon in self.teams[0].get_all_battlemons() + self.teams[1].get_all_battlemons():
+        for pokemon in self.teams[0].battlemons + self.teams[1].battlemons:
             self.clear_pokemon_stat_stages(pokemon)
 
     def init_battle(self):
@@ -192,9 +192,9 @@ class BattleManager:
         if self._has_actioned(user_position): return
 
         opponent = self.get_opponent_from_position(user_position)
-        if new_pokemon_index < 0 or new_pokemon_index >= len(opponent.get_all_battlemons()):
+        if new_pokemon_index < 0 or new_pokemon_index >= len(opponent.battlemons):
             raise ValueError("Invalid Pokémon index for switch.")
-        new_pokemon = opponent.get_battlemon_by_index(new_pokemon_index)
+        new_pokemon = opponent.battlemons[new_pokemon_index]
         if new_pokemon.is_fainted:
             raise ValueError("Cannot switch to a fainted Pokémon.")
         current_pokemon = self.position_manager.get_pokemon_at_position(user_position)
@@ -368,7 +368,7 @@ class BattleManager:
         for position, action in self.position_manager.position_actions().items():
             if isinstance(action, SwitchAction):
                 new_pokemon_index = action.switch_in_pokemon_index
-                new_pokemon = self.get_opponent_from_position(position).get_battlemon_by_index(new_pokemon_index)
+                new_pokemon = self.get_opponent_from_position(position).battlemons[new_pokemon_index]
                 self.position_manager.register_pokemon(new_pokemon, position.team_id, position.pokemon_index)
                 self.battle_log.pokemon_switch_in(
                     switched_in_pokemon=new_pokemon,

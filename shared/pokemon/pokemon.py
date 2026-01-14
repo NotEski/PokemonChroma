@@ -585,6 +585,10 @@ class Pokemon(BaseModel):
         self.current_hp = self.max_hp
         self.move_set.restore_all_pp()
 
+    @property
+    def name(self) -> str:
+        return self.nickname if self.nickname else self.pokemon_base.name
+
     #region Pokemon stats Proxy Properties
     @property
     def stat_attack(self) -> int:

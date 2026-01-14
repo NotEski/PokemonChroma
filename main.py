@@ -9,8 +9,6 @@ from shared.trainer.trainer import Trainer
 from shared.pokemon.pokemon import PokemonTeam, Pokemon
 from shared.battle.battle_actions import MoveAction, SkipTurnAction
 
-import os
-import sys
 import traceback
 import tkinter as tk
 from tkinter import ttk
@@ -364,7 +362,7 @@ class BattleInspectorWindow:
 
         roster.delete(0, tk.END)
 
-        battlemons = opponent.get_all_battlemons() if hasattr(opponent, "get_all_battlemons") else []
+        battlemons = opponent.battlemons if hasattr(opponent, "battlemons") else []
         for i, pokemon in enumerate(battlemons):
             base_name = getattr(pokemon.pokemon_base, "display_name", None) or getattr(pokemon.pokemon_base, "name", "-")
             hp_text = f"{pokemon.current_hp}/{pokemon.max_hp}"
@@ -488,7 +486,7 @@ class BattleInspectorWindow:
             return
 
         switch_index = selection[0]
-        battlemons = opponent.get_all_battlemons() if hasattr(opponent, "get_all_battlemons") else []
+        battlemons = opponent.battlemons if hasattr(opponent, "battlemons") else []
         if switch_index >= len(battlemons):
             print("Switch error: Invalid selection index.")
             return
