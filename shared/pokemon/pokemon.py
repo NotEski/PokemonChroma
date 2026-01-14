@@ -390,6 +390,9 @@ class BattleMon(BaseModel):
     @property
     def held_item(self) -> Optional[Item]:
         return self.pokemon_reference.held_item
+    @held_item.setter
+    def held_item(self, value: Optional[Item]):
+        self.pokemon_reference.held_item = value
     
     @property
     def held_item_str(self) -> str:
@@ -426,7 +429,7 @@ class BattleMon(BaseModel):
 
 
 class Pokemon(BaseModel):
-    pokemon_base: PokemonBase = Field(default_factory=PokemonBase)
+    pokemon_base: PokemonBase
     nickname: str = Field(default="")
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)

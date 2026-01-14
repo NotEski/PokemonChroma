@@ -609,8 +609,10 @@ def launch_battle_inspector():
 
 # Get application root: use __file__ if available (dev), else sys.executable (bundled)
 
+from engine.main import application_root
+initialize_repositories(application_root)
 
-test_tile_based_world_generation()
+# test_tile_based_world_generation()
 
 # launch_game_window()
 

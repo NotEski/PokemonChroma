@@ -22,38 +22,38 @@ def calculate_damage(attacking_pokemon: BattleMon, defending_pokemon: BattleMon,
 
     # Base damage calculation
 
-    level_modifier        = _get_level_modifier(attacking_pokemon.level)
-    power_modifier        = _get_power_modifier(move)
-    attack_stat_modifier  = _get_attack_stat_modifier(attacking_pokemon, move)
-    defence_stat_modifier = _get_defence_stat_modifier(defending_pokemon, move)
+    level_modifier        = get_level_modifier(attacking_pokemon.level)
+    power_modifier        = get_power_modifier(move)
+    attack_stat_modifier  = get_attack_stat_modifier(attacking_pokemon, move)
+    defence_stat_modifier = get_defence_stat_modifier(defending_pokemon, move)
 
     initial_damage = ((level_modifier * power_modifier * attack_stat_modifier / defence_stat_modifier) / 50 + 2)
 
     # Apply modifiers
 
-    modified_damage = round(initial_damage  * _get_targets_modifier(targets))
-    modified_damage = round(modified_damage * _get_pb_modifier(pb_second_strike))
-    modified_damage = round(modified_damage * _get_weather_modifier(move.type, battle_state.weather_turns.weather))
-    modified_damage = round(modified_damage * _get_glaive_rush_modifier(glaive_rush))
-    modified_damage = round(modified_damage * _get_critical_modifier(critical_hit))
-    modified_damage = round(modified_damage * _get_random_factor())
-    modified_damage = round(modified_damage * _get_stab_modifier(attacking_pokemon, move))
-    modified_damage = round(modified_damage * _get_type_effectiveness_modifier(move, defending_pokemon))
-    modified_damage = round(modified_damage * _get_burn_modifier(attacking_pokemon, move))
-    modified_damage = round(modified_damage * _get_other_modifiers())
+    modified_damage = round(initial_damage  * get_targets_modifier(targets))
+    modified_damage = round(modified_damage * get_pb_modifier(pb_second_strike))
+    modified_damage = round(modified_damage * get_weather_modifier(move.type, battle_state.weather_turns.weather))
+    modified_damage = round(modified_damage * get_glaive_rush_modifier(glaive_rush))
+    modified_damage = round(modified_damage * get_critical_modifier(critical_hit))
+    modified_damage = round(modified_damage * get_random_factor())
+    modified_damage = round(modified_damage * get_stab_modifier(attacking_pokemon, move))
+    modified_damage = round(modified_damage * get_type_effectiveness_modifier(move, defending_pokemon))
+    modified_damage = round(modified_damage * get_burn_modifier(attacking_pokemon, move))
+    modified_damage = round(modified_damage * get_other_modifiers())
 
     if modified_damage <= 0:
         return 0
 
     return max(1, modified_damage)  # Ensure at least 1 damage is dealt
 
-def _get_level_modifier(level: int) -> float:
+def get_level_modifier(level: int) -> float:
     return (2 * level) / 5 + 2
 
-def _get_power_modifier(move: BaseMove) -> float:
+def get_power_modifier(move: BaseMove) -> float:
     return move.power if move.power is not None else 0
 
-def _get_attack_stat_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> int:
+def get_attack_stat_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> int:
     if move.damage_class == DamageClass.PHYSICAL:
         attack_stat = attacking_pokemon.stat_attack
 
@@ -63,7 +63,7 @@ def _get_attack_stat_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> i
 
         return attack_stat
 
-def _get_defence_stat_modifier(defending_pokemon: BattleMon, move: BaseMove) -> int:
+def get_defence_stat_modifier(defending_pokemon: BattleMon, move: BaseMove) -> int:
     flip_defence = False  # Placeholder for moves that flip defense and special defense
     if move.damage_class == DamageClass.PHYSICAL and not flip_defence:
         defence_stat = defending_pokemon.stat_defense
@@ -74,17 +74,17 @@ def _get_defence_stat_modifier(defending_pokemon: BattleMon, move: BaseMove) -> 
 
         return defence_stat
 
-def _get_targets_modifier(num_targets: int) -> float:
+def get_targets_modifier(num_targets: int) -> float:
     if num_targets > 1:
         return 0.75
     return 1.0
 
-def _get_pb_modifier(is_second_strike: bool) -> float:
+def get_pb_modifier(is_second_strike: bool) -> float:
     if is_second_strike:
         return 0.25
     return 1.0
 
-def _get_weather_modifier(move_type: PokemonType, weather: BattleWeather) -> float:
+def get_weather_modifier(move_type: PokemonType, weather: BattleWeather) -> float:
     if weather == BattleWeather.HARSH_SUNLIGHT:
         if move_type == PokemonType.FIRE:
             return 1.5
@@ -107,36 +107,36 @@ def _get_weather_modifier(move_type: PokemonType, weather: BattleWeather) -> flo
             return 0
     return 1.0
 
-def _get_glaive_rush_modifier(is_under_effect: bool) -> float:
+def get_glaive_rush_modifier(is_under_effect: bool) -> float:
     if is_under_effect:
         return 2.0
     return 1.0
 
-def _get_critical_modifier(is_critical_hit: bool) -> float:
+def get_critical_modifier(is_critical_hit: bool) -> float:
     if is_critical_hit:
         return 1.5
     return 1.0
 
-def _get_random_factor() -> float:
+def get_random_factor() -> float:
     return random.uniform(0.85, 1.0)
 
-def _get_stab_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> float:
+def get_stab_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> float:
     if move.type in attacking_pokemon.pokemon_base.types:
         return 1.5
     return 1.0
 
-def _get_type_effectiveness_modifier(move: BaseMove, defending_pokemon: BattleMon) -> float:
+def get_type_effectiveness_modifier(move: BaseMove, defending_pokemon: BattleMon) -> float:
     multiplier = get_attack_multiplier(move.type, defending_pokemon.pokemon_base.types)
     return multiplier if multiplier > 0 else 0.0
 
-def _get_burn_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> float:
+def get_burn_modifier(attacking_pokemon: BattleMon, move: BaseMove) -> float:
     if move.damage_class == DamageClass.PHYSICAL and status_repository.get("burn") in attacking_pokemon.status_conditions.keys():
         # TODO Check if the Pokémon has the Guts ability to return 1.0 instead
         # if attacking_pokemon.ability
         return 0.5
     return 1.0
 
-def _get_other_modifiers() -> float:
+def get_other_modifiers() -> float:
     # Placeholder for other miscellaneous modifiers
     return 1.0
 

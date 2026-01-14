@@ -7,11 +7,11 @@ from shared.battle.position_manager import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
 from shared.pokemon.pokemon import Pokemon, PokemonTeam
 from shared.trainer.trainer import Trainer
-from shared.pokemon.move import MoveSet
+from shared.pokemon.move import BaseMove, MoveSet
 
 
 def moveset_from_names(move_names: list[str]) -> MoveSet:
-    moves = []
+    moves: list[BaseMove] = []
     for name in move_names:
         move = move_repository.get(name)
         if move:

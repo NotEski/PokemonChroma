@@ -1,9 +1,9 @@
+from math import ceil
 from shared.pokemon.move import BaseMove
+from engine.repositories.repository import move_repository
 from shared.pokemon.pokemon import BattleMon
-from shared.battle.type_effectiveness import get_effectiveness_level, EffectivenessLevel
-from engine.battle.damage_calculator import _get_stab_modifier
-
-from .move_categories import MoveCategories
+from shared.battle.type_effectiveness import get_effectiveness_level, effectiveness_multiplier, EffectivenessLevel
+from engine.battle.damage_calculator import get_stab_modifier
 
 
 
@@ -17,13 +17,13 @@ from .move_categories import MoveCategories
 def score_move_advanced(move: BaseMove, user: BattleMon, target: BattleMon, skill: int) -> int:
     base_score = 100
 
-    if move in MoveCategories.DAMAGING_MOVES:
+    if move in move_repository.damaging_moves:
         base_score += score_damage_potential(move, user, target, skill)
         base_score += score_type_effectiveness(move, user, target)
         base_score += score_stab_bonus(move, user)
         base_score += score_crit_potential(move, user, target)
     
-    if move in MoveCategories.STATUS_MOVES:
+    if move in move_repository.status_moves:
         base_score += score_status_utility(move, user, target, skill)
     
     if move.function_code.startswith("RaiseUser"):
@@ -42,7 +42,7 @@ def score_damage_potential(move: BaseMove, user: BattleMon, target: BattleMon, s
     bp = calculate_effective_power(move, user, target)
     
     if bp > 0:
-        score += (bp / 10.0)
+        score += ceil(bp / 10.0)
     
     if skill >= 60:
         rough_damage = calculate_rough_damage(move, user, target, bp)
@@ -57,7 +57,7 @@ def score_damage_potential(move: BaseMove, user: BattleMon, target: BattleMon, s
 
 
 def score_type_effectiveness(move: BaseMove, target: BattleMon) -> int:
-    type_mod = get_effectiveness_level(move.type, target.types)
+    type_mod: EffectivenessLevel = get_effectiveness_level(effectiveness_multiplier(move.type, target.types))
     
     if type_mod == EffectivenessLevel.SUPER_EFFECTIVE:
         return 40
@@ -69,7 +69,7 @@ def score_type_effectiveness(move: BaseMove, target: BattleMon) -> int:
 
 
 def score_stab_bonus(move: BaseMove, user: BattleMon) -> int:
-    if _get_stab_modifier(user, move) > 0:
+    if get_stab_modifier(user, move) > 0:
         return 20
     return 0
 
@@ -218,7 +218,7 @@ def score_recoil_risk(move: BaseMove, user: BattleMon) -> int:
 def score_secondary_effects(move: BaseMove, user: BattleMon, target: BattleMon) -> int:
     score = 0
     
-    if move.base_move in MoveCategories.FLINCHING_MOVES and user.stat_speed > target.stat_speed:
+    if move.base_move in move_repository.flinching_moves and user.stat_speed > target.stat_speed:
         score += 20
     
     if move.function_code.startswith("LowerTarget"):
@@ -231,7 +231,7 @@ def score_secondary_effects(move: BaseMove, user: BattleMon, target: BattleMon) 
 
 
 def calculate_rough_damage(move: BaseMove, user: BattleMon, target: BattleMon, override_bp: int = None) -> int:
-    if not move.base_move in MoveCategories.DAMAGING_MOVES:
+    if not move.base_move in move_repository.damaging_moves:
         return 0
     
     bp = override_bp or move.power
@@ -254,7 +254,7 @@ def is_safe_to_setup(user: BattleMon, target: BattleMon) -> bool:
         return False
     
     for move in target.move_set.list_moves():
-        if move.base_move in MoveCategories.DAMAGING_MOVES:
+        if move.base_move in move_repository.damaging_moves:
             continue
         else:
             return True
@@ -262,7 +262,7 @@ def is_safe_to_setup(user: BattleMon, target: BattleMon) -> bool:
     return False
 
 
-def calculate_effective_power(move, user, target):
+def calculate_effective_power(move: BaseMove, user: BattleMon, target: BattleMon) -> int:
     bp = move.power
     if bp == 0:
         return 0

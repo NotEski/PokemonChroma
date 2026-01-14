@@ -27,22 +27,22 @@ class BattleManager:
     taking_actions: bool = Field(default=False)
     battle_log: BattleLogManager = Field(default_factory=BattleLogManager)
     active_battle: bool = Field(default=True)
-    teams: dict[int, Opponent]|List[Opponent] = {}
+    teams: dict[int, Opponent] = {}
 
 
     def __init__(self, **data):
-        super().__init__(**data)
-        if isinstance(self.teams, list):
+        if isinstance(data["teams"], list):
             teams_dict = {}
-            for index, team in enumerate(self.teams):
+            for index, team in enumerate(data["teams"]):
                 teams_dict[index] = team
             self.teams = teams_dict
-        elif isinstance(self.teams, dict):
+        elif isinstance(data["teams"], dict):
             # validate keys are 0, 1, 2, ...
-            len_keys = len(self.teams.keys())
+            len_keys = len(data["teams"].keys())
             for i in range(0, len_keys):
-                if i not in self.teams:
+                if i not in data["teams"]:
                     raise ValueError("Teams dictionary keys must be sequential integers starting from 0.")
+        super().__init__(**data)
 
         if len(self.teams) != 2: # only support 2 teams for now. probably will only ever need 2 teams
             raise ValueError("There must be exactly 2 teams for a battle.")

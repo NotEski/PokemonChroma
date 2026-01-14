@@ -68,7 +68,8 @@ class BaseSingleton(Generic[T]):
 
 # Concrete Repositories
 class PokemonRepository(BaseRepository[PokemonBase]):
-    pass
+    def get(self, key: str) -> Optional[PokemonBase]:
+        return super().get(key)
 
 
 class MoveRepository(BaseRepository[BaseMove]):
@@ -86,7 +87,7 @@ class MoveRepository(BaseRepository[BaseMove]):
     @property
     def categories(self) -> "MoveCategories":
         """Lazy-load move categories on first access."""
-        if self._categories is None:
+        if self._categories is None: # type: ignore
             self._categories = MoveCategories()
             self._categories.build_all_categories()
         return self._categories
@@ -103,10 +104,10 @@ class MoveRepository(BaseRepository[BaseMove]):
     def setup_moves(self) -> dict[BaseMove, list[StatChangeMove]]:
         return self.categories.setup_moves
     @property
-    def hazard_moves(self) -> dict[BaseMove, int | None]:
+    def hazard_moves(self) -> list[BaseMove]:
         return self.categories.hazard_moves
     @property
-    def healing_moves(self) -> dict[BaseMove, int | None]:
+    def healing_moves(self) -> list[BaseMove]:
         return self.categories.healing_moves
     @property
     def ohko_moves(self) -> list[BaseMove]:
@@ -133,7 +134,7 @@ class MoveRepository(BaseRepository[BaseMove]):
     def pivot_moves(self) -> list[BaseMove]:
         return self.categories.pivot_moves
     @property
-    def damaging_moves(self) -> dict[BaseMove]:
+    def damaging_moves(self) -> list[BaseMove]:
         return self.categories.damaging_moves
     
 class PokemonAbilityRepository(BaseRepository[Ability]):
@@ -162,7 +163,6 @@ class MoveRepositorySingleton(BaseSingleton[MoveRepository]):
     @classmethod
     def _create_instance(cls) -> MoveRepository:
         return MoveRepository()
-
 
 class PokemonAbilityRepositorySingleton(BaseSingleton[PokemonAbilityRepository]):
     @classmethod
@@ -211,8 +211,8 @@ class MoveCategories:
 
     priority_moves: dict[BaseMove, int] = {} # set of move indexes with priority other than 0
     setup_moves: dict[BaseMove, list[StatChangeMove]] = {}
-    hazard_moves: dict[BaseMove, None] = {}
-    healing_moves: dict[BaseMove, None] = {}
+    hazard_moves: list[BaseMove] = []
+    healing_moves: list[BaseMove] = []
     ohko_moves: list[BaseMove] = []
     spread_moves: list[BaseMove] = []
     protect_moves: list[BaseMove] = []
@@ -221,7 +221,7 @@ class MoveCategories:
     weather_moves: list[BaseMove] = []
     terrain_moves: list[BaseMove] = []
     pivot_moves: list[BaseMove] = []
-    damaging_moves: dict[BaseMove] = []
+    damaging_moves: list[BaseMove] = []
 
 
     def build_priority_moves(self):
@@ -233,7 +233,7 @@ class MoveCategories:
     def build_setup_moves(self):
         """Build the set of setup move categories from move repo."""
         for move in move_repository.items.values():
-            stat_changes = []
+            stat_changes: list[StatChangeMove] = []
             for effect in move.move_tags:
                 if isinstance(effect, StatChangeMove):
                     stat_changes.append(effect)
@@ -244,18 +244,15 @@ class MoveCategories:
         """Build the set of hazard move categories from move repo."""
         for move in move_repository.items.values():
             if move.has_tag(EntryHazardMove):
-                self.hazard_moves[move] = None
+                self.hazard_moves.append(move)
 
     def build_healing_moves(self):
         """Build the set of healing move categories from move repo."""
         for move in move_repository.items.values():
-            stat_changes = []
             if move.has_tag(HealMove):
-                stat_changes.append(move)
-            elif move.has_tag(DrainMove) and move.get_tag(DrainMove)[0].drain_percentage > 0:
-                stat_changes.append(move)
-            if stat_changes:
-                self.healing_moves[move] = stat_changes
+                self.healing_moves.append(move)
+            elif move.has_tag(DrainMove) and move.get_tag(DrainMove).drain_percentage > 0: # type: ignore
+                self.healing_moves.append(move)
 
     def build_ohko_moves(self):
         """Build the set of OHKO move categories from move repo."""

@@ -1,6 +1,6 @@
 from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field, model_validator
-from typing import List, Optional, Type, Any, TYPE_CHECKING
+from typing import List, Optional, Type, TYPE_CHECKING
 
 from .types import PokemonType
 from .move_tags import *
@@ -101,7 +101,7 @@ class BaseMove(BaseModel):
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
     priority: int = Field(default=0)  # Move priority
 
-    move_tags: Optional[List[MoveTag]]  # Additional tags for the move
+    move_tags: List[MoveTag] = [] # Additional tags for the move
     
     def __init__(self, **data): # type: ignore
         super().__init__(**data)
@@ -137,15 +137,15 @@ class BaseMove(BaseModel):
         return Move(current_pp=self.base_pp, base_move=self)
     
     def has_tag(self, tag_type: Type[MoveTag]) -> bool:
-        if self.move_tags is None:
+        if self.move_tags == []:
             return False
         for tag in self.move_tags:
             if isinstance(tag, tag_type):
                 return True
         return False
     
-    def get_tag(self, tag_type: Type[MoveTag]) -> Optional[Any]:
-        if self.move_tags is None:
+    def get_tag(self, tag_type: Type[MoveTag]) -> Optional[MoveTag]:
+        if self.move_tags == []:
             return None
         if isinstance(tag_type, StatChangeMove):
             raise ValueError("For StatChangeMove use get_stat_change_tag() instead.")
@@ -155,7 +155,7 @@ class BaseMove(BaseModel):
         return None
     
     def get_stat_change_tags(self, tag_type: Type[StatChangeMove]) -> List[StatChangeMove]:
-        if self.move_tags is None:
+        if self.move_tags == []:
             return []
         stat_change_tags: List[StatChangeMove] = []
         for tag in self.move_tags:
@@ -164,12 +164,12 @@ class BaseMove(BaseModel):
         return stat_change_tags
     
     def add_tag(self, tag: MoveTag):
-        if self.move_tags is None:
+        if self.move_tags == []:
             self.move_tags = []
         self.move_tags.append(tag)
     
     def remove_tag(self, tag_type: Type[MoveTag]):
-        if self.move_tags is None:
+        if self.move_tags == []:
             return
         self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
 
@@ -188,37 +188,37 @@ class BaseMove(BaseModel):
     @property
     def critical_hit_rate_stage_increase(self) -> int:
         crit_tag = self.get_tag(CriticalHitMove)
-        if crit_tag:
+        if isinstance(crit_tag, CriticalHitMove):
             return crit_tag.critical_hit_rate_increase
         return 0
     @property
     def high_critical_hit(self) -> bool:
         crit_tag = self.get_tag(CriticalHitMove)
-        if crit_tag:
+        if isinstance(crit_tag, CriticalHitMove):
             return crit_tag.critical_hit_rate_increase >= 2
         return False
     @property
     def always_critical_hit(self) -> bool:
         crit_tag = self.get_tag(CriticalHitMove)
-        if crit_tag:
+        if isinstance(crit_tag, CriticalHitMove):
             return crit_tag.critical_hit_rate_increase >= 3
         return False
     @property
     def drain_percentage(self) -> int:
         drain_tag = self.get_tag(DrainMove)
-        if drain_tag:
+        if isinstance(drain_tag, DrainMove):
             return drain_tag.drain_percentage
         return 0
     @property
     def is_recoil(self) -> bool:
         drain_tag = self.get_tag(DrainMove)
-        if drain_tag:
+        if isinstance(drain_tag, DrainMove):
             return drain_tag.is_recoil
         return False
     @property
     def flinch_chance(self) -> int:
         flinch_tag = self.get_tag(FlinchMove)
-        if flinch_tag:
+        if isinstance(flinch_tag, FlinchMove):
             return flinch_tag.chance
         return 0
     @property
@@ -227,7 +227,7 @@ class BaseMove(BaseModel):
     @property
     def heal_percentage(self) -> int:
         heal_tag = self.get_tag(HealMove)
-        if heal_tag:
+        if isinstance(heal_tag, HealMove):
             return heal_tag.heal_percentage
         return 0
     @property
@@ -250,7 +250,7 @@ class BaseMove(BaseModel):
         return self.has_tag(ScreenMove)
     @property
     def screen_move(self) -> Optional[ScreenMove]:
-        return self.get_tag(ScreenMove)
+        return self.get_tag(ScreenMove) # type: ignore
     @property
     def is_stat_change_move(self) -> bool:
         return self.has_tag(StatChangeMove)
@@ -345,13 +345,13 @@ class Move(BaseModel):
         return self.base_move.is_multi_hit
     @property
     def min_hits(self) -> int:
-        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove)
+        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove) # type: ignore
         if multi_hit_tag:
             return min(multi_hit_tag.hits.keys())
         return 1
     @property
     def max_hits(self) -> int:
-        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove)
+        multi_hit_tag: Optional[MultiHitMove] = self.base_move.get_tag(MultiHitMove) # type: ignore
         if multi_hit_tag:
             return max(multi_hit_tag.hits.keys())
         return 1

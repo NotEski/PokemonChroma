@@ -5,7 +5,6 @@ import json
 import builtins
 from random import randint
 import os
-import sys
 from typing import Any, Optional, List, TypeVar, Callable
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
@@ -429,8 +428,8 @@ def validate_dsl_code_strict(source: str, filename: str):
 
     for node in ast.walk(tree):
         if isinstance(node, (ast.Import, ast.ImportFrom)):
-            if node.module:
-                if not any(node.module.startswith(allowed) for allowed in ALLOWED_IMPORT_MODULES):
+            if node.module: # type: ignore
+                if not any(node.module.startswith(allowed) for allowed in ALLOWED_IMPORT_MODULES): # type: ignore
                     raise DSLParseError(
                         f"Imports not allowed in {filename}. "
                         f"Move definitions must be self-contained."
@@ -630,6 +629,7 @@ def initialize_repositories(application_root_path: str):
             progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
             print (f"Loading Move Repo         - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
             load_dsl_files_from_directory(file_path)
+    move_repository.refresh_categories()
     print()
 
     # Generate Pokemon Repository
