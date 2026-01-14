@@ -611,6 +611,8 @@ from engine.main import application_root
 
 initialize_repositories(application_root)
 
+print (move_repository.get("struggle"))
+
 # test_tile_based_world_generation()
 
 # launch_game_window()

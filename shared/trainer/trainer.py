@@ -39,7 +39,7 @@ class OriginalTrainer(BaseModel):
 
 class Trainer(BaseModel):
     name: str
-    unique_id: Optional[str] = None # this is a hidden field that is generated if not provided
+    unique_id: str = "none" # this is a hidden field that is generated if not provided
     id_number: int = Field(default=0)
     team: PokemonTeam
 
@@ -48,10 +48,10 @@ class Trainer(BaseModel):
     trainer_type: Optional[str] = None  # e.g., "Ace Trainer", "Gym Leader", etc.
 
     def __init__(self, **data): # type: ignore
-        if 'unique_id' not in data or data['unique_id'] == None:
-            data['unique_id'] = str(uuid.uuid4())
-        data['id_number'] = self.calculate_id_number(data['unique_id'])
         super().__init__(**data)
+        if self.unique_id == "none":
+            self.unique_id = str(uuid.uuid4())
+        data['id_number'] = self.calculate_id_number(self.unique_id)
 
     def calculate_id_number(self, unique_id: str) -> int:
         # Simple hash function to convert unique_id to a numeric ID

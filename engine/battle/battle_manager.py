@@ -526,8 +526,8 @@ class BattleManager:
             if used_move.category in MoveCategoryCategories.STAT_CHANGE_MOVES:
                 self.process_stat_change_move(user_pokemon, target_pokemon, used_move.base_move)
 
-            if used_move.category == MoveCategory.HEAL:
-                self.process_healing_move(user_pokemon, target_pokemon, used_move.base_move)
+            # if used_move.category == MoveCategory.HEAL:
+            #     self.process_healing_move(user_pokemon, target_pokemon, used_move.base_move)
 
             if used_move.category == MoveCategory.OHKO:
                 self.process_ohko_move(target_pokemon)
@@ -535,12 +535,23 @@ class BattleManager:
             if used_move.base_move.has_tag(DrainMove):
                 self.process_drain_move(user_pokemon, damage, used_move.base_move)
             
+            if used_move.base_move.has_tag(HealMove):
+                self.process_self_healing_move(user_pokemon, used_move.base_move)
+            
             if used_move.base_move.has_tag(WeatherMove):
                 weather_move: WeatherMove = used_move.base_move.get_tag(WeatherMove) # type: ignore
                 weather = weather_move.weather
                 # run check here for item that extends weather duration
                 self.battle_state.set_weather(weather, turns=5)
                 description_list.append(f"The weather changed to {weather}!")
+
+            # Check for faint
+            if target_pokemon.current_hp <= 0:
+                target_pokemon.current_hp = 0
+            if user_pokemon.current_hp <= 0:
+                user_pokemon.current_hp = 0
+                break
+        
 
         if effectiveness_level != EffectivenessLevel.NORMAL_EFFECTIVE:
             description_list.append(effectiveness_message(effectiveness_level))
@@ -583,10 +594,6 @@ class BattleManager:
         
         # Apply effectiveness message
         target.current_hp -= damage
-
-        # Check for faint
-        if target.current_hp <= 0:
-            target.current_hp = 0
 
         if move.has_tag(ContactMove):
             user_abilities = list(user.abilities.get_all_active_abilities())
@@ -654,6 +661,12 @@ class BattleManager:
         heal_percentage = heal_move.heal_percentage
         heal_amount = target.max_hp * heal_percentage // 100
         target.current_hp = min(target.calculate_max_hp(), target.current_hp + heal_amount)
+
+    def process_self_healing_move(self, user: BattleMon, move: BaseMove):
+        heal_move: HealMove = move.get_tag(HealMove) # type: ignore
+        heal_percentage = heal_move.heal_percentage
+        heal_amount = user.max_hp * heal_percentage // 100
+        user.current_hp = min(user.calculate_max_hp(), user.current_hp + heal_amount)
 
     def process_ohko_move(self, target: BattleMon):
         """Process a one-hit KO move."""

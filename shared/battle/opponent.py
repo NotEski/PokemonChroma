@@ -8,8 +8,6 @@ from ..trainer.trainer import Trainer
 from .battle_header import *
 
 
-# TODO : Combine them into the one class theres no reason to have separate ones
-
 class Opponent(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
     escape_attempts: int = 0
