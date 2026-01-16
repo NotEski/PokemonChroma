@@ -115,7 +115,6 @@ class BaseMove(BaseModel):
     def __hash__(self):
         return hash(self.index)
         
-
     def on_use(self, attacker: "BattleMon", defender: "BattleMon", battle_state: "BattleState") -> Optional[bool]:
         """Called when the move is used."""
         return None
@@ -134,7 +133,6 @@ class BaseMove(BaseModel):
         """
         return None
     
-
     def move_factory(self):
         """Creates a new instance of the move."""
         return Move(current_pp=self.base_pp, base_move=self)
@@ -226,7 +224,7 @@ class BaseMove(BaseModel):
         return 0
     @property
     def is_hazard(self) -> bool:
-        return self.has_tag(EntryHazardMove)
+        return self.has_tag(HazardMove)
     @property
     def heal_percentage(self) -> int:
         heal_tag = self.get_tag(HealMove)
@@ -308,6 +306,12 @@ class Move(BaseModel):
         self.max_pp = self.base_move.max_pp_inc_three
         if self.current_pp > self.max_pp:
             self.current_pp = self.max_pp
+    
+    def has_tag(self, tag_type: Type[MoveTag]) -> bool:
+        return self.base_move.has_tag(tag_type)
+    
+    def get_tag(self, tag_type: Type[MoveTag]) -> Optional[MoveTag]:
+        return self.base_move.get_tag(tag_type)
 
 #region Move property getters
     @property

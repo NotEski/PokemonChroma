@@ -243,7 +243,7 @@ class MoveCategories:
     def build_hazard_moves(self):
         """Build the set of hazard move categories from move repo."""
         for move in move_repository.items.values():
-            if move.has_tag(EntryHazardMove):
+            if move.has_tag(HazardMove):
                 self.hazard_moves.append(move)
 
     def build_healing_moves(self):

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from random import randint
+import uuid
 from pydantic import BaseModel, Field
 from typing import Any, Dict, List, Optional
 from enum import Enum
@@ -98,6 +99,32 @@ class StatStages(BaseModel):
             self.evasion_stage = max(-6, min(6, self.evasion_stage + stages))
         elif stat == Stat.CRITICAL_HIT:
             self.critical_hit_stage = max(-6, min(6, self.critical_hit_stage + stages))
+    
+    @property
+    def total(self) -> int:
+        return (
+            self.attack_stat_stage +
+            self.defense_stat_stage +
+            self.special_attack_stat_stage +
+            self.special_defense_stat_stage +
+            self.speed_stat_stage +
+            self.accuracy_stage +
+            self.evasion_stage +
+            self.critical_hit_stage
+        )
+    
+    @property
+    def to_dict(self) -> Dict[str, int]:
+        return {
+            "attack": self.attack_stat_stage,
+            "defense": self.defense_stat_stage,
+            "special_attack": self.special_attack_stat_stage,
+            "special_defense": self.special_defense_stat_stage,
+            "speed": self.speed_stat_stage,
+            "accuracy": self.accuracy_stage,
+            "evasion": self.evasion_stage,
+            "critical_hit": self.critical_hit_stage,
+        }
 
 
 class BattleMonBattleState(BaseModel):
@@ -366,6 +393,10 @@ class BattleMon(BaseModel):
 
 #region Proxy Properties to Pokemon Reference
     @property
+    def id(self) -> uuid.UUID:
+        return self.pokemon_reference.id
+
+    @property
     def abilities(self) -> PokemonAbilities:
         return self.pokemon_reference.abilities
     
@@ -428,6 +459,7 @@ class BattleMon(BaseModel):
 
 class Pokemon(BaseModel):
     pokemon_base: PokemonBase
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
     nickname: str = Field(default="")
     level: int = Field(ge=1, le=100, default=1)
     current_hp: int = Field(ge=0, default=0)

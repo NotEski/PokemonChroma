@@ -179,7 +179,7 @@ def move(move_name: str):
                 harard_obj = hazard_repository.get(hazard_name)
                 if harard_obj is None:
                     raise ValueError(f"Move '{move_name}' hazard '{hazard_name}' not found in repository.")
-                move_tags.append(EntryHazardMove(entry_hazard=harard_obj, layers=layers_added))
+                move_tags.append(HazardMove(entry_hazard=harard_obj, layers=layers_added))
 
         if healing_flag is not None and healing_flag is False and not heal_exception:
             raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")

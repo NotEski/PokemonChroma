@@ -25,10 +25,12 @@ class Opponent(BaseModel):
             return False
         return True
     
+
     def get_viable_battlemons(self) -> List[BattleMon]:
         return [battlemon for battlemon in self.battlemons if not battlemon.is_fainted]
 
-    def get_active_battlemon(self) -> Optional[BattleMon]:
+    @property
+    def active_battlemon(self) -> Optional[BattleMon]:
         if not self.has_viable_pokemons():
             raise ValueError("No viable Pokémons available for this opponent.")
         for battlemon in self.battlemons:

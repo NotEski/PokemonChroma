@@ -79,7 +79,7 @@ class BattleManager:
 
         for team_id in range(0, self.position_manager.teams_count):
             for pokemon_index in range(0, self.position_manager.pokemon_per_team):
-                pokemon = self.teams[team_id].get_active_battlemon()
+                pokemon = self.teams[team_id].active_battlemon
                 if not pokemon:
                     raise ValueError(f"Team {team_id} does not have enough active Pokémon for the battle.")
                 self.position_manager.register_pokemon(
@@ -650,8 +650,8 @@ class BattleManager:
             field_effect = field_effect_move.field_effect
             turns = field_effect_move.turns
             self.position_manager.add_field_effect(position, field_effect, turns)
-        if move.has_tag(EntryHazardMove):
-            entry_hazard_move: EntryHazardMove = move.get_tag(EntryHazardMove) # type: ignore
+        if move.has_tag(HazardMove):
+            entry_hazard_move: HazardMove = move.get_tag(HazardMove) # type: ignore
             hazard = entry_hazard_move.entry_hazard
             layers = entry_hazard_move.layers
             self.position_manager.add_hazard(position, hazard, layers)
