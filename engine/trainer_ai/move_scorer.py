@@ -19,7 +19,7 @@ def score_move_advanced(move: BaseMove, user: BattleMon, target: BattleMon, skil
 
     if move in move_repository.damaging_moves:
         base_score += score_damage_potential(move, user, target, skill)
-        base_score += score_type_effectiveness(move, user, target)
+        base_score += score_type_effectiveness(move, target)
         base_score += score_stab_bonus(move, user)
         base_score += score_crit_potential(move, user, target)
     
