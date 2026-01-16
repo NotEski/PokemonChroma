@@ -6,7 +6,6 @@ Script to analyze all moves in the pokeapi_database and compile:
 """
 
 import json
-import os
 from pathlib import Path
 from collections import defaultdict
 import re
