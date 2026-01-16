@@ -10,6 +10,6 @@ class _Snatch:
         "power": None,
         "pp": 10,
         "target": "user",
-        "priority": 4,
     }
     flags = ["authentic"]
+    priority = 4

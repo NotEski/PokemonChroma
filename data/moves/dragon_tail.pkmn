@@ -10,6 +10,6 @@ class _DragonTail:
         "power": 60,
         "pp": 10,
         "target": "selected_pokemon",
-        "priority": -6,
     }
     flags = ["contact", "protect", "mirror"]
+    priority = -6

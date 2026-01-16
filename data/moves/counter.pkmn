@@ -10,6 +10,6 @@ class _Counter:
         "power": None,
         "pp": 20,
         "target": "specific_move",
-        "priority": -5,
     }
     flags = ["contact", "protect"]
+    priority = -5

@@ -10,6 +10,6 @@ class _QuickGuard:
         "power": None,
         "pp": 15,
         "target": "users_field",
-        "priority": 3,
     }
     flags = ["snatch"]
+    priority = 3

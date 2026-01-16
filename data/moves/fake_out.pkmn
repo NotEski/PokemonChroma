@@ -10,7 +10,7 @@ class _FakeOut:
         "power": 40,
         "pp": 10,
         "target": "selected_pokemon",
-        "priority": 3,
     }
     flags = ["contact", "protect", "mirror"]
     flinch_chance = 100
+    priority = 3

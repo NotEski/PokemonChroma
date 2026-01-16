@@ -10,5 +10,5 @@ class _MagicCoat:
         "power": None,
         "pp": 15,
         "target": "user",
-        "priority": 4,
     }
+    priority = 4

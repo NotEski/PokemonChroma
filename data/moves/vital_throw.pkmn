@@ -10,6 +10,6 @@ class _VitalThrow:
         "power": 70,
         "pp": 10,
         "target": "selected_pokemon",
-        "priority": -1,
     }
     flags = ["contact", "protect", "mirror"]
+    priority = -1

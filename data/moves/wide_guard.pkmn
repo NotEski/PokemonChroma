@@ -10,6 +10,6 @@ class _WideGuard:
         "power": None,
         "pp": 10,
         "target": "users_field",
-        "priority": 3,
     }
     flags = ["snatch"]
+    priority = 3

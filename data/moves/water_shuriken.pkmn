@@ -10,6 +10,6 @@ class _WaterShuriken:
         "power": 15,
         "pp": 20,
         "target": "selected_pokemon",
-        "priority": 1,
     }
     flags = ["protect", "mirror"]
+    priority = 1

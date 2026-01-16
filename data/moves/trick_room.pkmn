@@ -10,9 +10,9 @@ class _TrickRoom:
         "power": None,
         "pp": 5,
         "target": "entire_field",
-        "priority": -7,
     }
     flags = ["mirror"]
     field_effect = {
         "trick_room": 5
     }
+    priority = -7

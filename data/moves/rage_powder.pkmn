@@ -10,6 +10,6 @@ class _RagePowder:
         "power": None,
         "pp": 20,
         "target": "user",
-        "priority": 2,
     }
     flags = ["powder"]
+    priority = 2

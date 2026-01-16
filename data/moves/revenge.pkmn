@@ -10,6 +10,6 @@ class _Revenge:
         "power": 60,
         "pp": 10,
         "target": "selected_pokemon",
-        "priority": -4,
     }
     flags = ["contact", "protect", "mirror"]
+    priority = 4

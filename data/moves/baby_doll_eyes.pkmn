@@ -10,9 +10,9 @@ class _BabyDollEyes:
         "power": None,
         "pp": 30,
         "target": "selected_pokemon",
-        "priority": 1,
     }
     flags = ["protect", "reflectable", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }
+    priority = 1

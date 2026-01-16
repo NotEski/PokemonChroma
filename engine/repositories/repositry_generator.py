@@ -63,8 +63,6 @@ def move(move_name: str):
         pp: int = get_field(meta, "pp", int, required=False, default=15)
         # Target
         target: MoveTarget = get_field(meta, "target", MoveTarget, required=False, default=MoveTarget.SELECTED_POKEMON)
-        # Priority
-        priority: int = get_field(meta, "priority", int, required=False, default=0)
 
         # Below are MoveTags specific fields
 
@@ -74,52 +72,50 @@ def move(move_name: str):
         flags: List[str] = dsl_cls.__dict__.get("flags", [])
         for flag in flags:
             match flag:
-                case "contact":
-                    move_tags.append(ContactMove())
+                case "authentic":
+                    move_tags.append(AuthenticMove())
+                case "ballistics":
+                    move_tags.append(BallisticsMove())
+                case "bite":
+                    move_tags.append(BiteMove())
                 case "charge":
                     move_tags.append(ChargeMove())
-                case "recharge":
-                    move_tags.append(RechargeMove())
-                case "protect":
-                    move_tags.append(ProtectMove())
-                case "reflectable":
-                    move_tags.append(ReflectableMove())
-                case "snatch":
-                    move_tags.append(SnatchMove())
-                case "mirror":
-                    move_tags.append(MirrorMove())
-                case "punch":
-                    move_tags.append(PunchMove())
-                case "sound":
-                    move_tags.append(SoundMove())
-                case "gravity":
-                    move_tags.append(GravityMove())
+                case "contact":
+                    move_tags.append(ContactMove())
                 case "defrost":
                     move_tags.append(DefrostMove())
                 case "distance":
                     move_tags.append(DistanceMove())
+                case "gravity":
+                    move_tags.append(GravityMove())
                 case "heal":
                     # Set a value that needs to be true by the end of decorator
                     # This will be set by healing or positive drain
                     healing_flag = False
-                case "authentic":
-                    move_tags.append(AuthenticMove())
-                case "powder":
-                    move_tags.append(PowderMove())
-                case "bite":
-                    move_tags.append(BiteMove())
-                case "pulse":
-                    move_tags.append(PulseMove())
-                case "ballistics":
-                    move_tags.append(BallisticsMove())
+                case "heal_exception":
+                    heal_exception = True
+                case "mirror":
+                    move_tags.append(MirrorMove())
                 case "mental":
                     move_tags.append(MentalMove())
                 case "non_sky_battle":
                     move_tags.append(NonSkyBattleMove())
                 case "pivot":
                     move_tags.append(PivotMove())
-                case "heal_exception":
-                    heal_exception = True
+                case "powder":
+                    move_tags.append(PowderMove())
+                case "protect":
+                    move_tags.append(ProtectAgainstMove())
+                case "pulse":
+                    move_tags.append(PulseMove())
+                case "recharge":
+                    move_tags.append(RechargeMove())
+                case "reflectable":
+                    move_tags.append(ReflectableMove())
+                case "snatch":
+                    move_tags.append(SnatchMove())
+                case "sound":
+                    move_tags.append(SoundMove())
                 case _:
                     raise ValueError(f"Move '{move_name}' has unknown flag '{flag}'.")
 
@@ -135,55 +131,6 @@ def move(move_name: str):
                 healing_flag = True
             move_tags.append(DrainMove(drain_percentage=drain))
 
-        # Flinch Chance
-        flinch_chance = dsl_cls.__dict__.get("flinch_chance", None)
-        if flinch_chance is not None:
-            move_tags.append(FlinchMove(chance=flinch_chance))
-
-        # Status Condition and chance
-        status_condition: Optional[dict[str, int]] = dsl_cls.__dict__.get("status_condition", {})
-        if status_condition is not None:
-            if not isinstance(status_condition, dict): # type: ignore - Sanity check
-                raise ValueError(f"Move '{move_name}' has invalid status_condition definition. {type(status_condition)} found, dict expected.")
-            for sc_name, sc_chance in status_condition.items():
-                    status_condition_obj = get_status_condition(sc_name)
-                    move_tags.append(StatusConditionMove(
-                        status_condition=status_condition_obj,
-                        chance=sc_chance
-                    ))
-        
-        # Healing
-        healing = dsl_cls.__dict__.get("healing", None)
-        if healing is not None:
-            if healing_flag is False and healing > 0:
-                healing_flag = True
-            if healing != 0:
-                move_tags.append(HealMove(heal_percentage=healing))
-
-        # Stat Changes
-        stat_changes = dsl_cls.__dict__.get("stat_changes", None)
-        if stat_changes is not None:
-            if "stat_changes_inflicted" in stat_changes:
-                for sc in stat_changes["stat_changes_inflicted"]:
-                    stat_change = StatChangeInflictedMove(**sc)
-                    move_tags.append(stat_change)
-            if "stat_changes_received" in stat_changes:
-                for sc in stat_changes["stat_changes_received"]:
-                    stat_change = StatChangeReceivedMove(**sc)
-                    move_tags.append(stat_change)
-
-        # Hazard
-        hazard: Optional[dict[str, int]] = dsl_cls.__dict__.get("hazard", None)
-        if hazard is not None:
-            for hazard_name, layers_added in hazard.items():
-                harard_obj = hazard_repository.get(hazard_name)
-                if harard_obj is None:
-                    raise ValueError(f"Move '{move_name}' hazard '{hazard_name}' not found in repository.")
-                move_tags.append(HazardMove(entry_hazard=harard_obj, layers=layers_added))
-
-        if healing_flag is not None and healing_flag is False and not heal_exception:
-            raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")
-        
         # Field Effect
         field_effect: Optional[dict[str, int|Any]] = dsl_cls.__dict__.get("field_effect", None)
         if field_effect is not None:
@@ -194,6 +141,28 @@ def move(move_name: str):
                 if field_effect_turns is None:
                     field_effect_turns = field_effect_obj.default_duration
                 move_tags.append(FieldEffectMove(field_effect=field_effect_obj, turns=field_effect_turns))
+
+        # Flinch Chance
+        flinch_chance = dsl_cls.__dict__.get("flinch_chance", None)
+        if flinch_chance is not None:
+            move_tags.append(FlinchMove(chance=flinch_chance))
+
+        # Hazard
+        hazard: Optional[dict[str, int]] = dsl_cls.__dict__.get("hazard", None)
+        if hazard is not None:
+            for hazard_name, layers_added in hazard.items():
+                hazard_obj = hazard_repository.get(hazard_name)
+                if hazard_obj is None:
+                    raise ValueError(f"Move '{move_name}' hazard '{hazard_name}' not found in repository.")
+                move_tags.append(HazardMove(entry_hazard=hazard_obj, layers=layers_added))
+
+        # Healing
+        healing = dsl_cls.__dict__.get("healing", None)
+        if healing is not None:
+            if healing_flag is False and healing > 0:
+                healing_flag = True
+            if healing != 0:
+                move_tags.append(HealMove(heal_percentage=healing))
 
         # Multi-hit
         multi_hit: Optional[dict[int, int|float]|tuple[int, int]|bool] = dsl_cls.__dict__.get("multi_hit", None)
@@ -209,13 +178,70 @@ def move(move_name: str):
 
             if not isinstance(multi_hit, bool): # If not just True, as the default weights will be used and the custom weights have now been processed
                  move_tags.append(MultiHitMove(hits=multi_hit)) # type: ignore
-                
+
+        # Priority
+        priority_value = dsl_cls.__dict__.get("priority", None)
+        if priority_value is not None:
+            move_tags.append(PriorityMove(priority=priority_value))
+
+        # Protect
+        protect: Optional[dict[str, Any]] = dsl_cls.__dict__.get("protect", None)
+        if protect is not None:
+            if "status_condition_inflicted_on_attacker" in protect:
+                sc_name = protect["status_condition_inflicted_on_attacker"]
+                status_condition_obj = get_status_condition(sc_name)
+                protect["status_condition_inflicted_on_attacker"] = status_condition_obj
+            move_tags.append(ProtectMove.model_validate(protect))
+
+        # Screen
+        screen: Optional[dict[str, Any]] = dsl_cls.__dict__.get("screen", None)
+        if screen is not None:
+            move_tags.append(ScreenMove.model_validate(screen))
+
+        # Stat Changes
+        stat_changes = dsl_cls.__dict__.get("stat_changes", None)
+        if stat_changes is not None:
+            if "stat_changes_inflicted" in stat_changes:
+                for sc in stat_changes["stat_changes_inflicted"]:
+                    move_tags.append(StatChangeInflictedMove.model_validate(sc))
+            if "stat_changes_received" in stat_changes:
+                for sc in stat_changes["stat_changes_received"]:
+                    move_tags.append(StatChangeReceivedMove.model_validate(sc))
+
+        # Status Condition and chance
+        status_condition: Optional[dict[str, int]] = dsl_cls.__dict__.get("status_condition", None)
+        if status_condition is not None:
+            for sc_name, sc_chance in status_condition.items():
+                move_tags.append(StatusConditionMove(
+                    status_condition=get_status_condition(sc_name),
+                    chance=sc_chance
+                ))
+
+        # Terrain
+        if "terrain" in dsl_cls.__dict__:
+            terrain: BattleTerrain = BattleTerrain(dsl_cls.__dict__.get("terrain", None))
+            move_tags.append(TerrainMove(terrain=terrain))
 
         # Weather
         if "weather" in dsl_cls.__dict__:
             weather: BattleWeather = BattleWeather(dsl_cls.__dict__.get("weather", None))
             move_tags.append(WeatherMove(weather=weather))
-            
+
+        # Weather Affected
+        if "weather_affected" in dsl_cls.__dict__:
+            weather_info: dict[str, Any] = dsl_cls.__dict__.get("weather_affected", {})
+            weather: BattleWeather = BattleWeather(weather_info.get("weather", None))
+            multiplier: float = float(weather_info.get("multiplier", 1.0))
+            move_tags.append(WeatherAffectedMove(weather=weather, multiplier=multiplier))
+
+        # Weather Dependent
+        if "weather_dependent" in dsl_cls.__dict__:
+            weather: BattleWeather = BattleWeather(dsl_cls.__dict__.get("weather_dependent", None))
+            move_tags.append(WeatherDependentMove(weather=weather))
+
+
+        if healing_flag is not None and healing_flag is False and not heal_exception:
+            raise ValueError(f"Move '{move_name}' has 'heal' flag but no healing or drain defined.")
 
         # Generate BaseMove
         base_move = BaseMove(
@@ -229,7 +255,6 @@ def move(move_name: str):
             power=power,
             base_pp=pp,
             target=target,
-            priority=priority,
             move_tags=move_tags
         )
 

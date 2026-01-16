@@ -10,5 +10,5 @@ class _Detect:
         "power": None,
         "pp": 5,
         "target": "user",
-        "priority": 4,
     }
+    priority = 4

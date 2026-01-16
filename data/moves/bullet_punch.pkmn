@@ -10,6 +10,6 @@ class _BulletPunch:
         "power": 40,
         "pp": 30,
         "target": "selected_pokemon",
-        "priority": 1,
     }
     flags = ["contact", "protect", "mirror", "punch"]
+    priority = 1

@@ -10,6 +10,6 @@ class _HelpingHand:
         "power": None,
         "pp": 20,
         "target": "ally",
-        "priority": 5,
     }
     flags = ["authentic"]
+    priority = 5

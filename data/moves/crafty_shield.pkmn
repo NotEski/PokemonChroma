@@ -10,5 +10,5 @@ class _CraftyShield:
         "power": None,
         "pp": 10,
         "target": "users_field",
-        "priority": 3,
     }
+    priority = 3

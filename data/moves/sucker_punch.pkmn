@@ -10,6 +10,6 @@ class _SuckerPunch:
         "power": 80,
         "pp": 5,
         "target": "selected_pokemon",
-        "priority": 1,
     }
     flags = ["contact", "protect", "mirror"]
+    priority = 1

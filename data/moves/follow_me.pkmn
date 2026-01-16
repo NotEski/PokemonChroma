@@ -10,5 +10,5 @@ class _FollowMe:
         "power": None,
         "pp": 20,
         "target": "user",
-        "priority": 2,
     }
+    priority = 2

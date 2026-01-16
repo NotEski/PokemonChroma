@@ -10,6 +10,7 @@ class _Whirlwind:
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
-        "priority": -6,
+
     }
     flags = ["reflectable", "mirror", "authentic"]
+    priority = -6

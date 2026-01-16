@@ -10,6 +10,6 @@ class _VacuumWave:
         "power": 40,
         "pp": 30,
         "target": "selected_pokemon",
-        "priority": 1,
     }
     flags = ["protect", "mirror"]
+    priority = 1

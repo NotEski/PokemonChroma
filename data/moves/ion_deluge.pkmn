@@ -10,5 +10,5 @@ class _IonDeluge:
         "power": None,
         "pp": 25,
         "target": "entire_field",
-        "priority": 1,
     }
+    priority = 1

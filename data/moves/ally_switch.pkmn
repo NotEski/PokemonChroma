@@ -10,5 +10,5 @@ class _AllySwitch:
         "power": None,
         "pp": 15,
         "target": "user",
-        "priority": 1,
     }
+    priority = 1

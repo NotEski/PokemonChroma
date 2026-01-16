@@ -86,7 +86,24 @@ class PowderMove(MoveTag):
     pass
 
 class ProtectMove(MoveTag):
+    # blocks incoming moves for the turn on target
+    # side effects
+    success_rate: Optional[dict[int, float]] = Field({1: 100, 2: 50, 3: 25, 4: 12.5}, description="Success rate per consecutive use if None always succeeds")
+    stats_inflicted_on_attacker: Optional[dict[Stat, int]] = Field(None, description="Stats to inflict on attacker if they use a damaging move against the protected target")
+    status_condition_inflicted_on_attacker: Optional[StatusCondition] = Field(None, description="Status condition to inflict on attacker if they use a damaging move against the protected target")
+    damage_inflicted_on_attacker_damage_percentage: Optional[int] = Field(None, description="Damage to inflict on attacker based on damage that would have been inflicted if they use a damaging move against the protected target")
+    damage_inflicted_on_attacker_health_percentage: Optional[int] = Field(None, description="Damage to inflict on attacker based on their max health if they use a damaging move against the protected target")
+
+    full_protect: bool = Field(default=True, description="If true, protects as normal. If false, only protects from certain move types (e.g., status moves)")
+
+    survive_on_one_hp: bool = Field(default=False, description="If true, the target will survive with 1 HP if the move would have knocked it out. Only applies if full_protect is true.")
+    # add more side effects as needed
+
+class ProtectAgainstMove(MoveTag):
     pass
+
+class PriorityMove(MoveTag):
+    priority: int # Priority level of the move
 
 class PulseMove(MoveTag):
     pass
@@ -136,7 +153,6 @@ class SwitchOutMove(MoveTag):
 
 class TerrainMove(MoveTag):
     terrain: BattleTerrain
-    duration_turns: int  # Number of turns the terrain will last
 
 class WeatherMove(MoveTag):
     weather: BattleWeather
@@ -144,3 +160,6 @@ class WeatherMove(MoveTag):
 class WeatherAffectedMove(MoveTag):
     weather: BattleWeather
     multiplier: float  # Effectiveness multiplier under the specified weather might need to be changed
+
+class WeatherDependentMove(MoveTag):
+    weather: BattleWeather

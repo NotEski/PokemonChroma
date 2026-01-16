@@ -10,5 +10,6 @@ class _Protect:
         "power": None,
         "pp": 10,
         "target": "user",
-        "priority": 4,
     }
+    priority = 4
+    protect = {}

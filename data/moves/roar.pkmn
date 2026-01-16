@@ -10,6 +10,6 @@ class _Roar:
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
-        "priority": -6,
     }
     flags = ["reflectable", "mirror", "sound", "authentic"]
+    priority = -6

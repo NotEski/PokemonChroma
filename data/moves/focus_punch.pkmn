@@ -10,6 +10,6 @@ class _FocusPunch:
         "power": 150,
         "pp": 20,
         "target": "selected_pokemon",
-        "priority": -3,
     }
     flags = ["contact", "protect", "punch"]
+    priority = -3
