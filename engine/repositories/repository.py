@@ -210,7 +210,7 @@ class MoveCategories:
     """
 
     priority_moves: dict[BaseMove, int] = {} # set of move indexes with priority other than 0
-    setup_moves: dict[BaseMove, list[StatChangeMove]] = {}
+    setup_moves: list[BaseMove] = []
     hazard_moves: list[BaseMove] = []
     healing_moves: list[BaseMove] = []
     ohko_moves: list[BaseMove] = []
@@ -233,12 +233,43 @@ class MoveCategories:
     def build_setup_moves(self):
         """Build the set of setup move categories from move repo."""
         for move in move_repository.items.values():
-            stat_changes: list[StatChangeMove] = []
-            for effect in move.move_tags:
-                if isinstance(effect, StatChangeMove):
-                    stat_changes.append(effect)
-            if stat_changes:
-                self.setup_moves[move] = stat_changes
+            new_setup_move: Optional[SetupMove] = None
+            # setup_tag = move.has_any_tag([StatChangeReceivedMove, StatChangeReceivedMove]) # type: ignore
+            # if not setup_tag: continue
+            if move.has_tag(StatChangeReceivedMove):
+                if new_setup_move is None:
+                    new_setup_move = SetupMove()
+                new_setup_move.stat_changes_received.append(move.get_tag(StatChangeReceivedMove)) # type: ignore
+            if move.has_tag(StatChangeInflictedMove):
+                if new_setup_move is None:
+                    new_setup_move = SetupMove()
+                new_setup_move.stat_changes_inflicted.append(move.get_tag(StatChangeInflictedMove)) # type: ignore
+
+            if new_setup_move is None: # Can't be called a setup move without stat changes
+                continue
+
+            if move in self.damaging_moves:
+                new_setup_move.damages_opponent = True
+            # Check for recoil or self-damage
+                if move.has_tag(DrainMove):
+                    drain_move = move.get_tag(DrainMove) # type: ignore
+                    if isinstance(drain_move, DrainMove):
+                        if drain_move.drain_percentage < 0:
+                            new_setup_move.recoil_percentage = abs(drain_move.drain_percentage)
+                            new_setup_move.damages_user = True
+
+            if move.has_tag(TrapOpponentMove):
+                new_setup_move.trap_opponent = True
+            if move.has_tag(TrapUserMove):
+                new_setup_move.trap_user = True
+
+            secondary_effects: list[MoveTag] = []
+            for tag in move.move_tags:
+                if not isinstance(tag, (StatChangeInflictedMove, StatChangeReceivedMove, TrapOpponentMove, TrapUserMove, DrainMove)):
+                    secondary_effects.append(tag)
+
+            move.add_tag(new_setup_move)
+            self.setup_moves.append(move)
 
     def build_hazard_moves(self):
         """Build the set of hazard move categories from move repo."""

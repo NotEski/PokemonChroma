@@ -121,8 +121,15 @@ class ScreenMove(MoveTag):
     screen_type: str  # e.g., "Reflect", "Light Screen" # this will likely need to be an Enum later
     duration_turns: int  # Number of turns the screen will last
 
-class SetupMove(MoveTag):
-    pass
+class SetupMove(MoveTag): # Speceial tag for AI to identify setup moves
+    stat_changes_received: list['StatChangeReceivedMove'] = []
+    stat_changes_inflicted: list['StatChangeInflictedMove'] = []
+    damages_user: bool = Field(default=False)  # Whether the move also damages the user
+    damages_opponent: bool = Field(default=False)  # Whether the move also damages the opponent
+    trap_user: bool = Field(default=False)  # Whether the move traps the user
+    trap_opponent: bool = Field(default=False)  # Whether the move traps the opponent
+    recoil_percentage: Optional[int] = Field(default=None)  # Percentage of damage dealt to recoil to the user
+    secondary_effects: Optional[list[MoveTag]] = Field(default=None)  # List of additional MoveTags that represent secondary effects of the move
 
 class SnatchMove(MoveTag):
     pass
@@ -153,6 +160,12 @@ class SwitchOutMove(MoveTag):
 
 class TerrainMove(MoveTag):
     terrain: BattleTerrain
+
+class TrapUserMove(MoveTag):
+    pass
+
+class TrapOpponentMove(MoveTag):
+    pass
 
 class WeatherMove(MoveTag):
     weather: BattleWeather

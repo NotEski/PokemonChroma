@@ -145,6 +145,22 @@ class BaseMove(BaseModel):
                 return True
         return False
     
+    def has_tags(self, tag_types: List[Type[MoveTag]]) -> bool:
+        if self.move_tags == []:
+            return False
+        for tag_type in tag_types:
+            if not self.has_tag(tag_type):
+                return False
+        return True
+    
+    def has_any_tag(self, tag_types: List[Type[MoveTag]]) -> bool:
+        if self.move_tags == []:
+            return False
+        for tag_type in tag_types:
+            if self.has_tag(tag_type):
+                return True
+        return False
+
     def get_tag(self, tag_type: Type[MoveTag]) -> Optional[MoveTag]:
         if self.move_tags == []:
             return None

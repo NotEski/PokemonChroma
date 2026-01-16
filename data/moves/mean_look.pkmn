@@ -12,3 +12,4 @@ class _MeanLook:
         "target": "selected_pokemon",
     }
     flags = ["reflectable", "mirror"]
+    trap_target = True
