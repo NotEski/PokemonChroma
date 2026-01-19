@@ -27,7 +27,6 @@ class GrowthRate(Enum):
     FAST = "fast"
     SLOW_THEN_VERY_FAST = "slow_then_very_fast"
 
-
 class EggGroup(Enum):
     BUG = "bug"
     DITTO = "ditto"
@@ -323,7 +322,6 @@ class BattleMon(BaseModel):
     def disabled_moves(self, value: dict[int, int]):
         self.battle_state.disabled_moves = value
 #endregion
-
 
 #region Pokemon Base Proxy Properties
     @property

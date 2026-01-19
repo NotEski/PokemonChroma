@@ -98,7 +98,8 @@ class BattleManager:
                 success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
                     self.battle_log.battle_end(
-                        description=f"{escaping_pokemon.nickname} successfully escaped!"
+                        description=f"{escaping_pokemon.nickname} successfully escaped!",
+                        winning_trainer=None,
                     )
                     self.end_battle()
                     return
@@ -281,9 +282,10 @@ class BattleManager:
         self.process_fainted_pokemon()
 
 
-    def end_battle(self):
+    def end_battle(self, winning_trainer: Opponent | None = None):
         self.battle_log.battle_end(
-            description="The battle has ended"
+            description="The battle has ended",
+            winning_trainer=winning_trainer,
         )
         self.active_battle = False
 
@@ -508,7 +510,7 @@ class BattleManager:
             # TODO Struggle Move needs special handling here to skip PP check and deduction
 
             # Calc multihit here if applicable
-            num_hits = multihit_check(used_move.base_move, user_pokemon, target_pokemon)
+            num_hits = multihit_check(used_move.base_move)
 
             for _ in range(0, num_hits):
                 if used_move.category in MoveCategoryCategories.DAMAGE_MOVES:

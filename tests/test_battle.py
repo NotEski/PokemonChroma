@@ -3,15 +3,15 @@ import pytest
 from engine.battle.battle_manager import BattleManager, BattleConfig
 from shared.battle.position import BattlePosition
 from shared.battle.opponent import TrainerOpponent, WildPokemonOpponent
-from shared.battle.battle_header import BattleState
-from shared.pokemon.pokemon import PokemonTeam
+from shared.battle.battle_header import BattleState, UnfinishedTurnException
+from shared.pokemon.pokemon import PokemonTeam, Pokemon
 from shared.trainer.trainer import Trainer
 
 
 class TestBattleInitialization:
     """Tests for battle initialization."""
 
-    def test_init_wild_pokemon_battle(self, pikachu_pokemon, eevee_pokemon):
+    def test_init_wild_pokemon_battle(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test initializing a wild Pokemon battle."""
         trainer_opponent = TrainerOpponent(
             trainer=Trainer(
@@ -33,10 +33,10 @@ class TestBattleInitialization:
         
         assert battle.battle_config.is_wild is True
         assert len(battle.position_manager.list_registered_positions()) == 2
-        assert BattlePosition(team_id=1, pokemon_index=1) in battle.position_manager.list_registered_positions()
-        assert BattlePosition(team_id=2, pokemon_index=1) in battle.position_manager.list_registered_positions()
+        assert BattlePosition(team_id=0, pokemon_index=0) in battle.position_manager.list_registered_positions()
+        assert BattlePosition(team_id=1, pokemon_index=0) in battle.position_manager.list_registered_positions()
 
-    def test_init_trainer_battle(self, pikachu_pokemon, eevee_pokemon):
+    def test_init_trainer_battle(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test initializing a trainer vs trainer battle."""
         trainer_1 = TrainerOpponent(
             trainer=Trainer(
@@ -76,8 +76,8 @@ class TestBattleInitialization:
         battle.init_battle()
         
         # Check that both positions have Pokemon
-        pokemon_1 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=1))
-        pokemon_2 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=2, pokemon_index=1))
+        pokemon_1 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=0, pokemon_index=0))
+        pokemon_2 = battle.position_manager.get_pokemon_at_position(BattlePosition(team_id=1, pokemon_index=0))
         
         assert pokemon_1 is not None
         assert pokemon_2 is not None
@@ -115,13 +115,8 @@ class TestTurnManagement:
         battle.init_battle()
         battle.start_turn()
         
-        # Try to end turn without any actions - catches any exception
-        try:
+        with pytest.raises(UnfinishedTurnException):
             battle.end_turn()
-            assert False, "Should have raised an exception"
-        except Exception:
-            # Expected to fail without both actions
-            pass
 
     def test_turn_number_increments(self, pikachu_pokemon, eevee_pokemon):
         """Test that turn number increments correctly."""
@@ -133,9 +128,9 @@ class TestTurnManagement:
         battle = BattleManager(teams=[trainer_opponent, wild_opponent])
         battle.init_battle()
         
-        assert battle.battle_state.turn_number == 0
+        initial_turn = battle.battle_state.turn_number
         battle.start_turn()
-        assert battle.battle_state.turn_number == 1
+        assert battle.battle_state.turn_number == initial_turn + 1
 
 
 class TestBattleActions:
@@ -154,12 +149,12 @@ class TestBattleActions:
         
         # Use move from team 1 (Tackle has index=1)
         battle.use_move(
-            user_position=BattlePosition(team_id=1, pokemon_index=1),
+            user_position=BattlePosition(team_id=0, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=2, pokemon_index=1)
+            target_position=BattlePosition(team_id=1, pokemon_index=0)
         )
         
-        assert BattlePosition(team_id=1, pokemon_index=1) in battle.position_manager.position_actions()
+        assert BattlePosition(team_id=0, pokemon_index=0) in battle.position_manager.position_actions()
 
     def test_invalid_move_index_raises_error(self, pikachu_pokemon, eevee_pokemon):
         """Test that using an invalid move index raises error."""
@@ -174,9 +169,9 @@ class TestBattleActions:
         
         with pytest.raises(ValueError):
             battle.use_move(
-                user_position=BattlePosition(team_id=1, pokemon_index=1),
+                user_position=BattlePosition(team_id=0, pokemon_index=0),
                 move_index=10,
-                target_position=BattlePosition(team_id=2, pokemon_index=1)
+                target_position=BattlePosition(team_id=1, pokemon_index=0)
             )
 
     def test_escape_in_wild_battle(self, pikachu_pokemon, eevee_pokemon):
@@ -186,14 +181,14 @@ class TestBattleActions:
         )
         wild_opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        config = BattleConfig(is_wild=True, allow_escape=True)
+        config = BattleConfig(is_wild=True, can_escape=True)
 
         battle = BattleManager(teams=[trainer_opponent, wild_opponent], battle_config=config)
         battle.init_battle()
         battle.start_turn()
         
         # Trainer tries to escape
-        user_position = BattlePosition(team_id=1, pokemon_index=1)
+        user_position = BattlePosition(team_id=0, pokemon_index=0)
         battle.use_escape(user_position=user_position)
         
         assert user_position in battle.position_manager.position_actions()
@@ -212,7 +207,7 @@ class TestBattleActions:
         battle.start_turn()
         
         with pytest.raises(ValueError):
-            battle.use_escape(user_position=BattlePosition(team_id=1, pokemon_index=1))
+            battle.use_escape(user_position=BattlePosition(team_id=0, pokemon_index=0))
 
     def test_cancel_action(self, pikachu_pokemon, eevee_pokemon):
         """Test canceling an action."""
@@ -226,11 +221,11 @@ class TestBattleActions:
         battle.start_turn()
         
         # Use move
-        user_pos = BattlePosition(team_id=1, pokemon_index=1)
+        user_pos = BattlePosition(team_id=0, pokemon_index=0)
         battle.use_move(
             user_position=user_pos,
             move_index=1,
-            target_position=BattlePosition(team_id=2, pokemon_index=1)
+            target_position=BattlePosition(team_id=1, pokemon_index=0)
         )
         assert user_pos in battle.position_manager.position_actions()
         
@@ -256,14 +251,14 @@ class TestBattleFlow:
         
         # Both Pokemon use moves
         battle.use_move(
-            user_position=BattlePosition(team_id=1, pokemon_index=1),
+            user_position=BattlePosition(team_id=0, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=2, pokemon_index=1)
+            target_position=BattlePosition(team_id=1, pokemon_index=0)
         )
         battle.use_move(
-            user_position=BattlePosition(team_id=2, pokemon_index=1),
+            user_position=BattlePosition(team_id=1, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=1, pokemon_index=1)
+            target_position=BattlePosition(team_id=0, pokemon_index=0)
         )
         
         # End turn should process successfully
@@ -285,14 +280,14 @@ class TestBattleFlow:
         
         battle.start_turn()
         battle.use_move(
-            user_position=BattlePosition(team_id=1, pokemon_index=1),
+            user_position=BattlePosition(team_id=0, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=2, pokemon_index=1)
+            target_position=BattlePosition(team_id=1, pokemon_index=0)
         )
         battle.use_move(
-            user_position=BattlePosition(team_id=2, pokemon_index=1),
+            user_position=BattlePosition(team_id=1, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=1, pokemon_index=1)
+            target_position=BattlePosition(team_id=0, pokemon_index=0)
         )
         battle.end_turn()
         
@@ -314,14 +309,14 @@ class TestBattleFlow:
         
         battle.start_turn()
         battle.use_move(
-            user_position=BattlePosition(team_id=1, pokemon_index=1),
+            user_position=BattlePosition(team_id=0, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=2, pokemon_index=1)
+            target_position=BattlePosition(team_id=1, pokemon_index=0)
         )
         battle.use_move(
-            user_position=BattlePosition(team_id=2, pokemon_index=1),
+            user_position=BattlePosition(team_id=1, pokemon_index=0),
             move_index=1,
-            target_position=BattlePosition(team_id=1, pokemon_index=1)
+            target_position=BattlePosition(team_id=0, pokemon_index=0)
         )
         battle.end_turn()
         
@@ -370,19 +365,15 @@ class TestOpponentActions:
         trainer = Trainer(name="Ash", team=PokemonTeam(pokemons=[pikachu_pokemon]))
         opponent = TrainerOpponent(trainer=trainer)
         
-        all_pokemon = opponent.get_all_pokemons()
-        
-        assert len(all_pokemon) >= 1
-        assert pikachu_pokemon in all_pokemon
+        assert opponent.pokemon_team[0] == pikachu_pokemon
+        assert len(opponent.get_viable_battlemons()) == 1
 
     def test_wild_opponent_get_all_pokemon(self, eevee_pokemon):
         """Test getting Pokemon from wild opponent."""
         opponent = WildPokemonOpponent(pokemon=eevee_pokemon)
         
-        all_pokemon = opponent.get_all_pokemons()
-        
-        assert len(all_pokemon) == 1
-        assert eevee_pokemon in all_pokemon
+        assert opponent.pokemon_team[0] == eevee_pokemon
+        assert len(opponent.get_viable_battlemons()) == 1
 
 
 class TestBattlePositions:
@@ -398,14 +389,14 @@ class TestBattlePositions:
         battle = BattleManager(teams=[trainer_opponent, wild_opponent])
         
         opposite_1 = battle.get_opposite_position_from_position(
-            BattlePosition(team_id=1, pokemon_index=1)
+            BattlePosition(team_id=0, pokemon_index=0)
         )
         opposite_2 = battle.get_opposite_position_from_position(
-            BattlePosition(team_id=2, pokemon_index=1)
+            BattlePosition(team_id=1, pokemon_index=0)
         )
-        
-        assert opposite_1 == BattlePosition(team_id=2, pokemon_index=1)
-        assert opposite_2 == BattlePosition(team_id=1, pokemon_index=1)
+
+        assert opposite_1 == BattlePosition(team_id=1, pokemon_index=0)
+        assert opposite_2 == BattlePosition(team_id=0, pokemon_index=0)
 
     def test_get_opponent_from_position(self, pikachu_pokemon, eevee_pokemon):
         """Test getting opponent from position."""
@@ -417,9 +408,9 @@ class TestBattlePositions:
         battle = BattleManager(teams=[trainer_opponent, wild_opponent])
         
         # Position (1,1) belongs to team_1, so opponent should be team_2 (wild)
-        opponent_1 = battle.get_opponent_from_position(BattlePosition(team_id=1, pokemon_index=1))
+        opponent_1 = battle.get_opponent_from_position(BattlePosition(team_id=0, pokemon_index=0))
         # Position (2,1) belongs to team_2, so opponent should be team_1 (trainer)
-        opponent_2 = battle.get_opponent_from_position(BattlePosition(team_id=2, pokemon_index=1))
+        opponent_2 = battle.get_opponent_from_position(BattlePosition(team_id=1, pokemon_index=0))
         
         assert isinstance(opponent_1, TrainerOpponent)
         assert isinstance(opponent_2, WildPokemonOpponent)

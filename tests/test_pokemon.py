@@ -1,12 +1,12 @@
 """Test suite for Pokemon models and related functionality."""
 import pytest
-from shared.pokemon.pokemon import Pokemon, PokemonBase, BattleMon
+from engine.repositories.repository import status_repository
+from shared.pokemon.pokemon import Pokemon, PokemonBase, BattleMon, StatStages
 from shared.pokemon.types import PokemonType
-from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.genders import Gender
 from shared.pokemon.natures import Nature
 from shared.pokemon.stats import (
-    Stat, IndividualValues, EffortValues
+    BaseStats, Stat, IndividualValues, EffortValues
 )
 from shared.pokemon.move import MoveSet, BaseMove, Move
 
@@ -14,21 +14,21 @@ from shared.pokemon.move import MoveSet, BaseMove, Move
 class TestPokemonBase:
     """Tests for PokemonBase model."""
 
-    def test_create_pokemon_base(self, pikachu_base):
+    def test_create_pokemon_base(self, pikachu_base: "PokemonBase"):
         """Test creating a valid PokemonBase."""
         assert pikachu_base.name == "Pikachu"
         assert pikachu_base.pokedex_number == 25
         assert PokemonType.ELECTRIC in pikachu_base.types
         assert pikachu_base.capture_rate == 190
 
-    def test_pokemon_base_stats(self, pikachu_base):
+    def test_pokemon_base_stats(self, pikachu_base: "PokemonBase"):
         """Test PokemonBase has correct base stats."""
         assert pikachu_base.base_stats.hp == 35
         assert pikachu_base.base_stats.attack == 55
         assert pikachu_base.base_stats.defense == 40
         assert pikachu_base.base_stats.speed == 90
 
-    def test_dual_type_pokemon(self, charizard_base):
+    def test_dual_type_pokemon(self, charizard_base: "PokemonBase"):
         """Test Pokemon with dual types."""
         assert len(charizard_base.types) == 2
         assert PokemonType.FIRE in charizard_base.types
@@ -40,8 +40,8 @@ class TestPokemonBase:
             PokemonBase(
                 name="Invalid",
                 types=[PokemonType.NORMAL],
-                base_stats={"hp": 50, "attack": 50, "defense": 50,
-                           "special_attack": 50, "special_defense": 50, "speed": 50},
+                base_stats=BaseStats(hp=50, attack=50, defense=50,
+                           special_attack=50, special_defense=50, speed=50),
                 pokedex_number=999,
                 capture_rate=256  # Invalid: too high
             )
@@ -50,7 +50,7 @@ class TestPokemonBase:
 class TestPokemon:
     """Tests for Pokemon instances."""
 
-    def test_create_pokemon(self, pikachu_pokemon):
+    def test_create_pokemon(self, pikachu_pokemon: "Pokemon"):
         """Test creating a Pokemon instance."""
         assert pikachu_pokemon.pokemon_base.name == "Pikachu"
         assert pikachu_pokemon.level == 15
@@ -58,7 +58,7 @@ class TestPokemon:
         assert pikachu_pokemon.max_hp > 0
         assert pikachu_pokemon.current_hp == pikachu_pokemon.max_hp
 
-    def test_pokemon_level_validation(self, pikachu_base, tackle_move):
+    def test_pokemon_level_validation(self, pikachu_base: "PokemonBase", tackle_move: "BaseMove"):
         """Test Pokemon level is within valid range."""
         move_set = MoveSet(moves=[tackle_move])
         
@@ -73,13 +73,13 @@ class TestPokemon:
         with pytest.raises(Exception):
             Pokemon(pokemon_base=pikachu_base, level=101, move_set=move_set)
 
-    def test_hp_calculation(self, pikachu_pokemon):
+    def test_hp_calculation(self, pikachu_pokemon: "Pokemon"):
         """Test HP is calculated correctly."""
         # HP should be greater than 0 and based on level and stats
         assert pikachu_pokemon.max_hp > 0
         assert pikachu_pokemon.current_hp == pikachu_pokemon.max_hp
 
-    def test_pokemon_stat_calculation(self, pikachu_pokemon):
+    def test_pokemon_stat_calculation(self, pikachu_pokemon: "Pokemon"):
         """Test stat calculation methods."""
         attack = pikachu_pokemon.calculate_stat(Stat.ATTACK)
         defense = pikachu_pokemon.calculate_stat(Stat.DEFENSE)
@@ -89,7 +89,7 @@ class TestPokemon:
         assert defense > 0
         assert speed > 0
 
-    def test_pokemon_with_custom_nickname(self, pikachu_base, tackle_move):
+    def test_pokemon_with_custom_nickname(self, pikachu_base: "PokemonBase", tackle_move: "BaseMove"):
         """Test Pokemon with custom nickname."""
         move_set = MoveSet(moves=[tackle_move])
         pokemon = Pokemon(
@@ -102,15 +102,16 @@ class TestPokemon:
         pokemon.nickname = "Sparky"
         assert pokemon.nickname == "Sparky"
 
-    def test_pokemon_status_condition(self, pikachu_pokemon):
+    def test_pokemon_status_condition(self, pikachu_pokemon: "Pokemon"):
         """Test Pokemon external status condition (outside of battle)."""
-        assert pikachu_pokemon.external_status_condition == StatusCondition.NONE
+        assert pikachu_pokemon.external_status_condition is None
         
         # Simulate status change outside of battle
-        pikachu_pokemon.external_status_condition = StatusCondition.PARALYSIS
-        assert pikachu_pokemon.external_status_condition == StatusCondition.PARALYSIS
+        paralysis = status_repository.get("paralysis")
+        pikachu_pokemon.external_status_condition = paralysis
+        assert pikachu_pokemon.external_status_condition == paralysis
 
-    def test_pokemon_gender(self, pikachu_pokemon):
+    def test_pokemon_gender(self, pikachu_pokemon: "Pokemon"):
         """Test Pokemon gender."""
         assert pikachu_pokemon.gender in [Gender.MALE, Gender.FEMALE, Gender.NONE]
 
@@ -121,7 +122,8 @@ class TestPokemon:
             pokemon_base=pikachu_base,
             level=10,
             shiny=True,
-            move_set=move_set
+            move_set=move_set,
+            generate=False,
         )
         assert shiny_pokemon.shiny is True
 
@@ -138,56 +140,52 @@ class TestPokemon:
 class TestPokemonBattleState:
     """Tests for BattleMon."""
 
-    def test_initial_battle_state(self):
+    def test_initial_battle_state(self, pikachu_pokemon):
         """Test initial battle state values."""
-        state = BattleMon()
-        assert state.attack_stat_stage == 0
-        assert state.defense_stat_stage == 0
-        assert state.special_attack_stat_stage == 0
-        assert state.special_defense_stat_stage == 0
-        assert state.speed_stat_stage == 0
-        assert state.accuracy_stage == 0
-        assert state.evasion_stage == 0
-        assert state.critical_hit_stage == 0
-        assert len(state.status_conditions) == 0
+        battlemon = pikachu_pokemon.generate_battlemon()
+        assert battlemon.attack_stat_stage == 0
+        assert battlemon.defense_stat_stage == 0
+        assert battlemon.special_attack_stat_stage == 0
+        assert battlemon.special_defense_stat_stage == 0
+        assert battlemon.speed_stat_stage == 0
+        assert battlemon.accuracy_stage == 0
+        assert battlemon.evasion_stage == 0
+        assert battlemon.critical_hit_stage == 0
+        assert len(battlemon.status_conditions) == 0
 
-    def test_reset_stat_stages(self):
+    def test_reset_stat_stages(self, pikachu_pokemon):
         """Test stat stages can be reset to defaults."""
-        state = BattleMon()
-        state.stat_stages.attack_stat_stage = 2
-        state.stat_stages.defense_stat_stage = -1
-        state.stat_stages.speed_stat_stage = 1
+        battlemon = pikachu_pokemon.generate_battlemon()
+        battlemon.stat_stages.attack_stat_stage = 2
+        battlemon.stat_stages.defense_stat_stage = -1
+        battlemon.stat_stages.speed_stat_stage = 1
 
-        # Simulate reset by reinitializing stage fields
-        state.stat_stages.attack_stat_stage = 0
-        state.stat_stages.defense_stat_stage = 0
-        state.stat_stages.speed_stat_stage = 0
+        battlemon.stat_stages = StatStages()
 
-        assert state.stat_stages.attack_stat_stage == 0
-        assert state.stat_stages.defense_stat_stage == 0
-        assert state.stat_stages.speed_stat_stage == 0
+        assert battlemon.stat_stages.attack_stat_stage == 0
+        assert battlemon.stat_stages.defense_stat_stage == 0
+        assert battlemon.stat_stages.speed_stat_stage == 0
 
-    def test_reset_conditions(self):
+    def test_reset_conditions(self, pikachu_pokemon):
         """Test battle status conditions can be reset to defaults."""
-        state = BattleMon()
-        state.status_conditions[StatusCondition.CONFUSION] = 0
+        battlemon = pikachu_pokemon.generate_battlemon()
+        battlemon.status_conditions[status_repository.get("confusion")] = 0
 
-        # Simulate reset to defaults
-        state.status_conditions.clear()
+        battlemon.status_conditions.clear()
 
-        assert len(state.status_conditions) == 0
+        assert len(battlemon.status_conditions) == 0
 
-    def test_full_reset(self):
+    def test_full_reset(self, pikachu_pokemon):
         """Test full reset of battle state via reinitialization."""
-        state = BattleMon()
-        state.stat_stages.attack_stat_stage = 2
-        state.status_conditions[StatusCondition.CONFUSION] = 0
+        battlemon = pikachu_pokemon.generate_battlemon()
+        battlemon.stat_stages.attack_stat_stage = 2
+        battlemon.status_conditions[status_repository.get("confusion")] = 0
 
-        # Simulate full reset by creating a new instance
-        state = BattleMon()
+        battlemon.stat_stages = StatStages()
+        battlemon.status_conditions.clear()
 
-        assert state.stat_stages.attack_stat_stage == 0
-        assert len(state.status_conditions) == 0
+        assert battlemon.stat_stages.attack_stat_stage == 0
+        assert len(battlemon.status_conditions) == 0
 
 
 class TestPokemonIVsAndEVs:
@@ -212,7 +210,8 @@ class TestPokemonIVsAndEVs:
             pokemon_base=pikachu_base,
             level=50,
             individual_values=custom_ivs,
-            move_set=move_set
+            move_set=move_set,
+            generate=False,
         )
         # Pokemon with max IVs should have higher stats
         assert pokemon.individual_values.hp == 31

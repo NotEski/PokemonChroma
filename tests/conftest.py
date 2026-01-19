@@ -1,9 +1,8 @@
 """Pytest configuration and shared fixtures for the Pokemon Fan Game test suite."""
 import pytest
 from shared.pokemon.pokemon import Pokemon, PokemonBase
+from shared.pokemon.stats import BaseStats
 from shared.pokemon.types import PokemonType
-from shared.pokemon.natures import Nature
-from shared.pokemon.genders import Gender
 from shared.pokemon.move import MoveSet, BaseMove, DamageClass, MoveCategory
 from shared.pokemon.pokemon import PokemonTeam
 from shared.trainer.trainer import Trainer
@@ -16,14 +15,14 @@ def pikachu_base():
     return PokemonBase(
         name="Pikachu",
         types=[PokemonType.ELECTRIC],
-        base_stats={
-            "hp": 35,
-            "attack": 55,
-            "defense": 40,
-            "special_attack": 50,
-            "special_defense": 50,
-            "speed": 90,
-        },
+        base_stats=BaseStats(
+            hp=35,
+            attack=55,
+            defense=40,
+            special_attack=50,
+            special_defense=50,
+            speed=90,
+        ),
         pokedex_number=25,
         capture_rate=190
     )
@@ -35,14 +34,14 @@ def charizard_base():
     return PokemonBase(
         name="Charizard",
         types=[PokemonType.FIRE, PokemonType.FLYING],
-        base_stats={
-            "hp": 78,
-            "attack": 84,
-            "defense": 78,
-            "special_attack": 109,
-            "special_defense": 85,
-            "speed": 100,
-        },
+        base_stats=BaseStats(
+            hp=78,
+            attack=84,
+            defense=78,
+            special_attack=109,
+            special_defense=85,
+            speed=100
+        ),
         pokedex_number=6,
         capture_rate=45
     )
@@ -54,14 +53,14 @@ def eevee_base():
     return PokemonBase(
         name="Eevee",
         types=[PokemonType.NORMAL],
-        base_stats={
-            "hp": 55,
-            "attack": 55,
-            "defense": 50,
-            "special_attack": 45,
-            "special_defense": 65,
-            "speed": 55,
-        },
+        base_stats=BaseStats(
+            hp=55,
+            attack=55,
+            defense=50,
+            special_attack=45,
+            special_defense=65,
+            speed=55,
+        ),
         pokedex_number=133,
         capture_rate=45
     )
@@ -76,7 +75,7 @@ def tackle_move():
         type=PokemonType.NORMAL,
         power=40,
         accuracy=100,
-        pp=35,
+        base_pp=35,
         damage_class=DamageClass.PHYSICAL,
         category=MoveCategory.DAMAGE
     )
@@ -91,7 +90,7 @@ def thunderbolt_move():
         type=PokemonType.ELECTRIC,
         power=90,
         accuracy=100,
-        pp=15,
+        base_pp=15,
         damage_class=DamageClass.SPECIAL,
         category=MoveCategory.DAMAGE
     )
@@ -106,7 +105,7 @@ def flamethrower_move():
         type=PokemonType.FIRE,
         power=90,
         accuracy=100,
-        pp=15,
+        base_pp=15,
         damage_class=DamageClass.SPECIAL,
         category=MoveCategory.DAMAGE
     )
@@ -121,41 +120,41 @@ def water_gun_move():
         type=PokemonType.WATER,
         power=40,
         accuracy=100,
-        pp=25,
+        base_pp=25,
         damage_class=DamageClass.SPECIAL,
         category=MoveCategory.DAMAGE
     )
 
 
 @pytest.fixture
-def pikachu_pokemon(pikachu_base, tackle_move, thunderbolt_move):
+def pikachu_pokemon(pikachu_base: PokemonBase, tackle_move: BaseMove, thunderbolt_move: BaseMove):
     """Level 15 Pikachu with moves."""
     move_set = MoveSet(moves=[tackle_move, thunderbolt_move])
     return Pokemon(pokemon_base=pikachu_base, level=15, move_set=move_set)
 
 
 @pytest.fixture
-def charizard_pokemon(charizard_base, tackle_move, flamethrower_move):
+def charizard_pokemon(charizard_base: PokemonBase, tackle_move: BaseMove, flamethrower_move: BaseMove):
     """Level 50 Charizard with moves."""
     move_set = MoveSet(moves=[tackle_move, flamethrower_move])
     return Pokemon(pokemon_base=charizard_base, level=50, move_set=move_set)
 
 
 @pytest.fixture
-def eevee_pokemon(eevee_base, tackle_move):
+def eevee_pokemon(eevee_base: PokemonBase, tackle_move: BaseMove):
     """Level 10 Eevee with Tackle."""
     move_set = MoveSet(moves=[tackle_move])
     return Pokemon(pokemon_base=eevee_base, level=10, move_set=move_set)
 
 
 @pytest.fixture
-def basic_team(pikachu_pokemon):
+def basic_team(pikachu_pokemon: Pokemon):
     """Basic team with a single Pikachu."""
     return PokemonTeam(pokemons=[pikachu_pokemon])
 
 
 @pytest.fixture
-def ash_trainer(basic_team):
+def ash_trainer(basic_team: PokemonTeam):
     """Ash trainer with a basic team."""
     return Trainer(name="Ash", team=basic_team)
 

@@ -1,13 +1,18 @@
 """Test suite for damage calculation system."""
 import pytest
 from engine.battle.damage_calculator import (
-    calculate_damage, calculate_critical_hit,
-    _get_level_modifier, _get_power_modifier, _get_attack_stat_modifier,
-    _get_defence_stat_modifier, _get_stab_modifier, _get_type_effectiveness_modifier
+    calculate_damage,
+    calculate_critical_hit,
+    get_level_modifier,
+    get_power_modifier,
+    get_attack_stat_modifier,
+    get_defence_stat_modifier,
+    get_stab_modifier,
+    get_type_effectiveness_modifier,
 )
+from engine.repositories.repository import status_repository
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.types import PokemonType
-from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import Move, DamageClass
 
 
@@ -111,7 +116,7 @@ class TestDamageCalculation:
         move = pikachu_pokemon.move_set.moves[1]
         
         bm = pikachu_pokemon.generate_battlemon()
-        attack_modifier = _get_attack_stat_modifier(bm, move.base_move)
+        attack_modifier = get_attack_stat_modifier(bm, move.base_move)
         assert attack_modifier == bm.stat_attack
 
     def test_special_move_uses_special_attack_stat(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
@@ -124,23 +129,23 @@ class TestDamageCalculation:
         move = pikachu_pokemon.move_set.moves[24]
         
         bm = pikachu_pokemon.generate_battlemon()
-        attack_modifier = _get_attack_stat_modifier(bm, move.base_move)
+        attack_modifier = get_attack_stat_modifier(bm, move.base_move)
         assert attack_modifier == bm.stat_special_attack
 
 
 class TestCriticalHit:
     """Tests for critical hit calculation."""
 
-    def test_calculate_critical_hit_returns_bool(self, pikachu_pokemon):
+    def test_calculate_critical_hit_returns_bool(self, pikachu_pokemon, tackle_move):
         """Test that critical hit calculation returns a boolean."""
-        result = calculate_critical_hit(pikachu_pokemon.generate_battlemon())
+        result = calculate_critical_hit(pikachu_pokemon.generate_battlemon(), tackle_move)
         assert isinstance(result, bool)
 
-    def test_critical_hit_possible(self, pikachu_pokemon):
+    def test_critical_hit_possible(self, pikachu_pokemon, tackle_move):
         """Test that critical hits can occur."""
         # Run multiple times to check if critical can occur
         bm = pikachu_pokemon.generate_battlemon()
-        results = [calculate_critical_hit(bm) for _ in range(1000)]
+        results = [calculate_critical_hit(bm, tackle_move) for _ in range(1000)]
         
         # At least one should be True (critical hit) in 1000 tries
         # This is probabilistic but very unlikely to fail
@@ -153,9 +158,9 @@ class TestDamageModifiers:
 
     def test_level_modifier(self):
         """Test level modifier calculation."""
-        level_5 = _get_level_modifier(5)
-        level_50 = _get_level_modifier(50)
-        level_100 = _get_level_modifier(100)
+        level_5 = get_level_modifier(5)
+        level_50 = get_level_modifier(50)
+        level_100 = get_level_modifier(100)
         
         assert level_5 > 0
         assert level_100 > level_50 > level_5
@@ -164,11 +169,11 @@ class TestDamageModifiers:
         """Test power modifier from moves."""
         from shared.pokemon.move import Move
         
-        tackle = Move(base_move=tackle_move, current_pp=tackle_move.pp)
-        thunderbolt = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
+        tackle = Move(base_move=tackle_move, current_pp=tackle_move.base_pp)
+        thunderbolt = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.base_pp)
         
-        tackle_power = _get_power_modifier(tackle.base_move)
-        thunderbolt_power = _get_power_modifier(thunderbolt.base_move)
+        tackle_power = get_power_modifier(tackle.base_move)
+        thunderbolt_power = get_power_modifier(thunderbolt.base_move)
         
         assert tackle_power == 40
         assert thunderbolt_power == 90
@@ -180,31 +185,31 @@ class TestDamageModifiers:
         
         # Pikachu (Electric type) using Electric move should get STAB
         electric_move = Move(base_move=thunderbolt_move, current_pp=15)
-        stab = _get_stab_modifier(pikachu_pokemon.generate_battlemon(), electric_move.base_move)
+        stab = get_stab_modifier(pikachu_pokemon.generate_battlemon(), electric_move.base_move)
         assert stab == 1.5
         
         # Eevee (Normal type) using Electric move should not get STAB
         move_set = MoveSet(moves=[thunderbolt_move])
         eevee_pokemon.move_set = move_set
-        no_stab = _get_stab_modifier(eevee_pokemon.generate_battlemon(), electric_move.base_move)
+        no_stab = get_stab_modifier(eevee_pokemon.generate_battlemon(), electric_move.base_move)
         assert no_stab == 1.0
 
     def test_defense_stat_modifier_physical(self, eevee_pokemon, tackle_move):
         """Test defense stat modifier for physical moves."""
         from shared.pokemon.move import Move
         
-        move = Move(base_move=tackle_move, current_pp=tackle_move.pp)
+        move = Move(base_move=tackle_move, current_pp=tackle_move.base_pp)
         bm = eevee_pokemon.generate_battlemon()
-        defense_mod = _get_defence_stat_modifier(bm, move.base_move)
+        defense_mod = get_defence_stat_modifier(bm, move.base_move)
         assert defense_mod == bm.stat_defense
 
     def test_defense_stat_modifier_special(self, eevee_pokemon, thunderbolt_move):
         """Test defense stat modifier for special moves."""
         from shared.pokemon.move import Move
         
-        move = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.pp)
+        move = Move(base_move=thunderbolt_move, current_pp=thunderbolt_move.base_pp)
         bm = eevee_pokemon.generate_battlemon()
-        defense_mod = _get_defence_stat_modifier(bm, move.base_move)
+        defense_mod = get_defence_stat_modifier(bm, move.base_move)
         assert defense_mod == bm.stat_special_defense
 
 
@@ -266,7 +271,7 @@ class TestTypeEffectiveness:
         
         # Test that type effectiveness function exists and returns a value
         # Note: _get_type_effectiveness_modifier may return 1.0 as placeholder
-        effectiveness = _get_type_effectiveness_modifier(electric_move.base_move, pikachu_pokemon.generate_battlemon())
+        effectiveness = get_type_effectiveness_modifier(electric_move.base_move, pikachu_pokemon.generate_battlemon())
         assert effectiveness >= 0.0
         assert isinstance(effectiveness, float)
 
@@ -330,7 +335,7 @@ class TestStatusConditions:
         
         # Burned damage
         bm = pikachu_pokemon.generate_battlemon()
-        bm.status_conditions[StatusCondition.BURN] = 0
+        bm.status_conditions[status_repository.get("burn")] = 0
         burned_damage = calculate_damage(
             attacking_pokemon=bm,
             defending_pokemon=eevee_pokemon.generate_battlemon(),
