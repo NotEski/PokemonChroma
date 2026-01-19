@@ -1,16 +1,24 @@
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 from pydantic import BaseModel, Field
 
-from .status_conditions import StatusCondition
-from .stats import Stat
-from ..battle.weather import BattleWeather
-from ..battle.terrain import BattleTerrain
-from .hazard import EntryHazard
-from ..battle.field_effect import FieldEffect
+if TYPE_CHECKING:
+    from .status_conditions import StatusCondition
+    from .stats import Stat
+    from ..battle.weather import BattleWeather
+    from ..battle.terrain import BattleTerrain
+    from .hazard import EntryHazard
+    from ..battle.field_effect import FieldEffect
+    from .types import PokemonType
+    from .move import MoveTarget
+
 
 
 class MoveTag(BaseModel):
     pass
+
+class AddTypingMove(MoveTag):
+    typing_to_add: PokemonType  # Type to be added to the target
+    alt_target: Optional[MoveTarget] = None # Alternative target if needed otherwise uses the move's target
 
 class AuthenticMove(MoveTag):
     pass
@@ -85,6 +93,9 @@ class PivotMove(MoveTag):
 class PowderMove(MoveTag):
     pass
 
+class PokemonTypeRequirementMove(MoveTag):
+    required_type: PokemonType  # Type required to use the move otherwise fails
+
 class ProtectMove(MoveTag):
     # blocks incoming moves for the turn on target
     # side effects
@@ -116,6 +127,11 @@ class RechargeMove(MoveTag):
 
 class ReflectableMove(MoveTag):
     pass
+
+class RemoveTypingMove(MoveTag):
+    typing_to_remove: PokemonType  # Type to be removed from the target
+    alt_target: Optional[MoveTarget] = None # Alternative target if needed otherwise uses the move's target
+                                            # e.g for burn up which damages the target but removes fire typing from the user
 
 class ScreenMove(MoveTag):
     screen_type: str  # e.g., "Reflect", "Light Screen" # this will likely need to be an Enum later
@@ -164,7 +180,7 @@ class TerrainMove(MoveTag):
 class TrapUserMove(MoveTag):
     pass
 
-class TrapOpponentMove(MoveTag):
+class TrapTargetMove(MoveTag):
     pass
 
 class WeatherMove(MoveTag):

@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 # Adjust plugins/include_patterns as needed for your project assets.
 
 setup(
-    name="PokemonFanGame",
+    name="PokemonChroma",
     version="0.1.0",
     description="Pokemon fan game built with Panda3D",
     packages=find_packages(exclude=["tests", "tests.*"]),
@@ -16,7 +16,7 @@ setup(
         "build_apps": {
             # Entry points: GUI app for Windows
             "gui_apps": {
-                "PokemonFanGame": "main.py",
+                "PokemonChroma": "main.py",
             },
             # Include all assets/data needed at runtime
             "include_patterns": [

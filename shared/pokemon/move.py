@@ -74,11 +74,18 @@ class MoveTarget(Enum):
     USER = "user"
     USERS_FIELD = "users_field"
 
+class MoveTargetCategories:
+    USER_AND_ALLIES: list[MoveTarget] = [
+        MoveTarget.USER,
+        MoveTarget.ALLY,
+        MoveTarget.USER_AND_ALLIES,
+        MoveTarget.USERS_FIELD
+    ]
+
 class OnUseReturns(Enum):
     SUCCESS = "success"
     FAIL = "fail"
     NO_EFFECT = "no_effect"
-
 
 class BaseMove(BaseModel):
     model_config = ConfigDict(extra='allow')

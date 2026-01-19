@@ -116,8 +116,20 @@ def move(move_name: str):
                     move_tags.append(SnatchMove())
                 case "sound":
                     move_tags.append(SoundMove())
+                case "trap_target":
+                    move_tags.append(TrapTargetMove())
+                case "trap_user":
+                    move_tags.append(TrapUserMove())
                 case _:
                     raise ValueError(f"Move '{move_name}' has unknown flag '{flag}'.")
+
+        # Add Typing
+        add_typing: Optional[List[dict[str, str]] | dict[str, str]] = dsl_cls.__dict__.get("add_typing", None)
+        if add_typing is not None:
+            if isinstance(add_typing, dict):
+                add_typing = [add_typing]
+            for type_name in add_typing:
+                move_tags.append(AddTypingMove(typing_to_add=PokemonType(type_name["typing_to_add"]), alt_target=MoveTarget(type_name["alt_target"]) if "alt_target" in type_name else None))
 
         # Critical Hit Rate
         critical_hit_rate = dsl_cls.__dict__.get("critical_hit_rate", None)
@@ -179,6 +191,11 @@ def move(move_name: str):
             if not isinstance(multi_hit, bool): # If not just True, as the default weights will be used and the custom weights have now been processed
                  move_tags.append(MultiHitMove(hits=multi_hit)) # type: ignore
 
+        # Pokemon Type Requirement
+        pokemon_type_requirement = dsl_cls.__dict__.get("pokemon_type_requirement", None)
+        if pokemon_type_requirement is not None:
+            move_tags.append(PokemonTypeRequirementMove(required_type=PokemonType(pokemon_type_requirement)))
+
         # Priority
         priority_value = dsl_cls.__dict__.get("priority", None)
         if priority_value is not None:
@@ -192,6 +209,14 @@ def move(move_name: str):
                 status_condition_obj = get_status_condition(sc_name)
                 protect["status_condition_inflicted_on_attacker"] = status_condition_obj
             move_tags.append(ProtectMove.model_validate(protect))
+
+        # Remove Typing
+        remove_typing: Optional[List[dict[str, str]] | dict[str, str]] = dsl_cls.__dict__.get("remove_typing", None)
+        if remove_typing is not None:
+            if isinstance(remove_typing, dict):
+                remove_typing = [remove_typing]
+            for type_name in remove_typing:
+                move_tags.append(RemoveTypingMove(typing_to_remove=PokemonType(type_name["typing_to_remove"]), alt_target=MoveTarget(type_name["alt_target"]) if "alt_target" in type_name else None))
 
         # Screen
         screen: Optional[dict[str, Any]] = dsl_cls.__dict__.get("screen", None)

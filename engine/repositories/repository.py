@@ -4,7 +4,7 @@ from typing import Dict, Optional, TypeVar, Generic
 from shared.pokemon.hazard import EntryHazard
 from shared.pokemon.pokemon import PokemonBase
 from shared.pokemon.abilities import Ability
-from shared.pokemon.move import BaseMove, MoveCategory, MoveTarget
+from shared.pokemon.move import BaseMove, MoveCategory, MoveTarget, MoveTargetCategories
 from shared.pokemon.move_tags import *
 from shared.items.items import Item
 from shared.pokemon.status_conditions import StatusCondition
@@ -101,7 +101,7 @@ class MoveRepository(BaseRepository[BaseMove]):
     def priority_moves(self) -> dict[BaseMove, int]:
         return self.categories.priority_moves
     @property
-    def setup_moves(self) -> dict[BaseMove, list[StatChangeMove]]:
+    def setup_moves(self) -> list[BaseMove]:
         return self.categories.setup_moves
     @property
     def hazard_moves(self) -> list[BaseMove]:
@@ -258,14 +258,14 @@ class MoveCategories:
                             new_setup_move.recoil_percentage = abs(drain_move.drain_percentage)
                             new_setup_move.damages_user = True
 
-            if move.has_tag(TrapOpponentMove):
+            if move.has_tag(TrapTargetMove) and move.target not in MoveTargetCategories.USER_AND_ALLIES:
                 new_setup_move.trap_opponent = True
-            if move.has_tag(TrapUserMove):
+            if move.has_tag(TrapUserMove) or (move.has_tag(TrapTargetMove) and move.target in MoveTargetCategories.USER_AND_ALLIES):
                 new_setup_move.trap_user = True
 
             secondary_effects: list[MoveTag] = []
             for tag in move.move_tags:
-                if not isinstance(tag, (StatChangeInflictedMove, StatChangeReceivedMove, TrapOpponentMove, TrapUserMove, DrainMove)):
+                if not isinstance(tag, (StatChangeInflictedMove, StatChangeReceivedMove, TrapTargetMove, TrapUserMove, DrainMove)):
                     secondary_effects.append(tag)
 
             move.add_tag(new_setup_move)
