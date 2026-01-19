@@ -656,16 +656,11 @@ class Pokemon(BaseModel):
 class PokemonTeam(BaseModel):
     pokemons: List[Pokemon] = Field(min_items=1, max_items=6, default=[]) # pyright: ignore
 
-    def get_all_pokemons(self) -> List[Pokemon]:
-        return self.pokemons
-    
     def get_usable_pokemons(self) -> List[Pokemon]:
         return [pokemon for pokemon in self.pokemons if not pokemon.is_fainted]
     
     def has_usable_pokemons(self) -> bool:
         return any(not pokemon.is_fainted for pokemon in self.pokemons)
-    
-
 
 def generic_calculate_max_hp(pokemon_base: PokemonBase, individual_values: IndividualValues, effort_values: EffortValues, level: int) -> int:
     return round((((individual_values.hp + 2 * pokemon_base.base_stats.hp + ((effort_values.hp)/4)+100) * level)/100)+10)

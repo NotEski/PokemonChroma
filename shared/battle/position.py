@@ -10,8 +10,6 @@ class BattlePosition(BaseModel):
             self.team_id = other[0]
             self.pokemon_index = other[1]
             return
-        elif not isinstance(other, BattlePosition): # type: ignore - sanity check
-            raise ValueError("Can only set from another BattlePosition instance.")
         self.team_id = other.team_id
         self.pokemon_index = other.pokemon_index
 

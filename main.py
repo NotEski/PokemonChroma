@@ -1,5 +1,5 @@
 from engine.repositories.repositry_generator import initialize_repositories
-from engine.repositories.repository import pokemon_repository, move_repository, item_repository, ability_repository, status_repository, hazard_repository
+from engine.repositories.repository import pokemon_repository, move_repository, item_repository
 from engine.battle.battle_example import moveset_from_names
 from engine.battle.battle_manager import BattleManager
 from shared.battle.battle_header import BattleSwitchType, BattleType, BattleConfig
@@ -12,16 +12,18 @@ from shared.battle.battle_actions import MoveAction, SkipTurnAction
 import traceback
 import tkinter as tk
 from tkinter import ttk
+from typing import Any, Dict, Optional, Tuple
+from types import TracebackType
 
 
-from engine.window.window import launch_game_window
-from shared.world.test_world_gen import test_tile_based_world_generation
+# from engine.window.window import launch_game_window
+# from shared.world.test_world_gen import test_tile_based_world_generation
 
 
 # Tkinter battle inspector helpers
 
 
-def simulate_sample_battle():
+def simulate_sample_battle() -> Tuple[BattleManager, TrainerOpponent, TrainerOpponent]:
     pikachu_moveset = moveset_from_names(["sketch", "toxic", "sunny_day", "disable"])
     eevee_moveset = moveset_from_names(["tackle", "tail_whip", "bite", "quick_attack"])
 
@@ -65,13 +67,22 @@ def simulate_sample_battle():
 
 
 class BattleInspectorWindow:
-    def __init__(self):
+    root: tk.Tk
+    turn_label: Optional[ttk.Label]
+    battle_field_canvas: Optional[tk.Canvas]
+    team_panels: Dict[str, Any]
+    log_box: Optional[tk.Text]
+    weather_label: Optional[ttk.Label]
+    opponents: Dict[int, TrainerOpponent]
+    battle_manager: Optional[BattleManager]
+
+    def __init__(self) -> None:
         self.root = tk.Tk()
         self.root.title("Pokemon Chroma Battle Simulator")
         self.root.geometry("1500x1050")
 
         # Print full tracebacks to terminal for Tkinter callback errors
-        def _tk_exception_printer(exc, val, tb):
+        def _tk_exception_printer(exc: type[BaseException], val: BaseException, tb: Optional[TracebackType]) -> None:
             print("[Tkinter] Exception in callback:")
             traceback.print_exception(exc, val, tb)
 
@@ -81,13 +92,14 @@ class BattleInspectorWindow:
         self.battle_field_canvas = None
         self.team_panels = {}
         self.log_box = None
+        self.weather_label = None
         self.opponents = {}
         self.battle_manager = None
 
         self._build_layout()
         self.refresh()
 
-    def _build_layout(self):
+    def _build_layout(self) -> None:
         header = ttk.Label(self.root, text="Battle Simulator", font=("Segoe UI", 16, "bold"))
         header.pack(pady=6)
 
@@ -190,7 +202,7 @@ class BattleInspectorWindow:
         self.team_panels["roster_1"].configure(yscrollcommand=r2_scroll.set)
         r2_scroll.grid(row=0, column=1, sticky="ns")
 
-    def _draw_battle_field(self):
+    def _draw_battle_field(self) -> None:
         """Draw the top-down battle field with pokemon and field effects."""
         if self.battle_field_canvas is None or self.battle_manager is None:
             return
@@ -353,7 +365,7 @@ class BattleInspectorWindow:
                     anchor="center"
                 )
 
-    def _render_team_roster(self, team_id: int):
+    def _render_team_roster(self, team_id: int) -> None:
         """Populate a team's roster listbox with all BattleMons."""
         roster = self.team_panels.get(f"roster_{team_id}")
         opponent = self.opponents.get(team_id)
@@ -370,11 +382,11 @@ class BattleInspectorWindow:
             status_text = f" [{status}]" if status != "none" else ""
             roster.insert(tk.END, f"{i}. {pokemon.nickname} ({base_name}) - Lv {pokemon.level} - HP: {hp_text}{status_text}")
 
-    def _render_all_rosters(self):
+    def _render_all_rosters(self) -> None:
         self._render_team_roster(0)
         self._render_team_roster(1)
 
-    def _format_status(self, pokemon) -> str:
+    def _format_status(self, pokemon: Any) -> str:
         """Get status condition names from a BattleMon."""
         if not hasattr(pokemon, "status_conditions"):
             return "none"
@@ -386,7 +398,7 @@ class BattleInspectorWindow:
         names = ", ".join([getattr(s, "name", str(s)) for s in statuses])
         return names
 
-    def refresh(self):
+    def refresh(self) -> None:
         battle_manager, opponent_1, opponent_2 = simulate_sample_battle()
         self.battle_manager = battle_manager
         self.opponents = {0: opponent_1, 1: opponent_2}
@@ -397,16 +409,16 @@ class BattleInspectorWindow:
         self._update_turn_label()
         self._update_weather_label()
 
-    def _update_move_selector(self):
+    def _update_move_selector(self) -> None:
         """Refresh move buttons for both teams."""
         if self.battle_manager is None:
             return
         self._update_move_buttons(0)
         self._update_move_buttons(1)
 
-    def _update_move_buttons(self, team_id: int):
+    def _update_move_buttons(self, team_id: int) -> None:
         position = BattlePosition(team_id=team_id, pokemon_index=0)
-        pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position)
+        pokemon = self.battle_manager.position_manager.get_pokemon_at_position(position) if self.battle_manager else None
 
         moves_container = self.team_panels.get(f"move_buttons_frame_{team_id}")
         skip_button = self.team_panels.get(f"skip_switch_button_{team_id}")
@@ -444,7 +456,7 @@ class BattleInspectorWindow:
             )
             button.pack(side="left", padx=3, pady=3, fill="x")
 
-    def queue_move(self, team_id: int, move_index: int = None):
+    def queue_move(self, team_id: int, move_index: Optional[int] = None) -> None:
         if self.battle_manager is None:
             return
         position = BattlePosition(team_id=team_id, pokemon_index=0)
@@ -470,7 +482,7 @@ class BattleInspectorWindow:
         self._render_all_rosters()
         self._update_move_selector()
 
-    def switch_selected_pokemon(self, team_id: int):
+    def switch_selected_pokemon(self, team_id: int) -> None:
         """Queue a switch for the selected roster entry for the given team."""
         if self.battle_manager is None:
             return
@@ -504,7 +516,7 @@ class BattleInspectorWindow:
         self._render_all_rosters()
         self._update_move_selector()
 
-    def skip_switch(self, team_id: int):
+    def skip_switch(self, team_id: int) -> None:
         """Skip the switch turn for a team that does NOT have a fainted pokemon."""
         if self.battle_manager is None:
             return
@@ -532,7 +544,7 @@ class BattleInspectorWindow:
         self._render_all_rosters()
         self._update_move_selector()
 
-    def end_turn(self):
+    def end_turn(self) -> None:
         if self.battle_manager is None:
             return
         try:
@@ -553,14 +565,14 @@ class BattleInspectorWindow:
         self._render_all_rosters()
         self._update_move_selector()
 
-    def _update_turn_label(self):
+    def _update_turn_label(self) -> None:
         """Update the turn counter label."""
-        if self.battle_manager:
+        if self.battle_manager and self.turn_label:
             self.turn_label.config(text=f"Turn: {self.battle_manager.battle_state.turn_number}")
 
-    def _update_weather_label(self):
+    def _update_weather_label(self) -> None:
         """Update the weather label with currently active weather."""
-        if self.battle_manager:
+        if self.battle_manager and self.weather_label:
             weather = self.battle_manager.battle_state.weather_turns.weather
             remaining_turns = self.battle_manager.battle_state.weather_turns.remaining_turns
             
@@ -572,21 +584,22 @@ class BattleInspectorWindow:
                     self.weather_label.config(text=f"Weather: {weather_name} ({remaining_turns} turns)")
                 else:
                     self.weather_label.config(text=f"Weather: {weather_name}")
-        else:
+        elif self.weather_label:
             self.weather_label.config(text="Weather: None")
 
-    def _render_logs(self):
+    def _render_logs(self) -> None:
         """Render battle logs to the log box."""
-        self.log_box.configure(state="normal")
-        self.log_box.delete("1.0", tk.END)
-        if self.battle_manager:
-            for log in self.battle_manager.battle_log.logs:
-                log_text = self._format_log_line(log)
-                self.log_box.insert(tk.END, log_text + "\n")
-        self.log_box.configure(state="disabled")
-        self.log_box.see(tk.END)
+        if self.log_box:
+            self.log_box.configure(state="normal")
+            self.log_box.delete("1.0", tk.END)
+            if self.battle_manager:
+                for log in self.battle_manager.battle_log.logs:
+                    log_text = self._format_log_line(log)
+                    self.log_box.insert(tk.END, log_text + "\n")
+            self.log_box.configure(state="disabled")
+            self.log_box.see(tk.END)
 
-    def _format_log_line(self, log):
+    def _format_log_line(self, log: Any) -> str:
         """Format a log entry for display."""
         prefix = f"[{log.log_type.value}] " if hasattr(log, "log_type") else ""
         if getattr(log, "description", ""):
@@ -596,11 +609,11 @@ class BattleInspectorWindow:
             return f"{prefix}Turn {turn_no} started"
         return prefix + "No description provided"
 
-    def run(self):
+    def run(self) -> None:
         self.root.mainloop()
 
 
-def launch_battle_inspector():
+def launch_battle_inspector() -> None:
     window = BattleInspectorWindow()
     window.run()
 

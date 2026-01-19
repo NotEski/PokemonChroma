@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from .world_structure import NavigationMesh, WorldStructure, Node, Edge, Tile, TileDefinitions
+from .world_structure import NavigationMesh, Vector3, WorldStructure, Node, Edge, Tile, TileDefinitions
 
 
 
@@ -32,9 +32,9 @@ class TestGenerateFromTiles(WorldGenerator):
             for x, tile_id in enumerate(row):
                 # Example: Create nodes at walkable tile positions
                 if tile_id != TileDefinitions.BARRIER.value:  # Assuming 'P' represents a walkable tile
-                    node = Node(position={"x": x, "y": y, "z": 0}, direction={"x": 0, "y": 0, "z": -1})
+                    node = Node(position=Vector3(x=x, y=y, z=0), direction=Vector3(x=0, y=0, z=-1))
                     world_structure.navigation_mesh.nodes.append(node)
-                tile = Tile(tile_id=TileDefinitions(tile_id), position={"x": x, "y": y, "z": 0})
+                tile = Tile(tile_id=TileDefinitions(tile_id), position=Vector3(x=x, y=y, z=0))
                 world_structure.tiles.append(tile)
                 x_min = min(x_min, x)
                 x_max = max(x_max, x)
@@ -89,7 +89,7 @@ class GenerateFromTiles(WorldGenerator):
         # Reads tile layout data (2D array of tile IDs)
         # Generates geometry from tileset based on layout
         # Returns complete mesh for rendering
-        pass
+        return WorldStructure()
 
 class GenerateFromModel(WorldGenerator):
     """Model-based world generation from 3D files.
@@ -104,7 +104,7 @@ class GenerateFromModel(WorldGenerator):
         # Extracts geometry and collision data
         # Applies any procedural modifications if needed
         # Returns mesh for rendering
-        pass
+        return WorldStructure()
 
 class GenerateHybrid(WorldGenerator):
     """Hybrid generation combining tiles and models.
@@ -121,4 +121,4 @@ class GenerateHybrid(WorldGenerator):
         # Loads model geometry for outdoor/organic areas
         # Combines both into unified mesh
         # Returns complete mesh for rendering
-        pass
+        return WorldStructure()

@@ -1,12 +1,10 @@
 from typing import Optional
 from shared.pokemon.move import BaseMove
 from shared.pokemon.move_tags import MultiHitMove
-from shared.pokemon.pokemon import BattleMon
 from random import choices
 
-def multihit_check(move: BaseMove, attacker: BattleMon, target: BattleMon) -> int:
+def multihit_check(move: BaseMove) -> int:
     """Check the amount of times a multi-hit move will hit."""
-    # sanity check
     multimove_tag: Optional[MultiHitMove] = move.get_tag(MultiHitMove) # type: ignore
 
     if not move.is_multi_hit or multimove_tag is None:

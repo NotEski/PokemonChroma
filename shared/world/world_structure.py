@@ -3,7 +3,7 @@
 # a section will contain everything u puntil the loading spots
 
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from enum import Enum
 
 from panda3d.core import (
@@ -53,7 +53,7 @@ class Node(BaseModel):
 class Edge(BaseModel):
     """A connection between two nodes in the navigation network."""
     from_node: Node
-    shape: list[Vector3] = Field(default_factory=list) # if empty, the shape is a linear connection between the nodes
+    shape: list[Vector3] = [] # if empty, the shape is a linear connection between the nodes
     to_node: Node
 
     def generate_shape(self):
