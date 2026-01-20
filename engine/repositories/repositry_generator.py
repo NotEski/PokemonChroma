@@ -105,9 +105,11 @@ def move(move_name: str):
                 case "powder":
                     move_tags.append(PowderMove())
                 case "protect":
-                    move_tags.append(ProtectAgainstMove())
+                    move_tags.append(BlockedByProtectMove())
                 case "pulse":
                     move_tags.append(PulseMove())
+                case "punch":
+                    move_tags.append(PunchMove())
                 case "recharge":
                     move_tags.append(RechargeMove())
                 case "reflectable":
@@ -216,7 +218,10 @@ def move(move_name: str):
             if isinstance(remove_typing, dict):
                 remove_typing = [remove_typing]
             for type_name in remove_typing:
-                move_tags.append(RemoveTypingMove(typing_to_remove=PokemonType(type_name["typing_to_remove"]), alt_target=MoveTarget(type_name["alt_target"]) if "alt_target" in type_name else None))
+                move_tags.append(RemoveTypingMove(
+                    typing_to_remove=PokemonType(type_name["typing_to_remove"]),
+                    alt_target=MoveTarget(type_name["alt_target"]) if "alt_target" in type_name else None
+                    ))
 
         # Screen
         screen: Optional[dict[str, Any]] = dsl_cls.__dict__.get("screen", None)
@@ -224,14 +229,22 @@ def move(move_name: str):
             move_tags.append(ScreenMove.model_validate(screen))
 
         # Stat Changes
-        stat_changes = dsl_cls.__dict__.get("stat_changes", None)
+        stat_changes: Optional[dict[str, list[dict[str, str | int]]]] = dsl_cls.__dict__.get("stat_changes", None)
         if stat_changes is not None:
             if "stat_changes_inflicted" in stat_changes:
                 for sc in stat_changes["stat_changes_inflicted"]:
-                    move_tags.append(StatChangeInflictedMove.model_validate(sc))
+                    move_tags.append(StatChangeInflictedMove(
+                        stat=Stat(sc["stat"]),
+                        change=int(sc["change"]),
+                        chance=int(sc.get("chance", 100))
+                        ))
             if "stat_changes_received" in stat_changes:
                 for sc in stat_changes["stat_changes_received"]:
-                    move_tags.append(StatChangeReceivedMove.model_validate(sc))
+                    move_tags.append(StatChangeReceivedMove(
+                        stat=Stat(sc["stat"]),
+                        change=int(sc["change"]),
+                        chance=int(sc.get("chance", 100))
+                        ))
 
         # Status Condition and chance
         status_condition: Optional[dict[str, int]] = dsl_cls.__dict__.get("status_condition", None)

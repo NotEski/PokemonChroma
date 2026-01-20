@@ -98,8 +98,7 @@ class BattleManager:
                 success = calculate_escape_success(escaping_pokemon, enemy_pokemon, action.escape_attempts)
                 if success:
                     self.battle_log.battle_end(
-                        description=f"{escaping_pokemon.nickname} successfully escaped!",
-                        winning_trainer=None,
+                        description=f"{escaping_pokemon.nickname} successfully escaped!"
                     )
                     self.end_battle()
                     return

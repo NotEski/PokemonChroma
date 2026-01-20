@@ -32,7 +32,6 @@ class MoveCategory(Enum):
     UNIQUE = "unique"
     WHOLE_FIELD_EFFECT = "whole_field_effect"
 
-
 class MoveCategoryCategories:
     DAMAGE_MOVES = [
             MoveCategory.DAMAGE,
@@ -53,8 +52,6 @@ class MoveCategoryCategories:
         MoveCategory.FIELD_EFFECT,
         MoveCategory.WHOLE_FIELD_EFFECT
     ]
-
-
 
 class MoveTarget(Enum):
     ALL_ALLIES = "all_allies"
@@ -106,7 +103,6 @@ class BaseMove(BaseModel):
     max_pp_inc_three: int = 0
 
     target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
-    priority: int = Field(default=0)  # Move priority
 
     move_tags: List[MoveTag] = [] # Additional tags for the move
     
@@ -197,6 +193,7 @@ class BaseMove(BaseModel):
             return
         self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
 
+    #region Move property getters
     @property
     def physical(self) -> bool:
         return self.damage_class == DamageClass.PHYSICAL
@@ -206,6 +203,13 @@ class BaseMove(BaseModel):
     @property
     def status(self) -> bool:
         return self.damage_class == DamageClass.STATUS
+    @property
+    def priority(self) -> int:
+        priority_tag = self.get_tag(PriorityMove)
+        if isinstance(priority_tag, PriorityMove):
+            return priority_tag.priority
+        return 0
+
     @property
     def requires_charge(self) -> bool:
         return self.has_tag(ChargeMove)
@@ -287,7 +291,7 @@ class BaseMove(BaseModel):
     @property
     def is_weather_move(self) -> bool:
         return self.has_tag(WeatherMove)
-
+    #endregion
 
 class Move(BaseModel):
     """
@@ -390,8 +394,6 @@ class Move(BaseModel):
     
 #endregion
 
-
-
 class MoveSet(BaseModel):
     # this will store move objects in a dict of the move index, and then the move and its current pp
     moves: dict[int, Move] = {}
@@ -464,3 +466,5 @@ class MoveSet(BaseModel):
     def restore_all_pp(self):
         for move in self.moves.values():
             move.current_pp = move.max_pp
+
+rebuild_models()
