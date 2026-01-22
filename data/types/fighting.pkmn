@@ -1,0 +1,17 @@
+@pokemon_type("fighting")
+class FightingType:
+    name = "Fighting"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "bug": 0.5,
+        "dark": 2.0,
+        "fairy": 0.5,
+        "flying": 0.5,
+        "ghost": 0.0,
+        "ice": 2.0,
+        "normal": 2.0,
+        "poison": 0.5,
+        "psychic": 0.5,
+        "rock": 2.0,
+        "steel": 2.0,
+    }

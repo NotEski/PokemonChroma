@@ -1,0 +1,16 @@
+@pokemon_type("bug")
+class BugType:
+    name = "Bug"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dark": 2.0,
+        "fairy": 0.5,
+        "fighting": 0.5,
+        "fire": 0.5,
+        "flying": 0.5,
+        "ghost": 0.5,
+        "grass": 2.0,
+        "poison": 0.5,
+        "psychic": 2.0,
+        "steel": 0.5,
+    }

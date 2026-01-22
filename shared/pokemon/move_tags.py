@@ -8,11 +8,11 @@ from pydantic import BaseModel, Field
 if TYPE_CHECKING:
     from .status_conditions import StatusCondition
     from .stats import Stat
+    from .pokemon_types import PokemonType
     from ..battle.weather import BattleWeather
     from ..battle.terrain import BattleTerrain
     from .hazard import EntryHazard
     from ..battle.field_effect import FieldEffect
-    from .types import PokemonType
     from .move import MoveTarget
     from .abilities import Ability
 
@@ -256,11 +256,11 @@ def rebuild_models():
     # First import all models that MoveTags use
     from .status_conditions import StatusCondition  # pyright: ignore[reportUnusedImport] #
     from .stats import Stat                         # pyright: ignore[reportUnusedImport] #
+    from .pokemon_types import PokemonType          # pyright: ignore[reportUnusedImport] #
     from ..battle.weather import BattleWeather      # pyright: ignore[reportUnusedImport] #
     from ..battle.terrain import BattleTerrain      # pyright: ignore[reportUnusedImport] #
     from .hazard import EntryHazard                 # pyright: ignore[reportUnusedImport] #
     from ..battle.field_effect import FieldEffect   # pyright: ignore[reportUnusedImport] #
-    from .types import PokemonType                  # pyright: ignore[reportUnusedImport] #
     from .move import MoveTarget                    # pyright: ignore[reportUnusedImport] #
     from .abilities import Ability                  # pyright: ignore[reportUnusedImport] #
 

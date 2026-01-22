@@ -1,0 +1,13 @@
+@pokemon_type("steel")
+class SteelType:
+    name = "Steel"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "electric": 0.5,
+        "fairy": 2.0,
+        "fire": 0.5,
+        "ice": 2.0,
+        "rock": 2.0,
+        "steel": 0.5,
+        "water": 0.5,
+    }

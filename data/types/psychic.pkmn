@@ -1,0 +1,11 @@
+@pokemon_type("psychic")
+class PsychicType:
+    name = "Psychic"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dark": 0.0,
+        "fighting": 2.0,
+        "poison": 2.0,
+        "psychic": 0.5,
+        "steel": 0.5,
+    }

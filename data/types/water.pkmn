@@ -1,0 +1,12 @@
+@pokemon_type("water")
+class WaterType:
+    name = "Water"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dragon": 0.5,
+        "fire": 2.0,
+        "grass": 0.5,
+        "ground": 2.0,
+        "rock": 2.0,
+        "water": 0.5,
+    }

@@ -1,0 +1,14 @@
+@pokemon_type("fire")
+class FireType:
+    name = "Fire"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "bug": 2.0,
+        "dragon": 0.5,
+        "fire": 0.5,
+        "grass": 2.0,
+        "ice": 2.0,
+        "rock": 0.5,
+        "steel": 2.0,
+        "water": 0.5,
+    }

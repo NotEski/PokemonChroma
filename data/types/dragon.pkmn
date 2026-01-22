@@ -1,0 +1,9 @@
+@pokemon_type("dragon")
+class DragonType:
+    name = "Dragon"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dragon": 2.0,
+        "fairy": 0.0,
+        "steel": 0.5,
+    }

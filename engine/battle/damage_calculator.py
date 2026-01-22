@@ -1,7 +1,7 @@
 import random
 from shared.pokemon.move import BaseMove
 from shared.pokemon.pokemon import BattleMon
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 from engine.repositories.repository import status_repository
 from shared.pokemon.move import DamageClass
 from shared.battle.battle_header import BattleState, BattleWeather
@@ -86,24 +86,24 @@ def get_pb_modifier(is_second_strike: bool) -> float:
 
 def get_weather_modifier(move_type: PokemonType, weather: BattleWeather) -> float:
     if weather == BattleWeather.HARSH_SUNLIGHT:
-        if move_type == PokemonType.FIRE:
+        if move_type == "fire":
             return 1.5
-        elif move_type == PokemonType.WATER:
+        elif move_type == "water":
             return 0.5
     elif weather == BattleWeather.RAIN:
-        if move_type == PokemonType.WATER:
+        if move_type == "water":
             return 1.5
-        elif move_type == PokemonType.FIRE:
+        elif move_type == "fire":
             return 0.5
     elif weather == BattleWeather.EXTREMELY_HARSH_SUNLIGHT:
-        if move_type == PokemonType.FIRE:
+        if move_type == "fire":
             return 1.5
-        elif move_type == PokemonType.WATER:
+        elif move_type == "water":
             return 0
     elif weather == BattleWeather.HEAVY_RAIN:
-        if move_type == PokemonType.WATER:
+        if move_type == "water":
             return 1.5
-        elif move_type == PokemonType.FIRE:
+        elif move_type == "fire":
             return 0
     return 1.0
 

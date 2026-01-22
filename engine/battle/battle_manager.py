@@ -7,7 +7,6 @@ from shared.battle.battle_logs import BattleLogManager
 from shared.battle.type_effectiveness import EffectivenessLevel, get_attack_multiplier, get_effectiveness_level, effectiveness_message
 from shared.battle.opponent import Opponent
 from shared.battle.position_manager import BattlePosition
-from shared.pokemon.types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move_tags import *
 
@@ -394,7 +393,7 @@ class BattleManager:
             return
         elif weather == BattleWeather.HAIL:
             for pokemon in self.position_manager.list_registered_pokemon():
-                if PokemonType.ICE in pokemon.pokemon_base.types:
+                if "ice" in pokemon.pokemon_base.types:
                     continue
                 elif pokemon.abilities.has_any_ability(["snow_cloak", "ice_body", "forecast", "magic_guard", "overcoat"]):
                     continue
@@ -405,9 +404,9 @@ class BattleManager:
 
         elif weather == BattleWeather.SANDSTORM:
             for pokemon in self.position_manager.list_registered_pokemon():
-                if PokemonType.ROCK in pokemon.pokemon_base.types or \
-                   PokemonType.GROUND in pokemon.pokemon_base.types or \
-                   PokemonType.STEEL in pokemon.pokemon_base.types:
+                if "rock" in pokemon.pokemon_base.types or \
+                   "ground" in pokemon.pokemon_base.types or \
+                   "steel" in pokemon.pokemon_base.types:
                     continue
                 elif pokemon.abilities.has_any_ability(["sand_veil", "sand_rush", "sand_force", "magic_guard", "overcoat"]):
                     continue

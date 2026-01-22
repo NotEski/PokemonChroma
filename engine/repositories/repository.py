@@ -9,6 +9,7 @@ from shared.pokemon.move_tags import *
 from shared.items.items import Item
 from shared.pokemon.status_conditions import StatusCondition
 from shared.battle.field_effect import FieldEffect
+from shared.pokemon.pokemon_types import PokemonTypeData, setup_pokemon_type_repository
 
 T = TypeVar('T')
 
@@ -67,13 +68,16 @@ class BaseSingleton(Generic[T]):
 
 
 # Concrete Repositories
-class PokemonRepository(BaseRepository[PokemonBase]):
-    def get(self, key: str) -> Optional[PokemonBase]:
+class TypeRepository(BaseRepository["PokemonTypeData"]):
+    def get(self, key: "str|PokemonType") -> Optional["PokemonTypeData"]:
         return super().get(key)
 
+class PokemonRepository(BaseRepository["PokemonBase"]):
+    def get(self, key: str) -> Optional["PokemonBase"]:
+        return super().get(key)
 
-class MoveRepository(BaseRepository[BaseMove]):
-    def get(self, key: str|int) -> Optional[BaseMove]:
+class MoveRepository(BaseRepository["BaseMove"]):
+    def get(self, key: "str|int") -> Optional["BaseMove"]:
         if isinstance(key, int):
             for move in self.items.values():
                 if move.index == key:
@@ -97,63 +101,70 @@ class MoveRepository(BaseRepository[BaseMove]):
         self._categories = MoveCategories()
         self._categories.build_all_categories()
 
+    #region Move Category Proxies
     @property
-    def priority_moves(self) -> dict[BaseMove, int]:
+    def priority_moves(self) -> dict["BaseMove", int]:
         return self.categories.priority_moves
     @property
-    def setup_moves(self) -> list[BaseMove]:
+    def setup_moves(self) -> list["BaseMove"]:
         return self.categories.setup_moves
     @property
-    def hazard_moves(self) -> list[BaseMove]:
+    def hazard_moves(self) -> list["BaseMove"]:
         return self.categories.hazard_moves
     @property
-    def healing_moves(self) -> list[BaseMove]:
+    def healing_moves(self) -> list["BaseMove"]:
         return self.categories.healing_moves
     @property
-    def ohko_moves(self) -> list[BaseMove]:
+    def ohko_moves(self) -> list["BaseMove"]:
         return self.categories.ohko_moves
     @property
-    def spread_moves(self) -> list[BaseMove]:
+    def spread_moves(self) -> list["BaseMove"]:
         return self.categories.spread_moves
     @property
-    def protect_moves(self) -> list[BaseMove]:
+    def protect_moves(self) -> list["BaseMove"]:
         return self.categories.protect_moves
     @property
-    def status_moves(self) -> list[BaseMove]:
+    def status_moves(self) -> list["BaseMove"]:
         return self.categories.status_moves
     @property
-    def screen_moves(self) -> list[BaseMove]:
+    def screen_moves(self) -> list["BaseMove"]:
         return self.categories.screen_moves
     @property
-    def weather_moves(self) -> list[BaseMove]:
+    def weather_moves(self) -> list["BaseMove"]:
         return self.categories.weather_moves
     @property
-    def terrain_moves(self) -> list[BaseMove]:
+    def terrain_moves(self) -> list["BaseMove"]:
         return self.categories.terrain_moves
     @property
-    def pivot_moves(self) -> list[BaseMove]:
+    def pivot_moves(self) -> list["BaseMove"]:
         return self.categories.pivot_moves
     @property
-    def damaging_moves(self) -> list[BaseMove]:
+    def damaging_moves(self) -> list["BaseMove"]:
         return self.categories.damaging_moves
+    #endregion
     
-class PokemonAbilityRepository(BaseRepository[Ability]):
+class PokemonAbilityRepository(BaseRepository["Ability"]):
     pass
 
-class ItemRepository(BaseRepository[Item]):
+class ItemRepository(BaseRepository["Item"]):
     pass
 
-class StatusConditionRepository(BaseRepository[StatusCondition]):
+class StatusConditionRepository(BaseRepository["StatusCondition"]):
     pass
 
-class HazardRepository(BaseRepository[EntryHazard]):
+class HazardRepository(BaseRepository["EntryHazard"]):
     pass
 
-class FieldEffectRepository(BaseRepository[FieldEffect]):
+class FieldEffectRepository(BaseRepository["FieldEffect"]):
     pass
 
 
 # Concrete Singletons
+class TypeRepositorySingleton(BaseSingleton[TypeRepository]):
+    @classmethod
+    def _create_instance(cls) -> TypeRepository:
+        return TypeRepository()
+
 class PokemonRepositorySingleton(BaseSingleton[PokemonRepository]):
     @classmethod
     def _create_instance(cls) -> PokemonRepository:
@@ -189,7 +200,6 @@ class FieldEffectRepositorySingleton(BaseSingleton[FieldEffectRepository]):
     def _create_instance(cls) -> FieldEffectRepository:
         return FieldEffectRepository()
 
-
 class MoveCategories:
     """
     Categorizes all Moves for intelligent AI decisions
@@ -209,19 +219,19 @@ class MoveCategories:
     - Pivot Moves (U-turn, Volt Switch, Flip Turn, etc.)
     """
 
-    priority_moves: dict[BaseMove, int] = {} # set of move indexes with priority other than 0
-    setup_moves: list[BaseMove] = []
-    hazard_moves: list[BaseMove] = []
-    healing_moves: list[BaseMove] = []
-    ohko_moves: list[BaseMove] = []
-    spread_moves: list[BaseMove] = []
-    protect_moves: list[BaseMove] = []
-    status_moves: list[BaseMove] = []
-    screen_moves: list[BaseMove] = []
-    weather_moves: list[BaseMove] = []
-    terrain_moves: list[BaseMove] = []
-    pivot_moves: list[BaseMove] = []
-    damaging_moves: list[BaseMove] = []
+    priority_moves: dict["BaseMove", int] = {} # set of move indexes with priority other than 0
+    setup_moves: list["BaseMove"] = []
+    hazard_moves: list["BaseMove"] = []
+    healing_moves: list["BaseMove"] = []
+    ohko_moves: list["BaseMove"] = []
+    spread_moves: list["BaseMove"] = []
+    protect_moves: list["BaseMove"] = []
+    status_moves: list["BaseMove"] = []
+    screen_moves: list["BaseMove"] = []
+    weather_moves: list["BaseMove"] = []
+    terrain_moves: list["BaseMove"] = []
+    pivot_moves: list["BaseMove"] = []
+    damaging_moves: list["BaseMove"] = []
 
 
     def build_priority_moves(self):
@@ -356,6 +366,8 @@ class MoveCategories:
 
 
 # Module-level instances
+type_repository = TypeRepositorySingleton.get_instance()
+setup_pokemon_type_repository(type_repository)
 pokemon_repository = PokemonRepositorySingleton.get_instance()
 ability_repository = PokemonAbilityRepositorySingleton.get_instance()
 move_repository = MoveRepositorySingleton.get_instance()

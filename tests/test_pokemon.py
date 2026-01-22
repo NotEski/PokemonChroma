@@ -2,7 +2,7 @@
 import pytest
 from engine.repositories.repository import status_repository
 from shared.pokemon.pokemon import Pokemon, PokemonBase, StatStages
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.genders import Gender
 from shared.pokemon.natures import Nature
 from shared.pokemon.stats import (

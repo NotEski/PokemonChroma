@@ -1,0 +1,9 @@
+@pokemon_type("normal")
+class NormalType:
+    name = "Normal"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "ghost": 0.0,
+        "rock": 0.5,
+        "steel": 0.5,
+    }

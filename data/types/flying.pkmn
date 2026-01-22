@@ -1,0 +1,12 @@
+@pokemon_type("flying")
+class FlyingType:
+    name = "Flying"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "bug": 2.0,
+        "electric": 0.5,
+        "fighting": 2.0,
+        "grass": 2.0,
+        "rock": 0.5,
+        "steel": 0.5,
+    }

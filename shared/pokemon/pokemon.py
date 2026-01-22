@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 from typing import Any, Dict, List, Optional
 from enum import Enum
 
-from .types import PokemonType
+from .pokemon_types import PokemonType
 from .move import MoveSet, BaseMove
 from .genders import Gender, GenderRate
 from .natures import Nature
@@ -51,7 +51,7 @@ class MegaEvolution(BaseModel):
 class PokemonBase(BaseModel):
     name: str = Field(default="none")
     display_name: str = Field(default="None")
-    types: List[PokemonType]
+    types: List[PokemonType] = []
     base_stats: BaseStats
     pokedex_number: int
     ev_yield: EffortYield = Field(default_factory=EffortYield)
@@ -327,7 +327,7 @@ class BattleMon(BaseModel):
     @property
     def types(self) -> List[PokemonType]:
         all_types: list[PokemonType] = []
-    
+
         all_types.extend(self.pokemon_base.types)
         all_types.extend(self.extra_types)
         for excluded_type in self.excluded_types:
@@ -466,7 +466,7 @@ class Pokemon(BaseModel):
     gender: Gender = Field(default=Gender.NONE)
     individual_values: IndividualValues = Field(default_factory=IndividualValues)
     effort_values: EffortValues = Field(default_factory=EffortValues)
-    terra_type: PokemonType = Field(default=PokemonType.NORMAL)
+    terra_type: PokemonType = Field(default=PokemonType("normal"))
     nature: Nature = Field(default=Nature.HARDY)
     move_set: MoveSet = Field(default_factory=MoveSet)
     abilities: PokemonAbilities = Field(default_factory=PokemonAbilities)
@@ -639,7 +639,7 @@ class Pokemon(BaseModel):
     @property
     def stat_speed(self) -> int:
         return self.calculate_stat(Stat.SPEED)
-    
+
     @property
     def get_terra_type(self) -> PokemonType:
         return self.terra_type

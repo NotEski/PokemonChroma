@@ -1,0 +1,13 @@
+@pokemon_type("poison")
+class PoisonType:
+    name = "Poison"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "fairy": 2.0,
+        "ghost": 0.5,
+        "grass": 2.0,
+        "ground": 0.5,
+        "poison": 0.5,
+        "rock": 0.5,
+        "steel": 0.0,
+    }

@@ -1,0 +1,12 @@
+@pokemon_type("fairy")
+class FairyType:
+    name = "Fairy"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dark": 2.0,
+        "dragon": 2.0,
+        "fighting": 2.0,
+        "fire": 0.5,
+        "poison": 0.5,
+        "steel": 0.5,
+    }

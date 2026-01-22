@@ -1,0 +1,10 @@
+@pokemon_type("ghost")
+class GhostType:
+    name = "Ghost"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dark": 0.5,
+        "ghost": 2.0,
+        "normal": 0.0,
+        "psychic": 2.0,
+    }

@@ -1,0 +1,14 @@
+@pokemon_type("ice")
+class IceType:
+    name = "Ice"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "dragon": 2.0,
+        "fire": 0.5,
+        "flying": 2.0,
+        "grass": 2.0,
+        "ground": 2.0,
+        "ice": 0.5,
+        "steel": 0.5,
+        "water": 0.5,
+    }

@@ -2,7 +2,7 @@ from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from typing import List, Optional, Type, TYPE_CHECKING
 
-from .types import PokemonType
+from .pokemon_types import PokemonType
 from .move_tags import *
 from math import floor
 

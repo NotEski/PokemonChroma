@@ -4,7 +4,7 @@ from shared.pokemon.move import BaseMove, Move, MoveSet, DamageClass, MoveCatego
 from shared.pokemon.move_tags import StatChangeMove
 from shared.pokemon.pokemon import PokemonTeam, Pokemon, PokemonBase
 from shared.trainer.trainer import Trainer
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.stats import Stat
 
 # Ensure Pydantic model forward references are resolved for tests

@@ -1,0 +1,13 @@
+@pokemon_type("rock")
+class RockType:
+    name = "Rock"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "bug": 2.0,
+        "fighting": 0.5,
+        "fire": 2.0,
+        "flying": 2.0,
+        "ground": 0.5,
+        "ice": 2.0,
+        "steel": 0.5,
+    }

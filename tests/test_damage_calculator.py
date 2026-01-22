@@ -13,7 +13,7 @@ from engine.repositories.repository import status_repository
 from shared.battle.battle_header import BattleState, BattleWeather
 from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.stats import BaseStats
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.move import BaseMove
 
 

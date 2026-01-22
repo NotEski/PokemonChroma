@@ -15,6 +15,7 @@ from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, BattleMon, GrowthRate, EggGroup
 from shared.pokemon.abilities import Ability, AbilitySlot, PokemonBaseAbility
 from engine.repositories.repository import (
+    type_repository,
     pokemon_repository,
     ability_repository,
     move_repository,
@@ -23,7 +24,7 @@ from engine.repositories.repository import (
     hazard_repository,
     field_effect_repository
 )
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonTypeData, PokemonType
 from shared.pokemon.stats import BaseStats, Stat, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
 from shared.battle.weather import BattleWeather
@@ -38,6 +39,22 @@ class DSLParseError(Exception):
     pass
 
 
+def pokemon_type(type_id: str):
+    def decorator(dsl_cls: T) -> T:
+        name_default = type_id.replace("_", " ").capitalize()
+        name = dsl_cls.__dict__.get("name", name_default)
+        icon_bytes = dsl_cls.__dict__.get("icon", b"")
+        effectiveness = dsl_cls.__dict__.get("effectiveness", {})
+        pkmn_type = PokemonTypeData(
+            name=name,
+            id=type_id,
+            icon=icon_bytes,
+            effectiveness=effectiveness
+        )
+        type_repository.create(pkmn_type)
+        return dsl_cls
+    return decorator
+
 def move(move_name: str):
     def decorator(dsl_cls: T) -> T:
 
@@ -51,6 +68,8 @@ def move(move_name: str):
         index: int = get_field(meta, "index", int)
         # Type
         move_type: PokemonType = get_field(meta, "type", PokemonType)
+        if not type_repository.get(move_type):
+            raise ValueError(f"Move '{move_name}' has unknown type '{move_type}'.")
         # Damage Class
         damage_class: DamageClass = get_field(meta, "damage_class", DamageClass)
         # Category
@@ -454,6 +473,7 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
             "len": len,
             "randint": randint,
         },
+        "pokemon_type": pokemon_type,
         "move": move,
         "status": status,
         "item": item,
@@ -545,6 +565,23 @@ def get_field(meta: dict[str, Any], field_name: str, field_type: Any, required: 
     return field_type(value)
 
 
+# ============================================================================
+# DSL Loader
+# ============================================================================
+
+def load_dsl_files(application_root_path: str, loading_bar_length: int = 50, loading_bar_increment_length: float = 2.0,
+                                  directory_path: str = "data/dsl", loading_text: str = "DSL Files"):
+    
+    # Make the loading text at most 20 characters and pad with spaces
+    loading_text = loading_text[:20].ljust(20)
+    for subdir, _, files in os.walk(directory_path):
+        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
+        for file_path in file_paths:
+            # Loading bar
+            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+            print (f"Loading {loading_text} - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+            load_dsl_files_from_directory(file_path)
+    print()
 
 
 # ============================================================================
@@ -634,69 +671,32 @@ def generate_item_repository_from_json(file_path: str):
 # Initialize All Repositories
 # ============================================================================
 
-def initialize_repositories(application_root_path: str):
+def initialize_repositories(app_path: str):
 
     loading_bar_length = 50
     loading_bar_increment_length = 100 / loading_bar_length
 
+    # Generate Pokemon Type Repository
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/types", loading_text="Pokemon Types")
+
     # Generate Ability Repository
-    abilities_folder_path = os.path.join(application_root_path, "data/abilities")
-    for subdir, _, files in os.walk(abilities_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Ability Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            load_dsl_files_from_directory(file_path)
-    print()
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/abilities", loading_text="Abilities")
 
     # Generate Status Condition Repository
-    status_conditions_folder_path = os.path.join(application_root_path, "data/status")
-    for subdir, _, files in os.walk(status_conditions_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Status Repo       - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            load_dsl_files_from_directory(file_path)
-    print()
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/status", loading_text="Status Conditions")
 
     # Generate Entry Hazard Repository
-    hazards_folder_path = os.path.join(application_root_path, "data/hazards")
-    for subdir, _, files in os.walk(hazards_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Hazard Repo       - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            load_dsl_files_from_directory(file_path)
-    print()
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/hazards", loading_text="Hazards")
 
     # Generate Field Effect Repository
-    field_effects_folder_path = os.path.join(application_root_path, "data/field_effects")
-    for subdir, _, files in os.walk(field_effects_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Field Effect Repo - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            load_dsl_files_from_directory(file_path)
-    print()
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/field_effects", loading_text="Field Effects")
 
     # Generate Moves Repository
-    moves_folder_path = os.path.join(application_root_path, "data/moves")
-    for subdir, _, files in os.walk(moves_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.pkmn')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print (f"Loading Move Repo         - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            load_dsl_files_from_directory(file_path)
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/moves", loading_text="Moves")
     move_repository.refresh_categories()
-    print()
 
     # Generate Pokemon Repository
-    pokemon_folder_path = os.path.join(application_root_path, "data/pokemon")
+    pokemon_folder_path = os.path.join(app_path, "data/pokemon")
     for subdir, _, files in os.walk(pokemon_folder_path):
         file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
         for file_path in file_paths:
@@ -707,7 +707,7 @@ def initialize_repositories(application_root_path: str):
     print()
 
     # Generate Item Repository
-    items_folder_path = os.path.join(application_root_path, "data/items")
+    items_folder_path = os.path.join(app_path, "data/items")
     for subdir, _, files in os.walk(items_folder_path):
         file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
         for file_path in file_paths:

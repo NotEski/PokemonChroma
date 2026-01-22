@@ -2,7 +2,7 @@
 from shared.battle.type_effectiveness import (
     TYPE_EFFECTIVENESS, offensive_effectiveness_all
 )
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 
 
 class TestTypeEffectivenessChart:

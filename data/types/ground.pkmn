@@ -1,0 +1,14 @@
+@pokemon_type("ground")
+class GroundType:
+    name = "Ground"
+    icon = b""  # Placeholder for icon bytes
+    effectiveness = {
+        "bug": 0.5,
+        "electric": 2.0,
+        "fire": 2.0,
+        "flying": 0.0,
+        "grass": 0.5,
+        "poison": 2.0,
+        "rock": 2.0,
+        "steel": 2.0,
+    }

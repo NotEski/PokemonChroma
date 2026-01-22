@@ -2,7 +2,7 @@
 import pytest
 from shared.pokemon.pokemon import Pokemon, PokemonBase
 from shared.pokemon.stats import BaseStats
-from shared.pokemon.types import PokemonType
+from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.move import MoveSet, BaseMove, DamageClass, MoveCategory
 from shared.pokemon.pokemon import PokemonTeam
 from shared.trainer.trainer import Trainer
@@ -14,7 +14,7 @@ def pikachu_base():
     """Basic Pikachu PokemonBase fixture."""
     return PokemonBase(
         name="Pikachu",
-        types=[PokemonType.ELECTRIC],
+        types=[PokemonType("electric")],
         base_stats=BaseStats(
             hp=35,
             attack=55,
@@ -33,7 +33,7 @@ def charizard_base():
     """Basic Charizard PokemonBase fixture."""
     return PokemonBase(
         name="Charizard",
-        types=[PokemonType.FIRE, PokemonType.FLYING],
+        types=[PokemonType("fire"), PokemonType("flying")],
         base_stats=BaseStats(
             hp=78,
             attack=84,
@@ -52,7 +52,7 @@ def eevee_base():
     """Basic Eevee PokemonBase fixture."""
     return PokemonBase(
         name="Eevee",
-        types=[PokemonType.NORMAL],
+        types=[PokemonType("normal")],
         base_stats=BaseStats(
             hp=55,
             attack=55,
@@ -72,7 +72,7 @@ def tackle_move():
     return BaseMove(
         name="Tackle",
         index=1,
-        type=PokemonType.NORMAL,
+        type=PokemonType("normal"),
         power=40,
         accuracy=100,
         base_pp=35,
@@ -87,7 +87,7 @@ def thunderbolt_move():
     return BaseMove(
         name="Thunderbolt",
         index=24,
-        type=PokemonType.ELECTRIC,
+        type=PokemonType("electric"),
         power=90,
         accuracy=100,
         base_pp=15,
@@ -102,7 +102,7 @@ def flamethrower_move():
     return BaseMove(
         name="Flamethrower",
         index=15,
-        type=PokemonType.FIRE,
+        type=PokemonType("fire"),
         power=90,
         accuracy=100,
         base_pp=15,
@@ -117,7 +117,7 @@ def water_gun_move():
     return BaseMove(
         name="Water Gun",
         index=55,
-        type=PokemonType.WATER,
+        type=PokemonType("water"),
         power=40,
         accuracy=100,
         base_pp=25,
