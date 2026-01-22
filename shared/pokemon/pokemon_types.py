@@ -26,12 +26,6 @@ class PokemonTypeData(BaseModel):
 
 class PokemonType(str):
     def __new__(cls, value: str) -> 'PokemonType':
-        # global type_repository
-        # if type_repository is None:
-        #     raise ValueError("Type repository is not initialized. Call setup_pokemon_type_repository first.")
-        # return_type = type_repository.get(value)
-        # if not return_type:
-        #     raise ValueError(f"PokemonType '{value}' not found in repository.")
         return str.__new__(cls, value)
     
     def __get_type_data__(self) -> PokemonTypeData:
