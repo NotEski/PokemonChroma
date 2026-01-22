@@ -7,18 +7,8 @@ from pydantic import BaseModel
 from enum import Enum
 
 from panda3d.core import (
-    Geom,
     Vec3
 )
-
-class Vector3(BaseModel):
-    x: float
-    y: float
-    z: float
-
-    @property
-    def Vec3(self) -> Vec3:
-        return Vec3(self.x, self.y, self.z)
 
 class TileDefinitions(Enum):
     """Definitions for tile types used in tile-based world generation."""
@@ -28,8 +18,8 @@ class TileDefinitions(Enum):
 
 class Node(BaseModel):
     """A point in the navigation network."""
-    position: Vector3
-    direction: Vector3
+    position: Vec3
+    direction: Vec3
 
     @property
     def x(self) -> float:
@@ -53,7 +43,7 @@ class Node(BaseModel):
 class Edge(BaseModel):
     """A connection between two nodes in the navigation network."""
     from_node: Node
-    shape: list[Vector3] = [] # if empty, the shape is a linear connection between the nodes
+    shape: list[Vec3] = [] # if empty, the shape is a linear connection between the nodes
     to_node: Node
 
     def generate_shape(self):
@@ -63,7 +53,7 @@ class Edge(BaseModel):
 class Tile(BaseModel):
     """A single tile in the world grid."""
     tile_id: TileDefinitions
-    position: Vector3
+    position: Vec3
 
 class NavigationMesh(BaseModel):
     """Navigation mesh for pathfinding."""

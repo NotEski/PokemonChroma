@@ -24,7 +24,7 @@ from engine.repositories.repository import (
     field_effect_repository
 )
 from shared.pokemon.types import PokemonType
-from shared.pokemon.stats import BaseStats, EffortYield
+from shared.pokemon.stats import BaseStats, Stat, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
 from shared.battle.weather import BattleWeather
 from shared.battle.battle_header import BattleState

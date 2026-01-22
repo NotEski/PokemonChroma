@@ -1,14 +1,14 @@
 """Test suite for Pokemon models and related functionality."""
 import pytest
 from engine.repositories.repository import status_repository
-from shared.pokemon.pokemon import Pokemon, PokemonBase, BattleMon, StatStages
+from shared.pokemon.pokemon import Pokemon, PokemonBase, StatStages
 from shared.pokemon.types import PokemonType
 from shared.pokemon.genders import Gender
 from shared.pokemon.natures import Nature
 from shared.pokemon.stats import (
     BaseStats, Stat, IndividualValues, EffortValues
 )
-from shared.pokemon.move import MoveSet, BaseMove, Move
+from shared.pokemon.move import MoveSet, BaseMove
 
 
 class TestPokemonBase:
@@ -115,7 +115,7 @@ class TestPokemon:
         """Test Pokemon gender."""
         assert pikachu_pokemon.gender in [Gender.MALE, Gender.FEMALE, Gender.NONE]
 
-    def test_pokemon_shiny(self, pikachu_base, tackle_move):
+    def test_pokemon_shiny(self, pikachu_base: PokemonBase, tackle_move: BaseMove):
         """Test shiny Pokemon."""
         move_set = MoveSet(moves=[tackle_move])
         shiny_pokemon = Pokemon(
@@ -127,12 +127,12 @@ class TestPokemon:
         )
         assert shiny_pokemon.shiny is True
 
-    def test_pokemon_nature(self, pikachu_pokemon):
+    def test_pokemon_nature(self, pikachu_pokemon: Pokemon):
         """Test Pokemon has a nature."""
         assert pikachu_pokemon.nature is not None
         assert isinstance(pikachu_pokemon.nature, Nature)
 
-    def test_tera_type_defaults_to_first_type(self, pikachu_pokemon):
+    def test_tera_type_defaults_to_first_type(self, pikachu_pokemon: Pokemon):
         """Test tera type defaults to Pokemon's first type."""
         assert pikachu_pokemon.terra_type == PokemonType.ELECTRIC
 
@@ -140,7 +140,7 @@ class TestPokemon:
 class TestPokemonBattleState:
     """Tests for BattleMon."""
 
-    def test_initial_battle_state(self, pikachu_pokemon):
+    def test_initial_battle_state(self, pikachu_pokemon: Pokemon):
         """Test initial battle state values."""
         battlemon = pikachu_pokemon.generate_battlemon()
         assert battlemon.attack_stat_stage == 0
@@ -153,7 +153,7 @@ class TestPokemonBattleState:
         assert battlemon.critical_hit_stage == 0
         assert len(battlemon.status_conditions) == 0
 
-    def test_reset_stat_stages(self, pikachu_pokemon):
+    def test_reset_stat_stages(self, pikachu_pokemon: Pokemon):
         """Test stat stages can be reset to defaults."""
         battlemon = pikachu_pokemon.generate_battlemon()
         battlemon.stat_stages.attack_stat_stage = 2
@@ -166,20 +166,24 @@ class TestPokemonBattleState:
         assert battlemon.stat_stages.defense_stat_stage == 0
         assert battlemon.stat_stages.speed_stat_stage == 0
 
-    def test_reset_conditions(self, pikachu_pokemon):
+    def test_reset_conditions(self, pikachu_pokemon: Pokemon):
         """Test battle status conditions can be reset to defaults."""
         battlemon = pikachu_pokemon.generate_battlemon()
-        battlemon.status_conditions[status_repository.get("confusion")] = 0
+        confusion_status = status_repository.get("confusion")
+        if confusion_status:
+            battlemon.status_conditions[confusion_status] = confusion_status.default_data_factory()
 
         battlemon.status_conditions.clear()
 
         assert len(battlemon.status_conditions) == 0
 
-    def test_full_reset(self, pikachu_pokemon):
+    def test_full_reset(self, pikachu_pokemon: Pokemon):
         """Test full reset of battle state via reinitialization."""
         battlemon = pikachu_pokemon.generate_battlemon()
         battlemon.stat_stages.attack_stat_stage = 2
-        battlemon.status_conditions[status_repository.get("confusion")] = 0
+        confusion_status = status_repository.get("confusion")
+        if confusion_status:
+            battlemon.status_conditions[confusion_status] = confusion_status.default_data_factory()
 
         battlemon.stat_stages = StatStages()
         battlemon.status_conditions.clear()
@@ -199,7 +203,7 @@ class TestPokemonIVsAndEVs:
         assert 0 <= ivs.attack <= 31
         assert 0 <= ivs.defense <= 31
 
-    def test_custom_ivs(self, pikachu_base, tackle_move):
+    def test_custom_ivs(self, pikachu_base: PokemonBase, tackle_move: BaseMove):
         """Test Pokemon with custom IVs."""
         custom_ivs = IndividualValues(
             hp=31, attack=31, defense=31,
@@ -237,31 +241,31 @@ class TestPokemonIVsAndEVs:
 class TestPokemonGetters:
     """Test Pokemon stat getter methods."""
 
-    def test_get_attack_stat(self, pikachu_pokemon):
+    def test_get_attack_stat(self, pikachu_pokemon: Pokemon):
         """Test getting attack stat."""
         attack = pikachu_pokemon.stat_attack
         assert attack > 0
         assert isinstance(attack, int)
 
-    def test_get_defense_stat(self, pikachu_pokemon):
+    def test_get_defense_stat(self, pikachu_pokemon: Pokemon):
         """Test getting defense stat."""
         defense = pikachu_pokemon.stat_defense
         assert defense > 0
         assert isinstance(defense, int)
 
-    def test_get_special_attack_stat(self, pikachu_pokemon):
+    def test_get_special_attack_stat(self, pikachu_pokemon: Pokemon):
         """Test getting special attack stat."""
         sp_attack = pikachu_pokemon.stat_special_attack
         assert sp_attack > 0
         assert isinstance(sp_attack, int)
 
-    def test_get_special_defense_stat(self, pikachu_pokemon):
+    def test_get_special_defense_stat(self, pikachu_pokemon: Pokemon):
         """Test getting special defense stat."""
         sp_defense = pikachu_pokemon.stat_special_defense
         assert sp_defense > 0
         assert isinstance(sp_defense, int)
 
-    def test_stat_stages_affect_stats(self, pikachu_pokemon):
+    def test_stat_stages_affect_stats(self, pikachu_pokemon: Pokemon):
         """Test that stat stages affect calculated stats."""
         # This test verifies stat stage system exists
         # Actual stat calculation may or may not include stages yet

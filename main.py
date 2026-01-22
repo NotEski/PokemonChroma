@@ -176,7 +176,7 @@ class BattleInspectorWindow:
         log_frame.columnconfigure(0, weight=1)
 
         self.log_box = tk.Text(log_frame, height=18, state="disabled", wrap="word", font=("Consolas", 10))
-        scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.log_box.yview)
+        scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.log_box.yview) # type: ignore
         self.log_box.configure(yscrollcommand=scrollbar.set)
         self.log_box.grid(row=0, column=0, sticky="nsew")
         scrollbar.grid(row=0, column=1, sticky="ns")
@@ -188,7 +188,7 @@ class BattleInspectorWindow:
         roster_frame_1.rowconfigure(0, weight=1)
         self.team_panels["roster_0"] = tk.Listbox(roster_frame_1, height=8, font=("Segoe UI", 10))
         self.team_panels["roster_0"].grid(row=0, column=0, sticky="nsew")
-        r1_scroll = ttk.Scrollbar(roster_frame_1, orient="vertical", command=self.team_panels["roster_0"].yview)
+        r1_scroll = ttk.Scrollbar(roster_frame_1, orient="vertical", command=self.team_panels["roster_0"].yview) # type: ignore
         self.team_panels["roster_0"].configure(yscrollcommand=r1_scroll.set)
         r1_scroll.grid(row=0, column=1, sticky="ns")
 
@@ -198,7 +198,7 @@ class BattleInspectorWindow:
         roster_frame_2.rowconfigure(0, weight=1)
         self.team_panels["roster_1"] = tk.Listbox(roster_frame_2, height=8, font=("Segoe UI", 10))
         self.team_panels["roster_1"].grid(row=0, column=0, sticky="nsew")
-        r2_scroll = ttk.Scrollbar(roster_frame_2, orient="vertical", command=self.team_panels["roster_1"].yview)
+        r2_scroll = ttk.Scrollbar(roster_frame_2, orient="vertical", command=self.team_panels["roster_1"].yview) # type: ignore
         self.team_panels["roster_1"].configure(yscrollcommand=r2_scroll.set)
         r2_scroll.grid(row=0, column=1, sticky="ns")
 

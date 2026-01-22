@@ -91,7 +91,7 @@ class BattleLogTurnStartData(TypedDict):
     description: NotRequired[str]
 
 class BattleLogBattleEnd(BattleLogEntry):
-    winning_trainer: Optional[Opponent]
+    winning_trainer: Optional[Opponent] = None
     log_type: BattleLogType = BattleLogType.BATTLE_END
 
 class BattleLogBattleEndData(TypedDict):

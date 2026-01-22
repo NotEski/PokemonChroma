@@ -1,7 +1,6 @@
 """Test suite for type effectiveness system."""
-import pytest
 from shared.battle.type_effectiveness import (
-    TYPE_EFFECTIVENESS, offensive_effectiveness_all, defensive_effectiveness_all
+    TYPE_EFFECTIVENESS, offensive_effectiveness_all
 )
 from shared.pokemon.types import PokemonType
 

@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from .world_structure import NavigationMesh, Vector3, WorldStructure, Node, Edge, Tile, TileDefinitions
+from .world_structure import NavigationMesh, Vec3, WorldStructure, Node, Edge, Tile, TileDefinitions
 
 
 
 class WorldGenerator(ABC):
     @abstractmethod
-    def generate_world(self) -> WorldStructure:
+    def generate_world(self, tile_map: List[str]) -> WorldStructure:
         """Generate and return a world mesh."""
         pass
 
@@ -32,9 +32,9 @@ class TestGenerateFromTiles(WorldGenerator):
             for x, tile_id in enumerate(row):
                 # Example: Create nodes at walkable tile positions
                 if tile_id != TileDefinitions.BARRIER.value:  # Assuming 'P' represents a walkable tile
-                    node = Node(position=Vector3(x=x, y=y, z=0), direction=Vector3(x=0, y=0, z=-1))
+                    node = Node(position=Vec3(x, y, 0), direction=Vec3(0, 0, -1))
                     world_structure.navigation_mesh.nodes.append(node)
-                tile = Tile(tile_id=TileDefinitions(tile_id), position=Vector3(x=x, y=y, z=0))
+                tile = Tile(tile_id=TileDefinitions(tile_id), position=Vec3(x, y, 0))
                 world_structure.tiles.append(tile)
                 x_min = min(x_min, x)
                 x_max = max(x_max, x)
@@ -84,7 +84,7 @@ class GenerateFromTiles(WorldGenerator):
     Uses a 2D grid where each cell references a tile from a tileset.
     """
     
-    def generate_world(self) -> WorldStructure:
+    def generate_world(self, tile_map: List[str]) -> WorldStructure:
         # Implementation for tile-based generation
         # Reads tile layout data (2D array of tile IDs)
         # Generates geometry from tileset based on layout
@@ -98,7 +98,7 @@ class GenerateFromModel(WorldGenerator):
     Loads pre-made 3D models with collision and metadata.
     """
     
-    def generate_world(self) -> WorldStructure:
+    def generate_world(self, tile_map: List[str]) -> WorldStructure:
         # Implementation for model-based generation
         # Loads .obj, .gltf, or other 3D model formats
         # Extracts geometry and collision data
@@ -114,7 +114,7 @@ class GenerateHybrid(WorldGenerator):
     Seamlessly blends both approaches in a single world.
     """
     
-    def generate_world(self) -> WorldStructure:
+    def generate_world(self, tile_map: List[str]) -> WorldStructure:
         # Implementation for hybrid generation
         # Determines which regions use tiles vs models (via metadata)
         # Generates tile geometry for indoor/structured areas

@@ -1,5 +1,4 @@
 """Test suite for damage calculation system."""
-import pytest
 from engine.battle.damage_calculator import (
     calculate_damage,
     calculate_critical_hit,
@@ -12,14 +11,16 @@ from engine.battle.damage_calculator import (
 )
 from engine.repositories.repository import status_repository
 from shared.battle.battle_header import BattleState, BattleWeather
+from shared.pokemon.pokemon import Pokemon, PokemonBase
+from shared.pokemon.stats import BaseStats
 from shared.pokemon.types import PokemonType
-from shared.pokemon.move import Move, DamageClass
+from shared.pokemon.move import BaseMove
 
 
 class TestDamageCalculation:
     """Tests for damage calculation."""
 
-    def test_calculate_damage_returns_positive(self, pikachu_pokemon, eevee_pokemon):
+    def test_calculate_damage_returns_positive(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test that damage calculation returns a positive value."""
         move = pikachu_pokemon.move_set.moves[1]  # Tackle
         battle_state = BattleState()
@@ -35,7 +36,7 @@ class TestDamageCalculation:
         assert damage > 0
         assert isinstance(damage, int)
 
-    def test_damage_at_least_1(self, pikachu_pokemon, eevee_pokemon):
+    def test_damage_at_least_1(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test that damage is always at least 1."""
         move = pikachu_pokemon.move_set.moves[1]
         battle_state = BattleState()
@@ -53,7 +54,7 @@ class TestDamageCalculation:
         
         assert damage >= 1
 
-    def test_critical_hit_increases_damage(self, pikachu_pokemon, eevee_pokemon):
+    def test_critical_hit_increases_damage(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test that critical hits increase damage."""
         move = pikachu_pokemon.move_set.moves[1]
         battle_state = BattleState()
@@ -76,7 +77,7 @@ class TestDamageCalculation:
         
         assert critical_damage > normal_damage
 
-    def test_higher_level_deals_more_damage(self, pikachu_base, eevee_pokemon, tackle_move):
+    def test_higher_level_deals_more_damage(self, pikachu_base: Pokemon, eevee_pokemon: Pokemon, tackle_move: BaseMove):
         """Test that higher level Pokemon deal more damage."""
         from shared.pokemon.move import MoveSet
         from shared.pokemon.pokemon import Pokemon
@@ -106,7 +107,7 @@ class TestDamageCalculation:
         
         assert high_damage > low_damage
 
-    def test_physical_move_uses_attack_stat(self, pikachu_pokemon, eevee_pokemon, tackle_move):
+    def test_physical_move_uses_attack_stat(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon, tackle_move: BaseMove):
         """Test that physical moves use attack stat."""
         from shared.pokemon.move import MoveSet
         
@@ -119,7 +120,7 @@ class TestDamageCalculation:
         attack_modifier = get_attack_stat_modifier(bm, move.base_move)
         assert attack_modifier == bm.stat_attack
 
-    def test_special_move_uses_special_attack_stat(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
+    def test_special_move_uses_special_attack_stat(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon, thunderbolt_move: BaseMove):
         """Test that special moves use special attack stat."""
         from shared.pokemon.move import MoveSet
         
@@ -136,12 +137,12 @@ class TestDamageCalculation:
 class TestCriticalHit:
     """Tests for critical hit calculation."""
 
-    def test_calculate_critical_hit_returns_bool(self, pikachu_pokemon, tackle_move):
+    def test_calculate_critical_hit_returns_bool(self, pikachu_pokemon: Pokemon, tackle_move: BaseMove):
         """Test that critical hit calculation returns a boolean."""
         result = calculate_critical_hit(pikachu_pokemon.generate_battlemon(), tackle_move)
         assert isinstance(result, bool)
 
-    def test_critical_hit_possible(self, pikachu_pokemon, tackle_move):
+    def test_critical_hit_possible(self, pikachu_pokemon: Pokemon, tackle_move: BaseMove):
         """Test that critical hits can occur."""
         # Run multiple times to check if critical can occur
         bm = pikachu_pokemon.generate_battlemon()
@@ -165,7 +166,7 @@ class TestDamageModifiers:
         assert level_5 > 0
         assert level_100 > level_50 > level_5
 
-    def test_power_modifier(self, tackle_move, thunderbolt_move):
+    def test_power_modifier(self, tackle_move: BaseMove, thunderbolt_move: BaseMove):
         """Test power modifier from moves."""
         from shared.pokemon.move import Move
         
@@ -179,7 +180,7 @@ class TestDamageModifiers:
         assert thunderbolt_power == 90
         assert thunderbolt_power > tackle_power
 
-    def test_stab_modifier(self, pikachu_pokemon, eevee_pokemon, thunderbolt_move):
+    def test_stab_modifier(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon, thunderbolt_move: BaseMove):
         """Test Same Type Attack Bonus (STAB) modifier."""
         from shared.pokemon.move import Move, MoveSet
         
@@ -194,7 +195,7 @@ class TestDamageModifiers:
         no_stab = get_stab_modifier(eevee_pokemon.generate_battlemon(), electric_move.base_move)
         assert no_stab == 1.0
 
-    def test_defense_stat_modifier_physical(self, eevee_pokemon, tackle_move):
+    def test_defense_stat_modifier_physical(self, eevee_pokemon: Pokemon, tackle_move: BaseMove):
         """Test defense stat modifier for physical moves."""
         from shared.pokemon.move import Move
         
@@ -203,7 +204,7 @@ class TestDamageModifiers:
         defense_mod = get_defence_stat_modifier(bm, move.base_move)
         assert defense_mod == bm.stat_defense
 
-    def test_defense_stat_modifier_special(self, eevee_pokemon, thunderbolt_move):
+    def test_defense_stat_modifier_special(self, eevee_pokemon: Pokemon, thunderbolt_move: BaseMove):
         """Test defense stat modifier for special moves."""
         from shared.pokemon.move import Move
         
@@ -216,7 +217,7 @@ class TestDamageModifiers:
 class TestTypeEffectiveness:
     """Tests for type effectiveness in damage calculation."""
 
-    def test_super_effective_deals_more_damage(self, pikachu_base, tackle_move, water_gun_move):
+    def test_super_effective_deals_more_damage(self, pikachu_base: PokemonBase, tackle_move: BaseMove, water_gun_move: BaseMove):
         """Test that super effective moves deal more damage."""
         from shared.pokemon.move import MoveSet
         from shared.pokemon.pokemon import Pokemon, PokemonBase
@@ -225,10 +226,10 @@ class TestTypeEffectiveness:
         squirtle_base = PokemonBase(
             name="Squirtle",
             types=[PokemonType.WATER],
-            base_stats={
-                "hp": 44, "attack": 48, "defense": 65,
-                "special_attack": 50, "special_defense": 64, "speed": 43
-            },
+            base_stats=BaseStats(
+                hp=44, attack=48, defense=65,
+                special_attack=50, special_defense=64, speed=43
+            ),
             pokedex_number=7,
             capture_rate=45
         )
@@ -237,10 +238,10 @@ class TestTypeEffectiveness:
         charmander_base = PokemonBase(
             name="Charmander",
             types=[PokemonType.FIRE],
-            base_stats={
-                "hp": 39, "attack": 52, "defense": 43,
-                "special_attack": 60, "special_defense": 50, "speed": 65
-            },
+            base_stats=BaseStats(
+                hp=39, attack=52, defense=43,
+                special_attack=60, special_defense=50, speed=65
+            ),
             pokedex_number=4,
             capture_rate=45
         )
@@ -263,7 +264,7 @@ class TestTypeEffectiveness:
         
         assert damage > 0  # Should deal damage
 
-    def test_type_effectiveness_modifier(self, pikachu_pokemon, thunderbolt_move):
+    def test_type_effectiveness_modifier(self, pikachu_pokemon: Pokemon, thunderbolt_move: BaseMove):
         """Test type effectiveness modifier calculation."""
         from shared.pokemon.move import Move
         
@@ -279,7 +280,7 @@ class TestTypeEffectiveness:
 class TestWeatherEffects:
     """Tests for weather effects on damage."""
 
-    def test_harsh_sunlight_boosts_fire(self, charizard_pokemon, eevee_pokemon, flamethrower_move):
+    def test_harsh_sunlight_boosts_fire(self, charizard_pokemon: Pokemon, eevee_pokemon: Pokemon, flamethrower_move: BaseMove):
         """Test that harsh sunlight boosts Fire-type moves."""
         from shared.pokemon.move import MoveSet
         
@@ -314,7 +315,7 @@ class TestWeatherEffects:
 class TestStatusConditions:
     """Tests for status condition effects on damage."""
 
-    def test_burn_reduces_physical_damage(self, pikachu_pokemon, eevee_pokemon, tackle_move):
+    def test_burn_reduces_physical_damage(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon, tackle_move: BaseMove):
         """Test that burn reduces physical move damage."""
         from shared.pokemon.move import MoveSet
         
@@ -335,7 +336,9 @@ class TestStatusConditions:
         
         # Burned damage
         bm = pikachu_pokemon.generate_battlemon()
-        bm.status_conditions[status_repository.get("burn")] = 0
+        burn_status = status_repository.get("burn")
+        if burn_status:
+            bm.status_conditions[burn_status] = burn_status.default_data_factory()
         burned_damage = calculate_damage(
             attacking_pokemon=bm,
             defending_pokemon=eevee_pokemon.generate_battlemon(),
@@ -350,7 +353,7 @@ class TestStatusConditions:
 class TestDamageRange:
     """Tests for damage range and randomness."""
 
-    def test_damage_has_random_variation(self, pikachu_pokemon, eevee_pokemon):
+    def test_damage_has_random_variation(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test that damage has random variation."""
         move = pikachu_pokemon.move_set.moves[1]
         battle_state = BattleState()
@@ -371,7 +374,7 @@ class TestDamageRange:
         unique_damages = set(damages)
         assert len(unique_damages) > 1, "Damage should have random variation"
 
-    def test_damage_within_expected_range(self, pikachu_pokemon, eevee_pokemon):
+    def test_damage_within_expected_range(self, pikachu_pokemon: Pokemon, eevee_pokemon: Pokemon):
         """Test that damage stays within expected range."""
         move = pikachu_pokemon.move_set.moves[1]
         battle_state = BattleState()
