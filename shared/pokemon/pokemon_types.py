@@ -14,11 +14,9 @@ def setup_pokemon_type_repository(repository: 'TypeRepository') -> None:
 
 class PokemonTypeData(BaseModel):
     model_config = {"frozen": True}
-
-    name: str
     id: str
+    name: str
     icon: bytes
-
     effectiveness: dict['PokemonType', float] = {}
 
     def __hash__(self) -> int:
@@ -27,16 +25,7 @@ class PokemonTypeData(BaseModel):
 class PokemonType(str):
     def __new__(cls, value: str) -> 'PokemonType':
         return str.__new__(cls, value)
-    
-    def __get_type_data__(self) -> PokemonTypeData:
-        global type_repository
-        if type_repository is None:
-            raise ValueError("Type repository is not initialized. Call setup_pokemon_type_repository first.")
-        return_type = type_repository.get(self)
-        if not return_type:
-            raise ValueError(f"PokemonType '{self}' not found in repository.")
-        return return_type
-    
+        
     @classmethod
     def __get_pydantic_core_schema__(cls, source_type: Any, handler: GetCoreSchemaHandler) -> CoreSchema:
         return core_schema.no_info_after_validator_function(
@@ -47,15 +36,44 @@ class PokemonType(str):
                 return_schema=core_schema.str_schema(),
             ),
         )
+    
+    # Move the Type effectiveness script into this class for better encapsulation, simplicity, and performance.
+
+    @property
+    def __get_type_data__(self) -> PokemonTypeData:
+        global type_repository
+        if type_repository is None:
+            raise ValueError("Type repository is not initialized. Call setup_pokemon_type_repository first.")
+        return_type = type_repository.get(self)
+        if not return_type:
+            raise ValueError(f"PokemonType '{self}' not found in repository.")
+        return return_type
 
     @property
     def name(self) -> str:
-        return self.__get_type_data__().name
+        return self.__get_type_data__.name
     
     @property
     def icon(self) -> bytes:
-        return self.__get_type_data__().icon
+        return self.__get_type_data__.icon
     
     @property
     def effectiveness(self) -> dict['PokemonType', float]:
-        return self.__get_type_data__().effectiveness
+        return self.__get_type_data__.effectiveness
+
+    @property
+    def offensiveness(self) -> dict['PokemonType', float]:
+        return {ptype: multiplier for ptype, multiplier in self.__get_type_data__.effectiveness.items() if multiplier > 1.0}
+    
+    @property
+    def defensiveness(self) -> dict['PokemonType', float]:
+        global type_repository
+        if type_repository is None:
+            raise ValueError("Type repository is not initialized. Call setup_pokemon_type_repository first.")
+        result: dict['PokemonType', float] = {}
+        for ptype_data in type_repository.list():
+            ptype = PokemonType(ptype_data)
+            effectiveness = ptype.effectiveness.get(self, 1.0)
+            if effectiveness < 1.0:
+                result[ptype] = effectiveness
+        return result
