@@ -1,13 +1,15 @@
-@move("reflect_type")  # type: ignore
+from pkmn_imports import *
+
+@move("reflect_type")
 class _ReflectType:
-    meta = {
-        "display_name": "Reflect Type",
-        "type": "normal",
-        "index": 513,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Reflect Type",
+        index=513,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("double_shock")  # type: ignore
+from pkmn_imports import *
+
+@move("double_shock")
 class _DoubleShock:
-    meta = {
-        "display_name": "Double Shock",
-        "type": "electric",
-        "index": 892,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Double Shock",
+        index=892,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

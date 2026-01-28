@@ -1,16 +1,18 @@
-@move("grass_whistle")  # type: ignore
+from pkmn_imports import *
+
+@move("grass_whistle")
 class _GrassWhistle:
-    meta = {
-        "display_name": "Grass Whistle",
-        "type": "grass",
-        "index": 320,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 55,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Grass Whistle",
+        index=320,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=55,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "sleep": 0,
     }

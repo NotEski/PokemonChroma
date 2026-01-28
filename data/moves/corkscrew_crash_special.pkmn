@@ -1,13 +1,15 @@
-@move("corkscrew_crash_special")  # type: ignore
+from pkmn_imports import *
+
+@move("corkscrew_crash_special")
 class _CorkscrewCrashSpecial:
-    meta = {
-        "display_name": "Corkscrew Crash",
-        "type": "steel",
-        "index": 639,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Corkscrew Crash",
+        index=639,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

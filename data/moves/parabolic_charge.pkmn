@@ -1,14 +1,16 @@
-@move("parabolic_charge")  # type: ignore
+from pkmn_imports import *
+
+@move("parabolic_charge")
 class _ParabolicCharge:
-    meta = {
-        "display_name": "Parabolic Charge",
-        "type": "electric",
-        "index": 570,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Parabolic Charge",
+        index=570,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget("all_other_pokemon"),
+    )
     drain = 50

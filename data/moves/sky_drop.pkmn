@@ -1,13 +1,15 @@
-@move("sky_drop")  # type: ignore
+from pkmn_imports import *
+
+@move("sky_drop")
 class _SkyDrop:
-    meta = {
-        "display_name": "Sky Drop",
-        "type": "flying",
-        "index": 507,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sky Drop",
+        index=507,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

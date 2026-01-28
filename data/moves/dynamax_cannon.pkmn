@@ -1,13 +1,15 @@
-@move("dynamax_cannon")  # type: ignore
+from pkmn_imports import *
+
+@move("dynamax_cannon")
 class _DynamaxCannon:
-    meta = {
-        "display_name": "Dynamax Cannon",
-        "type": "dragon",
-        "index": 744,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dynamax Cannon",
+        index=744,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

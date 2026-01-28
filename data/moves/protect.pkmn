@@ -1,14 +1,16 @@
-@move("protect")  # type: ignore
+from pkmn_imports import *
+
+@move("protect")
 class _Protect:
-    meta = {
-        "display_name": "Protect",
-        "type": "normal",
-        "index": 182,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Protect",
+        index=182,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4

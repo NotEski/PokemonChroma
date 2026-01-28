@@ -1,14 +1,16 @@
-@move("vacuum_wave")  # type: ignore
+from pkmn_imports import *
+
+@move("vacuum_wave")
 class _VacuumWave:
-    meta = {
-        "display_name": "Vacuum Wave",
-        "type": "fighting",
-        "index": 410,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Vacuum Wave",
+        index=410,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

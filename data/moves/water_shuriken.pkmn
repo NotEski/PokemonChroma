@@ -1,14 +1,16 @@
-@move("water_shuriken")  # type: ignore
+from pkmn_imports import *
+
+@move("water_shuriken")
 class _WaterShuriken:
-    meta = {
-        "display_name": "Water Shuriken",
-        "type": "water",
-        "index": 594,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 15,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Water Shuriken",
+        index=594,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=15,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

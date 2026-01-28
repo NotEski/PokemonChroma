@@ -1,13 +1,15 @@
-@move("volt_switch")  # type: ignore
+from pkmn_imports import *
+
+@move("volt_switch")
 class _VoltSwitch:
-    meta = {
-        "display_name": "Volt Switch",
-        "type": "electric",
-        "index": 521,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Volt Switch",
+        index=521,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

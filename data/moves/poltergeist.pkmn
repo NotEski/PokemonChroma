@@ -1,13 +1,15 @@
-@move("poltergeist")  # type: ignore
+from pkmn_imports import *
+
+@move("poltergeist")
 class _Poltergeist:
-    meta = {
-        "display_name": "Poltergeist",
-        "type": "ghost",
-        "index": 809,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 110,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Poltergeist",
+        index=809,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=110,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

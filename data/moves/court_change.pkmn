@@ -1,13 +1,15 @@
-@move("court_change")  # type: ignore
+from pkmn_imports import *
+
+@move("court_change")
 class _CourtChange:
-    meta = {
-        "display_name": "Court Change",
-        "type": "normal",
-        "index": 756,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Court Change",
+        index=756,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

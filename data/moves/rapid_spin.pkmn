@@ -1,16 +1,18 @@
-@move("rapid_spin")  # type: ignore
+from pkmn_imports import *
+
+@move("rapid_spin")
 class _RapidSpin:
-    meta = {
-        "display_name": "Rapid Spin",
-        "type": "normal",
-        "index": 229,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 50,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rapid Spin",
+        index=229,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=50,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
     }

@@ -1,14 +1,16 @@
-@move("10_000_000_volt_thunderbolt")  # type: ignore
+from pkmn_imports import *
+
+@move("10_000_000_volt_thunderbolt")
 class _10000000VoltThunderbolt:
-    meta = {
-        "display_name": "10,000,000 Volt Thunderbolt",
-        "type": "electric",
-        "index": 719,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": 195,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="10,000,000 Volt Thunderbolt",
+        index=719,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=195,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 16

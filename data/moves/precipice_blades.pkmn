@@ -1,13 +1,15 @@
-@move("precipice_blades")  # type: ignore
+from pkmn_imports import *
+
+@move("precipice_blades")
 class _PrecipiceBlades:
-    meta = {
-        "display_name": "Precipice Blades",
-        "type": "ground",
-        "index": 619,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 120,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Precipice Blades",
+        index=619,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=120,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

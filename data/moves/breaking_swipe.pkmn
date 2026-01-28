@@ -1,16 +1,18 @@
-@move("breaking_swipe")  # type: ignore
+from pkmn_imports import *
+
+@move("breaking_swipe")
 class _BreakingSwipe:
-    meta = {
-        "display_name": "Breaking Swipe",
-        "type": "dragon",
-        "index": 784,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Breaking Swipe",
+        index=784,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

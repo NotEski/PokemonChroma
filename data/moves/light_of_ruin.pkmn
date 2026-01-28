@@ -1,14 +1,16 @@
-@move("light_of_ruin")  # type: ignore
+from pkmn_imports import *
+
+@move("light_of_ruin")
 class _LightOfRuin:
-    meta = {
-        "display_name": "Light of Ruin",
-        "type": "fairy",
-        "index": 617,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Light of Ruin",
+        index=617,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -50

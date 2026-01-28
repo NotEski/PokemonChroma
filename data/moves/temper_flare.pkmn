@@ -1,13 +1,15 @@
-@move("temper_flare")  # type: ignore
+from pkmn_imports import *
+
+@move("temper_flare")
 class _TemperFlare:
-    meta = {
-        "display_name": "Temper Flare",
-        "type": "fire",
-        "index": 915,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Temper Flare",
+        index=915,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

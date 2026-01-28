@@ -1,13 +1,15 @@
-@move("pulverizing_pancake")  # type: ignore
+from pkmn_imports import *
+
+@move("pulverizing_pancake")
 class _PulverizingPancake:
-    meta = {
-        "display_name": "Pulverizing Pancake",
-        "type": "normal",
-        "index": 701,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": 210,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Pulverizing Pancake",
+        index=701,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=210,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

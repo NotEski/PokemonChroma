@@ -1,14 +1,16 @@
-@move("life_dew")  # type: ignore
+from pkmn_imports import *
+
+@move("life_dew")
 class _LifeDew:
-    meta = {
-        "display_name": "Life Dew",
-        "type": "water",
-        "index": 791,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user_and_allies",
-    }
+    meta = MoveMetaData(
+        display_name="Life Dew",
+        index=791,
+        type=PokemonType("water"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("user_and_allies"),
+    )
     healing = 25

@@ -1,16 +1,18 @@
-@move("powder_snow")  # type: ignore
+from pkmn_imports import *
+
+@move("powder_snow")
 class _PowderSnow:
-    meta = {
-        "display_name": "Powder Snow",
-        "type": "ice",
-        "index": 181,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 25,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Powder Snow",
+        index=181,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=25,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "freeze": 10,
     }

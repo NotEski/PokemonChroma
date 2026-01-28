@@ -1,14 +1,16 @@
-@move("steamroller")  # type: ignore
+from pkmn_imports import *
+
+@move("steamroller")
 class _Steamroller:
-    meta = {
-        "display_name": "Steamroller",
-        "type": "bug",
-        "index": 537,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Steamroller",
+        index=537,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

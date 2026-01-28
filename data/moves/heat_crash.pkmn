@@ -1,13 +1,15 @@
-@move("heat_crash")  # type: ignore
+from pkmn_imports import *
+
+@move("heat_crash")
 class _HeatCrash:
-    meta = {
-        "display_name": "Heat Crash",
-        "type": "fire",
-        "index": 535,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Heat Crash",
+        index=535,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

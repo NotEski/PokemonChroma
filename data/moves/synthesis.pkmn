@@ -1,14 +1,16 @@
-@move("synthesis")  # type: ignore
+from pkmn_imports import *
+
+@move("synthesis")
 class _Synthesis:
-    meta = {
-        "display_name": "Synthesis",
-        "type": "grass",
-        "index": 235,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Synthesis",
+        index=235,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     healing = 50

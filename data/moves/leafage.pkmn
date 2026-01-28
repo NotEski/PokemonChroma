@@ -1,13 +1,15 @@
-@move("leafage")  # type: ignore
+from pkmn_imports import *
+
+@move("leafage")
 class _Leafage:
-    meta = {
-        "display_name": "Leafage",
-        "type": "grass",
-        "index": 670,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Leafage",
+        index=670,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

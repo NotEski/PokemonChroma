@@ -1,16 +1,18 @@
-@move("heat_wave")  # type: ignore
+from pkmn_imports import *
+
+@move("heat_wave")
 class _HeatWave:
-    meta = {
-        "display_name": "Heat Wave",
-        "type": "fire",
-        "index": 257,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 95,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Heat Wave",
+        index=257,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=95,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "burn": 10,
     }

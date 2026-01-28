@@ -1,13 +1,15 @@
-@move("sandsear_storm")  # type: ignore
+from pkmn_imports import *
+
+@move("sandsear_storm")
 class _SandsearStorm:
-    meta = {
-        "display_name": "Sandsear Storm",
-        "type": "ground",
-        "index": 848,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 100,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Sandsear Storm",
+        index=848,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=100,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

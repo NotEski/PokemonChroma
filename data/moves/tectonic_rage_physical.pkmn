@@ -1,13 +1,15 @@
-@move("tectonic_rage_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("tectonic_rage_physical")
 class _TectonicRagePhysical:
-    meta = {
-        "display_name": "Tectonic Rage",
-        "type": "ground",
-        "index": 630,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tectonic Rage",
+        index=630,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

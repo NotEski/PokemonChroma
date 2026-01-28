@@ -1,16 +1,18 @@
-@move("lick")  # type: ignore
+from pkmn_imports import *
+
+@move("lick")
 class _Lick:
-    meta = {
-        "display_name": "Lick",
-        "type": "ghost",
-        "index": 122,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 30,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Lick",
+        index=122,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=30,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

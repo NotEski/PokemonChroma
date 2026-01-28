@@ -1,13 +1,15 @@
-@move("ice_spinner")  # type: ignore
+from pkmn_imports import *
+
+@move("ice_spinner")
 class _IceSpinner:
-    meta = {
-        "display_name": "Ice Spinner",
-        "type": "ice",
-        "index": 861,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ice Spinner",
+        index=861,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

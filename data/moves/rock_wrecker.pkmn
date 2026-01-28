@@ -1,13 +1,15 @@
-@move("rock_wrecker")  # type: ignore
+from pkmn_imports import *
+
+@move("rock_wrecker")
 class _RockWrecker:
-    meta = {
-        "display_name": "Rock Wrecker",
-        "type": "rock",
-        "index": 439,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rock Wrecker",
+        index=439,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

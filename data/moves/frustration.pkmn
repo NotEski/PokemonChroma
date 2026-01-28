@@ -1,13 +1,15 @@
-@move("frustration")  # type: ignore
+from pkmn_imports import *
+
+@move("frustration")
 class _Frustration:
-    meta = {
-        "display_name": "Frustration",
-        "type": "normal",
-        "index": 218,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Frustration",
+        index=218,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,14 +1,16 @@
-@move("absorb")  # type: ignore
-class _Absorb:
-    meta = {
-        "display_name": "Absorb",
-        "type": "grass",
-        "index": 71,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+from pkmn_imports import *
+
+@move("absorb")
+class Absorb(BaseMove):
+    meta = MoveMetaData(
+        display_name="Absorb",
+        index=1,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 50

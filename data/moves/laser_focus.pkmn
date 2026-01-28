@@ -1,13 +1,15 @@
-@move("laser_focus")  # type: ignore
+from pkmn_imports import *
+
+@move("laser_focus")
 class _LaserFocus:
-    meta = {
-        "display_name": "Laser Focus",
-        "type": "normal",
-        "index": 673,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Laser Focus",
+        index=673,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget.USER,
+    )

@@ -1,14 +1,16 @@
-@move("iron_head")  # type: ignore
+from pkmn_imports import *
+
+@move("iron_head")
 class _IronHead:
-    meta = {
-        "display_name": "Iron Head",
-        "type": "steel",
-        "index": 442,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Iron Head",
+        index=442,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

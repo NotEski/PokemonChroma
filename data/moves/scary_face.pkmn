@@ -1,16 +1,18 @@
-@move("scary_face")  # type: ignore
+from pkmn_imports import *
+
+@move("scary_face")
 class _ScaryFace:
-    meta = {
-        "display_name": "Scary Face",
-        "type": "normal",
-        "index": 184,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Scary Face",
+        index=184,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -2, "chance": 100}],
     }

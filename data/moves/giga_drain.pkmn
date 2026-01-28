@@ -1,14 +1,16 @@
-@move("giga_drain")  # type: ignore
+from pkmn_imports import *
+
+@move("giga_drain")
 class _GigaDrain:
-    meta = {
-        "display_name": "Giga Drain",
-        "type": "grass",
-        "index": 202,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Giga Drain",
+        index=202,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 50

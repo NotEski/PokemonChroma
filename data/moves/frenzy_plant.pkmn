@@ -1,13 +1,15 @@
-@move("frenzy_plant")  # type: ignore
+from pkmn_imports import *
+
+@move("frenzy_plant")
 class _FrenzyPlant:
-    meta = {
-        "display_name": "Frenzy Plant",
-        "type": "grass",
-        "index": 338,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Frenzy Plant",
+        index=338,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

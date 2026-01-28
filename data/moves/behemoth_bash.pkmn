@@ -1,13 +1,15 @@
-@move("behemoth_bash")  # type: ignore
+from pkmn_imports import *
+
+@move("behemoth_bash")
 class _BehemothBash:
-    meta = {
-        "display_name": "Behemoth Bash",
-        "type": "steel",
-        "index": 782,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Behemoth Bash",
+        index=782,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

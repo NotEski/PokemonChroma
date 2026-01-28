@@ -1,13 +1,15 @@
-@move("bleakwind_storm")  # type: ignore
+from pkmn_imports import *
+
+@move("bleakwind_storm")
 class _BleakwindStorm:
-    meta = {
-        "display_name": "Bleakwind Storm",
-        "type": "flying",
-        "index": 846,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 100,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Bleakwind Storm",
+        index=846,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=100,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

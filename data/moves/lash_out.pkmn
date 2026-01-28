@@ -1,13 +1,15 @@
-@move("lash_out")  # type: ignore
+from pkmn_imports import *
+
+@move("lash_out")
 class _LashOut:
-    meta = {
-        "display_name": "Lash Out",
-        "type": "dark",
-        "index": 808,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Lash Out",
+        index=808,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

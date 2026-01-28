@@ -1,16 +1,18 @@
-@move("force_palm")  # type: ignore
+from pkmn_imports import *
+
+@move("force_palm")
 class _ForcePalm:
-    meta = {
-        "display_name": "Force Palm",
-        "type": "fighting",
-        "index": 395,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Force Palm",
+        index=395,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

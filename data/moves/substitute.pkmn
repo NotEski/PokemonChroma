@@ -1,13 +1,15 @@
-@move("substitute")  # type: ignore
+from pkmn_imports import *
+
+@move("substitute")
 class _Substitute:
-    meta = {
-        "display_name": "Substitute",
-        "type": "normal",
-        "index": 164,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Substitute",
+        index=164,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

@@ -1,14 +1,16 @@
-@move("attack_order")  # type: ignore
+from pkmn_imports import *
+
+@move("attack_order")
 class _AttackOrder:
-    meta = {
-        "display_name": "Attack Order",
-        "type": "bug",
-        "index": 454,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Attack Order",
+        index=454,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

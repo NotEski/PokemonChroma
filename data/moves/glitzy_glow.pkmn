@@ -1,13 +1,15 @@
-@move("glitzy_glow")  # type: ignore
+from pkmn_imports import *
+
+@move("glitzy_glow")
 class _GlitzyGlow:
-    meta = {
-        "display_name": "Glitzy Glow",
-        "type": "psychic",
-        "index": 736,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Glitzy Glow",
+        index=736,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("psychic_noise")  # type: ignore
+from pkmn_imports import *
+
+@move("psychic_noise")
 class _PsychicNoise:
-    meta = {
-        "display_name": "Psychic Noise",
-        "type": "psychic",
-        "index": 917,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Psychic Noise",
+        index=917,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

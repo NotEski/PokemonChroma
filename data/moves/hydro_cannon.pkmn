@@ -1,13 +1,15 @@
-@move("hydro_cannon")  # type: ignore
+from pkmn_imports import *
+
+@move("hydro_cannon")
 class _HydroCannon:
-    meta = {
-        "display_name": "Hydro Cannon",
-        "type": "water",
-        "index": 308,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hydro Cannon",
+        index=308,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

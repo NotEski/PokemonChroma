@@ -1,14 +1,16 @@
-@move("spotlight")  # type: ignore
+from pkmn_imports import *
+
+@move("spotlight")
 class _Spotlight:
-    meta = {
-        "display_name": "Spotlight",
-        "type": "normal",
-        "index": 671,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spotlight",
+        index=671,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 3

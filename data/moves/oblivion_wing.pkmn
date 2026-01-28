@@ -1,14 +1,16 @@
-@move("oblivion_wing")  # type: ignore
+from pkmn_imports import *
+
+@move("oblivion_wing")
 class _OblivionWing:
-    meta = {
-        "display_name": "Oblivion Wing",
-        "type": "flying",
-        "index": 613,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Oblivion Wing",
+        index=613,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 75

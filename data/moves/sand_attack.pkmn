@@ -1,16 +1,18 @@
-@move("sand_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("sand_attack")
 class _SandAttack:
-    meta = {
-        "display_name": "Sand Attack",
-        "type": "ground",
-        "index": 28,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sand Attack",
+        index=28,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
     }

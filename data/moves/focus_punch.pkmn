@@ -1,14 +1,16 @@
-@move("focus_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("focus_punch")
 class _FocusPunch:
-    meta = {
-        "display_name": "Focus Punch",
-        "type": "fighting",
-        "index": 264,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 150,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Focus Punch",
+        index=264,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=150,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = -3

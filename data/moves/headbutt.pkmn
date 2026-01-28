@@ -1,14 +1,16 @@
-@move("headbutt")  # type: ignore
+from pkmn_imports import *
+
+@move("headbutt")
 class _Headbutt:
-    meta = {
-        "display_name": "Headbutt",
-        "type": "normal",
-        "index": 29,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Headbutt",
+        index=29,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

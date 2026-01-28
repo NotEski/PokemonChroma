@@ -1,14 +1,16 @@
-@move("dream_eater")  # type: ignore
+from pkmn_imports import *
+
+@move("dream_eater")
 class _DreamEater:
-    meta = {
-        "display_name": "Dream Eater",
-        "type": "psychic",
-        "index": 138,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dream Eater",
+        index=138,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 50

@@ -1,13 +1,15 @@
-@move("sacred_sword")  # type: ignore
+from pkmn_imports import *
+
+@move("sacred_sword")
 class _SacredSword:
-    meta = {
-        "display_name": "Sacred Sword",
-        "type": "fighting",
-        "index": 533,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sacred Sword",
+        index=533,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

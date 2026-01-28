@@ -1,13 +1,15 @@
-@move("magical_leaf")  # type: ignore
+from pkmn_imports import *
+
+@move("magical_leaf")
 class _MagicalLeaf:
-    meta = {
-        "display_name": "Magical Leaf",
-        "type": "grass",
-        "index": 345,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": 60,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Magical Leaf",
+        index=345,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=60,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

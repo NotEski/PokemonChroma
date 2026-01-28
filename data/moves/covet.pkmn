@@ -1,13 +1,15 @@
-@move("covet")  # type: ignore
+from pkmn_imports import *
+
+@move("covet")
 class _Covet:
-    meta = {
-        "display_name": "Covet",
-        "type": "normal",
-        "index": 343,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Covet",
+        index=343,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

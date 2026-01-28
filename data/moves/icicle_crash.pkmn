@@ -1,14 +1,16 @@
-@move("icicle_crash")  # type: ignore
+from pkmn_imports import *
+
+@move("icicle_crash")
 class _IcicleCrash:
-    meta = {
-        "display_name": "Icicle Crash",
-        "type": "ice",
-        "index": 556,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Icicle Crash",
+        index=556,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

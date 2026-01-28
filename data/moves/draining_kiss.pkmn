@@ -1,14 +1,16 @@
-@move("draining_kiss")  # type: ignore
+from pkmn_imports import *
+
+@move("draining_kiss")
 class _DrainingKiss:
-    meta = {
-        "display_name": "Draining Kiss",
-        "type": "fairy",
-        "index": 577,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 50,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Draining Kiss",
+        index=577,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=50,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 75

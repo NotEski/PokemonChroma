@@ -1,13 +1,15 @@
-@move("savage_spin_out_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("savage_spin_out_physical")
 class _SavageSpinOutPhysical:
-    meta = {
-        "display_name": "Savage Spin-Out",
-        "type": "bug",
-        "index": 634,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Savage Spin-Out",
+        index=634,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

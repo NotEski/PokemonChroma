@@ -1,16 +1,18 @@
-@move("foresight")  # type: ignore
+from pkmn_imports import *
+
+@move("foresight")
 class _Foresight:
-    meta = {
-        "display_name": "Foresight",
-        "type": "normal",
-        "index": 193,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Foresight",
+        index=193,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "no_type_immunity": 0,
     }

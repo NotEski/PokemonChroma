@@ -1,13 +1,15 @@
-@move("instruct")  # type: ignore
+from pkmn_imports import *
+
+@move("instruct")
 class _Instruct:
-    meta = {
-        "display_name": "Instruct",
-        "type": "psychic",
-        "index": 689,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Instruct",
+        index=689,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

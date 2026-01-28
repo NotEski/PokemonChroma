@@ -1,13 +1,15 @@
-@move("power_whip")  # type: ignore
+from pkmn_imports import *
+
+@move("power_whip")
 class _PowerWhip:
-    meta = {
-        "display_name": "Power Whip",
-        "type": "grass",
-        "index": 438,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 120,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Power Whip",
+        index=438,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=120,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("volt_tackle")  # type: ignore
+from pkmn_imports import *
+
+@move("volt_tackle")
 class _VoltTackle:
-    meta = {
-        "display_name": "Volt Tackle",
-        "type": "electric",
-        "index": 344,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Volt Tackle",
+        index=344,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 10,
     }

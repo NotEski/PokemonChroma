@@ -1,13 +1,15 @@
-@move("water_pledge")  # type: ignore
+from pkmn_imports import *
+
+@move("water_pledge")
 class _WaterPledge:
-    meta = {
-        "display_name": "Water Pledge",
-        "type": "water",
-        "index": 518,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Water Pledge",
+        index=518,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

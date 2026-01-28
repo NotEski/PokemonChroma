@@ -1,16 +1,18 @@
-@move("lava_plume")  # type: ignore
+from pkmn_imports import *
+
+@move("lava_plume")
 class _LavaPlume:
-    meta = {
-        "display_name": "Lava Plume",
-        "type": "fire",
-        "index": 436,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Lava Plume",
+        index=436,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget("all_other_pokemon"),
+    )
     status_condition = {
         "burn": 30,
     }

@@ -1,16 +1,18 @@
-@move("dynamic_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("dynamic_punch")
 class _DynamicPunch:
-    meta = {
-        "display_name": "Dynamic Punch",
-        "type": "fighting",
-        "index": 223,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 50,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dynamic Punch",
+        index=223,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=50,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 100,
     }

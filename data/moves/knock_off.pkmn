@@ -1,13 +1,15 @@
-@move("knock_off")  # type: ignore
+from pkmn_imports import *
+
+@move("knock_off")
 class _KnockOff:
-    meta = {
-        "display_name": "Knock Off",
-        "type": "dark",
-        "index": 282,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Knock Off",
+        index=282,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

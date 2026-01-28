@@ -1,13 +1,15 @@
-@move("dragon_cheer")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_cheer")
 class _DragonCheer:
-    meta = {
-        "display_name": "Dragon Cheer",
-        "type": "dragon",
-        "index": 913,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 0,
-        "power": 0,
-        "pp": 15,
-        "target": "all_allies",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Cheer",
+        index=913,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=0,
+        power=0,
+        pp=15,
+        target=MoveTarget.ALL_ALLIES,
+    )

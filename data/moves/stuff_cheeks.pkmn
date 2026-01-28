@@ -1,16 +1,18 @@
-@move("stuff_cheeks")  # type: ignore
+from pkmn_imports import *
+
+@move("stuff_cheeks")
 class _StuffCheeks:
-    meta = {
-        "display_name": "Stuff Cheeks",
-        "type": "normal",
-        "index": 747,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Stuff Cheeks",
+        index=747,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "defense", "change": 2, "chance": 100}],
     }

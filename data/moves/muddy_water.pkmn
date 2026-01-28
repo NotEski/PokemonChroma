@@ -1,16 +1,18 @@
-@move("muddy_water")  # type: ignore
+from pkmn_imports import *
+
+@move("muddy_water")
 class _MuddyWater:
-    meta = {
-        "display_name": "Muddy Water",
-        "type": "water",
-        "index": 330,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 90,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Muddy Water",
+        index=330,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=90,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 30}],
     }

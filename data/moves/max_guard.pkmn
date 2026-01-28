@@ -1,14 +1,16 @@
-@move("max_guard")  # type: ignore
+from pkmn_imports import *
+
+@move("max_guard")
 class _MaxGuard:
-    meta = {
-        "display_name": "Max Guard",
-        "type": "normal",
-        "index": 743,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Max Guard",
+        index=743,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4

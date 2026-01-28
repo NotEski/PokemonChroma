@@ -1,16 +1,18 @@
-@move("fiery_dance")  # type: ignore
+from pkmn_imports import *
+
+@move("fiery_dance")
 class _FieryDance:
-    meta = {
-        "display_name": "Fiery Dance",
-        "type": "fire",
-        "index": 552,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fiery Dance",
+        index=552,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 50}],
     }

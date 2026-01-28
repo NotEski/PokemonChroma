@@ -1,16 +1,18 @@
-@move("mist_ball")  # type: ignore
+from pkmn_imports import *
+
+@move("mist_ball")
 class _MistBall:
-    meta = {
-        "display_name": "Mist Ball",
-        "type": "psychic",
-        "index": 296,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 95,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mist Ball",
+        index=296,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=95,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 50}],
     }

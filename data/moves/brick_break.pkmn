@@ -1,13 +1,15 @@
-@move("brick_break")  # type: ignore
+from pkmn_imports import *
+
+@move("brick_break")
 class _BrickBreak:
-    meta = {
-        "display_name": "Brick Break",
-        "type": "fighting",
-        "index": 280,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Brick Break",
+        index=280,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

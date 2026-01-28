@@ -1,13 +1,15 @@
-@move("dragon_claw")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_claw")
 class _DragonClaw:
-    meta = {
-        "display_name": "Dragon Claw",
-        "type": "dragon",
-        "index": 337,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Claw",
+        index=337,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

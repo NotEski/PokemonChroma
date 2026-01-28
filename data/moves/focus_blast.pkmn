@@ -1,16 +1,18 @@
-@move("focus_blast")  # type: ignore
+from pkmn_imports import *
+
+@move("focus_blast")
 class _FocusBlast:
-    meta = {
-        "display_name": "Focus Blast",
-        "type": "fighting",
-        "index": 411,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 70,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Focus Blast",
+        index=411,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=70,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

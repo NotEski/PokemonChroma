@@ -1,16 +1,18 @@
-@move("fake_tears")  # type: ignore
+from pkmn_imports import *
+
+@move("fake_tears")
 class _FakeTears:
-    meta = {
-        "display_name": "Fake Tears",
-        "type": "dark",
-        "index": 313,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fake Tears",
+        index=313,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
     }

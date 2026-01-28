@@ -1,13 +1,15 @@
-@move("surf")  # type: ignore
+from pkmn_imports import *
+
+@move("surf")
 class _Surf:
-    meta = {
-        "display_name": "Surf",
-        "type": "water",
-        "index": 57,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Surf",
+        index=57,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget("all_other_pokemon"),
+    )

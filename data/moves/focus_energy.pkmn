@@ -1,13 +1,15 @@
-@move("focus_energy")  # type: ignore
+from pkmn_imports import *
+
+@move("focus_energy")
 class _FocusEnergy:
-    meta = {
-        "display_name": "Focus Energy",
-        "type": "normal",
-        "index": 116,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Focus Energy",
+        index=116,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget.USER,
+    )

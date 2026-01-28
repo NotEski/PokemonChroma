@@ -1,13 +1,15 @@
-@move("final_gambit")  # type: ignore
+from pkmn_imports import *
+
+@move("final_gambit")
 class _FinalGambit:
-    meta = {
-        "display_name": "Final Gambit",
-        "type": "fighting",
-        "index": 515,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Final Gambit",
+        index=515,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("hypnosis")  # type: ignore
+from pkmn_imports import *
+
+@move("hypnosis")
 class _Hypnosis:
-    meta = {
-        "display_name": "Hypnosis",
-        "type": "psychic",
-        "index": 95,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 60,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hypnosis",
+        index=95,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=60,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "sleep": 0,
     }

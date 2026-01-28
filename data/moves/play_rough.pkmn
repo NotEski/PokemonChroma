@@ -1,16 +1,18 @@
-@move("play_rough")  # type: ignore
+from pkmn_imports import *
+
+@move("play_rough")
 class _PlayRough:
-    meta = {
-        "display_name": "Play Rough",
-        "type": "fairy",
-        "index": 583,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Play Rough",
+        index=583,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 10}],
     }

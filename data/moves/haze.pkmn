@@ -1,13 +1,15 @@
-@move("haze")  # type: ignore
+from pkmn_imports import *
+
+@move("haze")
 class _Haze:
-    meta = {
-        "display_name": "Haze",
-        "type": "ice",
-        "index": 114,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Haze",
+        index=114,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget("entire_field"),
+    )

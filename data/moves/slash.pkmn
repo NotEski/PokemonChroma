@@ -1,14 +1,16 @@
-@move("slash")  # type: ignore
+from pkmn_imports import *
+
+@move("slash")
 class _Slash:
-    meta = {
-        "display_name": "Slash",
-        "type": "normal",
-        "index": 163,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Slash",
+        index=163,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

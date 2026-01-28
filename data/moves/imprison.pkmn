@@ -1,13 +1,15 @@
-@move("imprison")  # type: ignore
+from pkmn_imports import *
+
+@move("imprison")
 class _Imprison:
-    meta = {
-        "display_name": "Imprison",
-        "type": "psychic",
-        "index": 286,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Imprison",
+        index=286,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

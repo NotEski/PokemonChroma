@@ -1,13 +1,15 @@
-@move("self_destruct")  # type: ignore
+from pkmn_imports import *
+
+@move("self_destruct")
 class _SelfDestruct:
-    meta = {
-        "display_name": "Self-Destruct",
-        "type": "normal",
-        "index": 120,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 200,
-        "pp": 5,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Self-Destruct",
+        index=120,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=200,
+        pp=5,
+        target=MoveTarget("all_other_pokemon"),
+    )

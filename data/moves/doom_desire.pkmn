@@ -1,13 +1,15 @@
-@move("doom_desire")  # type: ignore
+from pkmn_imports import *
+
+@move("doom_desire")
 class _DoomDesire:
-    meta = {
-        "display_name": "Doom Desire",
-        "type": "steel",
-        "index": 353,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Doom Desire",
+        index=353,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

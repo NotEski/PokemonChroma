@@ -1,13 +1,15 @@
-@move("malignant_chain")  # type: ignore
+from pkmn_imports import *
+
+@move("malignant_chain")
 class _MalignantChain:
-    meta = {
-        "display_name": "Malignant Chain",
-        "type": "poison",
-        "index": 919,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Malignant Chain",
+        index=919,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

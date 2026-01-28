@@ -1,14 +1,16 @@
-@move("double_edge")  # type: ignore
+from pkmn_imports import *
+
+@move("double_edge")
 class _DoubleEdge:
-    meta = {
-        "display_name": "Double-Edge",
-        "type": "normal",
-        "index": 38,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Double-Edge",
+        index=38,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -33

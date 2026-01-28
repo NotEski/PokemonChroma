@@ -1,13 +1,15 @@
-@move("bitter_blade")  # type: ignore
+from pkmn_imports import *
+
+@move("bitter_blade")
 class _BitterBlade:
-    meta = {
-        "display_name": "Bitter Blade",
-        "type": "fire",
-        "index": 891,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bitter Blade",
+        index=891,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

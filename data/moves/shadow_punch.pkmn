@@ -1,13 +1,15 @@
-@move("shadow_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("shadow_punch")
 class _ShadowPunch:
-    meta = {
-        "display_name": "Shadow Punch",
-        "type": "ghost",
-        "index": 325,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": 60,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shadow Punch",
+        index=325,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=60,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

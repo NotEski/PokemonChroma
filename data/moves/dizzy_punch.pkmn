@@ -1,16 +1,18 @@
-@move("dizzy_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("dizzy_punch")
 class _DizzyPunch:
-    meta = {
-        "display_name": "Dizzy Punch",
-        "type": "normal",
-        "index": 146,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dizzy Punch",
+        index=146,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 20,
     }

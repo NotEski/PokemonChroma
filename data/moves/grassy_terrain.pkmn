@@ -1,13 +1,15 @@
-@move("grassy_terrain")  # type: ignore
+from pkmn_imports import *
+
+@move("grassy_terrain")
 class _GrassyTerrain:
-    meta = {
-        "display_name": "Grassy Terrain",
-        "type": "grass",
-        "index": 580,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Grassy Terrain",
+        index=580,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

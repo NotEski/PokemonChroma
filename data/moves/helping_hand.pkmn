@@ -1,14 +1,16 @@
-@move("helping_hand")  # type: ignore
+from pkmn_imports import *
+
+@move("helping_hand")
 class _HelpingHand:
-    meta = {
-        "display_name": "Helping Hand",
-        "type": "normal",
-        "index": 270,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "ally",
-    }
+    meta = MoveMetaData(
+        display_name="Helping Hand",
+        index=270,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget("ally"),
+    )
     priority = 5

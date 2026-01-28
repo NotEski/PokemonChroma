@@ -1,13 +1,15 @@
-@move("sky_uppercut")  # type: ignore
+from pkmn_imports import *
+
+@move("sky_uppercut")
 class _SkyUppercut:
-    meta = {
-        "display_name": "Sky Uppercut",
-        "type": "fighting",
-        "index": 327,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 85,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sky Uppercut",
+        index=327,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=85,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("shadow_bone")  # type: ignore
+from pkmn_imports import *
+
+@move("shadow_bone")
 class _ShadowBone:
-    meta = {
-        "display_name": "Shadow Bone",
-        "type": "ghost",
-        "index": 708,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shadow Bone",
+        index=708,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 20}],
     }

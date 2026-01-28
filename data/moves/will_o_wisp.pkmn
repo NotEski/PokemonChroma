@@ -1,16 +1,18 @@
-@move("will_o_wisp")  # type: ignore
+from pkmn_imports import *
+
+@move("will_o_wisp")
 class _WillOWisp:
-    meta = {
-        "display_name": "Will-O-Wisp",
-        "type": "fire",
-        "index": 261,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 85,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Will-O-Wisp",
+        index=261,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 0,
     }

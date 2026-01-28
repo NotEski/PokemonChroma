@@ -1,13 +1,15 @@
-@move("collision_course")  # type: ignore
+from pkmn_imports import *
+
+@move("collision_course")
 class _CollisionCourse:
-    meta = {
-        "display_name": "Collision Course",
-        "type": "fighting",
-        "index": 878,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Collision Course",
+        index=878,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

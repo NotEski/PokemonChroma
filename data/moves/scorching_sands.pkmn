@@ -1,16 +1,18 @@
-@move("scorching_sands")  # type: ignore
+from pkmn_imports import *
+
+@move("scorching_sands")
 class _ScorchingSands:
-    meta = {
-        "display_name": "Scorching Sands",
-        "type": "ground",
-        "index": 815,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Scorching Sands",
+        index=815,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 30,
     }

@@ -1,13 +1,15 @@
-@move("guillotine")  # type: ignore
+from pkmn_imports import *
+
+@move("guillotine")
 class _Guillotine:
-    meta = {
-        "display_name": "Guillotine",
-        "type": "normal",
-        "index": 12,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 30,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Guillotine",
+        index=12,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=30,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

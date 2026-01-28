@@ -1,16 +1,18 @@
-@move("nightmare")  # type: ignore
+from pkmn_imports import *
+
+@move("nightmare")
 class _Nightmare:
-    meta = {
-        "display_name": "Nightmare",
-        "type": "ghost",
-        "index": 171,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Nightmare",
+        index=171,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "nightmare": 0,
     }

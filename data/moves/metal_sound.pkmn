@@ -1,16 +1,18 @@
-@move("metal_sound")  # type: ignore
+from pkmn_imports import *
+
+@move("metal_sound")
 class _MetalSound:
-    meta = {
-        "display_name": "Metal Sound",
-        "type": "steel",
-        "index": 319,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 85,
-        "power": None,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Metal Sound",
+        index=319,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=None,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
     }

@@ -1,13 +1,15 @@
-@move("max_steelspike")  # type: ignore
+from pkmn_imports import *
+
+@move("max_steelspike")
 class _MaxSteelspike:
-    meta = {
-        "display_name": "Max Steelspike",
-        "type": "steel",
-        "index": 774,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": 10,
-        "pp": 10,
-        "target": "selected_pokemon_me_first",
-    }
+    meta = MoveMetaData(
+        display_name="Max Steelspike",
+        index=774,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=10,
+        pp=10,
+        target=MoveTarget("selected_pokemon_me_first"),
+    )

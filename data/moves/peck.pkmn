@@ -1,13 +1,15 @@
-@move("peck")  # type: ignore
+from pkmn_imports import *
+
+@move("peck")
 class _Peck:
-    meta = {
-        "display_name": "Peck",
-        "type": "flying",
-        "index": 64,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 35,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Peck",
+        index=64,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=35,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

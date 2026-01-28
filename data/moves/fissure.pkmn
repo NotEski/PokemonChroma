@@ -1,13 +1,15 @@
-@move("fissure")  # type: ignore
+from pkmn_imports import *
+
+@move("fissure")
 class _Fissure:
-    meta = {
-        "display_name": "Fissure",
-        "type": "ground",
-        "index": 90,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 30,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fissure",
+        index=90,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=30,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

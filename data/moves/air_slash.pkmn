@@ -1,14 +1,16 @@
-@move("air_slash")  # type: ignore
+from pkmn_imports import *
+
+@move("air_slash")
 class _AirSlash:
-    meta = {
-        "display_name": "Air Slash",
-        "type": "flying",
-        "index": 403,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 75,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Air Slash",
+        index=403,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=75,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

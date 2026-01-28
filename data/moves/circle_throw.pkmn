@@ -1,14 +1,16 @@
-@move("circle_throw")  # type: ignore
+from pkmn_imports import *
+
+@move("circle_throw")
 class _CircleThrow:
-    meta = {
-        "display_name": "Circle Throw",
-        "type": "fighting",
-        "index": 509,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Circle Throw",
+        index=509,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = -6

@@ -1,16 +1,18 @@
-@move("spirit_break")  # type: ignore
+from pkmn_imports import *
+
+@move("spirit_break")
 class _SpiritBreak:
-    meta = {
-        "display_name": "Spirit Break",
-        "type": "fairy",
-        "index": 789,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spirit Break",
+        index=789,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
     }

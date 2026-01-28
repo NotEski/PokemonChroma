@@ -1,13 +1,15 @@
-@move("techno_blast")  # type: ignore
+from pkmn_imports import *
+
+@move("techno_blast")
 class _TechnoBlast:
-    meta = {
-        "display_name": "Techno Blast",
-        "type": "normal",
-        "index": 546,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Techno Blast",
+        index=546,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

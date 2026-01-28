@@ -1,16 +1,18 @@
-@move("tearful_look")  # type: ignore
+from pkmn_imports import *
+
+@move("tearful_look")
 class _TearfulLook:
-    meta = {
-        "display_name": "Tearful Look",
-        "type": "normal",
-        "index": 715,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tearful Look",
+        index=715,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}],
     }

@@ -1,14 +1,16 @@
-@move("ice_shard")  # type: ignore
+from pkmn_imports import *
+
+@move("ice_shard")
 class _IceShard:
-    meta = {
-        "display_name": "Ice Shard",
-        "type": "ice",
-        "index": 420,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ice Shard",
+        index=420,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

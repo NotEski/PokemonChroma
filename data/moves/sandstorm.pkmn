@@ -1,13 +1,15 @@
-@move("sandstorm")  # type: ignore
+from pkmn_imports import *
+
+@move("sandstorm")
 class _Sandstorm:
-    meta = {
-        "display_name": "Sandstorm",
-        "type": "rock",
-        "index": 201,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Sandstorm",
+        index=201,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

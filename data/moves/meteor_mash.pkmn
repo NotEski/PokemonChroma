@@ -1,16 +1,18 @@
-@move("meteor_mash")  # type: ignore
+from pkmn_imports import *
+
+@move("meteor_mash")
 class _MeteorMash:
-    meta = {
-        "display_name": "Meteor Mash",
-        "type": "steel",
-        "index": 309,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Meteor Mash",
+        index=309,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 20}],
     }

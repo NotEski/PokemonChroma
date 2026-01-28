@@ -1,16 +1,18 @@
-@move("nuzzle")  # type: ignore
+from pkmn_imports import *
+
+@move("nuzzle")
 class _Nuzzle:
-    meta = {
-        "display_name": "Nuzzle",
-        "type": "electric",
-        "index": 609,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Nuzzle",
+        index=609,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 100,
     }

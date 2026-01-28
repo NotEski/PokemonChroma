@@ -1,16 +1,18 @@
-@move("kinesis")  # type: ignore
+from pkmn_imports import *
+
+@move("kinesis")
 class _Kinesis:
-    meta = {
-        "display_name": "Kinesis",
-        "type": "psychic",
-        "index": 134,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 80,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Kinesis",
+        index=134,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
     }

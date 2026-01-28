@@ -1,16 +1,18 @@
-@move("thousand_arrows")  # type: ignore
+from pkmn_imports import *
+
+@move("thousand_arrows")
 class _ThousandArrows:
-    meta = {
-        "display_name": "Thousand Arrows",
-        "type": "ground",
-        "index": 614,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Thousand Arrows",
+        index=614,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "unknown": 100,
     }

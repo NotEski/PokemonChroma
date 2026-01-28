@@ -1,16 +1,18 @@
-@move("miracle_eye")  # type: ignore
+from pkmn_imports import *
+
+@move("miracle_eye")
 class _MiracleEye:
-    meta = {
-        "display_name": "Miracle Eye",
-        "type": "psychic",
-        "index": 357,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Miracle Eye",
+        index=357,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "no_type_immunity": 0,
     }

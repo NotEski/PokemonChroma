@@ -1,13 +1,15 @@
-@move("thief")  # type: ignore
+from pkmn_imports import *
+
+@move("thief")
 class _Thief:
-    meta = {
-        "display_name": "Thief",
-        "type": "dark",
-        "index": 168,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Thief",
+        index=168,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

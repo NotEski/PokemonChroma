@@ -1,13 +1,15 @@
-@move("freezy_frost")  # type: ignore
+from pkmn_imports import *
+
+@move("freezy_frost")
 class _FreezyFrost:
-    meta = {
-        "display_name": "Freezy Frost",
-        "type": "ice",
-        "index": 739,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Freezy Frost",
+        index=739,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

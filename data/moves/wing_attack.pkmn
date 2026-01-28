@@ -1,13 +1,15 @@
-@move("wing_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("wing_attack")
 class _WingAttack:
-    meta = {
-        "display_name": "Wing Attack",
-        "type": "flying",
-        "index": 17,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Wing Attack",
+        index=17,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

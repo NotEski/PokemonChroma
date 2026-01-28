@@ -1,16 +1,18 @@
-@move("defog")  # type: ignore
+from pkmn_imports import *
+
+@move("defog")
 class _Defog:
-    meta = {
-        "display_name": "Defog",
-        "type": "flying",
-        "index": 432,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Defog",
+        index=432,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "evasion", "change": -1, "chance": 100}],
     }

@@ -1,16 +1,18 @@
-@move("mud_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("mud_shot")
 class _MudShot:
-    meta = {
-        "display_name": "Mud Shot",
-        "type": "ground",
-        "index": 341,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 55,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mud Shot",
+        index=341,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=55,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

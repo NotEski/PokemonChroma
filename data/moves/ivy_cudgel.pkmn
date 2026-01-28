@@ -1,13 +1,15 @@
-@move("ivy_cudgel")  # type: ignore
+from pkmn_imports import *
+
+@move("ivy_cudgel")
 class _IvyCudgel:
-    meta = {
-        "display_name": "Ivy Cudgel",
-        "type": "grass",
-        "index": 904,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ivy Cudgel",
+        index=904,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

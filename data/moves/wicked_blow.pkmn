@@ -1,14 +1,16 @@
-@move("wicked_blow")  # type: ignore
+from pkmn_imports import *
+
+@move("wicked_blow")
 class _WickedBlow:
-    meta = {
-        "display_name": "Wicked Blow",
-        "type": "dark",
-        "index": 817,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Wicked Blow",
+        index=817,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 48

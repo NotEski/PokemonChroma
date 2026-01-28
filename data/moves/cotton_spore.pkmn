@@ -1,16 +1,18 @@
-@move("cotton_spore")  # type: ignore
+from pkmn_imports import *
+
+@move("cotton_spore")
 class _CottonSpore:
-    meta = {
-        "display_name": "Cotton Spore",
-        "type": "grass",
-        "index": 178,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 40,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Cotton Spore",
+        index=178,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=40,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -2, "chance": 100}],
     }

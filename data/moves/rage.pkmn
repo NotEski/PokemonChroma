@@ -1,13 +1,15 @@
-@move("rage")  # type: ignore
+from pkmn_imports import *
+
+@move("rage")
 class _Rage:
-    meta = {
-        "display_name": "Rage",
-        "type": "normal",
-        "index": 99,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rage",
+        index=99,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

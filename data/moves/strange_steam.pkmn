@@ -1,16 +1,18 @@
-@move("strange_steam")  # type: ignore
+from pkmn_imports import *
+
+@move("strange_steam")
 class _StrangeSteam:
-    meta = {
-        "display_name": "Strange Steam",
-        "type": "fairy",
-        "index": 790,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Strange Steam",
+        index=790,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 20,
     }

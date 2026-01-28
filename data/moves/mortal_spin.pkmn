@@ -1,13 +1,15 @@
-@move("mortal_spin")  # type: ignore
+from pkmn_imports import *
+
+@move("mortal_spin")
 class _MortalSpin:
-    meta = {
-        "display_name": "Mortal Spin",
-        "type": "poison",
-        "index": 866,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 30,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Mortal Spin",
+        index=866,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=30,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

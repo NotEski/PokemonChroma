@@ -1,13 +1,15 @@
-@move("never_ending_nightmare_special")  # type: ignore
+from pkmn_imports import *
+
+@move("never_ending_nightmare_special")
 class _NeverEndingNightmareSpecial:
-    meta = {
-        "display_name": "Never-Ending Nightmare",
-        "type": "ghost",
-        "index": 637,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Never-Ending Nightmare",
+        index=637,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

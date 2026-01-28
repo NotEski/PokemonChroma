@@ -1,16 +1,18 @@
-@move("rock_tomb")  # type: ignore
+from pkmn_imports import *
+
+@move("rock_tomb")
 class _RockTomb:
-    meta = {
-        "display_name": "Rock Tomb",
-        "type": "rock",
-        "index": 317,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 60,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rock Tomb",
+        index=317,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=60,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

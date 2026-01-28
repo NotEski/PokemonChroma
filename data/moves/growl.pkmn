@@ -1,16 +1,18 @@
-@move("growl")  # type: ignore
+from pkmn_imports import *
+
+@move("growl")
 class _Growl:
-    meta = {
-        "display_name": "Growl",
-        "type": "normal",
-        "index": 45,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 40,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Growl",
+        index=45,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=40,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

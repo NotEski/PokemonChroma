@@ -1,13 +1,15 @@
-@move("comeuppance")  # type: ignore
+from pkmn_imports import *
+
+@move("comeuppance")
 class _Comeuppance:
-    meta = {
-        "display_name": "Comeuppance",
-        "type": "dark",
-        "index": 894,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 1,
-        "pp": 10,
-        "target": "specific_move",
-    }
+    meta = MoveMetaData(
+        display_name="Comeuppance",
+        index=894,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=1,
+        pp=10,
+        target=MoveTarget("specific_move"),
+    )

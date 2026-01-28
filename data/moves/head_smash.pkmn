@@ -1,14 +1,16 @@
-@move("head_smash")  # type: ignore
+from pkmn_imports import *
+
+@move("head_smash")
 class _HeadSmash:
-    meta = {
-        "display_name": "Head Smash",
-        "type": "rock",
-        "index": 457,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Head Smash",
+        index=457,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -50

@@ -1,16 +1,18 @@
-@move("clangorous_soul")  # type: ignore
+from pkmn_imports import *
+
+@move("clangorous_soul")
 class _ClangorousSoul:
-    meta = {
-        "display_name": "Clangorous Soul",
-        "type": "dragon",
-        "index": 775,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Clangorous Soul",
+        index=775,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}, {"stat": "speed", "change": 1, "chance": 100}],
     }

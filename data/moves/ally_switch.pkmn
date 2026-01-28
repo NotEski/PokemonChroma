@@ -1,14 +1,16 @@
-@move("ally_switch")  # type: ignore
+from pkmn_imports import *
+
+@move("ally_switch")
 class _AllySwitch:
-    meta = {
-        "display_name": "Ally Switch",
-        "type": "psychic",
-        "index": 502,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Ally Switch",
+        index=502,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.USER,
+    )
     priority = 2

@@ -1,16 +1,18 @@
-@move("poison_gas")  # type: ignore
+from pkmn_imports import *
+
+@move("poison_gas")
 class _PoisonGas:
-    meta = {
-        "display_name": "Poison Gas",
-        "type": "poison",
-        "index": 139,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 90,
-        "power": None,
-        "pp": 40,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Poison Gas",
+        index=139,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=None,
+        pp=40,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "poison": 0,
     }

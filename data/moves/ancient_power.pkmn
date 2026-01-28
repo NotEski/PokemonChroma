@@ -1,16 +1,18 @@
-@move("ancient_power")  # type: ignore
+from pkmn_imports import *
+
+@move("ancient_power")
 class _AncientPower:
-    meta = {
-        "display_name": "Ancient Power",
-        "type": "rock",
-        "index": 246,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ancient Power",
+        index=246,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 10}, {"stat": "defense", "change": 1, "chance": 10}, {"stat": "special_attack", "change": 1, "chance": 10}, {"stat": "special_defense", "change": 1, "chance": 10}, {"stat": "speed", "change": 1, "chance": 10}],
     }

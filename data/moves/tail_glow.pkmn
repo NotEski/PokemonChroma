@@ -1,16 +1,18 @@
-@move("tail_glow")  # type: ignore
+from pkmn_imports import *
+
+@move("tail_glow")
 class _TailGlow:
-    meta = {
-        "display_name": "Tail Glow",
-        "type": "bug",
-        "index": 294,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Tail Glow",
+        index=294,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "special_attack", "change": 3, "chance": 100}],
     }

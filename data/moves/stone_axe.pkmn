@@ -1,13 +1,15 @@
-@move("stone_axe")  # type: ignore
+from pkmn_imports import *
+
+@move("stone_axe")
 class _StoneAxe:
-    meta = {
-        "display_name": "Stone Axe",
-        "type": "rock",
-        "index": 830,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 65,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Stone Axe",
+        index=830,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=65,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

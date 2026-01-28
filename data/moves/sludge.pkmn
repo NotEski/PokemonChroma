@@ -1,16 +1,18 @@
-@move("sludge")  # type: ignore
+from pkmn_imports import *
+
+@move("sludge")
 class _Sludge:
-    meta = {
-        "display_name": "Sludge",
-        "type": "poison",
-        "index": 124,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sludge",
+        index=124,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 30,
     }

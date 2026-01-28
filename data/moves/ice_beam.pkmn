@@ -1,16 +1,18 @@
-@move("ice_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("ice_beam")
 class _IceBeam:
-    meta = {
-        "display_name": "Ice Beam",
-        "type": "ice",
-        "index": 58,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ice Beam",
+        index=58,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "freeze": 10,
     }

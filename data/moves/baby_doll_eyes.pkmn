@@ -1,16 +1,18 @@
-@move("baby_doll_eyes")  # type: ignore
+from pkmn_imports import *
+
+@move("baby_doll_eyes")
 class _BabyDollEyes:
-    meta = {
-        "display_name": "Baby-Doll Eyes",
-        "type": "fairy",
-        "index": 608,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Baby-Doll Eyes",
+        index=608,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],

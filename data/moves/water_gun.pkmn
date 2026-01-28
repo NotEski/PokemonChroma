@@ -1,13 +1,15 @@
-@move("water_gun")  # type: ignore
+from pkmn_imports import *
+
+@move("water_gun")
 class _WaterGun:
-    meta = {
-        "display_name": "Water Gun",
-        "type": "water",
-        "index": 55,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Water Gun",
+        index=55,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

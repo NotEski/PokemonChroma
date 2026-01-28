@@ -1,10 +1,12 @@
-@status("badly_poison") # type: ignore
-class BadlyPoisonStatus:
+from pkmn_imports import *
+
+@status("badly_poison")
+class BadlyPoisonStatus(StatusCondition):
     meta = {
         "mutual_exclusive": True
     }
-    def on_inflicted(self, pokemon):
+    def on_inflicted(self, pokemon: BattleMon) -> None:
         print("Badly Poison status effect inflicted")
 
-    def on_turn_end(self, pokemon):
+    def on_turn_end(self, pokemon: BattleMon) -> None:
         print("Badly Poison status effect on turn end")

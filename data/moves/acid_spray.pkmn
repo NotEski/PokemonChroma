@@ -1,16 +1,18 @@
-@move("acid_spray")  # type: ignore
+from pkmn_imports import *
+
+@move("acid_spray")
 class _AcidSpray:
-    meta = {
-        "display_name": "Acid Spray",
-        "type": "poison",
-        "index": 491,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Acid Spray",
+        index=491,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
     }

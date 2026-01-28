@@ -1,16 +1,18 @@
-@move("chatter")  # type: ignore
+from pkmn_imports import *
+
+@move("chatter")
 class _Chatter:
-    meta = {
-        "display_name": "Chatter",
-        "type": "flying",
-        "index": 448,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Chatter",
+        index=448,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 100,
     }

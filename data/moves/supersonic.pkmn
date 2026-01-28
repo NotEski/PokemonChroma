@@ -1,16 +1,18 @@
-@move("supersonic")  # type: ignore
+from pkmn_imports import *
+
+@move("supersonic")
 class _Supersonic:
-    meta = {
-        "display_name": "Supersonic",
-        "type": "normal",
-        "index": 48,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 55,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Supersonic",
+        index=48,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=55,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 0,
     }

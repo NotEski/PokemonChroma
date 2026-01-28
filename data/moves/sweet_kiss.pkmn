@@ -1,16 +1,18 @@
-@move("sweet_kiss")  # type: ignore
+from pkmn_imports import *
+
+@move("sweet_kiss")
 class _SweetKiss:
-    meta = {
-        "display_name": "Sweet Kiss",
-        "type": "fairy",
-        "index": 186,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 75,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sweet Kiss",
+        index=186,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=75,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 0,
     }

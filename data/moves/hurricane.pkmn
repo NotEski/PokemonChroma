@@ -1,16 +1,18 @@
-@move("hurricane")  # type: ignore
+from pkmn_imports import *
+
+@move("hurricane")
 class _Hurricane:
-    meta = {
-        "display_name": "Hurricane",
-        "type": "flying",
-        "index": 542,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 70,
-        "power": 110,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hurricane",
+        index=542,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=70,
+        power=110,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 30,
     }

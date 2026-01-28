@@ -1,14 +1,16 @@
-@move("first_impression")  # type: ignore
+from pkmn_imports import *
+
+@move("first_impression")
 class _FirstImpression:
-    meta = {
-        "display_name": "First Impression",
-        "type": "bug",
-        "index": 660,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="First Impression",
+        index=660,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 2

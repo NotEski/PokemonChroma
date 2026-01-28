@@ -1,14 +1,16 @@
-@move("magic_coat")  # type: ignore
+from pkmn_imports import *
+
+@move("magic_coat")
 class _MagicCoat:
-    meta = {
-        "display_name": "Magic Coat",
-        "type": "psychic",
-        "index": 277,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Magic Coat",
+        index=277,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.USER,
+    )
     priority = 4

@@ -1,13 +1,15 @@
-@move("grassy_glide")  # type: ignore
+from pkmn_imports import *
+
+@move("grassy_glide")
 class _GrassyGlide:
-    meta = {
-        "display_name": "Grassy Glide",
-        "type": "grass",
-        "index": 803,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 55,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Grassy Glide",
+        index=803,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=55,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

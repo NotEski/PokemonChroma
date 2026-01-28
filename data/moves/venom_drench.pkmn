@@ -1,16 +1,18 @@
-@move("venom_drench")  # type: ignore
+from pkmn_imports import *
+
+@move("venom_drench")
 class _VenomDrench:
-    meta = {
-        "display_name": "Venom Drench",
-        "type": "poison",
-        "index": 599,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Venom Drench",
+        index=599,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}, {"stat": "speed", "change": -1, "chance": 100}],
     }

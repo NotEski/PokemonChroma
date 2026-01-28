@@ -1,13 +1,15 @@
-@move("fairy_wind")  # type: ignore
+from pkmn_imports import *
+
+@move("fairy_wind")
 class _FairyWind:
-    meta = {
-        "display_name": "Fairy Wind",
-        "type": "fairy",
-        "index": 584,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fairy Wind",
+        index=584,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

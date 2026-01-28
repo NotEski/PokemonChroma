@@ -1,14 +1,16 @@
-@move("submission")  # type: ignore
+from pkmn_imports import *
+
+@move("submission")
 class _Submission:
-    meta = {
-        "display_name": "Submission",
-        "type": "fighting",
-        "index": 66,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 80,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Submission",
+        index=66,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=80,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -25

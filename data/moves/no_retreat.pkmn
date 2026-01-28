@@ -1,16 +1,18 @@
-@move("no_retreat")  # type: ignore
+from pkmn_imports import *
+
+@move("no_retreat")
 class _NoRetreat:
-    meta = {
-        "display_name": "No Retreat",
-        "type": "fighting",
-        "index": 748,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="No Retreat",
+        index=748,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}, {"stat": "speed", "change": 1, "chance": 100}],
     }

@@ -1,16 +1,18 @@
-@move("apple_acid")  # type: ignore
+from pkmn_imports import *
+
+@move("apple_acid")
 class _AppleAcid:
-    meta = {
-        "display_name": "Apple Acid",
-        "type": "grass",
-        "index": 787,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Apple Acid",
+        index=787,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 100}],
     }

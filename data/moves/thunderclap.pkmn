@@ -1,14 +1,16 @@
-@move("thunderclap")  # type: ignore
+from pkmn_imports import *
+
+@move("thunderclap")
 class _Thunderclap:
-    meta = {
-        "display_name": "Thunderclap",
-        "type": "electric",
-        "index": 909,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Thunderclap",
+        index=909,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

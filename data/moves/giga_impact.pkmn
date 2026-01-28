@@ -1,13 +1,15 @@
-@move("giga_impact")  # type: ignore
+from pkmn_imports import *
+
+@move("giga_impact")
 class _GigaImpact:
-    meta = {
-        "display_name": "Giga Impact",
-        "type": "normal",
-        "index": 416,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Giga Impact",
+        index=416,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

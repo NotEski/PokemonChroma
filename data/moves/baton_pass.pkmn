@@ -1,13 +1,15 @@
-@move("baton_pass")  # type: ignore
+from pkmn_imports import *
+
+@move("baton_pass")
 class _BatonPass:
-    meta = {
-        "display_name": "Baton Pass",
-        "type": "normal",
-        "index": 226,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 40,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Baton Pass",
+        index=226,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=40,
+        target=MoveTarget.USER,
+    )

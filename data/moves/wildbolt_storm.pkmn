@@ -1,13 +1,15 @@
-@move("wildbolt_storm")  # type: ignore
+from pkmn_imports import *
+
+@move("wildbolt_storm")
 class _WildboltStorm:
-    meta = {
-        "display_name": "Wildbolt Storm",
-        "type": "electric",
-        "index": 847,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 100,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Wildbolt Storm",
+        index=847,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=100,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

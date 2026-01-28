@@ -1,13 +1,15 @@
-@move("grass_knot")  # type: ignore
+from pkmn_imports import *
+
+@move("grass_knot")
 class _GrassKnot:
-    meta = {
-        "display_name": "Grass Knot",
-        "type": "grass",
-        "index": 447,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Grass Knot",
+        index=447,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

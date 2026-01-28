@@ -1,14 +1,16 @@
-@move("rock_slide")  # type: ignore
+from pkmn_imports import *
+
+@move("rock_slide")
 class _RockSlide:
-    meta = {
-        "display_name": "Rock Slide",
-        "type": "rock",
-        "index": 157,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 75,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Rock Slide",
+        index=157,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=75,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     flinch_chance = 30

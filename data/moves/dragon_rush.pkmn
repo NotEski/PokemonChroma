@@ -1,14 +1,16 @@
-@move("dragon_rush")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_rush")
 class _DragonRush:
-    meta = {
-        "display_name": "Dragon Rush",
-        "type": "dragon",
-        "index": 407,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 75,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Rush",
+        index=407,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=75,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 20

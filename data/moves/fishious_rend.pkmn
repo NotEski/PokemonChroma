@@ -1,13 +1,15 @@
-@move("fishious_rend")  # type: ignore
+from pkmn_imports import *
+
+@move("fishious_rend")
 class _FishiousRend:
-    meta = {
-        "display_name": "Fishious Rend",
-        "type": "water",
-        "index": 755,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fishious Rend",
+        index=755,
+        type=PokemonType("water"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("gigavolt_havoc_special")  # type: ignore
+from pkmn_imports import *
+
+@move("gigavolt_havoc_special")
 class _GigavoltHavocSpecial:
-    meta = {
-        "display_name": "Gigavolt Havoc",
-        "type": "electric",
-        "index": 647,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Gigavolt Havoc",
+        index=647,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

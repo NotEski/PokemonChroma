@@ -1,13 +1,15 @@
-@move("headlong_rush")  # type: ignore
+from pkmn_imports import *
+
+@move("headlong_rush")
 class _HeadlongRush:
-    meta = {
-        "display_name": "Headlong Rush",
-        "type": "ground",
-        "index": 838,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Headlong Rush",
+        index=838,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

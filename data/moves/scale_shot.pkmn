@@ -1,13 +1,15 @@
-@move("scale_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("scale_shot")
 class _ScaleShot:
-    meta = {
-        "display_name": "Scale Shot",
-        "type": "dragon",
-        "index": 799,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 25,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Scale Shot",
+        index=799,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=25,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

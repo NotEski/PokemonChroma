@@ -1,16 +1,18 @@
-@move("attract")  # type: ignore
+from pkmn_imports import *
+
+@move("attract")
 class _Attract:
-    meta = {
-        "display_name": "Attract",
-        "type": "normal",
-        "index": 213,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Attract",
+        index=213,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "infatuation": 0,
     }

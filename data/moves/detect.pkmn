@@ -1,14 +1,16 @@
-@move("detect")  # type: ignore
+from pkmn_imports import *
+
+@move("detect")
 class _Detect:
-    meta = {
-        "display_name": "Detect",
-        "type": "fighting",
-        "index": 197,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Detect",
+        index=197,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     priority = 4

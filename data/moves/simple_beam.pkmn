@@ -1,13 +1,15 @@
-@move("simple_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("simple_beam")
 class _SimpleBeam:
-    meta = {
-        "display_name": "Simple Beam",
-        "type": "normal",
-        "index": 493,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Simple Beam",
+        index=493,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

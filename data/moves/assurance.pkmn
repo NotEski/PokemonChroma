@@ -1,13 +1,15 @@
-@move("assurance")  # type: ignore
+from pkmn_imports import *
+
+@move("assurance")
 class _Assurance:
-    meta = {
-        "display_name": "Assurance",
-        "type": "dark",
-        "index": 372,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Assurance",
+        index=372,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

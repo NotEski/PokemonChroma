@@ -1,13 +1,15 @@
-@move("bolt_beak")  # type: ignore
+from pkmn_imports import *
+
+@move("bolt_beak")
 class _BoltBeak:
-    meta = {
-        "display_name": "Bolt Beak",
-        "type": "electric",
-        "index": 754,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bolt Beak",
+        index=754,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

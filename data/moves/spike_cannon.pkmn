@@ -1,13 +1,15 @@
-@move("spike_cannon")  # type: ignore
+from pkmn_imports import *
+
+@move("spike_cannon")
 class _SpikeCannon:
-    meta = {
-        "display_name": "Spike Cannon",
-        "type": "normal",
-        "index": 131,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spike Cannon",
+        index=131,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

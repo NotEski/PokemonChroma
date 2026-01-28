@@ -1,13 +1,15 @@
-@move("fusion_bolt")  # type: ignore
+from pkmn_imports import *
+
+@move("fusion_bolt")
 class _FusionBolt:
-    meta = {
-        "display_name": "Fusion Bolt",
-        "type": "electric",
-        "index": 559,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fusion Bolt",
+        index=559,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("bug_buzz")  # type: ignore
+from pkmn_imports import *
+
+@move("bug_buzz")
 class _BugBuzz:
-    meta = {
-        "display_name": "Bug Buzz",
-        "type": "bug",
-        "index": 405,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bug Buzz",
+        index=405,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

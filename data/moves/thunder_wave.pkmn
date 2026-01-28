@@ -1,16 +1,18 @@
-@move("thunder_wave")  # type: ignore
+from pkmn_imports import *
+
+@move("thunder_wave")
 class _ThunderWave:
-    meta = {
-        "display_name": "Thunder Wave",
-        "type": "electric",
-        "index": 86,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 90,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Thunder Wave",
+        index=86,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 0,
     }

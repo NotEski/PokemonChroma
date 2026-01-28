@@ -555,32 +555,68 @@ def build_move_payload(move_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 
 
 def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
-    """Generate .pkmn file content from move payload."""
+    """Generate .pkmn file content from move payload using MoveMetaData."""
     move_id = payload.get("name")
     class_name = "_" + "".join(word.capitalize() for word in move_id.split("_"))
     
-    # Build meta dict
+    # Build MoveMetaData
     meta_lines = [
-        "    meta = {",
-        f'        "display_name": "{payload.get("display_name")}",',
-        f'        "type": "{payload.get("type")}",',
-        f'        "index": {payload.get("index")},',
-        f'        "damage_class": "{payload.get("damage_class")}",',
-        f'        "category": "{payload.get("category")}",',
+        "    meta = MoveMetaData(",
+        f'        display_name="{payload.get("display_name")}",',
+        f'        index={payload.get("index")},',
+        f'        type=PokemonType("{payload.get("type")}"),',
     ]
     
-    # Handle None values properly
+    # Convert damage_class to enum format
+    damage_class_raw = payload.get("damage_class", "physical")
+    damage_class_map = {
+        "physical": "DamageClass.PHYSICAL",
+        "special": "DamageClass.SPECIAL",
+        "status": "DamageClass.STATUS",
+    }
+    damage_class = damage_class_map.get(damage_class_raw, f'DamageClass("{damage_class_raw}")')
+    meta_lines.append(f'        damage_class={damage_class},')
+    
+    # Convert category to enum format
+    category_raw = payload.get("category", "damage")
+    category_map = {
+        "damage": "MoveCategory.DAMAGE",
+        "status": "MoveCategory.STATUS",
+        "damage_status": "MoveCategory.DAMAGE_STATUS",
+    }
+    category = category_map.get(category_raw, f'MoveCategory("{category_raw}")')
+    meta_lines.append(f'        category={category},')
+    
+    # Handle optional fields
     accuracy = payload.get("accuracy")
     power = payload.get("power")
-    meta_lines.append(f'        "accuracy": {accuracy if accuracy is not None else "None"},')
-    meta_lines.append(f'        "power": {power if power is not None else "None"},')
-    meta_lines.append(f'        "pp": {payload.get("pp")},')
-    meta_lines.append(f'        "target": "{payload.get("target")}",')
-    meta_lines.append("    }")
+    
+    if accuracy is not None:
+        meta_lines.append(f'        accuracy={accuracy},')
+    if power is not None:
+        meta_lines.append(f'        power={power},')
+    
+    meta_lines.append(f'        pp={payload.get("pp", 15)},')
+    
+    # Convert target to enum format
+    target_raw = payload.get("target", "selected_pokemon")
+    target_map = {
+        "selected_pokemon": "MoveTarget.SELECTED_POKEMON",
+        "user": "MoveTarget.USER",
+        "all_opponents": "MoveTarget.ALL_OPPONENTS",
+        "all_allies": "MoveTarget.ALL_ALLIES",
+        "all_others": "MoveTarget.ALL_OTHERS",
+        "all": "MoveTarget.ALL",
+    }
+    target = target_map.get(target_raw, f'MoveTarget("{target_raw}")')
+    meta_lines.append(f'        target={target},')
+    meta_lines.append("    )")
     
     # Build the full file content
     lines = [
-        f'@move("{move_id}")  # type: ignore',
+        "from pkmn_imports import *",
+        "",
+        f'@move("{move_id}")',
         f'class {class_name}:',
     ] + meta_lines
 

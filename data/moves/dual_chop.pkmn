@@ -1,13 +1,15 @@
-@move("dual_chop")  # type: ignore
+from pkmn_imports import *
+
+@move("dual_chop")
 class _DualChop:
-    meta = {
-        "display_name": "Dual Chop",
-        "type": "dragon",
-        "index": 530,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 40,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dual Chop",
+        index=530,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=40,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

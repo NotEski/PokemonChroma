@@ -1,13 +1,15 @@
-@move("rest")  # type: ignore
+from pkmn_imports import *
+
+@move("rest")
 class _Rest:
-    meta = {
-        "display_name": "Rest",
-        "type": "psychic",
-        "index": 156,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Rest",
+        index=156,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )

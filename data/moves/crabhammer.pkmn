@@ -1,14 +1,16 @@
-@move("crabhammer")  # type: ignore
+from pkmn_imports import *
+
+@move("crabhammer")
 class _Crabhammer:
-    meta = {
-        "display_name": "Crabhammer",
-        "type": "water",
-        "index": 152,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Crabhammer",
+        index=152,
+        type=PokemonType("water"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

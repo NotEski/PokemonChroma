@@ -1,13 +1,15 @@
-@move("dragon_hammer")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_hammer")
 class _DragonHammer:
-    meta = {
-        "display_name": "Dragon Hammer",
-        "type": "dragon",
-        "index": 692,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Hammer",
+        index=692,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

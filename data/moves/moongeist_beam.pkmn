@@ -1,13 +1,15 @@
-@move("moongeist_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("moongeist_beam")
 class _MoongeistBeam:
-    meta = {
-        "display_name": "Moongeist Beam",
-        "type": "ghost",
-        "index": 714,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Moongeist Beam",
+        index=714,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

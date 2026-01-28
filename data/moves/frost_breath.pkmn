@@ -1,14 +1,16 @@
-@move("frost_breath")  # type: ignore
+from pkmn_imports import *
+
+@move("frost_breath")
 class _FrostBreath:
-    meta = {
-        "display_name": "Frost Breath",
-        "type": "ice",
-        "index": 524,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Frost Breath",
+        index=524,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 48

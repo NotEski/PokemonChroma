@@ -1,13 +1,15 @@
-@move("barb_barrage")  # type: ignore
+from pkmn_imports import *
+
+@move("barb_barrage")
 class _BarbBarrage:
-    meta = {
-        "display_name": "Barb Barrage",
-        "type": "poison",
-        "index": 839,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Barb Barrage",
+        index=839,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

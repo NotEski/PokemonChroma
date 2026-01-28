@@ -1,13 +1,15 @@
-@move("continental_crush_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("continental_crush_physical")
 class _ContinentalCrushPhysical:
-    meta = {
-        "display_name": "Continental Crush",
-        "type": "rock",
-        "index": 632,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Continental Crush",
+        index=632,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

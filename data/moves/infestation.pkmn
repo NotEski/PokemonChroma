@@ -1,16 +1,18 @@
-@move("infestation")  # type: ignore
+from pkmn_imports import *
+
+@move("infestation")
 class _Infestation:
-    meta = {
-        "display_name": "Infestation",
-        "type": "bug",
-        "index": 611,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Infestation",
+        index=611,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "trap": 100,
     }

@@ -1,13 +1,15 @@
-@move("glacial_lance")  # type: ignore
+from pkmn_imports import *
+
+@move("glacial_lance")
 class _GlacialLance:
-    meta = {
-        "display_name": "Glacial Lance",
-        "type": "ice",
-        "index": 824,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Glacial Lance",
+        index=824,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

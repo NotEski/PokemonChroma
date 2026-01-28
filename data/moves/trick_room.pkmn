@@ -1,14 +1,16 @@
-@move("trick_room")  # type: ignore
+from pkmn_imports import *
+
+@move("trick_room")
 class _TrickRoom:
-    meta = {
-        "display_name": "Trick Room",
-        "type": "psychic",
-        "index": 433,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Trick Room",
+        index=433,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget("entire_field"),
+    )
     priority = -7

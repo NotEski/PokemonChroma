@@ -1,13 +1,15 @@
-@move("electro_drift")  # type: ignore
+from pkmn_imports import *
+
+@move("electro_drift")
 class _ElectroDrift:
-    meta = {
-        "display_name": "Electro Drift",
-        "type": "electric",
-        "index": 879,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Electro Drift",
+        index=879,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

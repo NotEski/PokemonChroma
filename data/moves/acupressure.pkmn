@@ -1,13 +1,15 @@
-@move("acupressure")  # type: ignore
+from pkmn_imports import *
+
+@move("acupressure")
 class _Acupressure:
-    meta = {
-        "display_name": "Acupressure",
-        "type": "normal",
-        "index": 367,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "user_or_ally",
-    }
+    meta = MoveMetaData(
+        display_name="Acupressure",
+        index=367,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget("user_or_ally"),
+    )

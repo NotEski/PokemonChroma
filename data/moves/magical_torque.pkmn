@@ -1,13 +1,15 @@
-@move("magical_torque")  # type: ignore
+from pkmn_imports import *
+
+@move("magical_torque")
 class _MagicalTorque:
-    meta = {
-        "display_name": "Magical Torque",
-        "type": "fairy",
-        "index": 900,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Magical Torque",
+        index=900,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,14 +1,16 @@
-@move("shadow_sneak")  # type: ignore
+from pkmn_imports import *
+
+@move("shadow_sneak")
 class _ShadowSneak:
-    meta = {
-        "display_name": "Shadow Sneak",
-        "type": "ghost",
-        "index": 425,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shadow Sneak",
+        index=425,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

@@ -1,16 +1,18 @@
-@move("heal_block")  # type: ignore
+from pkmn_imports import *
+
+@move("heal_block")
 class _HealBlock:
-    meta = {
-        "display_name": "Heal Block",
-        "type": "psychic",
-        "index": 377,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Heal Block",
+        index=377,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "heal_block": 0,
     }

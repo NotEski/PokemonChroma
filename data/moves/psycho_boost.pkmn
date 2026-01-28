@@ -1,16 +1,18 @@
-@move("psycho_boost")  # type: ignore
+from pkmn_imports import *
+
+@move("psycho_boost")
 class _PsychoBoost:
-    meta = {
-        "display_name": "Psycho Boost",
-        "type": "psychic",
-        "index": 354,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Psycho Boost",
+        index=354,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
     }

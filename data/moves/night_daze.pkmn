@@ -1,16 +1,18 @@
-@move("night_daze")  # type: ignore
+from pkmn_imports import *
+
+@move("night_daze")
 class _NightDaze:
-    meta = {
-        "display_name": "Night Daze",
-        "type": "dark",
-        "index": 539,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Night Daze",
+        index=539,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 40}],
     }

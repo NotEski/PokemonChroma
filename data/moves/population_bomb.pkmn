@@ -1,13 +1,15 @@
-@move("population_bomb")  # type: ignore
+from pkmn_imports import *
+
+@move("population_bomb")
 class _PopulationBomb:
-    meta = {
-        "display_name": "Population Bomb",
-        "type": "normal",
-        "index": 860,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 20,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Population Bomb",
+        index=860,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=20,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

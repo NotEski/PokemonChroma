@@ -1,16 +1,18 @@
-@move("water_pulse")  # type: ignore
+from pkmn_imports import *
+
+@move("water_pulse")
 class _WaterPulse:
-    meta = {
-        "display_name": "Water Pulse",
-        "type": "water",
-        "index": 352,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Water Pulse",
+        index=352,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 20,
     }

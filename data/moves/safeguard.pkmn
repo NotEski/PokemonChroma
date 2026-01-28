@@ -1,13 +1,15 @@
-@move("safeguard")  # type: ignore
+from pkmn_imports import *
+
+@move("safeguard")
 class _Safeguard:
-    meta = {
-        "display_name": "Safeguard",
-        "type": "normal",
-        "index": 219,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 25,
-        "target": "users_field",
-    }
+    meta = MoveMetaData(
+        display_name="Safeguard",
+        index=219,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=25,
+        target=MoveTarget("users_field"),
+    )

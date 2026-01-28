@@ -1,13 +1,15 @@
-@move("uproar")  # type: ignore
+from pkmn_imports import *
+
+@move("uproar")
 class _Uproar:
-    meta = {
-        "display_name": "Uproar",
-        "type": "normal",
-        "index": 253,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "random_opponent",
-    }
+    meta = MoveMetaData(
+        display_name="Uproar",
+        index=253,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget("random_opponent"),
+    )

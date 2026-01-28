@@ -1,13 +1,15 @@
-@move("solar_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("solar_beam")
 class _SolarBeam:
-    meta = {
-        "display_name": "Solar Beam",
-        "type": "grass",
-        "index": 76,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Solar Beam",
+        index=76,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

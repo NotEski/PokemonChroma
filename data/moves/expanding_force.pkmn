@@ -1,13 +1,15 @@
-@move("expanding_force")  # type: ignore
+from pkmn_imports import *
+
+@move("expanding_force")
 class _ExpandingForce:
-    meta = {
-        "display_name": "Expanding Force",
-        "type": "psychic",
-        "index": 797,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Expanding Force",
+        index=797,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,14 +1,16 @@
-@move("milk_drink")  # type: ignore
+from pkmn_imports import *
+
+@move("milk_drink")
 class _MilkDrink:
-    meta = {
-        "display_name": "Milk Drink",
-        "type": "normal",
-        "index": 208,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Milk Drink",
+        index=208,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     healing = 50

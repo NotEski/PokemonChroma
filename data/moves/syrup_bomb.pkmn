@@ -1,16 +1,18 @@
-@move("syrup_bomb")  # type: ignore
+from pkmn_imports import *
+
+@move("syrup_bomb")
 class _SyrupBomb:
-    meta = {
-        "display_name": "Syrup Bomb",
-        "type": "grass",
-        "index": 903,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 60,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Syrup Bomb",
+        index=903,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=60,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

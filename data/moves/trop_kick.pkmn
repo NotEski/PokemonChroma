@@ -1,16 +1,18 @@
-@move("trop_kick")  # type: ignore
+from pkmn_imports import *
+
+@move("trop_kick")
 class _TropKick:
-    meta = {
-        "display_name": "Trop Kick",
-        "type": "grass",
-        "index": 688,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Trop Kick",
+        index=688,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

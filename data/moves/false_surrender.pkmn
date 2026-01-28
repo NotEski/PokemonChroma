@@ -1,13 +1,15 @@
-@move("false_surrender")  # type: ignore
+from pkmn_imports import *
+
+@move("false_surrender")
 class _FalseSurrender:
-    meta = {
-        "display_name": "False Surrender",
-        "type": "dark",
-        "index": 793,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="False Surrender",
+        index=793,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

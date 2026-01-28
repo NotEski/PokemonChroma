@@ -1,13 +1,15 @@
-@move("fury_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("fury_attack")
 class _FuryAttack:
-    meta = {
-        "display_name": "Fury Attack",
-        "type": "normal",
-        "index": 31,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 15,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fury Attack",
+        index=31,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=15,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

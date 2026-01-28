@@ -1,13 +1,15 @@
-@move("inferno_overdrive_special")  # type: ignore
+from pkmn_imports import *
+
+@move("inferno_overdrive_special")
 class _InfernoOverdriveSpecial:
-    meta = {
-        "display_name": "Inferno Overdrive",
-        "type": "fire",
-        "index": 641,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Inferno Overdrive",
+        index=641,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

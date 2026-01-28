@@ -1,13 +1,15 @@
-@move("burn_up")  # type: ignore
+from pkmn_imports import *
+
+@move("burn_up")
 class _BurnUp:
-    meta = {
-        "display_name": "Burn Up",
-        "type": "fire",
-        "index": 682,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 130,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Burn Up",
+        index=682,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=130,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

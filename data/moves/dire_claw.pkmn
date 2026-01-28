@@ -1,13 +1,15 @@
-@move("dire_claw")  # type: ignore
+from pkmn_imports import *
+
+@move("dire_claw")
 class _DireClaw:
-    meta = {
-        "display_name": "Dire Claw",
-        "type": "poison",
-        "index": 827,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dire Claw",
+        index=827,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("hyper_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("hyper_beam")
 class _HyperBeam:
-    meta = {
-        "display_name": "Hyper Beam",
-        "type": "normal",
-        "index": 63,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hyper Beam",
+        index=63,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

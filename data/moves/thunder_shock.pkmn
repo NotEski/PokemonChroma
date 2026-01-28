@@ -1,16 +1,18 @@
-@move("thunder_shock")  # type: ignore
+from pkmn_imports import *
+
+@move("thunder_shock")
 class _ThunderShock:
-    meta = {
-        "display_name": "Thunder Shock",
-        "type": "electric",
-        "index": 84,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Thunder Shock",
+        index=84,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 10,
     }

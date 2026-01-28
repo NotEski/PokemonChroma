@@ -1,13 +1,15 @@
-@move("slam")  # type: ignore
+from pkmn_imports import *
+
+@move("slam")
 class _Slam:
-    meta = {
-        "display_name": "Slam",
-        "type": "normal",
-        "index": 21,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 75,
-        "power": 80,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Slam",
+        index=21,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=75,
+        power=80,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

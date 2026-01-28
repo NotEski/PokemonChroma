@@ -1,13 +1,15 @@
-@move("punishment")  # type: ignore
+from pkmn_imports import *
+
+@move("punishment")
 class _Punishment:
-    meta = {
-        "display_name": "Punishment",
-        "type": "dark",
-        "index": 386,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Punishment",
+        index=386,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

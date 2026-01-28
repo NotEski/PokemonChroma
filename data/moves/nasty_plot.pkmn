@@ -1,16 +1,18 @@
-@move("nasty_plot")  # type: ignore
+from pkmn_imports import *
+
+@move("nasty_plot")
 class _NastyPlot:
-    meta = {
-        "display_name": "Nasty Plot",
-        "type": "dark",
-        "index": 417,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Nasty Plot",
+        index=417,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "special_attack", "change": 2, "chance": 100}],
     }

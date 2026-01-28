@@ -1,13 +1,15 @@
-@move("body_press")  # type: ignore
+from pkmn_imports import *
+
+@move("body_press")
 class _BodyPress:
-    meta = {
-        "display_name": "Body Press",
-        "type": "fighting",
-        "index": 776,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Body Press",
+        index=776,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

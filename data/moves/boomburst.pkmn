@@ -1,13 +1,15 @@
-@move("boomburst")  # type: ignore
+from pkmn_imports import *
+
+@move("boomburst")
 class _Boomburst:
-    meta = {
-        "display_name": "Boomburst",
-        "type": "normal",
-        "index": 586,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 140,
-        "pp": 10,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Boomburst",
+        index=586,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=140,
+        pp=10,
+        target=MoveTarget("all_other_pokemon"),
+    )

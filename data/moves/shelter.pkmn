@@ -1,13 +1,15 @@
-@move("shelter")  # type: ignore
+from pkmn_imports import *
+
+@move("shelter")
 class _Shelter:
-    meta = {
-        "display_name": "Shelter",
-        "type": "steel",
-        "index": 842,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": 0,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Shelter",
+        index=842,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=0,
+        pp=10,
+        target=MoveTarget.USER,
+    )

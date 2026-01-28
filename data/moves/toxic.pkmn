@@ -1,16 +1,18 @@
-@move("toxic")  # type: ignore
+from pkmn_imports import *
+
+@move("toxic")
 class _Toxic:
-    meta = {
-        "display_name": "Toxic",
-        "type": "poison",
-        "index": 92,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 90,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Toxic",
+        index=92,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 0,
     }

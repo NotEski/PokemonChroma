@@ -1,14 +1,16 @@
-@move("astonish")  # type: ignore
+from pkmn_imports import *
+
+@move("astonish")
 class _Astonish:
-    meta = {
-        "display_name": "Astonish",
-        "type": "ghost",
-        "index": 310,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 30,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Astonish",
+        index=310,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=30,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

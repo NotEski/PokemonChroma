@@ -1,14 +1,16 @@
-@move("zen_headbutt")  # type: ignore
+from pkmn_imports import *
+
+@move("zen_headbutt")
 class _ZenHeadbutt:
-    meta = {
-        "display_name": "Zen Headbutt",
-        "type": "psychic",
-        "index": 428,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Zen Headbutt",
+        index=428,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 20

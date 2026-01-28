@@ -1,13 +1,15 @@
-@move("aura_sphere")  # type: ignore
+from pkmn_imports import *
+
+@move("aura_sphere")
 class _AuraSphere:
-    meta = {
-        "display_name": "Aura Sphere",
-        "type": "fighting",
-        "index": 396,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": 80,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Aura Sphere",
+        index=396,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=80,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

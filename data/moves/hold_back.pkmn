@@ -1,13 +1,15 @@
-@move("hold_back")  # type: ignore
+from pkmn_imports import *
+
+@move("hold_back")
 class _HoldBack:
-    meta = {
-        "display_name": "Hold Back",
-        "type": "normal",
-        "index": 610,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hold Back",
+        index=610,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

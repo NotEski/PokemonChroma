@@ -1,14 +1,16 @@
-@move("bone_club")  # type: ignore
+from pkmn_imports import *
+
+@move("bone_club")
 class _BoneClub:
-    meta = {
-        "display_name": "Bone Club",
-        "type": "ground",
-        "index": 125,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bone Club",
+        index=125,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 10

@@ -1,13 +1,15 @@
-@move("infernal_parade")  # type: ignore
+from pkmn_imports import *
+
+@move("infernal_parade")
 class _InfernalParade:
-    meta = {
-        "display_name": "Infernal Parade",
-        "type": "ghost",
-        "index": 844,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Infernal Parade",
+        index=844,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

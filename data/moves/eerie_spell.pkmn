@@ -1,13 +1,15 @@
-@move("eerie_spell")  # type: ignore
+from pkmn_imports import *
+
+@move("eerie_spell")
 class _EerieSpell:
-    meta = {
-        "display_name": "Eerie Spell",
-        "type": "psychic",
-        "index": 826,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Eerie Spell",
+        index=826,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

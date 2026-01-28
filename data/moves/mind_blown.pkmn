@@ -1,13 +1,15 @@
-@move("mind_blown")  # type: ignore
+from pkmn_imports import *
+
+@move("mind_blown")
 class _MindBlown:
-    meta = {
-        "display_name": "Mind Blown",
-        "type": "fire",
-        "index": 720,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 150,
-        "pp": 5,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mind Blown",
+        index=720,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=150,
+        pp=5,
+        target=MoveTarget("all_other_pokemon"),
+    )

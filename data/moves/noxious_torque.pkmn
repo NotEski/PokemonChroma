@@ -1,13 +1,15 @@
-@move("noxious_torque")  # type: ignore
+from pkmn_imports import *
+
+@move("noxious_torque")
 class _NoxiousTorque:
-    meta = {
-        "display_name": "Noxious Torque",
-        "type": "poison",
-        "index": 898,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Noxious Torque",
+        index=898,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

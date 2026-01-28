@@ -1,14 +1,16 @@
-@move("snatch")  # type: ignore
+from pkmn_imports import *
+
+@move("snatch")
 class _Snatch:
-    meta = {
-        "display_name": "Snatch",
-        "type": "dark",
-        "index": 289,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Snatch",
+        index=289,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4

@@ -1,14 +1,16 @@
-@move("razor_leaf")  # type: ignore
+from pkmn_imports import *
+
+@move("razor_leaf")
 class _RazorLeaf:
-    meta = {
-        "display_name": "Razor Leaf",
-        "type": "grass",
-        "index": 75,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 55,
-        "pp": 25,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Razor Leaf",
+        index=75,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=55,
+        pp=25,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     critical_hit_rate = 8

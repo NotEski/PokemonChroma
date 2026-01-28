@@ -1,16 +1,18 @@
-@move("sweet_scent")  # type: ignore
+from pkmn_imports import *
+
+@move("sweet_scent")
 class _SweetScent:
-    meta = {
-        "display_name": "Sweet Scent",
-        "type": "normal",
-        "index": 230,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Sweet Scent",
+        index=230,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "evasion", "change": -2, "chance": 100}],
     }

@@ -1,15 +1,17 @@
-@move("sky_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("sky_attack")
 class _SkyAttack:
-    meta = {
-        "display_name": "Sky Attack",
-        "type": "flying",
-        "index": 143,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sky Attack",
+        index=143,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8
     flinch_chance = 30

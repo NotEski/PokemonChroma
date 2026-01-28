@@ -1,13 +1,15 @@
-@move("mystical_power")  # type: ignore
+from pkmn_imports import *
+
+@move("mystical_power")
 class _MysticalPower:
-    meta = {
-        "display_name": "Mystical Power",
-        "type": "psychic",
-        "index": 832,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 70,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mystical Power",
+        index=832,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=70,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

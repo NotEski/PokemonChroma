@@ -1,16 +1,18 @@
-@move("shell_side_arm")  # type: ignore
+from pkmn_imports import *
+
+@move("shell_side_arm")
 class _ShellSideArm:
-    meta = {
-        "display_name": "Shell Side Arm",
-        "type": "poison",
-        "index": 801,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shell Side Arm",
+        index=801,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 20,
     }

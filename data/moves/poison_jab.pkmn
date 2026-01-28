@@ -1,16 +1,18 @@
-@move("poison_jab")  # type: ignore
+from pkmn_imports import *
+
+@move("poison_jab")
 class _PoisonJab:
-    meta = {
-        "display_name": "Poison Jab",
-        "type": "poison",
-        "index": 398,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Poison Jab",
+        index=398,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 30,
     }

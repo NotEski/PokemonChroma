@@ -1,13 +1,15 @@
-@move("astral_barrage")  # type: ignore
+from pkmn_imports import *
+
+@move("astral_barrage")
 class _AstralBarrage:
-    meta = {
-        "display_name": "Astral Barrage",
-        "type": "ghost",
-        "index": 825,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Astral Barrage",
+        index=825,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

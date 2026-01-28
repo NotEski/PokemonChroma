@@ -1,13 +1,15 @@
-@move("psychic_terrain")  # type: ignore
+from pkmn_imports import *
+
+@move("psychic_terrain")
 class _PsychicTerrain:
-    meta = {
-        "display_name": "Psychic Terrain",
-        "type": "psychic",
-        "index": 678,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Psychic Terrain",
+        index=678,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

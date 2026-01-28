@@ -1,13 +1,15 @@
-@move("wonder_room")  # type: ignore
+from pkmn_imports import *
+
+@move("wonder_room")
 class _WonderRoom:
-    meta = {
-        "display_name": "Wonder Room",
-        "type": "psychic",
-        "index": 472,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Wonder Room",
+        index=472,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

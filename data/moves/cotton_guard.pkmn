@@ -1,16 +1,18 @@
-@move("cotton_guard")  # type: ignore
+from pkmn_imports import *
+
+@move("cotton_guard")
 class _CottonGuard:
-    meta = {
-        "display_name": "Cotton Guard",
-        "type": "grass",
-        "index": 538,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Cotton Guard",
+        index=538,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "defense", "change": 3, "chance": 100}],
     }

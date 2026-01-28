@@ -1,16 +1,18 @@
-@move("sappy_seed")  # type: ignore
+from pkmn_imports import *
+
+@move("sappy_seed")
 class _SappySeed:
-    meta = {
-        "display_name": "Sappy Seed",
-        "type": "grass",
-        "index": 738,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sappy Seed",
+        index=738,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "leech_seed": 100,
     }

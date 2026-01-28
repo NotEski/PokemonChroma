@@ -1,13 +1,15 @@
-@move("eternabeam")  # type: ignore
+from pkmn_imports import *
+
+@move("eternabeam")
 class _Eternabeam:
-    meta = {
-        "display_name": "Eternabeam",
-        "type": "dragon",
-        "index": 795,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 160,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Eternabeam",
+        index=795,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=160,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

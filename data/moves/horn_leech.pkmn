@@ -1,14 +1,16 @@
-@move("horn_leech")  # type: ignore
+from pkmn_imports import *
+
+@move("horn_leech")
 class _HornLeech:
-    meta = {
-        "display_name": "Horn Leech",
-        "type": "grass",
-        "index": 532,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Horn Leech",
+        index=532,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = 50

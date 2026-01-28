@@ -1,14 +1,16 @@
-@move("spacial_rend")  # type: ignore
+from pkmn_imports import *
+
+@move("spacial_rend")
 class _SpacialRend:
-    meta = {
-        "display_name": "Spacial Rend",
-        "type": "dragon",
-        "index": 460,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spacial Rend",
+        index=460,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

@@ -1,13 +1,15 @@
-@move("power_trip")  # type: ignore
+from pkmn_imports import *
+
+@move("power_trip")
 class _PowerTrip:
-    meta = {
-        "display_name": "Power Trip",
-        "type": "dark",
-        "index": 681,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 20,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Power Trip",
+        index=681,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=20,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

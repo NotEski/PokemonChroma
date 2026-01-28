@@ -1,14 +1,16 @@
-@move("cross_chop")  # type: ignore
+from pkmn_imports import *
+
+@move("cross_chop")
 class _CrossChop:
-    meta = {
-        "display_name": "Cross Chop",
-        "type": "fighting",
-        "index": 238,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Cross Chop",
+        index=238,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

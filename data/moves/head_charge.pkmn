@@ -1,14 +1,16 @@
-@move("head_charge")  # type: ignore
+from pkmn_imports import *
+
+@move("head_charge")
 class _HeadCharge:
-    meta = {
-        "display_name": "Head Charge",
-        "type": "normal",
-        "index": 543,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Head Charge",
+        index=543,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -25

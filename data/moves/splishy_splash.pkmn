@@ -1,16 +1,18 @@
-@move("splishy_splash")  # type: ignore
+from pkmn_imports import *
+
+@move("splishy_splash")
 class _SplishySplash:
-    meta = {
-        "display_name": "Splishy Splash",
-        "type": "water",
-        "index": 730,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Splishy Splash",
+        index=730,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "paralysis": 30,
     }

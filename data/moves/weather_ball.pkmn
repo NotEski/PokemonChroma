@@ -1,13 +1,15 @@
-@move("weather_ball")  # type: ignore
+from pkmn_imports import *
+
+@move("weather_ball")
 class _WeatherBall:
-    meta = {
-        "display_name": "Weather Ball",
-        "type": "normal",
-        "index": 311,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 50,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Weather Ball",
+        index=311,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=50,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

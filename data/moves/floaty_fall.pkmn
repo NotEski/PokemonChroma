@@ -1,14 +1,16 @@
-@move("floaty_fall")  # type: ignore
+from pkmn_imports import *
+
+@move("floaty_fall")
 class _FloatyFall:
-    meta = {
-        "display_name": "Floaty Fall",
-        "type": "flying",
-        "index": 731,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Floaty Fall",
+        index=731,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

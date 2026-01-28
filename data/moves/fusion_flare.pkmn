@@ -1,13 +1,15 @@
-@move("fusion_flare")  # type: ignore
+from pkmn_imports import *
+
+@move("fusion_flare")
 class _FusionFlare:
-    meta = {
-        "display_name": "Fusion Flare",
-        "type": "fire",
-        "index": 558,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fusion Flare",
+        index=558,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

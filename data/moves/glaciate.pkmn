@@ -1,16 +1,18 @@
-@move("glaciate")  # type: ignore
+from pkmn_imports import *
+
+@move("glaciate")
 class _Glaciate:
-    meta = {
-        "display_name": "Glaciate",
-        "type": "ice",
-        "index": 549,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 65,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Glaciate",
+        index=549,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=65,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

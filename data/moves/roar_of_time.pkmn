@@ -1,13 +1,15 @@
-@move("roar_of_time")  # type: ignore
+from pkmn_imports import *
+
+@move("roar_of_time")
 class _RoarOfTime:
-    meta = {
-        "display_name": "Roar of Time",
-        "type": "dragon",
-        "index": 459,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Roar of Time",
+        index=459,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

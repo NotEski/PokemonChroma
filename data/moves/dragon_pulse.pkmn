@@ -1,13 +1,15 @@
-@move("dragon_pulse")  # type: ignore
-class _DragonPulse:
-    meta = {
-        "display_name": "Dragon Pulse",
-        "type": "dragon",
-        "index": 406,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 85,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+from pkmn_imports import *
+
+@move("dragon_pulse")
+class _DragonPulse(BaseMove):
+    meta = MoveMetaData(
+        display_name="Dragon Pulse",
+        index=406,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=85,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

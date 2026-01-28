@@ -1,16 +1,18 @@
-@move("v_create")  # type: ignore
+from pkmn_imports import *
+
+@move("v_create")
 class _VCreate:
-    meta = {
-        "display_name": "V-create",
-        "type": "fire",
-        "index": 557,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 180,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="V-create",
+        index=557,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=180,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}, {"stat": "speed", "change": -1, "chance": 100}],
     }

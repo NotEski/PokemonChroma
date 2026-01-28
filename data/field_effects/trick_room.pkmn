@@ -1,6 +1,17 @@
+from pkmn_imports import *
+
 @field_effect("trick_room")
-class TrickRoom:
+class TrickRoom(FieldEffect):
     meta = {
         "display_name": "Trick Room",
         "default_duration": 5,  # lasts for 5 turns
     }
+
+    def on_stat_calculation(self, pokemon: BattleMon, stat: Stat) -> int:
+        if stat == Stat.SPEED:
+            # Reverse the speed calculation under Trick Room
+            base_speed = pokemon.get_stat(Stat.SPEED)
+            # Example logic: slower Pokémon become faster and vice versa
+            reversed_speed = max(1, 255 - base_speed)  # Simple inversion for demonstration
+            return reversed_speed
+        return pokemon.get_stat(stat)

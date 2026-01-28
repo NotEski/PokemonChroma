@@ -10,7 +10,7 @@ from shared.battle.type_effectiveness import get_attack_multiplier
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
-from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, LearnSet
+from shared.pokemon.move import MoveMetaData, BaseMove, MoveTarget, DamageClass, MoveCategory, LearnSet
 from shared.pokemon.move_tags import *
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, BattleMon, GrowthRate, EggGroup
@@ -61,31 +61,16 @@ def move(move_name: str):
 
         name = move_name.lower()
 
-        meta: dict[str, Any] = dsl_cls.__dict__.get("meta", {})
+        meta: Optional[MoveMetaData] = dsl_cls.__dict__.get("meta", None)
+        if meta is None:
+            raise ValueError(f"Move '{move_name}' must have a 'meta' attribute defined.")
 
-        # Display Name
-        display_name: str = get_field(meta, "display_name", str, required=False, default=move_name.capitalize())
-        # Index
-        index: int = get_field(meta, "index", int)
-        # Type
-        move_type: PokemonType = get_field(meta, "type", PokemonType)
+        move_type: PokemonType = meta.type
         if not type_repository.get(move_type):
             raise ValueError(f"Move '{move_name}' has unknown type '{move_type}'.")
-        # Damage Class
-        damage_class: DamageClass = get_field(meta, "damage_class", DamageClass)
-        # Category
-        category: MoveCategory = get_field(meta, "category", MoveCategory)
-        # Accuracy
-        accuracy: Optional[int] = get_field(meta, "accuracy", int, required=False, default=None)
-        # Power
-        power: Optional[int] = get_field(meta, "power", int, required=False, default=None)
-        # PP
-        pp: int = get_field(meta, "pp", int, required=False, default=15)
-        # Target
-        target: MoveTarget = get_field(meta, "target", MoveTarget, required=False, default=MoveTarget.SELECTED_POKEMON)
+    
 
         # Below are MoveTags specific fields
-
         move_tags: List[MoveTag] = []
         healing_flag = None
         heal_exception = False
@@ -304,15 +289,7 @@ def move(move_name: str):
         # Generate BaseMove
         base_move = BaseMove(
             name=name,
-            display_name=display_name,
-            index=index,
-            type=move_type,
-            damage_class=damage_class,
-            category=category,
-            accuracy=accuracy,
-            power=power,
-            base_pp=pp,
-            target=target,
+            meta=meta,
             move_tags=move_tags
         )
 
@@ -396,13 +373,13 @@ def field_effect(field_effect_name: str):
             default_duration=duration
         )
 
-        if hasattr(dsl_cls, "on_apply"):
-            dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_apply # type: ignore
-            field_effect.on_apply = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
+        # if hasattr(dsl_cls, "on_apply"):
+        #     dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_apply # type: ignore
+        #     field_effect.on_apply = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
-        if hasattr(dsl_cls, "on_remove"):
-            dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_remove # type: ignore
-            field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
+        # if hasattr(dsl_cls, "on_remove"):
+        #     dsl_method: Callable[[FieldEffect, int], None] = dsl_cls.on_remove # type: ignore
+        #     field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
         if hasattr(dsl_cls, "on_stat_calculation"):
             dsl_method: Callable[[FieldEffect, BattleMon, str], None] = dsl_cls.on_stat_calculation # type: ignore
@@ -593,10 +570,14 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
         "get_attack_multiplier": get_attack_multiplier,
 
         # imports
+        "MoveMetaData": MoveMetaData,
         "BaseStats": BaseStats,
         "EffortYield": EffortYield,
         "PokemonType": PokemonType,
         "Stat": Stat,
+        "MoveTarget": MoveTarget,
+        "DamageClass": DamageClass,
+        "MoveCategory": MoveCategory,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):

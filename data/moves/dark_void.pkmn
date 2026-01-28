@@ -1,16 +1,18 @@
-@move("dark_void")  # type: ignore
+from pkmn_imports import *
+
+@move("dark_void")
 class _DarkVoid:
-    meta = {
-        "display_name": "Dark Void",
-        "type": "dark",
-        "index": 464,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 50,
-        "power": None,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Dark Void",
+        index=464,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=50,
+        power=None,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "sleep": 0,
     }

@@ -1,13 +1,15 @@
-@move("max_flare")  # type: ignore
+from pkmn_imports import *
+
+@move("max_flare")
 class _MaxFlare:
-    meta = {
-        "display_name": "Max Flare",
-        "type": "fire",
-        "index": 757,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon_me_first",
-    }
+    meta = MoveMetaData(
+        display_name="Max Flare",
+        index=757,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=100,
+        pp=10,
+        target=MoveTarget("selected_pokemon_me_first"),
+    )

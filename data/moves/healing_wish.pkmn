@@ -1,13 +1,15 @@
-@move("healing_wish")  # type: ignore
+from pkmn_imports import *
+
+@move("healing_wish")
 class _HealingWish:
-    meta = {
-        "display_name": "Healing Wish",
-        "type": "psychic",
-        "index": 361,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Healing Wish",
+        index=361,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

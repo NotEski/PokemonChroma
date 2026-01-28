@@ -1,16 +1,18 @@
-@move("electro_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("electro_shot")
 class _ElectroShot:
-    meta = {
-        "display_name": "Electro Shot",
-        "type": "electric",
-        "index": 905,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 130,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Electro Shot",
+        index=905,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=130,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 100}],
     }

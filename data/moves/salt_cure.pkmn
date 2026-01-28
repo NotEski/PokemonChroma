@@ -1,13 +1,15 @@
-@move("salt_cure")  # type: ignore
+from pkmn_imports import *
+
+@move("salt_cure")
 class _SaltCure:
-    meta = {
-        "display_name": "Salt Cure",
-        "type": "rock",
-        "index": 864,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Salt Cure",
+        index=864,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

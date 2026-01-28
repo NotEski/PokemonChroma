@@ -1,13 +1,15 @@
-@move("devastating_drake_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("devastating_drake_physical")
 class _DevastatingDrakePhysical:
-    meta = {
-        "display_name": "Devastating Drake",
-        "type": "dragon",
-        "index": 652,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Devastating Drake",
+        index=652,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

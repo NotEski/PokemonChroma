@@ -1,16 +1,18 @@
-@move("bolt_strike")  # type: ignore
+from pkmn_imports import *
+
+@move("bolt_strike")
 class _BoltStrike:
-    meta = {
-        "display_name": "Bolt Strike",
-        "type": "electric",
-        "index": 550,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 130,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bolt Strike",
+        index=550,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=130,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 20,
     }

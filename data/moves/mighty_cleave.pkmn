@@ -1,13 +1,15 @@
-@move("mighty_cleave")  # type: ignore
+from pkmn_imports import *
+
+@move("mighty_cleave")
 class _MightyCleave:
-    meta = {
-        "display_name": "Mighty Cleave",
-        "type": "rock",
-        "index": 910,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 95,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mighty Cleave",
+        index=910,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=95,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

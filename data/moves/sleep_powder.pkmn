@@ -1,16 +1,18 @@
-@move("sleep_powder")  # type: ignore
+from pkmn_imports import *
+
+@move("sleep_powder")
 class _SleepPowder:
-    meta = {
-        "display_name": "Sleep Powder",
-        "type": "grass",
-        "index": 79,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 75,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sleep Powder",
+        index=79,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=75,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "sleep": 0,
     }

@@ -1,13 +1,15 @@
-@move("psyshock")  # type: ignore
+from pkmn_imports import *
+
+@move("psyshock")
 class _Psyshock:
-    meta = {
-        "display_name": "Psyshock",
-        "type": "psychic",
-        "index": 473,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Psyshock",
+        index=473,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

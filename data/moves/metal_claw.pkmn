@@ -1,16 +1,18 @@
-@move("metal_claw")  # type: ignore
+from pkmn_imports import *
+
+@move("metal_claw")
 class _MetalClaw:
-    meta = {
-        "display_name": "Metal Claw",
-        "type": "steel",
-        "index": 232,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 50,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Metal Claw",
+        index=232,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=50,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 10}],
     }

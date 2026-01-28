@@ -1,13 +1,15 @@
-@move("matcha_gotcha")  # type: ignore
+from pkmn_imports import *
+
+@move("matcha_gotcha")
 class _MatchaGotcha:
-    meta = {
-        "display_name": "Matcha Gotcha",
-        "type": "grass",
-        "index": 902,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Matcha Gotcha",
+        index=902,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

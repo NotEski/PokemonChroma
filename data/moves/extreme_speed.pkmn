@@ -1,14 +1,16 @@
-@move("extreme_speed")  # type: ignore
+from pkmn_imports import *
+
+@move("extreme_speed")
 class _ExtremeSpeed:
-    meta = {
-        "display_name": "Extreme Speed",
-        "type": "normal",
-        "index": 245,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Extreme Speed",
+        index=245,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 2

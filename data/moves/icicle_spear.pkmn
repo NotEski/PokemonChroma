@@ -1,13 +1,15 @@
-@move("icicle_spear")  # type: ignore
+from pkmn_imports import *
+
+@move("icicle_spear")
 class _IcicleSpear:
-    meta = {
-        "display_name": "Icicle Spear",
-        "type": "ice",
-        "index": 333,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 25,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Icicle Spear",
+        index=333,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=25,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

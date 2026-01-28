@@ -1,14 +1,16 @@
-@move("mach_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("mach_punch")
 class _MachPunch:
-    meta = {
-        "display_name": "Mach Punch",
-        "type": "fighting",
-        "index": 183,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mach Punch",
+        index=183,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

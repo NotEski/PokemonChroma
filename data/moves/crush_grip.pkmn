@@ -1,13 +1,15 @@
-@move("crush_grip")  # type: ignore
+from pkmn_imports import *
+
+@move("crush_grip")
 class _CrushGrip:
-    meta = {
-        "display_name": "Crush Grip",
-        "type": "normal",
-        "index": 462,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Crush Grip",
+        index=462,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

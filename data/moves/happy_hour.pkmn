@@ -1,13 +1,15 @@
-@move("happy_hour")  # type: ignore
+from pkmn_imports import *
+
+@move("happy_hour")
 class _HappyHour:
-    meta = {
-        "display_name": "Happy Hour",
-        "type": "normal",
-        "index": 603,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "users_field",
-    }
+    meta = MoveMetaData(
+        display_name="Happy Hour",
+        index=603,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget("users_field"),
+    )

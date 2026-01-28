@@ -1,15 +1,17 @@
-@move("fake_out")  # type: ignore
+from pkmn_imports import *
+
+@move("fake_out")
 class _FakeOut:
-    meta = {
-        "display_name": "Fake Out",
-        "type": "normal",
-        "index": 252,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fake Out",
+        index=252,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 3
     flinch_chance = 100

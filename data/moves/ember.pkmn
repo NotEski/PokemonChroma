@@ -1,16 +1,18 @@
-@move("ember")  # type: ignore
+from pkmn_imports import *
+
+@move("ember")
 class _Ember:
-    meta = {
-        "display_name": "Ember",
-        "type": "fire",
-        "index": 52,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ember",
+        index=52,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 10,
     }

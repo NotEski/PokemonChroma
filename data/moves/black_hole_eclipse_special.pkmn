@@ -1,13 +1,15 @@
-@move("black_hole_eclipse_special")  # type: ignore
+from pkmn_imports import *
+
+@move("black_hole_eclipse_special")
 class _BlackHoleEclipseSpecial:
-    meta = {
-        "display_name": "Black Hole Eclipse",
-        "type": "dark",
-        "index": 655,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Black Hole Eclipse",
+        index=655,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

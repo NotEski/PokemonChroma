@@ -1,14 +1,16 @@
-@move("shell_trap")  # type: ignore
+from pkmn_imports import *
+
+@move("shell_trap")
 class _ShellTrap:
-    meta = {
-        "display_name": "Shell Trap",
-        "type": "fire",
-        "index": 704,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 150,
-        "pp": 5,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Shell Trap",
+        index=704,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=150,
+        pp=5,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     priority = -3

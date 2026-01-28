@@ -1,13 +1,15 @@
-@move("super_fang")  # type: ignore
+from pkmn_imports import *
+
+@move("super_fang")
 class _SuperFang:
-    meta = {
-        "display_name": "Super Fang",
-        "type": "normal",
-        "index": 162,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Super Fang",
+        index=162,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

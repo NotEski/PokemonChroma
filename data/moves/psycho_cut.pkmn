@@ -1,14 +1,16 @@
-@move("psycho_cut")  # type: ignore
+from pkmn_imports import *
+
+@move("psycho_cut")
 class _PsychoCut:
-    meta = {
-        "display_name": "Psycho Cut",
-        "type": "psychic",
-        "index": 427,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Psycho Cut",
+        index=427,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

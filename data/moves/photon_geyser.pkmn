@@ -1,13 +1,15 @@
-@move("photon_geyser")  # type: ignore
+from pkmn_imports import *
+
+@move("photon_geyser")
 class _PhotonGeyser:
-    meta = {
-        "display_name": "Photon Geyser",
-        "type": "psychic",
-        "index": 722,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Photon Geyser",
+        index=722,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

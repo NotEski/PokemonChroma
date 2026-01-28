@@ -1,13 +1,15 @@
-@move("gigaton_hammer")  # type: ignore
+from pkmn_imports import *
+
+@move("gigaton_hammer")
 class _GigatonHammer:
-    meta = {
-        "display_name": "Gigaton Hammer",
-        "type": "steel",
-        "index": 893,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 160,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Gigaton Hammer",
+        index=893,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=160,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

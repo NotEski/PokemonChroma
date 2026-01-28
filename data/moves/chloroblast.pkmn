@@ -1,13 +1,15 @@
-@move("chloroblast")  # type: ignore
+from pkmn_imports import *
+
+@move("chloroblast")
 class _Chloroblast:
-    meta = {
-        "display_name": "Chloroblast",
-        "type": "grass",
-        "index": 835,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Chloroblast",
+        index=835,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

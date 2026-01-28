@@ -1,13 +1,15 @@
-@move("rain_dance")  # type: ignore
+from pkmn_imports import *
+
+@move("rain_dance")
 class _RainDance:
-    meta = {
-        "display_name": "Rain Dance",
-        "type": "water",
-        "index": 240,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Rain Dance",
+        index=240,
+        type=PokemonType("water"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget("entire_field"),
+    )

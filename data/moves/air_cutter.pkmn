@@ -1,14 +1,16 @@
-@move("air_cutter")  # type: ignore
+from pkmn_imports import *
+
+@move("air_cutter")
 class _AirCutter:
-    meta = {
-        "display_name": "Air Cutter",
-        "type": "flying",
-        "index": 314,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 60,
-        "pp": 25,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Air Cutter",
+        index=314,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=60,
+        pp=25,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     critical_hit_rate = 8

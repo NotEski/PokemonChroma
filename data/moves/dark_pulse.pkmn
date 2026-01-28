@@ -1,14 +1,16 @@
-@move("dark_pulse")  # type: ignore
+from pkmn_imports import *
+
+@move("dark_pulse")
 class _DarkPulse:
-    meta = {
-        "display_name": "Dark Pulse",
-        "type": "dark",
-        "index": 399,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dark Pulse",
+        index=399,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 20

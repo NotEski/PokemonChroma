@@ -1,13 +1,15 @@
-@move("esper_wing")  # type: ignore
+from pkmn_imports import *
+
+@move("esper_wing")
 class _EsperWing:
-    meta = {
-        "display_name": "Esper Wing",
-        "type": "psychic",
-        "index": 840,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Esper Wing",
+        index=840,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

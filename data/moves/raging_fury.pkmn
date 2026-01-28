@@ -1,13 +1,15 @@
-@move("raging_fury")  # type: ignore
+from pkmn_imports import *
+
+@move("raging_fury")
 class _RagingFury:
-    meta = {
-        "display_name": "Raging Fury",
-        "type": "fire",
-        "index": 833,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 10,
-        "target": "random_opponent",
-    }
+    meta = MoveMetaData(
+        display_name="Raging Fury",
+        index=833,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=10,
+        target=MoveTarget("random_opponent"),
+    )

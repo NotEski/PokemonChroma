@@ -1,13 +1,15 @@
-@move("belly_drum")  # type: ignore
+from pkmn_imports import *
+
+@move("belly_drum")
 class _BellyDrum:
-    meta = {
-        "display_name": "Belly Drum",
-        "type": "normal",
-        "index": 187,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Belly Drum",
+        index=187,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

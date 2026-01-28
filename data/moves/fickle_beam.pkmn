@@ -1,13 +1,15 @@
-@move("fickle_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("fickle_beam")
 class _FickleBeam:
-    meta = {
-        "display_name": "Fickle Beam",
-        "type": "dragon",
-        "index": 907,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fickle Beam",
+        index=907,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

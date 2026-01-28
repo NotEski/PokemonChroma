@@ -1,13 +1,15 @@
-@move("steel_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("steel_beam")
 class _SteelBeam:
-    meta = {
-        "display_name": "Steel Beam",
-        "type": "steel",
-        "index": 796,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Steel Beam",
+        index=796,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("tickle")  # type: ignore
+from pkmn_imports import *
+
+@move("tickle")
 class _Tickle:
-    meta = {
-        "display_name": "Tickle",
-        "type": "normal",
-        "index": 321,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tickle",
+        index=321,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "defense", "change": -1, "chance": 100}],
     }

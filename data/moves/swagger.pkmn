@@ -1,16 +1,18 @@
-@move("swagger")  # type: ignore
+from pkmn_imports import *
+
+@move("swagger")
 class _Swagger:
-    meta = {
-        "display_name": "Swagger",
-        "type": "normal",
-        "index": 207,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 85,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Swagger",
+        index=207,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 2, "chance": 100}],
     }

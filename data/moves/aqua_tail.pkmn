@@ -1,13 +1,15 @@
-@move("aqua_tail")  # type: ignore
+from pkmn_imports import *
+
+@move("aqua_tail")
 class _AquaTail:
-    meta = {
-        "display_name": "Aqua Tail",
-        "type": "water",
-        "index": 401,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Aqua Tail",
+        index=401,
+        type=PokemonType("water"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

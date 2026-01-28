@@ -1,13 +1,15 @@
-@move("mean_look")  # type: ignore
+from pkmn_imports import *
+
+@move("mean_look")
 class _MeanLook:
-    meta = {
-        "display_name": "Mean Look",
-        "type": "normal",
-        "index": 212,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mean Look",
+        index=212,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

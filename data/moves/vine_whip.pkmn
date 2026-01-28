@@ -1,13 +1,15 @@
-@move("vine_whip")  # type: ignore
+from pkmn_imports import *
+
+@move("vine_whip")
 class _VineWhip:
-    meta = {
-        "display_name": "Vine Whip",
-        "type": "grass",
-        "index": 22,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 45,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Vine Whip",
+        index=22,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=45,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

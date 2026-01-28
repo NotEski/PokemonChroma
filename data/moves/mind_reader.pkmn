@@ -1,13 +1,15 @@
-@move("mind_reader")  # type: ignore
+from pkmn_imports import *
+
+@move("mind_reader")
 class _MindReader:
-    meta = {
-        "display_name": "Mind Reader",
-        "type": "normal",
-        "index": 170,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mind Reader",
+        index=170,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("guardian_of_alola")  # type: ignore
+from pkmn_imports import *
+
+@move("guardian_of_alola")
 class _GuardianOfAlola:
-    meta = {
-        "display_name": "Guardian of Alola",
-        "type": "fairy",
-        "index": 698,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Guardian of Alola",
+        index=698,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

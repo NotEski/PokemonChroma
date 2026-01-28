@@ -1,14 +1,16 @@
-@move("sucker_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("sucker_punch")
 class _SuckerPunch:
-    meta = {
-        "display_name": "Sucker Punch",
-        "type": "dark",
-        "index": 389,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sucker Punch",
+        index=389,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

@@ -1,13 +1,15 @@
-@move("sparkly_swirl")  # type: ignore
+from pkmn_imports import *
+
+@move("sparkly_swirl")
 class _SparklySwirl:
-    meta = {
-        "display_name": "Sparkly Swirl",
-        "type": "fairy",
-        "index": 740,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sparkly Swirl",
+        index=740,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

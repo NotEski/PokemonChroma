@@ -1,13 +1,15 @@
-@move("wicked_torque")  # type: ignore
+from pkmn_imports import *
+
+@move("wicked_torque")
 class _WickedTorque:
-    meta = {
-        "display_name": "Wicked Torque",
-        "type": "dark",
-        "index": 897,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Wicked Torque",
+        index=897,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("blue_flare")  # type: ignore
+from pkmn_imports import *
+
+@move("blue_flare")
 class _BlueFlare:
-    meta = {
-        "display_name": "Blue Flare",
-        "type": "fire",
-        "index": 551,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 130,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Blue Flare",
+        index=551,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=130,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 20,
     }

@@ -1,13 +1,15 @@
-@move("power_trick")  # type: ignore
+from pkmn_imports import *
+
+@move("power_trick")
 class _PowerTrick:
-    meta = {
-        "display_name": "Power Trick",
-        "type": "psychic",
-        "index": 379,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Power Trick",
+        index=379,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

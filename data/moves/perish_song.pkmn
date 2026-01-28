@@ -1,16 +1,18 @@
-@move("perish_song")  # type: ignore
+from pkmn_imports import *
+
+@move("perish_song")
 class _PerishSong:
-    meta = {
-        "display_name": "Perish Song",
-        "type": "normal",
-        "index": 195,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "all_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Perish Song",
+        index=195,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget("all_pokemon"),
+    )
     status_condition = {
         "perish_song": 0,
     }

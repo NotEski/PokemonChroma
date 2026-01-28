@@ -1,13 +1,15 @@
-@move("smelling_salts")  # type: ignore
+from pkmn_imports import *
+
+@move("smelling_salts")
 class _SmellingSalts:
-    meta = {
-        "display_name": "Smelling Salts",
-        "type": "normal",
-        "index": 265,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Smelling Salts",
+        index=265,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("freeze_shock")  # type: ignore
+from pkmn_imports import *
+
+@move("freeze_shock")
 class _FreezeShock:
-    meta = {
-        "display_name": "Freeze Shock",
-        "type": "ice",
-        "index": 553,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Freeze Shock",
+        index=553,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

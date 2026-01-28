@@ -1,16 +1,18 @@
-@move("lunge")  # type: ignore
+from pkmn_imports import *
+
+@move("lunge")
 class _Lunge:
-    meta = {
-        "display_name": "Lunge",
-        "type": "bug",
-        "index": 679,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Lunge",
+        index=679,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

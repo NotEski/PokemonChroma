@@ -1,16 +1,18 @@
-@move("stockpile")  # type: ignore
+from pkmn_imports import *
+
+@move("stockpile")
 class _Stockpile:
-    meta = {
-        "display_name": "Stockpile",
-        "type": "normal",
-        "index": 254,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Stockpile",
+        index=254,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
     }

@@ -1,13 +1,15 @@
-@move("lucky_chant")  # type: ignore
+from pkmn_imports import *
+
+@move("lucky_chant")
 class _LuckyChant:
-    meta = {
-        "display_name": "Lucky Chant",
-        "type": "normal",
-        "index": 381,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 30,
-        "target": "users_field",
-    }
+    meta = MoveMetaData(
+        display_name="Lucky Chant",
+        index=381,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=30,
+        target=MoveTarget("users_field"),
+    )

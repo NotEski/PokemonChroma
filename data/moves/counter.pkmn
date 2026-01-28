@@ -1,14 +1,16 @@
-@move("counter")  # type: ignore
+from pkmn_imports import *
+
+@move("counter")
 class _Counter:
-    meta = {
-        "display_name": "Counter",
-        "type": "fighting",
-        "index": 68,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "specific_move",
-    }
+    meta = MoveMetaData(
+        display_name="Counter",
+        index=68,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget("specific_move"),
+    )
     priority = -5

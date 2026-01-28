@@ -1,13 +1,15 @@
-@move("order_up")  # type: ignore
+from pkmn_imports import *
+
+@move("order_up")
 class _OrderUp:
-    meta = {
-        "display_name": "Order Up",
-        "type": "dragon",
-        "index": 856,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Order Up",
+        index=856,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

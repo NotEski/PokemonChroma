@@ -1,16 +1,18 @@
-@move("pyro_ball")  # type: ignore
+from pkmn_imports import *
+
+@move("pyro_ball")
 class _PyroBall:
-    meta = {
-        "display_name": "Pyro Ball",
-        "type": "fire",
-        "index": 780,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Pyro Ball",
+        index=780,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 10,
     }

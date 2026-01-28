@@ -1,13 +1,15 @@
-@move("fire_pledge")  # type: ignore
+from pkmn_imports import *
+
+@move("fire_pledge")
 class _FirePledge:
-    meta = {
-        "display_name": "Fire Pledge",
-        "type": "fire",
-        "index": 519,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fire Pledge",
+        index=519,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

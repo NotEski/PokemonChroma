@@ -1,13 +1,15 @@
-@move("pollen_puff")  # type: ignore
+from pkmn_imports import *
+
+@move("pollen_puff")
 class _PollenPuff:
-    meta = {
-        "display_name": "Pollen Puff",
-        "type": "bug",
-        "index": 676,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Pollen Puff",
+        index=676,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("sheer_cold")  # type: ignore
+from pkmn_imports import *
+
+@move("sheer_cold")
 class _SheerCold:
-    meta = {
-        "display_name": "Sheer Cold",
-        "type": "ice",
-        "index": 329,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 30,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sheer Cold",
+        index=329,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=30,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

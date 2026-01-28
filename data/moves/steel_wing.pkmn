@@ -1,16 +1,18 @@
-@move("steel_wing")  # type: ignore
+from pkmn_imports import *
+
+@move("steel_wing")
 class _SteelWing:
-    meta = {
-        "display_name": "Steel Wing",
-        "type": "steel",
-        "index": 211,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 70,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Steel Wing",
+        index=211,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=70,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 10}],
     }

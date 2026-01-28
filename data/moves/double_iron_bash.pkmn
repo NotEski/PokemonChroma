@@ -1,14 +1,16 @@
-@move("double_iron_bash")  # type: ignore
+from pkmn_imports import *
+
+@move("double_iron_bash")
 class _DoubleIronBash:
-    meta = {
-        "display_name": "Double Iron Bash",
-        "type": "steel",
-        "index": 742,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Double Iron Bash",
+        index=742,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

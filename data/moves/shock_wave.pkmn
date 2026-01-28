@@ -1,13 +1,15 @@
-@move("shock_wave")  # type: ignore
+from pkmn_imports import *
+
+@move("shock_wave")
 class _ShockWave:
-    meta = {
-        "display_name": "Shock Wave",
-        "type": "electric",
-        "index": 351,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": 60,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shock Wave",
+        index=351,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=60,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

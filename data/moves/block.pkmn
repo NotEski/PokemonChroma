@@ -1,13 +1,15 @@
-@move("block")  # type: ignore
+from pkmn_imports import *
+
+@move("block")
 class _Block:
-    meta = {
-        "display_name": "Block",
-        "type": "normal",
-        "index": 335,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Block",
+        index=335,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

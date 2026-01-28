@@ -1,16 +1,18 @@
-@move("relic_song")  # type: ignore
+from pkmn_imports import *
+
+@move("relic_song")
 class _RelicSong:
-    meta = {
-        "display_name": "Relic Song",
-        "type": "normal",
-        "index": 547,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Relic Song",
+        index=547,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     status_condition = {
         "sleep": 10,
     }

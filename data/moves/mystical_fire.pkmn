@@ -1,16 +1,18 @@
-@move("mystical_fire")  # type: ignore
+from pkmn_imports import *
+
+@move("mystical_fire")
 class _MysticalFire:
-    meta = {
-        "display_name": "Mystical Fire",
-        "type": "fire",
-        "index": 595,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mystical Fire",
+        index=595,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
     }

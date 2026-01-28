@@ -1,16 +1,18 @@
-@move("confuse_ray")  # type: ignore
+from pkmn_imports import *
+
+@move("confuse_ray")
 class _ConfuseRay:
-    meta = {
-        "display_name": "Confuse Ray",
-        "type": "ghost",
-        "index": 109,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Confuse Ray",
+        index=109,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "confusion": 0,
     }

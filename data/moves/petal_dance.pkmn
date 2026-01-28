@@ -1,13 +1,15 @@
-@move("petal_dance")  # type: ignore
+from pkmn_imports import *
+
+@move("petal_dance")
 class _PetalDance:
-    meta = {
-        "display_name": "Petal Dance",
-        "type": "grass",
-        "index": 80,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 10,
-        "target": "random_opponent",
-    }
+    meta = MoveMetaData(
+        display_name="Petal Dance",
+        index=80,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=10,
+        target=MoveTarget("random_opponent"),
+    )

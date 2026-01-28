@@ -1,13 +1,15 @@
-@move("reversal")  # type: ignore
+from pkmn_imports import *
+
+@move("reversal")
 class _Reversal:
-    meta = {
-        "display_name": "Reversal",
-        "type": "fighting",
-        "index": 179,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Reversal",
+        index=179,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

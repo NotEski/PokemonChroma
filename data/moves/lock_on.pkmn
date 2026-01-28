@@ -1,13 +1,15 @@
-@move("lock_on")  # type: ignore
+from pkmn_imports import *
+
+@move("lock_on")
 class _LockOn:
-    meta = {
-        "display_name": "Lock-On",
-        "type": "normal",
-        "index": 199,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Lock-On",
+        index=199,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("guard_swap")  # type: ignore
+from pkmn_imports import *
+
+@move("guard_swap")
 class _GuardSwap:
-    meta = {
-        "display_name": "Guard Swap",
-        "type": "psychic",
-        "index": 385,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Guard Swap",
+        index=385,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

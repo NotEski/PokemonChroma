@@ -1,14 +1,16 @@
-@move("snipe_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("snipe_shot")
 class _SnipeShot:
-    meta = {
-        "display_name": "Snipe Shot",
-        "type": "water",
-        "index": 745,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Snipe Shot",
+        index=745,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

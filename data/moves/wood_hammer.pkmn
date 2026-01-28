@@ -1,14 +1,16 @@
-@move("wood_hammer")  # type: ignore
+from pkmn_imports import *
+
+@move("wood_hammer")
 class _WoodHammer:
-    meta = {
-        "display_name": "Wood Hammer",
-        "type": "grass",
-        "index": 452,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Wood Hammer",
+        index=452,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -33

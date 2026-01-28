@@ -1,14 +1,16 @@
-@move("leaf_blade")  # type: ignore
+from pkmn_imports import *
+
+@move("leaf_blade")
 class _LeafBlade:
-    meta = {
-        "display_name": "Leaf Blade",
-        "type": "grass",
-        "index": 348,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Leaf Blade",
+        index=348,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

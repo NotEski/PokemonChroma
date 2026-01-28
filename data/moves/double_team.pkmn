@@ -1,16 +1,18 @@
-@move("double_team")  # type: ignore
+from pkmn_imports import *
+
+@move("double_team")
 class _DoubleTeam:
-    meta = {
-        "display_name": "Double Team",
-        "type": "normal",
-        "index": 104,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 15,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Double Team",
+        index=104,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=15,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "evasion", "change": 1, "chance": 100}],
     }

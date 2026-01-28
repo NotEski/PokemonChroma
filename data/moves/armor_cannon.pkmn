@@ -1,16 +1,18 @@
-@move("armor_cannon")  # type: ignore
+from pkmn_imports import *
+
+@move("armor_cannon")
 class _ArmorCannon:
-    meta = {
-        "display_name": "Armor Cannon",
-        "type": "fire",
-        "index": 890,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Armor Cannon",
+        index=890,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
     }

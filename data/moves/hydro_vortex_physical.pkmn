@@ -1,13 +1,15 @@
-@move("hydro_vortex_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("hydro_vortex_physical")
 class _HydroVortexPhysical:
-    meta = {
-        "display_name": "Hydro Vortex",
-        "type": "water",
-        "index": 642,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hydro Vortex",
+        index=642,
+        type=PokemonType("water"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

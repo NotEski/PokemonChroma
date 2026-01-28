@@ -1,13 +1,15 @@
-@move("horn_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("horn_attack")
 class _HornAttack:
-    meta = {
-        "display_name": "Horn Attack",
-        "type": "normal",
-        "index": 30,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Horn Attack",
+        index=30,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

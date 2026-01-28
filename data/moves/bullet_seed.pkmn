@@ -1,13 +1,15 @@
-@move("bullet_seed")  # type: ignore
+from pkmn_imports import *
+
+@move("bullet_seed")
 class _BulletSeed:
-    meta = {
-        "display_name": "Bullet Seed",
-        "type": "grass",
-        "index": 331,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 25,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bullet Seed",
+        index=331,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=25,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

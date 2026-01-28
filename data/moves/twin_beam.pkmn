@@ -1,13 +1,15 @@
-@move("twin_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("twin_beam")
 class _TwinBeam:
-    meta = {
-        "display_name": "Twin Beam",
-        "type": "psychic",
-        "index": 888,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Twin Beam",
+        index=888,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

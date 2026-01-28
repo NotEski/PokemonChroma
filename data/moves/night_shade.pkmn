@@ -1,13 +1,15 @@
-@move("night_shade")  # type: ignore
+from pkmn_imports import *
+
+@move("night_shade")
 class _NightShade:
-    meta = {
-        "display_name": "Night Shade",
-        "type": "ghost",
-        "index": 101,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Night Shade",
+        index=101,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,16 +1,18 @@
-@move("electroweb")  # type: ignore
+from pkmn_imports import *
+
+@move("electroweb")
 class _Electroweb:
-    meta = {
-        "display_name": "Electroweb",
-        "type": "electric",
-        "index": 527,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 55,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Electroweb",
+        index=527,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=55,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

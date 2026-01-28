@@ -1,13 +1,15 @@
-@move("barrage")  # type: ignore
+from pkmn_imports import *
+
+@move("barrage")
 class _Barrage:
-    meta = {
-        "display_name": "Barrage",
-        "type": "normal",
-        "index": 140,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 15,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Barrage",
+        index=140,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=15,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

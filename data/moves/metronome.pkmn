@@ -1,13 +1,15 @@
-@move("metronome")  # type: ignore
+from pkmn_imports import *
+
+@move("metronome")
 class _Metronome:
-    meta = {
-        "display_name": "Metronome",
-        "type": "normal",
-        "index": 118,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Metronome",
+        index=118,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )

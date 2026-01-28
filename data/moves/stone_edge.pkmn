@@ -1,14 +1,16 @@
-@move("stone_edge")  # type: ignore
+from pkmn_imports import *
+
+@move("stone_edge")
 class _StoneEdge:
-    meta = {
-        "display_name": "Stone Edge",
-        "type": "rock",
-        "index": 444,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Stone Edge",
+        index=444,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     critical_hit_rate = 8

@@ -1,16 +1,18 @@
-@move("charge")  # type: ignore
+from pkmn_imports import *
+
+@move("charge")
 class _Charge:
-    meta = {
-        "display_name": "Charge",
-        "type": "electric",
-        "index": 268,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Charge",
+        index=268,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "special_defense", "change": 1, "chance": 100}],
     }

@@ -1,16 +1,18 @@
-@move("fire_fang")  # type: ignore
+from pkmn_imports import *
+
+@move("fire_fang")
 class _FireFang:
-    meta = {
-        "display_name": "Fire Fang",
-        "type": "fire",
-        "index": 424,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 65,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fire Fang",
+        index=424,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=65,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 10,
     }

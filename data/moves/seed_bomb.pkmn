@@ -1,13 +1,15 @@
-@move("seed_bomb")  # type: ignore
+from pkmn_imports import *
+
+@move("seed_bomb")
 class _SeedBomb:
-    meta = {
-        "display_name": "Seed Bomb",
-        "type": "grass",
-        "index": 402,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Seed Bomb",
+        index=402,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

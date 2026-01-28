@@ -1,16 +1,18 @@
-@move("body_slam")  # type: ignore
+from pkmn_imports import *
+
+@move("body_slam")
 class _BodySlam:
-    meta = {
-        "display_name": "Body Slam",
-        "type": "normal",
-        "index": 34,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 85,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Body Slam",
+        index=34,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=85,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

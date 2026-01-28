@@ -1,13 +1,15 @@
-@move("sketch")  # type: ignore
+from pkmn_imports import *
+
+@move("sketch")
 class _Sketch:
-    meta = {
-        "display_name": "Sketch",
-        "type": "normal",
-        "index": 166,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sketch",
+        index=166,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

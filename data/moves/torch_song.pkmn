@@ -1,16 +1,18 @@
-@move("torch_song")  # type: ignore
+from pkmn_imports import *
+
+@move("torch_song")
 class _TorchSong:
-    meta = {
-        "display_name": "Torch Song",
-        "type": "fire",
-        "index": 871,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Torch Song",
+        index=871,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 100}],
     }

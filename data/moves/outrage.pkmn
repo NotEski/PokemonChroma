@@ -1,13 +1,15 @@
-@move("outrage")  # type: ignore
+from pkmn_imports import *
+
+@move("outrage")
 class _Outrage:
-    meta = {
-        "display_name": "Outrage",
-        "type": "dragon",
-        "index": 200,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 10,
-        "target": "random_opponent",
-    }
+    meta = MoveMetaData(
+        display_name="Outrage",
+        index=200,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=10,
+        target=MoveTarget("random_opponent"),
+    )

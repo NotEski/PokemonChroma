@@ -1,16 +1,18 @@
-@move("icy_wind")  # type: ignore
+from pkmn_imports import *
+
+@move("icy_wind")
 class _IcyWind:
-    meta = {
-        "display_name": "Icy Wind",
-        "type": "ice",
-        "index": 196,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 55,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Icy Wind",
+        index=196,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=55,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

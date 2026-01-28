@@ -1,16 +1,18 @@
-@move("seed_flare")  # type: ignore
+from pkmn_imports import *
+
+@move("seed_flare")
 class _SeedFlare:
-    meta = {
-        "display_name": "Seed Flare",
-        "type": "grass",
-        "index": 465,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Seed Flare",
+        index=465,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 40}],
     }

@@ -1,13 +1,15 @@
-@move("brine")  # type: ignore
+from pkmn_imports import *
+
+@move("brine")
 class _Brine:
-    meta = {
-        "display_name": "Brine",
-        "type": "water",
-        "index": 362,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Brine",
+        index=362,
+        type=PokemonType("water"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

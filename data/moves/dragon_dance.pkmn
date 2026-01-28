@@ -1,16 +1,18 @@
-@move("dragon_dance")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_dance")
 class _DragonDance:
-    meta = {
-        "display_name": "Dragon Dance",
-        "type": "dragon",
-        "index": 349,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Dance",
+        index=349,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "speed", "change": 1, "chance": 100}],
     }

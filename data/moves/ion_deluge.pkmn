@@ -1,14 +1,16 @@
-@move("ion_deluge")  # type: ignore
+from pkmn_imports import *
+
+@move("ion_deluge")
 class _IonDeluge:
-    meta = {
-        "display_name": "Ion Deluge",
-        "type": "electric",
-        "index": 569,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 25,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Ion Deluge",
+        index=569,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=25,
+        target=MoveTarget("entire_field"),
+    )
     priority = 1

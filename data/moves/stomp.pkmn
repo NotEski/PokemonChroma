@@ -1,14 +1,16 @@
-@move("stomp")  # type: ignore
+from pkmn_imports import *
+
+@move("stomp")
 class _Stomp:
-    meta = {
-        "display_name": "Stomp",
-        "type": "normal",
-        "index": 23,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Stomp",
+        index=23,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

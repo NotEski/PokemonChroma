@@ -1,16 +1,18 @@
-@move("sacred_fire")  # type: ignore
+from pkmn_imports import *
+
+@move("sacred_fire")
 class _SacredFire:
-    meta = {
-        "display_name": "Sacred Fire",
-        "type": "fire",
-        "index": 221,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 95,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sacred Fire",
+        index=221,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 50,
     }

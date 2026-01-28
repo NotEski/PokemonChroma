@@ -7,7 +7,7 @@ from typing import Callable, TypeVar, Any
 from shared.pokemon.stats import BaseStats, EffortYield, Stat
 from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
-from shared.pokemon.move import BaseMove
+from shared.pokemon.move import BaseMove, MoveMetaData, DamageClass, MoveCategory, MoveTarget
 from shared.pokemon.abilities import Ability
 from shared.items.items import Item
 from shared.pokemon.hazard import EntryHazard
@@ -277,6 +277,7 @@ def get_attack_multiplier(
     """
     ...
 
+
 # ==============================================================================
 # Re-exports (available in DSL namespace)
 # ==============================================================================
@@ -296,5 +297,6 @@ __all__ = [
     # Imported classes
     "BaseStats", "EffortYield", "PokemonType", "Stat",
     "StatusCondition", "BaseMove", "Ability", "Item",
-    "EntryHazard", "FieldEffect", "BattleMon",
+    "EntryHazard", "BattleMon", "FieldEffect", "MoveMetaData",
+    "DamageClass", "MoveCategory", "MoveTarget",
 ]

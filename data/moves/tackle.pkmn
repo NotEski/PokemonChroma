@@ -1,13 +1,15 @@
-@move("tackle")  # type: ignore
+from pkmn_imports import *
+
+@move("tackle")
 class _Tackle:
-    meta = {
-        "display_name": "Tackle",
-        "type": "normal",
-        "index": 33,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tackle",
+        index=33,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("bonemerang")  # type: ignore
+from pkmn_imports import *
+
+@move("bonemerang")
 class _Bonemerang:
-    meta = {
-        "display_name": "Bonemerang",
-        "type": "ground",
-        "index": 155,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 50,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bonemerang",
+        index=155,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=50,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

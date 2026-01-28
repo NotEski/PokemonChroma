@@ -1,16 +1,18 @@
-@move("fire_spin")  # type: ignore
+from pkmn_imports import *
+
+@move("fire_spin")
 class _FireSpin:
-    meta = {
-        "display_name": "Fire Spin",
-        "type": "fire",
-        "index": 83,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 35,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fire Spin",
+        index=83,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=35,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "trap": 100,
     }

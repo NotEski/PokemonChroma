@@ -1,16 +1,18 @@
-@move("fillet_away")  # type: ignore
+from pkmn_imports import *
+
+@move("fillet_away")
 class _FilletAway:
-    meta = {
-        "display_name": "Fillet Away",
-        "type": "normal",
-        "index": 868,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": 0,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Fillet Away",
+        index=868,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=0,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 2, "chance": 100}, {"stat": "special_attack", "change": 2, "chance": 100}, {"stat": "speed", "change": 2, "chance": 100}],
     }

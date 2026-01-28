@@ -1,14 +1,16 @@
-@move("obstruct")  # type: ignore
+from pkmn_imports import *
+
+@move("obstruct")
 class _Obstruct:
-    meta = {
-        "display_name": "Obstruct",
-        "type": "dark",
-        "index": 792,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Obstruct",
+        index=792,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4

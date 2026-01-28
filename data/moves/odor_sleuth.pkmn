@@ -1,16 +1,18 @@
-@move("odor_sleuth")  # type: ignore
+from pkmn_imports import *
+
+@move("odor_sleuth")
 class _OdorSleuth:
-    meta = {
-        "display_name": "Odor Sleuth",
-        "type": "normal",
-        "index": 316,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Odor Sleuth",
+        index=316,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "no_type_immunity": 0,
     }

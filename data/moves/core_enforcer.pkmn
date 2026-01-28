@@ -1,13 +1,15 @@
-@move("core_enforcer")  # type: ignore
+from pkmn_imports import *
+
+@move("core_enforcer")
 class _CoreEnforcer:
-    meta = {
-        "display_name": "Core Enforcer",
-        "type": "dragon",
-        "index": 687,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Core Enforcer",
+        index=687,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

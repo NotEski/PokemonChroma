@@ -1,14 +1,16 @@
-@move("crafty_shield")  # type: ignore
+from pkmn_imports import *
+
+@move("crafty_shield")
 class _CraftyShield:
-    meta = {
-        "display_name": "Crafty Shield",
-        "type": "fairy",
-        "index": 578,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "users_field",
-    }
+    meta = MoveMetaData(
+        display_name="Crafty Shield",
+        index=578,
+        type=PokemonType("fairy"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("users_field"),
+    )
     priority = 3

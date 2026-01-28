@@ -1,13 +1,15 @@
-@move("hidden_power")  # type: ignore
+from pkmn_imports import *
+
+@move("hidden_power")
 class _HiddenPower:
-    meta = {
-        "display_name": "Hidden Power",
-        "type": "normal",
-        "index": 237,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hidden Power",
+        index=237,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

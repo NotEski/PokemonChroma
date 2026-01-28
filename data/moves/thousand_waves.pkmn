@@ -1,13 +1,15 @@
-@move("thousand_waves")  # type: ignore
+from pkmn_imports import *
+
+@move("thousand_waves")
 class _ThousandWaves:
-    meta = {
-        "display_name": "Thousand Waves",
-        "type": "ground",
-        "index": 615,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Thousand Waves",
+        index=615,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

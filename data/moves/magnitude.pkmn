@@ -1,13 +1,15 @@
-@move("magnitude")  # type: ignore
+from pkmn_imports import *
+
+@move("magnitude")
 class _Magnitude:
-    meta = {
-        "display_name": "Magnitude",
-        "type": "ground",
-        "index": 222,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 30,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Magnitude",
+        index=222,
+        type=PokemonType("ground"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=30,
+        target=MoveTarget("all_other_pokemon"),
+    )

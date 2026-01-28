@@ -1,16 +1,18 @@
-@move("magnetic_flux")  # type: ignore
+from pkmn_imports import *
+
+@move("magnetic_flux")
 class _MagneticFlux:
-    meta = {
-        "display_name": "Magnetic Flux",
-        "type": "electric",
-        "index": 602,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "user_and_allies",
-    }
+    meta = MoveMetaData(
+        display_name="Magnetic Flux",
+        index=602,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget("user_and_allies"),
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
     }

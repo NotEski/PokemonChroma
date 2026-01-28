@@ -1,13 +1,15 @@
-@move("sunny_day")  # type: ignore
+from pkmn_imports import *
+
+@move("sunny_day")
 class _SunnyDay:
-    meta = {
-        "display_name": "Sunny Day",
-        "type": "fire",
-        "index": 241,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Sunny Day",
+        index=241,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget("entire_field"),
+    )

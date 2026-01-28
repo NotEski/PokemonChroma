@@ -1,13 +1,15 @@
-@move("branch_poke")  # type: ignore
+from pkmn_imports import *
+
+@move("branch_poke")
 class _BranchPoke:
-    meta = {
-        "display_name": "Branch Poke",
-        "type": "grass",
-        "index": 785,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Branch Poke",
+        index=785,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

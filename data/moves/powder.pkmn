@@ -1,14 +1,16 @@
-@move("powder")  # type: ignore
+from pkmn_imports import *
+
+@move("powder")
 class _Powder:
-    meta = {
-        "display_name": "Powder",
-        "type": "bug",
-        "index": 600,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Powder",
+        index=600,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

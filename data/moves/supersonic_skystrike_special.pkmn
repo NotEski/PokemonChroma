@@ -1,13 +1,15 @@
-@move("supersonic_skystrike_special")  # type: ignore
+from pkmn_imports import *
+
+@move("supersonic_skystrike_special")
 class _SupersonicSkystrikeSpecial:
-    meta = {
-        "display_name": "Supersonic Skystrike",
-        "type": "flying",
-        "index": 627,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Supersonic Skystrike",
+        index=627,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

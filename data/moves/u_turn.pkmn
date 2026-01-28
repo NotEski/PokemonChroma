@@ -1,13 +1,15 @@
-@move("u_turn")  # type: ignore
+from pkmn_imports import *
+
+@move("u_turn")
 class _UTurn:
-    meta = {
-        "display_name": "U-turn",
-        "type": "bug",
-        "index": 369,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 70,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="U-turn",
+        index=369,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=70,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

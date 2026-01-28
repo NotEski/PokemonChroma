@@ -1,13 +1,15 @@
-@move("tachyon_cutter")  # type: ignore
+from pkmn_imports import *
+
+@move("tachyon_cutter")
 class _TachyonCutter:
-    meta = {
-        "display_name": "Tachyon Cutter",
-        "type": "steel",
-        "index": 911,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 0,
-        "power": 50,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tachyon Cutter",
+        index=911,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=0,
+        power=50,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

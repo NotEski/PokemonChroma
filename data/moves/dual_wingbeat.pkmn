@@ -1,13 +1,15 @@
-@move("dual_wingbeat")  # type: ignore
+from pkmn_imports import *
+
+@move("dual_wingbeat")
 class _DualWingbeat:
-    meta = {
-        "display_name": "Dual Wingbeat",
-        "type": "flying",
-        "index": 814,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 40,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dual Wingbeat",
+        index=814,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=40,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

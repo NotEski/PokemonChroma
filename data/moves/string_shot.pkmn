@@ -1,16 +1,18 @@
-@move("string_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("string_shot")
 class _StringShot:
-    meta = {
-        "display_name": "String Shot",
-        "type": "bug",
-        "index": 81,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 95,
-        "power": None,
-        "pp": 40,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="String Shot",
+        index=81,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=95,
+        power=None,
+        pp=40,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -2, "chance": 100}],
     }

@@ -1,16 +1,18 @@
-@move("smack_down")  # type: ignore
+from pkmn_imports import *
+
+@move("smack_down")
 class _SmackDown:
-    meta = {
-        "display_name": "Smack Down",
-        "type": "rock",
-        "index": 479,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 50,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Smack Down",
+        index=479,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=50,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "unknown": 100,
     }

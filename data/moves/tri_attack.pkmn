@@ -1,16 +1,18 @@
-@move("tri_attack")  # type: ignore
+from pkmn_imports import *
+
+@move("tri_attack")
 class _TriAttack:
-    meta = {
-        "display_name": "Tri Attack",
-        "type": "normal",
-        "index": 161,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Tri Attack",
+        index=161,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "unknown": 20,
     }

@@ -1,16 +1,18 @@
-@move("draco_meteor")  # type: ignore
+from pkmn_imports import *
+
+@move("draco_meteor")
 class _DracoMeteor:
-    meta = {
-        "display_name": "Draco Meteor",
-        "type": "dragon",
-        "index": 434,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 130,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Draco Meteor",
+        index=434,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=130,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
     }

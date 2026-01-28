@@ -1,16 +1,18 @@
-@move("charge_beam")  # type: ignore
+from pkmn_imports import *
+
+@move("charge_beam")
 class _ChargeBeam:
-    meta = {
-        "display_name": "Charge Beam",
-        "type": "electric",
-        "index": 451,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 50,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Charge Beam",
+        index=451,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=50,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 70}],
     }

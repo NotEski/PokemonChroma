@@ -1,13 +1,15 @@
-@move("present")  # type: ignore
+from pkmn_imports import *
+
+@move("present")
 class _Present:
-    meta = {
-        "display_name": "Present",
-        "type": "normal",
-        "index": 217,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Present",
+        index=217,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -1,13 +1,15 @@
-@move("chilly_reception")  # type: ignore
+from pkmn_imports import *
+
+@move("chilly_reception")
 class _ChillyReception:
-    meta = {
-        "display_name": "Chilly Reception",
-        "type": "ice",
-        "index": 881,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": 0,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Chilly Reception",
+        index=881,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=0,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

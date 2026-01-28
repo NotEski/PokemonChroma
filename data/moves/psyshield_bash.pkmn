@@ -1,13 +1,15 @@
-@move("psyshield_bash")  # type: ignore
+from pkmn_imports import *
+
+@move("psyshield_bash")
 class _PsyshieldBash:
-    meta = {
-        "display_name": "Psyshield Bash",
-        "type": "psychic",
-        "index": 828,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 70,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Psyshield Bash",
+        index=828,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=70,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

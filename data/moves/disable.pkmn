@@ -1,16 +1,18 @@
-@move("disable")  # type: ignore
+from pkmn_imports import *
+
+@move("disable")
 class _Disable:
-    meta = {
-        "display_name": "Disable",
-        "type": "normal",
-        "index": 50,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Disable",
+        index=50,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "disable": 0,
     }

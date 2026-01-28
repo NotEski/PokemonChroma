@@ -1,16 +1,18 @@
-@move("leaf_storm")  # type: ignore
+from pkmn_imports import *
+
+@move("leaf_storm")
 class _LeafStorm:
-    meta = {
-        "display_name": "Leaf Storm",
-        "type": "grass",
-        "index": 437,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 130,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Leaf Storm",
+        index=437,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=130,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
     }

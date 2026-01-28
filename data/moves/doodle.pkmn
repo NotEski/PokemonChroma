@@ -1,13 +1,15 @@
-@move("doodle")  # type: ignore
+from pkmn_imports import *
+
+@move("doodle")
 class _Doodle:
-    meta = {
-        "display_name": "Doodle",
-        "type": "normal",
-        "index": 867,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 0,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Doodle",
+        index=867,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=0,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

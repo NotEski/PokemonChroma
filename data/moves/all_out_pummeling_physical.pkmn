@@ -1,13 +1,15 @@
-@move("all_out_pummeling_physical")  # type: ignore
+from pkmn_imports import *
+
+@move("all_out_pummeling_physical")
 class _AllOutPummelingPhysical:
-    meta = {
-        "display_name": "All-Out Pummeling",
-        "type": "fighting",
-        "index": 624,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 1,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="All-Out Pummeling",
+        index=624,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=1,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

@@ -381,6 +381,9 @@ class BattleMon(BaseModel):
     def stat_speed(self) -> int:
         return self.calculate_stat(Stat.SPEED)
     
+    def get_stat(self, stat: Stat) -> int:
+        return self.calculate_stat(stat)
+
     @property
     def is_fainted(self) -> bool:
         return self.current_hp <= 0

@@ -1,16 +1,18 @@
-@move("clanging_scales")  # type: ignore
+from pkmn_imports import *
+
+@move("clanging_scales")
 class _ClangingScales:
-    meta = {
-        "display_name": "Clanging Scales",
-        "type": "dragon",
-        "index": 691,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 110,
-        "pp": 5,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Clanging Scales",
+        index=691,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=110,
+        pp=5,
+        target=MoveTarget.ALL_OPPONENTS,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
     }

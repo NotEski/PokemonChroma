@@ -1,13 +1,15 @@
-@move("brutal_swing")  # type: ignore
+from pkmn_imports import *
+
+@move("brutal_swing")
 class _BrutalSwing:
-    meta = {
-        "display_name": "Brutal Swing",
-        "type": "dark",
-        "index": 693,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 20,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Brutal Swing",
+        index=693,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=20,
+        target=MoveTarget("all_other_pokemon"),
+    )

@@ -1,16 +1,18 @@
-@move("fire_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("fire_punch")
 class _FirePunch:
-    meta = {
-        "display_name": "Fire Punch",
-        "type": "fire",
-        "index": 7,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 75,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fire Punch",
+        index=7,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=75,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 10,
     }

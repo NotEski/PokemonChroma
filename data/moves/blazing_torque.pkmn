@@ -1,13 +1,15 @@
-@move("blazing_torque")  # type: ignore
+from pkmn_imports import *
+
+@move("blazing_torque")
 class _BlazingTorque:
-    meta = {
-        "display_name": "Blazing Torque",
-        "type": "fire",
-        "index": 896,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Blazing Torque",
+        index=896,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

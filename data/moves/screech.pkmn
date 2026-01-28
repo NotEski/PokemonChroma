@@ -1,16 +1,18 @@
-@move("screech")  # type: ignore
+from pkmn_imports import *
+
+@move("screech")
 class _Screech:
-    meta = {
-        "display_name": "Screech",
-        "type": "normal",
-        "index": 103,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 85,
-        "power": None,
-        "pp": 40,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Screech",
+        index=103,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=None,
+        pp=40,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -2, "chance": 100}],
     }

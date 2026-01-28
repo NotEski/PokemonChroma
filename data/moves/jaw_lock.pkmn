@@ -1,13 +1,15 @@
-@move("jaw_lock")  # type: ignore
+from pkmn_imports import *
+
+@move("jaw_lock")
 class _JawLock:
-    meta = {
-        "display_name": "Jaw Lock",
-        "type": "dark",
-        "index": 746,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Jaw Lock",
+        index=746,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

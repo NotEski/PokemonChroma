@@ -1,13 +1,15 @@
-@move("pay_day")  # type: ignore
+from pkmn_imports import *
+
+@move("pay_day")
 class _PayDay:
-    meta = {
-        "display_name": "Pay Day",
-        "type": "normal",
-        "index": 6,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Pay Day",
+        index=6,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

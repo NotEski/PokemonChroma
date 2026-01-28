@@ -1,13 +1,15 @@
-@move("incinerate")  # type: ignore
+from pkmn_imports import *
+
+@move("incinerate")
 class _Incinerate:
-    meta = {
-        "display_name": "Incinerate",
-        "type": "fire",
-        "index": 510,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 15,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Incinerate",
+        index=510,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=15,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

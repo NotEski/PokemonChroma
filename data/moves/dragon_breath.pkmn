@@ -1,16 +1,18 @@
-@move("dragon_breath")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_breath")
 class _DragonBreath:
-    meta = {
-        "display_name": "Dragon Breath",
-        "type": "dragon",
-        "index": 225,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Breath",
+        index=225,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

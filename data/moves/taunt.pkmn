@@ -1,13 +1,15 @@
-@move("taunt")  # type: ignore
+from pkmn_imports import *
+
+@move("taunt")
 class _Taunt:
-    meta = {
-        "display_name": "Taunt",
-        "type": "dark",
-        "index": 269,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Taunt",
+        index=269,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

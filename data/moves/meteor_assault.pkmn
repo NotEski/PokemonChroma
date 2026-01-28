@@ -1,13 +1,15 @@
-@move("meteor_assault")  # type: ignore
+from pkmn_imports import *
+
+@move("meteor_assault")
 class _MeteorAssault:
-    meta = {
-        "display_name": "Meteor Assault",
-        "type": "fighting",
-        "index": 794,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 150,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Meteor Assault",
+        index=794,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=150,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

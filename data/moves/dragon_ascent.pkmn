@@ -1,16 +1,18 @@
-@move("dragon_ascent")  # type: ignore
+from pkmn_imports import *
+
+@move("dragon_ascent")
 class _DragonAscent:
-    meta = {
-        "display_name": "Dragon Ascent",
-        "type": "flying",
-        "index": 620,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Dragon Ascent",
+        index=620,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
     }

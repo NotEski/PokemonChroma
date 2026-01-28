@@ -1,13 +1,15 @@
-@move("encore")  # type: ignore
+from pkmn_imports import *
+
+@move("encore")
 class _Encore:
-    meta = {
-        "display_name": "Encore",
-        "type": "normal",
-        "index": 227,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Encore",
+        index=227,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

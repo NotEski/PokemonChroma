@@ -1,16 +1,18 @@
-@move("smokescreen")  # type: ignore
+from pkmn_imports import *
+
+@move("smokescreen")
 class _Smokescreen:
-    meta = {
-        "display_name": "Smokescreen",
-        "type": "normal",
-        "index": 108,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Smokescreen",
+        index=108,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
     }

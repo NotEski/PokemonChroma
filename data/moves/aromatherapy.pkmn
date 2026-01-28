@@ -1,13 +1,15 @@
-@move("aromatherapy")  # type: ignore
+from pkmn_imports import *
+
+@move("aromatherapy")
 class _Aromatherapy:
-    meta = {
-        "display_name": "Aromatherapy",
-        "type": "grass",
-        "index": 312,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user_and_allies",
-    }
+    meta = MoveMetaData(
+        display_name="Aromatherapy",
+        index=312,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget("user_and_allies"),
+    )

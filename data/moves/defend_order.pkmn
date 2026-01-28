@@ -1,16 +1,18 @@
-@move("defend_order")  # type: ignore
+from pkmn_imports import *
+
+@move("defend_order")
 class _DefendOrder:
-    meta = {
-        "display_name": "Defend Order",
-        "type": "bug",
-        "index": 455,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Defend Order",
+        index=455,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
     }

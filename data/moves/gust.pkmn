@@ -1,13 +1,15 @@
-@move("gust")  # type: ignore
+from pkmn_imports import *
+
+@move("gust")
 class _Gust:
-    meta = {
-        "display_name": "Gust",
-        "type": "flying",
-        "index": 16,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Gust",
+        index=16,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

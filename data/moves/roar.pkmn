@@ -1,14 +1,16 @@
-@move("roar")  # type: ignore
+from pkmn_imports import *
+
+@move("roar")
 class _Roar:
-    meta = {
-        "display_name": "Roar",
-        "type": "normal",
-        "index": 46,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Roar",
+        index=46,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = -6

@@ -1,14 +1,16 @@
-@move("heal_order")  # type: ignore
+from pkmn_imports import *
+
+@move("heal_order")
 class _HealOrder:
-    meta = {
-        "display_name": "Heal Order",
-        "type": "bug",
-        "index": 456,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Heal Order",
+        index=456,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     healing = 50

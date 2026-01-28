@@ -1,13 +1,15 @@
-@move("gear_grind")  # type: ignore
+from pkmn_imports import *
+
+@move("gear_grind")
 class _GearGrind:
-    meta = {
-        "display_name": "Gear Grind",
-        "type": "steel",
-        "index": 544,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 50,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Gear Grind",
+        index=544,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=50,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

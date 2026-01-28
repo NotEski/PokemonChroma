@@ -84,25 +84,28 @@ class OnUseReturns(Enum):
     FAIL = "fail"
     NO_EFFECT = "no_effect"
 
+
+class MoveMetaData(BaseModel):
+    display_name: str = ""
+    index: int
+    type: PokemonType
+    damage_class: DamageClass
+    category: MoveCategory
+    accuracy: Optional[int] = None
+    power: Optional[int] = None
+    pp: int = 15
+    target: MoveTarget = MoveTarget.SELECTED_POKEMON
+
 class BaseMove(BaseModel):
     model_config = ConfigDict(extra='allow')
     
     name: str
-    display_name: str = ""
-    index: int
 
-    type: PokemonType
-    damage_class: DamageClass = DamageClass.PHYSICAL
-    category: MoveCategory = MoveCategory.DAMAGE
+    meta: MoveMetaData
 
-    accuracy: Optional[int] = 100
-    power: Optional[int] = 100
-    base_pp: int = 15
     max_pp_inc_one: int = 0
     max_pp_inc_two: int = 0
     max_pp_inc_three: int = 0
-
-    target: MoveTarget = Field(default=MoveTarget.SELECTED_POKEMON)
 
     move_tags: List[MoveTag] = [] # Additional tags for the move
     
@@ -192,6 +195,39 @@ class BaseMove(BaseModel):
         if self.move_tags == []:
             return
         self.move_tags = [tag for tag in self.move_tags if not isinstance(tag, tag_type)]
+
+    #region Meta property getters
+    @property
+    def display_name(self) -> str:
+        return self.meta.display_name
+    @display_name.setter
+    def display_name(self, value: str) -> None:
+        self.meta.display_name = value
+    @property
+    def index(self) -> int:
+        return self.meta.index
+    @property
+    def type(self) -> PokemonType:
+        return self.meta.type
+    @property
+    def damage_class(self) -> DamageClass:
+        return self.meta.damage_class
+    @property
+    def category(self) -> MoveCategory:
+        return self.meta.category
+    @property
+    def power(self) -> Optional[int]:
+        return self.meta.power
+    @property
+    def accuracy(self) -> Optional[int]:
+        return self.meta.accuracy
+    @property
+    def base_pp(self) -> int:
+        return self.meta.pp
+    @property
+    def target(self) -> MoveTarget:
+        return self.meta.target
+    #endregion
 
     #region Move property getters
     @property

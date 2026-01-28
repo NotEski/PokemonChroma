@@ -1,16 +1,18 @@
-@move("flatter")  # type: ignore
+from pkmn_imports import *
+
+@move("flatter")
 class _Flatter:
-    meta = {
-        "display_name": "Flatter",
-        "type": "dark",
-        "index": 260,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Flatter",
+        index=260,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 100}],
     }

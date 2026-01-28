@@ -1,16 +1,18 @@
-@move("shadow_ball")  # type: ignore
+from pkmn_imports import *
+
+@move("shadow_ball")
 class _ShadowBall:
-    meta = {
-        "display_name": "Shadow Ball",
-        "type": "ghost",
-        "index": 247,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Shadow Ball",
+        index=247,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 20}],
     }

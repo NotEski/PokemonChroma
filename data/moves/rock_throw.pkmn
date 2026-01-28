@@ -1,13 +1,15 @@
-@move("rock_throw")  # type: ignore
+from pkmn_imports import *
+
+@move("rock_throw")
 class _RockThrow:
-    meta = {
-        "display_name": "Rock Throw",
-        "type": "rock",
-        "index": 88,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 50,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rock Throw",
+        index=88,
+        type=PokemonType("rock"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=50,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

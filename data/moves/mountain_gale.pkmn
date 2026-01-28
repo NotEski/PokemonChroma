@@ -1,13 +1,15 @@
-@move("mountain_gale")  # type: ignore
+from pkmn_imports import *
+
+@move("mountain_gale")
 class _MountainGale:
-    meta = {
-        "display_name": "Mountain Gale",
-        "type": "ice",
-        "index": 836,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 100,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Mountain Gale",
+        index=836,
+        type=PokemonType("ice"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=100,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

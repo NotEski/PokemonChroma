@@ -1,16 +1,18 @@
-@move("rock_smash")  # type: ignore
+from pkmn_imports import *
+
+@move("rock_smash")
 class _RockSmash:
-    meta = {
-        "display_name": "Rock Smash",
-        "type": "fighting",
-        "index": 249,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rock Smash",
+        index=249,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 50}],
     }

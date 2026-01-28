@@ -1,16 +1,18 @@
-@move("aura_wheel")  # type: ignore
+from pkmn_imports import *
+
+@move("aura_wheel")
 class _AuraWheel:
-    meta = {
-        "display_name": "Aura Wheel",
-        "type": "electric",
-        "index": 783,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 110,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Aura Wheel",
+        index=783,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=110,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
     }

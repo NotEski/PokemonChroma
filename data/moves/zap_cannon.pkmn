@@ -1,16 +1,18 @@
-@move("zap_cannon")  # type: ignore
+from pkmn_imports import *
+
+@move("zap_cannon")
 class _ZapCannon:
-    meta = {
-        "display_name": "Zap Cannon",
-        "type": "electric",
-        "index": 192,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 50,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Zap Cannon",
+        index=192,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=50,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 100,
     }

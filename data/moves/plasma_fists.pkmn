@@ -1,13 +1,15 @@
-@move("plasma_fists")  # type: ignore
+from pkmn_imports import *
+
+@move("plasma_fists")
 class _PlasmaFists:
-    meta = {
-        "display_name": "Plasma Fists",
-        "type": "electric",
-        "index": 721,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Plasma Fists",
+        index=721,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

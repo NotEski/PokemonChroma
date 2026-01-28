@@ -1,14 +1,16 @@
-@move("upper_hand")  # type: ignore
+from pkmn_imports import *
+
+@move("upper_hand")
 class _UpperHand:
-    meta = {
-        "display_name": "Upper Hand",
-        "type": "fighting",
-        "index": 918,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 65,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Upper Hand",
+        index=918,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=65,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 3

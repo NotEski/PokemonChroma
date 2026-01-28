@@ -1,16 +1,18 @@
-@move("confide")  # type: ignore
+from pkmn_imports import *
+
+@move("confide")
 class _Confide:
-    meta = {
-        "display_name": "Confide",
-        "type": "normal",
-        "index": 590,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Confide",
+        index=590,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
     }

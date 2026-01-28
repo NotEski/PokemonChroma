@@ -1,13 +1,15 @@
-@move("spectral_thief")  # type: ignore
+from pkmn_imports import *
+
+@move("spectral_thief")
 class _SpectralThief:
-    meta = {
-        "display_name": "Spectral Thief",
-        "type": "ghost",
-        "index": 712,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spectral Thief",
+        index=712,
+        type=PokemonType("ghost"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

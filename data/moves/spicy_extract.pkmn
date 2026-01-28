@@ -1,16 +1,18 @@
-@move("spicy_extract")  # type: ignore
+from pkmn_imports import *
+
+@move("spicy_extract")
 class _SpicyExtract:
-    meta = {
-        "display_name": "Spicy Extract",
-        "type": "grass",
-        "index": 858,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": 0,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Spicy Extract",
+        index=858,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=0,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 2, "chance": 100}, {"stat": "defense", "change": -2, "chance": 100}],
     }

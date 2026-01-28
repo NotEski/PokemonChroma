@@ -1,14 +1,16 @@
-@move("rolling_kick")  # type: ignore
+from pkmn_imports import *
+
+@move("rolling_kick")
 class _RollingKick:
-    meta = {
-        "display_name": "Rolling Kick",
-        "type": "fighting",
-        "index": 27,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 60,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Rolling Kick",
+        index=27,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=60,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

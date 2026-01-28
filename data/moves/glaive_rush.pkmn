@@ -1,13 +1,15 @@
-@move("glaive_rush")  # type: ignore
+from pkmn_imports import *
+
+@move("glaive_rush")
 class _GlaiveRush:
-    meta = {
-        "display_name": "Glaive Rush",
-        "type": "dragon",
-        "index": 862,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Glaive Rush",
+        index=862,
+        type=PokemonType("dragon"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

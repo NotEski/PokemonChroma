@@ -1,16 +1,18 @@
-@move("clamp")  # type: ignore
+from pkmn_imports import *
+
+@move("clamp")
 class _Clamp:
-    meta = {
-        "display_name": "Clamp",
-        "type": "water",
-        "index": 128,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 35,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Clamp",
+        index=128,
+        type=PokemonType("water"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=35,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "trap": 100,
     }

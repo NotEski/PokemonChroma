@@ -1,16 +1,18 @@
-@move("parting_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("parting_shot")
 class _PartingShot:
-    meta = {
-        "display_name": "Parting Shot",
-        "type": "dark",
-        "index": 575,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 20,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Parting Shot",
+        index=575,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=20,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}],
     }

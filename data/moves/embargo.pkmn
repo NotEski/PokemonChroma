@@ -1,16 +1,18 @@
-@move("embargo")  # type: ignore
+from pkmn_imports import *
+
+@move("embargo")
 class _Embargo:
-    meta = {
-        "display_name": "Embargo",
-        "type": "dark",
-        "index": 373,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Embargo",
+        index=373,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "embargo": 0,
     }

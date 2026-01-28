@@ -1,14 +1,16 @@
-@move("bullet_punch")  # type: ignore
+from pkmn_imports import *
+
+@move("bullet_punch")
 class _BulletPunch:
-    meta = {
-        "display_name": "Bullet Punch",
-        "type": "steel",
-        "index": 418,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 40,
-        "pp": 30,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bullet Punch",
+        index=418,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=40,
+        pp=30,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     priority = 1

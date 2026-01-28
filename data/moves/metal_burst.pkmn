@@ -1,13 +1,15 @@
-@move("metal_burst")  # type: ignore
+from pkmn_imports import *
+
+@move("metal_burst")
 class _MetalBurst:
-    meta = {
-        "display_name": "Metal Burst",
-        "type": "steel",
-        "index": 368,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": None,
-        "pp": 10,
-        "target": "specific_move",
-    }
+    meta = MoveMetaData(
+        display_name="Metal Burst",
+        index=368,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=None,
+        pp=10,
+        target=MoveTarget("specific_move"),
+    )

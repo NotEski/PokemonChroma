@@ -1,16 +1,18 @@
-@move("silk_trap")  # type: ignore
+from pkmn_imports import *
+
+@move("silk_trap")
 class _SilkTrap:
-    meta = {
-        "display_name": "Silk Trap",
-        "type": "bug",
-        "index": 852,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": 0,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Silk Trap",
+        index=852,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=0,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4
     stat_changes = {
         "stat_changes_recieved": [{"stat": "speed", "change": -1, "chance": 100}],

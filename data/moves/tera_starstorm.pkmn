@@ -1,13 +1,15 @@
-@move("tera_starstorm")  # type: ignore
+from pkmn_imports import *
+
+@move("tera_starstorm")
 class _TeraStarstorm:
-    meta = {
-        "display_name": "Tera Starstorm",
-        "type": "normal",
-        "index": 906,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "all_opponents",
-    }
+    meta = MoveMetaData(
+        display_name="Tera Starstorm",
+        index=906,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.ALL_OPPONENTS,
+    )

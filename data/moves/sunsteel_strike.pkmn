@@ -1,13 +1,15 @@
-@move("sunsteel_strike")  # type: ignore
+from pkmn_imports import *
+
+@move("sunsteel_strike")
 class _SunsteelStrike:
-    meta = {
-        "display_name": "Sunsteel Strike",
-        "type": "steel",
-        "index": 713,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Sunsteel Strike",
+        index=713,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

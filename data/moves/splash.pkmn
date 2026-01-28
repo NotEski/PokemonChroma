@@ -1,13 +1,15 @@
-@move("splash")  # type: ignore
+from pkmn_imports import *
+
+@move("splash")
 class _Splash:
-    meta = {
-        "display_name": "Splash",
-        "type": "normal",
-        "index": 150,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 40,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Splash",
+        index=150,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=40,
+        target=MoveTarget.USER,
+    )

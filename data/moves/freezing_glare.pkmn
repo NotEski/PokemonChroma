@@ -1,16 +1,18 @@
-@move("freezing_glare")  # type: ignore
+from pkmn_imports import *
+
+@move("freezing_glare")
 class _FreezingGlare:
-    meta = {
-        "display_name": "Freezing Glare",
-        "type": "psychic",
-        "index": 821,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 90,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Freezing Glare",
+        index=821,
+        type=PokemonType("psychic"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=90,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "freeze": 10,
     }

@@ -1,16 +1,18 @@
-@move("shift_gear")  # type: ignore
+from pkmn_imports import *
+
+@move("shift_gear")
 class _ShiftGear:
-    meta = {
-        "display_name": "Shift Gear",
-        "type": "steel",
-        "index": 508,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Shift Gear",
+        index=508,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "speed", "change": 2, "chance": 100}],
     }

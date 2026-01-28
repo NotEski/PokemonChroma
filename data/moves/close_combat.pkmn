@@ -1,16 +1,18 @@
-@move("close_combat")  # type: ignore
+from pkmn_imports import *
+
+@move("close_combat")
 class _CloseCombat:
-    meta = {
-        "display_name": "Close Combat",
-        "type": "fighting",
-        "index": 370,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Close Combat",
+        index=370,
+        type=PokemonType("fighting"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
     }

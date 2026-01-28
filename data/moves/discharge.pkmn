@@ -1,16 +1,18 @@
-@move("discharge")  # type: ignore
+from pkmn_imports import *
+
+@move("discharge")
 class _Discharge:
-    meta = {
-        "display_name": "Discharge",
-        "type": "electric",
-        "index": 435,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 80,
-        "pp": 15,
-        "target": "all_other_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Discharge",
+        index=435,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=80,
+        pp=15,
+        target=MoveTarget("all_other_pokemon"),
+    )
     status_condition = {
         "paralysis": 30,
     }

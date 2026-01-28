@@ -1,13 +1,15 @@
-@move("ruination")  # type: ignore
+from pkmn_imports import *
+
+@move("ruination")
 class _Ruination:
-    meta = {
-        "display_name": "Ruination",
-        "type": "dark",
-        "index": 877,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 90,
-        "power": 1,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Ruination",
+        index=877,
+        type=PokemonType("dark"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=90,
+        power=1,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

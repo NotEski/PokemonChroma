@@ -1,13 +1,15 @@
-@move("blood_moon")  # type: ignore
+from pkmn_imports import *
+
+@move("blood_moon")
 class _BloodMoon:
-    meta = {
-        "display_name": "Blood Moon",
-        "type": "normal",
-        "index": 901,
-        "damage_class": "special",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 140,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Blood Moon",
+        index=901,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.SPECIAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=140,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

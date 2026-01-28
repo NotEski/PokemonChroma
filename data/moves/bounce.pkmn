@@ -1,16 +1,18 @@
-@move("bounce")  # type: ignore
+from pkmn_imports import *
+
+@move("bounce")
 class _Bounce:
-    meta = {
-        "display_name": "Bounce",
-        "type": "flying",
-        "index": 340,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 85,
-        "power": 85,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Bounce",
+        index=340,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=85,
+        power=85,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "paralysis": 30,
     }

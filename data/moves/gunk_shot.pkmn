@@ -1,16 +1,18 @@
-@move("gunk_shot")  # type: ignore
+from pkmn_imports import *
+
+@move("gunk_shot")
 class _GunkShot:
-    meta = {
-        "display_name": "Gunk Shot",
-        "type": "poison",
-        "index": 441,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 80,
-        "power": 120,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Gunk Shot",
+        index=441,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=80,
+        power=120,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 30,
     }

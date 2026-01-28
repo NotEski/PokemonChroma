@@ -1,14 +1,16 @@
-@move("morning_sun")  # type: ignore
+from pkmn_imports import *
+
+@move("morning_sun")
 class _MorningSun:
-    meta = {
-        "display_name": "Morning Sun",
-        "type": "normal",
-        "index": 234,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 5,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Morning Sun",
+        index=234,
+        type=PokemonType("normal"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=5,
+        target=MoveTarget.USER,
+    )
     healing = 50

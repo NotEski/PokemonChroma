@@ -1,13 +1,15 @@
-@move("hard_press")  # type: ignore
+from pkmn_imports import *
+
+@move("hard_press")
 class _HardPress:
-    meta = {
-        "display_name": "Hard Press",
-        "type": "steel",
-        "index": 912,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 0,
-        "pp": 10,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Hard Press",
+        index=912,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=0,
+        pp=10,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

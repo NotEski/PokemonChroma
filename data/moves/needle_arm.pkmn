@@ -1,14 +1,16 @@
-@move("needle_arm")  # type: ignore
+from pkmn_imports import *
+
+@move("needle_arm")
 class _NeedleArm:
-    meta = {
-        "display_name": "Needle Arm",
-        "type": "grass",
-        "index": 302,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Needle Arm",
+        index=302,
+        type=PokemonType("grass"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     flinch_chance = 30

@@ -1,13 +1,15 @@
-@move("electric_terrain")  # type: ignore
+from pkmn_imports import *
+
+@move("electric_terrain")
 class _ElectricTerrain:
-    meta = {
-        "display_name": "Electric Terrain",
-        "type": "electric",
-        "index": 604,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": None,
-        "power": None,
-        "pp": 10,
-        "target": "entire_field",
-    }
+    meta = MoveMetaData(
+        display_name="Electric Terrain",
+        index=604,
+        type=PokemonType("electric"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=None,
+        power=None,
+        pp=10,
+        target=MoveTarget("entire_field"),
+    )

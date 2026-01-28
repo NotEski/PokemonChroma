@@ -1,16 +1,18 @@
-@move("flame_wheel")  # type: ignore
+from pkmn_imports import *
+
+@move("flame_wheel")
 class _FlameWheel:
-    meta = {
-        "display_name": "Flame Wheel",
-        "type": "fire",
-        "index": 172,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 60,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Flame Wheel",
+        index=172,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=60,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "burn": 10,
     }

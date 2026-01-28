@@ -1,14 +1,16 @@
-@move("brave_bird")  # type: ignore
+from pkmn_imports import *
+
+@move("brave_bird")
 class _BraveBird:
-    meta = {
-        "display_name": "Brave Bird",
-        "type": "flying",
-        "index": 413,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 120,
-        "pp": 15,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Brave Bird",
+        index=413,
+        type=PokemonType("flying"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=120,
+        pp=15,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     drain = -33

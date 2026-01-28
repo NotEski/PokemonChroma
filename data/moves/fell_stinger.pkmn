@@ -1,13 +1,15 @@
-@move("fell_stinger")  # type: ignore
+from pkmn_imports import *
+
+@move("fell_stinger")
 class _FellStinger:
-    meta = {
-        "display_name": "Fell Stinger",
-        "type": "bug",
-        "index": 565,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 50,
-        "pp": 25,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Fell Stinger",
+        index=565,
+        type=PokemonType("bug"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=50,
+        pp=25,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

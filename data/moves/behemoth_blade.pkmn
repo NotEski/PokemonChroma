@@ -1,13 +1,15 @@
-@move("behemoth_blade")  # type: ignore
+from pkmn_imports import *
+
+@move("behemoth_blade")
 class _BehemothBlade:
-    meta = {
-        "display_name": "Behemoth Blade",
-        "type": "steel",
-        "index": 781,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 100,
-        "pp": 5,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Behemoth Blade",
+        index=781,
+        type=PokemonType("steel"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=100,
+        pp=5,
+        target=MoveTarget.SELECTED_POKEMON,
+    )

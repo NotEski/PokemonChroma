@@ -1,16 +1,18 @@
-@move("poison_sting")  # type: ignore
+from pkmn_imports import *
+
+@move("poison_sting")
 class _PoisonSting:
-    meta = {
-        "display_name": "Poison Sting",
-        "type": "poison",
-        "index": 40,
-        "damage_class": "physical",
-        "category": "damage",
-        "accuracy": 100,
-        "power": 15,
-        "pp": 35,
-        "target": "selected_pokemon",
-    }
+    meta = MoveMetaData(
+        display_name="Poison Sting",
+        index=40,
+        type=PokemonType("poison"),
+        damage_class=DamageClass.PHYSICAL,
+        category=MoveCategory.DAMAGE,
+        accuracy=100,
+        power=15,
+        pp=35,
+        target=MoveTarget.SELECTED_POKEMON,
+    )
     status_condition = {
         "poison": 30,
     }

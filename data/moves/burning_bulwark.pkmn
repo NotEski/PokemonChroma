@@ -1,14 +1,16 @@
-@move("burning_bulwark")  # type: ignore
+from pkmn_imports import *
+
+@move("burning_bulwark")
 class _BurningBulwark:
-    meta = {
-        "display_name": "Burning Bulwark",
-        "type": "fire",
-        "index": 908,
-        "damage_class": "status",
-        "category": "damage",
-        "accuracy": 0,
-        "power": 0,
-        "pp": 10,
-        "target": "user",
-    }
+    meta = MoveMetaData(
+        display_name="Burning Bulwark",
+        index=908,
+        type=PokemonType("fire"),
+        damage_class=DamageClass.STATUS,
+        category=MoveCategory.DAMAGE,
+        accuracy=0,
+        power=0,
+        pp=10,
+        target=MoveTarget.USER,
+    )
     priority = 4
