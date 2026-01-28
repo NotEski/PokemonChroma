@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("coalossal_gmax")
 class MegaCoalossal:
     display_name = "Coalossal Gmax"

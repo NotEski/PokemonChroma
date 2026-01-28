@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("drednaw_gmax")
 class MegaDrednaw:
     display_name = "Drednaw Gmax"

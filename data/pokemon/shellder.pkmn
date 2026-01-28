@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("shellder")
 class Shellder:
     display_name = "Shellder"

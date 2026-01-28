@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("avalugg_hisui")
 class MegaAvaluggHisui:
     display_name = "Avalugg Hisui"

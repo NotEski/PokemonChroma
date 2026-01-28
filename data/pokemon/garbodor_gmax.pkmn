@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("garbodor_gmax")
 class MegaGarbodor:
     display_name = "Garbodor Gmax"

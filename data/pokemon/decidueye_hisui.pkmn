@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("decidueye_hisui")
 class MegaDecidueyeHisui:
     display_name = "Decidueye Hisui"

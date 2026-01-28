@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("maushold_family_of_four")
 class MausholdFamilyOfFour:
     display_name = "Maushold Family Of Four"

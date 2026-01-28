@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("calyrex_shadow")
 class CalyrexShadow:
     display_name = "Calyrex Shadow"

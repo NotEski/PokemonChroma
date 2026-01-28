@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("toxtricity_amped_gmax")
 class MegaToxtricityAmped:
     display_name = "Toxtricity Amped Gmax"

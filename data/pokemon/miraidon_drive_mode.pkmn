@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("miraidon_drive_mode")
 class MegaMiraidonDriveMode:
     display_name = "Miraidon Drive Mode"

@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("tauros_paldea_aqua_breed")
 class MegaTaurosPaldeaAquaBreed:
     display_name = "Tauros Paldea Aqua Breed"

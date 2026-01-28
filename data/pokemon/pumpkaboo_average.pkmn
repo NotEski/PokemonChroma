@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("pumpkaboo_average")
 class PumpkabooAverage:
     display_name = "Pumpkaboo Average"

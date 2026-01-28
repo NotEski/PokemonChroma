@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("meowstic_mega")
 class MegaMeowstic:
     display_name = "Meowstic Mega"

@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("garchomp_mega_z")
 class MegaGarchompZ:
     display_name = "Garchomp Mega Z"

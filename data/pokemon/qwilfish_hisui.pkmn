@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("qwilfish_hisui")
 class MegaQwilfishHisui:
     display_name = "Qwilfish Hisui"

@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("kyurem_white")
 class KyuremWhite:
     display_name = "Kyurem White"

@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("scolipede_mega")
 class MegaScolipede:
     display_name = "Scolipede Mega"

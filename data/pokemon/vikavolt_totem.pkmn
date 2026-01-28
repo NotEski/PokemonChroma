@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("vikavolt_totem")
 class MegaVikavoltTotem:
     display_name = "Vikavolt Totem"

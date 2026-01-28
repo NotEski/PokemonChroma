@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("pikachu_original_cap")
 class PikachuOriginalCap:
     display_name = "Pikachu Original Cap"

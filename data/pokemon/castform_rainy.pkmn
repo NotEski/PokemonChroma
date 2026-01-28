@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("castform_rainy")
 class MegaCastformRainy:
     display_name = "Castform Rainy"

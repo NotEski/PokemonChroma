@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @pokemon("ninetales_alola")
 class NinetalesAlola:
     display_name = "Ninetales Alola"

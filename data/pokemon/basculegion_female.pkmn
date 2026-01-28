@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("basculegion_female")
 class MegaBasculegionFemale:
     display_name = "Basculegion Female"

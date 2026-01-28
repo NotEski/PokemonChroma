@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("greninja_battle_bond")
 class MegaGreninjaBattleBond:
     display_name = "Greninja Battle Bond"

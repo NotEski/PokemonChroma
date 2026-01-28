@@ -1,6 +1,3 @@
-from shared.pokemon.stats import BaseStats, EffortYield
-
-
 @mega_evolution("raticate_totem_alola")
 class MegaRaticateTotemAlola:
     display_name = "Raticate Totem Alola"
