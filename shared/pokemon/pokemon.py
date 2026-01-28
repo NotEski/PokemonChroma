@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional
 from enum import Enum
 
 from .pokemon_types import PokemonType
-from .move import MoveSet, BaseMove
+from .move import MoveSet, BaseMove, LearnSet
 from .genders import Gender, GenderRate
 from .natures import Nature
 from .abilities import PokemonBaseAbility, PokemonAbilities
@@ -68,6 +68,10 @@ class PokemonBase(BaseModel):
     weight: float = Field(ge=0.0, default=1.0)  # in kilograms
 
     mega_evolutions: List[MegaEvolution] = []
+
+    learnset: LearnSet = Field(default_factory=LearnSet)
+
+    model_config = {"frozen": True}
 
 
 class StatStages(BaseModel):

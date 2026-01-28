@@ -467,4 +467,13 @@ class MoveSet(BaseModel):
         for move in self.moves.values():
             move.current_pp = move.max_pp
 
+class LearnSet(BaseModel):
+    level_up_moves: dict[int, List[BaseMove]] = {}
+    machine_moves: List[BaseMove] = []
+    tutor_moves: List[BaseMove] = []
+    egg_moves: List[BaseMove] = []
+
+
+
+
 rebuild_models()

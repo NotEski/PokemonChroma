@@ -576,12 +576,6 @@ def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
     meta_lines.append(f'        "power": {power if power is not None else "None"},')
     meta_lines.append(f'        "pp": {payload.get("pp")},')
     meta_lines.append(f'        "target": "{payload.get("target")}",')
-    
-    # Optional fields with defaults
-    priority = payload.get("priority", 0)
-    if priority != 0:
-        meta_lines.append(f'        "priority": {priority},')
-    
     meta_lines.append("    }")
     
     # Build the full file content
@@ -593,6 +587,11 @@ def generate_move_pkmn_file(payload: Dict[str, Any]) -> str:
     flags = payload.get("flags") or []
     if flags:
         lines.append(f"    flags = {json.dumps(flags)}")
+
+    # Priority as separate top-level attribute
+    priority = payload.get("priority", 0)
+    if priority != 0:
+        lines.append(f"    priority = {priority}")
 
     stat_changes_inflicted = payload.get("stat_changes_inflicted")
     stat_changes_recieved = payload.get("stat_changes_recieved")
