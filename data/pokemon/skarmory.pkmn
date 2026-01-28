@@ -23,7 +23,7 @@ class Skarmory:
     base_experience_yield = 163
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "keen_eye",
             "slot": 1,
@@ -44,7 +44,7 @@ class Skarmory:
     weight_kg = 50.5
     egg_groups = ['flying']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "peck",

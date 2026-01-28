@@ -23,7 +23,7 @@ class MausholdFamilyOfFour:
     base_experience_yield = 165
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "friend_guard",
             "slot": 1,

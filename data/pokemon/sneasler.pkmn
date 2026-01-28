@@ -23,7 +23,7 @@ class Sneasler:
     base_experience_yield = 102
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pressure",
             "slot": 1,

@@ -23,7 +23,7 @@ class Cinccino:
     base_experience_yield = 165
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cute_charm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Cinccino:
     weight_kg = 7.5
     egg_groups = ['ground']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "after_you",
                 "baby_doll_eyes",

@@ -23,7 +23,7 @@ class Riolu:
     base_experience_yield = 57
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "steadfast",
             "slot": 1,
@@ -44,7 +44,7 @@ class Riolu:
     weight_kg = 20.2
     egg_groups = ['no_eggs']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "endure",
                 "quick_attack",

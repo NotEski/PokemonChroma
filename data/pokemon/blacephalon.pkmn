@@ -23,7 +23,7 @@ class Blacephalon:
     base_experience_yield = 257
     base_happiness = 70
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "beast_boost",
             "slot": 1,
@@ -34,7 +34,7 @@ class Blacephalon:
     weight_kg = 13.0
     egg_groups = ['no_eggs']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "fire_spin",

@@ -23,7 +23,7 @@ class Toxapex:
     base_experience_yield = 173
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "merciless",
             "slot": 1,
@@ -44,7 +44,7 @@ class Toxapex:
     weight_kg = 14.5
     egg_groups = ['water1']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "baneful_bunker",
             ],

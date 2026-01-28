@@ -23,7 +23,7 @@ class Luxio:
     base_experience_yield = 127
     base_happiness = 100
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "rivalry",
             "slot": 1,
@@ -44,7 +44,7 @@ class Luxio:
     weight_kg = 30.5
     egg_groups = ['ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "charge",
                 "leer",

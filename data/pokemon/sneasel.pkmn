@@ -23,7 +23,7 @@ class Sneasel:
     base_experience_yield = 86
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "inner_focus",
             "slot": 1,
@@ -44,7 +44,7 @@ class Sneasel:
     weight_kg = 28.0
     egg_groups = ['ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "scratch",

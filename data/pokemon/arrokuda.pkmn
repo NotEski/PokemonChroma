@@ -23,7 +23,7 @@ class Arrokuda:
     base_experience_yield = 56
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -39,7 +39,7 @@ class Arrokuda:
     weight_kg = 1.0
     egg_groups = ['water2']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "aqua_jet",
                 "peck",

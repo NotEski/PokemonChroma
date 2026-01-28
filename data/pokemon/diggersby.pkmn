@@ -23,7 +23,7 @@ class Diggersby:
     base_experience_yield = 148
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pickup",
             "slot": 1,
@@ -44,7 +44,7 @@ class Diggersby:
     weight_kg = 42.4
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "laser_focus",
                 "leer",

@@ -23,7 +23,7 @@ class Yamask:
     base_experience_yield = 61
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "mummy",
             "slot": 1,
@@ -34,7 +34,7 @@ class Yamask:
     weight_kg = 1.5
     egg_groups = ['mineral', 'indeterminate']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "protect",

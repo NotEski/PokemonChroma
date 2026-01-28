@@ -23,7 +23,7 @@ class NidoranM:
     base_experience_yield = 55
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "poison_point",
             "slot": 1,
@@ -43,7 +43,7 @@ class NidoranM:
     height_m = 0.5
     weight_kg = 9.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "poison_sting",

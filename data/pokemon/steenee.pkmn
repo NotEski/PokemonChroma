@@ -23,7 +23,7 @@ class Steenee:
     base_experience_yield = 102
     base_happiness = 70
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "leaf_guard",
             "slot": 1,
@@ -44,7 +44,7 @@ class Steenee:
     weight_kg = 8.2
     egg_groups = ['plant']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "flail",
                 "play_nice",

@@ -23,7 +23,7 @@ class Fraxure:
     base_experience_yield = 144
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "rivalry",
             "slot": 1,
@@ -44,7 +44,7 @@ class Fraxure:
     weight_kg = 36.0
     egg_groups = ['monster', 'dragon']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bite",
                 "false_swipe",

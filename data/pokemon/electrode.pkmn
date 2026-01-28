@@ -23,7 +23,7 @@ class Electrode:
     base_experience_yield = 172
     base_happiness = 70
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "soundproof",
             "slot": 1,

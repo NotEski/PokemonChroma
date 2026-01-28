@@ -23,7 +23,7 @@ class Nincada:
     base_experience_yield = 53
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "compound_eyes",
             "slot": 1,
@@ -39,7 +39,7 @@ class Nincada:
     weight_kg = 5.5
     egg_groups = ['bug']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "sand_attack",
                 "scratch",

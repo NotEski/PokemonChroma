@@ -23,7 +23,7 @@ class Illumise:
     base_experience_yield = 151
     base_happiness = 70
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "oblivious",
             "slot": 1,

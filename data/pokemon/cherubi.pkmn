@@ -23,7 +23,7 @@ class Cherubi:
     base_experience_yield = 55
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "chlorophyll",
             "slot": 1,
@@ -34,7 +34,7 @@ class Cherubi:
     weight_kg = 3.3
     egg_groups = ['fairy', 'plant']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "morning_sun",
                 "tackle",

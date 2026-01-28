@@ -23,7 +23,7 @@ class Emolga:
     base_experience_yield = 150
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "static",
             "slot": 1,
@@ -39,7 +39,7 @@ class Emolga:
     weight_kg = 5.0
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "nuzzle",
                 "tail_whip",

@@ -23,7 +23,7 @@ class Flapple:
     base_experience_yield = 170
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "ripen",
             "slot": 1,
@@ -44,7 +44,7 @@ class Flapple:
     weight_kg = 1.0
     egg_groups = ['plant', 'dragon']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "wing_attack",
             ],

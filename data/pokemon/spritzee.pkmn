@@ -23,7 +23,7 @@ class Spritzee:
     base_experience_yield = 68
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "healer",
             "slot": 1,
@@ -39,7 +39,7 @@ class Spritzee:
     weight_kg = 0.5
     egg_groups = ['fairy']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fairy_wind",
                 "sweet_scent",

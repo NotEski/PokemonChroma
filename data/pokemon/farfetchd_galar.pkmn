@@ -23,7 +23,7 @@ class FarfetchdGalar:
     base_experience_yield = 132
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "steadfast",
             "slot": 1,
@@ -38,7 +38,7 @@ class FarfetchdGalar:
     height_m = 0.8
     weight_kg = 42.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "peck",
                 "sand_attack",

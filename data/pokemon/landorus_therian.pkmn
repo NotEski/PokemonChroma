@@ -23,7 +23,7 @@ class LandorusTherian:
     base_experience_yield = 300
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intimidate",
             "slot": 1,
@@ -33,7 +33,7 @@ class LandorusTherian:
     height_m = 1.3
     weight_kg = 68.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "rock_throw",
                 "sand_tomb",

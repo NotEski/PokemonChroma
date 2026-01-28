@@ -23,7 +23,7 @@ class Drifloon:
     base_experience_yield = 70
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "aftermath",
             "slot": 1,
@@ -44,7 +44,7 @@ class Drifloon:
     weight_kg = 1.2
     egg_groups = ['indeterminate']
     growth_rate = "fast_then_very_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "minimize",

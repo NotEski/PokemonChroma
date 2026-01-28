@@ -23,7 +23,7 @@ class Ninjask:
     base_experience_yield = 160
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "speed_boost",
             "slot": 1,
@@ -39,7 +39,7 @@ class Ninjask:
     weight_kg = 12.0
     egg_groups = ['bug']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "double_team",
                 "fury_cutter",

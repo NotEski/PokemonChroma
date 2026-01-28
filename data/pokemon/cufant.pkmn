@@ -23,7 +23,7 @@ class Cufant:
     base_experience_yield = 66
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sheer_force",
             "slot": 1,
@@ -39,7 +39,7 @@ class Cufant:
     weight_kg = 100.0
     egg_groups = ['ground', 'mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "growl",
                 "tackle",

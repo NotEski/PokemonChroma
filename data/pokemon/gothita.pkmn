@@ -23,7 +23,7 @@ class Gothita:
     base_experience_yield = 58
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "frisk",
             "slot": 1,
@@ -44,7 +44,7 @@ class Gothita:
     weight_kg = 5.8
     egg_groups = ['humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "confusion",
                 "pound",

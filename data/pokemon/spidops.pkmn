@@ -23,7 +23,7 @@ class Spidops:
     base_experience_yield = 141
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "insomnia",
             "slot": 1,

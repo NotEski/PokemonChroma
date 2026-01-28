@@ -23,7 +23,7 @@ class DarumakaGalar:
     base_experience_yield = 63
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "hustle",
             "slot": 1,
@@ -38,7 +38,7 @@ class DarumakaGalar:
     height_m = 0.7
     weight_kg = 40.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "powder_snow",
                 "tackle",

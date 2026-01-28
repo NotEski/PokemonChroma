@@ -23,7 +23,7 @@ class Grapploct:
     base_experience_yield = 168
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "limber",
             "slot": 1,
@@ -39,7 +39,7 @@ class Grapploct:
     weight_kg = 39.0
     egg_groups = ['water1', 'humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "octolock",
             ],

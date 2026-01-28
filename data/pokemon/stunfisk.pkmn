@@ -23,7 +23,7 @@ class Stunfisk:
     base_experience_yield = 165
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "static",
             "slot": 1,
@@ -44,7 +44,7 @@ class Stunfisk:
     weight_kg = 11.0
     egg_groups = ['water1', 'indeterminate']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "mud_slap",
                 "tackle",

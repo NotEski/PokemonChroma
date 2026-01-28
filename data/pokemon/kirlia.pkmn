@@ -23,7 +23,7 @@ class Kirlia:
     base_experience_yield = 97
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "synchronize",
             "slot": 1,
@@ -44,7 +44,7 @@ class Kirlia:
     weight_kg = 20.2
     egg_groups = ['humanshape', 'indeterminate']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "confusion",
                 "disarming_voice",

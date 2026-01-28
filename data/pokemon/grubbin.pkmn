@@ -23,7 +23,7 @@ class Grubbin:
     base_experience_yield = 60
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,
@@ -34,7 +34,7 @@ class Grubbin:
     weight_kg = 4.4
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "mud_slap",
                 "vice_grip",

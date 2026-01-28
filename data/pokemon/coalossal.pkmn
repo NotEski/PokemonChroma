@@ -23,7 +23,7 @@ class Coalossal:
     base_experience_yield = 255
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "steam_engine",
             "slot": 1,
@@ -44,7 +44,7 @@ class Coalossal:
     weight_kg = 310.5
     egg_groups = ['mineral']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "tar_shot",
             ],

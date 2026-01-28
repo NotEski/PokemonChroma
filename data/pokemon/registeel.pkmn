@@ -23,7 +23,7 @@ class Registeel:
     base_experience_yield = 261
     base_happiness = 35
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "clear_body",
             "slot": 1,
@@ -39,7 +39,7 @@ class Registeel:
     weight_kg = 205.0
     egg_groups = ['no_eggs']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "charge_beam",
                 "metal_claw",

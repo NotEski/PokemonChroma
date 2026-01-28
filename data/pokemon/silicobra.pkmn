@@ -23,7 +23,7 @@ class Silicobra:
     base_experience_yield = 63
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sand_spit",
             "slot": 1,
@@ -44,7 +44,7 @@ class Silicobra:
     weight_kg = 7.6
     egg_groups = ['ground', 'dragon']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "sand_attack",
                 "wrap",

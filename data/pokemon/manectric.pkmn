@@ -23,7 +23,7 @@ class Manectric:
     base_experience_yield = 166
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "static",
             "slot": 1,
@@ -44,7 +44,7 @@ class Manectric:
     weight_kg = 40.2
     egg_groups = ['ground']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fire_fang",
                 "howl",

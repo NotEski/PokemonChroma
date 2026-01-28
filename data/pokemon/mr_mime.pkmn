@@ -23,7 +23,7 @@ class MrMime:
     base_experience_yield = 161
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "soundproof",
             "slot": 1,
@@ -43,7 +43,7 @@ class MrMime:
     height_m = 1.3
     weight_kg = 54.5
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "baton_pass",
                 "copycat",

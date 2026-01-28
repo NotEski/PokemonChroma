@@ -23,7 +23,7 @@ class Amoonguss:
     base_experience_yield = 162
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "effect_spore",
             "slot": 1,
@@ -39,7 +39,7 @@ class Amoonguss:
     weight_kg = 10.5
     egg_groups = ['plant']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "absorb",
                 "astonish",

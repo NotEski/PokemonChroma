@@ -23,7 +23,7 @@ class Pawniard:
     base_experience_yield = 68
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "defiant",
             "slot": 1,
@@ -44,7 +44,7 @@ class Pawniard:
     weight_kg = 10.2
     egg_groups = ['humanshape']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "scratch",

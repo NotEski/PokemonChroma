@@ -23,7 +23,7 @@ class PalafinZero:
     base_experience_yield = 160
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "zero_to_hero",
             "slot": 1,

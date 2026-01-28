@@ -23,7 +23,7 @@ class MeowthGalar:
     base_experience_yield = 58
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pickup",
             "slot": 1,
@@ -43,7 +43,7 @@ class MeowthGalar:
     height_m = 0.4
     weight_kg = 7.5
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fake_out",
                 "growl",

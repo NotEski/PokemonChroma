@@ -23,7 +23,7 @@ class Heliolisk:
     base_experience_yield = 168
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "dry_skin",
             "slot": 1,
@@ -44,7 +44,7 @@ class Heliolisk:
     weight_kg = 21.0
     egg_groups = ['monster', 'dragon']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bulldoze",
                 "charge",

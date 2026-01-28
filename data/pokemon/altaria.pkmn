@@ -23,7 +23,7 @@ class Altaria:
     base_experience_yield = 172
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "natural_cure",
             "slot": 1,
@@ -39,7 +39,7 @@ class Altaria:
     weight_kg = 20.6
     egg_groups = ['flying', 'dragon']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "dragon_pulse",
             ],

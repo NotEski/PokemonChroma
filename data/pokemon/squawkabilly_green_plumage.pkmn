@@ -23,7 +23,7 @@ class SquawkabillyGreenPlumage:
     base_experience_yield = 146
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intimidate",
             "slot": 1,

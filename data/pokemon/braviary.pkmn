@@ -23,7 +23,7 @@ class Braviary:
     base_experience_yield = 179
     base_happiness = 70
     gender_rate = 0
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "keen_eye",
             "slot": 1,
@@ -44,7 +44,7 @@ class Braviary:
     weight_kg = 41.0
     egg_groups = ['flying']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "superpower",
             ],

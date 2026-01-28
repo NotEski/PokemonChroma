@@ -23,7 +23,7 @@ class Milotic:
     base_experience_yield = 189
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "marvel_scale",
             "slot": 1,
@@ -44,7 +44,7 @@ class Milotic:
     weight_kg = 162.0
     egg_groups = ['water1', 'dragon']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "water_pulse",
             ],

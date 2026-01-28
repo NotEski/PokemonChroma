@@ -23,7 +23,7 @@ class Machoke:
     base_experience_yield = 142
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "guts",
             "slot": 1,
@@ -44,7 +44,7 @@ class Machoke:
     weight_kg = 70.5
     egg_groups = ['humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "focus_energy",
                 "leer",

@@ -23,7 +23,7 @@ class Ferrothorn:
     base_experience_yield = 171
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "iron_barbs",
             "slot": 1,
@@ -39,7 +39,7 @@ class Ferrothorn:
     weight_kg = 110.0
     egg_groups = ['plant', 'mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "power_whip",
             ],

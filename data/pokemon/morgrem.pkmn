@@ -23,7 +23,7 @@ class Morgrem:
     base_experience_yield = 130
     base_happiness = 50
     gender_rate = 0
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "prankster",
             "slot": 1,
@@ -44,7 +44,7 @@ class Morgrem:
     weight_kg = 12.5
     egg_groups = ['fairy', 'humanshape']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "false_surrender",
             ],

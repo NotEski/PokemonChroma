@@ -23,7 +23,7 @@ class Comfey:
     base_experience_yield = 170
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "flower_veil",
             "slot": 1,
@@ -44,7 +44,7 @@ class Comfey:
     weight_kg = 0.3
     egg_groups = ['plant']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "growth",
                 "wrap",

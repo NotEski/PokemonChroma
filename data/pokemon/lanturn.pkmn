@@ -23,7 +23,7 @@ class Lanturn:
     base_experience_yield = 161
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "volt_absorb",
             "slot": 1,
@@ -44,7 +44,7 @@ class Lanturn:
     weight_kg = 22.5
     egg_groups = ['water2']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "spit_up",
                 "stockpile",

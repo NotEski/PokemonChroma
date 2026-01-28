@@ -23,7 +23,7 @@ class Diglett:
     base_experience_yield = 53
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sand_veil",
             "slot": 1,
@@ -44,7 +44,7 @@ class Diglett:
     weight_kg = 0.8
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "sand_attack",
                 "scratch",

@@ -23,7 +23,7 @@ class Parasect:
     base_experience_yield = 142
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "effect_spore",
             "slot": 1,

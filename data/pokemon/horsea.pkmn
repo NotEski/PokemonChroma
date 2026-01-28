@@ -23,7 +23,7 @@ class Horsea:
     base_experience_yield = 59
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -44,7 +44,7 @@ class Horsea:
     weight_kg = 8.0
     egg_groups = ['water1', 'dragon']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "water_gun",

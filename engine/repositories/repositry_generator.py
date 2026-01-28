@@ -589,11 +589,11 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
         "get_move": get_move,
         "get_ability": get_ability,
         "get_item": get_item,
-        "get_type": PokemonType,
 
         # imports
         "BaseStats": BaseStats,
         "EffortYield": EffortYield,
+        "PokemonType": PokemonType,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):
@@ -694,58 +694,6 @@ def load_dsl_files(application_root_path: str, loading_bar_length: int = 50, loa
 
 
 # ============================================================================
-# Pokemon TODO update this to the pkmn system
-# ============================================================================
-
-# def json_to_pokemon_base(json_data: dict[str, Any]) -> PokemonBase:
-#     if json_data.get("base_experience_yield", 64) is None:
-#         json_data["base_experience_yield"] = 64
-
-#     compiled_abilities: list[PokemonBaseAbility] = []
-#     for ability_entry in json_data.get("abilities", []):
-#         ability_name = ability_entry["ability"]
-#         ability_slot_str = ability_entry.get("slot", 1)
-#         ability_slot = AbilitySlot(ability_slot_str)
-#         is_hidden = ability_entry.get("is_hidden", False)
-
-#         ability = ability_repository.get(ability_name.lower())
-#         if ability is None:
-#             raise ValueError(f"Ability '{ability_name}' not found in ability repository.")
-#         compiled_abilities.append(PokemonBaseAbility(
-#             ability=ability,
-#             is_hidden=is_hidden,
-#             slot=ability_slot
-#         ))
-
-#     return PokemonBase(
-#         name=json_data["name"],
-#         display_name=json_data["display_name"],
-#         pokedex_number=json_data["pokedex_number"],
-#         types=[PokemonType(type_str) for type_str in json_data["types"]],
-#         base_stats=BaseStats(**json_data["base_stats"]),
-#         ev_yield=EffortYield(**json_data.get("ev_yield", {})),
-#         capture_rate=json_data["capture_rate"],
-#         base_experience_yield=json_data.get("base_experience_yield", 64),
-#         base_happiness=json_data.get("base_happiness", 70),
-#         gender_rate=GenderRate(json_data.get("gender_rate", "4")),
-#         abilities=compiled_abilities,
-#         height=json_data.get("height_m", 1.0),
-#         weight=json_data.get("weight_kg", 1.0),
-#         egg_groups=[EggGroup(egg_group) for egg_group in json_data.get("egg_groups", "no-eggs")],
-#         growth_rate=GrowthRate(json_data.get("growth_rate", "medium")),
-#     )
-
-# def load_pokemon_from_json_file(file_path: str) -> PokemonBase:
-#     with open(file_path, 'r') as f:
-#         json_data = json.load(f)
-#     return json_to_pokemon_base(json_data)
-
-# def generate_pokemon_repository_from_json(file_path: str):
-#     pokemon_base = load_pokemon_from_json_file(file_path)
-#     pokemon_repository.create(pokemon_base)
-
-
-# ============================================================================
 # Item
 # ============================================================================
 
@@ -805,15 +753,6 @@ def initialize_repositories(app_path: str):
     move_repository.refresh_categories()
 
     # Generate Pokemon Repository
-    # pokemon_folder_path = os.path.join(app_path, "data/pokemon")
-    # for subdir, _, files in os.walk(pokemon_folder_path):
-    #     file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
-    #     for file_path in file_paths:
-    #         # Loading bar
-    #         progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-    #         print(f"Loading Pokemon Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-    #         generate_pokemon_repository_from_json(file_path)
-    # print()
     load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/pokemon", loading_text="Pokemon")
 
     # Generate Item Repository

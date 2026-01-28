@@ -23,7 +23,7 @@ class Weavile:
     base_experience_yield = 179
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pressure",
             "slot": 1,
@@ -39,7 +39,7 @@ class Weavile:
     weight_kg = 34.0
     egg_groups = ['ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "agility",
                 "assurance",

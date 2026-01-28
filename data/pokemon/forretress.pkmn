@@ -23,7 +23,7 @@ class Forretress:
     base_experience_yield = 163
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sturdy",
             "slot": 1,

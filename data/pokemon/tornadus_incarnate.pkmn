@@ -23,7 +23,7 @@ class TornadusIncarnate:
     base_experience_yield = 261
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "prankster",
             "slot": 1,
@@ -38,7 +38,7 @@ class TornadusIncarnate:
     height_m = 1.5
     weight_kg = 63.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "gust",

@@ -23,7 +23,7 @@ class Remoraid:
     base_experience_yield = 60
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "hustle",
             "slot": 1,
@@ -44,7 +44,7 @@ class Remoraid:
     weight_kg = 12.0
     egg_groups = ['water1', 'water2']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "helping_hand",
                 "water_gun",

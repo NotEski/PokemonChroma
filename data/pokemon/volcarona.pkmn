@@ -23,7 +23,7 @@ class Volcarona:
     base_experience_yield = 248
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "flame_body",
             "slot": 1,
@@ -39,7 +39,7 @@ class Volcarona:
     weight_kg = 46.0
     egg_groups = ['bug']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "quiver_dance",
             ],

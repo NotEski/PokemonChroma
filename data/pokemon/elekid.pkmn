@@ -23,7 +23,7 @@ class Elekid:
     base_experience_yield = 72
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "static",
             "slot": 1,
@@ -39,7 +39,7 @@ class Elekid:
     weight_kg = 23.5
     egg_groups = ['no_eggs']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "quick_attack",

@@ -23,7 +23,7 @@ class Ivysaur:
     base_experience_yield = 142
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "overgrow",
             "slot": 1,
@@ -39,7 +39,7 @@ class Ivysaur:
     weight_kg = 13.0
     egg_groups = ['monster', 'plant']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "growl",
                 "growth",

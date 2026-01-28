@@ -23,7 +23,7 @@ class Crawdaunt:
     base_experience_yield = 164
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "hyper_cutter",
             "slot": 1,
@@ -44,7 +44,7 @@ class Crawdaunt:
     weight_kg = 32.8
     egg_groups = ['water1', 'water3']
     growth_rate = "fast_then_very_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "swift",
             ],

@@ -23,7 +23,7 @@ class Mareanie:
     base_experience_yield = 61
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "merciless",
             "slot": 1,
@@ -44,7 +44,7 @@ class Mareanie:
     weight_kg = 8.0
     egg_groups = ['water1']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "peck",
                 "poison_sting",

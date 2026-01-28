@@ -23,7 +23,7 @@ class Whirlipede:
     base_experience_yield = 126
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "poison_point",
             "slot": 1,
@@ -44,7 +44,7 @@ class Whirlipede:
     weight_kg = 58.5
     egg_groups = ['bug']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "iron_defense",
             ],

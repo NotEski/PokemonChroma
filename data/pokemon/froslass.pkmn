@@ -23,7 +23,7 @@ class Froslass:
     base_experience_yield = 168
     base_happiness = 70
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "snow_cloak",
             "slot": 1,
@@ -39,7 +39,7 @@ class Froslass:
     weight_kg = 26.6
     egg_groups = ['fairy', 'mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "hex",
             ],

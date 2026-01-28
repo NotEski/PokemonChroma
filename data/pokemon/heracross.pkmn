@@ -23,7 +23,7 @@ class Heracross:
     base_experience_yield = 175
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Heracross:
     weight_kg = 54.0
     egg_groups = ['bug']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "tackle",

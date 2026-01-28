@@ -23,7 +23,7 @@ class Wailmer:
     base_experience_yield = 80
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "water_veil",
             "slot": 1,
@@ -44,7 +44,7 @@ class Wailmer:
     weight_kg = 130.0
     egg_groups = ['ground', 'water2']
     growth_rate = "fast_then_very_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "splash",
             ],

@@ -23,7 +23,7 @@ class Overqwil:
     base_experience_yield = 179
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "poison_point",
             "slot": 1,

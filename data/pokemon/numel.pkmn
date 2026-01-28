@@ -23,7 +23,7 @@ class Numel:
     base_experience_yield = 61
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "oblivious",
             "slot": 1,

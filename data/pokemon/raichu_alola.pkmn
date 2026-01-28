@@ -23,7 +23,7 @@ class RaichuAlola:
     base_experience_yield = 243
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "surge_surfer",
             "slot": 1,
@@ -33,7 +33,7 @@ class RaichuAlola:
     height_m = 0.7
     weight_kg = 21.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "psychic",
             ],

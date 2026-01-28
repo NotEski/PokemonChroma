@@ -23,7 +23,7 @@ class Politoed:
     base_experience_yield = 225
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "water_absorb",
             "slot": 1,
@@ -44,7 +44,7 @@ class Politoed:
     weight_kg = 33.9
     egg_groups = ['water1']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "bounce",
             ],

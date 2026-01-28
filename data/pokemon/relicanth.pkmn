@@ -23,7 +23,7 @@ class Relicanth:
     base_experience_yield = 170
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -44,7 +44,7 @@ class Relicanth:
     weight_kg = 23.4
     egg_groups = ['water1', 'water2']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "harden",
                 "tackle",

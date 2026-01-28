@@ -23,7 +23,7 @@ class Blipbug:
     base_experience_yield = 36
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Blipbug:
     weight_kg = 8.0
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "struggle_bug",
             ],

@@ -23,7 +23,7 @@ class Slurpuff:
     base_experience_yield = 168
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sweet_veil",
             "slot": 1,
@@ -39,7 +39,7 @@ class Slurpuff:
     weight_kg = 5.0
     egg_groups = ['fairy']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fairy_wind",
                 "play_nice",

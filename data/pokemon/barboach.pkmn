@@ -23,7 +23,7 @@ class Barboach:
     base_experience_yield = 58
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "oblivious",
             "slot": 1,
@@ -44,7 +44,7 @@ class Barboach:
     weight_kg = 1.9
     egg_groups = ['water2']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "mud_slap",
                 "water_gun",

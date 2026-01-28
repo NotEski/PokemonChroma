@@ -23,7 +23,7 @@ class Cetoddle:
     base_experience_yield = 67
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "thick_fat",
             "slot": 1,

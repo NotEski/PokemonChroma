@@ -23,7 +23,7 @@ class Sudowoodo:
     base_experience_yield = 144
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sturdy",
             "slot": 1,
@@ -44,7 +44,7 @@ class Sudowoodo:
     weight_kg = 38.0
     egg_groups = ['mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "slam",
             ],

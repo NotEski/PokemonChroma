@@ -23,7 +23,7 @@ class KyuremWhite:
     base_experience_yield = 350
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "turboblaze",
             "slot": 1,
@@ -33,7 +33,7 @@ class KyuremWhite:
     height_m = 3.6
     weight_kg = 325.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ancient_power",
                 "dragon_breath",

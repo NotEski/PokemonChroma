@@ -23,7 +23,7 @@ class Caterpie:
     base_experience_yield = 39
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "shield_dust",
             "slot": 1,
@@ -39,7 +39,7 @@ class Caterpie:
     weight_kg = 2.9
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "string_shot",
                 "tackle",

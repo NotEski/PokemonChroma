@@ -23,7 +23,7 @@ class HoOh:
     base_experience_yield = 306
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pressure",
             "slot": 1,
@@ -38,7 +38,7 @@ class HoOh:
     height_m = 3.8
     weight_kg = 199.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ancient_power",
                 "gust",

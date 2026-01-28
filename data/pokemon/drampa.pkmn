@@ -23,7 +23,7 @@ class Drampa:
     base_experience_yield = 170
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "berserk",
             "slot": 1,
@@ -44,7 +44,7 @@ class Drampa:
     weight_kg = 185.0
     egg_groups = ['monster', 'dragon']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "echoed_voice",
                 "play_nice",

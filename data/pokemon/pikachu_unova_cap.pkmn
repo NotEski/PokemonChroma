@@ -23,7 +23,7 @@ class PikachuUnovaCap:
     base_experience_yield = 112
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "static",
             "slot": 1,
@@ -38,7 +38,7 @@ class PikachuUnovaCap:
     height_m = 0.4
     weight_kg = 6.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "charm",
                 "growl",

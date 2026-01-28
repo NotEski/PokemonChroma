@@ -23,7 +23,7 @@ class Archaludon:
     base_experience_yield = 300
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "stamina",
             "slot": 1,

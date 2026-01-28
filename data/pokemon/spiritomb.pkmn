@@ -23,7 +23,7 @@ class Spiritomb:
     base_experience_yield = 170
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pressure",
             "slot": 1,
@@ -39,7 +39,7 @@ class Spiritomb:
     weight_kg = 108.0
     egg_groups = ['indeterminate']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "confuse_ray",
                 "night_shade",

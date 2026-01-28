@@ -23,7 +23,7 @@ class Simipour:
     base_experience_yield = 174
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "gluttony",
             "slot": 1,

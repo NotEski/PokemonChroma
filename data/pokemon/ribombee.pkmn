@@ -23,7 +23,7 @@ class Ribombee:
     base_experience_yield = 162
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "honey_gather",
             "slot": 1,
@@ -44,7 +44,7 @@ class Ribombee:
     weight_kg = 0.5
     egg_groups = ['bug', 'fairy']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "pollen_puff",
             ],

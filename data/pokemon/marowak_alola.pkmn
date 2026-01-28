@@ -23,7 +23,7 @@ class MarowakAlola:
     base_experience_yield = 149
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cursed_body",
             "slot": 1,
@@ -43,7 +43,7 @@ class MarowakAlola:
     height_m = 1.0
     weight_kg = 34.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "shadow_bone",
             ],

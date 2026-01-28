@@ -23,7 +23,7 @@ class Tinkaton:
     base_experience_yield = 253
     base_happiness = 50
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "mold_breaker",
             "slot": 1,

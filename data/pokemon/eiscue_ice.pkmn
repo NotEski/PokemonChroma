@@ -23,7 +23,7 @@ class EiscueIce:
     base_experience_yield = 165
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "ice_face",
             "slot": 1,
@@ -33,7 +33,7 @@ class EiscueIce:
     height_m = 1.4
     weight_kg = 89.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "powder_snow",
                 "tackle",

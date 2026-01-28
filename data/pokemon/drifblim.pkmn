@@ -23,7 +23,7 @@ class Drifblim:
     base_experience_yield = 174
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "aftermath",
             "slot": 1,
@@ -44,7 +44,7 @@ class Drifblim:
     weight_kg = 15.0
     egg_groups = ['indeterminate']
     growth_rate = "fast_then_very_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "phantom_force",
             ],

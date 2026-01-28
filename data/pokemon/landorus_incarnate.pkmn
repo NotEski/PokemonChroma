@@ -23,7 +23,7 @@ class LandorusIncarnate:
     base_experience_yield = 270
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sand_force",
             "slot": 1,
@@ -38,7 +38,7 @@ class LandorusIncarnate:
     height_m = 1.5
     weight_kg = 68.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "rock_throw",
                 "sand_tomb",

@@ -23,7 +23,7 @@ class Nidorino:
     base_experience_yield = 128
     base_happiness = 70
     gender_rate = 0
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "poison_point",
             "slot": 1,
@@ -44,7 +44,7 @@ class Nidorino:
     weight_kg = 19.5
     egg_groups = ['monster', 'ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "focus_energy",
                 "leer",

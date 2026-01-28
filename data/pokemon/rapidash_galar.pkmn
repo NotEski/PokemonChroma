@@ -23,7 +23,7 @@ class RapidashGalar:
     base_experience_yield = 175
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "run_away",
             "slot": 1,
@@ -43,7 +43,7 @@ class RapidashGalar:
     height_m = 1.7
     weight_kg = 80.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "psycho_cut",
             ],

@@ -23,7 +23,7 @@ class Porygon2:
     base_experience_yield = 180
     base_happiness = 70
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "trace",
             "slot": 1,
@@ -44,7 +44,7 @@ class Porygon2:
     weight_kg = 32.5
     egg_groups = ['mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "conversion",
                 "defense_curl",

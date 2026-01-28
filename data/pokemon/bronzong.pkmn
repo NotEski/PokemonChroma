@@ -23,7 +23,7 @@ class Bronzong:
     base_experience_yield = 175
     base_happiness = 70
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "levitate",
             "slot": 1,
@@ -44,7 +44,7 @@ class Bronzong:
     weight_kg = 187.0
     egg_groups = ['mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "block",
             ],

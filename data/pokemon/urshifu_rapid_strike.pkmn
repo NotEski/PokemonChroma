@@ -23,7 +23,7 @@ class UrshifuRapidStrike:
     base_experience_yield = 275
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "unseen_fist",
             "slot": 1,
@@ -33,7 +33,7 @@ class UrshifuRapidStrike:
     height_m = 1.9
     weight_kg = 105.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "surging_strikes",
             ],

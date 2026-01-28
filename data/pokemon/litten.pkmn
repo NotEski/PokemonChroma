@@ -23,7 +23,7 @@ class Litten:
     base_experience_yield = 64
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "blaze",
             "slot": 1,
@@ -39,7 +39,7 @@ class Litten:
     weight_kg = 4.3
     egg_groups = ['ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "growl",
                 "scratch",

@@ -23,7 +23,7 @@ class DarmanitanGalarStandard:
     base_experience_yield = 168
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "gorilla_tactics",
             "slot": 1,
@@ -38,7 +38,7 @@ class DarmanitanGalarStandard:
     height_m = 1.7
     weight_kg = 120.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "icicle_crash",
             ],

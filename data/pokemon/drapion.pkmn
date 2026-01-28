@@ -23,7 +23,7 @@ class Drapion:
     base_experience_yield = 175
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "battle_armor",
             "slot": 1,
@@ -44,7 +44,7 @@ class Drapion:
     weight_kg = 61.5
     egg_groups = ['bug', 'water3']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fell_stinger",
                 "fire_fang",

@@ -23,7 +23,7 @@ class Surskit:
     base_experience_yield = 54
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,

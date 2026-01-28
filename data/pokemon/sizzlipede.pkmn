@@ -23,7 +23,7 @@ class Sizzlipede:
     base_experience_yield = 61
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "flash_fire",
             "slot": 1,
@@ -44,7 +44,7 @@ class Sizzlipede:
     weight_kg = 1.0
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ember",
                 "smokescreen",

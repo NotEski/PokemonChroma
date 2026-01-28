@@ -23,7 +23,7 @@ class Blissey:
     base_experience_yield = 608
     base_happiness = 140
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "natural_cure",
             "slot": 1,
@@ -44,7 +44,7 @@ class Blissey:
     weight_kg = 46.8
     egg_groups = ['fairy']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "charm",
                 "copycat",

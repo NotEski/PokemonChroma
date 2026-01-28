@@ -23,7 +23,7 @@ class Chinchou:
     base_experience_yield = 66
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "volt_absorb",
             "slot": 1,
@@ -44,7 +44,7 @@ class Chinchou:
     weight_kg = 12.0
     egg_groups = ['water2']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "supersonic",
                 "water_gun",

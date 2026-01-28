@@ -23,7 +23,7 @@ class Ninetales:
     base_experience_yield = 177
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "flash_fire",
             "slot": 1,
@@ -39,7 +39,7 @@ class Ninetales:
     weight_kg = 19.9
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "confuse_ray",
                 "disable",

@@ -23,7 +23,7 @@ class SandslashAlola:
     base_experience_yield = 158
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "snow_cloak",
             "slot": 1,
@@ -38,7 +38,7 @@ class SandslashAlola:
     height_m = 1.2
     weight_kg = 55.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "icicle_spear",
             ],

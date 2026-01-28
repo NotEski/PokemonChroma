@@ -23,7 +23,7 @@ class Cursola:
     base_experience_yield = 179
     base_happiness = 50
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "weak_armor",
             "slot": 1,
@@ -39,7 +39,7 @@ class Cursola:
     weight_kg = 0.4
     egg_groups = ['water1', 'water3']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "disable",

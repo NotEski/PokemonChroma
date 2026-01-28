@@ -23,7 +23,7 @@ class Eelektross:
     base_experience_yield = 232
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "levitate",
             "slot": 1,

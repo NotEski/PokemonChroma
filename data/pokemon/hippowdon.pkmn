@@ -23,7 +23,7 @@ class Hippowdon:
     base_experience_yield = 184
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sand_stream",
             "slot": 1,
@@ -39,7 +39,7 @@ class Hippowdon:
     weight_kg = 300.0
     egg_groups = ['ground']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bite",
                 "fire_fang",

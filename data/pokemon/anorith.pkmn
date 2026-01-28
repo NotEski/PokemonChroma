@@ -23,7 +23,7 @@ class Anorith:
     base_experience_yield = 71
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "battle_armor",
             "slot": 1,
@@ -39,7 +39,7 @@ class Anorith:
     weight_kg = 12.5
     egg_groups = ['water3']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "fury_cutter",
                 "harden",

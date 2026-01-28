@@ -23,7 +23,7 @@ class StunfiskGalar:
     base_experience_yield = 165
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "mimicry",
             "slot": 1,
@@ -33,7 +33,7 @@ class StunfiskGalar:
     height_m = 0.7
     weight_kg = 20.5
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "metal_claw",
                 "mud_slap",

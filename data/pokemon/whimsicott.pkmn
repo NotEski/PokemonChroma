@@ -23,7 +23,7 @@ class Whimsicott:
     base_experience_yield = 168
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "prankster",
             "slot": 1,
@@ -44,7 +44,7 @@ class Whimsicott:
     weight_kg = 6.6
     egg_groups = ['plant', 'fairy']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "absorb",
                 "charm",

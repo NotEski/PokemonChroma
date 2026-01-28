@@ -23,7 +23,7 @@ class Happiny:
     base_experience_yield = 110
     base_happiness = 140
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "natural_cure",
             "slot": 1,
@@ -44,7 +44,7 @@ class Happiny:
     weight_kg = 24.4
     egg_groups = ['no_eggs']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "copycat",
                 "minimize",

@@ -23,7 +23,7 @@ class Glimmora:
     base_experience_yield = 184
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "toxic_debris",
             "slot": 1,

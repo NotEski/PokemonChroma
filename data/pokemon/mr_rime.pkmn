@@ -23,7 +23,7 @@ class MrRime:
     base_experience_yield = 182
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "tangled_feet",
             "slot": 1,
@@ -43,7 +43,7 @@ class MrRime:
     height_m = 1.5
     weight_kg = 58.2
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "after_you",
                 "baton_pass",

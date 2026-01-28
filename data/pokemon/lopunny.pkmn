@@ -23,7 +23,7 @@ class Lopunny:
     base_experience_yield = 168
     base_happiness = 140
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cute_charm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Lopunny:
     weight_kg = 33.3
     egg_groups = ['ground', 'humanshape']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "baby_doll_eyes",
                 "defense_curl",

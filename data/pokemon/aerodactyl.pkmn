@@ -23,7 +23,7 @@ class Aerodactyl:
     base_experience_yield = 180
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "rock_head",
             "slot": 1,
@@ -44,7 +44,7 @@ class Aerodactyl:
     weight_kg = 59.0
     egg_groups = ['flying']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ancient_power",
                 "bite",

@@ -23,7 +23,7 @@ class Corviknight:
     base_experience_yield = 248
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pressure",
             "slot": 1,
@@ -44,7 +44,7 @@ class Corviknight:
     weight_kg = 75.0
     egg_groups = ['flying']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "steel_wing",
             ],

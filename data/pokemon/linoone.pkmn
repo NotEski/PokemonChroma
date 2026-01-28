@@ -23,7 +23,7 @@ class Linoone:
     base_experience_yield = 147
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "pickup",
             "slot": 1,
@@ -44,7 +44,7 @@ class Linoone:
     weight_kg = 32.5
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "slash",
             ],

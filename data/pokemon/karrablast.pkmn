@@ -23,7 +23,7 @@ class Karrablast:
     base_experience_yield = 63
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Karrablast:
     weight_kg = 5.9
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "peck",

@@ -23,7 +23,7 @@ class Falinks:
     base_experience_yield = 165
     base_happiness = 50
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "battle_armor",
             "slot": 1,
@@ -39,7 +39,7 @@ class Falinks:
     weight_kg = 62.0
     egg_groups = ['fairy', 'mineral']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "protect",
                 "tackle",

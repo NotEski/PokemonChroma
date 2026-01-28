@@ -23,7 +23,7 @@ class Vivillon:
     base_experience_yield = 185
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "shield_dust",
             "slot": 1,

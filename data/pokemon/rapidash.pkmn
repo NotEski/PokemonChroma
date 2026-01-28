@@ -23,7 +23,7 @@ class Rapidash:
     base_experience_yield = 175
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "run_away",
             "slot": 1,
@@ -44,7 +44,7 @@ class Rapidash:
     weight_kg = 95.0
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "smart_strike",
             ],

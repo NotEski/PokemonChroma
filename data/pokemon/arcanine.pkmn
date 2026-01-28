@@ -23,7 +23,7 @@ class Arcanine:
     base_experience_yield = 194
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intimidate",
             "slot": 1,
@@ -44,7 +44,7 @@ class Arcanine:
     weight_kg = 155.0
     egg_groups = ['ground']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "extreme_speed",
             ],

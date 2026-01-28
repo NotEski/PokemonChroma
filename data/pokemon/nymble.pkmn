@@ -23,7 +23,7 @@ class Nymble:
     base_experience_yield = 42
     base_happiness = 20
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,

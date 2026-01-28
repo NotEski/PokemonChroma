@@ -23,7 +23,7 @@ class Mandibuzz:
     base_experience_yield = 179
     base_happiness = 35
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "big_pecks",
             "slot": 1,
@@ -44,7 +44,7 @@ class Mandibuzz:
     weight_kg = 39.5
     egg_groups = ['flying']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "bone_rush",
             ],

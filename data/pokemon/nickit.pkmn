@@ -23,7 +23,7 @@ class Nickit:
     base_experience_yield = 49
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "run_away",
             "slot": 1,
@@ -44,7 +44,7 @@ class Nickit:
     weight_kg = 8.9
     egg_groups = ['ground']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "quick_attack",
                 "tail_whip",

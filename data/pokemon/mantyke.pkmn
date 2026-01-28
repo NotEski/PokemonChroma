@@ -23,7 +23,7 @@ class Mantyke:
     base_experience_yield = 69
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -44,7 +44,7 @@ class Mantyke:
     weight_kg = 65.0
     egg_groups = ['no_eggs']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "tackle",
                 "water_gun",

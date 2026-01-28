@@ -3,7 +3,7 @@ from typing import Optional, List, TYPE_CHECKING
 from enum import Enum
 
 if TYPE_CHECKING:
-    from shared.pokemon.pokemon import BattleMon
+    from shared.pokemon.pokemon import BattleMon, PokemonBase
     from shared.pokemon.move import BaseMove
 
 class ItemAttribute(Enum):
@@ -103,7 +103,7 @@ class Item(BaseModel):
     fling_power: Optional[int] = None
     baby_trigger_for: Optional[int] = None
     category: ItemCategory
-    held_by_pokemon: List[str] = []
+    held_by_pokemon: List["PokemonBase"] = []
     pocket: Optional[ItemPocket] = None
 
     def after_move_effect(self, pokemon: "BattleMon", move: "BaseMove", target: "BattleMon") -> None:

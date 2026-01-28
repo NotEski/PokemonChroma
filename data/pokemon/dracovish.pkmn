@@ -23,7 +23,7 @@ class Dracovish:
     base_experience_yield = 177
     base_happiness = 50
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "water_absorb",
             "slot": 1,
@@ -44,7 +44,7 @@ class Dracovish:
     weight_kg = 215.0
     egg_groups = ['no_eggs']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "tackle",
                 "water_gun",

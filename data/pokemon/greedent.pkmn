@@ -23,7 +23,7 @@ class Greedent:
     base_experience_yield = 161
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cheek_pouch",
             "slot": 1,
@@ -39,7 +39,7 @@ class Greedent:
     weight_kg = 6.0
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "covet",
             ],

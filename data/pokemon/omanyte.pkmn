@@ -23,7 +23,7 @@ class Omanyte:
     base_experience_yield = 71
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -44,7 +44,7 @@ class Omanyte:
     weight_kg = 7.5
     egg_groups = ['water1', 'water3']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bind",
                 "withdraw",

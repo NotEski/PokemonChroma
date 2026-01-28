@@ -23,7 +23,7 @@ class Luvdisc:
     base_experience_yield = 116
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,

@@ -23,7 +23,7 @@ class Trapinch:
     base_experience_yield = 58
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "hyper_cutter",
             "slot": 1,
@@ -44,7 +44,7 @@ class Trapinch:
     weight_kg = 15.0
     egg_groups = ['bug', 'dragon']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "sand_attack",

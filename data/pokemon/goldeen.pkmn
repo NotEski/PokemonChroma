@@ -23,7 +23,7 @@ class Goldeen:
     base_experience_yield = 64
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swift_swim",
             "slot": 1,
@@ -44,7 +44,7 @@ class Goldeen:
     weight_kg = 15.0
     egg_groups = ['water2']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "peck",
                 "tail_whip",

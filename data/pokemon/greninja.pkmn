@@ -23,7 +23,7 @@ class Greninja:
     base_experience_yield = 239
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "torrent",
             "slot": 1,

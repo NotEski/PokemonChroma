@@ -23,7 +23,7 @@ class Carkol:
     base_experience_yield = 144
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "steam_engine",
             "slot": 1,
@@ -44,7 +44,7 @@ class Carkol:
     weight_kg = 78.0
     egg_groups = ['mineral']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "flame_charge",
             ],

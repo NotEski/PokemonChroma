@@ -23,7 +23,7 @@ class Heatmor:
     base_experience_yield = 169
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "gluttony",
             "slot": 1,
@@ -44,7 +44,7 @@ class Heatmor:
     weight_kg = 58.0
     egg_groups = ['ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "lick",
                 "tackle",

@@ -23,7 +23,7 @@ class Wooper:
     base_experience_yield = 42
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "damp",
             "slot": 1,
@@ -44,7 +44,7 @@ class Wooper:
     weight_kg = 8.5
     egg_groups = ['water1', 'ground']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "tail_whip",
                 "water_gun",

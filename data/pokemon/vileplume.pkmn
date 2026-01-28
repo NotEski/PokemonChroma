@@ -23,7 +23,7 @@ class Vileplume:
     base_experience_yield = 221
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "chlorophyll",
             "slot": 1,
@@ -39,7 +39,7 @@ class Vileplume:
     weight_kg = 18.6
     egg_groups = ['plant']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "petal_blizzard",
             ],

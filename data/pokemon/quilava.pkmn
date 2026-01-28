@@ -23,7 +23,7 @@ class Quilava:
     base_experience_yield = 142
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "blaze",
             "slot": 1,

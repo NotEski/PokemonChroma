@@ -23,7 +23,7 @@ class Ralts:
     base_experience_yield = 40
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "synchronize",
             "slot": 1,
@@ -44,7 +44,7 @@ class Ralts:
     weight_kg = 6.6
     egg_groups = ['humanshape', 'indeterminate']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "disarming_voice",
                 "growl",

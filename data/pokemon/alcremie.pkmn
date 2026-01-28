@@ -23,7 +23,7 @@ class Alcremie:
     base_experience_yield = 173
     base_happiness = 50
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sweet_veil",
             "slot": 1,
@@ -39,7 +39,7 @@ class Alcremie:
     weight_kg = 0.5
     egg_groups = ['fairy', 'indeterminate']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "decorate",
             ],

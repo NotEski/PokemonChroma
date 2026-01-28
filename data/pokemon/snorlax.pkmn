@@ -23,7 +23,7 @@ class Snorlax:
     base_experience_yield = 189
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "immunity",
             "slot": 1,
@@ -44,7 +44,7 @@ class Snorlax:
     weight_kg = 460.0
     egg_groups = ['monster']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "block",
                 "covet",

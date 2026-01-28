@@ -23,7 +23,7 @@ class Slaking:
     base_experience_yield = 252
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "truant",
             "slot": 1,

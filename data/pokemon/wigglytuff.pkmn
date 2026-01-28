@@ -23,7 +23,7 @@ class Wigglytuff:
     base_experience_yield = 196
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cute_charm",
             "slot": 1,
@@ -44,7 +44,7 @@ class Wigglytuff:
     weight_kg = 12.0
     egg_groups = ['fairy']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "body_slam",
                 "charm",

@@ -23,7 +23,7 @@ class Sawk:
     base_experience_yield = 163
     base_happiness = 70
     gender_rate = 0
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sturdy",
             "slot": 1,
@@ -44,7 +44,7 @@ class Sawk:
     weight_kg = 51.0
     egg_groups = ['humanshape']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "rock_smash",

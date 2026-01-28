@@ -23,7 +23,7 @@ class Shiftry:
     base_experience_yield = 216
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "chlorophyll",
             "slot": 1,
@@ -44,7 +44,7 @@ class Shiftry:
     weight_kg = 59.6
     egg_groups = ['ground', 'plant']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "leaf_tornado",
             ],

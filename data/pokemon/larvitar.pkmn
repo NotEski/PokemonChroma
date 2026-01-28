@@ -23,7 +23,7 @@ class Larvitar:
     base_experience_yield = 60
     base_happiness = 35
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "guts",
             "slot": 1,
@@ -39,7 +39,7 @@ class Larvitar:
     weight_kg = 72.0
     egg_groups = ['monster']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "tackle",

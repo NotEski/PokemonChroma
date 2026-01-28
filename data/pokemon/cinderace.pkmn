@@ -23,7 +23,7 @@ class Cinderace:
     base_experience_yield = 265
     base_happiness = 50
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "blaze",
             "slot": 1,
@@ -39,7 +39,7 @@ class Cinderace:
     weight_kg = 33.0
     egg_groups = ['ground', 'humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "pyro_ball",
             ],

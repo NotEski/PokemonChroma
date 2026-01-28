@@ -23,7 +23,7 @@ class Weezing:
     base_experience_yield = 172
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "levitate",
             "slot": 1,
@@ -44,7 +44,7 @@ class Weezing:
     weight_kg = 9.5
     egg_groups = ['indeterminate']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "double_hit",
             ],

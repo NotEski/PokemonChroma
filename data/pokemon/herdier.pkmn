@@ -23,7 +23,7 @@ class Herdier:
     base_experience_yield = 130
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intimidate",
             "slot": 1,
@@ -44,7 +44,7 @@ class Herdier:
     weight_kg = 14.7
     egg_groups = ['ground']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bite",
                 "leer",

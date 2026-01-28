@@ -23,7 +23,7 @@ class Mothim:
     base_experience_yield = 148
     base_happiness = 70
     gender_rate = 0
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "swarm",
             "slot": 1,

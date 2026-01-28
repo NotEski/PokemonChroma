@@ -23,7 +23,7 @@ class Growlithe:
     base_experience_yield = 70
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intimidate",
             "slot": 1,
@@ -44,7 +44,7 @@ class Growlithe:
     weight_kg = 19.0
     egg_groups = ['ground']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ember",
                 "leer",

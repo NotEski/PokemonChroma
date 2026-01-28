@@ -23,7 +23,7 @@ class Unfezant:
     base_experience_yield = 220
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "big_pecks",
             "slot": 1,
@@ -44,7 +44,7 @@ class Unfezant:
     weight_kg = 29.0
     egg_groups = ['flying']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "growl",
                 "gust",

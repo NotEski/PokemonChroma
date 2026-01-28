@@ -23,7 +23,7 @@ class Crobat:
     base_experience_yield = 241
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "inner_focus",
             "slot": 1,
@@ -39,7 +39,7 @@ class Crobat:
     weight_kg = 75.0
     egg_groups = ['flying']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "cross_poison",
             ],

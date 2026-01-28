@@ -23,7 +23,7 @@ class Kangaskhan:
     base_experience_yield = 172
     base_happiness = 70
     gender_rate = 8
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "early_bird",
             "slot": 1,
@@ -44,7 +44,7 @@ class Kangaskhan:
     weight_kg = 80.0
     egg_groups = ['monster']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "pound",
                 "tail_whip",

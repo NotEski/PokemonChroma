@@ -23,7 +23,7 @@ class Azurill:
     base_experience_yield = 38
     base_happiness = 70
     gender_rate = 6
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "thick_fat",
             "slot": 1,
@@ -44,7 +44,7 @@ class Azurill:
     weight_kg = 2.0
     egg_groups = ['no_eggs']
     growth_rate = "fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "splash",
                 "tail_whip",

@@ -23,7 +23,7 @@ class DiglettAlola:
     base_experience_yield = 53
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "sand_veil",
             "slot": 1,
@@ -43,7 +43,7 @@ class DiglettAlola:
     height_m = 0.2
     weight_kg = 1.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "metal_claw",
                 "sand_attack",

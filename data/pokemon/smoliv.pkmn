@@ -23,7 +23,7 @@ class Smoliv:
     base_experience_yield = 52
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "early_bird",
             "slot": 1,

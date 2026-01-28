@@ -23,7 +23,7 @@ class Magby:
     base_experience_yield = 73
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "flame_body",
             "slot": 1,
@@ -39,7 +39,7 @@ class Magby:
     weight_kg = 21.4
     egg_groups = ['no_eggs']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "leer",
                 "smog",

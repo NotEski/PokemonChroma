@@ -23,7 +23,7 @@ class Kyogre:
     base_experience_yield = 302
     base_happiness = 70
     gender_rate = -1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "drizzle",
             "slot": 1,
@@ -34,7 +34,7 @@ class Kyogre:
     weight_kg = 352.0
     egg_groups = ['no_eggs']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "ancient_power",
                 "body_slam",

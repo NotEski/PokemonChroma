@@ -23,7 +23,7 @@ class Mienshao:
     base_experience_yield = 179
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "inner_focus",
             "slot": 1,
@@ -44,7 +44,7 @@ class Mienshao:
     weight_kg = 35.5
     egg_groups = ['ground', 'humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "detect",
                 "fake_out",

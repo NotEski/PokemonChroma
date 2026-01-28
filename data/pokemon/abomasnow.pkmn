@@ -23,7 +23,7 @@ class Abomasnow:
     base_experience_yield = 173
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "snow_warning",
             "slot": 1,
@@ -39,7 +39,7 @@ class Abomasnow:
     weight_kg = 135.5
     egg_groups = ['monster', 'plant']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "ice_punch",
             ],

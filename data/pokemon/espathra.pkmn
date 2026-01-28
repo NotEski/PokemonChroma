@@ -23,7 +23,7 @@ class Espathra:
     base_experience_yield = 168
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "opportunist",
             "slot": 1,

@@ -23,7 +23,7 @@ class SlowkingGalar:
     base_experience_yield = 172
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "curious_medicine",
             "slot": 1,
@@ -43,7 +43,7 @@ class SlowkingGalar:
     height_m = 1.8
     weight_kg = 79.5
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "eerie_spell",
             ],

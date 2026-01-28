@@ -23,7 +23,7 @@ class Exeggutor:
     base_experience_yield = 186
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "chlorophyll",
             "slot": 1,
@@ -39,7 +39,7 @@ class Exeggutor:
     weight_kg = 120.0
     egg_groups = ['plant']
     growth_rate = "slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             0: [
                 "stomp",
             ],

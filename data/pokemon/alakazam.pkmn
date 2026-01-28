@@ -23,7 +23,7 @@ class Alakazam:
     base_experience_yield = 225
     base_happiness = 70
     gender_rate = 2
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "synchronize",
             "slot": 1,
@@ -44,7 +44,7 @@ class Alakazam:
     weight_kg = 48.0
     egg_groups = ['humanshape']
     growth_rate = "medium_slow"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "confusion",
                 "disable",

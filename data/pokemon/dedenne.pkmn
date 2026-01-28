@@ -23,7 +23,7 @@ class Dedenne:
     base_experience_yield = 151
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "cheek_pouch",
             "slot": 1,
@@ -44,7 +44,7 @@ class Dedenne:
     weight_kg = 2.2
     egg_groups = ['ground', 'fairy']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "nuzzle",
                 "tail_whip",

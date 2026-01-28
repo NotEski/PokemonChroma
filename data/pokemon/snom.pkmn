@@ -23,7 +23,7 @@ class Snom:
     base_experience_yield = 37
     base_happiness = 50
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "shield_dust",
             "slot": 1,
@@ -39,7 +39,7 @@ class Snom:
     weight_kg = 3.8
     egg_groups = ['bug']
     growth_rate = "medium"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "powder_snow",
                 "struggle_bug",

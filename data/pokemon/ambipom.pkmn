@@ -23,7 +23,7 @@ class Ambipom:
     base_experience_yield = 169
     base_happiness = 100
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "technician",
             "slot": 1,

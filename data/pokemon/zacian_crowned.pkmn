@@ -23,7 +23,7 @@ class ZacianCrowned:
     base_experience_yield = 360
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "intrepid_sword",
             "slot": 1,
@@ -33,7 +33,7 @@ class ZacianCrowned:
     height_m = 2.8
     weight_kg = 355.0
     growth_rate = "medium_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "bite",
                 "howl",

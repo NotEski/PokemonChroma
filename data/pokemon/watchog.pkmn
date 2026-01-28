@@ -23,7 +23,7 @@ class Watchog:
     base_experience_yield = 147
     base_happiness = 70
     gender_rate = 4
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "illuminate",
             "slot": 1,

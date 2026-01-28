@@ -23,7 +23,7 @@ class Lileep:
     base_experience_yield = 71
     base_happiness = 70
     gender_rate = 1
-    abilities: list[dict[str, str|int|bool]] = [
+    abilities = [
         {
             "ability": "suction_cups",
             "slot": 1,
@@ -39,7 +39,7 @@ class Lileep:
     weight_kg = 23.8
     egg_groups = ['water3']
     growth_rate = "slow_then_very_fast"
-    level_moves: dict[int, list[str]] = {
+    level_moves = {
             1: [
                 "astonish",
                 "wrap",
