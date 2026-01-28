@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("basculin_red_striped")
 class BasculinRedStriped:
     display_name = "Basculin Red Striped"

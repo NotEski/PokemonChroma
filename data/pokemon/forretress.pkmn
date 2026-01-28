@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("forretress")
 class Forretress:
     display_name = "Forretress"

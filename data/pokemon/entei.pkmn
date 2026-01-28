@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("entei")
 class Entei:
     display_name = "Entei"

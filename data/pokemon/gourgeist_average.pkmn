@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("gourgeist_average")
 class GourgeistAverage:
     display_name = "Gourgeist Average"

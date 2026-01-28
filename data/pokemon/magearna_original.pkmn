@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("magearna_original")
 class MagearnaOriginal:
     display_name = "Magearna Original"

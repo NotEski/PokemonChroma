@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("appletun")
 class Appletun:
     display_name = "Appletun"

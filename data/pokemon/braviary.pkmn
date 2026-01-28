@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("braviary")
 class Braviary:
     display_name = "Braviary"

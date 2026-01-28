@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("lycanroc_dusk")
 class LycanrocDusk:
     display_name = "Lycanroc Dusk"

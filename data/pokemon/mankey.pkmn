@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("mankey")
 class Mankey:
     display_name = "Mankey"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("landorus_therian")
 class LandorusTherian:
     display_name = "Landorus Therian"

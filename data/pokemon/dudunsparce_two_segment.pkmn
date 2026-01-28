@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("dudunsparce_two_segment")
 class DudunsparceTwoSegment:
     display_name = "Dudunsparce Two Segment"

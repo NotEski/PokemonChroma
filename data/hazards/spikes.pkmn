@@ -1,0 +1,27 @@
+from pkmn_imports import *
+
+@hazard("spikes")
+class Spikes:
+    display_name = "Spikes"
+
+    def on_entry(self, pokemon: BattleMon, layer_count: int) -> None:
+        if layer_count == 0:
+            return  # No effect if there are no layers
+
+        if pokemon.has_type("flying") or pokemon.has_ability("levitate"):
+            return  # No effect on Flying-type or Levitate ability
+
+        if pokemon.has_ability("magic_guard"):
+            return  # No effect on Magic Guard ability
+
+        # Damage based on number of layers
+        max_hp = pokemon.max_hp
+        damage = 0
+        if layer_count == 1:
+            damage = max_hp // 8  # 1/8 max HP
+        elif layer_count == 2:
+            damage = max_hp // 6  # 1/6 max HP
+        elif layer_count >= 3:
+            damage = max_hp // 4  # 1/4 max HP
+        
+        pokemon.take_damage(damage)

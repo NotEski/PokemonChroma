@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("aegislash_shield")
 class AegislashShield:
     display_name = "Aegislash Shield"

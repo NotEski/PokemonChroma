@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("metang")
 class Metang:
     display_name = "Metang"

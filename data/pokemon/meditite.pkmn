@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("meditite")
 class Meditite:
     display_name = "Meditite"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("eternatus_eternamax")
 class EternatusEternamax:
     display_name = "Eternatus Eternamax"

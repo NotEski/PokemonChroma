@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("gourgeist_small")
 class GourgeistSmall:
     display_name = "Gourgeist Small"

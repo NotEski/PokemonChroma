@@ -1,0 +1,15 @@
+from pkmn_imports import *
+
+@hazard("sticky_web")
+class StickyWeb:
+    display_name = "Sticky Web"
+
+    def on_entry(self, pokemon: BattleMon, layer_count: int) -> None:
+        if layer_count == 0:
+            return  # No effect if there are no layers
+
+        if pokemon.has_type("flying") or pokemon.has_ability("levitate"):
+            return  # No effect on Flying-type or Levitate ability
+
+        # Sticky Web only has one layer effect - lowers Speed by 1 stage
+        pokemon.modify_stat_stage(Stat.SPEED, -1)

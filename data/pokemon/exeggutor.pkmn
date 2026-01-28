@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("exeggutor")
 class Exeggutor:
     display_name = "Exeggutor"

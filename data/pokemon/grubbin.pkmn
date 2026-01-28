@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("grubbin")
 class Grubbin:
     display_name = "Grubbin"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("heliolisk")
 class Heliolisk:
     display_name = "Heliolisk"

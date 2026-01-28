@@ -1,8 +1,10 @@
+from pkmn_imports import *
+
 @hazard("toxic_spikes")
 class ToxicSpikes:
     display_name = "Toxic Spikes"
 
-    def on_entry(self, pokemon, layer_count: int):
+    def on_entry(self, pokemon: BattleMon, layer_count: int) -> None:
         if layer_count == 0:
             return  # No effect if there are no layers
 
@@ -13,6 +15,8 @@ class ToxicSpikes:
             return  # No effect on Immunity ability
 
         if layer_count == 1:
-            pokemon.apply_status("poisoned")
+            status = get_status_condition("poisoned")
+            pokemon.apply_status(status)
         elif layer_count >= 2:
-            pokemon.apply_status("badly_poisoned")
+            status = get_status_condition("badly_poisoned")
+            pokemon.apply_status(status)

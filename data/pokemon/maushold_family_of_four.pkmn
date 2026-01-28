@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("maushold_family_of_four")
 class MausholdFamilyOfFour:
     display_name = "Maushold Family Of Four"

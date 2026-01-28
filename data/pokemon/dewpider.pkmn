@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("dewpider")
 class Dewpider:
     display_name = "Dewpider"

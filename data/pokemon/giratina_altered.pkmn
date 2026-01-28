@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("giratina_altered")
 class GiratinaAltered:
     display_name = "Giratina Altered"

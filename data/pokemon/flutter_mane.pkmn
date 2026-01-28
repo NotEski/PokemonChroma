@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("flutter_mane")
 class FlutterMane:
     display_name = "Flutter Mane"

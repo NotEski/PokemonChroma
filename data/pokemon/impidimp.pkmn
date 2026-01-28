@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("impidimp")
 class Impidimp:
     display_name = "Impidimp"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("latios")
 class Latios:
     display_name = "Latios"

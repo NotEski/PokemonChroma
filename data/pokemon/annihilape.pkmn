@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("annihilape")
 class Annihilape:
     display_name = "Annihilape"

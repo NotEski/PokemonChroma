@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("clauncher")
 class Clauncher:
     display_name = "Clauncher"

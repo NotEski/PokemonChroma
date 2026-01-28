@@ -6,6 +6,7 @@ import builtins
 from random import randint
 import os
 from typing import Any, Optional, List, TypeVar, Callable
+from shared.battle.type_effectiveness import get_attack_multiplier
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
@@ -589,24 +590,20 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
         "get_move": get_move,
         "get_ability": get_ability,
         "get_item": get_item,
+        "get_attack_multiplier": get_attack_multiplier,
 
         # imports
         "BaseStats": BaseStats,
         "EffortYield": EffortYield,
         "PokemonType": PokemonType,
+        "Stat": Stat,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):
     tree = ast.parse(source, filename=filename)
 
     ALLOWED_IMPORT_MODULES = (
-        "shared.pokemon.pokemon",
-        "shared.pokemon.move",
-        "shared.pokemon.status_conditions",
-        "shared.pokemon.abilities",
-        "shared.pokemon.items",
-        "shared.pokemon.hazard",
-        "shared.pokemon.stats",
+        "pkmn_imports",
     )
 
     BLOCKED_CALLS = {

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("luxray")
 class Luxray:
     display_name = "Luxray"

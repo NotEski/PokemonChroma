@@ -1,0 +1,25 @@
+from pkmn_imports import *
+
+@hazard("stealth_rock")
+class StealthRock:
+    display_name = "Stealth Rock"
+
+    def on_entry(self, pokemon: BattleMon, layer_count: int) -> None:
+        if layer_count == 0:
+            return  # No effect if there are no layers
+
+        if pokemon.has_ability("magic_guard"):
+            return  # No effect on Magic Guard ability
+
+        # Stealth Rock only has one layer, but deals type-based damage
+        # Calculate type effectiveness against Rock-type        
+        rock_type = PokemonType("rock")
+        effectiveness = get_attack_multiplier(rock_type, pokemon.types)
+        
+        # Base damage is 1/8 of max HP, modified by type effectiveness
+        max_hp = pokemon.max_hp
+        base_damage = max_hp // 8
+        damage = int(base_damage * effectiveness)
+        
+        if damage > 0:
+            pokemon.take_damage(damage)

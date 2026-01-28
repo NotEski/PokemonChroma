@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("klinklang")
 class Klinklang:
     display_name = "Klinklang"

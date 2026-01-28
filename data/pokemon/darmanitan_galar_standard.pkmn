@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("darmanitan_galar_standard")
 class DarmanitanGalarStandard:
     display_name = "Darmanitan Galar Standard"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("kilowattrel")
 class Kilowattrel:
     display_name = "Kilowattrel"

@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("heatran")
 class Heatran:
     display_name = "Heatran"

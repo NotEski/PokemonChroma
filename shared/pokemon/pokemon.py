@@ -279,6 +279,26 @@ class BattleMon(BaseModel):
                 return index
         return None
 
+    def has_type(self, pokemon_type: str | PokemonType) -> bool:
+        return pokemon_type in self.types
+    
+    def has_ability(self, ability_name: str) -> bool:
+        for ability in self.abilities.abilities:
+            if ability.name.lower() == ability_name.lower():
+                return True
+        return False
+    
+    def apply_status(self, status_condition: StatusCondition):
+        # logic to apply status condition to the pokemon
+        if status_condition in self.status_conditions:
+            return  # Already has the status condition
+        self.add_status_condition(status_condition, status_condition.default_data_factory())
+
+    def take_damage(self, damage: int):
+        self.current_hp = max(0, self.current_hp - damage)
+
+        
+
 #region BattleState Proxy Properties
     @property
     def stat_stages(self) -> StatStages:

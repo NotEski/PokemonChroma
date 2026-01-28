@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("machop")
 class Machop:
     display_name = "Machop"

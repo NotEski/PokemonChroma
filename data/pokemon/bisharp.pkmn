@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("bisharp")
 class Bisharp:
     display_name = "Bisharp"

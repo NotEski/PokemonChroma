@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("klang")
 class Klang:
     display_name = "Klang"

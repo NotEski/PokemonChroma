@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("buneary")
 class Buneary:
     display_name = "Buneary"

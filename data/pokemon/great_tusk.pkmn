@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("great_tusk")
 class GreatTusk:
     display_name = "Great Tusk"

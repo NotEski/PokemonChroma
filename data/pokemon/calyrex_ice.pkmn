@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("calyrex_ice")
 class CalyrexIce:
     display_name = "Calyrex Ice"

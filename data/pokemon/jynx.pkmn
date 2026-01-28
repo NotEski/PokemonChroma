@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("jynx")
 class Jynx:
     display_name = "Jynx"

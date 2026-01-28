@@ -1,3 +1,5 @@
+from pkmn_imports import *
+
 @pokemon("fraxure")
 class Fraxure:
     display_name = "Fraxure"
