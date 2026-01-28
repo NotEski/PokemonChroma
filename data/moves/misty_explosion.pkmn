@@ -1,0 +1,13 @@
+@move("misty_explosion")  # type: ignore
+class _MistyExplosion:
+    meta = {
+        "display_name": "Misty Explosion",
+        "type": "fairy",
+        "index": 802,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "all_other_pokemon",
+    }

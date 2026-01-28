@@ -1,0 +1,13 @@
+@move("guardian_of_alola")  # type: ignore
+class _GuardianOfAlola:
+    meta = {
+        "display_name": "Guardian of Alola",
+        "type": "fairy",
+        "index": 698,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,13 @@
+@move("inferno_overdrive_special")  # type: ignore
+class _InfernoOverdriveSpecial:
+    meta = {
+        "display_name": "Inferno Overdrive",
+        "type": "fire",
+        "index": 641,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

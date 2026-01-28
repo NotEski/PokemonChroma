@@ -5,13 +5,12 @@ class _Octazooka:
         "type": "water",
         "index": 190,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 85,
         "power": 65,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "ballistics"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 50}],
     }

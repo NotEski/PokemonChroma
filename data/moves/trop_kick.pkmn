@@ -1,0 +1,16 @@
+@move("trop_kick")  # type: ignore
+class _TropKick:
+    meta = {
+        "display_name": "Trop Kick",
+        "type": "grass",
+        "index": 688,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

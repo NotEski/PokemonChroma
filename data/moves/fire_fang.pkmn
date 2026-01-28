@@ -5,13 +5,12 @@ class _FireFang:
         "type": "fire",
         "index": 424,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 95,
         "power": 65,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "bite"]
     status_condition = {
         "burn": 10,
     }

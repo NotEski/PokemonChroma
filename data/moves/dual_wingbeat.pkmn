@@ -1,0 +1,13 @@
+@move("dual_wingbeat")  # type: ignore
+class _DualWingbeat:
+    meta = {
+        "display_name": "Dual Wingbeat",
+        "type": "flying",
+        "index": 814,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 40,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

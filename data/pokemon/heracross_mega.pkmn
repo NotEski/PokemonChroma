@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("heracross_mega")
+class MegaHeracross:
+    display_name = "Heracross Mega"
+    id = 10047
+    base_stats = BaseStats(
+        hp=80,
+        attack=185,
+        defense=115,
+        special_attack=40,
+        special_defense=105,
+        speed=75
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 210
+    height_m = 1.7
+    weight_kg = 62.5

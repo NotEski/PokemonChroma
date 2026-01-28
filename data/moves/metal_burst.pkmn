@@ -11,4 +11,3 @@ class _MetalBurst:
         "pp": 10,
         "target": "specific_move",
     }
-    flags = ["protect", "mirror"]

@@ -1,0 +1,13 @@
+@move("body_press")  # type: ignore
+class _BodyPress:
+    meta = {
+        "display_name": "Body Press",
+        "type": "fighting",
+        "index": 776,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

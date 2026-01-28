@@ -1,0 +1,13 @@
+@move("magical_torque")  # type: ignore
+class _MagicalTorque:
+    meta = {
+        "display_name": "Magical Torque",
+        "type": "fairy",
+        "index": 900,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

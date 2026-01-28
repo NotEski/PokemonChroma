@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("porygon_z")
+class PorygonZ:
+    display_name = "Porygon Z"
+    id = 474
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=85,
+        attack=80,
+        defense=70,
+        special_attack=135,
+        special_defense=75,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 241
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "adaptability",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "download",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 34.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "conversion",
+                "defense_curl",
+                "magnet_rise",
+                "nasty_plot",
+                "recycle",
+                "tackle",
+                "trick_room",
+            ],
+            15: [
+                "thunder_shock",
+            ],
+            20: [
+                "psybeam",
+            ],
+            25: [
+                "conversion_2",
+            ],
+            30: [
+                "agility",
+            ],
+            35: [
+                "recover",
+            ],
+            40: [
+                "discharge",
+            ],
+            45: [
+                "tri_attack",
+            ],
+            50: [
+                "magic_coat",
+            ],
+            55: [
+                "lock_on",
+            ],
+            60: [
+                "zap_cannon",
+            ],
+            65: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "blizzard",
+        "dark_pulse",
+        "eerie_impulse",
+        "electroweb",
+        "endure",
+        "facade",
+        "foul_play",
+        "giga_impact",
+        "guard_swap",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "nasty_plot",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "rest",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "trick",
+        "trick_room",
+        "uproar",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    egg_moves = []

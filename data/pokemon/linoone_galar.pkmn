@@ -1,0 +1,148 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("linoone_galar")
+class LinooneGalar:
+    display_name = "Linoone Galar"
+    id = 10175
+    types = ['dark', 'normal']
+    base_stats = BaseStats(
+        hp=78,
+        attack=70,
+        defense=61,
+        special_attack=50,
+        special_defense=61,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 147
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "quick_feet",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 32.5
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "night_slash",
+            ],
+            1: [
+                "baby_doll_eyes",
+                "leer",
+                "lick",
+                "night_slash",
+                "pin_missile",
+                "sand_attack",
+                "switcheroo",
+                "tackle",
+            ],
+            9: [
+                "snarl",
+            ],
+            12: [
+                "headbutt",
+            ],
+            15: [
+                "hone_claws",
+            ],
+            18: [
+                "fury_swipes",
+            ],
+            23: [
+                "rest",
+            ],
+            28: [
+                "take_down",
+            ],
+            33: [
+                "scary_face",
+            ],
+            38: [
+                "counter",
+            ],
+            43: [
+                "taunt",
+            ],
+            48: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fling",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "mud_shot",
+        "payback",
+        "pin_missile",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "scary_face",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

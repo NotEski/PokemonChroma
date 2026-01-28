@@ -5,13 +5,12 @@ class _RelicSong:
         "type": "normal",
         "index": 547,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 75,
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]
     status_condition = {
         "sleep": 10,
     }

@@ -5,13 +5,12 @@ class _Meditate:
         "type": "psychic",
         "index": 96,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 40,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}],
     }

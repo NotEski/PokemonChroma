@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("darmanitan_standard")
+class DarmanitanStandard:
+    display_name = "Darmanitan Standard"
+    id = 555
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=105,
+        attack=140,
+        defense=55,
+        special_attack=30,
+        special_defense=55,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sheer_force",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "zen_mode",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 92.9
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "hammer_arm",
+            ],
+            1: [
+                "bite",
+                "ember",
+                "hammer_arm",
+                "tackle",
+                "taunt",
+            ],
+            12: [
+                "incinerate",
+            ],
+            16: [
+                "work_up",
+            ],
+            20: [
+                "fire_fang",
+            ],
+            24: [
+                "headbutt",
+            ],
+            28: [
+                "fire_punch",
+            ],
+            32: [
+                "uproar",
+            ],
+            38: [
+                "belly_drum",
+            ],
+            44: [
+                "flare_blitz",
+            ],
+            50: [
+                "thrash",
+            ],
+            56: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "dig",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "gyro_ball",
+        "heat_wave",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "mega_kick",
+        "mega_punch",
+        "mystical_fire",
+        "overheat",
+        "payback",
+        "power_swap",
+        "protect",
+        "psychic",
+        "rest",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thief",
+        "trick",
+        "u_turn",
+        "uproar",
+        "will_o_wisp",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "expanding_force",
+        "lash_out",
+    ]
+    egg_moves = []

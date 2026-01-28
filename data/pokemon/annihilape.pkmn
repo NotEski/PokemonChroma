@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("annihilape")
+class Annihilape:
+    display_name = "Annihilape"
+    id = 979
+    types = ['fighting', 'ghost']
+    base_stats = BaseStats(
+        hp=110,
+        attack=115,
+        defense=80,
+        special_attack=50,
+        special_defense=90,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 268
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "vital_spirit",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 56.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

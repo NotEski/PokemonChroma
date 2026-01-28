@@ -1,0 +1,13 @@
+@move("triple_axel")  # type: ignore
+class _TripleAxel:
+    meta = {
+        "display_name": "Triple Axel",
+        "type": "ice",
+        "index": 813,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 20,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

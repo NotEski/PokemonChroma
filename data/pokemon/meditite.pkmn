@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("meditite")
+class Meditite:
+    display_name = "Meditite"
+    id = 307
+    types = ['fighting', 'psychic']
+    base_stats = BaseStats(
+        hp=30,
+        attack=40,
+        defense=55,
+        special_attack=40,
+        special_defense=55,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 180
+    base_experience_yield = 56
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pure_power",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 11.2
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    egg_moves = []

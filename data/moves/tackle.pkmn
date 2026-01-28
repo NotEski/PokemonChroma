@@ -7,8 +7,7 @@ class _Tackle:
         "damage_class": "physical",
         "category": "damage",
         "accuracy": 100,
-        "power": 50,
+        "power": 40,
         "pp": 35,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

@@ -1,0 +1,44 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tatsugiri_curly")
+class TatsugiriCurly:
+    display_name = "Tatsugiri Curly"
+    id = 978
+    types = ['dragon', 'water']
+    base_stats = BaseStats(
+        hp=68,
+        attack=50,
+        defense=60,
+        special_attack=120,
+        special_defense=95,
+        speed=82
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "commander",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "storm_drain",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 8.0
+    growth_rate = "medium_fast"
+    egg_moves = []

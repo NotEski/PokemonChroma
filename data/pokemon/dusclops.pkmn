@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dusclops")
+class Dusclops:
+    display_name = "Dusclops"
+    id = 356
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=40,
+        attack=70,
+        defense=130,
+        special_attack=60,
+        special_defense=130,
+        speed=25
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 159
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 30.6
+    egg_groups = ['indeterminate']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "shadow_punch",
+            ],
+            1: [
+                "astonish",
+                "bind",
+                "disable",
+                "fire_punch",
+                "gravity",
+                "ice_punch",
+                "leer",
+                "shadow_punch",
+                "shadow_sneak",
+                "thunder_punch",
+            ],
+            12: [
+                "confuse_ray",
+            ],
+            16: [
+                "night_shade",
+            ],
+            20: [
+                "payback",
+            ],
+            24: [
+                "will_o_wisp",
+            ],
+            28: [
+                "mean_look",
+            ],
+            32: [
+                "hex",
+            ],
+            36: [
+                "curse",
+            ],
+            42: [
+                "shadow_ball",
+            ],
+            48: [
+                "future_sight",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "calm_mind",
+        "dark_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "future_sight",
+        "giga_impact",
+        "helping_hand",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "imprison",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder_punch",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "poltergeist",
+        "skitter_smack",
+    ]
+    egg_moves = []

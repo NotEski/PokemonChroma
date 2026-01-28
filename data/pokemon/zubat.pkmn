@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zubat")
+class Zubat:
+    display_name = "Zubat"
+    id = 41
+    types = ['poison', 'flying']
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=35,
+        special_attack=30,
+        special_defense=40,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 49
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 7.5
+    egg_groups = ['flying']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "supersonic",
+            ],
+            5: [
+                "astonish",
+            ],
+            10: [
+                "mean_look",
+            ],
+            15: [
+                "poison_fang",
+            ],
+            20: [
+                "quick_guard",
+            ],
+            25: [
+                "air_cutter",
+            ],
+            30: [
+                "bite",
+            ],
+            35: [
+                "haze",
+            ],
+            40: [
+                "venoshock",
+            ],
+            45: [
+                "confuse_ray",
+            ],
+            50: [
+                "air_slash",
+            ],
+            55: [
+                "leech_life",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "assurance",
+        "attract",
+        "brave_bird",
+        "crunch",
+        "endure",
+        "facade",
+        "fly",
+        "giga_drain",
+        "heat_wave",
+        "leech_life",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "u_turn",
+        "uproar",
+        "venom_drench",
+        "venoshock",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "curse",
+        "defog",
+        "gust",
+        "hypnosis",
+        "quick_attack",
+        "whirlwind",
+        "wing_attack",
+    ]

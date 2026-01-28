@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("manectric_mega")
+class MegaManectric:
+    display_name = "Manectric Mega"
+    id = 10055
+    base_stats = BaseStats(
+        hp=70,
+        attack=75,
+        defense=80,
+        special_attack=135,
+        special_defense=80,
+        speed=135
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 201
+    height_m = 1.8
+    weight_kg = 44.0

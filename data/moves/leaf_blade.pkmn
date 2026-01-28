@@ -11,5 +11,4 @@ class _LeafBlade:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     critical_hit_rate = 8

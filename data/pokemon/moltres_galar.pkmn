@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("moltres_galar")
+class MoltresGalar:
+    display_name = "Moltres Galar"
+    id = 10171
+    types = ['dark', 'flying']
+    base_stats = BaseStats(
+        hp=90,
+        attack=85,
+        defense=90,
+        special_attack=100,
+        special_defense=125,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 290
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "berserk",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 66.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "gust",
+                "leer",
+            ],
+            5: [
+                "payback",
+            ],
+            10: [
+                "safeguard",
+            ],
+            15: [
+                "wing_attack",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "ancient_power",
+            ],
+            30: [
+                "sucker_punch",
+            ],
+            35: [
+                "air_slash",
+            ],
+            40: [
+                "after_you",
+            ],
+            45: [
+                "fiery_wrath",
+            ],
+            50: [
+                "nasty_plot",
+            ],
+            55: [
+                "hurricane",
+            ],
+            60: [
+                "endure",
+            ],
+            65: [
+                "memento",
+            ],
+            70: [
+                "sky_attack",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "assurance",
+        "brave_bird",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "fly",
+        "foul_play",
+        "giga_impact",
+        "hex",
+        "hurricane",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "scary_face",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "swift",
+        "taunt",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "lash_out",
+    ]
+    egg_moves = []

@@ -5,11 +5,10 @@ class _Absorb:
         "type": "grass",
         "index": 71,
         "damage_class": "special",
-        "category": "damage_heal",
+        "category": "damage",
         "accuracy": 100,
         "power": 20,
         "pp": 25,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "heal"]
     drain = 50

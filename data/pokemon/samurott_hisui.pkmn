@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("samurott_hisui")
+class MegaSamurottHisui:
+    display_name = "Samurott Hisui"
+    id = 10236
+    base_stats = BaseStats(
+        hp=90,
+        attack=108,
+        defense=80,
+        special_attack=100,
+        special_defense=65,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 238
+    height_m = 1.5
+    weight_kg = 58.2

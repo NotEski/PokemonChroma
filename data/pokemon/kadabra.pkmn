@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kadabra")
+class Kadabra:
+    display_name = "Kadabra"
+    id = 64
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=40,
+        attack=35,
+        defense=30,
+        special_attack=120,
+        special_defense=70,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 100
+    base_experience_yield = 140
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 56.5
+    egg_groups = ['humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "confusion",
+            ],
+            1: [
+                "confusion",
+                "disable",
+                "kinesis",
+                "teleport",
+            ],
+            5: [
+                "psybeam",
+            ],
+            10: [
+                "reflect",
+            ],
+            15: [
+                "ally_switch",
+            ],
+            20: [
+                "psycho_cut",
+            ],
+            25: [
+                "recover",
+            ],
+            30: [
+                "psyshock",
+            ],
+            35: [
+                "psychic",
+            ],
+            40: [
+                "role_play",
+            ],
+            45: [
+                "future_sight",
+            ],
+            50: [
+                "calm_mind",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "body_slam",
+        "calm_mind",
+        "dazzling_gleam",
+        "drain_punch",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fire_punch",
+        "fling",
+        "foul_play",
+        "future_sight",
+        "grass_knot",
+        "guard_swap",
+        "ice_punch",
+        "iron_tail",
+        "light_screen",
+        "magic_room",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psycho_cut",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "speed_swap",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "thunder_punch",
+        "thunder_wave",
+        "tri_attack",
+        "trick",
+        "trick_room",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = []

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("aggron_mega")
+class MegaAggron:
+    display_name = "Aggron Mega"
+    id = 10053
+    base_stats = BaseStats(
+        hp=70,
+        attack=140,
+        defense=230,
+        special_attack=60,
+        special_defense=80,
+        speed=50
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 284
+    height_m = 2.2
+    weight_kg = 395.0

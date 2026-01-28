@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("appletun")
+class Appletun:
+    display_name = "Appletun"
+    id = 842
+    types = ['grass', 'dragon']
+    base_stats = BaseStats(
+        hp=110,
+        attack=85,
+        defense=80,
+        special_attack=100,
+        special_defense=80,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 170
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "ripen",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 13.0
+    egg_groups = ['plant', 'dragon']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "headbutt",
+            ],
+            1: [
+                "astonish",
+                "growth",
+                "headbutt",
+                "recycle",
+                "sweet_scent",
+                "withdraw",
+            ],
+            4: [
+                "curse",
+            ],
+            8: [
+                "stomp",
+            ],
+            12: [
+                "leech_seed",
+            ],
+            16: [
+                "protect",
+            ],
+            20: [
+                "bullet_seed",
+            ],
+            24: [
+                "recover",
+            ],
+            28: [
+                "apple_acid",
+            ],
+            32: [
+                "body_slam",
+            ],
+            36: [
+                "iron_defense",
+            ],
+            40: [
+                "dragon_pulse",
+            ],
+            44: [
+                "energy_ball",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_press",
+        "body_slam",
+        "bulldoze",
+        "bullet_seed",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "gyro_ball",
+        "heavy_slam",
+        "high_horsepower",
+        "hyper_beam",
+        "iron_defense",
+        "light_screen",
+        "outrage",
+        "payback",
+        "protect",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "superpower",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "grassy_glide",
+    ]
+    egg_moves = []

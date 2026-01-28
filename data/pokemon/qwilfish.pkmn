@@ -1,0 +1,165 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("qwilfish")
+class Qwilfish:
+    display_name = "Qwilfish"
+    id = 211
+    types = ['water', 'poison']
+    base_stats = BaseStats(
+        hp=65,
+        attack=95,
+        defense=85,
+        special_attack=55,
+        special_defense=55,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 88
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 3.9
+    egg_groups = ['water2']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "poison_sting",
+                "tackle",
+            ],
+            4: [
+                "harden",
+            ],
+            8: [
+                "water_gun",
+            ],
+            12: [
+                "fell_stinger",
+            ],
+            16: [
+                "minimize",
+            ],
+            20: [
+                "spikes",
+            ],
+            24: [
+                "brine",
+            ],
+            28: [
+                "revenge",
+            ],
+            32: [
+                "pin_missile",
+            ],
+            36: [
+                "toxic_spikes",
+            ],
+            40: [
+                "poison_jab",
+            ],
+            44: [
+                "spit_up",
+                "stockpile",
+            ],
+            48: [
+                "take_down",
+            ],
+            52: [
+                "toxic",
+            ],
+            56: [
+                "aqua_tail",
+            ],
+            60: [
+                "acupressure",
+            ],
+            66: [
+                "destiny_bond",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "bounce",
+        "brine",
+        "dive",
+        "endure",
+        "facade",
+        "gyro_ball",
+        "hail",
+        "hex",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "liquidation",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "revenge",
+        "reversal",
+        "round",
+        "scald",
+        "scary_face",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "spikes",
+        "substitute",
+        "surf",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "throat_chop",
+        "thunder_wave",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "scale_shot",
+        "steel_roller",
+    ]
+    egg_moves = [
+        "acid_spray",
+        "aqua_jet",
+        "astonish",
+        "bubble_beam",
+        "flail",
+        "haze",
+        "supersonic",
+        "water_pulse",
+    ]

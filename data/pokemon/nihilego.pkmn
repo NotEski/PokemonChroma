@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("nihilego")
+class Nihilego:
+    display_name = "Nihilego"
+    id = 793
+    types = ['rock', 'poison']
+    base_stats = BaseStats(
+        hp=109,
+        attack=53,
+        defense=47,
+        special_attack=127,
+        special_defense=131,
+        speed=103
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 55.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "pound",
+                "wrap",
+            ],
+            5: [
+                "acid",
+            ],
+            10: [
+                "tickle",
+            ],
+            15: [
+                "acid_spray",
+            ],
+            20: [
+                "clear_smog",
+            ],
+            25: [
+                "guard_split",
+                "power_split",
+            ],
+            30: [
+                "venoshock",
+            ],
+            35: [
+                "headbutt",
+            ],
+            40: [
+                "toxic_spikes",
+            ],
+            45: [
+                "venom_drench",
+            ],
+            50: [
+                "power_gem",
+            ],
+            55: [
+                "stealth_rock",
+            ],
+            60: [
+                "mirror_coat",
+            ],
+            65: [
+                "wonder_room",
+            ],
+            70: [
+                "head_smash",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_slam",
+        "brutal_swing",
+        "cross_poison",
+        "dazzling_gleam",
+        "endure",
+        "facade",
+        "foul_play",
+        "grass_knot",
+        "gunk_shot",
+        "hex",
+        "iron_head",
+        "light_screen",
+        "poison_jab",
+        "power_gem",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "stealth_rock",
+        "substitute",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "toxic_spikes",
+        "trick_room",
+        "venom_drench",
+        "venoshock",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+        "meteor_beam",
+    ]
+    egg_moves = []

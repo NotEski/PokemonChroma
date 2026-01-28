@@ -1,11 +1,11 @@
 @move("kings_shield")  # type: ignore
 class _KingsShield:
     meta = {
-        "display_name": "King's Shield",
+        "display_name": "King’s Shield",
         "type": "steel",
         "index": 588,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,

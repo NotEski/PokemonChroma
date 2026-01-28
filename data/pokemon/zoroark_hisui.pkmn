@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("zoroark_hisui")
+class MegaZoroarkHisui:
+    display_name = "Zoroark Hisui"
+    id = 10239
+    base_stats = BaseStats(
+        hp=55,
+        attack=100,
+        defense=60,
+        special_attack=125,
+        special_defense=60,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 179
+    height_m = 1.6
+    weight_kg = 73.0

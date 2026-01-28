@@ -5,13 +5,12 @@ class _Glare:
         "type": "normal",
         "index": 137,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "paralysis": 0,
     }

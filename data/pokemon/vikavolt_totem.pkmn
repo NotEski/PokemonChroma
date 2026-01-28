@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("vikavolt_totem")
+class MegaVikavoltTotem:
+    display_name = "Vikavolt Totem"
+    id = 10122
+    base_stats = BaseStats(
+        hp=77,
+        attack=70,
+        defense=90,
+        special_attack=145,
+        special_defense=75,
+        speed=43
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 225
+    height_m = 2.6
+    weight_kg = 147.5

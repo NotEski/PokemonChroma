@@ -1,0 +1,13 @@
+@move("stone_axe")  # type: ignore
+class _StoneAxe:
+    meta = {
+        "display_name": "Stone Axe",
+        "type": "rock",
+        "index": 830,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 65,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

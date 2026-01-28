@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("leafeon")
+class Leafeon:
+    display_name = "Leafeon"
+    id = 470
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=65,
+        attack=110,
+        defense=130,
+        special_attack=60,
+        special_defense=65,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 184
+    base_happiness = 35
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "leaf_guard",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "chlorophyll",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 25.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "razor_leaf",
+            ],
+            1: [
+                "baton_pass",
+                "bite",
+                "charm",
+                "copycat",
+                "covet",
+                "double_edge",
+                "growl",
+                "helping_hand",
+                "razor_leaf",
+                "swift",
+                "tackle",
+                "tail_whip",
+                "take_down",
+            ],
+            5: [
+                "sand_attack",
+            ],
+            10: [
+                "quick_attack",
+            ],
+            15: [
+                "baby_doll_eyes",
+            ],
+            20: [
+                "leech_seed",
+            ],
+            25: [
+                "magical_leaf",
+            ],
+            30: [
+                "synthesis",
+            ],
+            35: [
+                "sunny_day",
+            ],
+            40: [
+                "giga_drain",
+            ],
+            45: [
+                "swords_dance",
+            ],
+            50: [
+                "leaf_blade",
+            ],
+            55: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "bullet_seed",
+        "charm",
+        "dig",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "focus_energy",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "leaf_blade",
+        "leaf_storm",
+        "magical_leaf",
+        "pay_day",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "seed_bomb",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "weather_ball",
+        "work_up",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

@@ -5,10 +5,9 @@ class _MagicRoom:
         "type": "psychic",
         "index": 478,
         "damage_class": "status",
-        "category": "whole_field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "entire_field",
     }
-    flags = ["mirror"]

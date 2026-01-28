@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magby")
+class Magby:
+    display_name = "Magby"
+    id = 240
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=45,
+        attack=75,
+        defense=37,
+        special_attack=70,
+        special_defense=55,
+        speed=83
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 73
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 21.4
+    egg_groups = ['no_eggs']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "smog",
+            ],
+            4: [
+                "ember",
+            ],
+            8: [
+                "smokescreen",
+            ],
+            12: [
+                "clear_smog",
+            ],
+            16: [
+                "flame_wheel",
+            ],
+            20: [
+                "confuse_ray",
+            ],
+            24: [
+                "scary_face",
+            ],
+            28: [
+                "fire_punch",
+            ],
+            32: [
+                "lava_plume",
+            ],
+            36: [
+                "low_kick",
+            ],
+            40: [
+                "flamethrower",
+            ],
+            44: [
+                "sunny_day",
+            ],
+            48: [
+                "fire_blast",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "brick_break",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "focus_energy",
+        "heat_wave",
+        "helping_hand",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "overheat",
+        "power_swap",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "scary_face",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "thunder_punch",
+        "uproar",
+        "will_o_wisp",
+    ]
+    egg_moves = [
+        "belch",
+        "cross_chop",
+        "dynamic_punch",
+        "focus_punch",
+        "mach_punch",
+    ]

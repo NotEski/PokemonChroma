@@ -1,0 +1,14 @@
+@move("floral_healing")  # type: ignore
+class _FloralHealing:
+    meta = {
+        "display_name": "Floral Healing",
+        "type": "fairy",
+        "index": 666,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    healing = 50

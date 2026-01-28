@@ -1,0 +1,13 @@
+@move("leafage")  # type: ignore
+class _Leafage:
+    meta = {
+        "display_name": "Leafage",
+        "type": "grass",
+        "index": 670,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }

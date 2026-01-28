@@ -1,0 +1,13 @@
+@move("revival_blessing")  # type: ignore
+class _RevivalBlessing:
+    meta = {
+        "display_name": "Revival Blessing",
+        "type": "normal",
+        "index": 863,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 1,
+        "target": "fainting_pokemon",
+    }

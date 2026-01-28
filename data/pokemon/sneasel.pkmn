@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sneasel")
+class Sneasel:
+    display_name = "Sneasel"
+    id = 215
+    types = ['dark', 'ice']
+    base_stats = BaseStats(
+        hp=55,
+        attack=95,
+        defense=55,
+        special_attack=35,
+        special_defense=75,
+        speed=115
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 60
+    base_experience_yield = 86
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 28.0
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            6: [
+                "taunt",
+            ],
+            12: [
+                "quick_attack",
+            ],
+            18: [
+                "metal_claw",
+            ],
+            24: [
+                "icy_wind",
+            ],
+            30: [
+                "fury_swipes",
+            ],
+            36: [
+                "hone_claws",
+            ],
+            42: [
+                "beat_up",
+            ],
+            48: [
+                "agility",
+            ],
+            54: [
+                "screech",
+            ],
+            60: [
+                "slash",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "avalanche",
+        "beat_up",
+        "blizzard",
+        "brick_break",
+        "calm_mind",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "false_swipe",
+        "fling",
+        "foul_play",
+        "hail",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_tail",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "screech",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "whirlpool",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "triple_axel",
+    ]
+    egg_moves = [
+        "bite",
+        "counter",
+        "double_hit",
+        "fake_out",
+        "feint",
+        "ice_shard",
+        "icicle_crash",
+        "spite",
+    ]

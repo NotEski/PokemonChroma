@@ -11,5 +11,4 @@ class _ExtremeSpeed:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     priority = 2

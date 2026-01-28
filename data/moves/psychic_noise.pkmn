@@ -1,0 +1,13 @@
+@move("psychic_noise")  # type: ignore
+class _PsychicNoise:
+    meta = {
+        "display_name": "Psychic Noise",
+        "type": "psychic",
+        "index": 917,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

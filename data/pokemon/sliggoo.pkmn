@@ -1,0 +1,115 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sliggoo")
+class Sliggoo:
+    display_name = "Sliggoo"
+    id = 705
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=68,
+        attack=75,
+        defense=53,
+        special_attack=83,
+        special_defense=113,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 158
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sap_sipper",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hydration",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "gooey",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 17.5
+    egg_groups = ['dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "acid_spray",
+            ],
+            1: [
+                "absorb",
+                "acid_spray",
+                "dragon_breath",
+                "tackle",
+                "water_gun",
+            ],
+            15: [
+                "protect",
+            ],
+            20: [
+                "flail",
+            ],
+            25: [
+                "water_pulse",
+            ],
+            30: [
+                "rain_dance",
+            ],
+            35: [
+                "dragon_pulse",
+            ],
+            43: [
+                "curse",
+            ],
+            49: [
+                "body_slam",
+            ],
+            56: [
+                "muddy_water",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "ice_beam",
+        "iron_tail",
+        "mud_shot",
+        "muddy_water",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thunderbolt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "skitter_smack",
+    ]
+    egg_moves = []

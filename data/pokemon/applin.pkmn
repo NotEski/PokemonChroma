@@ -1,0 +1,68 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("applin")
+class Applin:
+    display_name = "Applin"
+    id = 840
+    types = ['grass', 'dragon']
+    base_stats = BaseStats(
+        hp=40,
+        attack=40,
+        defense=80,
+        special_attack=40,
+        special_defense=40,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 52
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "ripen",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "bulletproof",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 0.5
+    egg_groups = ['plant', 'dragon']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "withdraw",
+            ],
+        }
+    machine_moves = [
+        "attract",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "defense_curl",
+        "recycle",
+        "rollout",
+        "sucker_punch",
+    ]

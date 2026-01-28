@@ -1,0 +1,13 @@
+@move("never_ending_nightmare_special")  # type: ignore
+class _NeverEndingNightmareSpecial:
+    meta = {
+        "display_name": "Never-Ending Nightmare",
+        "type": "ghost",
+        "index": 637,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

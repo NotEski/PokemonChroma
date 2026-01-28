@@ -1,0 +1,13 @@
+@move("octolock")  # type: ignore
+class _Octolock:
+    meta = {
+        "display_name": "Octolock",
+        "type": "fighting",
+        "index": 753,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

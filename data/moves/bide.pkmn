@@ -11,5 +11,4 @@ class _Bide:
         "pp": 10,
         "target": "user",
     }
-    flags = ["contact", "protect"]
     priority = 1

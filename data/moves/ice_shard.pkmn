@@ -11,5 +11,4 @@ class _IceShard:
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     priority = 1

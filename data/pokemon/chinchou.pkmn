@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chinchou")
+class Chinchou:
+    display_name = "Chinchou"
+    id = 170
+    types = ['water', 'electric']
+    base_stats = BaseStats(
+        hp=75,
+        attack=38,
+        defense=38,
+        special_attack=56,
+        special_defense=56,
+        speed=67
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 66
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "illuminate",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 12.0
+    egg_groups = ['water2']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "supersonic",
+                "water_gun",
+            ],
+            4: [
+                "electro_ball",
+            ],
+            8: [
+                "thunder_wave",
+            ],
+            12: [
+                "bubble_beam",
+            ],
+            16: [
+                "confuse_ray",
+            ],
+            20: [
+                "spark",
+            ],
+            24: [
+                "charge",
+            ],
+            28: [
+                "discharge",
+            ],
+            32: [
+                "aqua_ring",
+            ],
+            36: [
+                "flail",
+            ],
+            40: [
+                "take_down",
+            ],
+            44: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "amnesia",
+        "attract",
+        "blizzard",
+        "bounce",
+        "brine",
+        "dazzling_gleam",
+        "dive",
+        "electro_ball",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "waterfall",
+        "whirlpool",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = [
+        "mist",
+        "psybeam",
+        "soak",
+        "water_pulse",
+    ]

@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magmar")
+class Magmar:
+    display_name = "Magmar"
+    id = 126
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=65,
+        attack=95,
+        defense=57,
+        special_attack=100,
+        special_defense=85,
+        speed=93
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 173
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 44.5
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "leer",
+                "smog",
+                "smokescreen",
+            ],
+            12: [
+                "clear_smog",
+            ],
+            16: [
+                "flame_wheel",
+            ],
+            20: [
+                "confuse_ray",
+            ],
+            24: [
+                "scary_face",
+            ],
+            28: [
+                "fire_punch",
+            ],
+            34: [
+                "lava_plume",
+            ],
+            40: [
+                "low_kick",
+            ],
+            46: [
+                "flamethrower",
+            ],
+            52: [
+                "sunny_day",
+            ],
+            58: [
+                "fire_blast",
+            ],
+            64: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "brick_break",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "iron_tail",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "overheat",
+        "power_swap",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "scary_face",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "thunder_punch",
+        "uproar",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "scorching_sands",
+    ]
+    egg_moves = []

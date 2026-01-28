@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("druddigon")
+class Druddigon:
+    display_name = "Druddigon"
+    id = 621
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=77,
+        attack=120,
+        defense=90,
+        special_attack=60,
+        special_defense=90,
+        speed=48
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 170
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rough_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 139.0
+    egg_groups = ['dragon', 'monster']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            5: [
+                "bite",
+            ],
+            10: [
+                "dragon_tail",
+            ],
+            15: [
+                "metal_claw",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "slash",
+            ],
+            30: [
+                "dragon_claw",
+            ],
+            35: [
+                "hone_claws",
+            ],
+            40: [
+                "crunch",
+            ],
+            45: [
+                "iron_head",
+            ],
+            50: [
+                "outrage",
+            ],
+            55: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dragon_claw",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_fang",
+        "fire_punch",
+        "flamethrower",
+        "flash_cannon",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "gunk_shot",
+        "heat_wave",
+        "hyper_beam",
+        "iron_head",
+        "iron_tail",
+        "mega_punch",
+        "outrage",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "snarl",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "taunt",
+        "thunder_fang",
+        "thunder_punch",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "lash_out",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "glare",
+        "night_slash",
+        "poison_tail",
+        "sucker_punch",
+    ]

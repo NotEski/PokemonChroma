@@ -1,0 +1,116 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("foongus")
+class Foongus:
+    display_name = "Foongus"
+    id = 590
+    types = ['grass', 'poison']
+    base_stats = BaseStats(
+        hp=69,
+        attack=55,
+        defense=45,
+        special_attack=55,
+        special_defense=55,
+        speed=15
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 59
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "effect_spore",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 1.0
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "astonish",
+            ],
+            4: [
+                "growth",
+            ],
+            8: [
+                "stun_spore",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "synthesis",
+            ],
+            20: [
+                "clear_smog",
+            ],
+            24: [
+                "sweet_scent",
+            ],
+            28: [
+                "giga_drain",
+            ],
+            32: [
+                "ingrain",
+            ],
+            36: [
+                "toxic",
+            ],
+            40: [
+                "rage_powder",
+            ],
+            44: [
+                "solar_beam",
+            ],
+            48: [
+                "spore",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "endure",
+        "energy_ball",
+        "facade",
+        "foul_play",
+        "giga_drain",
+        "grass_knot",
+        "payback",
+        "pollen_puff",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "venoshock",
+    ]
+    egg_moves = [
+        "defense_curl",
+        "poison_powder",
+        "rollout",
+        "worry_seed",
+    ]

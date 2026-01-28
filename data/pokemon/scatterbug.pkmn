@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("scatterbug")
+class Scatterbug:
+    display_name = "Scatterbug"
+    id = 664
+    types = ['bug']
+    base_stats = BaseStats(
+        hp=38,
+        attack=35,
+        defense=40,
+        special_attack=27,
+        special_defense=25,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 40
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shield_dust",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "compound_eyes",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 2.5
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    egg_moves = []

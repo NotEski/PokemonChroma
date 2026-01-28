@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("necrozma_ultra")
+class MegaNecrozmaUltra:
+    display_name = "Necrozma Ultra"
+    id = 10157
+    base_stats = BaseStats(
+        hp=97,
+        attack=167,
+        defense=97,
+        special_attack=167,
+        special_defense=97,
+        speed=129
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 339
+    height_m = 7.5
+    weight_kg = 230.0

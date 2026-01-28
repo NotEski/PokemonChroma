@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("electrode_hisui")
+class MegaElectrodeHisui:
+    display_name = "Electrode Hisui"
+    id = 10232
+    base_stats = BaseStats(
+        hp=60,
+        attack=50,
+        defense=70,
+        special_attack=80,
+        special_defense=80,
+        speed=150
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 172
+    height_m = 1.2
+    weight_kg = 71.0

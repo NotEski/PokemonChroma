@@ -1,0 +1,16 @@
+@move("torch_song")  # type: ignore
+class _TorchSong:
+    meta = {
+        "display_name": "Torch Song",
+        "type": "fire",
+        "index": 871,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 100}],
+    }

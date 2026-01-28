@@ -5,7 +5,7 @@ class _HappyHour:
         "type": "normal",
         "index": 603,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 30,

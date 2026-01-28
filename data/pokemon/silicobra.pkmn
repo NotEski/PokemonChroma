@@ -1,0 +1,118 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("silicobra")
+class Silicobra:
+    display_name = "Silicobra"
+    id = 843
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=52,
+        attack=57,
+        defense=75,
+        special_attack=35,
+        special_defense=50,
+        speed=46
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 63
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sand_spit",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shed_skin",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.2
+    weight_kg = 7.6
+    egg_groups = ['ground', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "sand_attack",
+                "wrap",
+            ],
+            5: [
+                "minimize",
+            ],
+            10: [
+                "brutal_swing",
+            ],
+            15: [
+                "bulldoze",
+            ],
+            20: [
+                "headbutt",
+            ],
+            25: [
+                "glare",
+            ],
+            30: [
+                "dig",
+            ],
+            35: [
+                "sandstorm",
+            ],
+            40: [
+                "slam",
+            ],
+            45: [
+                "coil",
+            ],
+            50: [
+                "sand_tomb",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brutal_swing",
+        "bulldoze",
+        "dig",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "mud_shot",
+        "protect",
+        "rest",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+    ]
+    tutor_moves = [
+        "scale_shot",
+        "scorching_sands",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "belch",
+        "dragon_rush",
+        "last_resort",
+        "mud_slap",
+        "poison_tail",
+    ]

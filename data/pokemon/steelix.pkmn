@@ -1,0 +1,165 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("steelix")
+class Steelix:
+    display_name = "Steelix"
+    id = 208
+    types = ['steel', 'ground']
+    base_stats = BaseStats(
+        hp=75,
+        attack=85,
+        defense=200,
+        special_attack=55,
+        special_defense=65,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 179
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 9.2
+    weight_kg = 400.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "crunch",
+                "fire_fang",
+                "harden",
+                "ice_fang",
+                "rock_polish",
+                "rock_throw",
+                "tackle",
+                "thunder_fang",
+            ],
+            4: [
+                "smack_down",
+            ],
+            8: [
+                "autotomize",
+            ],
+            12: [
+                "dragon_breath",
+            ],
+            16: [
+                "curse",
+            ],
+            20: [
+                "rock_slide",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "sand_tomb",
+            ],
+            32: [
+                "stealth_rock",
+            ],
+            36: [
+                "slam",
+            ],
+            40: [
+                "sandstorm",
+            ],
+            44: [
+                "dig",
+            ],
+            48: [
+                "iron_tail",
+            ],
+            52: [
+                "stone_edge",
+            ],
+            56: [
+                "double_edge",
+            ],
+            60: [
+                "magnet_rise",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "body_slam",
+        "breaking_swipe",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dragon_dance",
+        "dragon_pulse",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_fang",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "heavy_slam",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_fang",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "payback",
+        "protect",
+        "psychic_fangs",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scary_face",
+        "screech",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thunder_fang",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "scorching_sands",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

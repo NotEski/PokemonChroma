@@ -1,0 +1,14 @@
+@move("snipe_shot")  # type: ignore
+class _SnipeShot:
+    meta = {
+        "display_name": "Snipe Shot",
+        "type": "water",
+        "index": 745,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    critical_hit_rate = 8

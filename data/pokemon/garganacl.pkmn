@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("garganacl")
+class Garganacl:
+    display_name = "Garganacl"
+    id = 934
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=130,
+        special_attack=45,
+        special_defense=90,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 250
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "purifying_salt",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "clear_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.3
+    weight_kg = 240.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    egg_moves = []

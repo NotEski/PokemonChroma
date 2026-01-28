@@ -1,0 +1,121 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("eternatus")
+class Eternatus:
+    display_name = "Eternatus"
+    id = 890
+    types = ['poison', 'dragon']
+    base_stats = BaseStats(
+        hp=140,
+        attack=85,
+        defense=95,
+        special_attack=145,
+        special_defense=95,
+        speed=130
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 345
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 20.0
+    weight_kg = 950.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "agility",
+                "confuse_ray",
+                "dragon_tail",
+                "poison_tail",
+            ],
+            8: [
+                "toxic",
+            ],
+            16: [
+                "venoshock",
+            ],
+            24: [
+                "dragon_dance",
+            ],
+            32: [
+                "cross_poison",
+            ],
+            40: [
+                "dragon_pulse",
+            ],
+            48: [
+                "flamethrower",
+            ],
+            56: [
+                "dynamax_cannon",
+            ],
+            64: [
+                "cosmic_power",
+            ],
+            72: [
+                "recover",
+            ],
+            80: [
+                "hyper_beam",
+            ],
+            88: [
+                "eternabeam",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "brutal_swing",
+        "cosmic_power",
+        "cross_poison",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "flamethrower",
+        "flash_cannon",
+        "fly",
+        "giga_impact",
+        "hyper_beam",
+        "light_screen",
+        "mystical_fire",
+        "payback",
+        "poison_jab",
+        "protect",
+        "reflect",
+        "rest",
+        "round",
+        "scary_face",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "meteor_beam",
+    ]
+    egg_moves = []

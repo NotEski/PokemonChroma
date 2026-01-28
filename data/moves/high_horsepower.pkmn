@@ -1,0 +1,13 @@
+@move("high_horsepower")  # type: ignore
+class _HighHorsepower:
+    meta = {
+        "display_name": "High Horsepower",
+        "type": "ground",
+        "index": 667,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 95,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

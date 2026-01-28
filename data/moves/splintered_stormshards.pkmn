@@ -1,0 +1,13 @@
+@move("splintered_stormshards")  # type: ignore
+class _SplinteredStormshards:
+    meta = {
+        "display_name": "Splintered Stormshards",
+        "type": "rock",
+        "index": 727,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 190,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

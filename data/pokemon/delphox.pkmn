@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("delphox")
+class Delphox:
+    display_name = "Delphox"
+    id = 655
+    types = ['fire', 'psychic']
+    base_stats = BaseStats(
+        hp=75,
+        attack=69,
+        defense=72,
+        special_attack=114,
+        special_defense=100,
+        speed=104
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 240
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 39.0
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    egg_moves = []

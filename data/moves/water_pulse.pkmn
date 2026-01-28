@@ -5,13 +5,12 @@ class _WaterPulse:
         "type": "water",
         "index": 352,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 60,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance", "pulse"]
     status_condition = {
         "confusion": 20,
     }

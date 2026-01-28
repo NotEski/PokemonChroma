@@ -1,0 +1,128 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("carbink")
+class Carbink:
+    display_name = "Carbink"
+    id = 703
+    types = ['rock', 'fairy']
+    base_stats = BaseStats(
+        hp=50,
+        attack=50,
+        defense=150,
+        special_attack=50,
+        special_defense=150,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 100
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "clear_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 5.7
+    egg_groups = ['fairy', 'mineral']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "tackle",
+            ],
+            5: [
+                "guard_split",
+            ],
+            10: [
+                "smack_down",
+            ],
+            15: [
+                "flail",
+            ],
+            20: [
+                "ancient_power",
+            ],
+            25: [
+                "rock_polish",
+            ],
+            30: [
+                "light_screen",
+            ],
+            35: [
+                "rock_slide",
+            ],
+            40: [
+                "skill_swap",
+            ],
+            45: [
+                "power_gem",
+            ],
+            50: [
+                "stealth_rock",
+            ],
+            55: [
+                "moonblast",
+            ],
+            60: [
+                "stone_edge",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_press",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "earth_power",
+        "endure",
+        "facade",
+        "guard_swap",
+        "gyro_ball",
+        "hail",
+        "iron_defense",
+        "light_screen",
+        "power_gem",
+        "protect",
+        "psychic",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sand_tomb",
+        "sandstorm",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "trick_room",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "misty_explosion",
+        "terrain_pulse",
+    ]
+    egg_moves = []

@@ -5,13 +5,12 @@ class _BlazeKick:
         "type": "fire",
         "index": 299,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 90,
         "power": 85,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "burn": 10,
     }

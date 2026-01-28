@@ -1,0 +1,115 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("regidrago")
+class Regidrago:
+    display_name = "Regidrago"
+    id = 895
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=200,
+        attack=100,
+        defense=50,
+        special_attack=100,
+        special_defense=50,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 290
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "dragons_maw",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.1
+    weight_kg = 200.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "twister",
+                "vice_grip",
+            ],
+            6: [
+                "bite",
+            ],
+            12: [
+                "ancient_power",
+            ],
+            18: [
+                "dragon_breath",
+            ],
+            24: [
+                "focus_energy",
+            ],
+            30: [
+                "crunch",
+            ],
+            36: [
+                "dragon_claw",
+            ],
+            42: [
+                "hammer_arm",
+            ],
+            48: [
+                "dragon_dance",
+            ],
+            54: [
+                "thrash",
+            ],
+            60: [
+                "laser_focus",
+            ],
+            66: [
+                "dragon_energy",
+            ],
+            72: [
+                "hyper_beam",
+            ],
+            78: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "body_slam",
+        "breaking_swipe",
+        "crunch",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_fang",
+        "focus_energy",
+        "giga_impact",
+        "hyper_beam",
+        "light_screen",
+        "outrage",
+        "protect",
+        "reflect",
+        "rest",
+        "reversal",
+        "round",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder_fang",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+    ]
+    egg_moves = []

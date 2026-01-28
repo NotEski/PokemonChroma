@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("meganium_mega")
+class MegaMeganium:
+    display_name = "Meganium Mega"
+    id = 10282
+    base_stats = BaseStats(
+        hp=80,
+        attack=92,
+        defense=115,
+        special_attack=143,
+        special_defense=115,
+        speed=80
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.4
+    weight_kg = 201.0

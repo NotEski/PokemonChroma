@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("shellos")
+class Shellos:
+    display_name = "Shellos"
+    id = 422
+    types = ['water']
+    base_stats = BaseStats(
+        hp=76,
+        attack=48,
+        defense=48,
+        special_attack=57,
+        special_defense=62,
+        speed=34
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 65
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sticky_hold",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "storm_drain",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 6.3
+    egg_groups = ['water1', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "mud_slap",
+                "water_gun",
+            ],
+            5: [
+                "harden",
+            ],
+            10: [
+                "recover",
+            ],
+            15: [
+                "water_pulse",
+            ],
+            20: [
+                "ancient_power",
+            ],
+            25: [
+                "body_slam",
+            ],
+            31: [
+                "muddy_water",
+            ],
+            35: [
+                "earth_power",
+            ],
+            40: [
+                "rain_dance",
+            ],
+            45: [
+                "memento",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "dive",
+        "earth_power",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "acid_armor",
+        "clear_smog",
+        "counter",
+        "curse",
+        "mirror_coat",
+        "mist",
+        "sludge",
+        "spit_up",
+        "stockpile",
+        "swallow",
+        "yawn",
+    ]

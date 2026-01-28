@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("altaria_mega")
+class MegaAltaria:
+    display_name = "Altaria Mega"
+    id = 10067
+    base_stats = BaseStats(
+        hp=75,
+        attack=110,
+        defense=110,
+        special_attack=110,
+        special_defense=105,
+        speed=80
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 207
+    height_m = 1.5
+    weight_kg = 20.6

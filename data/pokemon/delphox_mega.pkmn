@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("delphox_mega")
+class MegaDelphox:
+    display_name = "Delphox Mega"
+    id = 10293
+    base_stats = BaseStats(
+        hp=75,
+        attack=69,
+        defense=72,
+        special_attack=159,
+        special_defense=125,
+        speed=134
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.5
+    weight_kg = 39.0

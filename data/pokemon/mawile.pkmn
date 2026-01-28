@@ -1,0 +1,162 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mawile")
+class Mawile:
+    display_name = "Mawile"
+    id = 303
+    types = ['steel', 'fairy']
+    base_stats = BaseStats(
+        hp=50,
+        attack=85,
+        defense=85,
+        special_attack=55,
+        special_defense=55,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 133
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 11.5
+    egg_groups = ['ground', 'fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "growl",
+            ],
+            4: [
+                "fairy_wind",
+            ],
+            8: [
+                "baton_pass",
+            ],
+            12: [
+                "bite",
+            ],
+            16: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            20: [
+                "sucker_punch",
+            ],
+            24: [
+                "iron_defense",
+            ],
+            28: [
+                "crunch",
+            ],
+            32: [
+                "sweet_scent",
+            ],
+            36: [
+                "iron_head",
+            ],
+            40: [
+                "taunt",
+            ],
+            44: [
+                "fake_tears",
+            ],
+            48: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "crunch",
+        "dark_pulse",
+        "draining_kiss",
+        "endure",
+        "facade",
+        "fake_tears",
+        "false_swipe",
+        "fire_blast",
+        "fire_fang",
+        "flamethrower",
+        "flash_cannon",
+        "fling",
+        "focus_blast",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "helping_hand",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "mega_kick",
+        "mega_punch",
+        "misty_terrain",
+        "payback",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "taunt",
+        "thunder_fang",
+        "thunder_punch",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "power_up_punch",
+        "seismic_toss",
+        "slam",
+        "tickle",
+    ]

@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zigzagoon")
+class Zigzagoon:
+    display_name = "Zigzagoon"
+    id = 263
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=38,
+        attack=30,
+        defense=41,
+        special_attack=30,
+        special_defense=41,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 56
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "quick_feet",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 17.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            3: [
+                "sand_attack",
+            ],
+            6: [
+                "tail_whip",
+            ],
+            9: [
+                "covet",
+            ],
+            12: [
+                "headbutt",
+            ],
+            15: [
+                "baby_doll_eyes",
+            ],
+            18: [
+                "pin_missile",
+            ],
+            21: [
+                "rest",
+            ],
+            24: [
+                "take_down",
+            ],
+            27: [
+                "fling",
+            ],
+            30: [
+                "flail",
+            ],
+            33: [
+                "belly_drum",
+            ],
+            36: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "charm",
+        "dig",
+        "endure",
+        "facade",
+        "fling",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "mud_shot",
+        "pin_missile",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "seed_bomb",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "tail_slap",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "whirlpool",
+        "work_up",
+    ]
+    egg_moves = [
+        "extreme_speed",
+        "simple_beam",
+        "tickle",
+    ]

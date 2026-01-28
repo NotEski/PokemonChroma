@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cubone")
+class Cubone:
+    display_name = "Cubone"
+    id = 104
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=50,
+        attack=50,
+        defense=95,
+        special_attack=40,
+        special_defense=50,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "lightning_rod",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "battle_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 6.5
+    egg_groups = ['monster']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "mud_slap",
+            ],
+            4: [
+                "tail_whip",
+            ],
+            8: [
+                "false_swipe",
+            ],
+            12: [
+                "headbutt",
+            ],
+            16: [
+                "retaliate",
+            ],
+            20: [
+                "fling",
+            ],
+            24: [
+                "stomping_tantrum",
+            ],
+            29: [
+                "bone_rush",
+            ],
+            32: [
+                "focus_energy",
+            ],
+            36: [
+                "endeavor",
+            ],
+            40: [
+                "bonemerang",
+            ],
+            44: [
+                "thrash",
+            ],
+            48: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "focus_energy",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thief",
+        "thunder_punch",
+        "uproar",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "belly_drum",
+        "curse",
+        "detect",
+        "double_kick",
+        "leer",
+        "perish_song",
+        "skull_bash",
+    ]

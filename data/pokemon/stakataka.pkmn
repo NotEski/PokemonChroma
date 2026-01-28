@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("stakataka")
+class Stakataka:
+    display_name = "Stakataka"
+    id = 805
+    types = ['rock', 'steel']
+    base_stats = BaseStats(
+        hp=61,
+        attack=131,
+        defense=211,
+        special_attack=53,
+        special_defense=101,
+        speed=13
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 5.5
+    weight_kg = 820.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "tackle",
+            ],
+            5: [
+                "rock_throw",
+            ],
+            10: [
+                "protect",
+            ],
+            15: [
+                "stomp",
+            ],
+            20: [
+                "block",
+            ],
+            25: [
+                "rock_slide",
+            ],
+            30: [
+                "wide_guard",
+            ],
+            35: [
+                "autotomize",
+            ],
+            40: [
+                "rock_blast",
+            ],
+            45: [
+                "magnet_rise",
+            ],
+            50: [
+                "iron_defense",
+            ],
+            55: [
+                "iron_head",
+            ],
+            60: [
+                "take_down",
+            ],
+            65: [
+                "stealth_rock",
+            ],
+            70: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_press",
+        "body_slam",
+        "brutal_swing",
+        "bulldoze",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "heat_crash",
+        "heavy_slam",
+        "high_horsepower",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "magic_room",
+        "mega_kick",
+        "protect",
+        "reflect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "trick_room",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

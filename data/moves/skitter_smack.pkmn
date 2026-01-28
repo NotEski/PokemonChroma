@@ -1,0 +1,16 @@
+@move("skitter_smack")  # type: ignore
+class _SkitterSmack:
+    meta = {
+        "display_name": "Skitter Smack",
+        "type": "bug",
+        "index": 806,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
+    }

@@ -1,0 +1,16 @@
+@move("strength_sap")  # type: ignore
+class _StrengthSap:
+    meta = {
+        "display_name": "Strength Sap",
+        "type": "grass",
+        "index": 668,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

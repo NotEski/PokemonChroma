@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("squawkabilly_yellow_plumage")
+class MegaSquawkabillyYellowPlumage:
+    display_name = "Squawkabilly Yellow Plumage"
+    id = 10261
+    base_stats = BaseStats(
+        hp=82,
+        attack=96,
+        defense=51,
+        special_attack=45,
+        special_defense=51,
+        speed=92
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 146
+    height_m = 0.6
+    weight_kg = 2.4

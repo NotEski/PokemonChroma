@@ -1,0 +1,166 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pangoro")
+class Pangoro:
+    display_name = "Pangoro"
+    id = 675
+    types = ['fighting', 'dark']
+    base_stats = BaseStats(
+        hp=95,
+        attack=124,
+        defense=78,
+        special_attack=69,
+        special_defense=71,
+        speed=58
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 65
+    base_experience_yield = 173
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "iron_fist",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.1
+    weight_kg = 136.0
+    egg_groups = ['ground', 'humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "night_slash",
+            ],
+            1: [
+                "arm_thrust",
+                "bullet_punch",
+                "leer",
+                "night_slash",
+                "tackle",
+                "taunt",
+            ],
+            12: [
+                "circle_throw",
+            ],
+            16: [
+                "low_sweep",
+            ],
+            20: [
+                "work_up",
+            ],
+            24: [
+                "slash",
+            ],
+            28: [
+                "vital_throw",
+            ],
+            35: [
+                "crunch",
+            ],
+            40: [
+                "body_slam",
+            ],
+            46: [
+                "parting_shot",
+            ],
+            52: [
+                "entrainment",
+            ],
+            58: [
+                "hammer_arm",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "beat_up",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "crunch",
+        "dark_pulse",
+        "darkest_lariat",
+        "dig",
+        "dragon_claw",
+        "drain_punch",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_punch",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "outrage",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "snarl",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder_punch",
+        "uproar",
+        "work_up",
+        "x_scissor",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+        "lash_out",
+    ]
+    egg_moves = []

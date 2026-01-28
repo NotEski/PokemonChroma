@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tadbulb")
+class Tadbulb:
+    display_name = "Tadbulb"
+    id = 938
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=61,
+        attack=31,
+        defense=41,
+        special_attack=59,
+        special_defense=35,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 54
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "static",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 0.4
+    egg_groups = ['water1']
+    growth_rate = "medium"
+    egg_moves = []

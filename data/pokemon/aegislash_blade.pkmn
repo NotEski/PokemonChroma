@@ -1,0 +1,99 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("aegislash_blade")
+class AegislashBlade:
+    display_name = "Aegislash Blade"
+    id = 10026
+    types = ['steel', 'ghost']
+    base_stats = BaseStats(
+        hp=60,
+        attack=140,
+        defense=50,
+        special_attack=140,
+        special_defense=50,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 250
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "stance_change",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 53.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "kings_shield",
+            ],
+            1: [
+                "aerial_ace",
+                "autotomize",
+                "fury_cutter",
+                "head_smash",
+                "iron_defense",
+                "iron_head",
+                "kings_shield",
+                "metal_sound",
+                "night_slash",
+                "power_trick",
+                "retaliate",
+                "sacred_sword",
+                "shadow_sneak",
+                "slash",
+                "swords_dance",
+                "tackle",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "attract",
+        "brick_break",
+        "brutal_swing",
+        "close_combat",
+        "endure",
+        "facade",
+        "false_swipe",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "reversal",
+        "rock_slide",
+        "round",
+        "screech",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = []

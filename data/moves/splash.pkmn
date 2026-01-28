@@ -5,10 +5,9 @@ class _Splash:
         "type": "normal",
         "index": 150,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 40,
         "target": "user",
     }
-    flags = ["gravity"]

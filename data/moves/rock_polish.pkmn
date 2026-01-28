@@ -5,13 +5,12 @@ class _RockPolish:
         "type": "rock",
         "index": 397,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "speed", "change": 2, "chance": 100}],
     }

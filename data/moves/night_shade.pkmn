@@ -11,4 +11,3 @@ class _NightShade:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

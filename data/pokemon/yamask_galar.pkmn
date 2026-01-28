@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("yamask_galar")
+class YamaskGalar:
+    display_name = "Yamask Galar"
+    id = 10179
+    types = ['ground', 'ghost']
+    base_stats = BaseStats(
+        hp=38,
+        attack=55,
+        defense=85,
+        special_attack=30,
+        special_defense=65,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "wandering_spirit",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 1.5
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "protect",
+            ],
+            4: [
+                "haze",
+            ],
+            8: [
+                "night_shade",
+            ],
+            12: [
+                "disable",
+            ],
+            16: [
+                "brutal_swing",
+            ],
+            20: [
+                "crafty_shield",
+            ],
+            24: [
+                "hex",
+            ],
+            28: [
+                "mean_look",
+            ],
+            32: [
+                "slam",
+            ],
+            36: [
+                "curse",
+            ],
+            40: [
+                "shadow_ball",
+            ],
+            44: [
+                "earthquake",
+            ],
+            48: [
+                "guard_split",
+                "power_split",
+            ],
+            52: [
+                "destiny_bond",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "brutal_swing",
+        "calm_mind",
+        "dark_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "hex",
+        "imprison",
+        "iron_defense",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thief",
+        "toxic_spikes",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "poltergeist",
+    ]
+    egg_moves = [
+        "memento",
+    ]

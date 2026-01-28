@@ -11,5 +11,4 @@ class _Counter:
         "pp": 20,
         "target": "specific_move",
     }
-    flags = ["contact", "protect"]
     priority = -5

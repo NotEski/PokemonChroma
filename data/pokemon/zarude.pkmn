@@ -1,0 +1,152 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zarude")
+class Zarude:
+    display_name = "Zarude"
+    id = 893
+    types = ['dark', 'grass']
+    base_stats = BaseStats(
+        hp=105,
+        attack=120,
+        defense=105,
+        special_attack=70,
+        special_defense=95,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 300
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "leaf_guard",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 70.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "scratch",
+            ],
+            6: [
+                "leer",
+            ],
+            12: [
+                "vine_whip",
+            ],
+            18: [
+                "growth",
+            ],
+            24: [
+                "fury_swipes",
+            ],
+            30: [
+                "scary_face",
+            ],
+            36: [
+                "grass_knot",
+            ],
+            42: [
+                "bite",
+            ],
+            48: [
+                "u_turn",
+            ],
+            54: [
+                "swagger",
+            ],
+            60: [
+                "energy_ball",
+            ],
+            66: [
+                "synthesis",
+            ],
+            72: [
+                "hammer_arm",
+            ],
+            78: [
+                "thrash",
+            ],
+            84: [
+                "power_whip",
+            ],
+            90: [
+                "jungle_healing",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "assurance",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bullet_seed",
+        "close_combat",
+        "crunch",
+        "dark_pulse",
+        "darkest_lariat",
+        "dig",
+        "drain_punch",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "low_kick",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "mud_shot",
+        "nasty_plot",
+        "payback",
+        "power_whip",
+        "protect",
+        "rest",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "seed_bomb",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "lash_out",
+    ]
+    egg_moves = []

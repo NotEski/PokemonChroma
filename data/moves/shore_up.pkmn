@@ -1,0 +1,14 @@
+@move("shore_up")  # type: ignore
+class _ShoreUp:
+    meta = {
+        "display_name": "Shore Up",
+        "type": "ground",
+        "index": 659,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 5,
+        "target": "user",
+    }
+    healing = 50

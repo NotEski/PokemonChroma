@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kubfu")
+class Kubfu:
+    display_name = "Kubfu"
+    id = 891
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=60,
+        attack=90,
+        defense=60,
+        special_attack=53,
+        special_defense=50,
+        speed=72
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 77
+    base_happiness = 50
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 12.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "rock_smash",
+            ],
+            4: [
+                "endure",
+            ],
+            8: [
+                "focus_energy",
+            ],
+            12: [
+                "aerial_ace",
+            ],
+            16: [
+                "scary_face",
+            ],
+            20: [
+                "headbutt",
+            ],
+            24: [
+                "brick_break",
+            ],
+            28: [
+                "detect",
+            ],
+            32: [
+                "bulk_up",
+            ],
+            36: [
+                "iron_head",
+            ],
+            40: [
+                "dynamic_punch",
+            ],
+            44: [
+                "counter",
+            ],
+            48: [
+                "close_combat",
+            ],
+            52: [
+                "focus_punch",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "close_combat",
+        "dig",
+        "endure",
+        "facade",
+        "fire_punch",
+        "focus_energy",
+        "helping_hand",
+        "ice_punch",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "superpower",
+        "thunder_punch",
+        "u_turn",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

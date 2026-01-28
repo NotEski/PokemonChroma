@@ -5,13 +5,12 @@ class _BoltStrike:
         "type": "electric",
         "index": 550,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 85,
         "power": 130,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "paralysis": 20,
     }

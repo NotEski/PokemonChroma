@@ -5,13 +5,12 @@ class _SandAttack:
         "type": "ground",
         "index": 28,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 100}],
     }

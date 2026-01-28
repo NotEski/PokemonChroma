@@ -5,10 +5,9 @@ class _Rest:
         "type": "psychic",
         "index": 156,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
-        "pp": 10,
+        "pp": 5,
         "target": "user",
     }
-    flags = ["snatch", "heal", "heal_exception"]

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("araquanid_totem")
+class MegaAraquanidTotem:
+    display_name = "Araquanid Totem"
+    id = 10153
+    base_stats = BaseStats(
+        hp=68,
+        attack=70,
+        defense=92,
+        special_attack=50,
+        special_defense=132,
+        speed=42
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 159
+    height_m = 3.1
+    weight_kg = 217.5

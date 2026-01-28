@@ -1,0 +1,148 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sigilyph")
+class Sigilyph:
+    display_name = "Sigilyph"
+    id = 561
+    types = ['psychic', 'flying']
+    base_stats = BaseStats(
+        hp=72,
+        attack=58,
+        defense=80,
+        special_attack=103,
+        special_defense=80,
+        speed=97
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "wonder_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "tinted_lens",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 14.0
+    egg_groups = ['flying']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "gust",
+            ],
+            5: [
+                "gravity",
+            ],
+            10: [
+                "hypnosis",
+            ],
+            15: [
+                "air_cutter",
+            ],
+            20: [
+                "psybeam",
+            ],
+            25: [
+                "whirlwind",
+            ],
+            30: [
+                "cosmic_power",
+            ],
+            35: [
+                "air_slash",
+            ],
+            40: [
+                "psychic",
+            ],
+            45: [
+                "tailwind",
+            ],
+            50: [
+                "light_screen",
+                "reflect",
+            ],
+            55: [
+                "sky_attack",
+            ],
+            60: [
+                "skill_swap",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "attract",
+        "calm_mind",
+        "cosmic_power",
+        "dark_pulse",
+        "dazzling_gleam",
+        "endure",
+        "energy_ball",
+        "facade",
+        "flash_cannon",
+        "fly",
+        "future_sight",
+        "giga_impact",
+        "heat_wave",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "imprison",
+        "light_screen",
+        "magic_room",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "steel_wing",
+        "stored_power",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder_wave",
+        "trick",
+        "trick_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "expanding_force",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "psycho_shift",
+        "roost",
+    ]

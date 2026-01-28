@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("castform_sunny")
+class MegaCastformSunny:
+    display_name = "Castform Sunny"
+    id = 10013
+    base_stats = BaseStats(
+        hp=70,
+        attack=70,
+        defense=70,
+        special_attack=70,
+        special_defense=70,
+        speed=70
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 147
+    height_m = 0.3
+    weight_kg = 0.8

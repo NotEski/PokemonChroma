@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("malamar_mega")
+class MegaMalamar:
+    display_name = "Malamar Mega"
+    id = 10297
+    base_stats = BaseStats(
+        hp=86,
+        attack=102,
+        defense=88,
+        special_attack=98,
+        special_defense=120,
+        speed=88
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.9
+    weight_kg = 69.8

@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chimecho")
+class Chimecho:
+    display_name = "Chimecho"
+    id = 358
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=75,
+        attack=50,
+        defense=80,
+        special_attack=95,
+        special_defense=90,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 159
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 1.0
+    egg_groups = ['indeterminate']
+    growth_rate = "fast"
+    egg_moves = []

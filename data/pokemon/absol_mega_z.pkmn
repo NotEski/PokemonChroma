@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("absol_mega_z")
+class MegaAbsolZ:
+    display_name = "Absol Mega Z"
+    id = 10307
+    base_stats = BaseStats(
+        hp=65,
+        attack=154,
+        defense=60,
+        special_attack=75,
+        special_defense=60,
+        speed=151
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.2
+    weight_kg = 49.0

@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lurantis")
+class Lurantis:
+    display_name = "Lurantis"
+    id = 754
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=70,
+        attack=105,
+        defense=90,
+        special_attack=80,
+        special_defense=90,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "leaf_guard",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "contrary",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 18.5
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "petal_blizzard",
+            ],
+            1: [
+                "dual_chop",
+                "fury_cutter",
+                "growth",
+                "ingrain",
+                "leafage",
+                "night_slash",
+                "petal_blizzard",
+                "solar_beam",
+            ],
+            15: [
+                "razor_leaf",
+            ],
+            20: [
+                "sweet_scent",
+            ],
+            25: [
+                "slash",
+            ],
+            30: [
+                "x_scissor",
+            ],
+            37: [
+                "synthesis",
+            ],
+            44: [
+                "leaf_blade",
+            ],
+            51: [
+                "sunny_day",
+            ],
+            63: [
+                "solar_blade",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "bullet_seed",
+        "cross_poison",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "leaf_blade",
+        "leaf_storm",
+        "leech_life",
+        "low_sweep",
+        "magical_leaf",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psycho_cut",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swords_dance",
+        "weather_ball",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

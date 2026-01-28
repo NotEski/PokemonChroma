@@ -1,0 +1,128 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rufflet")
+class Rufflet:
+    display_name = "Rufflet"
+    id = 627
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=70,
+        attack=83,
+        defense=50,
+        special_attack=37,
+        special_defense=50,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "hustle",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 10.5
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "peck",
+            ],
+            6: [
+                "hone_claws",
+            ],
+            12: [
+                "wing_attack",
+            ],
+            18: [
+                "tailwind",
+            ],
+            24: [
+                "scary_face",
+            ],
+            30: [
+                "aerial_ace",
+            ],
+            36: [
+                "slash",
+            ],
+            42: [
+                "whirlwind",
+            ],
+            48: [
+                "crush_claw",
+            ],
+            55: [
+                "air_slash",
+            ],
+            60: [
+                "defog",
+            ],
+            66: [
+                "thrash",
+            ],
+            72: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "assurance",
+        "attract",
+        "brave_bird",
+        "bulk_up",
+        "close_combat",
+        "endure",
+        "facade",
+        "fly",
+        "heat_wave",
+        "hurricane",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "u_turn",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

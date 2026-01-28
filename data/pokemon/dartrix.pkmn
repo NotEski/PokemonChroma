@@ -1,0 +1,117 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dartrix")
+class Dartrix:
+    display_name = "Dartrix"
+    id = 723
+    types = ['grass', 'flying']
+    base_stats = BaseStats(
+        hp=78,
+        attack=75,
+        defense=75,
+        special_attack=70,
+        special_defense=70,
+        speed=52
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 147
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "long_reach",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 16.0
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "growl",
+                "leafage",
+                "tackle",
+            ],
+            9: [
+                "peck",
+            ],
+            12: [
+                "shadow_sneak",
+            ],
+            15: [
+                "razor_leaf",
+            ],
+            20: [
+                "synthesis",
+            ],
+            25: [
+                "pluck",
+            ],
+            30: [
+                "nasty_plot",
+            ],
+            35: [
+                "sucker_punch",
+            ],
+            40: [
+                "leaf_blade",
+            ],
+            45: [
+                "feather_dance",
+            ],
+            50: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "brave_bird",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "giga_drain",
+        "grass_knot",
+        "leaf_blade",
+        "light_screen",
+        "nasty_plot",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "grass_pledge",
+        "grassy_glide",
+    ]
+    egg_moves = []

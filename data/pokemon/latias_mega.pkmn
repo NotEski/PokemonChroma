@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("latias_mega")
+class MegaLatias:
+    display_name = "Latias Mega"
+    id = 10062
+    base_stats = BaseStats(
+        hp=80,
+        attack=100,
+        defense=120,
+        special_attack=140,
+        special_defense=150,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 315
+    height_m = 1.8
+    weight_kg = 52.0

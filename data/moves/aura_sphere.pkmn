@@ -11,4 +11,3 @@ class _AuraSphere:
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance", "pulse", "ballistics"]

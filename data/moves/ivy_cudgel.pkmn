@@ -1,0 +1,13 @@
+@move("ivy_cudgel")  # type: ignore
+class _IvyCudgel:
+    meta = {
+        "display_name": "Ivy Cudgel",
+        "type": "grass",
+        "index": 904,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

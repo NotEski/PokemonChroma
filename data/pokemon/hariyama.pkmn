@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hariyama")
+class Hariyama:
+    display_name = "Hariyama"
+    id = 297
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=144,
+        attack=120,
+        defense=60,
+        special_attack=40,
+        special_defense=60,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 200
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "guts",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.3
+    weight_kg = 253.8
+    egg_groups = ['humanshape']
+    growth_rate = "fast_then_very_slow"
+    egg_moves = []

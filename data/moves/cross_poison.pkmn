@@ -5,13 +5,12 @@ class _CrossPoison:
         "type": "poison",
         "index": 440,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 70,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "poison": 10,
     }

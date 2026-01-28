@@ -1,0 +1,111 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("corvisquire")
+class Corvisquire:
+    display_name = "Corvisquire"
+    id = 822
+    types = ['flying']
+    base_stats = BaseStats(
+        hp=68,
+        attack=67,
+        defense=55,
+        special_attack=43,
+        special_defense=55,
+        speed=77
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 120
+    base_experience_yield = 128
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "big_pecks",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 16.0
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "hone_claws",
+                "leer",
+                "peck",
+                "power_trip",
+            ],
+            12: [
+                "fury_attack",
+            ],
+            16: [
+                "pluck",
+            ],
+            22: [
+                "taunt",
+            ],
+            28: [
+                "scary_face",
+            ],
+            34: [
+                "drill_peck",
+            ],
+            40: [
+                "swagger",
+            ],
+            46: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "assurance",
+        "attract",
+        "brave_bird",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fly",
+        "focus_energy",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swift",
+        "taunt",
+        "thief",
+        "u_turn",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hippopotas")
+class Hippopotas:
+    display_name = "Hippopotas"
+    id = 449
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=68,
+        attack=72,
+        defense=78,
+        special_attack=38,
+        special_defense=42,
+        speed=32
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 140
+    base_experience_yield = 66
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sand_stream",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 49.5
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "sand_attack",
+                "tackle",
+            ],
+            4: [
+                "bite",
+            ],
+            8: [
+                "yawn",
+            ],
+            12: [
+                "sand_tomb",
+            ],
+            16: [
+                "dig",
+            ],
+            20: [
+                "crunch",
+            ],
+            24: [
+                "sandstorm",
+            ],
+            28: [
+                "take_down",
+            ],
+            32: [
+                "roar",
+            ],
+            36: [
+                "rest",
+            ],
+            40: [
+                "earthquake",
+            ],
+            44: [
+                "double_edge",
+            ],
+            48: [
+                "fissure",
+            ],
+            52: [
+                "slack_off",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_slam",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "high_horsepower",
+        "iron_tail",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rest",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "weather_ball",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = [
+        "curse",
+        "spit_up",
+        "stockpile",
+        "swallow",
+        "whirlwind",
+    ]

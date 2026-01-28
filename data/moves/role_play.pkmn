@@ -5,10 +5,9 @@ class _RolePlay:
         "type": "psychic",
         "index": 272,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["authentic"]

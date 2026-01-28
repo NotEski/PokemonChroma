@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("nosepass")
+class Nosepass:
+    display_name = "Nosepass"
+    id = 299
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=30,
+        attack=45,
+        defense=135,
+        special_attack=45,
+        special_defense=90,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 75
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magnet_pull",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 97.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    egg_moves = []

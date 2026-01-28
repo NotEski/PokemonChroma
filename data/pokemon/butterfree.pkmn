@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("butterfree")
+class Butterfree:
+    display_name = "Butterfree"
+    id = 12
+    types = ['bug', 'flying']
+    base_stats = BaseStats(
+        hp=60,
+        attack=45,
+        defense=50,
+        special_attack=90,
+        special_defense=80,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 178
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "compound_eyes",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "tinted_lens",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 32.0
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "gust",
+            ],
+            1: [
+                "bug_bite",
+                "gust",
+                "harden",
+                "string_shot",
+                "tackle",
+            ],
+            4: [
+                "supersonic",
+            ],
+            8: [
+                "confusion",
+            ],
+            12: [
+                "poison_powder",
+                "sleep_powder",
+                "stun_spore",
+            ],
+            16: [
+                "psybeam",
+            ],
+            20: [
+                "whirlwind",
+            ],
+            24: [
+                "air_slash",
+            ],
+            28: [
+                "safeguard",
+            ],
+            32: [
+                "bug_buzz",
+            ],
+            36: [
+                "tailwind",
+            ],
+            40: [
+                "rage_powder",
+            ],
+            44: [
+                "quiver_dance",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "air_slash",
+        "attract",
+        "baton_pass",
+        "bug_buzz",
+        "draining_kiss",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "hurricane",
+        "hyper_beam",
+        "iron_defense",
+        "pollen_puff",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "u_turn",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

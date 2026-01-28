@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("venusaur_gmax")
+class MegaVenusaur:
+    display_name = "Venusaur Gmax"
+    id = 10195
+    base_stats = BaseStats(
+        hp=80,
+        attack=82,
+        defense=83,
+        special_attack=100,
+        special_defense=100,
+        speed=80
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 236
+    height_m = 24.0
+    weight_kg = 1000.0

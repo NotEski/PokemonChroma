@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("gyarados_mega")
+class MegaGyarados:
+    display_name = "Gyarados Mega"
+    id = 10041
+    base_stats = BaseStats(
+        hp=95,
+        attack=155,
+        defense=109,
+        special_attack=70,
+        special_defense=130,
+        speed=81
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 224
+    height_m = 6.5
+    weight_kg = 305.0

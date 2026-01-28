@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("banette")
+class Banette:
+    display_name = "Banette"
+    id = 354
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=64,
+        attack=115,
+        defense=65,
+        special_attack=83,
+        special_defense=63,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 159
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 12.5
+    egg_groups = ['indeterminate']
+    growth_rate = "fast"
+    egg_moves = []

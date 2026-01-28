@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("scolipede")
+class Scolipede:
+    display_name = "Scolipede"
+    id = 545
+    types = ['bug', 'poison']
+    base_stats = BaseStats(
+        hp=60,
+        attack=100,
+        defense=89,
+        special_attack=55,
+        special_defense=69,
+        speed=112
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 218
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "swarm",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.5
+    weight_kg = 200.5
+    egg_groups = ['bug']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "baton_pass",
+                "defense_curl",
+                "iron_defense",
+                "poison_sting",
+                "protect",
+                "rollout",
+            ],
+            12: [
+                "poison_tail",
+            ],
+            16: [
+                "screech",
+            ],
+            20: [
+                "bug_bite",
+            ],
+            26: [
+                "venoshock",
+            ],
+            34: [
+                "take_down",
+            ],
+            42: [
+                "agility",
+            ],
+            50: [
+                "toxic",
+            ],
+            58: [
+                "venom_drench",
+            ],
+            66: [
+                "double_edge",
+            ],
+            74: [
+                "megahorn",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "bulldoze",
+        "cross_poison",
+        "dig",
+        "earthquake",
+        "endure",
+        "facade",
+        "giga_impact",
+        "gyro_ball",
+        "hex",
+        "hyper_beam",
+        "iron_defense",
+        "iron_tail",
+        "megahorn",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "spikes",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swords_dance",
+        "throat_chop",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+        "steel_roller",
+    ]
+    egg_moves = []

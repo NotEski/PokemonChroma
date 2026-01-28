@@ -1,7 +1,7 @@
 @move("vice_grip")  # type: ignore
 class _ViceGrip:
     meta = {
-        "display_name": "Vice Grip",
+        "display_name": "Vise Grip",
         "type": "normal",
         "index": 11,
         "damage_class": "physical",
@@ -11,4 +11,3 @@ class _ViceGrip:
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

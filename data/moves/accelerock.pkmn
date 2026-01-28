@@ -1,0 +1,14 @@
+@move("accelerock")  # type: ignore
+class _Accelerock:
+    meta = {
+        "display_name": "Accelerock",
+        "type": "rock",
+        "index": 709,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    priority = 1

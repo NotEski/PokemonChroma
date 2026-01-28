@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("stunky")
+class Stunky:
+    display_name = "Stunky"
+    id = 434
+    types = ['poison', 'dark']
+    base_stats = BaseStats(
+        hp=63,
+        attack=63,
+        defense=47,
+        special_attack=41,
+        special_defense=41,
+        speed=74
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 225
+    base_experience_yield = 66
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "stench",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "aftermath",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 19.2
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "poison_gas",
+                "scratch",
+            ],
+            3: [
+                "feint",
+            ],
+            6: [
+                "smokescreen",
+            ],
+            9: [
+                "acid_spray",
+            ],
+            12: [
+                "fury_swipes",
+            ],
+            15: [
+                "focus_energy",
+            ],
+            18: [
+                "bite",
+            ],
+            21: [
+                "venoshock",
+            ],
+            24: [
+                "screech",
+            ],
+            27: [
+                "toxic",
+            ],
+            30: [
+                "sucker_punch",
+            ],
+            33: [
+                "memento",
+            ],
+            36: [
+                "night_slash",
+            ],
+            39: [
+                "belch",
+            ],
+            42: [
+                "venom_drench",
+            ],
+            45: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "focus_energy",
+        "foul_play",
+        "hex",
+        "iron_tail",
+        "nasty_plot",
+        "payback",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scary_face",
+        "screech",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "tail_slap",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "venom_drench",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+        "lash_out",
+    ]
+    egg_moves = [
+        "astonish",
+        "double_edge",
+        "haze",
+        "leer",
+        "slash",
+        "smog",
+    ]

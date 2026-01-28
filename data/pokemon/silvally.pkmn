@@ -1,0 +1,149 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("silvally")
+class Silvally:
+    display_name = "Silvally"
+    id = 773
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=95,
+        attack=95,
+        defense=95,
+        special_attack=95,
+        special_defense=95,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rks_system",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.3
+    weight_kg = 100.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "multi_attack",
+            ],
+            1: [
+                "aerial_ace",
+                "bite",
+                "explosion",
+                "fire_fang",
+                "ice_fang",
+                "imprison",
+                "iron_head",
+                "multi_attack",
+                "poison_fang",
+                "scary_face",
+                "tackle",
+                "thunder_fang",
+            ],
+            15: [
+                "double_hit",
+            ],
+            20: [
+                "metal_sound",
+            ],
+            25: [
+                "crush_claw",
+            ],
+            30: [
+                "air_slash",
+            ],
+            35: [
+                "tri_attack",
+            ],
+            40: [
+                "x_scissor",
+            ],
+            45: [
+                "crunch",
+            ],
+            50: [
+                "take_down",
+            ],
+            55: [
+                "double_edge",
+            ],
+            60: [
+                "parting_shot",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "crunch",
+        "dragon_claw",
+        "endure",
+        "facade",
+        "fire_fang",
+        "flamethrower",
+        "flash_cannon",
+        "giga_impact",
+        "hail",
+        "heat_wave",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "ice_fang",
+        "icy_wind",
+        "imprison",
+        "iron_defense",
+        "iron_head",
+        "outrage",
+        "payback",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_slide",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "self_destruct",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "swords_dance",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "u_turn",
+        "work_up",
+        "x_scissor",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "fire_pledge",
+        "grass_pledge",
+        "steel_beam",
+        "terrain_pulse",
+        "water_pledge",
+    ]
+    egg_moves = []

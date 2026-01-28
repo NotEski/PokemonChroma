@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("spheal")
+class Spheal:
+    display_name = "Spheal"
+    id = 363
+    types = ['ice', 'water']
+    base_stats = BaseStats(
+        hp=70,
+        attack=40,
+        defense=50,
+        special_attack=55,
+        special_defense=50,
+        speed=25
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "oblivious",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 39.5
+    egg_groups = ['water1', 'ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "defense_curl",
+                "rollout",
+            ],
+            4: [
+                "growl",
+            ],
+            8: [
+                "water_gun",
+            ],
+            12: [
+                "powder_snow",
+            ],
+            16: [
+                "rest",
+            ],
+            20: [
+                "snore",
+            ],
+            24: [
+                "brine",
+            ],
+            28: [
+                "aurora_beam",
+            ],
+            33: [
+                "encore",
+            ],
+            36: [
+                "body_slam",
+            ],
+            40: [
+                "surf",
+            ],
+            44: [
+                "blizzard",
+            ],
+            48: [
+                "hail",
+            ],
+            52: [
+                "sheer_cold",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "bulldoze",
+        "dive",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "hail",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "steel_roller",
+    ]
+    egg_moves = [
+        "aqua_ring",
+        "belly_drum",
+        "curse",
+        "fissure",
+        "spit_up",
+        "stockpile",
+        "swallow",
+        "water_pulse",
+        "yawn",
+    ]

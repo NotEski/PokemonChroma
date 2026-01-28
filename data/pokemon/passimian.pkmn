@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("passimian")
+class Passimian:
+    display_name = "Passimian"
+    id = 766
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=100,
+        attack=120,
+        defense=90,
+        special_attack=40,
+        special_defense=60,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "receiver",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 82.8
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "tackle",
+            ],
+            5: [
+                "rock_smash",
+            ],
+            10: [
+                "focus_energy",
+            ],
+            15: [
+                "beat_up",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "take_down",
+            ],
+            30: [
+                "fling",
+            ],
+            35: [
+                "bulk_up",
+            ],
+            40: [
+                "thrash",
+            ],
+            45: [
+                "double_edge",
+            ],
+            50: [
+                "close_combat",
+            ],
+            55: [
+                "reversal",
+            ],
+            60: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "assurance",
+        "attract",
+        "beat_up",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "drain_punch",
+        "earthquake",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "gyro_ball",
+        "hyper_beam",
+        "iron_head",
+        "iron_tail",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "seed_bomb",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thief",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = [
+        "counter",
+        "feint",
+        "knock_off",
+        "quick_attack",
+        "quick_guard",
+        "seismic_toss",
+        "vital_throw",
+    ]

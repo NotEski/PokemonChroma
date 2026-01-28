@@ -1,0 +1,13 @@
+@move("meteor_beam")  # type: ignore
+class _MeteorBeam:
+    meta = {
+        "display_name": "Meteor Beam",
+        "type": "rock",
+        "index": 800,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

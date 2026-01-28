@@ -1,0 +1,14 @@
+@move("fiery_wrath")  # type: ignore
+class _FieryWrath:
+    meta = {
+        "display_name": "Fiery Wrath",
+        "type": "dark",
+        "index": 822,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_opponents",
+    }
+    flinch_chance = 20

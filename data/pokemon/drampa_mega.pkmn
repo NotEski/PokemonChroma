@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("drampa_mega")
+class MegaDrampa:
+    display_name = "Drampa Mega"
+    id = 10302
+    base_stats = BaseStats(
+        hp=78,
+        attack=85,
+        defense=110,
+        special_attack=160,
+        special_defense=116,
+        speed=36
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 3.0
+    weight_kg = 240.5

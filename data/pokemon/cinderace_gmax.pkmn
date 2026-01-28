@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("cinderace_gmax")
+class MegaCinderace:
+    display_name = "Cinderace Gmax"
+    id = 10210
+    base_stats = BaseStats(
+        hp=80,
+        attack=116,
+        defense=75,
+        special_attack=65,
+        special_defense=75,
+        speed=119
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 265
+    height_m = 27.0
+    weight_kg = 1000.0

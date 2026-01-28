@@ -1,0 +1,159 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("jigglypuff")
+class Jigglypuff:
+    display_name = "Jigglypuff"
+    id = 39
+    types = ['normal', 'fairy']
+    base_stats = BaseStats(
+        hp=115,
+        attack=45,
+        defense=20,
+        special_attack=45,
+        special_defense=25,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 170
+    base_experience_yield = 95
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "competitive",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 5.5
+    egg_groups = ['fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "charm",
+                "copycat",
+                "defense_curl",
+                "disable",
+                "disarming_voice",
+                "pound",
+                "sing",
+                "sweet_kiss",
+            ],
+            4: [
+                "echoed_voice",
+            ],
+            8: [
+                "covet",
+            ],
+            12: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "rest",
+            ],
+            24: [
+                "body_slam",
+            ],
+            28: [
+                "mimic",
+            ],
+            32: [
+                "gyro_ball",
+            ],
+            36: [
+                "hyper_voice",
+            ],
+            40: [
+                "play_rough",
+            ],
+            44: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "charm",
+        "dazzling_gleam",
+        "dig",
+        "drain_punch",
+        "draining_kiss",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "grass_knot",
+        "gyro_ball",
+        "helping_hand",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "light_screen",
+        "mega_kick",
+        "mega_punch",
+        "misty_terrain",
+        "play_rough",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "screech",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "substitute",
+        "sunny_day",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "uproar",
+        "wild_charge",
+        "work_up",
+    ]
+    tutor_moves = [
+        "misty_explosion",
+        "steel_roller",
+    ]
+    egg_moves = []

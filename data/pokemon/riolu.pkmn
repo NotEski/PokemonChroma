@@ -1,0 +1,158 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("riolu")
+class Riolu:
+    display_name = "Riolu"
+    id = 447
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=40,
+        attack=70,
+        defense=40,
+        special_attack=35,
+        special_defense=40,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 57
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 20.2
+    egg_groups = ['no_eggs']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "endure",
+                "quick_attack",
+            ],
+            4: [
+                "feint",
+            ],
+            8: [
+                "metal_claw",
+            ],
+            12: [
+                "counter",
+            ],
+            16: [
+                "work_up",
+            ],
+            20: [
+                "rock_smash",
+            ],
+            24: [
+                "nasty_plot",
+            ],
+            28: [
+                "screech",
+            ],
+            32: [
+                "quick_guard",
+            ],
+            36: [
+                "force_palm",
+            ],
+            40: [
+                "swords_dance",
+            ],
+            44: [
+                "helping_hand",
+            ],
+            48: [
+                "copycat",
+            ],
+            52: [
+                "final_gambit",
+            ],
+            56: [
+                "reversal",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "blaze_kick",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "drain_punch",
+        "earthquake",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "helping_hand",
+        "ice_punch",
+        "iron_defense",
+        "iron_tail",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "nasty_plot",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = [
+        "bite",
+        "bullet_punch",
+        "circle_throw",
+        "cross_chop",
+        "detect",
+        "high_jump_kick",
+        "howl",
+        "mind_reader",
+        "vacuum_wave",
+    ]

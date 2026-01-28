@@ -1,0 +1,112 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sinistea")
+class Sinistea:
+    display_name = "Sinistea"
+    id = 854
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=45,
+        special_attack=74,
+        special_defense=54,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 62
+    base_happiness = 50
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "weak_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.1
+    weight_kg = 0.2
+    egg_groups = ['mineral', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "withdraw",
+            ],
+            6: [
+                "aromatic_mist",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            18: [
+                "protect",
+            ],
+            24: [
+                "sucker_punch",
+            ],
+            30: [
+                "aromatherapy",
+            ],
+            36: [
+                "giga_drain",
+            ],
+            42: [
+                "nasty_plot",
+            ],
+            48: [
+                "shadow_ball",
+            ],
+            54: [
+                "memento",
+            ],
+            60: [
+                "shell_smash",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "baton_pass",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "foul_play",
+        "giga_drain",
+        "hex",
+        "imprison",
+        "metronome",
+        "nasty_plot",
+        "payback",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rest",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "trick",
+        "will_o_wisp",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "poltergeist",
+    ]
+    egg_moves = []

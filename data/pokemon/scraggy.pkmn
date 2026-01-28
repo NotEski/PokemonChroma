@@ -1,0 +1,160 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("scraggy")
+class Scraggy:
+    display_name = "Scraggy"
+    id = 559
+    types = ['dark', 'fighting']
+    base_stats = BaseStats(
+        hp=50,
+        attack=75,
+        defense=70,
+        special_attack=35,
+        special_defense=70,
+        speed=48
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 180
+    base_experience_yield = 70
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shed_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "moxie",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 11.8
+    egg_groups = ['ground', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "low_kick",
+            ],
+            4: [
+                "payback",
+            ],
+            8: [
+                "headbutt",
+            ],
+            12: [
+                "sand_attack",
+            ],
+            16: [
+                "facade",
+            ],
+            20: [
+                "protect",
+            ],
+            24: [
+                "beat_up",
+            ],
+            28: [
+                "scary_face",
+            ],
+            32: [
+                "brick_break",
+            ],
+            36: [
+                "swagger",
+            ],
+            40: [
+                "crunch",
+            ],
+            44: [
+                "high_jump_kick",
+            ],
+            48: [
+                "focus_punch",
+            ],
+            52: [
+                "head_smash",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "beat_up",
+        "brick_break",
+        "bulk_up",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "drain_punch",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "foul_play",
+        "grass_knot",
+        "ice_punch",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "sludge_bomb",
+        "snarl",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder_punch",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+        "lash_out",
+    ]
+    egg_moves = [
+        "acid_spray",
+        "counter",
+        "detect",
+        "fake_out",
+        "power_up_punch",
+        "quick_guard",
+    ]

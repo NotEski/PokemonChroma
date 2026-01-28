@@ -11,5 +11,4 @@ class _RazorLeaf:
         "pp": 25,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     critical_hit_rate = 8

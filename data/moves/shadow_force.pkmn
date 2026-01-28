@@ -11,4 +11,3 @@ class _ShadowForce:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "charge", "mirror"]

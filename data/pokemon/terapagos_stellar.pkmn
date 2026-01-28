@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("terapagos_stellar")
+class MegaTerapagosStellar:
+    display_name = "Terapagos Stellar"
+    id = 10277
+    base_stats = BaseStats(
+        hp=160,
+        attack=105,
+        defense=110,
+        special_attack=130,
+        special_defense=110,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 90
+    height_m = 1.7
+    weight_kg = 77.0

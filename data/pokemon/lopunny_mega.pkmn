@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("lopunny_mega")
+class MegaLopunny:
+    display_name = "Lopunny Mega"
+    id = 10088
+    base_stats = BaseStats(
+        hp=65,
+        attack=136,
+        defense=94,
+        special_attack=54,
+        special_defense=96,
+        speed=135
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 203
+    height_m = 1.3
+    weight_kg = 28.3

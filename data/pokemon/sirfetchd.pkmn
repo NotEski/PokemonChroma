@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sirfetchd")
+class Sirfetchd:
+    display_name = "Sirfetch’d"
+    id = 865
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=62,
+        attack=135,
+        defense=95,
+        special_attack=68,
+        special_defense=82,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 177
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 117.0
+    egg_groups = ['flying', 'ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "iron_defense",
+            ],
+            1: [
+                "first_impression",
+                "fury_cutter",
+                "iron_defense",
+                "leer",
+                "peck",
+                "sand_attack",
+            ],
+            15: [
+                "rock_smash",
+            ],
+            20: [
+                "brutal_swing",
+            ],
+            25: [
+                "detect",
+            ],
+            30: [
+                "knock_off",
+            ],
+            35: [
+                "defog",
+            ],
+            40: [
+                "brick_break",
+            ],
+            45: [
+                "swords_dance",
+            ],
+            50: [
+                "slam",
+            ],
+            55: [
+                "leaf_blade",
+            ],
+            60: [
+                "final_gambit",
+            ],
+            65: [
+                "brave_bird",
+            ],
+            70: [
+                "meteor_assault",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "body_slam",
+        "brave_bird",
+        "brick_break",
+        "brutal_swing",
+        "close_combat",
+        "endure",
+        "facade",
+        "focus_energy",
+        "helping_hand",
+        "iron_defense",
+        "leaf_blade",
+        "poison_jab",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_blade",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swords_dance",
+        "throat_chop",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+        "dual_wingbeat",
+        "grassy_glide",
+    ]
+    egg_moves = []

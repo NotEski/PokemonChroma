@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("farfetchd_galar")
+class FarfetchdGalar:
+    display_name = "Farfetchd Galar"
+    id = 10166
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=52,
+        attack=95,
+        defense=55,
+        special_attack=58,
+        special_defense=62,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 132
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "steadfast",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 42.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "peck",
+                "sand_attack",
+            ],
+            5: [
+                "leer",
+            ],
+            10: [
+                "fury_cutter",
+            ],
+            15: [
+                "rock_smash",
+            ],
+            20: [
+                "brutal_swing",
+            ],
+            25: [
+                "detect",
+            ],
+            30: [
+                "knock_off",
+            ],
+            35: [
+                "defog",
+            ],
+            40: [
+                "brick_break",
+            ],
+            45: [
+                "swords_dance",
+            ],
+            50: [
+                "slam",
+            ],
+            55: [
+                "leaf_blade",
+            ],
+            60: [
+                "final_gambit",
+            ],
+            65: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "body_slam",
+        "brave_bird",
+        "brick_break",
+        "brutal_swing",
+        "close_combat",
+        "endure",
+        "facade",
+        "focus_energy",
+        "helping_hand",
+        "leaf_blade",
+        "poison_jab",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_blade",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swords_dance",
+        "throat_chop",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "counter",
+        "covet",
+        "curse",
+        "double_edge",
+        "feint",
+        "flail",
+        "night_slash",
+        "quick_attack",
+        "quick_guard",
+        "simple_beam",
+        "sky_attack",
+    ]

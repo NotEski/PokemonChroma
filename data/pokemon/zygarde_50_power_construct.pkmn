@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zygarde_50_power_construct")
+class Zygarde50PowerConstruct:
+    display_name = "Zygarde 50 Power Construct"
+    id = 10119
+    types = ['dragon', 'ground']
+    base_stats = BaseStats(
+        hp=108,
+        attack=100,
+        defense=121,
+        special_attack=81,
+        special_defense=95,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 300
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "power_construct",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 5.0
+    weight_kg = 305.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "bite",
+                "bulldoze",
+                "core_enforcer",
+                "dragon_breath",
+                "thousand_arrows",
+                "thousand_waves",
+            ],
+            8: [
+                "haze",
+            ],
+            16: [
+                "dig",
+            ],
+            24: [
+                "safeguard",
+            ],
+            32: [
+                "crunch",
+            ],
+            40: [
+                "dragon_pulse",
+            ],
+            48: [
+                "lands_wrath",
+            ],
+            56: [
+                "glare",
+            ],
+            64: [
+                "sandstorm",
+            ],
+            72: [
+                "coil",
+            ],
+            80: [
+                "earthquake",
+            ],
+            88: [
+                "outrage",
+            ],
+        }
+    machine_moves = [
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "focus_blast",
+        "giga_impact",
+        "grass_knot",
+        "high_horsepower",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "outrage",
+        "payback",
+        "protect",
+        "rest",
+        "retaliate",
+        "reversal",
+        "rock_slide",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "sleep_talk",
+        "sludge_wave",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+        "scorching_sands",
+        "skitter_smack",
+    ]
+    egg_moves = []

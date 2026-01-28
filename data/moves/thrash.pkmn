@@ -11,4 +11,3 @@ class _Thrash:
         "pp": 10,
         "target": "random_opponent",
     }
-    flags = ["contact", "protect", "mirror"]

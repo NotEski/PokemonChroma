@@ -1,0 +1,16 @@
+@move("spin_out")  # type: ignore
+class _SpinOut:
+    meta = {
+        "display_name": "Spin Out",
+        "type": "steel",
+        "index": 859,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -2, "chance": 100}],
+    }

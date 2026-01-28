@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("steelix_mega")
+class MegaSteelix:
+    display_name = "Steelix Mega"
+    id = 10072
+    base_stats = BaseStats(
+        hp=75,
+        attack=125,
+        defense=230,
+        special_attack=55,
+        special_defense=95,
+        speed=30
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 214
+    height_m = 10.5
+    weight_kg = 740.0

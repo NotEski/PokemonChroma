@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("drifloon")
+class Drifloon:
+    display_name = "Drifloon"
+    id = 425
+    types = ['ghost', 'flying']
+    base_stats = BaseStats(
+        hp=90,
+        attack=50,
+        defense=34,
+        special_attack=60,
+        special_defense=44,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 125
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "aftermath",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "flare_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 1.2
+    egg_groups = ['indeterminate']
+    growth_rate = "fast_then_very_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "minimize",
+            ],
+            4: [
+                "gust",
+            ],
+            8: [
+                "focus_energy",
+            ],
+            12: [
+                "payback",
+            ],
+            16: [
+                "hex",
+            ],
+            20: [
+                "shadow_ball",
+            ],
+            24: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            29: [
+                "self_destruct",
+            ],
+            32: [
+                "destiny_bond",
+            ],
+            36: [
+                "baton_pass",
+            ],
+            40: [
+                "tailwind",
+            ],
+            44: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "brutal_swing",
+        "calm_mind",
+        "endure",
+        "facade",
+        "focus_energy",
+        "gyro_ball",
+        "hex",
+        "icy_wind",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "self_destruct",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "weather_ball",
+        "will_o_wisp",
+    ]
+    egg_moves = [
+        "clear_smog",
+        "defog",
+        "disable",
+        "haze",
+        "hypnosis",
+        "memento",
+    ]

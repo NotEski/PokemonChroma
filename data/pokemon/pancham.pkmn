@@ -1,0 +1,149 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pancham")
+class Pancham:
+    display_name = "Pancham"
+    id = 674
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=67,
+        attack=82,
+        defense=62,
+        special_attack=46,
+        special_defense=48,
+        speed=43
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 220
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "iron_fist",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 8.0
+    egg_groups = ['ground', 'humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "tackle",
+            ],
+            4: [
+                "arm_thrust",
+            ],
+            8: [
+                "taunt",
+            ],
+            12: [
+                "circle_throw",
+            ],
+            16: [
+                "low_sweep",
+            ],
+            20: [
+                "work_up",
+            ],
+            24: [
+                "slash",
+            ],
+            28: [
+                "vital_throw",
+            ],
+            33: [
+                "crunch",
+            ],
+            36: [
+                "body_slam",
+            ],
+            40: [
+                "parting_shot",
+            ],
+            44: [
+                "entrainment",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "drain_punch",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_punch",
+        "fling",
+        "foul_play",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_voice",
+        "ice_punch",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "swords_dance",
+        "taunt",
+        "thunder_punch",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+        "lash_out",
+    ]
+    egg_moves = [
+        "power_trip",
+        "quash",
+        "quick_guard",
+        "seismic_toss",
+        "storm_throw",
+    ]

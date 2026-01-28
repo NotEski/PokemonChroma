@@ -1,0 +1,137 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cinderace")
+class Cinderace:
+    display_name = "Cinderace"
+    id = 815
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=80,
+        attack=116,
+        defense=75,
+        special_attack=65,
+        special_defense=75,
+        speed=119
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 265
+    base_happiness = 50
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "libero",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 33.0
+    egg_groups = ['ground', 'humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "pyro_ball",
+            ],
+            1: [
+                "ember",
+                "feint",
+                "growl",
+                "pyro_ball",
+                "quick_attack",
+                "tackle",
+            ],
+            12: [
+                "double_kick",
+            ],
+            19: [
+                "flame_charge",
+            ],
+            24: [
+                "agility",
+            ],
+            30: [
+                "headbutt",
+            ],
+            38: [
+                "counter",
+            ],
+            46: [
+                "bounce",
+            ],
+            54: [
+                "double_edge",
+            ],
+            62: [
+                "court_change",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "ally_switch",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "blaze_kick",
+        "bounce",
+        "bulk_up",
+        "electro_ball",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "gunk_shot",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mud_shot",
+        "overheat",
+        "protect",
+        "rest",
+        "revenge",
+        "reversal",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "u_turn",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "blast_burn",
+        "coaching",
+        "fire_pledge",
+        "scorching_sands",
+    ]
+    egg_moves = []

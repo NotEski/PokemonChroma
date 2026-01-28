@@ -5,13 +5,12 @@ class _LovelyKiss:
         "type": "normal",
         "index": 142,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 75,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "sleep": 0,
     }

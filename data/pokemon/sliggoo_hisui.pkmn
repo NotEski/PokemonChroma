@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("sliggoo_hisui")
+class MegaSliggooHisui:
+    display_name = "Sliggoo Hisui"
+    id = 10241
+    base_stats = BaseStats(
+        hp=58,
+        attack=75,
+        defense=83,
+        special_attack=83,
+        special_defense=113,
+        speed=40
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 158
+    height_m = 0.7
+    weight_kg = 68.5

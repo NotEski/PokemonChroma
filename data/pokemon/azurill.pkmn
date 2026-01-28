@@ -1,0 +1,117 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("azurill")
+class Azurill:
+    display_name = "Azurill"
+    id = 298
+    types = ['normal', 'fairy']
+    base_stats = BaseStats(
+        hp=50,
+        attack=20,
+        defense=40,
+        special_attack=20,
+        special_defense=40,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 150
+    base_experience_yield = 38
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "huge_power",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 2.0
+    egg_groups = ['no_eggs']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "splash",
+                "tail_whip",
+                "water_gun",
+            ],
+            3: [
+                "helping_hand",
+            ],
+            6: [
+                "bubble_beam",
+            ],
+            9: [
+                "charm",
+            ],
+            12: [
+                "slam",
+            ],
+            15: [
+                "bounce",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brutal_swing",
+        "charm",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "hail",
+        "helping_hand",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+    ]
+    egg_moves = [
+        "aqua_jet",
+        "belly_drum",
+        "copycat",
+        "perish_song",
+        "present",
+        "sing",
+        "soak",
+        "supersonic",
+        "tickle",
+    ]

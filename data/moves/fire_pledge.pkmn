@@ -11,4 +11,3 @@ class _FirePledge:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]

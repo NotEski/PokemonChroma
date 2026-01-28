@@ -1,0 +1,14 @@
+@move("double_iron_bash")  # type: ignore
+class _DoubleIronBash:
+    meta = {
+        "display_name": "Double Iron Bash",
+        "type": "steel",
+        "index": 742,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    flinch_chance = 30

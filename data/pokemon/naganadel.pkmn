@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("naganadel")
+class Naganadel:
+    display_name = "Naganadel"
+    id = 804
+    types = ['poison', 'dragon']
+    base_stats = BaseStats(
+        hp=73,
+        attack=73,
+        defense=73,
+        special_attack=127,
+        special_defense=73,
+        speed=121
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 243
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 3.6
+    weight_kg = 150.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "air_cutter",
+            ],
+            1: [
+                "acid",
+                "air_cutter",
+                "air_slash",
+                "dragon_pulse",
+                "growl",
+                "helping_hand",
+                "peck",
+            ],
+            7: [
+                "fury_attack",
+            ],
+            14: [
+                "fell_stinger",
+            ],
+            21: [
+                "charm",
+            ],
+            28: [
+                "venoshock",
+            ],
+            35: [
+                "venom_drench",
+            ],
+            42: [
+                "nasty_plot",
+            ],
+            49: [
+                "poison_jab",
+            ],
+            56: [
+                "gastro_acid",
+            ],
+            63: [
+                "toxic",
+            ],
+            70: [
+                "dragon_rush",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "air_slash",
+        "ally_switch",
+        "assurance",
+        "breaking_swipe",
+        "charm",
+        "cross_poison",
+        "dark_pulse",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fly",
+        "giga_impact",
+        "gunk_shot",
+        "heat_wave",
+        "helping_hand",
+        "hex",
+        "hyper_beam",
+        "iron_tail",
+        "leech_life",
+        "nasty_plot",
+        "outrage",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rest",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "smart_strike",
+        "snarl",
+        "snore",
+        "spikes",
+        "substitute",
+        "swift",
+        "thief",
+        "throat_chop",
+        "thunderbolt",
+        "toxic_spikes",
+        "u_turn",
+        "uproar",
+        "venom_drench",
+        "venoshock",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "scale_shot",
+    ]
+    egg_moves = []

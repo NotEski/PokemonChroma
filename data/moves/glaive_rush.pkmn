@@ -1,0 +1,13 @@
+@move("glaive_rush")  # type: ignore
+class _GlaiveRush:
+    meta = {
+        "display_name": "Glaive Rush",
+        "type": "dragon",
+        "index": 862,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

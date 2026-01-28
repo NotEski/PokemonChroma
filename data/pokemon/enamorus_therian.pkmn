@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("enamorus_therian")
+class MegaEnamorusTherian:
+    display_name = "Enamorus Therian"
+    id = 10249
+    base_stats = BaseStats(
+        hp=74,
+        attack=115,
+        defense=110,
+        special_attack=135,
+        special_defense=100,
+        speed=46
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 116
+    height_m = 1.6
+    weight_kg = 48.0

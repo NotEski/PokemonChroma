@@ -1,0 +1,13 @@
+@move("multi_attack")  # type: ignore
+class _MultiAttack:
+    meta = {
+        "display_name": "Multi-Attack",
+        "type": "normal",
+        "index": 718,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

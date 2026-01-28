@@ -1,0 +1,13 @@
+@move("take_heart")  # type: ignore
+class _TakeHeart:
+    meta = {
+        "display_name": "Take Heart",
+        "type": "psychic",
+        "index": 850,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "all_allies",
+    }

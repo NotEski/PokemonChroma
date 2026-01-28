@@ -1,0 +1,13 @@
+@move("aurora_veil")  # type: ignore
+class _AuroraVeil:
+    meta = {
+        "display_name": "Aurora Veil",
+        "type": "ice",
+        "index": 694,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "users_field",
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("heatran_mega")
+class MegaHeatran:
+    display_name = "Heatran Mega"
+    id = 10311
+    base_stats = BaseStats(
+        hp=91,
+        attack=120,
+        defense=106,
+        special_attack=175,
+        special_defense=141,
+        speed=67
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.8
+    weight_kg = 570.0

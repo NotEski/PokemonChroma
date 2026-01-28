@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("zeraora_mega")
+class MegaZeraora:
+    display_name = "Zeraora Mega"
+    id = 10319
+    base_stats = BaseStats(
+        hp=88,
+        attack=157,
+        defense=75,
+        special_attack=147,
+        special_defense=80,
+        speed=153
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.5
+    weight_kg = 44.5

@@ -1,0 +1,13 @@
+@move("dragon_hammer")  # type: ignore
+class _DragonHammer:
+    meta = {
+        "display_name": "Dragon Hammer",
+        "type": "dragon",
+        "index": 692,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

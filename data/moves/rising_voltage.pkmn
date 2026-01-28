@@ -1,0 +1,13 @@
+@move("rising_voltage")  # type: ignore
+class _RisingVoltage:
+    meta = {
+        "display_name": "Rising Voltage",
+        "type": "electric",
+        "index": 804,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

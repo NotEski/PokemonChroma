@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("deerling")
+class Deerling:
+    display_name = "Deerling"
+    id = 585
+    types = ['normal', 'grass']
+    base_stats = BaseStats(
+        hp=60,
+        attack=60,
+        defense=50,
+        special_attack=40,
+        special_defense=50,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 67
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 19.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

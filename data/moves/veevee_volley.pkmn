@@ -1,0 +1,13 @@
+@move("veevee_volley")  # type: ignore
+class _VeeveeVolley:
+    meta = {
+        "display_name": "Veevee Volley",
+        "type": "normal",
+        "index": 741,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

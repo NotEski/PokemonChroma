@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kilowattrel")
+class Kilowattrel:
+    display_name = "Kilowattrel"
+    id = 941
+    types = ['electric', 'flying']
+    base_stats = BaseStats(
+        hp=70,
+        attack=70,
+        defense=60,
+        special_attack=105,
+        special_defense=60,
+        speed=125
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 90
+    base_experience_yield = 172
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "wind_power",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "volt_absorb",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "competitive",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 38.6
+    egg_groups = ['water1', 'flying']
+    growth_rate = "medium_slow"
+    egg_moves = []

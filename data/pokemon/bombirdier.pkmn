@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bombirdier")
+class Bombirdier:
+    display_name = "Bombirdier"
+    id = 962
+    types = ['flying', 'dark']
+    base_stats = BaseStats(
+        hp=70,
+        attack=103,
+        defense=85,
+        special_attack=60,
+        special_defense=85,
+        speed=82
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 243
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rocky_payload",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 42.9
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    egg_moves = []

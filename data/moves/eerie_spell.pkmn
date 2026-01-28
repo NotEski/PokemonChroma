@@ -1,0 +1,13 @@
+@move("eerie_spell")  # type: ignore
+class _EerieSpell:
+    meta = {
+        "display_name": "Eerie Spell",
+        "type": "psychic",
+        "index": 826,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

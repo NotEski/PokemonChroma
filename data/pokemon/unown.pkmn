@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("unown")
+class Unown:
+    display_name = "Unown"
+    id = 201
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=48,
+        attack=72,
+        defense=48,
+        special_attack=72,
+        special_defense=48,
+        speed=48
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 225
+    base_experience_yield = 118
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 5.0
+    egg_groups = ['no_eggs']
+    growth_rate = "medium"
+    egg_moves = []

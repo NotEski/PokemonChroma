@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zebstrika")
+class Zebstrika:
+    display_name = "Zebstrika"
+    id = 523
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=75,
+        attack=100,
+        defense=63,
+        special_attack=80,
+        special_defense=63,
+        speed=116
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 75
+    base_experience_yield = 174
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "lightning_rod",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "motor_drive",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 79.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

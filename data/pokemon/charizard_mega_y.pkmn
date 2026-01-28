@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("charizard_mega_y")
+class MegaCharizardY:
+    display_name = "Charizard Mega Y"
+    id = 10035
+    base_stats = BaseStats(
+        hp=78,
+        attack=104,
+        defense=78,
+        special_attack=159,
+        special_defense=115,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 285
+    height_m = 1.7
+    weight_kg = 100.5

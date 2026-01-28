@@ -1,0 +1,13 @@
+@move("corkscrew_crash_special")  # type: ignore
+class _CorkscrewCrashSpecial:
+    meta = {
+        "display_name": "Corkscrew Crash",
+        "type": "steel",
+        "index": 639,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

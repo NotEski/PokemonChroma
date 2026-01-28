@@ -1,0 +1,168 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sableye")
+class Sableye:
+    display_name = "Sableye"
+    id = 302
+    types = ['dark', 'ghost']
+    base_stats = BaseStats(
+        hp=50,
+        attack=75,
+        defense=75,
+        special_attack=65,
+        special_defense=65,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 133
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "stall",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 11.0
+    egg_groups = ['humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            3: [
+                "astonish",
+            ],
+            6: [
+                "confuse_ray",
+            ],
+            9: [
+                "shadow_sneak",
+            ],
+            12: [
+                "fake_out",
+            ],
+            15: [
+                "disable",
+            ],
+            18: [
+                "detect",
+            ],
+            21: [
+                "night_shade",
+            ],
+            24: [
+                "fury_swipes",
+            ],
+            27: [
+                "knock_off",
+            ],
+            30: [
+                "quash",
+            ],
+            33: [
+                "shadow_claw",
+            ],
+            36: [
+                "mean_look",
+            ],
+            39: [
+                "power_gem",
+            ],
+            42: [
+                "zen_headbutt",
+            ],
+            45: [
+                "shadow_ball",
+            ],
+            48: [
+                "foul_play",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "calm_mind",
+        "dark_pulse",
+        "dazzling_gleam",
+        "dig",
+        "drain_punch",
+        "encore",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "foul_play",
+        "gyro_ball",
+        "helping_hand",
+        "hex",
+        "ice_punch",
+        "icy_wind",
+        "imprison",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "nasty_plot",
+        "payback",
+        "poison_jab",
+        "power_gem",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_tomb",
+        "round",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder_punch",
+        "trick",
+        "will_o_wisp",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "poltergeist",
+    ]
+    egg_moves = [
+        "feint",
+        "flatter",
+        "metal_burst",
+        "recover",
+        "sucker_punch",
+        "torment",
+    ]

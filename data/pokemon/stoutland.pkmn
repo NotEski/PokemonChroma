@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("stoutland")
+class Stoutland:
+    display_name = "Stoutland"
+    id = 508
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=85,
+        attack=110,
+        defense=90,
+        special_attack=45,
+        special_defense=90,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 225
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_rush",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 61.0
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bite",
+                "fire_fang",
+                "ice_fang",
+                "leer",
+                "tackle",
+                "thunder_fang",
+                "work_up",
+            ],
+            12: [
+                "retaliate",
+            ],
+            19: [
+                "baby_doll_eyes",
+            ],
+            24: [
+                "play_rough",
+            ],
+            30: [
+                "crunch",
+            ],
+            38: [
+                "take_down",
+            ],
+            46: [
+                "helping_hand",
+            ],
+            54: [
+                "reversal",
+            ],
+            62: [
+                "roar",
+            ],
+            70: [
+                "last_resort",
+            ],
+            78: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "charm",
+        "crunch",
+        "dig",
+        "endure",
+        "facade",
+        "fire_fang",
+        "giga_impact",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_fang",
+        "iron_head",
+        "payback",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "reversal",
+        "rock_tomb",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "wild_charge",
+        "work_up",
+    ]
+    egg_moves = []

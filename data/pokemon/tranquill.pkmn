@@ -1,0 +1,112 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tranquill")
+class Tranquill:
+    display_name = "Tranquill"
+    id = 520
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=62,
+        attack=77,
+        defense=62,
+        special_attack=50,
+        special_defense=42,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 125
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rivalry",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 15.0
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "gust",
+                "leer",
+                "quick_attack",
+            ],
+            12: [
+                "taunt",
+            ],
+            16: [
+                "air_cutter",
+            ],
+            20: [
+                "swagger",
+            ],
+            26: [
+                "feather_dance",
+            ],
+            34: [
+                "detect",
+            ],
+            38: [
+                "air_slash",
+            ],
+            44: [
+                "roost",
+            ],
+            50: [
+                "tailwind",
+            ],
+            56: [
+                "sky_attack",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "attract",
+        "endure",
+        "facade",
+        "fly",
+        "focus_energy",
+        "heat_wave",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

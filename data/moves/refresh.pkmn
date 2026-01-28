@@ -5,10 +5,9 @@ class _Refresh:
         "type": "normal",
         "index": 287,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user",
     }
-    flags = ["snatch"]

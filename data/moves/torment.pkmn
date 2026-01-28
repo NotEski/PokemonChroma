@@ -5,13 +5,12 @@ class _Torment:
         "type": "dark",
         "index": 259,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "authentic", "mental"]
     status_condition = {
         "torment": 0,
     }

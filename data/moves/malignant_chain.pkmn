@@ -1,0 +1,13 @@
+@move("malignant_chain")  # type: ignore
+class _MalignantChain:
+    meta = {
+        "display_name": "Malignant Chain",
+        "type": "poison",
+        "index": 919,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

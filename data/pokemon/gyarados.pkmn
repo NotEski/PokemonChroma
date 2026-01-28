@@ -1,0 +1,154 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gyarados")
+class Gyarados:
+    display_name = "Gyarados"
+    id = 130
+    types = ['water', 'flying']
+    base_stats = BaseStats(
+        hp=95,
+        attack=125,
+        defense=79,
+        special_attack=60,
+        special_defense=100,
+        speed=81
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 189
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "moxie",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 6.5
+    weight_kg = 235.0
+    egg_groups = ['water2', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "bite",
+            ],
+            1: [
+                "bite",
+                "flail",
+                "leer",
+                "splash",
+                "tackle",
+                "twister",
+            ],
+            4: [
+                "whirlpool",
+            ],
+            8: [
+                "ice_fang",
+            ],
+            12: [
+                "brine",
+            ],
+            16: [
+                "scary_face",
+            ],
+            21: [
+                "waterfall",
+            ],
+            24: [
+                "crunch",
+            ],
+            28: [
+                "rain_dance",
+            ],
+            32: [
+                "aqua_tail",
+            ],
+            36: [
+                "dragon_dance",
+            ],
+            40: [
+                "hydro_pump",
+            ],
+            44: [
+                "hurricane",
+            ],
+            48: [
+                "thrash",
+            ],
+            52: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brine",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dive",
+        "dragon_dance",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "giga_impact",
+        "hail",
+        "hurricane",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "icy_wind",
+        "iron_head",
+        "iron_tail",
+        "muddy_water",
+        "outrage",
+        "payback",
+        "power_whip",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "sandstorm",
+        "scald",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "taunt",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "scale_shot",
+    ]
+    egg_moves = []

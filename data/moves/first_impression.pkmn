@@ -1,0 +1,14 @@
+@move("first_impression")  # type: ignore
+class _FirstImpression:
+    meta = {
+        "display_name": "First Impression",
+        "type": "bug",
+        "index": 660,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    priority = 2

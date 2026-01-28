@@ -1,0 +1,173 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rhyperior")
+class Rhyperior:
+    display_name = "Rhyperior"
+    id = 464
+    types = ['ground', 'rock']
+    base_stats = BaseStats(
+        hp=115,
+        attack=140,
+        defense=130,
+        special_attack=55,
+        special_defense=55,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 241
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "lightning_rod",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "solid_rock",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "reckless",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.4
+    weight_kg = 282.8
+    egg_groups = ['monster', 'ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bulldoze",
+                "hammer_arm",
+                "smack_down",
+                "tackle",
+                "tail_whip",
+            ],
+            15: [
+                "horn_attack",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "stomp",
+            ],
+            30: [
+                "rock_blast",
+            ],
+            35: [
+                "drill_run",
+            ],
+            40: [
+                "take_down",
+            ],
+            47: [
+                "earthquake",
+            ],
+            54: [
+                "stone_edge",
+            ],
+            61: [
+                "megahorn",
+            ],
+            68: [
+                "horn_drill",
+            ],
+            75: [
+                "rock_wrecker",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "dragon_pulse",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "flamethrower",
+        "flash_cannon",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "heat_crash",
+        "heavy_slam",
+        "helping_hand",
+        "high_horsepower",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "megahorn",
+        "mud_shot",
+        "outrage",
+        "pay_day",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "swords_dance",
+        "thief",
+        "thunder",
+        "thunder_fang",
+        "thunder_punch",
+        "thunderbolt",
+        "uproar",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "scorching_sands",
+    ]
+    egg_moves = []

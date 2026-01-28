@@ -1,0 +1,13 @@
+@move("revelation_dance")  # type: ignore
+class _RevelationDance:
+    meta = {
+        "display_name": "Revelation Dance",
+        "type": "normal",
+        "index": 686,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

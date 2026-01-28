@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("beedrill")
+class Beedrill:
+    display_name = "Beedrill"
+    id = 15
+    types = ['bug', 'poison']
+    base_stats = BaseStats(
+        hp=65,
+        attack=90,
+        defense=40,
+        special_attack=45,
+        special_defense=80,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 178
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sniper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 29.5
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    egg_moves = []

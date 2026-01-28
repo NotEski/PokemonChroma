@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("starmie_mega")
+class MegaStarmie:
+    display_name = "Starmie Mega"
+    id = 10280
+    base_stats = BaseStats(
+        hp=60,
+        attack=140,
+        defense=105,
+        special_attack=130,
+        special_defense=105,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.3
+    weight_kg = 80.0

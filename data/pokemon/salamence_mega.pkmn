@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("salamence_mega")
+class MegaSalamence:
+    display_name = "Salamence Mega"
+    id = 10089
+    base_stats = BaseStats(
+        hp=95,
+        attack=145,
+        defense=130,
+        special_attack=120,
+        special_defense=90,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 315
+    height_m = 1.8
+    weight_kg = 112.6

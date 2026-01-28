@@ -5,10 +5,9 @@ class _Wish:
         "type": "normal",
         "index": 273,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch", "heal", "heal_exception"]

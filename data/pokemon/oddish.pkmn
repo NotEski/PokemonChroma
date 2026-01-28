@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("oddish")
+class Oddish:
+    display_name = "Oddish"
+    id = 43
+    types = ['grass', 'poison']
+    base_stats = BaseStats(
+        hp=45,
+        attack=50,
+        defense=55,
+        special_attack=75,
+        special_defense=65,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "run_away",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 5.4
+    egg_groups = ['plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "growth",
+            ],
+            4: [
+                "acid",
+            ],
+            8: [
+                "sweet_scent",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            14: [
+                "poison_powder",
+            ],
+            16: [
+                "stun_spore",
+            ],
+            18: [
+                "sleep_powder",
+            ],
+            20: [
+                "giga_drain",
+            ],
+            24: [
+                "toxic",
+            ],
+            28: [
+                "moonblast",
+            ],
+            32: [
+                "grassy_terrain",
+            ],
+            36: [
+                "moonlight",
+            ],
+            40: [
+                "petal_dance",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bullet_seed",
+        "charm",
+        "dazzling_gleam",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "protect",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "after_you",
+        "flail",
+        "ingrain",
+        "leech_seed",
+        "nature_power",
+        "razor_leaf",
+        "strength_sap",
+        "synthesis",
+        "teeter_dance",
+        "tickle",
+    ]

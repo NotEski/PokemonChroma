@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("orbeetle_gmax")
+class MegaOrbeetle:
+    display_name = "Orbeetle Gmax"
+    id = 10213
+    base_stats = BaseStats(
+        hp=60,
+        attack=45,
+        defense=110,
+        special_attack=80,
+        special_defense=120,
+        speed=90
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 253
+    height_m = 14.0
+    weight_kg = 1000.0

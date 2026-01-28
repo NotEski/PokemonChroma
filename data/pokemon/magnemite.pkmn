@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magnemite")
+class Magnemite:
+    display_name = "Magnemite"
+    id = 81
+    types = ['electric', 'steel']
+    base_stats = BaseStats(
+        hp=25,
+        attack=35,
+        defense=70,
+        special_attack=95,
+        special_defense=55,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 65
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 6.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "thunder_shock",
+            ],
+            4: [
+                "supersonic",
+            ],
+            8: [
+                "thunder_wave",
+            ],
+            12: [
+                "electro_ball",
+            ],
+            16: [
+                "gyro_ball",
+            ],
+            20: [
+                "spark",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "magnet_rise",
+            ],
+            32: [
+                "flash_cannon",
+            ],
+            36: [
+                "discharge",
+            ],
+            40: [
+                "metal_sound",
+            ],
+            44: [
+                "light_screen",
+            ],
+            48: [
+                "lock_on",
+            ],
+            52: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "gyro_ball",
+        "iron_defense",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "steel_beam",
+    ]
+    egg_moves = []

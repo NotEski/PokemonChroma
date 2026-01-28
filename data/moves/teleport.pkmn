@@ -5,9 +5,10 @@ class _Teleport:
         "type": "psychic",
         "index": 100,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user",
     }
+    priority = -6

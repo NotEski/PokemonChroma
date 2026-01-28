@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("braviary")
+class Braviary:
+    display_name = "Braviary"
+    id = 628
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=100,
+        attack=123,
+        defense=75,
+        special_attack=57,
+        special_defense=75,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 179
+    base_happiness = 70
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 41.0
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "superpower",
+            ],
+            1: [
+                "hone_claws",
+                "leer",
+                "peck",
+                "sky_attack",
+                "superpower",
+                "wing_attack",
+            ],
+            18: [
+                "tailwind",
+            ],
+            24: [
+                "scary_face",
+            ],
+            30: [
+                "aerial_ace",
+            ],
+            36: [
+                "slash",
+            ],
+            42: [
+                "whirlwind",
+            ],
+            48: [
+                "crush_claw",
+            ],
+            57: [
+                "air_slash",
+            ],
+            64: [
+                "defog",
+            ],
+            72: [
+                "thrash",
+            ],
+            80: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "assurance",
+        "attract",
+        "brave_bird",
+        "bulk_up",
+        "close_combat",
+        "endure",
+        "facade",
+        "fly",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "iron_head",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "u_turn",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

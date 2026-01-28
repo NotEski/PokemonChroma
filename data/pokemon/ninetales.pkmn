@@ -1,0 +1,116 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ninetales")
+class Ninetales:
+    display_name = "Ninetales"
+    id = 38
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=73,
+        attack=76,
+        defense=75,
+        special_attack=81,
+        special_defense=100,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=1
+    )
+    catch_rate = 75
+    base_experience_yield = 177
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "drought",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 19.9
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confuse_ray",
+                "disable",
+                "ember",
+                "extrasensory",
+                "fire_blast",
+                "fire_spin",
+                "flamethrower",
+                "grudge",
+                "imprison",
+                "incinerate",
+                "inferno",
+                "nasty_plot",
+                "quick_attack",
+                "safeguard",
+                "spite",
+                "tail_whip",
+                "will_o_wisp",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "calm_mind",
+        "dark_pulse",
+        "dig",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "foul_play",
+        "giga_impact",
+        "heat_wave",
+        "hex",
+        "hyper_beam",
+        "imprison",
+        "iron_tail",
+        "mystical_fire",
+        "nasty_plot",
+        "overheat",
+        "payback",
+        "power_swap",
+        "protect",
+        "psyshock",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "tail_slap",
+        "weather_ball",
+        "will_o_wisp",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "scorching_sands",
+    ]
+    egg_moves = []

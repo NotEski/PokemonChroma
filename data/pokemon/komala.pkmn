@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("komala")
+class Komala:
+    display_name = "Komala"
+    id = 775
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=65,
+        attack=115,
+        defense=65,
+        special_attack=75,
+        special_defense=95,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "comatose",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 19.9
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    egg_moves = []

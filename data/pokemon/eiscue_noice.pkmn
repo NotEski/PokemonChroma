@@ -1,0 +1,115 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("eiscue_noice")
+class EiscueNoice:
+    display_name = "Eiscue Noice"
+    id = 10185
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=75,
+        attack=80,
+        defense=70,
+        special_attack=65,
+        special_defense=50,
+        speed=130
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 165
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "ice_face",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 89.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "powder_snow",
+                "tackle",
+            ],
+            6: [
+                "mist",
+            ],
+            12: [
+                "weather_ball",
+            ],
+            18: [
+                "icy_wind",
+            ],
+            24: [
+                "headbutt",
+            ],
+            30: [
+                "amnesia",
+            ],
+            36: [
+                "freeze_dry",
+            ],
+            42: [
+                "hail",
+            ],
+            48: [
+                "aurora_veil",
+            ],
+            54: [
+                "surf",
+            ],
+            60: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "amnesia",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "brine",
+        "dive",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "ice_punch",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "liquidation",
+        "protect",
+        "reflect",
+        "rest",
+        "reversal",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "aqua_ring",
+        "belly_drum",
+        "double_edge",
+        "head_smash",
+        "icicle_crash",
+        "soak",
+    ]

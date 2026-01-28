@@ -1,0 +1,13 @@
+@move("oceanic_operetta")  # type: ignore
+class _OceanicOperetta:
+    meta = {
+        "display_name": "Oceanic Operetta",
+        "type": "water",
+        "index": 697,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 195,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

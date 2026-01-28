@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("iron_treads")
+class IronTreads:
+    display_name = "Iron Treads"
+    id = 990
+    types = ['ground', 'steel']
+    base_stats = BaseStats(
+        hp=90,
+        attack=112,
+        defense=120,
+        special_attack=72,
+        special_defense=70,
+        speed=106
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "quark_drive",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 240.0
+    growth_rate = "medium_fast"
+    egg_moves = []

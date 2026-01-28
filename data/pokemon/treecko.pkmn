@@ -1,0 +1,145 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("treecko")
+class Treecko:
+    display_name = "Treecko"
+    id = 252
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=35,
+        special_attack=65,
+        special_defense=55,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 5.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "pound",
+            ],
+            3: [
+                "leafage",
+            ],
+            6: [
+                "quick_attack",
+            ],
+            9: [
+                "mega_drain",
+            ],
+            12: [
+                "detect",
+            ],
+            15: [
+                "quick_guard",
+            ],
+            18: [
+                "assurance",
+            ],
+            21: [
+                "giga_drain",
+            ],
+            24: [
+                "slam",
+            ],
+            27: [
+                "double_team",
+            ],
+            30: [
+                "energy_ball",
+            ],
+            33: [
+                "screech",
+            ],
+            36: [
+                "endeavor",
+            ],
+            39: [
+                "leaf_storm",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "assurance",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bullet_seed",
+        "crunch",
+        "dig",
+        "drain_punch",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "iron_tail",
+        "leaf_storm",
+        "low_kick",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "screech",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "work_up",
+    ]
+    tutor_moves = [
+        "grass_pledge",
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "absorb",
+        "double_kick",
+        "dragon_breath",
+        "leech_seed",
+        "night_slash",
+        "slash",
+        "synthesis",
+        "worry_seed",
+    ]

@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("meowth_galar")
+class MeowthGalar:
+    display_name = "Meowth Galar"
+    id = 10161
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=50,
+        attack=65,
+        defense=55,
+        special_attack=40,
+        special_defense=40,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "tough_claws",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 7.5
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fake_out",
+                "growl",
+            ],
+            4: [
+                "hone_claws",
+            ],
+            8: [
+                "scratch",
+            ],
+            12: [
+                "pay_day",
+            ],
+            16: [
+                "metal_claw",
+            ],
+            20: [
+                "taunt",
+            ],
+            24: [
+                "swagger",
+            ],
+            29: [
+                "fury_swipes",
+            ],
+            32: [
+                "screech",
+            ],
+            36: [
+                "slash",
+            ],
+            40: [
+                "metal_sound",
+            ],
+            44: [
+                "thrash",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "body_slam",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "foul_play",
+        "gunk_shot",
+        "gyro_ball",
+        "hyper_voice",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "nasty_plot",
+        "pay_day",
+        "payback",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunderbolt",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "steel_beam",
+    ]
+    egg_moves = [
+        "covet",
+        "curse",
+        "double_edge",
+        "flail",
+        "night_slash",
+        "spite",
+    ]

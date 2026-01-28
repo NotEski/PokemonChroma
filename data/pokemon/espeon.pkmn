@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("espeon")
+class Espeon:
+    display_name = "Espeon"
+    id = 196
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=65,
+        attack=65,
+        defense=60,
+        special_attack=130,
+        special_defense=95,
+        speed=110
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 184
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_bounce",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 26.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "confusion",
+            ],
+            1: [
+                "baton_pass",
+                "bite",
+                "charm",
+                "confusion",
+                "copycat",
+                "covet",
+                "double_edge",
+                "growl",
+                "helping_hand",
+                "tackle",
+                "tail_whip",
+                "take_down",
+            ],
+            5: [
+                "sand_attack",
+            ],
+            10: [
+                "quick_attack",
+            ],
+            15: [
+                "baby_doll_eyes",
+            ],
+            20: [
+                "swift",
+            ],
+            25: [
+                "psybeam",
+            ],
+            30: [
+                "morning_sun",
+            ],
+            35: [
+                "power_swap",
+            ],
+            40: [
+                "psychic",
+            ],
+            45: [
+                "psych_up",
+            ],
+            50: [
+                "future_sight",
+            ],
+            55: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "focus_energy",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "light_screen",
+        "magic_room",
+        "pay_day",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_fangs",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "trick",
+        "trick_room",
+        "weather_ball",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = []

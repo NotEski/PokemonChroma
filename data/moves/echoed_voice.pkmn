@@ -11,4 +11,3 @@ class _EchoedVoice:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]

@@ -1,0 +1,13 @@
+@move("teatime")  # type: ignore
+class _Teatime:
+    meta = {
+        "display_name": "Teatime",
+        "type": "normal",
+        "index": 752,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "all_pokemon",
+    }

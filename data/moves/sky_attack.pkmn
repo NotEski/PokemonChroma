@@ -11,6 +11,5 @@ class _SkyAttack:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["charge", "protect", "mirror", "distance"]
     critical_hit_rate = 8
     flinch_chance = 30

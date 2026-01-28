@@ -1,0 +1,115 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("delibird")
+class Delibird:
+    display_name = "Delibird"
+    id = 225
+    types = ['ice', 'flying']
+    base_stats = BaseStats(
+        hp=45,
+        attack=55,
+        defense=45,
+        special_attack=65,
+        special_defense=45,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 116
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "vital_spirit",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hustle",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "insomnia",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 16.0
+    egg_groups = ['water1', 'ground']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "present",
+            ],
+            25: [
+                "drill_peck",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "avalanche",
+        "baton_pass",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brave_bird",
+        "brick_break",
+        "brutal_swing",
+        "drill_run",
+        "endure",
+        "facade",
+        "fling",
+        "fly",
+        "future_sight",
+        "gunk_shot",
+        "hail",
+        "helping_hand",
+        "ice_beam",
+        "ice_punch",
+        "icicle_spear",
+        "icy_wind",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "steel_wing",
+        "substitute",
+        "swift",
+        "thief",
+        "weather_ball",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "triple_axel",
+    ]
+    egg_moves = [
+        "aurora_beam",
+        "aurora_veil",
+        "counter",
+        "destiny_bond",
+        "fake_out",
+        "freeze_dry",
+        "ice_shard",
+        "memento",
+        "quick_attack",
+        "rapid_spin",
+        "splash",
+    ]

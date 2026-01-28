@@ -11,4 +11,6 @@ class _SmackDown:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]
+    status_condition = {
+        "unknown": 100,
+    }

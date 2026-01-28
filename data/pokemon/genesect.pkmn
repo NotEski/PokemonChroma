@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("genesect")
+class Genesect:
+    display_name = "Genesect"
+    id = 649
+    types = ['bug', 'steel']
+    base_stats = BaseStats(
+        hp=71,
+        attack=120,
+        defense=95,
+        special_attack=120,
+        special_defense=95,
+        speed=99
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 3
+    base_experience_yield = 270
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "download",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 82.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fury_cutter",
+                "quick_attack",
+            ],
+            7: [
+                "screech",
+            ],
+            14: [
+                "metal_claw",
+            ],
+            21: [
+                "fell_stinger",
+            ],
+            28: [
+                "flame_charge",
+            ],
+            35: [
+                "metal_sound",
+            ],
+            42: [
+                "x_scissor",
+            ],
+            49: [
+                "magnet_rise",
+            ],
+            56: [
+                "bug_buzz",
+            ],
+            63: [
+                "simple_beam",
+            ],
+            70: [
+                "zap_cannon",
+            ],
+            77: [
+                "lock_on",
+            ],
+            84: [
+                "techno_blast",
+            ],
+            91: [
+                "self_destruct",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "assurance",
+        "blaze_kick",
+        "blizzard",
+        "bug_buzz",
+        "dark_pulse",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "flamethrower",
+        "flash_cannon",
+        "fly",
+        "giga_drain",
+        "giga_impact",
+        "gunk_shot",
+        "hyper_beam",
+        "ice_beam",
+        "iron_defense",
+        "iron_head",
+        "leech_life",
+        "light_screen",
+        "protect",
+        "psychic",
+        "reflect",
+        "rest",
+        "round",
+        "screech",
+        "self_destruct",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "u_turn",
+        "x_scissor",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = []

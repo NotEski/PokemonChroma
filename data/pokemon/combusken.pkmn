@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("combusken")
+class Combusken:
+    display_name = "Combusken"
+    id = 256
+    types = ['fire', 'fighting']
+    base_stats = BaseStats(
+        hp=60,
+        attack=85,
+        defense=60,
+        special_attack=85,
+        special_defense=60,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 19.5
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "double_kick",
+            ],
+            1: [
+                "double_kick",
+                "ember",
+                "feather_dance",
+                "flamethrower",
+                "growl",
+                "quick_attack",
+                "scratch",
+            ],
+            9: [
+                "flame_charge",
+            ],
+            12: [
+                "detect",
+            ],
+            15: [
+                "sand_attack",
+            ],
+            20: [
+                "aerial_ace",
+            ],
+            25: [
+                "slash",
+            ],
+            30: [
+                "bounce",
+            ],
+            35: [
+                "focus_energy",
+            ],
+            40: [
+                "blaze_kick",
+            ],
+            45: [
+                "bulk_up",
+            ],
+            50: [
+                "reversal",
+            ],
+            55: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "blaze_kick",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "bulk_up",
+        "dig",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "heat_wave",
+        "helping_hand",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "overheat",
+        "poison_jab",
+        "protect",
+        "rest",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+        "fire_pledge",
+    ]
+    egg_moves = []

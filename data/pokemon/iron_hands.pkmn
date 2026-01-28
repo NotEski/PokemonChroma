@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("iron_hands")
+class IronHands:
+    display_name = "Iron Hands"
+    id = 992
+    types = ['fighting', 'electric']
+    base_stats = BaseStats(
+        hp=154,
+        attack=140,
+        defense=108,
+        special_attack=50,
+        special_defense=68,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "quark_drive",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 380.7
+    growth_rate = "medium_fast"
+    egg_moves = []

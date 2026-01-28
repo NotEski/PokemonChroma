@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("charizard")
+class Charizard:
+    display_name = "Charizard"
+    id = 6
+    types = ['fire', 'flying']
+    base_stats = BaseStats(
+        hp=78,
+        attack=84,
+        defense=78,
+        special_attack=109,
+        special_defense=85,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 240
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "solar_power",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 90.5
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "air_slash",
+            ],
+            1: [
+                "air_slash",
+                "dragon_claw",
+                "ember",
+                "growl",
+                "heat_wave",
+                "scratch",
+                "smokescreen",
+            ],
+            12: [
+                "dragon_breath",
+            ],
+            19: [
+                "fire_fang",
+            ],
+            24: [
+                "slash",
+            ],
+            30: [
+                "flamethrower",
+            ],
+            39: [
+                "scary_face",
+            ],
+            46: [
+                "fire_spin",
+            ],
+            54: [
+                "inferno",
+            ],
+            62: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "air_slash",
+        "attract",
+        "beat_up",
+        "blaze_kick",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "heat_crash",
+        "heat_wave",
+        "helping_hand",
+        "hurricane",
+        "hyper_beam",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "mystical_fire",
+        "outrage",
+        "overheat",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "weather_ball",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "blast_burn",
+        "dual_wingbeat",
+        "fire_pledge",
+        "scale_shot",
+        "scorching_sands",
+    ]
+    egg_moves = []

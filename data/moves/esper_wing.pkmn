@@ -1,0 +1,13 @@
+@move("esper_wing")  # type: ignore
+class _EsperWing:
+    meta = {
+        "display_name": "Esper Wing",
+        "type": "psychic",
+        "index": 840,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

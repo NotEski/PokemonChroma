@@ -11,4 +11,3 @@ class _HyperspaceHole:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["mirror", "authentic"]

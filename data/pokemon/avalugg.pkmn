@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("avalugg")
+class Avalugg:
+    display_name = "Avalugg"
+    id = 713
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=95,
+        attack=117,
+        defense=184,
+        special_attack=44,
+        special_defense=46,
+        speed=28
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 55
+    base_experience_yield = 180
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 505.0
+    egg_groups = ['monster', 'mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "body_slam",
+            ],
+            1: [
+                "body_slam",
+                "harden",
+                "powder_snow",
+                "rapid_spin",
+                "tackle",
+                "wide_guard",
+            ],
+            9: [
+                "curse",
+            ],
+            12: [
+                "icy_wind",
+            ],
+            15: [
+                "protect",
+            ],
+            18: [
+                "avalanche",
+            ],
+            21: [
+                "bite",
+            ],
+            24: [
+                "ice_fang",
+            ],
+            27: [
+                "iron_defense",
+            ],
+            30: [
+                "recover",
+            ],
+            33: [
+                "crunch",
+            ],
+            36: [
+                "take_down",
+            ],
+            41: [
+                "blizzard",
+            ],
+            46: [
+                "double_edge",
+            ],
+            51: [
+                "skull_bash",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "bulldoze",
+        "crunch",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "hail",
+        "heavy_slam",
+        "high_horsepower",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "surf",
+    ]
+    egg_moves = []

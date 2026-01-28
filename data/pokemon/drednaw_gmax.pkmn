@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("drednaw_gmax")
+class MegaDrednaw:
+    display_name = "Drednaw Gmax"
+    id = 10214
+    base_stats = BaseStats(
+        hp=90,
+        attack=115,
+        defense=90,
+        special_attack=48,
+        special_defense=68,
+        speed=74
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 170
+    height_m = 24.0
+    weight_kg = 1000.0

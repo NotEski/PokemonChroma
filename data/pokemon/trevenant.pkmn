@@ -1,0 +1,148 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("trevenant")
+class Trevenant:
+    display_name = "Trevenant"
+    id = 709
+    types = ['ghost', 'grass']
+    base_stats = BaseStats(
+        hp=85,
+        attack=110,
+        defense=76,
+        special_attack=65,
+        special_defense=82,
+        speed=56
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "harvest",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 71.0
+    egg_groups = ['plant', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "shadow_claw",
+            ],
+            1: [
+                "astonish",
+                "branch_poke",
+                "leech_seed",
+                "shadow_claw",
+                "tackle",
+            ],
+            12: [
+                "confuse_ray",
+            ],
+            16: [
+                "will_o_wisp",
+            ],
+            20: [
+                "hex",
+            ],
+            24: [
+                "growth",
+            ],
+            28: [
+                "horn_leech",
+            ],
+            32: [
+                "curse",
+            ],
+            36: [
+                "phantom_force",
+            ],
+            40: [
+                "ingrain",
+            ],
+            44: [
+                "wood_hammer",
+            ],
+            48: [
+                "destiny_bond",
+            ],
+            52: [
+                "forests_curse",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "brutal_swing",
+        "bulldoze",
+        "calm_mind",
+        "dark_pulse",
+        "dig",
+        "drain_punch",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "focus_blast",
+        "foul_play",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "hex",
+        "hyper_beam",
+        "imprison",
+        "leaf_storm",
+        "magical_leaf",
+        "phantom_force",
+        "poison_jab",
+        "protect",
+        "psychic",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "trick",
+        "trick_room",
+        "venom_drench",
+        "will_o_wisp",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "poltergeist",
+        "skitter_smack",
+    ]
+    egg_moves = []

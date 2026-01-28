@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rapidash_galar")
+class RapidashGalar:
+    display_name = "Rapidash Galar"
+    id = 10163
+    types = ['psychic', 'fairy']
+    base_stats = BaseStats(
+        hp=65,
+        attack=100,
+        defense=70,
+        special_attack=80,
+        special_defense=80,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "pastel_veil",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "anticipation",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 80.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "psycho_cut",
+            ],
+            1: [
+                "confusion",
+                "growl",
+                "megahorn",
+                "psycho_cut",
+                "quick_attack",
+                "tackle",
+                "tail_whip",
+            ],
+            15: [
+                "fairy_wind",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "psybeam",
+            ],
+            30: [
+                "stomp",
+            ],
+            35: [
+                "heal_pulse",
+            ],
+            43: [
+                "take_down",
+            ],
+            49: [
+                "dazzling_gleam",
+            ],
+            56: [
+                "psychic",
+            ],
+            63: [
+                "healing_wish",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "bounce",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "drill_run",
+        "endure",
+        "facade",
+        "future_sight",
+        "giga_impact",
+        "high_horsepower",
+        "hyper_beam",
+        "imprison",
+        "iron_tail",
+        "low_kick",
+        "magic_room",
+        "megahorn",
+        "misty_terrain",
+        "mystical_fire",
+        "pay_day",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psycho_cut",
+        "rest",
+        "round",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "stored_power",
+        "substitute",
+        "swift",
+        "swords_dance",
+        "throat_chop",
+        "trick_room",
+        "wild_charge",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = []

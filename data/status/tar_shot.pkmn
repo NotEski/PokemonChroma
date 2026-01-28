@@ -1,0 +1,5 @@
+@status("tar_shot")  # type: ignore
+class TarShotStatus:
+    meta = {
+        "display_name": "Tar Shot",
+    }

@@ -5,10 +5,9 @@ class _PsychoShift:
         "type": "psychic",
         "index": 375,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

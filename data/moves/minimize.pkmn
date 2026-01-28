@@ -5,13 +5,12 @@ class _Minimize:
         "type": "normal",
         "index": 107,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "evasion", "change": 2, "chance": 100}],
     }

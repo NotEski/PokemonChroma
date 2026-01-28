@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tentacruel")
+class Tentacruel:
+    display_name = "Tentacruel"
+    id = 73
+    types = ['water', 'poison']
+    base_stats = BaseStats(
+        hp=80,
+        attack=70,
+        defense=65,
+        special_attack=80,
+        special_defense=120,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 180
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "clear_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "liquid_ooze",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 55.0
+    egg_groups = ['water3']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "acid",
+                "poison_sting",
+                "reflect_type",
+                "water_gun",
+                "wrap",
+            ],
+            12: [
+                "supersonic",
+            ],
+            16: [
+                "water_pulse",
+            ],
+            20: [
+                "screech",
+            ],
+            24: [
+                "bubble_beam",
+            ],
+            28: [
+                "hex",
+            ],
+            34: [
+                "acid_armor",
+            ],
+            40: [
+                "poison_jab",
+            ],
+            46: [
+                "surf",
+            ],
+            52: [
+                "sludge_wave",
+            ],
+            58: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "brine",
+        "brutal_swing",
+        "cross_poison",
+        "dazzling_gleam",
+        "dive",
+        "endure",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "hail",
+        "hex",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "muddy_water",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "surf",
+        "swords_dance",
+        "thief",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+    ]
+    egg_moves = []

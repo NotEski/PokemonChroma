@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("giratina_altered")
+class GiratinaAltered:
+    display_name = "Giratina Altered"
+    id = 487
+    types = ['ghost', 'dragon']
+    base_stats = BaseStats(
+        hp=150,
+        attack=100,
+        defense=120,
+        special_attack=100,
+        special_defense=120,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 4.5
+    weight_kg = 750.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "defog",
+                "shadow_sneak",
+            ],
+            7: [
+                "dragon_breath",
+            ],
+            14: [
+                "ancient_power",
+            ],
+            21: [
+                "hex",
+            ],
+            28: [
+                "slash",
+            ],
+            35: [
+                "scary_face",
+            ],
+            42: [
+                "shadow_claw",
+            ],
+            49: [
+                "pain_split",
+            ],
+            56: [
+                "aura_sphere",
+            ],
+            63: [
+                "dragon_claw",
+            ],
+            70: [
+                "earth_power",
+            ],
+            77: [
+                "shadow_force",
+            ],
+            84: [
+                "destiny_bond",
+            ],
+        }
+    machine_moves = [
+        "aura_sphere",
+        "body_slam",
+        "breaking_swipe",
+        "brutal_swing",
+        "bulldoze",
+        "calm_mind",
+        "dark_pulse",
+        "dragon_claw",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fly",
+        "giga_impact",
+        "hex",
+        "hyper_beam",
+        "hyper_voice",
+        "icy_wind",
+        "iron_head",
+        "iron_tail",
+        "outrage",
+        "payback",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "scary_face",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "poltergeist",
+    ]
+    egg_moves = []

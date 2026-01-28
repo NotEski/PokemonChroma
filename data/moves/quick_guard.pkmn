@@ -5,11 +5,10 @@ class _QuickGuard:
         "type": "fighting",
         "index": 501,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "users_field",
     }
-    flags = ["snatch"]
     priority = 3

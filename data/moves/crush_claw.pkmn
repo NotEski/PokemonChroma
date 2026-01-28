@@ -5,13 +5,12 @@ class _CrushClaw:
         "type": "normal",
         "index": 306,
         "damage_class": "physical",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 95,
         "power": 75,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 50}],
     }

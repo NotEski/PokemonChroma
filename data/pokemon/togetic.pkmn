@@ -1,0 +1,156 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("togetic")
+class Togetic:
+    display_name = "Togetic"
+    id = 176
+    types = ['fairy', 'flying']
+    base_stats = BaseStats(
+        hp=55,
+        attack=40,
+        defense=85,
+        special_attack=80,
+        special_defense=105,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 3.2
+    egg_groups = ['flying', 'fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "fairy_wind",
+            ],
+            1: [
+                "fairy_wind",
+                "growl",
+                "life_dew",
+                "pound",
+                "sweet_kiss",
+            ],
+            12: [
+                "charm",
+            ],
+            16: [
+                "ancient_power",
+            ],
+            20: [
+                "yawn",
+            ],
+            24: [
+                "metronome",
+            ],
+            28: [
+                "after_you",
+            ],
+            32: [
+                "double_edge",
+            ],
+            36: [
+                "safeguard",
+            ],
+            40: [
+                "follow_me",
+            ],
+            44: [
+                "baton_pass",
+            ],
+            48: [
+                "last_resort",
+            ],
+            52: [
+                "wish",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "brick_break",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "fly",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "light_screen",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "mystical_fire",
+        "nasty_plot",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder_wave",
+        "tri_attack",
+        "trick",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

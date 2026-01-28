@@ -1,0 +1,13 @@
+@move("moongeist_beam")  # type: ignore
+class _MoongeistBeam:
+    meta = {
+        "display_name": "Moongeist Beam",
+        "type": "ghost",
+        "index": 714,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

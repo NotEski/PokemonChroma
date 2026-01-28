@@ -1,0 +1,16 @@
+@move("lumina_crash")  # type: ignore
+class _LuminaCrash:
+    meta = {
+        "display_name": "Lumina Crash",
+        "type": "psychic",
+        "index": 855,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
+    }

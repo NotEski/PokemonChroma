@@ -5,11 +5,10 @@ class _OblivionWing:
         "type": "flying",
         "index": 613,
         "damage_class": "special",
-        "category": "damage_heal",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance", "heal"]
     drain = 75

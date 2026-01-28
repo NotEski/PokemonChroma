@@ -1,0 +1,119 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("klink")
+class Klink:
+    display_name = "Klink"
+    id = 599
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=40,
+        attack=55,
+        defense=70,
+        special_attack=45,
+        special_defense=60,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 130
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "plus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "minus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "clear_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 21.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "thunder_shock",
+                "vice_grip",
+            ],
+            4: [
+                "bind",
+            ],
+            8: [
+                "charge",
+            ],
+            12: [
+                "charge_beam",
+            ],
+            16: [
+                "metal_sound",
+            ],
+            20: [
+                "autotomize",
+            ],
+            24: [
+                "discharge",
+            ],
+            28: [
+                "screech",
+            ],
+            32: [
+                "gear_grind",
+            ],
+            36: [
+                "lock_on",
+            ],
+            40: [
+                "shift_gear",
+            ],
+            44: [
+                "zap_cannon",
+            ],
+            48: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "hyper_beam",
+        "iron_defense",
+        "power_gem",
+        "protect",
+        "rest",
+        "round",
+        "sandstorm",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

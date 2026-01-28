@@ -5,13 +5,12 @@ class _Spore:
         "type": "grass",
         "index": 147,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "powder"]
     status_condition = {
         "sleep": 0,
     }

@@ -11,5 +11,4 @@ class _Submission:
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     drain = -25

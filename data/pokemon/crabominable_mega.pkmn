@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("crabominable_mega")
+class MegaCrabominable:
+    display_name = "Crabominable Mega"
+    id = 10315
+    base_stats = BaseStats(
+        hp=97,
+        attack=157,
+        defense=122,
+        special_attack=62,
+        special_defense=107,
+        speed=33
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.6
+    weight_kg = 252.8

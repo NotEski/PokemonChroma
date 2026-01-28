@@ -1,0 +1,108 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("charjabug")
+class Charjabug:
+    display_name = "Charjabug"
+    id = 737
+    types = ['bug', 'electric']
+    base_stats = BaseStats(
+        hp=57,
+        attack=82,
+        defense=95,
+        special_attack=55,
+        special_defense=75,
+        speed=36
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 140
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "battery",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 10.5
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "charge",
+            ],
+            1: [
+                "bug_bite",
+                "charge",
+                "mud_slap",
+                "string_shot",
+                "vice_grip",
+            ],
+            15: [
+                "bite",
+            ],
+            23: [
+                "spark",
+            ],
+            29: [
+                "sticky_web",
+            ],
+            36: [
+                "x_scissor",
+            ],
+            43: [
+                "crunch",
+            ],
+            50: [
+                "dig",
+            ],
+            57: [
+                "iron_defense",
+            ],
+            64: [
+                "discharge",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "attract",
+        "crunch",
+        "dig",
+        "eerie_impulse",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "iron_defense",
+        "light_screen",
+        "mud_shot",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "skitter_smack",
+    ]
+    egg_moves = []

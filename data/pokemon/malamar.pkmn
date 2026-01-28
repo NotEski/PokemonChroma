@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("malamar")
+class Malamar:
+    display_name = "Malamar"
+    id = 687
+    types = ['dark', 'psychic']
+    base_stats = BaseStats(
+        hp=86,
+        attack=92,
+        defense=88,
+        special_attack=68,
+        special_defense=75,
+        speed=73
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 80
+    base_experience_yield = 169
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "contrary",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "suction_cups",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 47.0
+    egg_groups = ['water1', 'water2']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "hypnosis",
+                "peck",
+                "reversal",
+                "tackle",
+                "wrap",
+            ],
+            9: [
+                "payback",
+            ],
+            12: [
+                "pluck",
+            ],
+            15: [
+                "psybeam",
+            ],
+            18: [
+                "swagger",
+            ],
+            21: [
+                "slash",
+            ],
+            24: [
+                "night_slash",
+            ],
+            27: [
+                "psycho_cut",
+            ],
+            33: [
+                "switcheroo",
+            ],
+            37: [
+                "foul_play",
+            ],
+            42: [
+                "topsy_turvy",
+            ],
+            47: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "brutal_swing",
+        "calm_mind",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "fake_tears",
+        "flamethrower",
+        "fling",
+        "foul_play",
+        "future_sight",
+        "giga_impact",
+        "guard_swap",
+        "hyper_beam",
+        "light_screen",
+        "liquidation",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "reversal",
+        "rock_slide",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunderbolt",
+        "trick_room",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "lash_out",
+    ]
+    egg_moves = []

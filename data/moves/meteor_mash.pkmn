@@ -5,13 +5,12 @@ class _MeteorMash:
         "type": "steel",
         "index": 309,
         "damage_class": "physical",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 90,
         "power": 90,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "punch"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 20}],
     }

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("shieldon")
+class Shieldon:
+    display_name = "Shieldon"
+    id = 410
+    types = ['rock', 'steel']
+    base_stats = BaseStats(
+        hp=30,
+        attack=42,
+        defense=118,
+        special_attack=42,
+        special_defense=88,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "soundproof",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 57.0
+    egg_groups = ['monster']
+    growth_rate = "slow_then_very_fast"
+    egg_moves = []

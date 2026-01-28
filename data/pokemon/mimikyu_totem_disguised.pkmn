@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("mimikyu_totem_disguised")
+class MegaMimikyuTotemDisguised:
+    display_name = "Mimikyu Totem Disguised"
+    id = 10144
+    base_stats = BaseStats(
+        hp=55,
+        attack=90,
+        defense=80,
+        special_attack=50,
+        special_defense=105,
+        speed=96
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 167
+    height_m = 0.4
+    weight_kg = 2.8

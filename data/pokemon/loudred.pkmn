@@ -1,0 +1,122 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("loudred")
+class Loudred:
+    display_name = "Loudred"
+    id = 294
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=84,
+        attack=71,
+        defense=43,
+        special_attack=71,
+        special_defense=43,
+        speed=48
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 126
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "soundproof",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 40.5
+    egg_groups = ['monster', 'ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "bite",
+            ],
+            1: [
+                "astonish",
+                "bite",
+                "echoed_voice",
+                "howl",
+                "pound",
+            ],
+            15: [
+                "rest",
+                "sleep_talk",
+            ],
+            23: [
+                "stomp",
+            ],
+            29: [
+                "roar",
+            ],
+            36: [
+                "supersonic",
+            ],
+            43: [
+                "uproar",
+            ],
+            50: [
+                "screech",
+            ],
+            57: [
+                "hyper_voice",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "earthquake",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "overheat",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thunder_punch",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = []

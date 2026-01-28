@@ -1,0 +1,140 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("noibat")
+class Noibat:
+    display_name = "Noibat"
+    id = 714
+    types = ['flying', 'dragon']
+    base_stats = BaseStats(
+        hp=40,
+        attack=30,
+        defense=35,
+        special_attack=45,
+        special_defense=40,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 49
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "frisk",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 8.0
+    egg_groups = ['flying', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "tackle",
+            ],
+            4: [
+                "gust",
+            ],
+            8: [
+                "supersonic",
+            ],
+            12: [
+                "double_team",
+            ],
+            16: [
+                "wing_attack",
+            ],
+            20: [
+                "bite",
+            ],
+            24: [
+                "air_cutter",
+            ],
+            28: [
+                "whirlwind",
+            ],
+            32: [
+                "super_fang",
+            ],
+            36: [
+                "air_slash",
+            ],
+            40: [
+                "screech",
+            ],
+            44: [
+                "roost",
+            ],
+            49: [
+                "tailwind",
+            ],
+            52: [
+                "hurricane",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "attract",
+        "brick_break",
+        "dark_pulse",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fly",
+        "heat_wave",
+        "hurricane",
+        "hyper_voice",
+        "iron_tail",
+        "leech_life",
+        "outrage",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "screech",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "u_turn",
+        "uproar",
+        "wild_charge",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "defog",
+        "dragon_rush",
+    ]

@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("iron_leaves")
+class IronLeaves:
+    display_name = "Iron Leaves"
+    id = 1010
+    types = ['grass', 'psychic']
+    base_stats = BaseStats(
+        hp=90,
+        attack=130,
+        defense=88,
+        special_attack=70,
+        special_defense=108,
+        speed=104
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 295
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "quark_drive",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 125.0
+    growth_rate = "medium_fast"
+    egg_moves = []

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("florges")
+class Florges:
+    display_name = "Florges"
+    id = 671
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=78,
+        attack=65,
+        defense=68,
+        special_attack=112,
+        special_defense=154,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 248
+    base_happiness = 70
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flower_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "symbiosis",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 10.0
+    egg_groups = ['fairy']
+    growth_rate = "medium"
+    egg_moves = []

@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mareanie")
+class Mareanie:
+    display_name = "Mareanie"
+    id = 747
+    types = ['poison', 'water']
+    base_stats = BaseStats(
+        hp=50,
+        attack=53,
+        defense=62,
+        special_attack=43,
+        special_defense=52,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "merciless",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "limber",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 8.0
+    egg_groups = ['water1']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "peck",
+                "poison_sting",
+            ],
+            5: [
+                "wide_guard",
+            ],
+            10: [
+                "bite",
+            ],
+            15: [
+                "venoshock",
+            ],
+            20: [
+                "recover",
+            ],
+            25: [
+                "pin_missile",
+            ],
+            30: [
+                "toxic_spikes",
+            ],
+            35: [
+                "liquidation",
+            ],
+            40: [
+                "venom_drench",
+            ],
+            45: [
+                "poison_jab",
+            ],
+            50: [
+                "toxic",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "brine",
+        "endure",
+        "facade",
+        "gunk_shot",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "scald",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "surf",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+    ]
+    egg_moves = [
+        "haze",
+        "infestation",
+        "spit_up",
+        "stockpile",
+        "swallow",
+    ]

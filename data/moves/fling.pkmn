@@ -11,4 +11,3 @@ class _Fling:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("typhlosion_hisui")
+class MegaTyphlosionHisui:
+    display_name = "Typhlosion Hisui"
+    id = 10233
+    base_stats = BaseStats(
+        hp=73,
+        attack=84,
+        defense=78,
+        special_attack=119,
+        special_defense=85,
+        speed=95
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 240
+    height_m = 1.6
+    weight_kg = 69.8

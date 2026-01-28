@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gimmighoul")
+class Gimmighoul:
+    display_name = "Gimmighoul"
+    id = 999
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=45,
+        attack=30,
+        defense=70,
+        special_attack=75,
+        special_defense=70,
+        speed=10
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 60
+    base_happiness = 50
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rattled",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 5.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

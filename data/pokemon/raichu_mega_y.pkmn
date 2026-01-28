@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("raichu_mega_y")
+class MegaRaichuY:
+    display_name = "Raichu Mega Y"
+    id = 10305
+    base_stats = BaseStats(
+        hp=60,
+        attack=100,
+        defense=55,
+        special_attack=160,
+        special_defense=80,
+        speed=130
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.0
+    weight_kg = 26.0

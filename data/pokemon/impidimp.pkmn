@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("impidimp")
+class Impidimp:
+    display_name = "Impidimp"
+    id = 859
+    types = ['dark', 'fairy']
+    base_stats = BaseStats(
+        hp=45,
+        attack=45,
+        defense=30,
+        special_attack=55,
+        special_defense=40,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 53
+    base_happiness = 50
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.5
+    egg_groups = ['fairy', 'humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confide",
+                "fake_out",
+            ],
+            4: [
+                "bite",
+            ],
+            8: [
+                "flatter",
+            ],
+            12: [
+                "fake_tears",
+            ],
+            16: [
+                "assurance",
+            ],
+            20: [
+                "swagger",
+            ],
+            24: [
+                "sucker_punch",
+            ],
+            28: [
+                "torment",
+            ],
+            33: [
+                "dark_pulse",
+            ],
+            36: [
+                "nasty_plot",
+            ],
+            40: [
+                "play_rough",
+            ],
+            44: [
+                "foul_play",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "dark_pulse",
+        "dazzling_gleam",
+        "drain_punch",
+        "draining_kiss",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "leech_life",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "nasty_plot",
+        "play_rough",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "taunt",
+        "thief",
+        "thunder_wave",
+        "trick",
+        "uproar",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+    ]
+    egg_moves = []

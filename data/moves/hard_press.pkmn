@@ -1,0 +1,13 @@
+@move("hard_press")  # type: ignore
+class _HardPress:
+    meta = {
+        "display_name": "Hard Press",
+        "type": "steel",
+        "index": 912,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 0,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

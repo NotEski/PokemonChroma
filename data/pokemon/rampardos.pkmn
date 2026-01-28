@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rampardos")
+class Rampardos:
+    display_name = "Rampardos"
+    id = 409
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=97,
+        attack=165,
+        defense=60,
+        special_attack=65,
+        special_defense=50,
+        speed=58
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 173
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "mold_breaker",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 102.5
+    egg_groups = ['monster']
+    growth_rate = "slow_then_very_fast"
+    egg_moves = []

@@ -1,0 +1,118 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gossifleur")
+class Gossifleur:
+    display_name = "Gossifleur"
+    id = 829
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=40,
+        attack=40,
+        defense=60,
+        special_attack=40,
+        special_defense=60,
+        speed=10
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 50
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cotton_down",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "effect_spore",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 2.2
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leafage",
+                "sing",
+            ],
+            4: [
+                "rapid_spin",
+            ],
+            8: [
+                "sweet_scent",
+            ],
+            12: [
+                "razor_leaf",
+            ],
+            16: [
+                "round",
+            ],
+            21: [
+                "leaf_tornado",
+            ],
+            24: [
+                "synthesis",
+            ],
+            28: [
+                "hyper_voice",
+            ],
+            32: [
+                "aromatherapy",
+            ],
+            36: [
+                "leaf_storm",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bullet_seed",
+        "charm",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hyper_voice",
+        "leaf_storm",
+        "light_screen",
+        "magical_leaf",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "growth",
+        "leech_seed",
+        "poison_powder",
+        "sleep_powder",
+        "stun_spore",
+        "worry_seed",
+    ]

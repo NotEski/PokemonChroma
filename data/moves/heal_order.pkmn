@@ -5,11 +5,10 @@ class _HealOrder:
         "type": "bug",
         "index": 456,
         "damage_class": "status",
-        "category": "heal",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch", "heal"]
     healing = 50

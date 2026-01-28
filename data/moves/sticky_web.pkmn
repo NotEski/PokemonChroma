@@ -5,10 +5,9 @@ class _StickyWeb:
         "type": "bug",
         "index": 564,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "opponents_field",
     }
-    flags = ["reflectable"]

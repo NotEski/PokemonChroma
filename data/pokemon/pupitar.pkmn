@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pupitar")
+class Pupitar:
+    display_name = "Pupitar"
+    id = 247
+    types = ['rock', 'ground']
+    base_stats = BaseStats(
+        hp=70,
+        attack=84,
+        defense=70,
+        special_attack=65,
+        special_defense=70,
+        speed=51
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 144
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shed_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 152.0
+    egg_groups = ['monster']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "iron_defense",
+            ],
+            1: [
+                "iron_defense",
+                "leer",
+                "payback",
+                "rock_throw",
+                "tackle",
+            ],
+            9: [
+                "bite",
+            ],
+            12: [
+                "scary_face",
+            ],
+            15: [
+                "rock_slide",
+            ],
+            18: [
+                "stomping_tantrum",
+            ],
+            21: [
+                "screech",
+            ],
+            24: [
+                "dark_pulse",
+            ],
+            27: [
+                "crunch",
+            ],
+            33: [
+                "earthquake",
+            ],
+            37: [
+                "stone_edge",
+            ],
+            42: [
+                "thrash",
+            ],
+            47: [
+                "sandstorm",
+            ],
+            52: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dragon_dance",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "focus_energy",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "muddy_water",
+        "outrage",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scary_face",
+        "screech",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "uproar",
+    ]
+    egg_moves = []

@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rayquaza")
+class Rayquaza:
+    display_name = "Rayquaza"
+    id = 384
+    types = ['dragon', 'flying']
+    base_stats = BaseStats(
+        hp=105,
+        attack=150,
+        defense=90,
+        special_attack=150,
+        special_defense=90,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "air_lock",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 7.0
+    weight_kg = 206.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "air_slash",
+                "ancient_power",
+                "dragon_ascent",
+                "scary_face",
+                "twister",
+            ],
+            9: [
+                "crunch",
+            ],
+            18: [
+                "dragon_dance",
+            ],
+            27: [
+                "extreme_speed",
+            ],
+            36: [
+                "dragon_pulse",
+            ],
+            45: [
+                "hyper_voice",
+            ],
+            54: [
+                "rest",
+            ],
+            63: [
+                "fly",
+            ],
+            72: [
+                "hurricane",
+            ],
+            81: [
+                "outrage",
+            ],
+            90: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bulldoze",
+        "cosmic_power",
+        "crunch",
+        "dive",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "gyro_ball",
+        "hurricane",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "iron_head",
+        "iron_tail",
+        "outrage",
+        "overheat",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "swords_dance",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "meteor_beam",
+        "scale_shot",
+    ]
+    egg_moves = []

@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magnezone")
+class Magnezone:
+    display_name = "Magnezone"
+    id = 462
+    types = ['electric', 'steel']
+    base_stats = BaseStats(
+        hp=70,
+        attack=70,
+        defense=115,
+        special_attack=130,
+        special_defense=90,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 241
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 180.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "electric_terrain",
+                "magnetic_flux",
+                "mirror_coat",
+                "supersonic",
+                "tackle",
+                "thunder_shock",
+                "thunder_wave",
+                "tri_attack",
+            ],
+            12: [
+                "electro_ball",
+            ],
+            16: [
+                "gyro_ball",
+            ],
+            20: [
+                "spark",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "magnet_rise",
+            ],
+            34: [
+                "flash_cannon",
+            ],
+            40: [
+                "discharge",
+            ],
+            46: [
+                "metal_sound",
+            ],
+            52: [
+                "light_screen",
+            ],
+            58: [
+                "lock_on",
+            ],
+            64: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_press",
+        "electric_terrain",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "heavy_slam",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "screech",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("orthworm")
+class Orthworm:
+    display_name = "Orthworm"
+    id = 968
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=70,
+        attack=85,
+        defense=145,
+        special_attack=60,
+        special_defense=55,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 240
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "earth_eater",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.5
+    weight_kg = 310.0
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    egg_moves = []

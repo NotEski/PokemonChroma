@@ -5,13 +5,12 @@ class _FireBlast:
         "type": "fire",
         "index": 126,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 85,
         "power": 110,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "burn": 10,
     }

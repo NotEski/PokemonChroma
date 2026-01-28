@@ -5,13 +5,12 @@ class _Hurricane:
         "type": "flying",
         "index": 542,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 70,
         "power": 110,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance"]
     status_condition = {
         "confusion": 30,
     }

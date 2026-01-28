@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("urshifu_rapid_strike_gmax")
+class MegaUrshifuRapidStrike:
+    display_name = "Urshifu Rapid Strike Gmax"
+    id = 10227
+    base_stats = BaseStats(
+        hp=100,
+        attack=130,
+        defense=100,
+        special_attack=63,
+        special_defense=60,
+        speed=97
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 275
+    height_m = 26.0
+    weight_kg = 1000.0

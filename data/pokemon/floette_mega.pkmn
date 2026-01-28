@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("floette_mega")
+class MegaFloette:
+    display_name = "Floette Mega"
+    id = 10296
+    base_stats = BaseStats(
+        hp=74,
+        attack=85,
+        defense=87,
+        special_attack=155,
+        special_defense=148,
+        speed=102
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 0.2
+    weight_kg = 100.8

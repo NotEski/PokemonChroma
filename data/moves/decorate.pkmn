@@ -1,0 +1,16 @@
+@move("decorate")  # type: ignore
+class _Decorate:
+    meta = {
+        "display_name": "Decorate",
+        "type": "fairy",
+        "index": 777,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 2, "chance": 100}, {"stat": "special_attack", "change": 2, "chance": 100}],
+    }

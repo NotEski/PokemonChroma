@@ -5,13 +5,12 @@ class _BodySlam:
         "type": "normal",
         "index": 34,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 85,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "non_sky_battle"]
     status_condition = {
         "paralysis": 30,
     }

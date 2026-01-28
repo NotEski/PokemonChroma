@@ -5,10 +5,9 @@ class _TrickOrTreat:
         "type": "ghost",
         "index": 567,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]

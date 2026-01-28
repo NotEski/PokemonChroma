@@ -1,0 +1,13 @@
+@move("twinkle_tackle_special")  # type: ignore
+class _TwinkleTackleSpecial:
+    meta = {
+        "display_name": "Twinkle Tackle",
+        "type": "fairy",
+        "index": 657,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

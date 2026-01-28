@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("camerupt")
+class Camerupt:
+    display_name = "Camerupt"
+    id = 323
+    types = ['fire', 'ground']
+    base_stats = BaseStats(
+        hp=70,
+        attack=100,
+        defense=70,
+        special_attack=105,
+        special_defense=75,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 150
+    base_experience_yield = 161
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "magma_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "solid_rock",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "anger_point",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 220.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

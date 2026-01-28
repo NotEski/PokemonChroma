@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("skitty")
+class Skitty:
+    display_name = "Skitty"
+    id = 300
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=50,
+        attack=45,
+        defense=45,
+        special_attack=35,
+        special_defense=35,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 52
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "normalize",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "wonder_skin",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 11.0
+    egg_groups = ['ground', 'fairy']
+    growth_rate = "fast"
+    egg_moves = []

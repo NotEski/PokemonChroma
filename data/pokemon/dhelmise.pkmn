@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dhelmise")
+class Dhelmise:
+    display_name = "Dhelmise"
+    id = 781
+    types = ['ghost', 'grass']
+    base_stats = BaseStats(
+        hp=70,
+        attack=131,
+        defense=100,
+        special_attack=86,
+        special_defense=90,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 181
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "steelworker",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 3.9
+    weight_kg = 210.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "rapid_spin",
+            ],
+            4: [
+                "astonish",
+            ],
+            8: [
+                "wrap",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "growth",
+            ],
+            20: [
+                "gyro_ball",
+            ],
+            24: [
+                "switcheroo",
+            ],
+            28: [
+                "giga_drain",
+            ],
+            32: [
+                "whirlpool",
+            ],
+            36: [
+                "heavy_slam",
+            ],
+            40: [
+                "slam",
+            ],
+            44: [
+                "shadow_ball",
+            ],
+            48: [
+                "metal_sound",
+            ],
+            52: [
+                "anchor_shot",
+            ],
+            56: [
+                "energy_ball",
+            ],
+            60: [
+                "phantom_force",
+            ],
+            64: [
+                "power_whip",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "assurance",
+        "body_press",
+        "brick_break",
+        "brine",
+        "brutal_swing",
+        "bulldoze",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "flash_cannon",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "gyro_ball",
+        "heavy_slam",
+        "helping_hand",
+        "hex",
+        "hydro_pump",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "liquidation",
+        "muddy_water",
+        "payback",
+        "phantom_force",
+        "power_whip",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_wave",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swords_dance",
+        "thief",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "poltergeist",
+        "steel_roller",
+    ]
+    egg_moves = []

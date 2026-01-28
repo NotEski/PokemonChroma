@@ -1,0 +1,112 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gloom")
+class Gloom:
+    display_name = "Gloom"
+    id = 44
+    types = ['grass', 'poison']
+    base_stats = BaseStats(
+        hp=60,
+        attack=65,
+        defense=70,
+        special_attack=85,
+        special_defense=75,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 138
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "stench",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 8.6
+    egg_groups = ['plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "acid",
+                "growth",
+                "sweet_scent",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            14: [
+                "poison_powder",
+            ],
+            16: [
+                "stun_spore",
+            ],
+            18: [
+                "sleep_powder",
+            ],
+            20: [
+                "giga_drain",
+            ],
+            26: [
+                "toxic",
+            ],
+            32: [
+                "moonblast",
+            ],
+            38: [
+                "grassy_terrain",
+            ],
+            44: [
+                "moonlight",
+            ],
+            50: [
+                "petal_dance",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bullet_seed",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "protect",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

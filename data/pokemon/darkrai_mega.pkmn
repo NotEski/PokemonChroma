@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("darkrai_mega")
+class MegaDarkrai:
+    display_name = "Darkrai Mega"
+    id = 10312
+    base_stats = BaseStats(
+        hp=70,
+        attack=120,
+        defense=130,
+        special_attack=165,
+        special_defense=130,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 3.0
+    weight_kg = 240.0

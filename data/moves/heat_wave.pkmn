@@ -5,13 +5,12 @@ class _HeatWave:
         "type": "fire",
         "index": 257,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 90,
         "power": 95,
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "burn": 10,
     }

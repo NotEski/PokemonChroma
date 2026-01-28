@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gumshoos")
+class Gumshoos:
+    display_name = "Gumshoos"
+    id = 735
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=88,
+        attack=110,
+        defense=60,
+        special_attack=55,
+        special_defense=60,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 127
+    base_experience_yield = 146
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "stakeout",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "strong_jaw",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "adaptability",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 14.2
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

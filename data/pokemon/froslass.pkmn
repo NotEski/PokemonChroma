@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("froslass")
+class Froslass:
+    display_name = "Froslass"
+    id = 478
+    types = ['ice', 'ghost']
+    base_stats = BaseStats(
+        hp=70,
+        attack=80,
+        defense=70,
+        special_attack=80,
+        special_defense=70,
+        speed=110
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 75
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "snow_cloak",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 26.6
+    egg_groups = ['fairy', 'mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "hex",
+            ],
+            1: [
+                "astonish",
+                "bite",
+                "crunch",
+                "destiny_bond",
+                "double_team",
+                "headbutt",
+                "hex",
+                "ice_fang",
+                "leer",
+                "powder_snow",
+                "protect",
+            ],
+            15: [
+                "ice_shard",
+            ],
+            20: [
+                "draining_kiss",
+            ],
+            25: [
+                "icy_wind",
+            ],
+            30: [
+                "frost_breath",
+            ],
+            35: [
+                "confuse_ray",
+            ],
+            40: [
+                "hail",
+            ],
+            47: [
+                "will_o_wisp",
+            ],
+            54: [
+                "aurora_veil",
+            ],
+            61: [
+                "shadow_ball",
+            ],
+            68: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "charm",
+        "crunch",
+        "draining_kiss",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fling",
+        "giga_impact",
+        "hail",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "ice_punch",
+        "icicle_spear",
+        "icy_wind",
+        "imprison",
+        "light_screen",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "substitute",
+        "taunt",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "weather_ball",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "poltergeist",
+        "triple_axel",
+    ]
+    egg_moves = []

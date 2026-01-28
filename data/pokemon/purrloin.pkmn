@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("purrloin")
+class Purrloin:
+    display_name = "Purrloin"
+    id = 509
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=41,
+        attack=50,
+        defense=37,
+        special_attack=50,
+        special_defense=37,
+        speed=66
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 56
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 10.1
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "scratch",
+            ],
+            4: [
+                "sand_attack",
+            ],
+            5: [
+                "fake_out",
+            ],
+            12: [
+                "fury_swipes",
+            ],
+            16: [
+                "torment",
+            ],
+            21: [
+                "assurance",
+            ],
+            24: [
+                "hone_claws",
+            ],
+            28: [
+                "sucker_punch",
+            ],
+            32: [
+                "nasty_plot",
+            ],
+            36: [
+                "night_slash",
+            ],
+            40: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "baton_pass",
+        "charm",
+        "dark_pulse",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "grass_knot",
+        "gunk_shot",
+        "hyper_voice",
+        "iron_tail",
+        "nasty_plot",
+        "pay_day",
+        "payback",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "thunder_wave",
+        "trick",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = [
+        "copycat",
+        "covet",
+        "double_team",
+        "quick_attack",
+        "slash",
+        "yawn",
+    ]

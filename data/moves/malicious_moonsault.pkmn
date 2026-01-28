@@ -1,0 +1,13 @@
+@move("malicious_moonsault")  # type: ignore
+class _MaliciousMoonsault:
+    meta = {
+        "display_name": "Malicious Moonsault",
+        "type": "dark",
+        "index": 696,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 180,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("alakazam_mega")
+class MegaAlakazam:
+    display_name = "Alakazam Mega"
+    id = 10037
+    base_stats = BaseStats(
+        hp=55,
+        attack=50,
+        defense=65,
+        special_attack=175,
+        special_defense=105,
+        speed=150
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 270
+    height_m = 1.2
+    weight_kg = 48.0

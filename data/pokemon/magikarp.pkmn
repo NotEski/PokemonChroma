@@ -1,0 +1,60 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magikarp")
+class Magikarp:
+    display_name = "Magikarp"
+    id = 129
+    types = ['water']
+    base_stats = BaseStats(
+        hp=20,
+        attack=10,
+        defense=55,
+        special_attack=15,
+        special_defense=20,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 40
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 10.0
+    egg_groups = ['water2', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "splash",
+            ],
+            15: [
+                "tackle",
+            ],
+            25: [
+                "flail",
+            ],
+        }
+    machine_moves = [
+        "bounce",
+        "hydro_pump",
+    ]
+    egg_moves = []

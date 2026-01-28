@@ -5,7 +5,7 @@ class _DoomDesire:
         "type": "steel",
         "index": 353,
         "damage_class": "special",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": 140,
         "pp": 5,

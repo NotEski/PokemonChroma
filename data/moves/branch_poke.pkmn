@@ -1,0 +1,13 @@
+@move("branch_poke")  # type: ignore
+class _BranchPoke:
+    meta = {
+        "display_name": "Branch Poke",
+        "type": "grass",
+        "index": 785,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 40,
+        "target": "selected_pokemon",
+    }

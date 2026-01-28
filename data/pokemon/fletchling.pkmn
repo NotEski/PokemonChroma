@@ -1,0 +1,113 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("fletchling")
+class Fletchling:
+    display_name = "Fletchling"
+    id = 661
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=45,
+        attack=50,
+        defense=43,
+        special_attack=40,
+        special_defense=38,
+        speed=62
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 56
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gale_wings",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 1.7
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "peck",
+            ],
+            5: [
+                "quick_attack",
+            ],
+            10: [
+                "ember",
+            ],
+            15: [
+                "flail",
+            ],
+            20: [
+                "acrobatics",
+            ],
+            25: [
+                "agility",
+            ],
+            30: [
+                "aerial_ace",
+            ],
+            35: [
+                "tailwind",
+            ],
+            40: [
+                "steel_wing",
+            ],
+            45: [
+                "roost",
+            ],
+            50: [
+                "fly",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "attract",
+        "endure",
+        "facade",
+        "fly",
+        "heat_wave",
+        "overheat",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "u_turn",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "defog",
+        "flame_charge",
+        "quick_guard",
+    ]

@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("snorunt")
+class Snorunt:
+    display_name = "Snorunt"
+    id = 361
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=50,
+        attack=50,
+        defense=50,
+        special_attack=50,
+        special_defense=50,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 16.8
+    egg_groups = ['fairy', 'mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "powder_snow",
+            ],
+            5: [
+                "leer",
+            ],
+            10: [
+                "double_team",
+            ],
+            15: [
+                "ice_shard",
+            ],
+            20: [
+                "protect",
+            ],
+            25: [
+                "icy_wind",
+            ],
+            30: [
+                "frost_breath",
+            ],
+            35: [
+                "bite",
+            ],
+            40: [
+                "ice_fang",
+            ],
+            45: [
+                "hail",
+            ],
+            50: [
+                "headbutt",
+            ],
+            55: [
+                "crunch",
+            ],
+            60: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "crunch",
+        "endure",
+        "facade",
+        "fake_tears",
+        "hail",
+        "hex",
+        "ice_beam",
+        "ice_fang",
+        "icy_wind",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "substitute",
+        "weather_ball",
+    ]
+    egg_moves = [
+        "block",
+        "disable",
+        "icicle_crash",
+        "rollout",
+        "switcheroo",
+    ]

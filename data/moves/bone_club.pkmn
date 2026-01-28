@@ -11,5 +11,4 @@ class _BoneClub:
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     flinch_chance = 10

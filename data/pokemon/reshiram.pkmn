@@ -1,0 +1,140 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("reshiram")
+class Reshiram:
+    display_name = "Reshiram"
+    id = 643
+    types = ['dragon', 'fire']
+    base_stats = BaseStats(
+        hp=100,
+        attack=120,
+        defense=100,
+        special_attack=150,
+        special_defense=120,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "turboblaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 3.2
+    weight_kg = 330.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "dragon_breath",
+                "fire_fang",
+                "noble_roar",
+            ],
+            8: [
+                "slash",
+            ],
+            16: [
+                "crunch",
+            ],
+            24: [
+                "extrasensory",
+            ],
+            32: [
+                "dragon_pulse",
+            ],
+            40: [
+                "flamethrower",
+            ],
+            48: [
+                "fusion_flare",
+            ],
+            56: [
+                "hyper_voice",
+            ],
+            64: [
+                "fire_blast",
+            ],
+            72: [
+                "imprison",
+            ],
+            80: [
+                "outrage",
+            ],
+            88: [
+                "blue_flare",
+            ],
+        }
+    machine_moves = [
+        "body_press",
+        "breaking_swipe",
+        "brutal_swing",
+        "crunch",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "heat_crash",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "light_screen",
+        "mystical_fire",
+        "outrage",
+        "overheat",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "weather_ball",
+        "will_o_wisp",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "scale_shot",
+        "scorching_sands",
+    ]
+    egg_moves = []

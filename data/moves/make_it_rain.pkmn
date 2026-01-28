@@ -1,0 +1,16 @@
+@move("make_it_rain")  # type: ignore
+class _MakeItRain:
+    meta = {
+        "display_name": "Make It Rain",
+        "type": "steel",
+        "index": 874,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "all_opponents",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
+    }

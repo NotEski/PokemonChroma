@@ -5,13 +5,12 @@ class _PowderSnow:
         "type": "ice",
         "index": 181,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 40,
         "pp": 25,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "freeze": 10,
     }

@@ -5,11 +5,10 @@ class _HealPulse:
         "type": "psychic",
         "index": 505,
         "damage_class": "status",
-        "category": "heal",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "distance", "heal", "pulse"]
     healing = 50

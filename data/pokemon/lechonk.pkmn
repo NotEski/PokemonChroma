@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lechonk")
+class Lechonk:
+    display_name = "Lechonk"
+    id = 915
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=54,
+        attack=45,
+        defense=40,
+        special_attack=35,
+        special_defense=45,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 51
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "aroma_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 10.2
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

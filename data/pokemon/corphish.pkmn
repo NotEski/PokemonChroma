@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("corphish")
+class Corphish:
+    display_name = "Corphish"
+    id = 341
+    types = ['water']
+    base_stats = BaseStats(
+        hp=43,
+        attack=80,
+        defense=65,
+        special_attack=50,
+        special_defense=35,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 205
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "adaptability",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 11.5
+    egg_groups = ['water1', 'water3']
+    growth_rate = "fast_then_very_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "water_gun",
+            ],
+            4: [
+                "leer",
+            ],
+            8: [
+                "taunt",
+            ],
+            12: [
+                "bubble_beam",
+            ],
+            16: [
+                "knock_off",
+            ],
+            20: [
+                "double_hit",
+            ],
+            24: [
+                "protect",
+            ],
+            28: [
+                "night_slash",
+            ],
+            32: [
+                "razor_shell",
+            ],
+            36: [
+                "swords_dance",
+            ],
+            40: [
+                "crunch",
+            ],
+            44: [
+                "crabhammer",
+            ],
+            48: [
+                "endeavor",
+            ],
+            52: [
+                "guillotine",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "crunch",
+        "dig",
+        "dragon_dance",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "protect",
+        "rain_dance",
+        "razor_shell",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+        "swords_dance",
+        "taunt",
+        "waterfall",
+        "whirlpool",
+        "x_scissor",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "aqua_jet",
+        "double_edge",
+        "metal_claw",
+        "slash",
+        "switcheroo",
+    ]

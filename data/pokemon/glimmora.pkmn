@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("glimmora")
+class Glimmora:
+    display_name = "Glimmora"
+    id = 970
+    types = ['rock', 'poison']
+    base_stats = BaseStats(
+        hp=83,
+        attack=55,
+        defense=90,
+        special_attack=130,
+        special_defense=81,
+        speed=86
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 184
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "toxic_debris",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "corrosion",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 45.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    egg_moves = []

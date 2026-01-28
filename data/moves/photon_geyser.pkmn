@@ -1,0 +1,13 @@
+@move("photon_geyser")  # type: ignore
+class _PhotonGeyser:
+    meta = {
+        "display_name": "Photon Geyser",
+        "type": "psychic",
+        "index": 722,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

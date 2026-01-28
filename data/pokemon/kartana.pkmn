@@ -1,0 +1,114 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kartana")
+class Kartana:
+    display_name = "Kartana"
+    id = 798
+    types = ['grass', 'steel']
+    base_stats = BaseStats(
+        hp=59,
+        attack=181,
+        defense=131,
+        special_attack=59,
+        special_defense=31,
+        speed=109
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 0.1
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fury_cutter",
+                "vacuum_wave",
+            ],
+            5: [
+                "razor_leaf",
+            ],
+            10: [
+                "false_swipe",
+            ],
+            15: [
+                "cut",
+            ],
+            20: [
+                "air_cutter",
+            ],
+            25: [
+                "aerial_ace",
+            ],
+            30: [
+                "detect",
+            ],
+            35: [
+                "night_slash",
+            ],
+            40: [
+                "synthesis",
+            ],
+            45: [
+                "laser_focus",
+            ],
+            50: [
+                "defog",
+            ],
+            55: [
+                "leaf_blade",
+            ],
+            60: [
+                "sacred_sword",
+            ],
+            65: [
+                "swords_dance",
+            ],
+            70: [
+                "guillotine",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "brick_break",
+        "calm_mind",
+        "endure",
+        "false_swipe",
+        "giga_drain",
+        "giga_impact",
+        "iron_defense",
+        "leaf_blade",
+        "protect",
+        "psycho_cut",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_blade",
+        "substitute",
+        "swords_dance",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = []

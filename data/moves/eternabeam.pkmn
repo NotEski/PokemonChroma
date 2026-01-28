@@ -1,0 +1,13 @@
+@move("eternabeam")  # type: ignore
+class _Eternabeam:
+    meta = {
+        "display_name": "Eternabeam",
+        "type": "dragon",
+        "index": 795,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 160,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

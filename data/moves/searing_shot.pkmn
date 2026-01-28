@@ -5,13 +5,12 @@ class _SearingShot:
         "type": "fire",
         "index": 545,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 100,
         "pp": 5,
         "target": "all_other_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "burn": 30,
     }

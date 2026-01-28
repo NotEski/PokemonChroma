@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("klawf")
+class Klawf:
+    display_name = "Klawf"
+    id = 950
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=70,
+        attack=100,
+        defense=115,
+        special_attack=35,
+        special_defense=55,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 158
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "anger_shell",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 79.0
+    egg_groups = ['water3']
+    growth_rate = "medium"
+    egg_moves = []

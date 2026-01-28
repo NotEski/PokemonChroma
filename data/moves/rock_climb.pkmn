@@ -5,13 +5,12 @@ class _RockClimb:
         "type": "normal",
         "index": 431,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 85,
         "power": 90,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "confusion": 20,
     }

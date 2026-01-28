@@ -1,0 +1,118 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ninetales_alola")
+class NinetalesAlola:
+    display_name = "Ninetales Alola"
+    id = 10104
+    types = ['ice', 'fairy']
+    base_stats = BaseStats(
+        hp=73,
+        attack=67,
+        defense=75,
+        special_attack=81,
+        special_defense=100,
+        speed=109
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 177
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "snow_cloak",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_warning",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 19.9
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "dazzling_gleam",
+            ],
+            1: [
+                "aurora_beam",
+                "aurora_veil",
+                "blizzard",
+                "confuse_ray",
+                "dazzling_gleam",
+                "disable",
+                "extrasensory",
+                "grudge",
+                "ice_beam",
+                "ice_shard",
+                "icy_wind",
+                "imprison",
+                "mist",
+                "nasty_plot",
+                "powder_snow",
+                "sheer_cold",
+                "spite",
+                "tail_whip",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "calm_mind",
+        "charm",
+        "dark_pulse",
+        "dazzling_gleam",
+        "dig",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "giga_impact",
+        "hail",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "imprison",
+        "iron_tail",
+        "misty_terrain",
+        "nasty_plot",
+        "payback",
+        "power_swap",
+        "protect",
+        "psyshock",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "swift",
+        "tail_slap",
+        "weather_ball",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "triple_axel",
+    ]
+    egg_moves = []

@@ -5,13 +5,12 @@ class _SignalBeam:
         "type": "bug",
         "index": 324,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 75,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "confusion": 10,
     }

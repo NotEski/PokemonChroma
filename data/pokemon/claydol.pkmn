@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("claydol")
+class Claydol:
+    display_name = "Claydol"
+    id = 344
+    types = ['ground', 'psychic']
+    base_stats = BaseStats(
+        hp=60,
+        attack=70,
+        defense=105,
+        special_attack=70,
+        special_defense=120,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 108.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "hyper_beam",
+            ],
+            1: [
+                "confusion",
+                "harden",
+                "hyper_beam",
+                "mud_slap",
+                "rapid_spin",
+                "teleport",
+            ],
+            9: [
+                "rock_tomb",
+            ],
+            12: [
+                "power_trick",
+            ],
+            15: [
+                "psybeam",
+            ],
+            18: [
+                "ancient_power",
+            ],
+            21: [
+                "imprison",
+            ],
+            24: [
+                "cosmic_power",
+            ],
+            27: [
+                "extrasensory",
+            ],
+            30: [
+                "earth_power",
+            ],
+            33: [
+                "self_destruct",
+            ],
+            38: [
+                "guard_split",
+                "power_split",
+            ],
+            43: [
+                "sandstorm",
+            ],
+            48: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_press",
+        "bulldoze",
+        "calm_mind",
+        "cosmic_power",
+        "dazzling_gleam",
+        "dig",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "eerie_impulse",
+        "endure",
+        "facade",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "gyro_ball",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "imprison",
+        "iron_defense",
+        "light_screen",
+        "nasty_plot",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sand_tomb",
+        "sandstorm",
+        "self_destruct",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stone_edge",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "trick",
+        "trick_room",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "scorching_sands",
+    ]
+    egg_moves = []

@@ -5,11 +5,10 @@ class _Powder:
         "type": "bug",
         "index": 600,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "authentic", "powder"]
     priority = 1

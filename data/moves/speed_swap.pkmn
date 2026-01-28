@@ -1,0 +1,13 @@
+@move("speed_swap")  # type: ignore
+class _SpeedSwap:
+    meta = {
+        "display_name": "Speed Swap",
+        "type": "psychic",
+        "index": 683,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

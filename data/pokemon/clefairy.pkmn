@@ -1,0 +1,173 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("clefairy")
+class Clefairy:
+    display_name = "Clefairy"
+    id = 35
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=70,
+        attack=45,
+        defense=48,
+        special_attack=60,
+        special_defense=65,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 150
+    base_experience_yield = 113
+    base_happiness = 140
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 7.5
+    egg_groups = ['fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "charm",
+                "copycat",
+                "defense_curl",
+                "disarming_voice",
+                "encore",
+                "growl",
+                "pound",
+                "sing",
+                "splash",
+                "sweet_kiss",
+            ],
+            4: [
+                "stored_power",
+            ],
+            8: [
+                "minimize",
+            ],
+            12: [
+                "after_you",
+            ],
+            16: [
+                "life_dew",
+            ],
+            20: [
+                "metronome",
+            ],
+            24: [
+                "moonlight",
+            ],
+            28: [
+                "gravity",
+            ],
+            32: [
+                "meteor_mash",
+            ],
+            36: [
+                "follow_me",
+            ],
+            40: [
+                "cosmic_power",
+            ],
+            44: [
+                "moonblast",
+            ],
+            48: [
+                "healing_wish",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "baton_pass",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "calm_mind",
+        "charm",
+        "cosmic_power",
+        "dazzling_gleam",
+        "dig",
+        "drain_punch",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "grass_knot",
+        "helping_hand",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "imprison",
+        "iron_tail",
+        "light_screen",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "misty_terrain",
+        "mystical_fire",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "trick",
+        "uproar",
+        "wonder_room",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "meteor_beam",
+        "misty_explosion",
+    ]
+    egg_moves = []

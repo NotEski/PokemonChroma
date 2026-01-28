@@ -5,13 +5,12 @@ class _SeedFlare:
         "type": "grass",
         "index": 465,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 85,
         "power": 120,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 40}],
     }

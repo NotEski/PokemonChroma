@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("dragalge_mega")
+class MegaDragalge:
+    display_name = "Dragalge Mega"
+    id = 10299
+    base_stats = BaseStats(
+        hp=65,
+        attack=85,
+        defense=105,
+        special_attack=132,
+        special_defense=163,
+        speed=44
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.1
+    weight_kg = 100.3

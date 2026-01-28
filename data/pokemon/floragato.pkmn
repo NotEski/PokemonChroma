@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("floragato")
+class Floragato:
+    display_name = "Floragato"
+    id = 907
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=61,
+        attack=80,
+        defense=63,
+        special_attack=60,
+        special_defense=63,
+        speed=83
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 144
+    base_happiness = 50
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "protean",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 12.2
+    egg_groups = ['ground', 'plant']
+    growth_rate = "medium_slow"
+    egg_moves = []

@@ -11,4 +11,3 @@ class _WaterGun:
         "pp": 25,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

@@ -1,0 +1,105 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("drizzile")
+class Drizzile:
+    display_name = "Drizzile"
+    id = 817
+    types = ['water']
+    base_stats = BaseStats(
+        hp=65,
+        attack=60,
+        defense=55,
+        special_attack=95,
+        special_defense=55,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 147
+    base_happiness = 50
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sniper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 11.5
+    egg_groups = ['water1', 'ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "growl",
+                "pound",
+                "water_gun",
+            ],
+            12: [
+                "water_pulse",
+            ],
+            19: [
+                "tearful_look",
+            ],
+            24: [
+                "sucker_punch",
+            ],
+            30: [
+                "u_turn",
+            ],
+            36: [
+                "liquidation",
+            ],
+            42: [
+                "soak",
+            ],
+            48: [
+                "rain_dance",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "bounce",
+        "dive",
+        "endure",
+        "facade",
+        "fling",
+        "light_screen",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "u_turn",
+        "weather_ball",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "water_pledge",
+    ]
+    egg_moves = []

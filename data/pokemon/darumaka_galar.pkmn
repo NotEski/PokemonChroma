@@ -1,0 +1,140 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("darumaka_galar")
+class DarumakaGalar:
+    display_name = "Darumaka Galar"
+    id = 10176
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=70,
+        attack=90,
+        defense=45,
+        special_attack=15,
+        special_defense=45,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 63
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 40.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "powder_snow",
+                "tackle",
+            ],
+            4: [
+                "taunt",
+            ],
+            8: [
+                "bite",
+            ],
+            12: [
+                "avalanche",
+            ],
+            16: [
+                "work_up",
+            ],
+            20: [
+                "ice_fang",
+            ],
+            24: [
+                "headbutt",
+            ],
+            28: [
+                "ice_punch",
+            ],
+            32: [
+                "uproar",
+            ],
+            36: [
+                "belly_drum",
+            ],
+            40: [
+                "blizzard",
+            ],
+            44: [
+                "thrash",
+            ],
+            48: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "brick_break",
+        "dig",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "focus_energy",
+        "grass_knot",
+        "gyro_ball",
+        "heat_wave",
+        "ice_beam",
+        "ice_fang",
+        "ice_punch",
+        "mega_kick",
+        "mega_punch",
+        "overheat",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thief",
+        "u_turn",
+        "uproar",
+        "will_o_wisp",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "flame_wheel",
+        "focus_punch",
+        "freeze_dry",
+        "hammer_arm",
+        "incinerate",
+        "power_up_punch",
+        "take_down",
+        "yawn",
+    ]

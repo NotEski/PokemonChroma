@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("salazzle_totem")
+class MegaSalazzleTotem:
+    display_name = "Salazzle Totem"
+    id = 10129
+    base_stats = BaseStats(
+        hp=68,
+        attack=64,
+        defense=60,
+        special_attack=111,
+        special_defense=60,
+        speed=117
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 168
+    height_m = 2.1
+    weight_kg = 81.0

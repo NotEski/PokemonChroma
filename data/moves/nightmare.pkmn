@@ -5,13 +5,12 @@ class _Nightmare:
         "type": "ghost",
         "index": 171,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "nightmare": 0,
     }

@@ -1,0 +1,119 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("whirlipede")
+class Whirlipede:
+    display_name = "Whirlipede"
+    id = 544
+    types = ['bug', 'poison']
+    base_stats = BaseStats(
+        hp=40,
+        attack=55,
+        defense=99,
+        special_attack=40,
+        special_defense=79,
+        speed=47
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 126
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "swarm",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 58.5
+    egg_groups = ['bug']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "iron_defense",
+            ],
+            1: [
+                "defense_curl",
+                "iron_defense",
+                "poison_sting",
+                "protect",
+                "rollout",
+            ],
+            12: [
+                "poison_tail",
+            ],
+            16: [
+                "screech",
+            ],
+            20: [
+                "bug_bite",
+            ],
+            26: [
+                "venoshock",
+            ],
+            32: [
+                "take_down",
+            ],
+            38: [
+                "agility",
+            ],
+            44: [
+                "toxic",
+            ],
+            50: [
+                "venom_drench",
+            ],
+            56: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "endure",
+        "facade",
+        "gyro_ball",
+        "hex",
+        "iron_defense",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "spikes",
+        "substitute",
+        "sunny_day",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+        "steel_roller",
+    ]
+    egg_moves = []

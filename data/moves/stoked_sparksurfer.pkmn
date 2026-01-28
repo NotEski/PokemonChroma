@@ -1,0 +1,16 @@
+@move("stoked_sparksurfer")  # type: ignore
+class _StokedSparksurfer:
+    meta = {
+        "display_name": "Stoked Sparksurfer",
+        "type": "electric",
+        "index": 700,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 175,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "paralysis": 100,
+    }

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chikorita")
+class Chikorita:
+    display_name = "Chikorita"
+    id = 152
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=45,
+        attack=49,
+        defense=65,
+        special_attack=49,
+        special_defense=65,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 6.4
+    egg_groups = ['monster', 'plant']
+    growth_rate = "medium_slow"
+    egg_moves = []

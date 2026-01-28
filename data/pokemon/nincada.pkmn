@@ -1,0 +1,104 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("nincada")
+class Nincada:
+    display_name = "Nincada"
+    id = 290
+    types = ['bug', 'ground']
+    base_stats = BaseStats(
+        hp=31,
+        attack=45,
+        defense=90,
+        special_attack=30,
+        special_defense=30,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 53
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "compound_eyes",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "run_away",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 5.5
+    egg_groups = ['bug']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "sand_attack",
+                "scratch",
+            ],
+            5: [
+                "harden",
+            ],
+            10: [
+                "false_swipe",
+            ],
+            15: [
+                "mud_slap",
+            ],
+            21: [
+                "absorb",
+            ],
+            25: [
+                "metal_claw",
+            ],
+            30: [
+                "fury_swipes",
+            ],
+            35: [
+                "mind_reader",
+            ],
+            40: [
+                "dig",
+            ],
+        }
+    machine_moves = [
+        "bug_buzz",
+        "dig",
+        "endure",
+        "facade",
+        "false_swipe",
+        "giga_drain",
+        "leech_life",
+        "protect",
+        "rest",
+        "round",
+        "sandstorm",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "bug_bite",
+        "final_gambit",
+        "flail",
+        "gust",
+        "night_slash",
+    ]

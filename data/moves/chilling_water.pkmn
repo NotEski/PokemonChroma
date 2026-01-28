@@ -1,0 +1,16 @@
+@move("chilling_water")  # type: ignore
+class _ChillingWater:
+    meta = {
+        "display_name": "Chilling Water",
+        "type": "water",
+        "index": 886,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

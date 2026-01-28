@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bulbasaur")
+class Bulbasaur:
+    display_name = "Bulbasaur"
+    id = 1
+    types = ['grass', 'poison']
+    base_stats = BaseStats(
+        hp=45,
+        attack=49,
+        defense=49,
+        special_attack=65,
+        special_defense=65,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "chlorophyll",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 6.9
+    egg_groups = ['monster', 'plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            3: [
+                "vine_whip",
+            ],
+            6: [
+                "growth",
+            ],
+            9: [
+                "leech_seed",
+            ],
+            12: [
+                "razor_leaf",
+            ],
+            15: [
+                "poison_powder",
+                "sleep_powder",
+            ],
+            18: [
+                "seed_bomb",
+            ],
+            21: [
+                "take_down",
+            ],
+            24: [
+                "sweet_scent",
+            ],
+            27: [
+                "synthesis",
+            ],
+            30: [
+                "worry_seed",
+            ],
+            33: [
+                "double_edge",
+            ],
+            36: [
+                "solar_beam",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_slam",
+        "bullet_seed",
+        "charm",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "leaf_storm",
+        "light_screen",
+        "magical_leaf",
+        "power_whip",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "venoshock",
+        "weather_ball",
+        "work_up",
+    ]
+    tutor_moves = [
+        "grass_pledge",
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "curse",
+        "ingrain",
+        "nature_power",
+        "petal_dance",
+        "skull_bash",
+        "toxic",
+    ]

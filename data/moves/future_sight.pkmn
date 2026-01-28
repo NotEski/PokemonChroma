@@ -5,7 +5,7 @@ class _FutureSight:
         "type": "psychic",
         "index": 248,
         "damage_class": "special",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": 120,
         "pp": 10,

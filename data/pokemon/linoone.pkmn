@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("linoone")
+class Linoone:
+    display_name = "Linoone"
+    id = 264
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=78,
+        attack=70,
+        defense=61,
+        special_attack=50,
+        special_defense=61,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 90
+    base_experience_yield = 147
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "quick_feet",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 32.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "slash",
+            ],
+            1: [
+                "baby_doll_eyes",
+                "growl",
+                "pin_missile",
+                "sand_attack",
+                "slash",
+                "switcheroo",
+                "tackle",
+                "tail_whip",
+            ],
+            9: [
+                "covet",
+            ],
+            12: [
+                "headbutt",
+            ],
+            15: [
+                "hone_claws",
+            ],
+            18: [
+                "fury_swipes",
+            ],
+            23: [
+                "rest",
+            ],
+            28: [
+                "take_down",
+            ],
+            33: [
+                "fling",
+            ],
+            38: [
+                "flail",
+            ],
+            43: [
+                "belly_drum",
+            ],
+            48: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "charm",
+        "dig",
+        "endure",
+        "facade",
+        "fling",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "mud_shot",
+        "pin_missile",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "tail_slap",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "whirlpool",
+        "work_up",
+    ]
+    egg_moves = []

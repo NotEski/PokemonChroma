@@ -11,4 +11,3 @@ class _DragonPulse:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance", "pulse"]

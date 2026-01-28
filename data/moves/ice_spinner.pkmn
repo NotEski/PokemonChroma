@@ -1,0 +1,13 @@
+@move("ice_spinner")  # type: ignore
+class _IceSpinner:
+    meta = {
+        "display_name": "Ice Spinner",
+        "type": "ice",
+        "index": 861,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

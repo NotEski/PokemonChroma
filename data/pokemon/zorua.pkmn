@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zorua")
+class Zorua:
+    display_name = "Zorua"
+    id = 570
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=40,
+        attack=65,
+        defense=40,
+        special_attack=80,
+        special_defense=40,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 66
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "illusion",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 12.5
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            4: [
+                "torment",
+            ],
+            8: [
+                "hone_claws",
+            ],
+            12: [
+                "fury_swipes",
+            ],
+            16: [
+                "scary_face",
+            ],
+            20: [
+                "taunt",
+            ],
+            24: [
+                "knock_off",
+            ],
+            28: [
+                "fake_tears",
+            ],
+            32: [
+                "agility",
+            ],
+            36: [
+                "imprison",
+            ],
+            40: [
+                "night_daze",
+            ],
+            44: [
+                "nasty_plot",
+            ],
+            48: [
+                "foul_play",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "bounce",
+        "calm_mind",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fling",
+        "foul_play",
+        "grass_knot",
+        "hex",
+        "hyper_voice",
+        "imprison",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "round",
+        "scary_face",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "trick",
+        "u_turn",
+        "uproar",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "copycat",
+        "counter",
+        "detect",
+        "extrasensory",
+        "memento",
+        "sucker_punch",
+    ]

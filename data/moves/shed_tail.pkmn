@@ -1,0 +1,13 @@
+@move("shed_tail")  # type: ignore
+class _ShedTail:
+    meta = {
+        "display_name": "Shed Tail",
+        "type": "normal",
+        "index": 880,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("emboar_mega")
+class MegaEmboar:
+    display_name = "Emboar Mega"
+    id = 10286
+    base_stats = BaseStats(
+        hp=110,
+        attack=148,
+        defense=75,
+        special_attack=110,
+        special_defense=110,
+        speed=75
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.8
+    weight_kg = 180.3

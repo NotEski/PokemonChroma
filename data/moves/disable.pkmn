@@ -5,13 +5,12 @@ class _Disable:
         "type": "normal",
         "index": 50,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "authentic"]
     status_condition = {
         "disable": 0,
     }

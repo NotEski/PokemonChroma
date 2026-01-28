@@ -11,4 +11,3 @@ class _SelfDestruct:
         "pp": 5,
         "target": "all_other_pokemon",
     }
-    flags = ["protect", "mirror"]

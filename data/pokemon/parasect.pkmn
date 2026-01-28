@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("parasect")
+class Parasect:
+    display_name = "Parasect"
+    id = 47
+    types = ['bug', 'grass']
+    base_stats = BaseStats(
+        hp=60,
+        attack=95,
+        defense=80,
+        special_attack=60,
+        special_defense=80,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "effect_spore",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "dry_skin",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 29.5
+    egg_groups = ['bug', 'plant']
+    growth_rate = "medium"
+    egg_moves = []

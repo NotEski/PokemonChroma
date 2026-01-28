@@ -1,0 +1,137 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("raikou")
+class Raikou:
+    display_name = "Raikou"
+    id = 243
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=90,
+        attack=85,
+        defense=75,
+        special_attack=115,
+        special_defense=100,
+        speed=115
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 3
+    base_experience_yield = 261
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 178.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "charge",
+                "extreme_speed",
+                "leer",
+                "quick_attack",
+                "thunder_shock",
+            ],
+            6: [
+                "spark",
+            ],
+            12: [
+                "bite",
+            ],
+            18: [
+                "calm_mind",
+            ],
+            24: [
+                "roar",
+            ],
+            30: [
+                "thunder_fang",
+            ],
+            36: [
+                "howl",
+            ],
+            42: [
+                "crunch",
+            ],
+            48: [
+                "extrasensory",
+            ],
+            54: [
+                "discharge",
+            ],
+            60: [
+                "reflect",
+            ],
+            66: [
+                "rain_dance",
+            ],
+            72: [
+                "thunder",
+            ],
+            78: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "aura_sphere",
+        "body_slam",
+        "bulldoze",
+        "calm_mind",
+        "crunch",
+        "dig",
+        "eerie_impulse",
+        "electric_terrain",
+        "endure",
+        "facade",
+        "giga_impact",
+        "helping_hand",
+        "hyper_beam",
+        "iron_head",
+        "iron_tail",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "sandstorm",
+        "scald",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "throat_chop",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "weather_ball",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

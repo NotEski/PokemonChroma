@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("wooper_paldea")
+class MegaWooperPaldea:
+    display_name = "Wooper Paldea"
+    id = 10253
+    base_stats = BaseStats(
+        hp=55,
+        attack=45,
+        defense=45,
+        special_attack=25,
+        special_defense=25,
+        speed=15
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 42
+    height_m = 0.4
+    weight_kg = 11.0

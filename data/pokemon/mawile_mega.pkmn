@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("mawile_mega")
+class MegaMawile:
+    display_name = "Mawile Mega"
+    id = 10052
+    base_stats = BaseStats(
+        hp=50,
+        attack=105,
+        defense=125,
+        special_attack=55,
+        special_defense=95,
+        speed=50
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 168
+    height_m = 1.0
+    weight_kg = 23.5

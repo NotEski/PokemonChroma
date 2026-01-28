@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ting_lu")
+class TingLu:
+    display_name = "Ting Lu"
+    id = 1003
+    types = ['dark', 'ground']
+    base_stats = BaseStats(
+        hp=155,
+        attack=110,
+        defense=125,
+        special_attack=55,
+        special_defense=80,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "vessel_of_ruin",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.7
+    weight_kg = 699.7
+    growth_rate = "medium_fast"
+    egg_moves = []

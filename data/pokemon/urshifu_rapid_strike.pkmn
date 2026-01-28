@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("urshifu_rapid_strike")
+class UrshifuRapidStrike:
+    display_name = "Urshifu Rapid Strike"
+    id = 10191
+    types = ['fighting', 'water']
+    base_stats = BaseStats(
+        hp=100,
+        attack=130,
+        defense=100,
+        special_attack=63,
+        special_defense=60,
+        speed=97
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 275
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "unseen_fist",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 105.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "surging_strikes",
+            ],
+            1: [
+                "aqua_jet",
+                "endure",
+                "focus_energy",
+                "leer",
+                "rock_smash",
+                "surging_strikes",
+            ],
+            12: [
+                "aerial_ace",
+            ],
+            16: [
+                "scary_face",
+            ],
+            20: [
+                "headbutt",
+            ],
+            24: [
+                "brick_break",
+            ],
+            28: [
+                "detect",
+            ],
+            32: [
+                "bulk_up",
+            ],
+            36: [
+                "iron_head",
+            ],
+            40: [
+                "dynamic_punch",
+            ],
+            44: [
+                "counter",
+            ],
+            48: [
+                "close_combat",
+            ],
+            52: [
+                "focus_punch",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "attract",
+        "aura_sphere",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "bulk_up",
+        "close_combat",
+        "dig",
+        "dive",
+        "drain_punch",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_punch",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "helping_hand",
+        "ice_punch",
+        "iron_defense",
+        "iron_head",
+        "liquidation",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "swift",
+        "taunt",
+        "thunder_punch",
+        "u_turn",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

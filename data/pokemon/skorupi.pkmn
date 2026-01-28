@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("skorupi")
+class Skorupi:
+    display_name = "Skorupi"
+    id = 451
+    types = ['poison', 'bug']
+    base_stats = BaseStats(
+        hp=40,
+        attack=50,
+        defense=90,
+        special_attack=30,
+        special_defense=55,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 66
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "battle_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sniper",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 12.0
+    egg_groups = ['bug', 'water3']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "poison_sting",
+            ],
+            3: [
+                "hone_claws",
+            ],
+            6: [
+                "fell_stinger",
+            ],
+            9: [
+                "poison_fang",
+            ],
+            12: [
+                "bite",
+            ],
+            15: [
+                "toxic_spikes",
+            ],
+            18: [
+                "bug_bite",
+            ],
+            21: [
+                "venoshock",
+            ],
+            24: [
+                "knock_off",
+            ],
+            27: [
+                "scary_face",
+            ],
+            30: [
+                "pin_missile",
+            ],
+            33: [
+                "toxic",
+            ],
+            36: [
+                "night_slash",
+            ],
+            39: [
+                "cross_poison",
+            ],
+            42: [
+                "x_scissor",
+            ],
+            45: [
+                "acupressure",
+            ],
+            48: [
+                "crunch",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "brick_break",
+        "bug_buzz",
+        "cross_poison",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "iron_tail",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "toxic_spikes",
+        "venoshock",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "confuse_ray",
+        "sand_attack",
+        "slash",
+        "whirlwind",
+    ]

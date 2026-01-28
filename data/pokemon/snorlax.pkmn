@@ -1,0 +1,182 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("snorlax")
+class Snorlax:
+    display_name = "Snorlax"
+    id = 143
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=160,
+        attack=110,
+        defense=65,
+        special_attack=65,
+        special_defense=110,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 189
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "immunity",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.1
+    weight_kg = 460.0
+    egg_groups = ['monster']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "block",
+                "covet",
+                "defense_curl",
+                "flail",
+                "fling",
+                "last_resort",
+                "lick",
+                "metronome",
+                "recycle",
+                "screech",
+                "stockpile",
+                "swallow",
+                "tackle",
+            ],
+            12: [
+                "yawn",
+            ],
+            16: [
+                "bite",
+            ],
+            20: [
+                "rest",
+                "sleep_talk",
+                "snore",
+            ],
+            24: [
+                "crunch",
+            ],
+            28: [
+                "body_slam",
+            ],
+            32: [
+                "heavy_slam",
+            ],
+            36: [
+                "amnesia",
+            ],
+            40: [
+                "high_horsepower",
+            ],
+            44: [
+                "hammer_arm",
+            ],
+            48: [
+                "belly_drum",
+            ],
+            52: [
+                "belch",
+            ],
+            56: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "charm",
+        "crunch",
+        "darkest_lariat",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "gunk_shot",
+        "heat_crash",
+        "heavy_slam",
+        "high_horsepower",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_head",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "outrage",
+        "pay_day",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "screech",
+        "seed_bomb",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "thunder",
+        "thunder_punch",
+        "thunderbolt",
+        "uproar",
+        "whirlpool",
+        "wild_charge",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "steel_roller",
+        "terrain_pulse",
+    ]
+    egg_moves = [
+        "counter",
+        "curse",
+        "double_edge",
+        "fissure",
+        "gastro_acid",
+    ]

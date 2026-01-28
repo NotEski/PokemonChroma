@@ -1,0 +1,13 @@
+@move("barb_barrage")  # type: ignore
+class _BarbBarrage:
+    meta = {
+        "display_name": "Barb Barrage",
+        "type": "poison",
+        "index": 839,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

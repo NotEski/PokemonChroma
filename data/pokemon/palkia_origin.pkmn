@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("palkia_origin")
+class MegaPalkiaOrigin:
+    display_name = "Palkia Origin"
+    id = 10246
+    base_stats = BaseStats(
+        hp=90,
+        attack=100,
+        defense=100,
+        special_attack=150,
+        special_defense=120,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 306
+    height_m = 6.3
+    weight_kg = 659.0

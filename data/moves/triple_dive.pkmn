@@ -1,0 +1,13 @@
+@move("triple_dive")  # type: ignore
+class _TripleDive:
+    meta = {
+        "display_name": "Triple Dive",
+        "type": "water",
+        "index": 865,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 30,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,113 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("skwovet")
+class Skwovet:
+    display_name = "Skwovet"
+    id = 819
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=70,
+        attack=55,
+        defense=55,
+        special_attack=35,
+        special_defense=35,
+        speed=25
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 55
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cheek_pouch",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 2.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+            ],
+            5: [
+                "bite",
+            ],
+            10: [
+                "stuff_cheeks",
+            ],
+            15: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            20: [
+                "body_slam",
+            ],
+            25: [
+                "rest",
+            ],
+            30: [
+                "counter",
+            ],
+            35: [
+                "bullet_seed",
+            ],
+            40: [
+                "super_fang",
+            ],
+            45: [
+                "belch",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "body_slam",
+        "brutal_swing",
+        "bullet_seed",
+        "crunch",
+        "dig",
+        "endure",
+        "facade",
+        "fling",
+        "gyro_ball",
+        "hyper_voice",
+        "iron_tail",
+        "mud_shot",
+        "payback",
+        "protect",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "tail_slap",
+        "thief",
+        "uproar",
+    ]
+    egg_moves = [
+        "belly_drum",
+        "defense_curl",
+        "last_resort",
+        "rollout",
+    ]

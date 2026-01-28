@@ -7,8 +7,10 @@ class _RapidSpin:
         "damage_class": "physical",
         "category": "damage",
         "accuracy": 100,
-        "power": 20,
+        "power": 50,
         "pp": 40,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
+    }

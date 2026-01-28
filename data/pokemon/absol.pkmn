@@ -1,0 +1,156 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("absol")
+class Absol:
+    display_name = "Absol"
+    id = 359
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=65,
+        attack=130,
+        defense=60,
+        special_attack=75,
+        special_defense=60,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 163
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "justified",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 47.0
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "quick_attack",
+            ],
+            5: [
+                "double_team",
+            ],
+            10: [
+                "knock_off",
+            ],
+            15: [
+                "detect",
+            ],
+            20: [
+                "taunt",
+            ],
+            25: [
+                "slash",
+            ],
+            30: [
+                "night_slash",
+            ],
+            35: [
+                "focus_energy",
+            ],
+            40: [
+                "sucker_punch",
+            ],
+            45: [
+                "swords_dance",
+            ],
+            50: [
+                "future_sight",
+            ],
+            55: [
+                "perish_song",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brutal_swing",
+        "calm_mind",
+        "close_combat",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "flamethrower",
+        "focus_energy",
+        "foul_play",
+        "future_sight",
+        "giga_impact",
+        "hail",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "megahorn",
+        "payback",
+        "play_rough",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "will_o_wisp",
+        "x_scissor",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "bite",
+        "curse",
+        "double_edge",
+        "feint",
+        "magic_coat",
+        "mean_look",
+    ]

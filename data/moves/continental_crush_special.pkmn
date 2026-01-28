@@ -1,0 +1,13 @@
+@move("continental_crush_special")  # type: ignore
+class _ContinentalCrushSpecial:
+    meta = {
+        "display_name": "Continental Crush",
+        "type": "rock",
+        "index": 633,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

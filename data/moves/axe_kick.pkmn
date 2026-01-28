@@ -1,0 +1,13 @@
+@move("axe_kick")  # type: ignore
+class _AxeKick:
+    meta = {
+        "display_name": "Axe Kick",
+        "type": "fighting",
+        "index": 853,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 120,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

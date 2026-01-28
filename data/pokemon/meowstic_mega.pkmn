@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("meowstic_mega")
+class MegaMeowstic:
+    display_name = "Meowstic Mega"
+    id = 10314
+    base_stats = BaseStats(
+        hp=74,
+        attack=48,
+        defense=76,
+        special_attack=143,
+        special_defense=101,
+        speed=124
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 0.8
+    weight_kg = 10.1

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("muk_alola")
+class MegaMukAlola:
+    display_name = "Muk Alola"
+    id = 10113
+    base_stats = BaseStats(
+        hp=105,
+        attack=105,
+        defense=75,
+        special_attack=65,
+        special_defense=100,
+        speed=50
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 175
+    height_m = 1.0
+    weight_kg = 52.0

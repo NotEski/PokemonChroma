@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("palafin_hero")
+class MegaPalafinHero:
+    display_name = "Palafin Hero"
+    id = 10256
+    base_stats = BaseStats(
+        hp=100,
+        attack=160,
+        defense=97,
+        special_attack=106,
+        special_defense=87,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 160
+    height_m = 1.8
+    weight_kg = 97.4

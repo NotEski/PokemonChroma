@@ -11,5 +11,4 @@ class _LightOfRuin:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     drain = -50

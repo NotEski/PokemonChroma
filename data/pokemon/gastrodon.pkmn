@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gastrodon")
+class Gastrodon:
+    display_name = "Gastrodon"
+    id = 423
+    types = ['water', 'ground']
+    base_stats = BaseStats(
+        hp=111,
+        attack=83,
+        defense=68,
+        special_attack=92,
+        special_defense=82,
+        speed=39
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sticky_hold",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "storm_drain",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 29.9
+    egg_groups = ['water1', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "mud_slap",
+                "recover",
+                "water_gun",
+            ],
+            15: [
+                "water_pulse",
+            ],
+            20: [
+                "ancient_power",
+            ],
+            25: [
+                "body_slam",
+            ],
+            33: [
+                "muddy_water",
+            ],
+            39: [
+                "earth_power",
+            ],
+            46: [
+                "rain_dance",
+            ],
+            53: [
+                "memento",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "bulldoze",
+        "dig",
+        "dive",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scald",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = []

@@ -1,0 +1,14 @@
+@move("floaty_fall")  # type: ignore
+class _FloatyFall:
+    meta = {
+        "display_name": "Floaty Fall",
+        "type": "flying",
+        "index": 731,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 90,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    flinch_chance = 30

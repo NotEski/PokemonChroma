@@ -1,0 +1,60 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("combee")
+class Combee:
+    display_name = "Combee"
+    id = 415
+    types = ['bug', 'flying']
+    base_stats = BaseStats(
+        hp=30,
+        attack=30,
+        defense=42,
+        special_attack=30,
+        special_defense=42,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 120
+    base_experience_yield = 49
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "honey_gather",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hustle",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 5.5
+    egg_groups = ['bug']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bug_bite",
+                "gust",
+                "struggle_bug",
+                "sweet_scent",
+            ],
+        }
+    machine_moves = [
+        "bug_buzz",
+        "snore",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

@@ -11,3 +11,6 @@ class _DragonAscent:
         "pp": 5,
         "target": "selected_pokemon",
     }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
+    }

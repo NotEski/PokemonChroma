@@ -1,0 +1,13 @@
+@move("springtide_storm")  # type: ignore
+class _SpringtideStorm:
+    meta = {
+        "display_name": "Springtide Storm",
+        "type": "fairy",
+        "index": 831,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 100,
+        "pp": 5,
+        "target": "all_opponents",
+    }

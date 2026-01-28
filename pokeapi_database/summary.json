@@ -1,0 +1,8 @@
+{
+  "download_date": "2026-01-28 11:09:28",
+  "base_url": "https://pokeapi.co/api/v2",
+  "endpoints": {
+    "move": 937
+  },
+  "total_resources": 937
+}

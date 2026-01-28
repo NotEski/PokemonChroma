@@ -1,0 +1,14 @@
+@move("shell_trap")  # type: ignore
+class _ShellTrap:
+    meta = {
+        "display_name": "Shell Trap",
+        "type": "fire",
+        "index": 704,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 5,
+        "target": "all_opponents",
+    }
+    priority = -3

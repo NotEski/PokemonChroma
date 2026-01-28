@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("terapagos")
+class Terapagos:
+    display_name = "Terapagos"
+    id = 1024
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=90,
+        attack=65,
+        defense=85,
+        special_attack=65,
+        special_defense=85,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 90
+    base_happiness = 50
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "tera_shift",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 6.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

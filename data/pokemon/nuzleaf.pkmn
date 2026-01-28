@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("nuzleaf")
+class Nuzleaf:
+    display_name = "Nuzleaf"
+    id = 274
+    types = ['grass', 'dark']
+    base_stats = BaseStats(
+        hp=70,
+        attack=70,
+        defense=40,
+        special_attack=60,
+        special_defense=40,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 119
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "early_bird",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 28.0
+    egg_groups = ['ground', 'plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "razor_leaf",
+            ],
+            1: [
+                "absorb",
+                "air_cutter",
+                "astonish",
+                "explosion",
+                "fake_out",
+                "harden",
+                "razor_leaf",
+                "swagger",
+                "synthesis",
+                "tackle",
+                "torment",
+            ],
+            9: [
+                "growth",
+            ],
+            12: [
+                "rollout",
+            ],
+            18: [
+                "mega_drain",
+            ],
+            24: [
+                "payback",
+            ],
+            30: [
+                "nature_power",
+            ],
+            36: [
+                "sunny_day",
+            ],
+            43: [
+                "extrasensory",
+            ],
+            50: [
+                "sucker_punch",
+            ],
+            57: [
+                "leaf_blade",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "beat_up",
+        "body_slam",
+        "brick_break",
+        "bullet_seed",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "fling",
+        "foul_play",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "leaf_blade",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "nasty_plot",
+        "payback",
+        "power_swap",
+        "protect",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "seed_bomb",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thief",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "lash_out",
+    ]
+    egg_moves = []

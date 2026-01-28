@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("mewtwo_mega_x")
+class MegaMewtwoX:
+    display_name = "Mewtwo Mega X"
+    id = 10043
+    base_stats = BaseStats(
+        hp=106,
+        attack=190,
+        defense=100,
+        special_attack=154,
+        special_defense=100,
+        speed=130
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 351
+    height_m = 2.3
+    weight_kg = 127.0

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("spidops")
+class Spidops:
+    display_name = "Spidops"
+    id = 918
+    types = ['bug']
+    base_stats = BaseStats(
+        hp=60,
+        attack=79,
+        defense=92,
+        special_attack=52,
+        special_defense=86,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 141
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "stakeout",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 16.5
+    egg_groups = ['bug']
+    growth_rate = "slow_then_very_fast"
+    egg_moves = []

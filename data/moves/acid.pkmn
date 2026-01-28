@@ -5,13 +5,12 @@ class _Acid:
         "type": "poison",
         "index": 51,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
         "power": 40,
         "pp": 30,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

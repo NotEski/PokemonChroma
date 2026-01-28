@@ -1,0 +1,127 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("grapploct")
+class Grapploct:
+    display_name = "Grapploct"
+    id = 853
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=80,
+        attack=118,
+        defense=90,
+        special_attack=70,
+        special_defense=80,
+        speed=42
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 168
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 39.0
+    egg_groups = ['water1', 'humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "octolock",
+            ],
+            1: [
+                "bind",
+                "feint",
+                "leer",
+                "octazooka",
+                "octolock",
+                "rock_smash",
+            ],
+            15: [
+                "detect",
+            ],
+            20: [
+                "brick_break",
+            ],
+            25: [
+                "bulk_up",
+            ],
+            30: [
+                "submission",
+            ],
+            35: [
+                "taunt",
+            ],
+            40: [
+                "reversal",
+            ],
+            45: [
+                "superpower",
+            ],
+            50: [
+                "topsy_turvy",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "brutal_swing",
+        "bulk_up",
+        "close_combat",
+        "dig",
+        "dive",
+        "drain_punch",
+        "endure",
+        "facade",
+        "focus_blast",
+        "giga_impact",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_punch",
+        "liquidation",
+        "mega_punch",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "superpower",
+        "surf",
+        "taunt",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+        "skitter_smack",
+    ]
+    egg_moves = []

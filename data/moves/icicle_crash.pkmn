@@ -11,5 +11,4 @@ class _IcicleCrash:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     flinch_chance = 30

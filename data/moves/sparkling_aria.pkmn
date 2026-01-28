@@ -1,0 +1,13 @@
+@move("sparkling_aria")  # type: ignore
+class _SparklingAria:
+    meta = {
+        "display_name": "Sparkling Aria",
+        "type": "water",
+        "index": 664,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "all_other_pokemon",
+    }

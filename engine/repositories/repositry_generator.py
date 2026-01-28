@@ -9,7 +9,7 @@ from typing import Any, Optional, List, TypeVar, Callable
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
-from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory
+from shared.pokemon.move import BaseMove, MoveTarget, DamageClass, MoveCategory, LearnSet
 from shared.pokemon.move_tags import *
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.pokemon import PokemonBase, BattleMon, GrowthRate, EggGroup
@@ -429,6 +429,108 @@ def ability(ability_name: str):
         return dsl_cls
     return decorator
 
+def pokemon(pokemon_name: str):
+    def decorator(dsl_cls: T) -> T:
+        pokedex_number = dsl_cls.__dict__.get("id", None)
+        if pokedex_number is None:
+            raise ValueError(f"Pokemon '{pokemon_name}' must have an 'id' attribute defined.")
+        display_name = dsl_cls.__dict__.get("display_name", pokemon_name.capitalize())
+        types_str = dsl_cls.__dict__.get("types", [])
+        if types_str == []:
+            raise ValueError(f"Pokemon '{pokemon_name}' must have at least one type defined.")
+        types: list[PokemonType] = [PokemonType(type_str) for type_str in types_str]
+        base_stats: BaseStats = dsl_cls.__dict__.get("base_stats", BaseStats())
+        ev_yield: EffortYield = dsl_cls.__dict__.get("ev_yield", EffortYield())
+        catch_rate: int = dsl_cls.__dict__.get("catch_rate", 45)
+        base_experience_yield: int = dsl_cls.__dict__.get("base_experience_yield", 64)
+        base_happiness: int = dsl_cls.__dict__.get("base_happiness", 70)
+        gender_rate_int: int = dsl_cls.__dict__.get("gender_rate", 4)
+        gender_rate = GenderRate(gender_rate_int)
+        abilities_str: list[dict[str, str|int|bool]] = dsl_cls.__dict__.get("abilities", [])
+
+        abilities: list[PokemonBaseAbility] = []
+        for ability_info in abilities_str:
+            ability_name: str = ability_info["ability"] # type: ignore
+            ability_obj = get_ability(ability_name)
+            ability_slot = AbilitySlot(ability_info["slot"])
+            is_hidden: bool = ability_info.get("is_hidden", False) # type: ignore
+            pkmn_ability = PokemonBaseAbility(
+                ability=ability_obj,
+                slot=ability_slot,
+                is_hidden=is_hidden
+            )
+            abilities.append(pkmn_ability)
+
+        height_m: float = dsl_cls.__dict__.get("height_m", 1.0)
+        weight_kg: float = dsl_cls.__dict__.get("weight_kg", 10.0)
+        egg_groups_str: list[str] = dsl_cls.__dict__.get("egg_groups", [])
+        egg_groups: list[EggGroup] = [EggGroup(egg_group_str) for egg_group_str in egg_groups_str]
+        growth_rate_str: str = dsl_cls.__dict__.get("growth_rate", "medium_fast")
+        growth_rate: GrowthRate = GrowthRate(growth_rate_str)
+        level_up_moves: dict[int, List[BaseMove]] = {}
+        level_moves_dict: dict[int, list[str]] = dsl_cls.__dict__.get("level_moves", {})
+        for level, move_names in level_moves_dict.items():
+            move_list: List[BaseMove] = []
+            for move_name in move_names:
+                move_obj = get_move(move_name)
+                move_list.append(move_obj)
+            level_up_moves[level] = move_list
+        
+        machine_moves: List[BaseMove] = []
+        machine_move_names: List[str] = dsl_cls.__dict__.get("machine_moves", [])
+        for move_name in machine_move_names:
+            move_obj = get_move(move_name)
+            machine_moves.append(move_obj)
+
+        tutor_moves: List[BaseMove] = []
+        tutor_move_names: List[str] = dsl_cls.__dict__.get("tutor_moves", [])
+        for move_name in tutor_move_names:
+            move_obj = get_move(move_name)
+            tutor_moves.append(move_obj)
+
+        egg_moves: List[BaseMove] = []
+        egg_move_names: List[str] = dsl_cls.__dict__.get("egg_moves", [])
+        for move_name in egg_move_names:
+            move_obj = get_move(move_name)
+            egg_moves.append(move_obj)
+
+        learn_set = LearnSet(
+            level_up_moves=level_up_moves,
+            machine_moves=machine_moves,
+            tutor_moves=tutor_moves,
+            egg_moves=egg_moves
+        )
+        
+        pokemon_base = PokemonBase(
+            name=pokemon_name,
+            display_name=display_name,
+            pokedex_number=pokedex_number,
+            types=types,
+            base_stats=base_stats,
+            ev_yield=ev_yield,
+            abilities=abilities,
+            capture_rate=catch_rate,
+            base_experience_yield=base_experience_yield,
+            gender_rate=gender_rate,
+            base_happiness=base_happiness,
+            growth_rate=growth_rate,
+            egg_groups=egg_groups,
+            height=height_m,
+            weight=weight_kg,
+            mega_evolutions=[],
+            learnset=learn_set
+        )
+        pokemon_repository.create(pokemon_base)
+
+        return dsl_cls
+    return decorator
+
+def mega_evolution(mega_evolution_name: str):
+    def decorator(dsl_cls: T) -> T:
+        # Code goes here for registering mega evolutions
+        return dsl_cls
+    return decorator
+
 def get_status_condition(status_name: str) -> StatusCondition:
     status_condition = status_repository.get(status_name.lower())
     if status_condition is None:
@@ -480,12 +582,18 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
         "ability": ability,
         "hazard": hazard,
         "field_effect": field_effect,
+        "pokemon": pokemon,
+        "mega_evolution": mega_evolution,
 
         "get_status_condition": get_status_condition,
         "get_move": get_move,
         "get_ability": get_ability,
         "get_item": get_item,
         "get_type": PokemonType,
+
+        # imports
+        "BaseStats": BaseStats,
+        "EffortYield": EffortYield,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):
@@ -498,6 +606,7 @@ def validate_dsl_code_strict(source: str, filename: str):
         "shared.pokemon.abilities",
         "shared.pokemon.items",
         "shared.pokemon.hazard",
+        "shared.pokemon.stats",
     )
 
     BLOCKED_CALLS = {
@@ -588,52 +697,52 @@ def load_dsl_files(application_root_path: str, loading_bar_length: int = 50, loa
 # Pokemon TODO update this to the pkmn system
 # ============================================================================
 
-def json_to_pokemon_base(json_data: dict[str, Any]) -> PokemonBase:
-    if json_data.get("base_experience_yield", 64) is None:
-        json_data["base_experience_yield"] = 64
+# def json_to_pokemon_base(json_data: dict[str, Any]) -> PokemonBase:
+#     if json_data.get("base_experience_yield", 64) is None:
+#         json_data["base_experience_yield"] = 64
 
-    compiled_abilities: list[PokemonBaseAbility] = []
-    for ability_entry in json_data.get("abilities", []):
-        ability_name = ability_entry["ability"]
-        ability_slot_str = ability_entry.get("slot", 1)
-        ability_slot = AbilitySlot(ability_slot_str)
-        is_hidden = ability_entry.get("is_hidden", False)
+#     compiled_abilities: list[PokemonBaseAbility] = []
+#     for ability_entry in json_data.get("abilities", []):
+#         ability_name = ability_entry["ability"]
+#         ability_slot_str = ability_entry.get("slot", 1)
+#         ability_slot = AbilitySlot(ability_slot_str)
+#         is_hidden = ability_entry.get("is_hidden", False)
 
-        ability = ability_repository.get(ability_name.lower())
-        if ability is None:
-            raise ValueError(f"Ability '{ability_name}' not found in ability repository.")
-        compiled_abilities.append(PokemonBaseAbility(
-            ability=ability,
-            is_hidden=is_hidden,
-            slot=ability_slot
-        ))
+#         ability = ability_repository.get(ability_name.lower())
+#         if ability is None:
+#             raise ValueError(f"Ability '{ability_name}' not found in ability repository.")
+#         compiled_abilities.append(PokemonBaseAbility(
+#             ability=ability,
+#             is_hidden=is_hidden,
+#             slot=ability_slot
+#         ))
 
-    return PokemonBase(
-        name=json_data["name"],
-        display_name=json_data["display_name"],
-        pokedex_number=json_data["pokedex_number"],
-        types=[PokemonType(type_str) for type_str in json_data["types"]],
-        base_stats=BaseStats(**json_data["base_stats"]),
-        ev_yield=EffortYield(**json_data.get("ev_yield", {})),
-        capture_rate=json_data["capture_rate"],
-        base_experience_yield=json_data.get("base_experience_yield", 64),
-        base_happiness=json_data.get("base_happiness", 70),
-        gender_rate=GenderRate(json_data.get("gender_rate", "4")),
-        abilities=compiled_abilities,
-        height=json_data.get("height_m", 1.0),
-        weight=json_data.get("weight_kg", 1.0),
-        egg_groups=[EggGroup(egg_group) for egg_group in json_data.get("egg_groups", "no-eggs")],
-        growth_rate=GrowthRate(json_data.get("growth_rate", "medium")),
-    )
+#     return PokemonBase(
+#         name=json_data["name"],
+#         display_name=json_data["display_name"],
+#         pokedex_number=json_data["pokedex_number"],
+#         types=[PokemonType(type_str) for type_str in json_data["types"]],
+#         base_stats=BaseStats(**json_data["base_stats"]),
+#         ev_yield=EffortYield(**json_data.get("ev_yield", {})),
+#         capture_rate=json_data["capture_rate"],
+#         base_experience_yield=json_data.get("base_experience_yield", 64),
+#         base_happiness=json_data.get("base_happiness", 70),
+#         gender_rate=GenderRate(json_data.get("gender_rate", "4")),
+#         abilities=compiled_abilities,
+#         height=json_data.get("height_m", 1.0),
+#         weight=json_data.get("weight_kg", 1.0),
+#         egg_groups=[EggGroup(egg_group) for egg_group in json_data.get("egg_groups", "no-eggs")],
+#         growth_rate=GrowthRate(json_data.get("growth_rate", "medium")),
+#     )
 
-def load_pokemon_from_json_file(file_path: str) -> PokemonBase:
-    with open(file_path, 'r') as f:
-        json_data = json.load(f)
-    return json_to_pokemon_base(json_data)
+# def load_pokemon_from_json_file(file_path: str) -> PokemonBase:
+#     with open(file_path, 'r') as f:
+#         json_data = json.load(f)
+#     return json_to_pokemon_base(json_data)
 
-def generate_pokemon_repository_from_json(file_path: str):
-    pokemon_base = load_pokemon_from_json_file(file_path)
-    pokemon_repository.create(pokemon_base)
+# def generate_pokemon_repository_from_json(file_path: str):
+#     pokemon_base = load_pokemon_from_json_file(file_path)
+#     pokemon_repository.create(pokemon_base)
 
 
 # ============================================================================
@@ -696,15 +805,16 @@ def initialize_repositories(app_path: str):
     move_repository.refresh_categories()
 
     # Generate Pokemon Repository
-    pokemon_folder_path = os.path.join(app_path, "data/pokemon")
-    for subdir, _, files in os.walk(pokemon_folder_path):
-        file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
-        for file_path in file_paths:
-            # Loading bar
-            progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
-            print(f"Loading Pokemon Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
-            generate_pokemon_repository_from_json(file_path)
-    print()
+    # pokemon_folder_path = os.path.join(app_path, "data/pokemon")
+    # for subdir, _, files in os.walk(pokemon_folder_path):
+    #     file_paths = [os.path.join(subdir, file) for file in files if file.endswith('.json')]
+    #     for file_path in file_paths:
+    #         # Loading bar
+    #         progress_percent = (file_paths.index(file_path) + 1) / len(file_paths) * 100
+    #         print(f"Loading Pokemon Repo      - [{'=' * int(progress_percent // loading_bar_increment_length)}{'-' * (loading_bar_length - int(progress_percent // loading_bar_increment_length))}] {progress_percent:.2f}%", end="\r")
+    #         generate_pokemon_repository_from_json(file_path)
+    # print()
+    load_dsl_files(app_path, loading_bar_length, loading_bar_increment_length, directory_path="data/pokemon", loading_text="Pokemon")
 
     # Generate Item Repository
     items_folder_path = os.path.join(app_path, "data/items")

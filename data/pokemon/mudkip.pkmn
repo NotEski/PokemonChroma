@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mudkip")
+class Mudkip:
+    display_name = "Mudkip"
+    id = 258
+    types = ['water']
+    base_stats = BaseStats(
+        hp=50,
+        attack=70,
+        defense=50,
+        special_attack=50,
+        special_defense=50,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 7.6
+    egg_groups = ['monster', 'water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            3: [
+                "water_gun",
+            ],
+            6: [
+                "rock_smash",
+            ],
+            9: [
+                "rock_throw",
+            ],
+            12: [
+                "protect",
+            ],
+            15: [
+                "supersonic",
+            ],
+            18: [
+                "water_pulse",
+            ],
+            21: [
+                "rock_slide",
+            ],
+            24: [
+                "take_down",
+            ],
+            27: [
+                "amnesia",
+            ],
+            30: [
+                "surf",
+            ],
+            33: [
+                "screech",
+            ],
+            36: [
+                "endeavor",
+            ],
+            39: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "dig",
+        "dive",
+        "earth_power",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "low_kick",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "water_pledge",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "bite",
+        "counter",
+        "curse",
+        "double_edge",
+        "mirror_coat",
+        "mud_slap",
+        "sludge",
+        "stomp",
+        "wide_guard",
+        "yawn",
+    ]

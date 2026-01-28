@@ -1,0 +1,14 @@
+@move("baneful_bunker")  # type: ignore
+class _BanefulBunker:
+    meta = {
+        "display_name": "Baneful Bunker",
+        "type": "poison",
+        "index": 661,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user",
+    }
+    priority = 4

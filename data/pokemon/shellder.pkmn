@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("shellder")
+class Shellder:
+    display_name = "Shellder"
+    id = 90
+    types = ['water']
+    base_stats = BaseStats(
+        hp=30,
+        attack=65,
+        defense=100,
+        special_attack=45,
+        special_defense=25,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shell_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "skill_link",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 4.0
+    egg_groups = ['water3']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "water_gun",
+            ],
+            4: [
+                "withdraw",
+            ],
+            8: [
+                "ice_shard",
+            ],
+            12: [
+                "leer",
+            ],
+            16: [
+                "whirlpool",
+            ],
+            20: [
+                "supersonic",
+            ],
+            24: [
+                "aurora_beam",
+            ],
+            28: [
+                "protect",
+            ],
+            32: [
+                "razor_shell",
+            ],
+            36: [
+                "iron_defense",
+            ],
+            40: [
+                "ice_beam",
+            ],
+            44: [
+                "shell_smash",
+            ],
+            48: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "brine",
+        "dive",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "liquidation",
+        "mud_shot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "razor_shell",
+        "rest",
+        "rock_blast",
+        "round",
+        "screech",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "tri_attack",
+        "whirlpool",
+    ]
+    egg_moves = [
+        "aqua_ring",
+        "bubble_beam",
+        "life_dew",
+        "water_pulse",
+    ]

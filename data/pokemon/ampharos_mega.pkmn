@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("ampharos_mega")
+class MegaAmpharos:
+    display_name = "Ampharos Mega"
+    id = 10045
+    base_stats = BaseStats(
+        hp=90,
+        attack=95,
+        defense=105,
+        special_attack=165,
+        special_defense=110,
+        speed=45
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 275
+    height_m = 1.4
+    weight_kg = 61.5

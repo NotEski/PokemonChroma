@@ -1,0 +1,16 @@
+@move("lunge")  # type: ignore
+class _Lunge:
+    meta = {
+        "display_name": "Lunge",
+        "type": "bug",
+        "index": 679,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

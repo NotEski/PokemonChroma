@@ -5,13 +5,12 @@ class _HealBlock:
         "type": "psychic",
         "index": 377,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "all_opponents",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "heal_block": 0,
     }

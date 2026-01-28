@@ -5,13 +5,12 @@ class _SludgeBomb:
         "type": "poison",
         "index": 188,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 90,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "ballistics"]
     status_condition = {
         "poison": 30,
     }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("duraludon_gmax")
+class MegaDuraludon:
+    display_name = "Duraludon Gmax"
+    id = 10225
+    base_stats = BaseStats(
+        hp=70,
+        attack=95,
+        defense=115,
+        special_attack=120,
+        special_defense=50,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 187
+    height_m = 43.0
+    weight_kg = 1000.0

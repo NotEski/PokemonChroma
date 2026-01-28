@@ -1,0 +1,13 @@
+@move("supercell_slam")  # type: ignore
+class _SupercellSlam:
+    meta = {
+        "display_name": "Supercell Slam",
+        "type": "electric",
+        "index": 916,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 100,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

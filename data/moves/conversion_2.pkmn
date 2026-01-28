@@ -5,10 +5,9 @@ class _Conversion2:
         "type": "normal",
         "index": 176,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["authentic"]

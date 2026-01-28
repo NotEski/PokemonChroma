@@ -1,0 +1,13 @@
+@move("blazing_torque")  # type: ignore
+class _BlazingTorque:
+    meta = {
+        "display_name": "Blazing Torque",
+        "type": "fire",
+        "index": 896,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

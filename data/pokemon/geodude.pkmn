@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("geodude")
+class Geodude:
+    display_name = "Geodude"
+    id = 74
+    types = ['rock', 'ground']
+    base_stats = BaseStats(
+        hp=40,
+        attack=80,
+        defense=100,
+        special_attack=30,
+        special_defense=30,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 20.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    egg_moves = []

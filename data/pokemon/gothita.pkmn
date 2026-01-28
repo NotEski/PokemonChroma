@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gothita")
+class Gothita:
+    display_name = "Gothita"
+    id = 574
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=45,
+        attack=30,
+        defense=50,
+        special_attack=55,
+        special_defense=65,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 200
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "frisk",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "competitive",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "shadow_tag",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.8
+    egg_groups = ['humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "pound",
+            ],
+            4: [
+                "play_nice",
+            ],
+            8: [
+                "tickle",
+            ],
+            12: [
+                "psybeam",
+            ],
+            16: [
+                "charm",
+            ],
+            20: [
+                "psyshock",
+            ],
+            24: [
+                "hypnosis",
+            ],
+            28: [
+                "fake_tears",
+            ],
+            33: [
+                "psych_up",
+            ],
+            36: [
+                "psychic",
+            ],
+            40: [
+                "flatter",
+            ],
+            44: [
+                "future_sight",
+            ],
+            48: [
+                "magic_room",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "calm_mind",
+        "charm",
+        "dark_pulse",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "fling",
+        "foul_play",
+        "future_sight",
+        "grass_knot",
+        "guard_swap",
+        "helping_hand",
+        "light_screen",
+        "magic_room",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "taunt",
+        "thief",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "trick_room",
+        "uproar",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = [
+        "fake_out",
+        "heal_pulse",
+        "mean_look",
+        "mirror_coat",
+        "torment",
+    ]

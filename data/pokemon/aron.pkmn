@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("aron")
+class Aron:
+    display_name = "Aron"
+    id = 304
+    types = ['steel', 'rock']
+    base_stats = BaseStats(
+        hp=50,
+        attack=70,
+        defense=100,
+        special_attack=40,
+        special_defense=40,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 180
+    base_experience_yield = 66
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "heavy_metal",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 60.0
+    egg_groups = ['monster']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "tackle",
+            ],
+            4: [
+                "metal_claw",
+            ],
+            8: [
+                "rock_tomb",
+            ],
+            12: [
+                "roar",
+            ],
+            16: [
+                "headbutt",
+            ],
+            20: [
+                "protect",
+            ],
+            24: [
+                "rock_slide",
+            ],
+            28: [
+                "iron_head",
+            ],
+            33: [
+                "metal_sound",
+            ],
+            36: [
+                "take_down",
+            ],
+            40: [
+                "autotomize",
+            ],
+            44: [
+                "iron_tail",
+            ],
+            48: [
+                "iron_defense",
+            ],
+            52: [
+                "heavy_slam",
+            ],
+            56: [
+                "double_edge",
+            ],
+            60: [
+                "metal_burst",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "body_slam",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "heavy_slam",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "protect",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "uproar",
+    ]
+    tutor_moves = [
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = [
+        "curse",
+        "dragon_rush",
+        "endeavor",
+        "head_smash",
+        "mud_slap",
+        "stomp",
+    ]

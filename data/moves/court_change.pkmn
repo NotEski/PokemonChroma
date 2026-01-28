@@ -1,0 +1,13 @@
+@move("court_change")  # type: ignore
+class _CourtChange:
+    meta = {
+        "display_name": "Court Change",
+        "type": "normal",
+        "index": 756,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 10,
+        "target": "entire_field",
+    }

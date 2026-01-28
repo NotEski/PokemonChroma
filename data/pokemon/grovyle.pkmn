@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("grovyle")
+class Grovyle:
+    display_name = "Grovyle"
+    id = 253
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=50,
+        attack=65,
+        defense=45,
+        special_attack=85,
+        special_defense=65,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 21.6
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "energy_ball",
+                "false_swipe",
+                "fury_cutter",
+                "leafage",
+                "leer",
+                "pound",
+                "quick_attack",
+                "x_scissor",
+            ],
+            9: [
+                "mega_drain",
+            ],
+            12: [
+                "detect",
+            ],
+            15: [
+                "quick_guard",
+            ],
+            20: [
+                "assurance",
+            ],
+            25: [
+                "giga_drain",
+            ],
+            30: [
+                "slam",
+            ],
+            35: [
+                "double_team",
+            ],
+            40: [
+                "leaf_blade",
+            ],
+            45: [
+                "screech",
+            ],
+            50: [
+                "endeavor",
+            ],
+            55: [
+                "leaf_storm",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "assurance",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bullet_seed",
+        "crunch",
+        "dig",
+        "drain_punch",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "fling",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "iron_tail",
+        "leaf_blade",
+        "leaf_storm",
+        "low_kick",
+        "low_sweep",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "screech",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "work_up",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "grass_pledge",
+        "grassy_glide",
+    ]
+    egg_moves = []

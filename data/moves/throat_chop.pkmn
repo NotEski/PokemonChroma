@@ -1,0 +1,16 @@
+@move("throat_chop")  # type: ignore
+class _ThroatChop:
+    meta = {
+        "display_name": "Throat Chop",
+        "type": "dark",
+        "index": 675,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "silence": 100,
+    }

@@ -1,0 +1,111 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wooloo")
+class Wooloo:
+    display_name = "Wooloo"
+    id = 831
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=42,
+        attack=40,
+        defense=55,
+        special_attack=40,
+        special_defense=45,
+        speed=48
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 122
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "fluffy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "run_away",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "bulletproof",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 6.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            4: [
+                "defense_curl",
+            ],
+            8: [
+                "copycat",
+            ],
+            12: [
+                "guard_split",
+            ],
+            16: [
+                "double_kick",
+            ],
+            21: [
+                "headbutt",
+            ],
+            25: [
+                "take_down",
+            ],
+            28: [
+                "guard_swap",
+            ],
+            32: [
+                "reversal",
+            ],
+            36: [
+                "cotton_guard",
+            ],
+            40: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "electro_ball",
+        "endure",
+        "facade",
+        "guard_swap",
+        "payback",
+        "protect",
+        "rest",
+        "reversal",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder_wave",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "counter",
+        "stomp",
+        "swagger",
+    ]

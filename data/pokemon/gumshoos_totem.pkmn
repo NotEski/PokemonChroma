@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("gumshoos_totem")
+class MegaGumshoosTotem:
+    display_name = "Gumshoos Totem"
+    id = 10121
+    base_stats = BaseStats(
+        hp=88,
+        attack=110,
+        defense=60,
+        special_attack=55,
+        special_defense=60,
+        speed=45
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 146
+    height_m = 1.4
+    weight_kg = 60.0

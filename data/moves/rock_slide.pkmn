@@ -11,5 +11,4 @@ class _RockSlide:
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     flinch_chance = 30

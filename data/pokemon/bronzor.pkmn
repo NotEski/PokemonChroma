@@ -1,0 +1,137 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bronzor")
+class Bronzor:
+    display_name = "Bronzor"
+    id = 436
+    types = ['steel', 'psychic']
+    base_stats = BaseStats(
+        hp=57,
+        attack=24,
+        defense=86,
+        special_attack=24,
+        special_defense=86,
+        speed=23
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "heatproof",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "heavy_metal",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 60.5
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "tackle",
+            ],
+            4: [
+                "confuse_ray",
+            ],
+            8: [
+                "payback",
+            ],
+            12: [
+                "imprison",
+            ],
+            16: [
+                "gyro_ball",
+            ],
+            20: [
+                "hypnosis",
+            ],
+            24: [
+                "safeguard",
+            ],
+            28: [
+                "extrasensory",
+            ],
+            32: [
+                "heavy_slam",
+            ],
+            36: [
+                "iron_defense",
+            ],
+            40: [
+                "metal_sound",
+            ],
+            44: [
+                "future_sight",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "bulldoze",
+        "calm_mind",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "future_sight",
+        "grass_knot",
+        "guard_swap",
+        "gyro_ball",
+        "heavy_slam",
+        "hex",
+        "imprison",
+        "iron_defense",
+        "light_screen",
+        "payback",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "stealth_rock",
+        "substitute",
+        "sunny_day",
+        "trick",
+        "trick_room",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

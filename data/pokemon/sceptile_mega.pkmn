@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("sceptile_mega")
+class MegaSceptile:
+    display_name = "Sceptile Mega"
+    id = 10065
+    base_stats = BaseStats(
+        hp=70,
+        attack=110,
+        defense=75,
+        special_attack=145,
+        special_defense=85,
+        speed=145
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 284
+    height_m = 1.9
+    weight_kg = 55.2

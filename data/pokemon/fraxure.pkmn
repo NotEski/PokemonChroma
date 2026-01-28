@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("fraxure")
+class Fraxure:
+    display_name = "Fraxure"
+    id = 611
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=66,
+        attack=117,
+        defense=70,
+        special_attack=40,
+        special_defense=50,
+        speed=67
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 144
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rivalry",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 36.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bite",
+                "false_swipe",
+                "leer",
+                "scratch",
+            ],
+            9: [
+                "assurance",
+            ],
+            12: [
+                "taunt",
+            ],
+            15: [
+                "slash",
+            ],
+            18: [
+                "dragon_claw",
+            ],
+            21: [
+                "scary_face",
+            ],
+            24: [
+                "crunch",
+            ],
+            27: [
+                "dragon_dance",
+            ],
+            30: [
+                "dual_chop",
+            ],
+            33: [
+                "laser_focus",
+            ],
+            36: [
+                "dragon_pulse",
+            ],
+            41: [
+                "swords_dance",
+            ],
+            46: [
+                "outrage",
+            ],
+            51: [
+                "guillotine",
+            ],
+            56: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "breaking_swipe",
+        "crunch",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "focus_energy",
+        "giga_impact",
+        "iron_tail",
+        "low_kick",
+        "outrage",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+    ]
+    egg_moves = []

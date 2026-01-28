@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("golisopod")
+class Golisopod:
+    display_name = "Golisopod"
+    id = 768
+    types = ['bug', 'water']
+    base_stats = BaseStats(
+        hp=75,
+        attack=125,
+        defense=140,
+        special_attack=60,
+        special_defense=90,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 186
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "emergency_exit",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 108.0
+    egg_groups = ['bug', 'water3']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "first_impression",
+            ],
+            1: [
+                "defense_curl",
+                "first_impression",
+                "sand_attack",
+                "spite",
+                "struggle_bug",
+            ],
+            4: [
+                "rock_smash",
+            ],
+            8: [
+                "fury_cutter",
+            ],
+            12: [
+                "mud_shot",
+            ],
+            16: [
+                "bug_bite",
+            ],
+            20: [
+                "iron_defense",
+            ],
+            24: [
+                "sucker_punch",
+            ],
+            28: [
+                "slash",
+            ],
+            32: [
+                "razor_shell",
+            ],
+            36: [
+                "pin_missile",
+            ],
+            40: [
+                "swords_dance",
+            ],
+            44: [
+                "liquidation",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "brick_break",
+        "bug_buzz",
+        "bulk_up",
+        "close_combat",
+        "dark_pulse",
+        "dive",
+        "drill_run",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "hail",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "leech_life",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "razor_shell",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snarl",
+        "snore",
+        "spikes",
+        "substitute",
+        "surf",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "throat_chop",
+        "venoshock",
+        "waterfall",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = []

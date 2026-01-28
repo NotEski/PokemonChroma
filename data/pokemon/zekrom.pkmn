@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zekrom")
+class Zekrom:
+    display_name = "Zekrom"
+    id = 644
+    types = ['dragon', 'electric']
+    base_stats = BaseStats(
+        hp=100,
+        attack=150,
+        defense=120,
+        special_attack=120,
+        special_defense=100,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "teravolt",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.9
+    weight_kg = 345.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "dragon_breath",
+                "noble_roar",
+                "thunder_fang",
+            ],
+            8: [
+                "slash",
+            ],
+            16: [
+                "crunch",
+            ],
+            24: [
+                "zen_headbutt",
+            ],
+            32: [
+                "dragon_claw",
+            ],
+            40: [
+                "thunderbolt",
+            ],
+            48: [
+                "fusion_bolt",
+            ],
+            56: [
+                "hyper_voice",
+            ],
+            64: [
+                "thunder",
+            ],
+            72: [
+                "imprison",
+            ],
+            80: [
+                "outrage",
+            ],
+            88: [
+                "bolt_strike",
+            ],
+        }
+    machine_moves = [
+        "body_press",
+        "breaking_swipe",
+        "brutal_swing",
+        "crunch",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "electro_ball",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "light_screen",
+        "outrage",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "swift",
+        "thunder",
+        "thunder_fang",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "weather_ball",
+        "wild_charge",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "rising_voltage",
+        "scale_shot",
+    ]
+    egg_moves = []

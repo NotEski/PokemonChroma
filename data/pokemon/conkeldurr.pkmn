@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("conkeldurr")
+class Conkeldurr:
+    display_name = "Conkeldurr"
+    id = 534
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=105,
+        attack=140,
+        defense=95,
+        special_attack=55,
+        special_defense=65,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 227
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "guts",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 87.0
+    egg_groups = ['humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "low_kick",
+                "pound",
+                "rock_throw",
+            ],
+            12: [
+                "focus_energy",
+            ],
+            16: [
+                "bulk_up",
+            ],
+            20: [
+                "rock_slide",
+            ],
+            24: [
+                "slam",
+            ],
+            30: [
+                "scary_face",
+            ],
+            36: [
+                "dynamic_punch",
+            ],
+            42: [
+                "hammer_arm",
+            ],
+            48: [
+                "stone_edge",
+            ],
+            54: [
+                "superpower",
+            ],
+            60: [
+                "focus_punch",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "dig",
+        "drain_punch",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_punch",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thunder_punch",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

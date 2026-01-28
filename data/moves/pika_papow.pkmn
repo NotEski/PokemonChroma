@@ -1,0 +1,13 @@
+@move("pika_papow")  # type: ignore
+class _PikaPapow:
+    meta = {
+        "display_name": "Pika Papow",
+        "type": "electric",
+        "index": 732,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

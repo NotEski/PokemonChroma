@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("thievul")
+class Thievul:
+    display_name = "Thievul"
+    id = 828
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=70,
+        attack=58,
+        defense=58,
+        special_attack=87,
+        special_defense=92,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 127
+    base_experience_yield = 159
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "stakeout",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 19.9
+    egg_groups = ['ground']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "thief",
+            ],
+            1: [
+                "beat_up",
+                "hone_claws",
+                "quick_attack",
+                "tail_whip",
+                "thief",
+            ],
+            12: [
+                "snarl",
+            ],
+            16: [
+                "assurance",
+            ],
+            22: [
+                "nasty_plot",
+            ],
+            28: [
+                "sucker_punch",
+            ],
+            34: [
+                "night_slash",
+            ],
+            40: [
+                "tail_slap",
+            ],
+            46: [
+                "foul_play",
+            ],
+            52: [
+                "parting_shot",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "beat_up",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_fang",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "hyper_beam",
+        "ice_fang",
+        "mud_shot",
+        "nasty_plot",
+        "play_rough",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "screech",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "swift",
+        "tail_slap",
+        "taunt",
+        "thief",
+        "thunder_fang",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+    ]
+    egg_moves = []

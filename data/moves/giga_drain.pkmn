@@ -5,11 +5,10 @@ class _GigaDrain:
         "type": "grass",
         "index": 202,
         "damage_class": "special",
-        "category": "damage_heal",
+        "category": "damage",
         "accuracy": 100,
         "power": 75,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "heal"]
     drain = 50

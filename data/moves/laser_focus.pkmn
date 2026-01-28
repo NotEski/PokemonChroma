@@ -1,0 +1,13 @@
+@move("laser_focus")  # type: ignore
+class _LaserFocus:
+    meta = {
+        "display_name": "Laser Focus",
+        "type": "normal",
+        "index": 673,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 30,
+        "target": "user",
+    }

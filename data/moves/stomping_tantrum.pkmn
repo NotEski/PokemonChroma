@@ -1,0 +1,13 @@
+@move("stomping_tantrum")  # type: ignore
+class _StompingTantrum:
+    meta = {
+        "display_name": "Stomping Tantrum",
+        "type": "ground",
+        "index": 707,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

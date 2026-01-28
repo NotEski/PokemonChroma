@@ -1,0 +1,13 @@
+@move("bleakwind_storm")  # type: ignore
+class _BleakwindStorm:
+    meta = {
+        "display_name": "Bleakwind Storm",
+        "type": "flying",
+        "index": 846,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 100,
+        "pp": 10,
+        "target": "all_opponents",
+    }

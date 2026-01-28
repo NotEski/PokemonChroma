@@ -1,0 +1,13 @@
+@move("mighty_cleave")  # type: ignore
+class _MightyCleave:
+    meta = {
+        "display_name": "Mighty Cleave",
+        "type": "rock",
+        "index": 910,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 95,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

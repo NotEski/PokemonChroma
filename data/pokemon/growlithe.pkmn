@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("growlithe")
+class Growlithe:
+    display_name = "Growlithe"
+    id = 58
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=55,
+        attack=70,
+        defense=45,
+        special_attack=70,
+        special_defense=50,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "flash_fire",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "justified",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 19.0
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "leer",
+            ],
+            4: [
+                "howl",
+            ],
+            8: [
+                "bite",
+            ],
+            12: [
+                "flame_wheel",
+            ],
+            16: [
+                "helping_hand",
+            ],
+            20: [
+                "agility",
+            ],
+            24: [
+                "fire_fang",
+            ],
+            28: [
+                "retaliate",
+            ],
+            32: [
+                "crunch",
+            ],
+            36: [
+                "take_down",
+            ],
+            40: [
+                "flamethrower",
+            ],
+            44: [
+                "roar",
+            ],
+            48: [
+                "play_rough",
+            ],
+            52: [
+                "reversal",
+            ],
+            56: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "close_combat",
+        "crunch",
+        "dig",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "heat_wave",
+        "helping_hand",
+        "iron_tail",
+        "outrage",
+        "overheat",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rest",
+        "retaliate",
+        "reversal",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "wild_charge",
+        "will_o_wisp",
+    ]
+    egg_moves = [
+        "covet",
+        "double_edge",
+        "double_kick",
+        "morning_sun",
+        "thrash",
+    ]

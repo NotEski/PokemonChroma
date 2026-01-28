@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("fezandipiti")
+class Fezandipiti:
+    display_name = "Fezandipiti"
+    id = 1016
+    types = ['poison', 'fairy']
+    base_stats = BaseStats(
+        hp=88,
+        attack=91,
+        defense=82,
+        special_attack=70,
+        special_defense=125,
+        speed=99
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 278
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "toxic_chain",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 30.1
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

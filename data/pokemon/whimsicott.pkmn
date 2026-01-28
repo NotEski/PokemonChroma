@@ -1,0 +1,118 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("whimsicott")
+class Whimsicott:
+    display_name = "Whimsicott"
+    id = 547
+    types = ['grass', 'fairy']
+    base_stats = BaseStats(
+        hp=60,
+        attack=67,
+        defense=85,
+        special_attack=77,
+        special_defense=75,
+        speed=116
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 75
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "prankster",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "chlorophyll",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 6.6
+    egg_groups = ['plant', 'fairy']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "charm",
+                "cotton_guard",
+                "cotton_spore",
+                "endeavor",
+                "energy_ball",
+                "fairy_wind",
+                "giga_drain",
+                "growth",
+                "gust",
+                "helping_hand",
+                "hurricane",
+                "leech_seed",
+                "mega_drain",
+                "memento",
+                "moonblast",
+                "poison_powder",
+                "razor_leaf",
+                "solar_beam",
+                "stun_spore",
+                "sunny_day",
+                "tailwind",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "beat_up",
+        "charm",
+        "dazzling_gleam",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hurricane",
+        "hyper_beam",
+        "light_screen",
+        "misty_terrain",
+        "play_rough",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "trick_room",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

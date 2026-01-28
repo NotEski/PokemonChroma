@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("ogerpon_wellspring_mask")
+class MegaOgerponWellspringMask:
+    display_name = "Ogerpon Wellspring Mask"
+    id = 10273
+    base_stats = BaseStats(
+        hp=80,
+        attack=120,
+        defense=84,
+        special_attack=60,
+        special_defense=96,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 275
+    height_m = 1.2
+    weight_kg = 39.8

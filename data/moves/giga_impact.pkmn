@@ -11,4 +11,3 @@ class _GigaImpact:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "recharge", "protect", "mirror"]

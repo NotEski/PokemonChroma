@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("great_tusk")
+class GreatTusk:
+    display_name = "Great Tusk"
+    id = 984
+    types = ['ground', 'fighting']
+    base_stats = BaseStats(
+        hp=115,
+        attack=131,
+        defense=131,
+        special_attack=53,
+        special_defense=53,
+        speed=87
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "protosynthesis",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.2
+    weight_kg = 320.0
+    growth_rate = "medium_fast"
+    egg_moves = []

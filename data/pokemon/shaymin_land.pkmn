@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("shaymin_land")
+class ShayminLand:
+    display_name = "Shaymin Land"
+    id = 492
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=100,
+        special_attack=100,
+        special_defense=100,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 270
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 2.1
+    growth_rate = "medium_fast"
+    egg_moves = []

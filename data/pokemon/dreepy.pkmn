@@ -1,0 +1,84 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dreepy")
+class Dreepy:
+    display_name = "Dreepy"
+    id = 885
+    types = ['dragon', 'ghost']
+    base_stats = BaseStats(
+        hp=28,
+        attack=60,
+        defense=30,
+        special_attack=40,
+        special_defense=30,
+        speed=82
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 54
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "clear_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 2.0
+    egg_groups = ['indeterminate', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "bite",
+                "infestation",
+                "quick_attack",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "endure",
+        "facade",
+        "helping_hand",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swift",
+        "thunder_wave",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+    ]
+    egg_moves = [
+        "confuse_ray",
+        "curse",
+        "disable",
+        "double_team",
+        "dragon_tail",
+        "grudge",
+        "sucker_punch",
+    ]

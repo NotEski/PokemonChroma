@@ -5,13 +5,12 @@ class _FlashCannon:
         "type": "steel",
         "index": 430,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

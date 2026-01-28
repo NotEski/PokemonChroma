@@ -5,13 +5,12 @@ class _Inferno:
         "type": "fire",
         "index": 517,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 50,
         "power": 100,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "burn": 100,
     }

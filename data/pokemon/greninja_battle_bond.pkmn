@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("greninja_battle_bond")
+class MegaGreninjaBattleBond:
+    display_name = "Greninja Battle Bond"
+    id = 10116
+    base_stats = BaseStats(
+        hp=72,
+        attack=95,
+        defense=67,
+        special_attack=103,
+        special_defense=71,
+        speed=122
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 239
+    height_m = 1.5
+    weight_kg = 40.0

@@ -5,11 +5,10 @@ class _WideGuard:
         "type": "rock",
         "index": 469,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "users_field",
     }
-    flags = ["snatch"]
     priority = 3

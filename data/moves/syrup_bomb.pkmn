@@ -1,0 +1,16 @@
+@move("syrup_bomb")  # type: ignore
+class _SyrupBomb:
+    meta = {
+        "display_name": "Syrup Bomb",
+        "type": "grass",
+        "index": 903,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 60,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

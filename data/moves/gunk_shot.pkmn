@@ -5,13 +5,12 @@ class _GunkShot:
         "type": "poison",
         "index": 441,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 80,
         "power": 120,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "poison": 30,
     }

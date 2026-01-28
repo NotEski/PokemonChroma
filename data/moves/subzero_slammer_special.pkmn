@@ -1,0 +1,13 @@
+@move("subzero_slammer_special")  # type: ignore
+class _SubzeroSlammerSpecial:
+    meta = {
+        "display_name": "Subzero Slammer",
+        "type": "ice",
+        "index": 651,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

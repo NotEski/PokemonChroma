@@ -5,10 +5,9 @@ class _MagnetRise:
         "type": "electric",
         "index": 393,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch", "gravity"]

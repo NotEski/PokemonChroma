@@ -1,0 +1,13 @@
+@move("fishious_rend")  # type: ignore
+class _FishiousRend:
+    meta = {
+        "display_name": "Fishious Rend",
+        "type": "water",
+        "index": 755,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

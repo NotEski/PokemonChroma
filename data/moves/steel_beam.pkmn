@@ -1,0 +1,13 @@
+@move("steel_beam")  # type: ignore
+class _SteelBeam:
+    meta = {
+        "display_name": "Steel Beam",
+        "type": "steel",
+        "index": 796,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 140,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

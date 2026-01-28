@@ -5,13 +5,12 @@ class _Confusion:
         "type": "psychic",
         "index": 93,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 50,
         "pp": 25,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "confusion": 10,
     }

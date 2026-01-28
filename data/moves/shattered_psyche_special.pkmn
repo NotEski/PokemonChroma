@@ -1,0 +1,13 @@
+@move("shattered_psyche_special")  # type: ignore
+class _ShatteredPsycheSpecial:
+    meta = {
+        "display_name": "Shattered Psyche",
+        "type": "psychic",
+        "index": 649,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

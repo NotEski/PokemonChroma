@@ -5,10 +5,12 @@ class _ShellSmash:
         "type": "normal",
         "index": 504,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "user",
     }
-    flags = ["snatch"]
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}, {"stat": "attack", "change": 2, "chance": 100}, {"stat": "special_attack", "change": 2, "chance": 100}, {"stat": "speed", "change": 2, "chance": 100}],
+    }

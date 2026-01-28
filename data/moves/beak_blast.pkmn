@@ -1,0 +1,14 @@
+@move("beak_blast")  # type: ignore
+class _BeakBlast:
+    meta = {
+        "display_name": "Beak Blast",
+        "type": "flying",
+        "index": 690,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    priority = -3

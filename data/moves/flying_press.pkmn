@@ -7,8 +7,7 @@ class _FlyingPress:
         "damage_class": "physical",
         "category": "damage",
         "accuracy": 95,
-        "power": 80,
+        "power": 100,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "gravity", "distance", "non_sky_battle"]

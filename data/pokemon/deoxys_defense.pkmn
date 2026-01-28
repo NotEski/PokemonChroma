@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("deoxys_defense")
+class MegaDeoxysDefense:
+    display_name = "Deoxys Defense"
+    id = 10002
+    base_stats = BaseStats(
+        hp=50,
+        attack=70,
+        defense=160,
+        special_attack=70,
+        special_defense=160,
+        speed=90
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 270
+    height_m = 1.7
+    weight_kg = 60.8

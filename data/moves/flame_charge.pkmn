@@ -5,13 +5,12 @@ class _FlameCharge:
         "type": "fire",
         "index": 488,
         "damage_class": "physical",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 100,
         "power": 50,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
     }

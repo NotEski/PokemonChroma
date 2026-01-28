@@ -1,0 +1,13 @@
+@move("prismatic_laser")  # type: ignore
+class _PrismaticLaser:
+    meta = {
+        "display_name": "Prismatic Laser",
+        "type": "psychic",
+        "index": 711,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 160,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("porygon")
+class Porygon:
+    display_name = "Porygon"
+    id = 137
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=65,
+        attack=60,
+        defense=70,
+        special_attack=85,
+        special_defense=75,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 79
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "trace",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "download",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 36.5
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "conversion",
+                "tackle",
+            ],
+            5: [
+                "recycle",
+            ],
+            10: [
+                "magnet_rise",
+            ],
+            15: [
+                "thunder_shock",
+            ],
+            20: [
+                "psybeam",
+            ],
+            25: [
+                "conversion_2",
+            ],
+            30: [
+                "agility",
+            ],
+            35: [
+                "recover",
+            ],
+            40: [
+                "discharge",
+            ],
+            45: [
+                "tri_attack",
+            ],
+            50: [
+                "magic_coat",
+            ],
+            55: [
+                "lock_on",
+            ],
+            60: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "blizzard",
+        "eerie_impulse",
+        "electroweb",
+        "endure",
+        "facade",
+        "foul_play",
+        "giga_impact",
+        "guard_swap",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "rest",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "trick",
+        "trick_room",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    egg_moves = []

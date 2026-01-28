@@ -1,0 +1,13 @@
+@move("freezy_frost")  # type: ignore
+class _FreezyFrost:
+    meta = {
+        "display_name": "Freezy Frost",
+        "type": "ice",
+        "index": 739,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

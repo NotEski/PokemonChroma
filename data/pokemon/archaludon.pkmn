@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("archaludon")
+class Archaludon:
+    display_name = "Archaludon"
+    id = 1018
+    types = ['steel', 'dragon']
+    base_stats = BaseStats(
+        hp=90,
+        attack=105,
+        defense=130,
+        special_attack=125,
+        special_defense=65,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 10
+    base_experience_yield = 300
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "stamina",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "stalwart",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 60.0
+    egg_groups = ['mineral', 'dragon']
+    growth_rate = "medium"
+    egg_moves = []

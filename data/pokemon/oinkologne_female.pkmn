@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("oinkologne_female")
+class MegaOinkologneFemale:
+    display_name = "Oinkologne Female"
+    id = 10254
+    base_stats = BaseStats(
+        hp=115,
+        attack=90,
+        defense=70,
+        special_attack=59,
+        special_defense=90,
+        speed=65
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 171
+    height_m = 1.0
+    weight_kg = 120.0

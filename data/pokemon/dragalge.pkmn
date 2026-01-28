@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dragalge")
+class Dragalge:
+    display_name = "Dragalge"
+    id = 691
+    types = ['poison', 'dragon']
+    base_stats = BaseStats(
+        hp=65,
+        attack=75,
+        defense=90,
+        special_attack=97,
+        special_defense=123,
+        speed=44
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 55
+    base_experience_yield = 173
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "poison_touch",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "adaptability",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 81.5
+    egg_groups = ['water1', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "acid",
+                "smokescreen",
+                "tackle",
+                "water_gun",
+            ],
+            15: [
+                "tail_whip",
+            ],
+            20: [
+                "double_team",
+            ],
+            25: [
+                "poison_tail",
+            ],
+            30: [
+                "water_pulse",
+            ],
+            35: [
+                "toxic",
+            ],
+            40: [
+                "dragon_pulse",
+            ],
+            45: [
+                "aqua_tail",
+            ],
+            52: [
+                "sludge_bomb",
+            ],
+            59: [
+                "hydro_pump",
+            ],
+            66: [
+                "outrage",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bounce",
+        "dive",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "focus_blast",
+        "giga_impact",
+        "gunk_shot",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "icy_wind",
+        "iron_tail",
+        "outrage",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "surf",
+        "thunder",
+        "thunderbolt",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+        "waterfall",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "flip_turn",
+        "scale_shot",
+    ]
+    egg_moves = []

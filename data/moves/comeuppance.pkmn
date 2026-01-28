@@ -1,0 +1,13 @@
+@move("comeuppance")  # type: ignore
+class _Comeuppance:
+    meta = {
+        "display_name": "Comeuppance",
+        "type": "dark",
+        "index": 894,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 1,
+        "pp": 10,
+        "target": "specific_move",
+    }

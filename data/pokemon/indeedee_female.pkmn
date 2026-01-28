@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("indeedee_female")
+class IndeedeeFemale:
+    display_name = "Indeedee Female"
+    id = 10186
+    types = ['psychic', 'normal']
+    base_stats = BaseStats(
+        hp=70,
+        attack=55,
+        defense=65,
+        special_attack=95,
+        special_defense=105,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "own_tempo",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "synchronize",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "psychic_surge",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 28.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "play_nice",
+                "stored_power",
+            ],
+            5: [
+                "baton_pass",
+            ],
+            10: [
+                "disarming_voice",
+            ],
+            15: [
+                "psybeam",
+            ],
+            20: [
+                "helping_hand",
+            ],
+            25: [
+                "follow_me",
+            ],
+            30: [
+                "aromatherapy",
+            ],
+            35: [
+                "psychic",
+            ],
+            40: [
+                "calm_mind",
+            ],
+            45: [
+                "guard_split",
+            ],
+            50: [
+                "psychic_terrain",
+            ],
+            55: [
+                "healing_wish",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "calm_mind",
+        "dazzling_gleam",
+        "drain_punch",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "future_sight",
+        "guard_swap",
+        "helping_hand",
+        "hyper_voice",
+        "imprison",
+        "light_screen",
+        "magical_leaf",
+        "metronome",
+        "mystical_fire",
+        "pay_day",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "swift",
+        "trick",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "terrain_pulse",
+    ]
+    egg_moves = [
+        "fake_out",
+        "heal_pulse",
+        "psych_up",
+        "psycho_shift",
+    ]

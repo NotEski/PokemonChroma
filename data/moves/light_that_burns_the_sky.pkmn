@@ -1,0 +1,13 @@
+@move("light_that_burns_the_sky")  # type: ignore
+class _LightThatBurnsTheSky:
+    meta = {
+        "display_name": "Light That Burns the Sky",
+        "type": "psychic",
+        "index": 723,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 200,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

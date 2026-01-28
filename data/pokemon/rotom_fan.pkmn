@@ -1,0 +1,118 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rotom_fan")
+class RotomFan:
+    display_name = "Rotom Fan"
+    id = 10011
+    types = ['electric', 'flying']
+    base_stats = BaseStats(
+        hp=50,
+        attack=65,
+        defense=107,
+        special_attack=105,
+        special_defense=107,
+        speed=86
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 182
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 0.3
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "double_team",
+            ],
+            5: [
+                "thunder_shock",
+            ],
+            10: [
+                "confuse_ray",
+            ],
+            15: [
+                "charge",
+            ],
+            20: [
+                "electro_ball",
+            ],
+            25: [
+                "thunder_wave",
+            ],
+            30: [
+                "shock_wave",
+            ],
+            35: [
+                "hex",
+            ],
+            40: [
+                "substitute",
+            ],
+            45: [
+                "trick",
+            ],
+            50: [
+                "discharge",
+            ],
+            55: [
+                "uproar",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "dark_pulse",
+        "eerie_impulse",
+        "electric_terrain",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "foul_play",
+        "helping_hand",
+        "hex",
+        "hyper_voice",
+        "light_screen",
+        "nasty_plot",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "uproar",
+        "volt_switch",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "poltergeist",
+        "rising_voltage",
+    ]
+    egg_moves = []

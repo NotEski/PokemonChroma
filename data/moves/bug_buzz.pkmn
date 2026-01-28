@@ -5,13 +5,12 @@ class _BugBuzz:
         "type": "bug",
         "index": 405,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
         "power": 90,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

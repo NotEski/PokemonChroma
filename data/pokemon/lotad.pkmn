@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lotad")
+class Lotad:
+    display_name = "Lotad"
+    id = 270
+    types = ['water', 'grass']
+    base_stats = BaseStats(
+        hp=40,
+        attack=30,
+        defense=30,
+        special_attack=40,
+        special_defense=50,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 44
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "own_tempo",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 2.6
+    egg_groups = ['water1', 'plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "growl",
+            ],
+            3: [
+                "absorb",
+            ],
+            6: [
+                "water_gun",
+            ],
+            9: [
+                "mist",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "flail",
+            ],
+            20: [
+                "bubble_beam",
+            ],
+            24: [
+                "nature_power",
+            ],
+            28: [
+                "giga_drain",
+            ],
+            33: [
+                "rain_dance",
+            ],
+            38: [
+                "zen_headbutt",
+            ],
+            43: [
+                "energy_ball",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bullet_seed",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "grass_knot",
+        "hail",
+        "ice_beam",
+        "icy_wind",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swords_dance",
+        "thief",
+        "uproar",
+        "whirlpool",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "counter",
+        "leech_seed",
+        "razor_leaf",
+        "sweet_scent",
+        "synthesis",
+        "teeter_dance",
+        "tickle",
+    ]

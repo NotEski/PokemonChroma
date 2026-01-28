@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tauros")
+class Tauros:
+    display_name = "Tauros"
+    id = 128
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=75,
+        attack=100,
+        defense=95,
+        special_attack=40,
+        special_defense=70,
+        speed=110
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "anger_point",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 88.4
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+            ],
+            5: [
+                "work_up",
+            ],
+            10: [
+                "payback",
+            ],
+            15: [
+                "assurance",
+            ],
+            20: [
+                "horn_attack",
+            ],
+            25: [
+                "scary_face",
+            ],
+            30: [
+                "zen_headbutt",
+            ],
+            35: [
+                "take_down",
+            ],
+            40: [
+                "rest",
+            ],
+            45: [
+                "swagger",
+            ],
+            50: [
+                "thrash",
+            ],
+            55: [
+                "double_edge",
+            ],
+            60: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "close_combat",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "giga_impact",
+        "helping_hand",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_head",
+        "iron_tail",
+        "megahorn",
+        "outrage",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "throat_chop",
+        "thunder",
+        "thunderbolt",
+        "uproar",
+        "whirlpool",
+        "wild_charge",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

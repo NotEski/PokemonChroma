@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("munkidori")
+class Munkidori:
+    display_name = "Munkidori"
+    id = 1015
+    types = ['poison', 'psychic']
+    base_stats = BaseStats(
+        hp=88,
+        attack=75,
+        defense=66,
+        special_attack=130,
+        special_defense=90,
+        speed=106
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 278
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "toxic_chain",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 12.2
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

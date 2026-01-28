@@ -1,0 +1,16 @@
+@move("gear_up")  # type: ignore
+class _GearUp:
+    meta = {
+        "display_name": "Gear Up",
+        "type": "steel",
+        "index": 674,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "user_and_allies",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}],
+    }

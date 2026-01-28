@@ -5,10 +5,9 @@ class _Fissure:
         "type": "ground",
         "index": 90,
         "damage_class": "physical",
-        "category": "ohko",
+        "category": "damage",
         "accuracy": 30,
         "power": None,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]

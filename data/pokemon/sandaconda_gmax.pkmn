@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("sandaconda_gmax")
+class MegaSandaconda:
+    display_name = "Sandaconda Gmax"
+    id = 10218
+    base_stats = BaseStats(
+        hp=72,
+        attack=107,
+        defense=125,
+        special_attack=65,
+        special_defense=70,
+        speed=71
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 179
+    height_m = 22.0
+    weight_kg = 1000.0

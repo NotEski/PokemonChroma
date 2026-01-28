@@ -11,5 +11,4 @@ class _PsychoCut:
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     critical_hit_rate = 8

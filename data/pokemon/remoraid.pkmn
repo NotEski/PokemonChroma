@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("remoraid")
+class Remoraid:
+    display_name = "Remoraid"
+    id = 223
+    types = ['water']
+    base_stats = BaseStats(
+        hp=35,
+        attack=65,
+        defense=35,
+        special_attack=65,
+        special_defense=35,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sniper",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 12.0
+    egg_groups = ['water1', 'water2']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "helping_hand",
+                "water_gun",
+            ],
+            4: [
+                "water_pulse",
+            ],
+            8: [
+                "focus_energy",
+            ],
+            12: [
+                "psybeam",
+            ],
+            16: [
+                "aurora_beam",
+            ],
+            20: [
+                "bubble_beam",
+            ],
+            24: [
+                "lock_on",
+            ],
+            28: [
+                "bullet_seed",
+            ],
+            32: [
+                "ice_beam",
+            ],
+            36: [
+                "hydro_pump",
+            ],
+            40: [
+                "soak",
+            ],
+            44: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "bounce",
+        "brine",
+        "bullet_seed",
+        "dive",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "focus_energy",
+        "gunk_shot",
+        "helping_hand",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "mud_shot",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "round",
+        "scald",
+        "screech",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "thief",
+        "thunder_wave",
+        "waterfall",
+        "whirlpool",
+    ]
+    egg_moves = [
+        "acid_spray",
+        "flail",
+        "haze",
+        "octazooka",
+        "supersonic",
+        "water_spout",
+    ]

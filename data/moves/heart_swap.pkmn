@@ -5,10 +5,9 @@ class _HeartSwap:
         "type": "psychic",
         "index": 391,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "authentic"]

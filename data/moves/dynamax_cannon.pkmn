@@ -1,0 +1,13 @@
+@move("dynamax_cannon")  # type: ignore
+class _DynamaxCannon:
+    meta = {
+        "display_name": "Dynamax Cannon",
+        "type": "dragon",
+        "index": 744,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

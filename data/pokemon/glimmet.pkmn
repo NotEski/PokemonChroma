@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("glimmet")
+class Glimmet:
+    display_name = "Glimmet"
+    id = 969
+    types = ['rock', 'poison']
+    base_stats = BaseStats(
+        hp=48,
+        attack=35,
+        defense=42,
+        special_attack=105,
+        special_defense=60,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 70
+    base_experience_yield = 70
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "toxic_debris",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "corrosion",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 8.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    egg_moves = []

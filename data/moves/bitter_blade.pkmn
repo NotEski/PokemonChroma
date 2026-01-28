@@ -1,0 +1,13 @@
+@move("bitter_blade")  # type: ignore
+class _BitterBlade:
+    meta = {
+        "display_name": "Bitter Blade",
+        "type": "fire",
+        "index": 891,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

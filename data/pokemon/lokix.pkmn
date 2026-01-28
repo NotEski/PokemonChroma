@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lokix")
+class Lokix:
+    display_name = "Lokix"
+    id = 920
+    types = ['bug', 'dark']
+    base_stats = BaseStats(
+        hp=71,
+        attack=102,
+        defense=78,
+        special_attack=52,
+        special_defense=55,
+        speed=92
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 158
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "tinted_lens",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 17.5
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    egg_moves = []

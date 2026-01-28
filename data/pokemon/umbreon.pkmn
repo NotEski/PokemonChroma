@@ -1,0 +1,145 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("umbreon")
+class Umbreon:
+    display_name = "Umbreon"
+    id = 197
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=95,
+        attack=65,
+        defense=110,
+        special_attack=60,
+        special_defense=130,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 184
+    base_happiness = 35
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 27.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "snarl",
+            ],
+            1: [
+                "baton_pass",
+                "bite",
+                "charm",
+                "copycat",
+                "covet",
+                "double_edge",
+                "growl",
+                "helping_hand",
+                "snarl",
+                "swift",
+                "tackle",
+                "tail_whip",
+                "take_down",
+            ],
+            5: [
+                "sand_attack",
+            ],
+            10: [
+                "quick_attack",
+            ],
+            15: [
+                "baby_doll_eyes",
+            ],
+            20: [
+                "confuse_ray",
+            ],
+            25: [
+                "assurance",
+            ],
+            30: [
+                "moonlight",
+            ],
+            35: [
+                "guard_swap",
+            ],
+            40: [
+                "dark_pulse",
+            ],
+            45: [
+                "screech",
+            ],
+            50: [
+                "mean_look",
+            ],
+            55: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "charm",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "focus_energy",
+        "foul_play",
+        "giga_impact",
+        "guard_swap",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "pay_day",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "weather_ball",
+        "wonder_room",
+        "work_up",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

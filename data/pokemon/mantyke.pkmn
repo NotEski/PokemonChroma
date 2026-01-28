@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mantyke")
+class Mantyke:
+    display_name = "Mantyke"
+    id = 458
+    types = ['water', 'flying']
+    base_stats = BaseStats(
+        hp=45,
+        attack=20,
+        defense=50,
+        special_attack=60,
+        special_defense=120,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 69
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 65.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "water_gun",
+            ],
+            4: [
+                "supersonic",
+            ],
+            8: [
+                "wing_attack",
+            ],
+            12: [
+                "water_pulse",
+            ],
+            16: [
+                "wide_guard",
+            ],
+            20: [
+                "agility",
+            ],
+            24: [
+                "bubble_beam",
+            ],
+            28: [
+                "headbutt",
+            ],
+            32: [
+                "air_slash",
+            ],
+            36: [
+                "aqua_ring",
+            ],
+            40: [
+                "bounce",
+            ],
+            44: [
+                "take_down",
+            ],
+            48: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "amnesia",
+        "attract",
+        "blizzard",
+        "bounce",
+        "bulldoze",
+        "dive",
+        "earthquake",
+        "endure",
+        "facade",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "waterfall",
+        "whirlpool",
+    ]
+    egg_moves = [
+        "confuse_ray",
+        "haze",
+        "mirror_coat",
+        "slam",
+        "splash",
+        "tailwind",
+        "twister",
+    ]

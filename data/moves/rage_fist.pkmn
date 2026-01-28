@@ -1,0 +1,13 @@
+@move("rage_fist")  # type: ignore
+class _RageFist:
+    meta = {
+        "display_name": "Rage Fist",
+        "type": "ghost",
+        "index": 889,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

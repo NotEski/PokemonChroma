@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("flapple_gmax")
+class MegaFlapple:
+    display_name = "Flapple Gmax"
+    id = 10216
+    base_stats = BaseStats(
+        hp=70,
+        attack=110,
+        defense=80,
+        special_attack=95,
+        special_defense=60,
+        speed=70
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 170
+    height_m = 24.0
+    weight_kg = 1000.0

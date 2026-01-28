@@ -5,13 +5,12 @@ class _Scald:
         "type": "water",
         "index": 503,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "defrost"]
     status_condition = {
         "burn": 30,
     }

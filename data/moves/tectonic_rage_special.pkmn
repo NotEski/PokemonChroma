@@ -1,0 +1,13 @@
+@move("tectonic_rage_special")  # type: ignore
+class _TectonicRageSpecial:
+    meta = {
+        "display_name": "Tectonic Rage",
+        "type": "ground",
+        "index": 631,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

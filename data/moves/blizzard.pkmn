@@ -5,13 +5,12 @@ class _Blizzard:
         "type": "ice",
         "index": 59,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 70,
         "power": 110,
         "pp": 5,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "freeze": 10,
     }

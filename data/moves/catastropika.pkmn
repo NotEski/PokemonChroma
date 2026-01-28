@@ -1,0 +1,13 @@
+@move("catastropika")  # type: ignore
+class _Catastropika:
+    meta = {
+        "display_name": "Catastropika",
+        "type": "electric",
+        "index": 658,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 210,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

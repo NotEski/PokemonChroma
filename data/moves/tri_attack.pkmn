@@ -5,10 +5,12 @@ class _TriAttack:
         "type": "normal",
         "index": 161,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
+    status_condition = {
+        "unknown": 20,
+    }

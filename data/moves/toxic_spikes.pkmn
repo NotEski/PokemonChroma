@@ -5,13 +5,9 @@ class _ToxicSpikes:
         "type": "poison",
         "index": 390,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "opponents_field",
-    }
-    flags = ["reflectable", "non_sky_battle"]
-    hazard = {
-        "toxic_spikes": 1,
     }

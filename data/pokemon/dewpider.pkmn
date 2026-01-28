@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dewpider")
+class Dewpider:
+    display_name = "Dewpider"
+    id = 751
+    types = ['water', 'bug']
+    base_stats = BaseStats(
+        hp=38,
+        attack=40,
+        defense=52,
+        special_attack=40,
+        special_defense=72,
+        speed=27
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 200
+    base_experience_yield = 54
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "water_bubble",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 4.0
+    egg_groups = ['water1', 'bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "infestation",
+                "water_gun",
+            ],
+            4: [
+                "bug_bite",
+            ],
+            8: [
+                "bite",
+            ],
+            12: [
+                "bubble_beam",
+            ],
+            16: [
+                "aqua_ring",
+            ],
+            20: [
+                "headbutt",
+            ],
+            24: [
+                "crunch",
+            ],
+            28: [
+                "soak",
+            ],
+            32: [
+                "entrainment",
+            ],
+            36: [
+                "lunge",
+            ],
+            40: [
+                "liquidation",
+            ],
+            44: [
+                "leech_life",
+            ],
+            48: [
+                "mirror_coat",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "bug_buzz",
+        "crunch",
+        "endure",
+        "facade",
+        "giga_drain",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "leech_life",
+        "liquidation",
+        "magic_room",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "wonder_room",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "power_split",
+        "spit_up",
+        "sticky_web",
+        "stockpile",
+    ]

@@ -1,0 +1,13 @@
+@move("plasma_fists")  # type: ignore
+class _PlasmaFists:
+    meta = {
+        "display_name": "Plasma Fists",
+        "type": "electric",
+        "index": 721,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

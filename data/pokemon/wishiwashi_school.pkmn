@@ -1,0 +1,120 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wishiwashi_school")
+class WishiwashiSchool:
+    display_name = "Wishiwashi School"
+    id = 10127
+    types = ['water']
+    base_stats = BaseStats(
+        hp=45,
+        attack=140,
+        defense=130,
+        special_attack=140,
+        special_defense=135,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 217
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "schooling",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 8.2
+    weight_kg = 78.6
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "water_gun",
+            ],
+            4: [
+                "helping_hand",
+            ],
+            8: [
+                "beat_up",
+            ],
+            12: [
+                "brine",
+            ],
+            16: [
+                "tearful_look",
+            ],
+            20: [
+                "dive",
+            ],
+            24: [
+                "soak",
+            ],
+            28: [
+                "uproar",
+            ],
+            32: [
+                "aqua_tail",
+            ],
+            36: [
+                "aqua_ring",
+            ],
+            40: [
+                "endeavor",
+            ],
+            44: [
+                "hydro_pump",
+            ],
+            48: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "beat_up",
+        "brine",
+        "bulldoze",
+        "dive",
+        "earthquake",
+        "endure",
+        "facade",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "ice_beam",
+        "iron_tail",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "u_turn",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "mist",
+        "take_down",
+        "water_pulse",
+    ]

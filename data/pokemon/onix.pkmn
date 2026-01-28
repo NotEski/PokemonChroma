@@ -1,0 +1,154 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("onix")
+class Onix:
+    display_name = "Onix"
+    id = 95
+    types = ['rock', 'ground']
+    base_stats = BaseStats(
+        hp=35,
+        attack=45,
+        defense=160,
+        special_attack=30,
+        special_defense=45,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 77
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 8.8
+    weight_kg = 210.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "harden",
+                "rock_throw",
+                "tackle",
+            ],
+            4: [
+                "smack_down",
+            ],
+            8: [
+                "rock_polish",
+            ],
+            12: [
+                "dragon_breath",
+            ],
+            16: [
+                "curse",
+            ],
+            20: [
+                "rock_slide",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "sand_tomb",
+            ],
+            32: [
+                "stealth_rock",
+            ],
+            36: [
+                "slam",
+            ],
+            40: [
+                "sandstorm",
+            ],
+            44: [
+                "dig",
+            ],
+            48: [
+                "iron_tail",
+            ],
+            52: [
+                "stone_edge",
+            ],
+            56: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "body_slam",
+        "breaking_swipe",
+        "brutal_swing",
+        "bulldoze",
+        "dig",
+        "dragon_dance",
+        "dragon_pulse",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "gyro_ball",
+        "heavy_slam",
+        "high_horsepower",
+        "iron_head",
+        "iron_tail",
+        "payback",
+        "protect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scary_face",
+        "screech",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "taunt",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "scorching_sands",
+    ]
+    egg_moves = [
+        "block",
+        "defense_curl",
+        "dragon_tail",
+        "flail",
+        "head_smash",
+        "rollout",
+        "wide_guard",
+    ]

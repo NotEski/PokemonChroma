@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("omastar")
+class Omastar:
+    display_name = "Omastar"
+    id = 139
+    types = ['rock', 'water']
+    base_stats = BaseStats(
+        hp=70,
+        attack=60,
+        defense=125,
+        special_attack=115,
+        special_defense=70,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 173
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 35.0
+    egg_groups = ['water1', 'water3']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "crunch",
+            ],
+            1: [
+                "bind",
+                "crunch",
+                "rollout",
+                "sand_attack",
+                "withdraw",
+            ],
+            15: [
+                "water_gun",
+            ],
+            20: [
+                "leer",
+            ],
+            25: [
+                "mud_shot",
+            ],
+            30: [
+                "ancient_power",
+            ],
+            35: [
+                "brine",
+            ],
+            43: [
+                "protect",
+            ],
+            49: [
+                "rock_blast",
+            ],
+            56: [
+                "surf",
+            ],
+            63: [
+                "shell_smash",
+            ],
+            70: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "crunch",
+        "dive",
+        "earth_power",
+        "endure",
+        "facade",
+        "giga_impact",
+        "gyro_ball",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "pin_missile",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "thief",
+        "toxic_spikes",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = []

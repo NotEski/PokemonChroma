@@ -5,13 +5,12 @@ class _ThunderPunch:
         "type": "electric",
         "index": 9,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 75,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "punch"]
     status_condition = {
         "paralysis": 10,
     }

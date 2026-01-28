@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("kommo_o_totem")
+class MegaKommoOTotem:
+    display_name = "Kommo O Totem"
+    id = 10146
+    base_stats = BaseStats(
+        hp=75,
+        attack=110,
+        defense=125,
+        special_attack=100,
+        special_defense=105,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 270
+    height_m = 2.4
+    weight_kg = 207.5

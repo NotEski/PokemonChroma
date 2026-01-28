@@ -1,0 +1,137 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("salamence")
+class Salamence:
+    display_name = "Salamence"
+    id = 373
+    types = ['dragon', 'flying']
+    base_stats = BaseStats(
+        hp=95,
+        attack=135,
+        defense=80,
+        special_attack=110,
+        special_defense=80,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 270
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "moxie",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 102.6
+    egg_groups = ['dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "fly",
+            ],
+            1: [
+                "bite",
+                "dragon_breath",
+                "dragon_tail",
+                "ember",
+                "fly",
+                "leer",
+                "protect",
+            ],
+            15: [
+                "headbutt",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "crunch",
+            ],
+            33: [
+                "dragon_claw",
+            ],
+            39: [
+                "zen_headbutt",
+            ],
+            46: [
+                "focus_energy",
+            ],
+            55: [
+                "flamethrower",
+            ],
+            64: [
+                "outrage",
+            ],
+            73: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "attract",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "flamethrower",
+        "fly",
+        "focus_energy",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_defense",
+        "iron_tail",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder_fang",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+    ]
+    egg_moves = []

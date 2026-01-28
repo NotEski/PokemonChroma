@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lycanroc_midnight")
+class LycanrocMidnight:
+    display_name = "Lycanroc Midnight"
+    id = 10126
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=85,
+        attack=115,
+        defense=75,
+        special_attack=55,
+        special_defense=75,
+        speed=82
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 170
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "no_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 25.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "counter",
+            ],
+            1: [
+                "counter",
+                "double_team",
+                "endure",
+                "leer",
+                "reversal",
+                "sand_attack",
+                "tackle",
+                "taunt",
+            ],
+            12: [
+                "rock_throw",
+            ],
+            16: [
+                "howl",
+            ],
+            20: [
+                "bite",
+            ],
+            24: [
+                "rock_tomb",
+            ],
+            30: [
+                "roar",
+            ],
+            36: [
+                "rock_slide",
+            ],
+            42: [
+                "crunch",
+            ],
+            48: [
+                "scary_face",
+            ],
+            54: [
+                "stealth_rock",
+            ],
+            60: [
+                "stone_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "bulk_up",
+        "close_combat",
+        "crunch",
+        "earth_power",
+        "endure",
+        "facade",
+        "fire_fang",
+        "fire_punch",
+        "foul_play",
+        "giga_impact",
+        "hyper_voice",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "outrage",
+        "payback",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rest",
+        "revenge",
+        "reversal",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "swords_dance",
+        "taunt",
+        "throat_chop",
+        "thunder_fang",
+        "thunder_punch",
+        "uproar",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

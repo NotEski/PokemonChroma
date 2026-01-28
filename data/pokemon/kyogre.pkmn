@@ -1,0 +1,120 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kyogre")
+class Kyogre:
+    display_name = "Kyogre"
+    id = 382
+    types = ['water']
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=90,
+        special_attack=150,
+        special_defense=140,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 302
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "drizzle",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 4.5
+    weight_kg = 352.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "body_slam",
+                "scary_face",
+                "water_pulse",
+            ],
+            9: [
+                "aqua_tail",
+            ],
+            18: [
+                "calm_mind",
+            ],
+            27: [
+                "muddy_water",
+            ],
+            36: [
+                "ice_beam",
+            ],
+            45: [
+                "sheer_cold",
+            ],
+            54: [
+                "aqua_ring",
+            ],
+            63: [
+                "origin_pulse",
+            ],
+            72: [
+                "hydro_pump",
+            ],
+            81: [
+                "double_edge",
+            ],
+            90: [
+                "water_spout",
+            ],
+        }
+    machine_moves = [
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "bulldoze",
+        "calm_mind",
+        "dive",
+        "earthquake",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "heavy_slam",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_head",
+        "liquidation",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "scald",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+    ]
+    egg_moves = []

@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("orbeetle")
+class Orbeetle:
+    display_name = "Orbeetle"
+    id = 826
+    types = ['bug', 'psychic']
+    base_stats = BaseStats(
+        hp=60,
+        attack=45,
+        defense=110,
+        special_attack=80,
+        special_defense=120,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 253
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swarm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 40.8
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "light_screen",
+                "reflect",
+                "struggle_bug",
+            ],
+            4: [
+                "confuse_ray",
+            ],
+            8: [
+                "magic_coat",
+            ],
+            12: [
+                "agility",
+            ],
+            16: [
+                "psybeam",
+            ],
+            20: [
+                "hypnosis",
+            ],
+            24: [
+                "ally_switch",
+            ],
+            28: [
+                "bug_buzz",
+            ],
+            32: [
+                "mirror_coat",
+            ],
+            36: [
+                "psychic",
+            ],
+            40: [
+                "after_you",
+            ],
+            44: [
+                "calm_mind",
+            ],
+            48: [
+                "psychic_terrain",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "body_press",
+        "bug_buzz",
+        "calm_mind",
+        "endure",
+        "energy_ball",
+        "facade",
+        "future_sight",
+        "giga_drain",
+        "giga_impact",
+        "guard_swap",
+        "helping_hand",
+        "hyper_beam",
+        "imprison",
+        "iron_defense",
+        "leech_life",
+        "light_screen",
+        "magic_room",
+        "payback",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psycho_cut",
+        "psyshock",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "trick",
+        "trick_room",
+        "u_turn",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = []

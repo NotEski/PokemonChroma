@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dialga")
+class Dialga:
+    display_name = "Dialga"
+    id = 483
+    types = ['steel', 'dragon']
+    base_stats = BaseStats(
+        hp=100,
+        attack=120,
+        defense=120,
+        special_attack=150,
+        special_defense=100,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 5.4
+    weight_kg = 683.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "metal_claw",
+                "scary_face",
+            ],
+            8: [
+                "dragon_breath",
+            ],
+            16: [
+                "ancient_power",
+            ],
+            24: [
+                "slash",
+            ],
+            32: [
+                "flash_cannon",
+            ],
+            40: [
+                "dragon_claw",
+            ],
+            48: [
+                "aura_sphere",
+            ],
+            56: [
+                "power_gem",
+            ],
+            64: [
+                "metal_burst",
+            ],
+            72: [
+                "earth_power",
+            ],
+            80: [
+                "iron_tail",
+            ],
+            88: [
+                "roar_of_time",
+            ],
+        }
+    machine_moves = [
+        "aura_sphere",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "dragon_claw",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "flash_cannon",
+        "giga_impact",
+        "heavy_slam",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "outrage",
+        "overheat",
+        "power_gem",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick_room",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+        "steel_beam",
+    ]
+    egg_moves = []

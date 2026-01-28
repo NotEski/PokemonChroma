@@ -5,13 +5,12 @@ class _PlayNice:
         "type": "normal",
         "index": 589,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["reflectable", "mirror", "authentic"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

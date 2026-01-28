@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("turtwig")
+class Turtwig:
+    display_name = "Turtwig"
+    id = 387
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=55,
+        attack=68,
+        defense=64,
+        special_attack=45,
+        special_defense=55,
+        speed=31
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 10.2
+    egg_groups = ['monster', 'plant']
+    growth_rate = "medium_slow"
+    egg_moves = []

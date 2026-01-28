@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("garbodor")
+class Garbodor:
+    display_name = "Garbodor"
+    id = 569
+    types = ['poison']
+    base_stats = BaseStats(
+        hp=80,
+        attack=95,
+        defense=82,
+        special_attack=60,
+        special_defense=82,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "stench",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "aftermath",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 107.3
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "acid_spray",
+                "metal_claw",
+                "poison_gas",
+                "pound",
+                "recycle",
+                "take_down",
+            ],
+            9: [
+                "amnesia",
+            ],
+            12: [
+                "clear_smog",
+            ],
+            15: [
+                "toxic_spikes",
+            ],
+            18: [
+                "sludge",
+            ],
+            21: [
+                "stockpile",
+                "swallow",
+            ],
+            24: [
+                "body_slam",
+            ],
+            27: [
+                "sludge_bomb",
+            ],
+            30: [
+                "toxic",
+            ],
+            33: [
+                "belch",
+            ],
+            39: [
+                "pain_split",
+            ],
+            43: [
+                "gunk_shot",
+            ],
+            48: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_press",
+        "body_slam",
+        "cross_poison",
+        "dark_pulse",
+        "drain_punch",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "giga_drain",
+        "giga_impact",
+        "gunk_shot",
+        "hyper_beam",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "round",
+        "screech",
+        "seed_bomb",
+        "self_destruct",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "solar_beam",
+        "spikes",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "thunderbolt",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+    ]
+    egg_moves = []

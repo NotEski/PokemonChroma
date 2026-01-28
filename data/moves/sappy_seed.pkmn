@@ -1,0 +1,16 @@
+@move("sappy_seed")  # type: ignore
+class _SappySeed:
+    meta = {
+        "display_name": "Sappy Seed",
+        "type": "grass",
+        "index": 738,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "leech_seed": 100,
+    }

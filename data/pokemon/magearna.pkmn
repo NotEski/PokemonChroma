@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("magearna")
+class Magearna:
+    display_name = "Magearna"
+    id = 801
+    types = ['steel', 'fairy']
+    base_stats = BaseStats(
+        hp=80,
+        attack=95,
+        defense=115,
+        special_attack=130,
+        special_defense=115,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 270
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "soul_heart",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 80.5
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "gyro_ball",
+                "helping_hand",
+            ],
+            6: [
+                "defense_curl",
+            ],
+            12: [
+                "rollout",
+            ],
+            18: [
+                "iron_defense",
+            ],
+            24: [
+                "gear_up",
+            ],
+            30: [
+                "psybeam",
+            ],
+            36: [
+                "aurora_beam",
+            ],
+            42: [
+                "mind_reader",
+            ],
+            48: [
+                "shift_gear",
+            ],
+            54: [
+                "crafty_shield",
+            ],
+            60: [
+                "iron_head",
+            ],
+            66: [
+                "aura_sphere",
+            ],
+            72: [
+                "flash_cannon",
+            ],
+            78: [
+                "pain_split",
+            ],
+            84: [
+                "zap_cannon",
+            ],
+            90: [
+                "fleur_cannon",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "aura_sphere",
+        "baton_pass",
+        "brick_break",
+        "calm_mind",
+        "dazzling_gleam",
+        "draining_kiss",
+        "eerie_impulse",
+        "electro_ball",
+        "electroweb",
+        "encore",
+        "endure",
+        "energy_ball",
+        "false_swipe",
+        "flash_cannon",
+        "focus_blast",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "gyro_ball",
+        "helping_hand",
+        "hyper_beam",
+        "ice_beam",
+        "imprison",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "power_swap",
+        "protect",
+        "reflect",
+        "rest",
+        "round",
+        "self_destruct",
+        "shadow_ball",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "stored_power",
+        "substitute",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "trick",
+        "trick_room",
+        "volt_switch",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "misty_explosion",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

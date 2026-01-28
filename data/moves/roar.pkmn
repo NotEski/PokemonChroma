@@ -5,11 +5,10 @@ class _Roar:
         "type": "normal",
         "index": 46,
         "damage_class": "status",
-        "category": "force_switch",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["reflectable", "mirror", "sound", "authentic"]
     priority = -6

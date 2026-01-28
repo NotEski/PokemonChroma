@@ -1,0 +1,167 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("audino")
+class Audino:
+    display_name = "Audino"
+    id = 531
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=103,
+        attack=60,
+        defense=86,
+        special_attack=60,
+        special_defense=86,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 390
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "healer",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "klutz",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 31.0
+    egg_groups = ['fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "play_nice",
+                "pound",
+            ],
+            4: [
+                "disarming_voice",
+            ],
+            9: [
+                "baby_doll_eyes",
+            ],
+            12: [
+                "helping_hand",
+            ],
+            16: [
+                "growl",
+            ],
+            20: [
+                "zen_headbutt",
+            ],
+            24: [
+                "life_dew",
+            ],
+            28: [
+                "after_you",
+            ],
+            32: [
+                "take_down",
+            ],
+            36: [
+                "simple_beam",
+            ],
+            40: [
+                "hyper_voice",
+            ],
+            44: [
+                "heal_pulse",
+            ],
+            48: [
+                "double_edge",
+            ],
+            52: [
+                "entrainment",
+            ],
+            56: [
+                "misty_terrain",
+            ],
+            60: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "calm_mind",
+        "dazzling_gleam",
+        "dig",
+        "drain_punch",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "misty_terrain",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "throat_chop",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "trick_room",
+        "uproar",
+        "wild_charge",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "healing_wish",
+        "sweet_kiss",
+        "wish",
+        "yawn",
+    ]

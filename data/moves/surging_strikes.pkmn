@@ -1,0 +1,14 @@
+@move("surging_strikes")  # type: ignore
+class _SurgingStrikes:
+    meta = {
+        "display_name": "Surging Strikes",
+        "type": "water",
+        "index": 818,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 25,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    critical_hit_rate = 48

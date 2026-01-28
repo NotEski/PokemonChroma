@@ -1,0 +1,148 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mienfoo")
+class Mienfoo:
+    display_name = "Mienfoo"
+    id = 619
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=45,
+        attack=85,
+        defense=50,
+        special_attack=55,
+        special_defense=50,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 180
+    base_experience_yield = 70
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "reckless",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 20.0
+    egg_groups = ['ground', 'humanshape']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "detect",
+                "pound",
+            ],
+            5: [
+                "fake_out",
+            ],
+            10: [
+                "reversal",
+            ],
+            15: [
+                "fury_swipes",
+            ],
+            20: [
+                "quick_guard",
+            ],
+            25: [
+                "force_palm",
+            ],
+            30: [
+                "u_turn",
+            ],
+            35: [
+                "drain_punch",
+            ],
+            40: [
+                "hone_claws",
+            ],
+            45: [
+                "aura_sphere",
+            ],
+            51: [
+                "bounce",
+            ],
+            55: [
+                "calm_mind",
+            ],
+            60: [
+                "high_jump_kick",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "ally_switch",
+        "attract",
+        "aura_sphere",
+        "baton_pass",
+        "bounce",
+        "brick_break",
+        "bulk_up",
+        "calm_mind",
+        "close_combat",
+        "dig",
+        "drain_punch",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "grass_knot",
+        "helping_hand",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "u_turn",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = [
+        "feint",
+        "focus_punch",
+        "knock_off",
+        "vital_throw",
+    ]

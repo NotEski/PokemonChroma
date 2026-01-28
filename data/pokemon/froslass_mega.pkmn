@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("froslass_mega")
+class MegaFroslass:
+    display_name = "Froslass Mega"
+    id = 10285
+    base_stats = BaseStats(
+        hp=70,
+        attack=80,
+        defense=70,
+        special_attack=140,
+        special_defense=100,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.6
+    weight_kg = 29.6

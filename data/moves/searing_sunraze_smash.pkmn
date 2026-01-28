@@ -1,0 +1,13 @@
+@move("searing_sunraze_smash")  # type: ignore
+class _SearingSunrazeSmash:
+    meta = {
+        "display_name": "Searing Sunraze Smash",
+        "type": "steel",
+        "index": 724,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 200,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

@@ -11,4 +11,3 @@ class _Outrage:
         "pp": 10,
         "target": "random_opponent",
     }
-    flags = ["contact", "protect", "mirror"]

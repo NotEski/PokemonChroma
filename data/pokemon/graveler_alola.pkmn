@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("graveler_alola")
+class MegaGravelerAlola:
+    display_name = "Graveler Alola"
+    id = 10110
+    base_stats = BaseStats(
+        hp=55,
+        attack=95,
+        defense=115,
+        special_attack=45,
+        special_defense=45,
+        speed=35
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 137
+    height_m = 1.0
+    weight_kg = 110.0

@@ -5,13 +5,12 @@ class _Discharge:
         "type": "electric",
         "index": 435,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 15,
         "target": "all_other_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "paralysis": 30,
     }

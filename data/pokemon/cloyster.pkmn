@@ -1,0 +1,120 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cloyster")
+class Cloyster:
+    display_name = "Cloyster"
+    id = 91
+    types = ['water', 'ice']
+    base_stats = BaseStats(
+        hp=50,
+        attack=95,
+        defense=180,
+        special_attack=85,
+        special_defense=45,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 184
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shell_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "skill_link",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "overcoat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 132.5
+    egg_groups = ['water3']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "icicle_spear",
+            ],
+            1: [
+                "aurora_beam",
+                "hydro_pump",
+                "ice_beam",
+                "ice_shard",
+                "icicle_crash",
+                "icicle_spear",
+                "iron_defense",
+                "leer",
+                "protect",
+                "razor_shell",
+                "shell_smash",
+                "spikes",
+                "supersonic",
+                "tackle",
+                "toxic_spikes",
+                "water_gun",
+                "whirlpool",
+                "withdraw",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "brine",
+        "dive",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "light_screen",
+        "liquidation",
+        "mud_shot",
+        "payback",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "razor_shell",
+        "rest",
+        "rock_blast",
+        "round",
+        "screech",
+        "self_destruct",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "spikes",
+        "substitute",
+        "surf",
+        "swift",
+        "toxic_spikes",
+        "tri_attack",
+        "weather_ball",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "steel_roller",
+    ]
+    egg_moves = []

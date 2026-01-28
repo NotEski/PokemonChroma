@@ -1,0 +1,63 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wynaut")
+class Wynaut:
+    display_name = "Wynaut"
+    id = 360
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=95,
+        attack=23,
+        defense=48,
+        special_attack=23,
+        special_defense=48,
+        speed=23
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 125
+    base_experience_yield = 52
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shadow_tag",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 14.0
+    egg_groups = ['no_eggs']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "amnesia",
+                "charm",
+                "counter",
+                "destiny_bond",
+                "encore",
+                "mirror_coat",
+                "safeguard",
+                "splash",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "charm",
+        "encore",
+        "safeguard",
+    ]
+    egg_moves = []

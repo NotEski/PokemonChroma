@@ -1,0 +1,13 @@
+@move("doodle")  # type: ignore
+class _Doodle:
+    meta = {
+        "display_name": "Doodle",
+        "type": "normal",
+        "index": 867,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 0,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

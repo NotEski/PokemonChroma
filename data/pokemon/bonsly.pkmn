@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bonsly")
+class Bonsly:
+    display_name = "Bonsly"
+    id = 438
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=50,
+        attack=80,
+        defense=95,
+        special_attack=10,
+        special_defense=45,
+        speed=10
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rock_head",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 15.0
+    egg_groups = ['no_eggs']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "copycat",
+                "fake_tears",
+            ],
+            4: [
+                "flail",
+            ],
+            8: [
+                "rock_throw",
+            ],
+            12: [
+                "block",
+            ],
+            16: [
+                "mimic",
+            ],
+            20: [
+                "rock_tomb",
+            ],
+            24: [
+                "tearful_look",
+            ],
+            28: [
+                "sucker_punch",
+            ],
+            32: [
+                "rock_slide",
+            ],
+            36: [
+                "low_kick",
+            ],
+            40: [
+                "counter",
+            ],
+            44: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "calm_mind",
+        "dig",
+        "earth_power",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "helping_hand",
+        "low_kick",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "uproar",
+    ]
+    egg_moves = [
+        "curse",
+        "defense_curl",
+        "harden",
+        "headbutt",
+        "rock_polish",
+        "rollout",
+    ]

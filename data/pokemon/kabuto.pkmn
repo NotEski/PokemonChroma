@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kabuto")
+class Kabuto:
+    display_name = "Kabuto"
+    id = 140
+    types = ['rock', 'water']
+    base_stats = BaseStats(
+        hp=30,
+        attack=80,
+        defense=90,
+        special_attack=55,
+        special_defense=45,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 71
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "battle_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 11.5
+    egg_groups = ['water1', 'water3']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "harden",
+            ],
+            5: [
+                "scratch",
+            ],
+            10: [
+                "sand_attack",
+            ],
+            15: [
+                "aqua_jet",
+            ],
+            20: [
+                "leer",
+            ],
+            25: [
+                "mud_shot",
+            ],
+            30: [
+                "ancient_power",
+            ],
+            35: [
+                "brine",
+            ],
+            41: [
+                "protect",
+            ],
+            45: [
+                "leech_life",
+            ],
+            50: [
+                "liquidation",
+            ],
+            55: [
+                "metal_sound",
+            ],
+            60: [
+                "stone_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "dig",
+        "earth_power",
+        "endure",
+        "facade",
+        "giga_drain",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "leech_life",
+        "liquidation",
+        "mud_shot",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "thief",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = [
+        "aurora_beam",
+        "bubble_beam",
+        "confuse_ray",
+        "flail",
+        "knock_off",
+        "mega_drain",
+        "rapid_spin",
+        "take_down",
+    ]

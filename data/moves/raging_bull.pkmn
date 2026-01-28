@@ -1,0 +1,13 @@
+@move("raging_bull")  # type: ignore
+class _RagingBull:
+    meta = {
+        "display_name": "Raging Bull",
+        "type": "normal",
+        "index": 873,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

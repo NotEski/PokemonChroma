@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("squirtle")
+class Squirtle:
+    display_name = "Squirtle"
+    id = 7
+    types = ['water']
+    base_stats = BaseStats(
+        hp=44,
+        attack=48,
+        defense=65,
+        special_attack=50,
+        special_defense=64,
+        speed=43
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 63
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 9.0
+    egg_groups = ['monster', 'water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+            ],
+            3: [
+                "water_gun",
+            ],
+            6: [
+                "withdraw",
+            ],
+            9: [
+                "rapid_spin",
+            ],
+            12: [
+                "bite",
+            ],
+            15: [
+                "water_pulse",
+            ],
+            18: [
+                "protect",
+            ],
+            21: [
+                "rain_dance",
+            ],
+            24: [
+                "aqua_tail",
+            ],
+            27: [
+                "shell_smash",
+            ],
+            30: [
+                "iron_defense",
+            ],
+            33: [
+                "hydro_pump",
+            ],
+            36: [
+                "skull_bash",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "aura_sphere",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "dig",
+        "dive",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "gyro_ball",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "water_pledge",
+    ]
+    egg_moves = [
+        "aqua_jet",
+        "aqua_ring",
+        "fake_out",
+        "flail",
+        "haze",
+        "life_dew",
+        "mirror_coat",
+        "mist",
+        "water_spout",
+        "yawn",
+    ]

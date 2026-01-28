@@ -1,0 +1,111 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cherrim")
+class Cherrim:
+    display_name = "Cherrim"
+    id = 421
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=70,
+        attack=60,
+        defense=70,
+        special_attack=87,
+        special_defense=78,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 158
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flower_gift",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 9.3
+    egg_groups = ['fairy', 'plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "sunny_day",
+            ],
+            1: [
+                "flower_shield",
+                "growth",
+                "leafage",
+                "morning_sun",
+                "sunny_day",
+                "tackle",
+            ],
+            15: [
+                "helping_hand",
+            ],
+            20: [
+                "magical_leaf",
+            ],
+            28: [
+                "leech_seed",
+            ],
+            34: [
+                "take_down",
+            ],
+            41: [
+                "petal_blizzard",
+            ],
+            48: [
+                "worry_seed",
+            ],
+            55: [
+                "solar_beam",
+            ],
+            62: [
+                "petal_dance",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bullet_seed",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hyper_beam",
+        "magical_leaf",
+        "play_rough",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "weather_ball",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

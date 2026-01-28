@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("yveltal")
+class Yveltal:
+    display_name = "Yveltal"
+    id = 717
+    types = ['dark', 'flying']
+    base_stats = BaseStats(
+        hp=126,
+        attack=131,
+        defense=95,
+        special_attack=131,
+        special_defense=98,
+        speed=99
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "dark_aura",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 5.8
+    weight_kg = 203.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "double_team",
+                "gust",
+            ],
+            5: [
+                "taunt",
+            ],
+            10: [
+                "snarl",
+            ],
+            15: [
+                "disable",
+            ],
+            20: [
+                "sucker_punch",
+            ],
+            25: [
+                "tailwind",
+            ],
+            30: [
+                "roost",
+            ],
+            35: [
+                "air_slash",
+            ],
+            40: [
+                "dark_pulse",
+            ],
+            45: [
+                "psychic",
+            ],
+            50: [
+                "oblivion_wing",
+            ],
+            55: [
+                "phantom_force",
+            ],
+            60: [
+                "foul_play",
+            ],
+            65: [
+                "dragon_rush",
+            ],
+            70: [
+                "hurricane",
+            ],
+            75: [
+                "focus_blast",
+            ],
+            80: [
+                "sky_attack",
+            ],
+            85: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "air_slash",
+        "body_slam",
+        "dark_pulse",
+        "dragon_claw",
+        "endure",
+        "facade",
+        "fly",
+        "focus_blast",
+        "foul_play",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "hyper_voice",
+        "payback",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "u_turn",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "lash_out",
+    ]
+    egg_moves = []

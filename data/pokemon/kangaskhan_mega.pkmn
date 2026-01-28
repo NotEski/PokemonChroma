@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("kangaskhan_mega")
+class MegaKangaskhan:
+    display_name = "Kangaskhan Mega"
+    id = 10039
+    base_stats = BaseStats(
+        hp=105,
+        attack=125,
+        defense=100,
+        special_attack=60,
+        special_defense=100,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 207
+    height_m = 2.2
+    weight_kg = 100.0

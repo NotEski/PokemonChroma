@@ -5,13 +5,12 @@ class _Swagger:
         "type": "normal",
         "index": 207,
         "damage_class": "status",
-        "category": "swagger",
-        "accuracy": 90,
+        "category": "damage",
+        "accuracy": 85,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 2, "chance": 100}],
     }

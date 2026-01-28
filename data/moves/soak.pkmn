@@ -5,10 +5,9 @@ class _Soak:
         "type": "water",
         "index": 487,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]

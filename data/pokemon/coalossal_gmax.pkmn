@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("coalossal_gmax")
+class MegaCoalossal:
+    display_name = "Coalossal Gmax"
+    id = 10215
+    base_stats = BaseStats(
+        hp=110,
+        attack=80,
+        defense=120,
+        special_attack=80,
+        special_defense=90,
+        speed=30
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 255
+    height_m = 42.0
+    weight_kg = 1000.0

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("lilligant_hisui")
+class MegaLilligantHisui:
+    display_name = "Lilligant Hisui"
+    id = 10237
+    base_stats = BaseStats(
+        hp=70,
+        attack=105,
+        defense=75,
+        special_attack=50,
+        special_defense=75,
+        speed=105
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 168
+    height_m = 1.2
+    weight_kg = 19.2

@@ -1,0 +1,16 @@
+@move("shell_side_arm")  # type: ignore
+class _ShellSideArm:
+    meta = {
+        "display_name": "Shell Side Arm",
+        "type": "poison",
+        "index": 801,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "poison": 20,
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("golisopod_mega")
+class MegaGolisopod:
+    display_name = "Golisopod Mega"
+    id = 10316
+    base_stats = BaseStats(
+        hp=75,
+        attack=150,
+        defense=175,
+        special_attack=70,
+        special_defense=120,
+        speed=40
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.3
+    weight_kg = 148.0

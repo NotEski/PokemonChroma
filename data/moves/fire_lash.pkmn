@@ -1,0 +1,16 @@
+@move("fire_lash")  # type: ignore
+class _FireLash:
+    meta = {
+        "display_name": "Fire Lash",
+        "type": "fire",
+        "index": 680,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
+    }

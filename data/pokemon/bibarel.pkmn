@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bibarel")
+class Bibarel:
+    display_name = "Bibarel"
+    id = 400
+    types = ['normal', 'water']
+    base_stats = BaseStats(
+        hp=79,
+        attack=85,
+        defense=60,
+        special_attack=55,
+        special_defense=60,
+        speed=71
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 127
+    base_experience_yield = 144
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "simple",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unaware",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 31.5
+    egg_groups = ['water1', 'ground']
+    growth_rate = "medium"
+    egg_moves = []

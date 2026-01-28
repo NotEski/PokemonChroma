@@ -1,0 +1,13 @@
+@move("hydro_vortex_physical")  # type: ignore
+class _HydroVortexPhysical:
+    meta = {
+        "display_name": "Hydro Vortex",
+        "type": "water",
+        "index": 642,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

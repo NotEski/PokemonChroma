@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("larvesta")
+class Larvesta:
+    display_name = "Larvesta"
+    id = 636
+    types = ['bug', 'fire']
+    base_stats = BaseStats(
+        hp=55,
+        attack=85,
+        defense=55,
+        special_attack=50,
+        special_defense=55,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 72
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "swarm",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 28.8
+    egg_groups = ['bug']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "string_shot",
+            ],
+            6: [
+                "flame_charge",
+            ],
+            12: [
+                "struggle_bug",
+            ],
+            18: [
+                "flame_wheel",
+            ],
+            24: [
+                "bug_bite",
+            ],
+            30: [
+                "screech",
+            ],
+            36: [
+                "leech_life",
+            ],
+            42: [
+                "bug_buzz",
+            ],
+            48: [
+                "take_down",
+            ],
+            54: [
+                "amnesia",
+            ],
+            60: [
+                "double_edge",
+            ],
+            66: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "amnesia",
+        "attract",
+        "bug_buzz",
+        "calm_mind",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "flare_blitz",
+        "giga_drain",
+        "heat_wave",
+        "leech_life",
+        "light_screen",
+        "overheat",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "safeguard",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "u_turn",
+        "wild_charge",
+        "will_o_wisp",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "absorb",
+        "harden",
+        "thrash",
+    ]

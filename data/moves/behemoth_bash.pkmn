@@ -1,0 +1,13 @@
+@move("behemoth_bash")  # type: ignore
+class _BehemothBash:
+    meta = {
+        "display_name": "Behemoth Bash",
+        "type": "steel",
+        "index": 782,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

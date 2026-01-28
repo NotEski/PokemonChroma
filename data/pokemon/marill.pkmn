@@ -1,0 +1,157 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("marill")
+class Marill:
+    display_name = "Marill"
+    id = 183
+    types = ['water', 'fairy']
+    base_stats = BaseStats(
+        hp=70,
+        attack=20,
+        defense=50,
+        special_attack=20,
+        special_defense=50,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 88
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "huge_power",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 8.5
+    egg_groups = ['water1', 'fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "defense_curl",
+                "helping_hand",
+                "rollout",
+                "tackle",
+                "tail_whip",
+                "water_gun",
+            ],
+            6: [
+                "bubble_beam",
+            ],
+            9: [
+                "charm",
+            ],
+            12: [
+                "slam",
+            ],
+            15: [
+                "bounce",
+            ],
+            19: [
+                "aqua_tail",
+            ],
+            21: [
+                "play_rough",
+            ],
+            24: [
+                "aqua_ring",
+            ],
+            27: [
+                "rain_dance",
+            ],
+            30: [
+                "hydro_pump",
+            ],
+            33: [
+                "double_edge",
+            ],
+            36: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "brutal_swing",
+        "charm",
+        "dig",
+        "dive",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fling",
+        "future_sight",
+        "grass_knot",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "mega_kick",
+        "mega_punch",
+        "misty_terrain",
+        "mud_shot",
+        "muddy_water",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+        "swift",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "misty_explosion",
+        "steel_roller",
+    ]
+    egg_moves = [
+        "aqua_jet",
+        "belly_drum",
+        "copycat",
+        "perish_song",
+        "present",
+        "sing",
+        "soak",
+        "supersonic",
+        "tickle",
+    ]

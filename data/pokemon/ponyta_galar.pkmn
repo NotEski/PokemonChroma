@@ -1,0 +1,128 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ponyta_galar")
+class PonytaGalar:
+    display_name = "Ponyta Galar"
+    id = 10162
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=50,
+        attack=85,
+        defense=55,
+        special_attack=65,
+        special_defense=65,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 82
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "pastel_veil",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "anticipation",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 24.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            5: [
+                "tail_whip",
+            ],
+            10: [
+                "confusion",
+            ],
+            15: [
+                "fairy_wind",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "psybeam",
+            ],
+            30: [
+                "stomp",
+            ],
+            35: [
+                "heal_pulse",
+            ],
+            41: [
+                "take_down",
+            ],
+            45: [
+                "dazzling_gleam",
+            ],
+            50: [
+                "psychic",
+            ],
+            55: [
+                "healing_wish",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "body_slam",
+        "bounce",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "endure",
+        "facade",
+        "future_sight",
+        "high_horsepower",
+        "imprison",
+        "iron_tail",
+        "low_kick",
+        "mystical_fire",
+        "play_rough",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "swift",
+        "wild_charge",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = [
+        "double_edge",
+        "double_kick",
+        "horn_drill",
+        "hypnosis",
+        "morning_sun",
+        "thrash",
+    ]

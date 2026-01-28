@@ -5,13 +5,12 @@ class _RockTomb:
         "type": "rock",
         "index": 317,
         "damage_class": "physical",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 95,
         "power": 60,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

@@ -1,0 +1,13 @@
+@move("aqua_cutter")  # type: ignore
+class _AquaCutter:
+    meta = {
+        "display_name": "Aqua Cutter",
+        "type": "water",
+        "index": 895,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

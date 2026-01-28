@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("kyurem_white")
+class KyuremWhite:
+    display_name = "Kyurem White"
+    id = 10023
+    types = ['dragon', 'ice']
+    base_stats = BaseStats(
+        hp=125,
+        attack=120,
+        defense=90,
+        special_attack=170,
+        special_defense=100,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 350
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "turboblaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 3.6
+    weight_kg = 325.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "dragon_breath",
+                "freeze_dry",
+                "noble_roar",
+            ],
+            8: [
+                "slash",
+            ],
+            16: [
+                "endeavor",
+            ],
+            24: [
+                "dragon_pulse",
+            ],
+            32: [
+                "ice_beam",
+            ],
+            40: [
+                "hyper_voice",
+            ],
+            48: [
+                "fusion_flare",
+            ],
+            56: [
+                "blizzard",
+            ],
+            64: [
+                "imprison",
+            ],
+            72: [
+                "outrage",
+            ],
+            80: [
+                "ice_burn",
+            ],
+            88: [
+                "sheer_cold",
+            ],
+        }
+    machine_moves = [
+        "blizzard",
+        "body_press",
+        "breaking_swipe",
+        "brutal_swing",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "hail",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "imprison",
+        "iron_head",
+        "light_screen",
+        "outrage",
+        "payback",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "scary_face",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "weather_ball",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+        "scale_shot",
+    ]
+    egg_moves = []

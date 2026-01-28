@@ -1,0 +1,148 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("blastoise")
+class Blastoise:
+    display_name = "Blastoise"
+    id = 9
+    types = ['water']
+    base_stats = BaseStats(
+        hp=79,
+        attack=83,
+        defense=100,
+        special_attack=85,
+        special_defense=105,
+        speed=78
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 239
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 85.5
+    egg_groups = ['monster', 'water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "flash_cannon",
+            ],
+            1: [
+                "flash_cannon",
+                "tackle",
+                "tail_whip",
+                "water_gun",
+                "withdraw",
+            ],
+            9: [
+                "rapid_spin",
+            ],
+            12: [
+                "bite",
+            ],
+            15: [
+                "water_pulse",
+            ],
+            20: [
+                "protect",
+            ],
+            25: [
+                "rain_dance",
+            ],
+            30: [
+                "aqua_tail",
+            ],
+            35: [
+                "shell_smash",
+            ],
+            42: [
+                "iron_defense",
+            ],
+            49: [
+                "hydro_pump",
+            ],
+            56: [
+                "skull_bash",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "aura_sphere",
+        "avalanche",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dive",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "flash_cannon",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "gyro_ball",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_tail",
+        "liquidation",
+        "mega_kick",
+        "mega_punch",
+        "muddy_water",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "hydro_cannon",
+        "terrain_pulse",
+        "water_pledge",
+    ]
+    egg_moves = []

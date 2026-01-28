@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("liepard")
+class Liepard:
+    display_name = "Liepard"
+    id = 510
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=64,
+        attack=88,
+        defense=50,
+        special_attack=88,
+        special_defense=50,
+        speed=106
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 90
+    base_experience_yield = 156
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "prankster",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 37.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fake_out",
+                "growl",
+                "sand_attack",
+                "scratch",
+            ],
+            12: [
+                "fury_swipes",
+            ],
+            16: [
+                "torment",
+            ],
+            23: [
+                "assurance",
+            ],
+            28: [
+                "hone_claws",
+            ],
+            34: [
+                "sucker_punch",
+            ],
+            40: [
+                "nasty_plot",
+            ],
+            46: [
+                "night_slash",
+            ],
+            52: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "baton_pass",
+        "charm",
+        "dark_pulse",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_tail",
+        "nasty_plot",
+        "pay_day",
+        "payback",
+        "play_rough",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder_wave",
+        "trick",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+        "skitter_smack",
+    ]
+    egg_moves = []

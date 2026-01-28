@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("glastrier")
+class Glastrier:
+    display_name = "Glastrier"
+    id = 896
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=100,
+        attack=145,
+        defense=130,
+        special_attack=65,
+        special_defense=110,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 290
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chilling_neigh",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.2
+    weight_kg = 800.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+            ],
+            6: [
+                "double_kick",
+            ],
+            12: [
+                "avalanche",
+            ],
+            18: [
+                "stomp",
+            ],
+            24: [
+                "torment",
+            ],
+            30: [
+                "mist",
+            ],
+            36: [
+                "icicle_crash",
+            ],
+            42: [
+                "take_down",
+            ],
+            48: [
+                "iron_defense",
+            ],
+            54: [
+                "thrash",
+            ],
+            60: [
+                "taunt",
+            ],
+            66: [
+                "double_edge",
+            ],
+            72: [
+                "swords_dance",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "avalanche",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "bulldoze",
+        "close_combat",
+        "crunch",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "heavy_slam",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "megahorn",
+        "mud_shot",
+        "outrage",
+        "payback",
+        "protect",
+        "rest",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "smart_strike",
+        "snarl",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "superpower",
+        "swords_dance",
+        "taunt",
+        "throat_chop",
+        "uproar",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

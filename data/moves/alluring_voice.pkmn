@@ -1,0 +1,13 @@
+@move("alluring_voice")  # type: ignore
+class _AlluringVoice:
+    meta = {
+        "display_name": "Alluring Voice",
+        "type": "fairy",
+        "index": 914,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

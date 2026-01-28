@@ -5,13 +5,12 @@ class _PoisonPowder:
         "type": "poison",
         "index": 77,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 75,
         "power": None,
         "pp": 35,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "powder"]
     status_condition = {
         "poison": 0,
     }

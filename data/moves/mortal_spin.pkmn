@@ -1,0 +1,13 @@
+@move("mortal_spin")  # type: ignore
+class _MortalSpin:
+    meta = {
+        "display_name": "Mortal Spin",
+        "type": "poison",
+        "index": 866,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 30,
+        "pp": 15,
+        "target": "all_opponents",
+    }

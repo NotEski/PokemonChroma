@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("persian_alola")
+class PersianAlola:
+    display_name = "Persian Alola"
+    id = 10108
+    types = ['dark']
+    base_stats = BaseStats(
+        hp=65,
+        attack=60,
+        defense=60,
+        special_attack=75,
+        special_defense=65,
+        speed=115
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 154
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "fur_coat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 33.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "power_gem",
+            ],
+            1: [
+                "fake_out",
+                "feint",
+                "growl",
+                "power_gem",
+                "quash",
+                "scratch",
+                "switcheroo",
+            ],
+            12: [
+                "pay_day",
+            ],
+            16: [
+                "bite",
+            ],
+            20: [
+                "taunt",
+            ],
+            24: [
+                "assurance",
+            ],
+            31: [
+                "fury_swipes",
+            ],
+            36: [
+                "screech",
+            ],
+            42: [
+                "night_slash",
+            ],
+            48: [
+                "nasty_plot",
+            ],
+            54: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "beat_up",
+        "body_slam",
+        "charm",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "foul_play",
+        "giga_impact",
+        "gunk_shot",
+        "hyper_beam",
+        "hyper_voice",
+        "icy_wind",
+        "iron_tail",
+        "nasty_plot",
+        "pay_day",
+        "payback",
+        "play_rough",
+        "power_gem",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunderbolt",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+        "skitter_smack",
+    ]
+    egg_moves = []

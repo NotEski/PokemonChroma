@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("eevee_gmax")
+class MegaEevee:
+    display_name = "Eevee Gmax"
+    id = 10205
+    base_stats = BaseStats(
+        hp=55,
+        attack=55,
+        defense=50,
+        special_attack=45,
+        special_defense=65,
+        speed=55
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 65
+    height_m = 18.0
+    weight_kg = 1000.0

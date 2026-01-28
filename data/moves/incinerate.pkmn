@@ -11,4 +11,3 @@ class _Incinerate:
         "pp": 15,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]

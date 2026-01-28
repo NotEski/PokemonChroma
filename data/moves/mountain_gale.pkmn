@@ -1,0 +1,13 @@
+@move("mountain_gale")  # type: ignore
+class _MountainGale:
+    meta = {
+        "display_name": "Mountain Gale",
+        "type": "ice",
+        "index": 836,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

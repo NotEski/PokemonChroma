@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ribombee")
+class Ribombee:
+    display_name = "Ribombee"
+    id = 743
+    types = ['bug', 'fairy']
+    base_stats = BaseStats(
+        hp=60,
+        attack=55,
+        defense=60,
+        special_attack=95,
+        special_defense=70,
+        speed=124
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 75
+    base_experience_yield = 162
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "honey_gather",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shield_dust",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sweet_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 0.5
+    egg_groups = ['bug', 'fairy']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "pollen_puff",
+            ],
+            1: [
+                "absorb",
+                "covet",
+                "fairy_wind",
+                "pollen_puff",
+                "stun_spore",
+                "sweet_scent",
+            ],
+            18: [
+                "draining_kiss",
+            ],
+            24: [
+                "struggle_bug",
+            ],
+            32: [
+                "aromatherapy",
+            ],
+            40: [
+                "switcheroo",
+            ],
+            48: [
+                "dazzling_gleam",
+            ],
+            56: [
+                "bug_buzz",
+            ],
+            64: [
+                "quiver_dance",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "bug_buzz",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "giga_impact",
+        "helping_hand",
+        "hyper_beam",
+        "imprison",
+        "leech_life",
+        "light_screen",
+        "magic_room",
+        "magical_leaf",
+        "play_rough",
+        "pollen_puff",
+        "protect",
+        "psychic",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "trick",
+        "u_turn",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("xurkitree")
+class Xurkitree:
+    display_name = "Xurkitree"
+    id = 796
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=83,
+        attack=89,
+        defense=71,
+        special_attack=173,
+        special_defense=71,
+        speed=83
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "beast_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 3.8
+    weight_kg = 100.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "thunder_shock",
+                "wrap",
+            ],
+            5: [
+                "charge",
+            ],
+            10: [
+                "thunder_wave",
+            ],
+            15: [
+                "ingrain",
+            ],
+            20: [
+                "spark",
+            ],
+            25: [
+                "shock_wave",
+            ],
+            30: [
+                "hypnosis",
+            ],
+            35: [
+                "eerie_impulse",
+            ],
+            40: [
+                "thunder_punch",
+            ],
+            45: [
+                "discharge",
+            ],
+            50: [
+                "magnet_rise",
+            ],
+            55: [
+                "thunderbolt",
+            ],
+            60: [
+                "electric_terrain",
+            ],
+            65: [
+                "power_whip",
+            ],
+            70: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "brutal_swing",
+        "calm_mind",
+        "dazzling_gleam",
+        "eerie_impulse",
+        "electric_terrain",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_impact",
+        "grass_knot",
+        "hyper_beam",
+        "light_screen",
+        "power_whip",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

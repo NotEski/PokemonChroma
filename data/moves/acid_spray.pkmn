@@ -5,13 +5,12 @@ class _AcidSpray:
         "type": "poison",
         "index": 491,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
         "power": 40,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "ballistics"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -2, "chance": 100}],
     }

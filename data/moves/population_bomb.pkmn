@@ -1,0 +1,13 @@
+@move("population_bomb")  # type: ignore
+class _PopulationBomb:
+    meta = {
+        "display_name": "Population Bomb",
+        "type": "normal",
+        "index": 860,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 20,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

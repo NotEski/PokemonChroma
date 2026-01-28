@@ -1,0 +1,13 @@
+@move("noxious_torque")  # type: ignore
+class _NoxiousTorque:
+    meta = {
+        "display_name": "Noxious Torque",
+        "type": "poison",
+        "index": 898,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

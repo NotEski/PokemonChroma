@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ninjask")
+class Ninjask:
+    display_name = "Ninjask"
+    id = 291
+    types = ['bug', 'flying']
+    base_stats = BaseStats(
+        hp=61,
+        attack=90,
+        defense=45,
+        special_attack=50,
+        special_defense=50,
+        speed=160
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 120
+    base_experience_yield = 160
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "speed_boost",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 12.0
+    egg_groups = ['bug']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "double_team",
+                "fury_cutter",
+                "screech",
+            ],
+            1: [
+                "aerial_ace",
+                "baton_pass",
+                "dig",
+                "double_team",
+                "false_swipe",
+                "fury_cutter",
+                "harden",
+                "metal_claw",
+                "mud_slap",
+                "sand_attack",
+                "scratch",
+                "screech",
+            ],
+            15: [
+                "agility",
+            ],
+            23: [
+                "absorb",
+            ],
+            29: [
+                "bug_bite",
+            ],
+            36: [
+                "fury_swipes",
+            ],
+            43: [
+                "mind_reader",
+            ],
+            50: [
+                "slash",
+            ],
+            57: [
+                "swords_dance",
+            ],
+            64: [
+                "x_scissor",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "baton_pass",
+        "bug_buzz",
+        "dig",
+        "endure",
+        "facade",
+        "false_swipe",
+        "giga_drain",
+        "giga_impact",
+        "hyper_beam",
+        "leech_life",
+        "protect",
+        "rest",
+        "round",
+        "sandstorm",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thief",
+        "u_turn",
+        "uproar",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "skitter_smack",
+    ]
+    egg_moves = []

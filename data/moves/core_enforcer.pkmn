@@ -1,0 +1,13 @@
+@move("core_enforcer")  # type: ignore
+class _CoreEnforcer:
+    meta = {
+        "display_name": "Core Enforcer",
+        "type": "dragon",
+        "index": 687,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "all_opponents",
+    }

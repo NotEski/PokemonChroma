@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mime_jr")
+class MimeJr:
+    display_name = "Mime Jr"
+    id = 439
+    types = ['psychic', 'fairy']
+    base_stats = BaseStats(
+        hp=20,
+        attack=25,
+        defense=45,
+        special_attack=70,
+        special_defense=90,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "soundproof",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "filter",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 13.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "copycat",
+                "pound",
+            ],
+            4: [
+                "baton_pass",
+            ],
+            8: [
+                "encore",
+            ],
+            12: [
+                "confusion",
+            ],
+            16: [
+                "role_play",
+            ],
+            20: [
+                "protect",
+            ],
+            24: [
+                "recycle",
+            ],
+            28: [
+                "psybeam",
+            ],
+            32: [
+                "mimic",
+            ],
+            36: [
+                "light_screen",
+                "reflect",
+                "safeguard",
+            ],
+            40: [
+                "sucker_punch",
+            ],
+            44: [
+                "dazzling_gleam",
+            ],
+            48: [
+                "psychic",
+            ],
+            52: [
+                "teeter_dance",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "brick_break",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "encore",
+        "endure",
+        "facade",
+        "fling",
+        "future_sight",
+        "grass_knot",
+        "helping_hand",
+        "icy_wind",
+        "light_screen",
+        "magic_room",
+        "misty_terrain",
+        "nasty_plot",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "trick_room",
+        "uproar",
+        "wonder_room",
+    ]
+    egg_moves = [
+        "confuse_ray",
+        "fake_out",
+        "hypnosis",
+        "power_split",
+        "tickle",
+    ]

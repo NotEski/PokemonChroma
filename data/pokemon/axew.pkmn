@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("axew")
+class Axew:
+    display_name = "Axew"
+    id = 610
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=46,
+        attack=87,
+        defense=60,
+        special_attack=30,
+        special_defense=40,
+        speed=57
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 64
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rivalry",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 18.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            3: [
+                "bite",
+            ],
+            6: [
+                "false_swipe",
+            ],
+            9: [
+                "assurance",
+            ],
+            12: [
+                "taunt",
+            ],
+            15: [
+                "slash",
+            ],
+            18: [
+                "dragon_claw",
+            ],
+            21: [
+                "scary_face",
+            ],
+            24: [
+                "crunch",
+            ],
+            27: [
+                "dragon_dance",
+            ],
+            30: [
+                "dual_chop",
+            ],
+            33: [
+                "laser_focus",
+            ],
+            36: [
+                "dragon_pulse",
+            ],
+            39: [
+                "swords_dance",
+            ],
+            42: [
+                "outrage",
+            ],
+            45: [
+                "guillotine",
+            ],
+            48: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "breaking_swipe",
+        "crunch",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "focus_energy",
+        "giga_impact",
+        "iron_tail",
+        "outrage",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "counter",
+        "endeavor",
+        "first_impression",
+        "harden",
+        "night_slash",
+    ]

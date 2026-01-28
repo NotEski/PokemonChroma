@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("marowak")
+class Marowak:
+    display_name = "Marowak"
+    id = 105
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=60,
+        attack=80,
+        defense=110,
+        special_attack=50,
+        special_defense=80,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 149
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "lightning_rod",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "battle_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 45.0
+    egg_groups = ['monster']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "false_swipe",
+                "growl",
+                "mud_slap",
+                "tail_whip",
+            ],
+            12: [
+                "headbutt",
+            ],
+            16: [
+                "retaliate",
+            ],
+            20: [
+                "fling",
+            ],
+            24: [
+                "stomping_tantrum",
+            ],
+            31: [
+                "bone_rush",
+            ],
+            36: [
+                "focus_energy",
+            ],
+            42: [
+                "endeavor",
+            ],
+            48: [
+                "bonemerang",
+            ],
+            54: [
+                "thrash",
+            ],
+            60: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "outrage",
+        "protect",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thief",
+        "throat_chop",
+        "thunder_punch",
+        "uproar",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = []

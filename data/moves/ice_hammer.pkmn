@@ -1,0 +1,16 @@
+@move("ice_hammer")  # type: ignore
+class _IceHammer:
+    meta = {
+        "display_name": "Ice Hammer",
+        "type": "ice",
+        "index": 665,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

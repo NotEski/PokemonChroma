@@ -1,0 +1,13 @@
+@move("lunar_blessing")  # type: ignore
+class _LunarBlessing:
+    meta = {
+        "display_name": "Lunar Blessing",
+        "type": "psychic",
+        "index": 849,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 5,
+        "target": "all_allies",
+    }

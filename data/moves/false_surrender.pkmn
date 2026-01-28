@@ -1,0 +1,13 @@
+@move("false_surrender")  # type: ignore
+class _FalseSurrender:
+    meta = {
+        "display_name": "False Surrender",
+        "type": "dark",
+        "index": 793,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

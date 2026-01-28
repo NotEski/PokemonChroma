@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("meowth")
+class Meowth:
+    display_name = "Meowth"
+    id = 52
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=35,
+        special_attack=40,
+        special_defense=40,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 4.2
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fake_out",
+                "growl",
+            ],
+            4: [
+                "feint",
+            ],
+            8: [
+                "scratch",
+            ],
+            12: [
+                "pay_day",
+            ],
+            16: [
+                "bite",
+            ],
+            20: [
+                "taunt",
+            ],
+            24: [
+                "assurance",
+            ],
+            29: [
+                "fury_swipes",
+            ],
+            32: [
+                "screech",
+            ],
+            36: [
+                "slash",
+            ],
+            40: [
+                "nasty_plot",
+            ],
+            44: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "body_slam",
+        "charm",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "foul_play",
+        "gunk_shot",
+        "hyper_voice",
+        "icy_wind",
+        "iron_tail",
+        "nasty_plot",
+        "pay_day",
+        "payback",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunderbolt",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = [
+        "covet",
+        "flail",
+        "hypnosis",
+        "last_resort",
+        "spite",
+        "tail_whip",
+    ]

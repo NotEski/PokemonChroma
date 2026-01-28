@@ -5,13 +5,12 @@ class _MuddyWater:
         "type": "water",
         "index": 330,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 85,
         "power": 90,
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "accuracy", "change": -1, "chance": 30}],
     }

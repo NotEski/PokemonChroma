@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("basculin_white_striped")
+class MegaBasculinWhiteStriped:
+    display_name = "Basculin White Striped"
+    id = 10247
+    base_stats = BaseStats(
+        hp=70,
+        attack=92,
+        defense=65,
+        special_attack=80,
+        special_defense=55,
+        speed=98
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 161
+    height_m = 1.0
+    weight_kg = 18.0

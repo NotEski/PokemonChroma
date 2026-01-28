@@ -1,0 +1,13 @@
+@move("never_ending_nightmare_physical")  # type: ignore
+class _NeverEndingNightmarePhysical:
+    meta = {
+        "display_name": "Never-Ending Nightmare",
+        "type": "ghost",
+        "index": 636,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

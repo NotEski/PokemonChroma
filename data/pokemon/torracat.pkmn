@@ -1,0 +1,121 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("torracat")
+class Torracat:
+    display_name = "Torracat"
+    id = 726
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=65,
+        attack=85,
+        defense=50,
+        special_attack=80,
+        special_defense=50,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 147
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 25.0
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "growl",
+                "lick",
+                "scratch",
+            ],
+            9: [
+                "roar",
+            ],
+            12: [
+                "fury_swipes",
+            ],
+            15: [
+                "bite",
+            ],
+            20: [
+                "double_kick",
+            ],
+            25: [
+                "fire_fang",
+            ],
+            30: [
+                "scary_face",
+            ],
+            35: [
+                "swagger",
+            ],
+            40: [
+                "flamethrower",
+            ],
+            45: [
+                "thrash",
+            ],
+            50: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "attract",
+        "body_slam",
+        "bulk_up",
+        "crunch",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "heat_wave",
+        "leech_life",
+        "nasty_plot",
+        "outrage",
+        "overheat",
+        "pay_day",
+        "protect",
+        "rest",
+        "revenge",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "taunt",
+        "u_turn",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "fire_pledge",
+    ]
+    egg_moves = []

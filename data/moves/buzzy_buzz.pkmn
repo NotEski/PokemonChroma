@@ -1,0 +1,16 @@
+@move("buzzy_buzz")  # type: ignore
+class _BuzzyBuzz:
+    meta = {
+        "display_name": "Buzzy Buzz",
+        "type": "electric",
+        "index": 734,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "paralysis": 100,
+    }

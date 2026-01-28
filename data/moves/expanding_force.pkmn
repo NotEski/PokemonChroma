@@ -1,0 +1,13 @@
+@move("expanding_force")  # type: ignore
+class _ExpandingForce:
+    meta = {
+        "display_name": "Expanding Force",
+        "type": "psychic",
+        "index": 797,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("doduo")
+class Doduo:
+    display_name = "Doduo"
+    id = 84
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=35,
+        attack=85,
+        defense=45,
+        special_attack=35,
+        special_defense=35,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "early_bird",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "tangled_feet",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 39.2
+    egg_groups = ['flying']
+    growth_rate = "medium"
+    egg_moves = []

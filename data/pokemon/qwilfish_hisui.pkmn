@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("qwilfish_hisui")
+class MegaQwilfishHisui:
+    display_name = "Qwilfish Hisui"
+    id = 10234
+    base_stats = BaseStats(
+        hp=65,
+        attack=95,
+        defense=85,
+        special_attack=55,
+        special_defense=55,
+        speed=85
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 88
+    height_m = 0.5
+    weight_kg = 3.9

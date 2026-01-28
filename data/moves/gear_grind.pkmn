@@ -11,4 +11,3 @@ class _GearGrind:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

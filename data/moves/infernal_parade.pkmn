@@ -1,0 +1,13 @@
+@move("infernal_parade")  # type: ignore
+class _InfernalParade:
+    meta = {
+        "display_name": "Infernal Parade",
+        "type": "ghost",
+        "index": 844,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

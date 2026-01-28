@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("avalugg_hisui")
+class MegaAvaluggHisui:
+    display_name = "Avalugg Hisui"
+    id = 10243
+    base_stats = BaseStats(
+        hp=95,
+        attack=127,
+        defense=184,
+        special_attack=34,
+        special_defense=36,
+        speed=38
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 180
+    height_m = 1.4
+    weight_kg = 262.4

@@ -1,0 +1,13 @@
+@move("overdrive")  # type: ignore
+class _Overdrive:
+    meta = {
+        "display_name": "Overdrive",
+        "type": "electric",
+        "index": 786,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "all_opponents",
+    }

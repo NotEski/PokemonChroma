@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("misdreavus")
+class Misdreavus:
+    display_name = "Misdreavus"
+    id = 200
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=60,
+        attack=60,
+        defense=60,
+        special_attack=85,
+        special_defense=85,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 87
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 1.0
+    egg_groups = ['indeterminate']
+    growth_rate = "fast"
+    egg_moves = []

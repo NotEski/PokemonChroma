@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pumpkaboo_average")
+class PumpkabooAverage:
+    display_name = "Pumpkaboo Average"
+    id = 710
+    types = ['ghost', 'grass']
+    base_stats = BaseStats(
+        hp=49,
+        attack=66,
+        defense=70,
+        special_attack=44,
+        special_defense=55,
+        speed=51
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 67
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "frisk",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "insomnia",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "trick_or_treat",
+            ],
+            4: [
+                "shadow_sneak",
+            ],
+            8: [
+                "confuse_ray",
+            ],
+            12: [
+                "razor_leaf",
+                "trick_or_treat",
+            ],
+            16: [
+                "leech_seed",
+            ],
+            20: [
+                "bullet_seed",
+            ],
+            24: [
+                "scary_face",
+                "trick_or_treat",
+            ],
+            28: [
+                "worry_seed",
+            ],
+            32: [
+                "seed_bomb",
+            ],
+            36: [
+                "shadow_ball",
+                "trick_or_treat",
+            ],
+            40: [
+                "trick",
+            ],
+            44: [
+                "pain_split",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "bullet_seed",
+        "dark_pulse",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "foul_play",
+        "giga_drain",
+        "grass_knot",
+        "gyro_ball",
+        "hex",
+        "imprison",
+        "light_screen",
+        "mystical_fire",
+        "protect",
+        "psychic",
+        "rest",
+        "rock_slide",
+        "round",
+        "safeguard",
+        "scary_face",
+        "seed_bomb",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "poltergeist",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "curse",
+        "destiny_bond",
+        "disable",
+    ]

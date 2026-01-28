@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wartortle")
+class Wartortle:
+    display_name = "Wartortle"
+    id = 8
+    types = ['water']
+    base_stats = BaseStats(
+        hp=59,
+        attack=63,
+        defense=80,
+        special_attack=65,
+        special_defense=80,
+        speed=58
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "torrent",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 22.5
+    egg_groups = ['monster', 'water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+                "water_gun",
+                "withdraw",
+            ],
+            9: [
+                "rapid_spin",
+            ],
+            12: [
+                "bite",
+            ],
+            15: [
+                "water_pulse",
+            ],
+            20: [
+                "protect",
+            ],
+            25: [
+                "rain_dance",
+            ],
+            30: [
+                "aqua_tail",
+            ],
+            35: [
+                "shell_smash",
+            ],
+            40: [
+                "iron_defense",
+            ],
+            45: [
+                "hydro_pump",
+            ],
+            50: [
+                "skull_bash",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "aura_sphere",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "dig",
+        "dive",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "gyro_ball",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "water_pledge",
+    ]
+    egg_moves = []

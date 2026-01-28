@@ -5,7 +5,7 @@ class _Detect:
         "type": "fighting",
         "index": 197,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 5,

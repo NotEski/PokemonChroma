@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("crawdaunt")
+class Crawdaunt:
+    display_name = "Crawdaunt"
+    id = 342
+    types = ['water', 'dark']
+    base_stats = BaseStats(
+        hp=63,
+        attack=120,
+        defense=85,
+        special_attack=90,
+        special_defense=55,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 155
+    base_experience_yield = 164
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "adaptability",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 32.8
+    egg_groups = ['water1', 'water3']
+    growth_rate = "fast_then_very_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "swift",
+            ],
+            1: [
+                "harden",
+                "leer",
+                "swift",
+                "taunt",
+                "water_gun",
+            ],
+            12: [
+                "bubble_beam",
+            ],
+            16: [
+                "knock_off",
+            ],
+            20: [
+                "double_hit",
+            ],
+            24: [
+                "protect",
+            ],
+            28: [
+                "night_slash",
+            ],
+            34: [
+                "razor_shell",
+            ],
+            40: [
+                "swords_dance",
+            ],
+            46: [
+                "crunch",
+            ],
+            52: [
+                "crabhammer",
+            ],
+            58: [
+                "endeavor",
+            ],
+            64: [
+                "guillotine",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "close_combat",
+        "crunch",
+        "dark_pulse",
+        "dig",
+        "dive",
+        "dragon_dance",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_defense",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "razor_shell",
+        "rest",
+        "retaliate",
+        "revenge",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snarl",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "waterfall",
+        "whirlpool",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

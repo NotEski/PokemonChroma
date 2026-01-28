@@ -1,0 +1,13 @@
+@move("meteor_assault")  # type: ignore
+class _MeteorAssault:
+    meta = {
+        "display_name": "Meteor Assault",
+        "type": "fighting",
+        "index": 794,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

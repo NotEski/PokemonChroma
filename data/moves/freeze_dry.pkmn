@@ -5,13 +5,12 @@ class _FreezeDry:
         "type": "ice",
         "index": 573,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 70,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "freeze": 10,
     }

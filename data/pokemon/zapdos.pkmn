@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zapdos")
+class Zapdos:
+    display_name = "Zapdos"
+    id = 145
+    types = ['electric', 'flying']
+    base_stats = BaseStats(
+        hp=90,
+        attack=90,
+        defense=85,
+        special_attack=125,
+        special_defense=90,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 261
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "static",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 52.6
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "peck",
+                "thunder_wave",
+            ],
+            5: [
+                "thunder_shock",
+            ],
+            10: [
+                "light_screen",
+            ],
+            15: [
+                "pluck",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "ancient_power",
+            ],
+            30: [
+                "charge",
+            ],
+            35: [
+                "drill_peck",
+            ],
+            40: [
+                "roost",
+            ],
+            45: [
+                "discharge",
+            ],
+            50: [
+                "rain_dance",
+            ],
+            55: [
+                "thunder",
+            ],
+            60: [
+                "detect",
+            ],
+            65: [
+                "magnetic_flux",
+            ],
+            70: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "baton_pass",
+        "brave_bird",
+        "eerie_impulse",
+        "endure",
+        "facade",
+        "fly",
+        "giga_impact",
+        "hail",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "u_turn",
+        "volt_switch",
+        "weather_ball",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "rising_voltage",
+    ]
+    egg_moves = []

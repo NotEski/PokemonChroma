@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("hatterene_gmax")
+class MegaHatterene:
+    display_name = "Hatterene Gmax"
+    id = 10221
+    base_stats = BaseStats(
+        hp=57,
+        attack=90,
+        defense=95,
+        special_attack=136,
+        special_defense=103,
+        speed=29
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 255
+    height_m = 26.0
+    weight_kg = 1000.0

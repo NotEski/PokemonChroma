@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("wormadam_sandy")
+class MegaWormadamSandy:
+    display_name = "Wormadam Sandy"
+    id = 10004
+    base_stats = BaseStats(
+        hp=60,
+        attack=79,
+        defense=105,
+        special_attack=59,
+        special_defense=85,
+        speed=36
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 148
+    height_m = 0.5
+    weight_kg = 6.5

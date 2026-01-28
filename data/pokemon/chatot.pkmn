@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chatot")
+class Chatot:
+    display_name = "Chatot"
+    id = 441
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=76,
+        attack=65,
+        defense=45,
+        special_attack=92,
+        special_defense=42,
+        speed=91
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 144
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "tangled_feet",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "big_pecks",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 1.9
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    egg_moves = []

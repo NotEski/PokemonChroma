@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("roggenrola")
+class Roggenrola:
+    display_name = "Roggenrola"
+    id = 524
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=55,
+        attack=75,
+        defense=85,
+        special_attack=25,
+        special_defense=25,
+        speed=15
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 56
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 18.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "sand_attack",
+                "tackle",
+            ],
+            4: [
+                "harden",
+            ],
+            8: [
+                "stealth_rock",
+            ],
+            12: [
+                "mud_slap",
+            ],
+            16: [
+                "smack_down",
+            ],
+            20: [
+                "iron_defense",
+            ],
+            24: [
+                "headbutt",
+            ],
+            28: [
+                "rock_slide",
+            ],
+            32: [
+                "rock_blast",
+            ],
+            36: [
+                "sandstorm",
+            ],
+            40: [
+                "stone_edge",
+            ],
+            44: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "bulldoze",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "heavy_slam",
+        "iron_defense",
+        "protect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = [
+        "autotomize",
+        "curse",
+        "gravity",
+        "take_down",
+        "wide_guard",
+    ]

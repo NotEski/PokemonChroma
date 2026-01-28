@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("corviknight_gmax")
+class MegaCorviknight:
+    display_name = "Corviknight Gmax"
+    id = 10212
+    base_stats = BaseStats(
+        hp=98,
+        attack=87,
+        defense=105,
+        special_attack=53,
+        special_defense=85,
+        speed=67
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 248
+    height_m = 14.0
+    weight_kg = 1000.0

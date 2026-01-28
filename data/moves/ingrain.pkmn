@@ -5,13 +5,12 @@ class _Ingrain:
         "type": "grass",
         "index": 275,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user",
     }
-    flags = ["snatch", "non_sky_battle"]
     status_condition = {
         "ingrain": 0,
     }

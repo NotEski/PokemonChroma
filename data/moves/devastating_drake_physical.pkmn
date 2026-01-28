@@ -1,0 +1,13 @@
+@move("devastating_drake_physical")  # type: ignore
+class _DevastatingDrakePhysical:
+    meta = {
+        "display_name": "Devastating Drake",
+        "type": "dragon",
+        "index": 652,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

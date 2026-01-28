@@ -1,0 +1,13 @@
+@move("black_hole_eclipse_physical")  # type: ignore
+class _BlackHoleEclipsePhysical:
+    meta = {
+        "display_name": "Black Hole Eclipse",
+        "type": "dark",
+        "index": 654,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

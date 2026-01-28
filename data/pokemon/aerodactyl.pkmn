@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("aerodactyl")
+class Aerodactyl:
+    display_name = "Aerodactyl"
+    id = 142
+    types = ['rock', 'flying']
+    base_stats = BaseStats(
+        hp=80,
+        attack=105,
+        defense=65,
+        special_attack=60,
+        special_defense=75,
+        speed=130
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 180
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rock_head",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "pressure",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 59.0
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "bite",
+            ],
+            5: [
+                "supersonic",
+            ],
+            10: [
+                "wing_attack",
+            ],
+            15: [
+                "scary_face",
+            ],
+            20: [
+                "rock_slide",
+            ],
+            25: [
+                "roar",
+            ],
+            30: [
+                "crunch",
+            ],
+            35: [
+                "iron_head",
+            ],
+            40: [
+                "take_down",
+            ],
+            45: [
+                "stone_edge",
+            ],
+            50: [
+                "agility",
+            ],
+            55: [
+                "hyper_beam",
+            ],
+            60: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "brutal_swing",
+        "bulldoze",
+        "crunch",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "flamethrower",
+        "fly",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "ice_fang",
+        "iron_head",
+        "iron_tail",
+        "payback",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "steel_wing",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "thunder_fang",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "meteor_beam",
+    ]
+    egg_moves = [
+        "curse",
+        "dragon_breath",
+        "roost",
+        "tailwind",
+        "whirlwind",
+        "wide_guard",
+    ]

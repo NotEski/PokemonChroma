@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dedenne")
+class Dedenne:
+    display_name = "Dedenne"
+    id = 702
+    types = ['electric', 'fairy']
+    base_stats = BaseStats(
+        hp=67,
+        attack=58,
+        defense=57,
+        special_attack=81,
+        special_defense=67,
+        speed=101
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 180
+    base_experience_yield = 151
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cheek_pouch",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickup",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "plus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 2.2
+    egg_groups = ['ground', 'fairy']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "nuzzle",
+                "tail_whip",
+            ],
+            5: [
+                "tackle",
+            ],
+            10: [
+                "charge",
+            ],
+            15: [
+                "thunder_shock",
+            ],
+            20: [
+                "charm",
+            ],
+            25: [
+                "parabolic_charge",
+            ],
+            30: [
+                "volt_switch",
+            ],
+            35: [
+                "rest",
+                "snore",
+            ],
+            40: [
+                "discharge",
+            ],
+            45: [
+                "play_rough",
+            ],
+            50: [
+                "super_fang",
+            ],
+            55: [
+                "entrainment",
+            ],
+            60: [
+                "thunder",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "charm",
+        "dazzling_gleam",
+        "dig",
+        "eerie_impulse",
+        "electric_terrain",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "fling",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "iron_tail",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "u_turn",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = [
+        "covet",
+        "magnet_rise",
+        "tearful_look",
+    ]

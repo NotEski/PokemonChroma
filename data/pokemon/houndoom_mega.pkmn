@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("houndoom_mega")
+class MegaHoundoom:
+    display_name = "Houndoom Mega"
+    id = 10048
+    base_stats = BaseStats(
+        hp=75,
+        attack=90,
+        defense=90,
+        special_attack=140,
+        special_defense=90,
+        speed=115
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 210
+    height_m = 1.9
+    weight_kg = 49.5

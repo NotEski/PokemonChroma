@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("swampert_mega")
+class MegaSwampert:
+    display_name = "Swampert Mega"
+    id = 10064
+    base_stats = BaseStats(
+        hp=100,
+        attack=150,
+        defense=110,
+        special_attack=95,
+        special_defense=110,
+        speed=70
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 286
+    height_m = 1.9
+    weight_kg = 102.0

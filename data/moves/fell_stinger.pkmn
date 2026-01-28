@@ -7,8 +7,7 @@ class _FellStinger:
         "damage_class": "physical",
         "category": "damage",
         "accuracy": 100,
-        "power": 30,
+        "power": 50,
         "pp": 25,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

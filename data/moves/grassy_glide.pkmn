@@ -1,0 +1,13 @@
+@move("grassy_glide")  # type: ignore
+class _GrassyGlide:
+    meta = {
+        "display_name": "Grassy Glide",
+        "type": "grass",
+        "index": 803,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 55,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

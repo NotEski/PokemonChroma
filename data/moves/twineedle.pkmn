@@ -5,13 +5,12 @@ class _Twineedle:
         "type": "bug",
         "index": 41,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 25,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "poison": 20,
     }

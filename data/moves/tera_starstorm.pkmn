@@ -1,0 +1,13 @@
+@move("tera_starstorm")  # type: ignore
+class _TeraStarstorm:
+    meta = {
+        "display_name": "Tera Starstorm",
+        "type": "normal",
+        "index": 906,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "all_opponents",
+    }

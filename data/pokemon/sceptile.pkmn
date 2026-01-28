@@ -1,0 +1,160 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sceptile")
+class Sceptile:
+    display_name = "Sceptile"
+    id = 254
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=70,
+        attack=85,
+        defense=65,
+        special_attack=105,
+        special_defense=85,
+        speed=120
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 239
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "overgrow",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 52.2
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "dual_chop",
+            ],
+            1: [
+                "dual_chop",
+                "energy_ball",
+                "false_swipe",
+                "fury_cutter",
+                "leafage",
+                "leer",
+                "pound",
+                "quick_attack",
+                "x_scissor",
+            ],
+            5: [
+                "mega_drain",
+            ],
+            12: [
+                "detect",
+            ],
+            15: [
+                "quick_guard",
+            ],
+            20: [
+                "assurance",
+            ],
+            25: [
+                "giga_drain",
+            ],
+            30: [
+                "slam",
+            ],
+            35: [
+                "double_team",
+            ],
+            42: [
+                "leaf_blade",
+            ],
+            49: [
+                "screech",
+            ],
+            56: [
+                "endeavor",
+            ],
+            63: [
+                "leaf_storm",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "assurance",
+        "attract",
+        "body_slam",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "bullet_seed",
+        "cross_poison",
+        "crunch",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "drain_punch",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "false_swipe",
+        "fling",
+        "focus_blast",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "iron_tail",
+        "leaf_blade",
+        "leaf_storm",
+        "low_kick",
+        "low_sweep",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "outrage",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "screech",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "throat_chop",
+        "thunder_punch",
+        "work_up",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "frenzy_plant",
+        "grass_pledge",
+        "grassy_glide",
+        "scale_shot",
+    ]
+    egg_moves = []

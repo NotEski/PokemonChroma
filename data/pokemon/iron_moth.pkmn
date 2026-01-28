@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("iron_moth")
+class IronMoth:
+    display_name = "Iron Moth"
+    id = 994
+    types = ['fire', 'poison']
+    base_stats = BaseStats(
+        hp=80,
+        attack=70,
+        defense=60,
+        special_attack=140,
+        special_defense=110,
+        speed=110
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "quark_drive",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 36.0
+    growth_rate = "medium_fast"
+    egg_moves = []

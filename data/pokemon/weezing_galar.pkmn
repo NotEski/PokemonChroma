@@ -1,0 +1,149 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("weezing_galar")
+class WeezingGalar:
+    display_name = "Weezing Galar"
+    id = 10167
+    types = ['poison', 'fairy']
+    base_stats = BaseStats(
+        hp=65,
+        attack=90,
+        defense=120,
+        special_attack=85,
+        special_defense=70,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "neutralizing_gas",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "misty_surge",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 3.0
+    weight_kg = 16.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "double_hit",
+            ],
+            1: [
+                "aromatic_mist",
+                "defog",
+                "double_hit",
+                "fairy_wind",
+                "haze",
+                "heat_wave",
+                "poison_gas",
+                "smog",
+                "smokescreen",
+                "strange_steam",
+                "tackle",
+            ],
+            12: [
+                "clear_smog",
+            ],
+            16: [
+                "assurance",
+            ],
+            20: [
+                "sludge",
+            ],
+            24: [
+                "aromatherapy",
+            ],
+            28: [
+                "self_destruct",
+            ],
+            32: [
+                "sludge_bomb",
+            ],
+            38: [
+                "toxic",
+            ],
+            44: [
+                "belch",
+            ],
+            50: [
+                "explosion",
+            ],
+            56: [
+                "memento",
+            ],
+            62: [
+                "destiny_bond",
+            ],
+            68: [
+                "misty_terrain",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "brutal_swing",
+        "dark_pulse",
+        "dazzling_gleam",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "giga_impact",
+        "gyro_ball",
+        "heat_wave",
+        "hyper_beam",
+        "misty_terrain",
+        "overheat",
+        "payback",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder",
+        "thunderbolt",
+        "toxic_spikes",
+        "uproar",
+        "venom_drench",
+        "venoshock",
+        "will_o_wisp",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+        "misty_explosion",
+    ]
+    egg_moves = []

@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("vanillite")
+class Vanillite:
+    display_name = "Vanillite"
+    id = 582
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=36,
+        attack=50,
+        defense=50,
+        special_attack=65,
+        special_defense=60,
+        speed=44
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "ice_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_cloak",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.7
+    egg_groups = ['mineral']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "harden",
+            ],
+            4: [
+                "taunt",
+            ],
+            8: [
+                "mist",
+            ],
+            12: [
+                "icy_wind",
+            ],
+            16: [
+                "avalanche",
+            ],
+            20: [
+                "hail",
+            ],
+            24: [
+                "icicle_spear",
+            ],
+            28: [
+                "uproar",
+            ],
+            32: [
+                "acid_armor",
+            ],
+            36: [
+                "mirror_coat",
+            ],
+            40: [
+                "ice_beam",
+            ],
+            44: [
+                "blizzard",
+            ],
+            48: [
+                "sheer_cold",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "hail",
+        "hyper_voice",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "imprison",
+        "iron_defense",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "taunt",
+        "uproar",
+    ]
+    egg_moves = [
+        "aurora_veil",
+        "autotomize",
+        "explosion",
+        "ice_shard",
+        "icicle_crash",
+        "magnet_rise",
+    ]

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("dialga_origin")
+class MegaDialgaOrigin:
+    display_name = "Dialga Origin"
+    id = 10245
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=120,
+        special_attack=150,
+        special_defense=120,
+        speed=90
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 306
+    height_m = 7.0
+    weight_kg = 848.7

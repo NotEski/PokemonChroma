@@ -5,13 +5,12 @@ class _Growl:
         "type": "normal",
         "index": 45,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 40,
         "target": "all_opponents",
     }
-    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
     }

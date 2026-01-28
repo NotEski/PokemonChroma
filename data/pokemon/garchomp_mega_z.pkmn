@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("garchomp_mega_z")
+class MegaGarchompZ:
+    display_name = "Garchomp Mega Z"
+    id = 10309
+    base_stats = BaseStats(
+        hp=108,
+        attack=130,
+        defense=85,
+        special_attack=141,
+        special_defense=85,
+        speed=151
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.9
+    weight_kg = 99.0

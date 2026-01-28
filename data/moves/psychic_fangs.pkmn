@@ -1,0 +1,13 @@
+@move("psychic_fangs")  # type: ignore
+class _PsychicFangs:
+    meta = {
+        "display_name": "Psychic Fangs",
+        "type": "psychic",
+        "index": 706,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

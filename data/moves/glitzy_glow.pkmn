@@ -1,0 +1,13 @@
+@move("glitzy_glow")  # type: ignore
+class _GlitzyGlow:
+    meta = {
+        "display_name": "Glitzy Glow",
+        "type": "psychic",
+        "index": 736,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

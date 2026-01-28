@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("entei")
+class Entei:
+    display_name = "Entei"
+    id = 244
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=115,
+        attack=115,
+        defense=85,
+        special_attack=90,
+        special_defense=75,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 261
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.1
+    weight_kg = 198.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "extreme_speed",
+                "leer",
+                "sacred_fire",
+                "smokescreen",
+                "stomp",
+            ],
+            6: [
+                "flame_wheel",
+            ],
+            12: [
+                "bite",
+            ],
+            18: [
+                "calm_mind",
+            ],
+            24: [
+                "roar",
+            ],
+            30: [
+                "fire_fang",
+            ],
+            36: [
+                "scary_face",
+            ],
+            42: [
+                "crunch",
+            ],
+            48: [
+                "extrasensory",
+            ],
+            54: [
+                "lava_plume",
+            ],
+            60: [
+                "swagger",
+            ],
+            66: [
+                "sunny_day",
+            ],
+            72: [
+                "fire_blast",
+            ],
+            78: [
+                "eruption",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "body_slam",
+        "bulldoze",
+        "calm_mind",
+        "crunch",
+        "dig",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "giga_impact",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "iron_head",
+        "iron_tail",
+        "overheat",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "reversal",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "weather_ball",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = []

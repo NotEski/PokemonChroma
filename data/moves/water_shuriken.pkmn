@@ -4,12 +4,11 @@ class _WaterShuriken:
         "display_name": "Water Shuriken",
         "type": "water",
         "index": 594,
-        "damage_class": "physical",
+        "damage_class": "special",
         "category": "damage",
         "accuracy": 100,
         "power": 15,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     priority = 1

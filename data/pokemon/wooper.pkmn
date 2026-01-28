@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wooper")
+class Wooper:
+    display_name = "Wooper"
+    id = 194
+    types = ['water', 'ground']
+    base_stats = BaseStats(
+        hp=55,
+        attack=45,
+        defense=45,
+        special_attack=25,
+        special_defense=25,
+        speed=15
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 42
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "damp",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unaware",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 8.5
+    egg_groups = ['water1', 'ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tail_whip",
+                "water_gun",
+            ],
+            4: [
+                "rain_dance",
+            ],
+            8: [
+                "mud_shot",
+            ],
+            12: [
+                "haze",
+                "mist",
+            ],
+            16: [
+                "slam",
+            ],
+            21: [
+                "yawn",
+            ],
+            24: [
+                "aqua_tail",
+            ],
+            28: [
+                "muddy_water",
+            ],
+            32: [
+                "amnesia",
+            ],
+            36: [
+                "toxic",
+            ],
+            40: [
+                "earthquake",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "dig",
+        "dive",
+        "earth_power",
+        "earthquake",
+        "eerie_impulse",
+        "encore",
+        "endure",
+        "facade",
+        "guard_swap",
+        "hail",
+        "hydro_pump",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_tail",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "scald",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "surf",
+        "waterfall",
+        "whirlpool",
+    ]
+    egg_moves = [
+        "acid_spray",
+        "after_you",
+        "ancient_power",
+        "counter",
+        "curse",
+        "double_kick",
+        "power_up_punch",
+        "recover",
+        "spit_up",
+        "stockpile",
+        "swallow",
+    ]

@@ -1,0 +1,19 @@
+@move("tar_shot")  # type: ignore
+class _TarShot:
+    meta = {
+        "display_name": "Tar Shot",
+        "type": "rock",
+        "index": 749,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }
+    status_condition = {
+        "tar_shot": 100,
+    }

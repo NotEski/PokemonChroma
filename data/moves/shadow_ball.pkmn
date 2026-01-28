@@ -5,13 +5,12 @@ class _ShadowBall:
         "type": "ghost",
         "index": 247,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "ballistics"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 20}],
     }

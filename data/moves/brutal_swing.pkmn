@@ -1,0 +1,13 @@
+@move("brutal_swing")  # type: ignore
+class _BrutalSwing:
+    meta = {
+        "display_name": "Brutal Swing",
+        "type": "dark",
+        "index": 693,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "all_other_pokemon",
+    }

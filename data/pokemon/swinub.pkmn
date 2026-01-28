@@ -1,0 +1,128 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("swinub")
+class Swinub:
+    display_name = "Swinub"
+    id = 220
+    types = ['ice', 'ground']
+    base_stats = BaseStats(
+        hp=50,
+        attack=50,
+        defense=40,
+        special_attack=30,
+        special_defense=30,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 225
+    base_experience_yield = 50
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "oblivious",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_cloak",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 6.5
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "mud_slap",
+                "tackle",
+            ],
+            5: [
+                "powder_snow",
+            ],
+            10: [
+                "flail",
+            ],
+            15: [
+                "ice_shard",
+            ],
+            20: [
+                "mist",
+            ],
+            25: [
+                "endure",
+            ],
+            30: [
+                "icy_wind",
+            ],
+            35: [
+                "amnesia",
+            ],
+            40: [
+                "take_down",
+            ],
+            45: [
+                "earthquake",
+            ],
+            50: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "hail",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "light_screen",
+        "mud_shot",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "substitute",
+        "superpower",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "bite",
+        "curse",
+        "double_edge",
+        "fissure",
+        "freeze_dry",
+        "icicle_crash",
+    ]

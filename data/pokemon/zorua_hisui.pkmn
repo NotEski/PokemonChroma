@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("zorua_hisui")
+class MegaZoruaHisui:
+    display_name = "Zorua Hisui"
+    id = 10238
+    base_stats = BaseStats(
+        hp=35,
+        attack=60,
+        defense=40,
+        special_attack=85,
+        special_defense=40,
+        speed=70
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 66
+    height_m = 0.7
+    weight_kg = 12.5

@@ -1,0 +1,13 @@
+@move("scale_shot")  # type: ignore
+class _ScaleShot:
+    meta = {
+        "display_name": "Scale Shot",
+        "type": "dragon",
+        "index": 799,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 25,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

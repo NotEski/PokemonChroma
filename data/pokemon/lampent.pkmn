@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lampent")
+class Lampent:
+    display_name = "Lampent"
+    id = 608
+    types = ['ghost', 'fire']
+    base_stats = BaseStats(
+        hp=60,
+        attack=40,
+        defense=60,
+        special_attack=95,
+        special_defense=60,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 130
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "flame_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 13.0
+    egg_groups = ['indeterminate']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "ember",
+                "minimize",
+                "smog",
+            ],
+            12: [
+                "confuse_ray",
+            ],
+            16: [
+                "hex",
+            ],
+            20: [
+                "will_o_wisp",
+            ],
+            24: [
+                "fire_spin",
+            ],
+            28: [
+                "night_shade",
+            ],
+            32: [
+                "curse",
+            ],
+            36: [
+                "shadow_ball",
+            ],
+            40: [
+                "inferno",
+            ],
+            46: [
+                "imprison",
+            ],
+            52: [
+                "pain_split",
+            ],
+            58: [
+                "overheat",
+            ],
+            64: [
+                "memento",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "calm_mind",
+        "dark_pulse",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "heat_wave",
+        "hex",
+        "imprison",
+        "mystical_fire",
+        "overheat",
+        "payback",
+        "protect",
+        "psychic",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "poltergeist",
+        "skitter_smack",
+    ]
+    egg_moves = []

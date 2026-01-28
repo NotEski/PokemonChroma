@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cryogonal")
+class Cryogonal:
+    display_name = "Cryogonal"
+    id = 615
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=80,
+        attack=50,
+        defense=50,
+        special_attack=95,
+        special_defense=135,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 180
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 148.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "ice_shard",
+            ],
+            4: [
+                "confuse_ray",
+            ],
+            8: [
+                "rapid_spin",
+            ],
+            12: [
+                "laser_focus",
+            ],
+            16: [
+                "icy_wind",
+            ],
+            20: [
+                "haze",
+                "mist",
+            ],
+            24: [
+                "ancient_power",
+            ],
+            28: [
+                "aurora_beam",
+            ],
+            32: [
+                "night_slash",
+                "slash",
+            ],
+            36: [
+                "freeze_dry",
+            ],
+            40: [
+                "light_screen",
+                "reflect",
+            ],
+            44: [
+                "recover",
+            ],
+            48: [
+                "ice_beam",
+            ],
+            52: [
+                "acid_armor",
+            ],
+            56: [
+                "solar_beam",
+            ],
+            60: [
+                "sheer_cold",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "avalanche",
+        "blizzard",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "hail",
+        "hyper_beam",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "light_screen",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+    ]
+    tutor_moves = [
+        "triple_axel",
+    ]
+    egg_moves = []

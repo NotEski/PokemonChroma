@@ -1,0 +1,16 @@
+@move("aqua_step")  # type: ignore
+class _AquaStep:
+    meta = {
+        "display_name": "Aqua Step",
+        "type": "water",
+        "index": 872,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
+    }

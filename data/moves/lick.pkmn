@@ -5,13 +5,12 @@ class _Lick:
         "type": "ghost",
         "index": 122,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 30,
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "paralysis": 30,
     }

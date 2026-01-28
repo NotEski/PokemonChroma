@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pawmot")
+class Pawmot:
+    display_name = "Pawmot"
+    id = 923
+    types = ['electric', 'fighting']
+    base_stats = BaseStats(
+        hp=70,
+        attack=115,
+        defense=70,
+        special_attack=70,
+        special_defense=60,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 245
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "natural_cure",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 41.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

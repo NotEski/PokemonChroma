@@ -5,10 +5,12 @@ class _Memento:
         "type": "dark",
         "index": 262,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -2, "chance": 100}, {"stat": "special_attack", "change": -2, "chance": 100}],
+    }

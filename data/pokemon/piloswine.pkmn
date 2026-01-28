@@ -1,0 +1,130 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("piloswine")
+class Piloswine:
+    display_name = "Piloswine"
+    id = 221
+    types = ['ice', 'ground']
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=80,
+        special_attack=60,
+        special_defense=60,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 158
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "oblivious",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_cloak",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 55.8
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "ice_fang",
+            ],
+            1: [
+                "ancient_power",
+                "flail",
+                "ice_fang",
+                "mud_slap",
+                "powder_snow",
+                "tackle",
+            ],
+            15: [
+                "ice_shard",
+            ],
+            20: [
+                "mist",
+            ],
+            25: [
+                "endure",
+            ],
+            30: [
+                "icy_wind",
+            ],
+            37: [
+                "amnesia",
+            ],
+            44: [
+                "take_down",
+            ],
+            51: [
+                "earthquake",
+            ],
+            58: [
+                "blizzard",
+            ],
+            65: [
+                "thrash",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "icicle_spear",
+        "icy_wind",
+        "light_screen",
+        "mud_shot",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "superpower",
+    ]
+    egg_moves = []

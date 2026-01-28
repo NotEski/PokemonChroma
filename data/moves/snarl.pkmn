@@ -5,13 +5,12 @@ class _Snarl:
         "type": "dark",
         "index": 555,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 95,
         "power": 55,
         "pp": 15,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -1, "chance": 100}],
     }

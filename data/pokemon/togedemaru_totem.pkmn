@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("togedemaru_totem")
+class MegaTogedemaruTotem:
+    display_name = "Togedemaru Totem"
+    id = 10154
+    base_stats = BaseStats(
+        hp=65,
+        attack=98,
+        defense=63,
+        special_attack=40,
+        special_defense=73,
+        speed=96
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 152
+    height_m = 0.6
+    weight_kg = 13.0

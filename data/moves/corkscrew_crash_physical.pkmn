@@ -1,0 +1,13 @@
+@move("corkscrew_crash_physical")  # type: ignore
+class _CorkscrewCrashPhysical:
+    meta = {
+        "display_name": "Corkscrew Crash",
+        "type": "steel",
+        "index": 638,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

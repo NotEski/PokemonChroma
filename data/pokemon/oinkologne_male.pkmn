@@ -1,0 +1,49 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("oinkologne_male")
+class OinkologneMale:
+    display_name = "Oinkologne Male"
+    id = 916
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=110,
+        attack=100,
+        defense=75,
+        special_attack=59,
+        special_defense=80,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 171
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "lingering_aroma",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 120.0
+    growth_rate = "medium_fast"
+    egg_moves = []

@@ -1,0 +1,13 @@
+@move("combat_torque")  # type: ignore
+class _CombatTorque:
+    meta = {
+        "display_name": "Combat Torque",
+        "type": "fighting",
+        "index": 899,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("diancie_mega")
+class MegaDiancie:
+    display_name = "Diancie Mega"
+    id = 10075
+    base_stats = BaseStats(
+        hp=50,
+        attack=160,
+        defense=110,
+        special_attack=160,
+        special_defense=110,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 315
+    height_m = 1.1
+    weight_kg = 27.8

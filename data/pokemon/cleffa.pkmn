@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cleffa")
+class Cleffa:
+    display_name = "Cleffa"
+    id = 173
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=50,
+        attack=25,
+        defense=28,
+        special_attack=45,
+        special_defense=55,
+        speed=15
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 150
+    base_experience_yield = 44
+    base_happiness = 140
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_guard",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "friend_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 3.0
+    egg_groups = ['no_eggs']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "copycat",
+                "pound",
+                "splash",
+            ],
+            4: [
+                "sing",
+            ],
+            8: [
+                "sweet_kiss",
+            ],
+            12: [
+                "disarming_voice",
+            ],
+            16: [
+                "encore",
+            ],
+            20: [
+                "charm",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_slam",
+        "charm",
+        "dig",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "grass_knot",
+        "helping_hand",
+        "hyper_voice",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "misty_terrain",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "thunder_wave",
+        "trick",
+        "uproar",
+        "wonder_room",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "aromatherapy",
+        "heal_pulse",
+        "present",
+        "tickle",
+        "wish",
+    ]

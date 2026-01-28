@@ -5,13 +5,12 @@ class _MetalClaw:
         "type": "steel",
         "index": 232,
         "damage_class": "physical",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 95,
         "power": 50,
         "pp": 35,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 10}],
     }

@@ -1,0 +1,116 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("steenee")
+class Steenee:
+    display_name = "Steenee"
+    id = 762
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=52,
+        attack=40,
+        defense=48,
+        special_attack=40,
+        special_defense=48,
+        speed=62
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 120
+    base_experience_yield = 102
+    base_happiness = 70
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "leaf_guard",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "oblivious",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sweet_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 8.2
+    egg_groups = ['plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "flail",
+                "play_nice",
+                "rapid_spin",
+                "razor_leaf",
+                "splash",
+            ],
+            16: [
+                "sweet_scent",
+            ],
+            22: [
+                "magical_leaf",
+            ],
+            28: [
+                "stomp",
+            ],
+            34: [
+                "teeter_dance",
+            ],
+            40: [
+                "aromatic_mist",
+            ],
+            46: [
+                "aromatherapy",
+            ],
+            52: [
+                "leaf_storm",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bounce",
+        "charm",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "grass_knot",
+        "helping_hand",
+        "leaf_storm",
+        "light_screen",
+        "low_sweep",
+        "magical_leaf",
+        "payback",
+        "play_rough",
+        "protect",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+        "triple_axel",
+    ]
+    egg_moves = []

@@ -1,0 +1,113 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("arrokuda")
+class Arrokuda:
+    display_name = "Arrokuda"
+    id = 846
+    types = ['water']
+    base_stats = BaseStats(
+        hp=41,
+        attack=63,
+        defense=40,
+        special_attack=40,
+        special_defense=30,
+        speed=66
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 56
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "propeller_tail",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 1.0
+    egg_groups = ['water2']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "aqua_jet",
+                "peck",
+            ],
+            6: [
+                "fury_attack",
+            ],
+            12: [
+                "bite",
+            ],
+            18: [
+                "agility",
+            ],
+            24: [
+                "dive",
+            ],
+            30: [
+                "laser_focus",
+            ],
+            36: [
+                "crunch",
+            ],
+            42: [
+                "liquidation",
+            ],
+            48: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "bounce",
+        "brick_break",
+        "close_combat",
+        "crunch",
+        "dive",
+        "drill_run",
+        "endure",
+        "facade",
+        "focus_energy",
+        "ice_fang",
+        "liquidation",
+        "poison_jab",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swift",
+        "throat_chop",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "scale_shot",
+    ]
+    egg_moves = [
+        "acupressure",
+        "night_slash",
+        "slash",
+        "thrash",
+    ]

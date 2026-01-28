@@ -5,13 +5,12 @@ class _DarkVoid:
         "type": "dark",
         "index": 464,
         "damage_class": "status",
-        "category": "status",
-        "accuracy": 80,
+        "category": "damage",
+        "accuracy": 50,
         "power": None,
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "sleep": 0,
     }

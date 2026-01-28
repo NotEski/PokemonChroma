@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ponyta")
+class Ponyta:
+    display_name = "Ponyta"
+    id = 77
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=50,
+        attack=85,
+        defense=55,
+        special_attack=65,
+        special_defense=65,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 82
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "flash_fire",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 30.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            5: [
+                "tail_whip",
+            ],
+            10: [
+                "ember",
+            ],
+            15: [
+                "flame_charge",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "flame_wheel",
+            ],
+            30: [
+                "stomp",
+            ],
+            35: [
+                "fire_spin",
+            ],
+            41: [
+                "take_down",
+            ],
+            45: [
+                "inferno",
+            ],
+            50: [
+                "fire_blast",
+            ],
+            55: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "body_slam",
+        "bounce",
+        "charm",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "heat_wave",
+        "high_horsepower",
+        "iron_tail",
+        "low_kick",
+        "mystical_fire",
+        "overheat",
+        "play_rough",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "wild_charge",
+        "will_o_wisp",
+    ]
+    egg_moves = [
+        "double_edge",
+        "double_kick",
+        "horn_drill",
+        "hypnosis",
+        "morning_sun",
+        "thrash",
+    ]

@@ -1,0 +1,49 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("maushold_family_of_four")
+class MausholdFamilyOfFour:
+    display_name = "Maushold Family Of Four"
+    id = 925
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=74,
+        attack=75,
+        defense=70,
+        special_attack=65,
+        special_defense=75,
+        speed=111
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 165
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "friend_guard",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cheek_pouch",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 2.3
+    growth_rate = "medium_fast"
+    egg_moves = []

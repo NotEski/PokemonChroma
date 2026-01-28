@@ -1,0 +1,121 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("morelull")
+class Morelull:
+    display_name = "Morelull"
+    id = 755
+    types = ['grass', 'fairy']
+    base_stats = BaseStats(
+        hp=40,
+        attack=35,
+        defense=55,
+        special_attack=65,
+        special_defense=75,
+        speed=15
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 57
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "illuminate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "effect_spore",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 1.5
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "astonish",
+            ],
+            4: [
+                "confuse_ray",
+            ],
+            8: [
+                "ingrain",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "sleep_powder",
+            ],
+            20: [
+                "moonlight",
+            ],
+            25: [
+                "strength_sap",
+            ],
+            28: [
+                "giga_drain",
+            ],
+            32: [
+                "dazzling_gleam",
+            ],
+            36: [
+                "spore",
+            ],
+            40: [
+                "moonblast",
+            ],
+            44: [
+                "dream_eater",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "grass_knot",
+        "light_screen",
+        "magic_room",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "thunder_wave",
+        "wonder_room",
+    ]
+    egg_moves = [
+        "growth",
+        "leech_seed",
+        "poison_powder",
+        "stun_spore",
+    ]

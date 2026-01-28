@@ -1,0 +1,13 @@
+@move("max_ooze")  # type: ignore
+class _MaxOoze:
+    meta = {
+        "display_name": "Max Ooze",
+        "type": "poison",
+        "index": 764,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 10,
+        "pp": 10,
+        "target": "selected_pokemon_me_first",
+    }

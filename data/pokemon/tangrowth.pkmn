@@ -1,0 +1,140 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tangrowth")
+class Tangrowth:
+    display_name = "Tangrowth"
+    id = 465
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=100,
+        attack=100,
+        defense=125,
+        special_attack=110,
+        special_defense=50,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 187
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 128.6
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "bind",
+                "block",
+                "growth",
+                "stun_spore",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "vine_whip",
+            ],
+            20: [
+                "poison_powder",
+            ],
+            24: [
+                "ancient_power",
+            ],
+            28: [
+                "knock_off",
+            ],
+            32: [
+                "giga_drain",
+            ],
+            36: [
+                "sleep_powder",
+            ],
+            40: [
+                "slam",
+            ],
+            44: [
+                "tickle",
+            ],
+            48: [
+                "power_whip",
+            ],
+            52: [
+                "ingrain",
+            ],
+            56: [
+                "grassy_terrain",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "bullet_seed",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "focus_blast",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "leaf_storm",
+        "payback",
+        "poison_jab",
+        "power_swap",
+        "power_whip",
+        "protect",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "thief",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

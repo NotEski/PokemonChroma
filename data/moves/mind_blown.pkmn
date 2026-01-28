@@ -1,0 +1,13 @@
+@move("mind_blown")  # type: ignore
+class _MindBlown:
+    meta = {
+        "display_name": "Mind Blown",
+        "type": "fire",
+        "index": 720,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 5,
+        "target": "all_other_pokemon",
+    }

@@ -1,0 +1,152 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("comfey")
+class Comfey:
+    display_name = "Comfey"
+    id = 764
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=51,
+        attack=52,
+        defense=90,
+        special_attack=82,
+        special_defense=110,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 170
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flower_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "triage",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "natural_cure",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.1
+    weight_kg = 0.3
+    egg_groups = ['plant']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growth",
+                "wrap",
+            ],
+            3: [
+                "vine_whip",
+            ],
+            6: [
+                "helping_hand",
+            ],
+            9: [
+                "draining_kiss",
+            ],
+            12: [
+                "flower_shield",
+            ],
+            15: [
+                "magical_leaf",
+            ],
+            18: [
+                "synthesis",
+            ],
+            21: [
+                "leech_seed",
+            ],
+            24: [
+                "grass_knot",
+            ],
+            27: [
+                "sweet_kiss",
+            ],
+            30: [
+                "floral_healing",
+            ],
+            33: [
+                "petal_blizzard",
+            ],
+            36: [
+                "aromatherapy",
+            ],
+            39: [
+                "play_rough",
+            ],
+            42: [
+                "sweet_scent",
+            ],
+            45: [
+                "petal_dance",
+            ],
+            48: [
+                "grassy_terrain",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "bullet_seed",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hyper_beam",
+        "light_screen",
+        "magical_leaf",
+        "play_rough",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "trick",
+        "trick_room",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "after_you",
+        "leaf_tornado",
+        "worry_seed",
+    ]

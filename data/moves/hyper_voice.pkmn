@@ -11,4 +11,3 @@ class _HyperVoice:
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]

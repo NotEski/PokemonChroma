@@ -1,0 +1,13 @@
+@move("electro_drift")  # type: ignore
+class _ElectroDrift:
+    meta = {
+        "display_name": "Electro Drift",
+        "type": "electric",
+        "index": 879,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

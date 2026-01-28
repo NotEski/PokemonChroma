@@ -1,0 +1,16 @@
+@move("armor_cannon")  # type: ignore
+class _ArmorCannon:
+    meta = {
+        "display_name": "Armor Cannon",
+        "type": "fire",
+        "index": 890,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
+    }

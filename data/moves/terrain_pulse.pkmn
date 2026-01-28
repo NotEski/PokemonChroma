@@ -1,0 +1,13 @@
+@move("terrain_pulse")  # type: ignore
+class _TerrainPulse:
+    meta = {
+        "display_name": "Terrain Pulse",
+        "type": "normal",
+        "index": 805,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

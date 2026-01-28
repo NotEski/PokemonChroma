@@ -1,0 +1,116 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dubwool")
+class Dubwool:
+    display_name = "Dubwool"
+    id = 832
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=72,
+        attack=80,
+        defense=100,
+        special_attack=60,
+        special_defense=90,
+        speed=88
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 127
+    base_experience_yield = 172
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "fluffy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "steadfast",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "bulletproof",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 43.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "copycat",
+                "defense_curl",
+                "growl",
+                "tackle",
+            ],
+            12: [
+                "guard_split",
+            ],
+            16: [
+                "double_kick",
+            ],
+            21: [
+                "headbutt",
+            ],
+            27: [
+                "take_down",
+            ],
+            32: [
+                "guard_swap",
+            ],
+            38: [
+                "reversal",
+            ],
+            44: [
+                "cotton_guard",
+            ],
+            50: [
+                "double_edge",
+            ],
+            56: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "baton_pass",
+        "body_press",
+        "body_slam",
+        "bounce",
+        "electro_ball",
+        "endure",
+        "facade",
+        "giga_impact",
+        "guard_swap",
+        "hyper_beam",
+        "mega_kick",
+        "payback",
+        "protect",
+        "rest",
+        "retaliate",
+        "reversal",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swords_dance",
+        "thunder_wave",
+        "wild_charge",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

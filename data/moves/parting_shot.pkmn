@@ -5,13 +5,12 @@ class _PartingShot:
         "type": "dark",
         "index": 575,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}],
     }

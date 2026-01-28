@@ -5,11 +5,9 @@ class _MeanLook:
         "type": "normal",
         "index": 212,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["reflectable", "mirror"]
-    trap_target = True

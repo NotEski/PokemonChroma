@@ -1,0 +1,13 @@
+@move("corrosive_gas")  # type: ignore
+class _CorrosiveGas:
+    meta = {
+        "display_name": "Corrosive Gas",
+        "type": "poison",
+        "index": 810,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 40,
+        "target": "all_other_pokemon",
+    }

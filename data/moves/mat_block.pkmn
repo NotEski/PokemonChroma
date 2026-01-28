@@ -5,10 +5,9 @@ class _MatBlock:
         "type": "fighting",
         "index": 561,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "users_field",
     }
-    flags = ["snatch", "non_sky_battle"]

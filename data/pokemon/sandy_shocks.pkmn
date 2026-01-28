@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sandy_shocks")
+class SandyShocks:
+    display_name = "Sandy Shocks"
+    id = 989
+    types = ['electric', 'ground']
+    base_stats = BaseStats(
+        hp=85,
+        attack=81,
+        defense=97,
+        special_attack=121,
+        special_defense=85,
+        speed=101
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "protosynthesis",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.3
+    weight_kg = 60.0
+    growth_rate = "medium_fast"
+    egg_moves = []

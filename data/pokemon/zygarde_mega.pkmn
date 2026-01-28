@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("zygarde_mega")
+class MegaZygarde:
+    display_name = "Zygarde Mega"
+    id = 10301
+    base_stats = BaseStats(
+        hp=216,
+        attack=70,
+        defense=91,
+        special_attack=216,
+        special_defense=85,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 7.7
+    weight_kg = 610.0

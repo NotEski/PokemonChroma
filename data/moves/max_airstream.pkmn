@@ -1,0 +1,13 @@
+@move("max_airstream")  # type: ignore
+class _MaxAirstream:
+    meta = {
+        "display_name": "Max Airstream",
+        "type": "flying",
+        "index": 766,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 10,
+        "pp": 10,
+        "target": "selected_pokemon_me_first",
+    }

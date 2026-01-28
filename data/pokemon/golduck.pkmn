@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("golduck")
+class Golduck:
+    display_name = "Golduck"
+    id = 55
+    types = ['water']
+    base_stats = BaseStats(
+        hp=80,
+        attack=82,
+        defense=78,
+        special_attack=95,
+        special_defense=80,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "damp",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cloud_nine",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 76.6
+    egg_groups = ['water1', 'ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "aqua_jet",
+                "confusion",
+                "scratch",
+                "tail_whip",
+                "water_gun",
+            ],
+            9: [
+                "fury_swipes",
+            ],
+            12: [
+                "water_pulse",
+            ],
+            15: [
+                "disable",
+            ],
+            18: [
+                "zen_headbutt",
+            ],
+            21: [
+                "screech",
+            ],
+            24: [
+                "aqua_tail",
+            ],
+            27: [
+                "soak",
+            ],
+            30: [
+                "psych_up",
+            ],
+            36: [
+                "amnesia",
+            ],
+            40: [
+                "hydro_pump",
+            ],
+            45: [
+                "wonder_room",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "brine",
+        "calm_mind",
+        "dig",
+        "dive",
+        "encore",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "future_sight",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "liquidation",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "muddy_water",
+        "pay_day",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "waterfall",
+        "whirlpool",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "flip_turn",
+    ]
+    egg_moves = []

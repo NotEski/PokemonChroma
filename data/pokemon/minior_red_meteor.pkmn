@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("minior_red_meteor")
+class MiniorRedMeteor:
+    display_name = "Minior Red Meteor"
+    id = 774
+    types = ['rock', 'flying']
+    base_stats = BaseStats(
+        hp=60,
+        attack=60,
+        defense=100,
+        special_attack=60,
+        special_defense=100,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 154
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shields_down",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 40.0
+    growth_rate = "medium_fast"
+    egg_moves = []

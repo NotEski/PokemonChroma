@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dratini")
+class Dratini:
+    display_name = "Dratini"
+    id = 147
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=41,
+        attack=64,
+        defense=45,
+        special_attack=50,
+        special_defense=50,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 60
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shed_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "marvel_scale",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 3.3
+    egg_groups = ['water1', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "wrap",
+            ],
+            5: [
+                "twister",
+            ],
+            10: [
+                "thunder_wave",
+            ],
+            15: [
+                "dragon_tail",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "slam",
+            ],
+            31: [
+                "aqua_tail",
+            ],
+            35: [
+                "dragon_rush",
+            ],
+            40: [
+                "safeguard",
+            ],
+            45: [
+                "rain_dance",
+            ],
+            50: [
+                "dragon_dance",
+            ],
+            55: [
+                "outrage",
+            ],
+            60: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "breaking_swipe",
+        "brutal_swing",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "iron_tail",
+        "light_screen",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "aqua_jet",
+        "dragon_breath",
+        "extreme_speed",
+        "mist",
+        "supersonic",
+        "water_pulse",
+    ]

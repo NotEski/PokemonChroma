@@ -5,13 +5,12 @@ class _GrassWhistle:
         "type": "grass",
         "index": 320,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 55,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "sound", "authentic"]
     status_condition = {
         "sleep": 0,
     }

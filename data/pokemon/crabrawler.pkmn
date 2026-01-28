@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("crabrawler")
+class Crabrawler:
+    display_name = "Crabrawler"
+    id = 739
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=47,
+        attack=82,
+        defense=57,
+        special_attack=42,
+        special_defense=47,
+        speed=63
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 225
+    base_experience_yield = 68
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "iron_fist",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "anger_point",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 7.0
+    egg_groups = ['water3']
+    growth_rate = "medium"
+    egg_moves = []

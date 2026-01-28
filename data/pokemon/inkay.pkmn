@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("inkay")
+class Inkay:
+    display_name = "Inkay"
+    id = 686
+    types = ['dark', 'psychic']
+    base_stats = BaseStats(
+        hp=53,
+        attack=54,
+        defense=53,
+        special_attack=37,
+        special_defense=46,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "contrary",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "suction_cups",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 3.5
+    egg_groups = ['water1', 'water2']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "peck",
+                "tackle",
+            ],
+            3: [
+                "hypnosis",
+            ],
+            6: [
+                "wrap",
+            ],
+            9: [
+                "payback",
+            ],
+            12: [
+                "pluck",
+            ],
+            15: [
+                "psybeam",
+            ],
+            18: [
+                "swagger",
+            ],
+            21: [
+                "slash",
+            ],
+            24: [
+                "night_slash",
+            ],
+            27: [
+                "psycho_cut",
+            ],
+            31: [
+                "switcheroo",
+            ],
+            33: [
+                "foul_play",
+            ],
+            36: [
+                "topsy_turvy",
+            ],
+            39: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "calm_mind",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "fake_tears",
+        "flamethrower",
+        "fling",
+        "foul_play",
+        "future_sight",
+        "guard_swap",
+        "light_screen",
+        "liquidation",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "thief",
+        "thunderbolt",
+        "trick_room",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "lash_out",
+    ]
+    egg_moves = [
+        "acupressure",
+        "destiny_bond",
+        "disable",
+    ]

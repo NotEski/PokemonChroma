@@ -1,0 +1,121 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hatenna")
+class Hatenna:
+    display_name = "Hatenna"
+    id = 856
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=42,
+        attack=30,
+        defense=45,
+        special_attack=56,
+        special_defense=53,
+        speed=39
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 235
+    base_experience_yield = 53
+    base_happiness = 50
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "healer",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "anticipation",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "magic_bounce",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 3.4
+    egg_groups = ['fairy']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "play_nice",
+            ],
+            5: [
+                "life_dew",
+            ],
+            10: [
+                "disarming_voice",
+            ],
+            15: [
+                "aromatherapy",
+            ],
+            20: [
+                "psybeam",
+            ],
+            25: [
+                "heal_pulse",
+            ],
+            30: [
+                "dazzling_gleam",
+            ],
+            35: [
+                "calm_mind",
+            ],
+            40: [
+                "psychic",
+            ],
+            45: [
+                "healing_wish",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "calm_mind",
+        "charm",
+        "dark_pulse",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "facade",
+        "giga_drain",
+        "helping_hand",
+        "imprison",
+        "light_screen",
+        "magical_leaf",
+        "mystical_fire",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rest",
+        "round",
+        "safeguard",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "thunder_wave",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = [
+        "after_you",
+        "aromatic_mist",
+        "nuzzle",
+        "quash",
+    ]

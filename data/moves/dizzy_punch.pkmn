@@ -5,13 +5,12 @@ class _DizzyPunch:
         "type": "normal",
         "index": 146,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 70,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "punch"]
     status_condition = {
         "confusion": 20,
     }

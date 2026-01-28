@@ -1,0 +1,111 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lilligant")
+class Lilligant:
+    display_name = "Lilligant"
+    id = 549
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=70,
+        attack=60,
+        defense=75,
+        special_attack=110,
+        special_defense=75,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "own_tempo",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 16.3
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "petal_dance",
+            ],
+            1: [
+                "absorb",
+                "after_you",
+                "aromatherapy",
+                "energy_ball",
+                "entrainment",
+                "giga_drain",
+                "growth",
+                "helping_hand",
+                "leaf_storm",
+                "leech_seed",
+                "magical_leaf",
+                "mega_drain",
+                "petal_blizzard",
+                "petal_dance",
+                "quiver_dance",
+                "sleep_powder",
+                "stun_spore",
+                "sunny_day",
+                "synthesis",
+                "teeter_dance",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "charm",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hyper_beam",
+        "leaf_blade",
+        "leaf_storm",
+        "light_screen",
+        "magical_leaf",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

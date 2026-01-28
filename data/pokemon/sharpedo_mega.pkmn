@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("sharpedo_mega")
+class MegaSharpedo:
+    display_name = "Sharpedo Mega"
+    id = 10070
+    base_stats = BaseStats(
+        hp=70,
+        attack=140,
+        defense=70,
+        special_attack=110,
+        special_defense=65,
+        speed=105
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 196
+    height_m = 2.5
+    weight_kg = 130.3

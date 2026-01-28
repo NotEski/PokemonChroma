@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("glalie_mega")
+class MegaGlalie:
+    display_name = "Glalie Mega"
+    id = 10074
+    base_stats = BaseStats(
+        hp=80,
+        attack=120,
+        defense=80,
+        special_attack=120,
+        special_defense=80,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 203
+    height_m = 2.1
+    weight_kg = 350.2

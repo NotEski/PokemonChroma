@@ -1,0 +1,13 @@
+@move("dire_claw")  # type: ignore
+class _DireClaw:
+    meta = {
+        "display_name": "Dire Claw",
+        "type": "poison",
+        "index": 827,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

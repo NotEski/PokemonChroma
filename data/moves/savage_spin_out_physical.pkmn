@@ -1,0 +1,13 @@
+@move("savage_spin_out_physical")  # type: ignore
+class _SavageSpinOutPhysical:
+    meta = {
+        "display_name": "Savage Spin-Out",
+        "type": "bug",
+        "index": 634,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

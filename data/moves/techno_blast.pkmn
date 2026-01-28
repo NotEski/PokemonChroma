@@ -11,4 +11,3 @@ class _TechnoBlast:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

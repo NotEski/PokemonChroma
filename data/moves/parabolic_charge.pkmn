@@ -5,11 +5,10 @@ class _ParabolicCharge:
         "type": "electric",
         "index": 570,
         "damage_class": "special",
-        "category": "damage_heal",
+        "category": "damage",
         "accuracy": 100,
-        "power": 50,
+        "power": 65,
         "pp": 20,
         "target": "all_other_pokemon",
     }
-    flags = ["protect", "mirror", "heal"]
     drain = 50

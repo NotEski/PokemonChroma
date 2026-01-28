@@ -5,11 +5,10 @@ class _DrainingKiss:
         "type": "fairy",
         "index": 577,
         "damage_class": "special",
-        "category": "damage_heal",
+        "category": "damage",
         "accuracy": 100,
         "power": 50,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "heal"]
     drain = 75

@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("nidoran_f")
+class NidoranF:
+    display_name = "Nidoran F"
+    id = 29
+    types = ['poison']
+    base_stats = BaseStats(
+        hp=55,
+        attack=47,
+        defense=52,
+        special_attack=40,
+        special_defense=40,
+        speed=41
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 55
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rivalry",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "hustle",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 7.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "poison_sting",
+            ],
+            5: [
+                "scratch",
+            ],
+            10: [
+                "tail_whip",
+            ],
+            15: [
+                "fury_swipes",
+            ],
+            20: [
+                "toxic_spikes",
+            ],
+            25: [
+                "double_kick",
+            ],
+            30: [
+                "bite",
+            ],
+            35: [
+                "helping_hand",
+            ],
+            40: [
+                "toxic",
+            ],
+            45: [
+                "flatter",
+            ],
+            50: [
+                "crunch",
+            ],
+            55: [
+                "earth_power",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "beat_up",
+        "blizzard",
+        "body_slam",
+        "charm",
+        "crunch",
+        "dig",
+        "earth_power",
+        "endure",
+        "facade",
+        "focus_energy",
+        "helping_hand",
+        "ice_beam",
+        "iron_tail",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thief",
+        "thunder",
+        "thunderbolt",
+        "toxic_spikes",
+        "venom_drench",
+        "venoshock",
+    ]
+    egg_moves = [
+        "counter",
+        "disable",
+        "poison_fang",
+        "poison_tail",
+        "skull_bash",
+        "supersonic",
+        "take_down",
+    ]

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("raticate_alola")
+class MegaRaticateAlola:
+    display_name = "Raticate Alola"
+    id = 10092
+    base_stats = BaseStats(
+        hp=75,
+        attack=71,
+        defense=70,
+        special_attack=40,
+        special_defense=80,
+        speed=77
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 145
+    height_m = 0.7
+    weight_kg = 25.5

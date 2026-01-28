@@ -5,13 +5,12 @@ class _AcidArmor:
         "type": "poison",
         "index": 151,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "defense", "change": 2, "chance": 100}],
     }

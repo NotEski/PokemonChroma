@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("elgyem")
+class Elgyem:
+    display_name = "Elgyem"
+    id = 605
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=55,
+        attack=55,
+        defense=55,
+        special_attack=85,
+        special_defense=55,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 67
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "telepathy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "synchronize",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "analytic",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 9.0
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "growl",
+            ],
+            6: [
+                "imprison",
+            ],
+            12: [
+                "teleport",
+            ],
+            18: [
+                "psybeam",
+            ],
+            24: [
+                "guard_split",
+                "power_split",
+            ],
+            30: [
+                "headbutt",
+            ],
+            36: [
+                "zen_headbutt",
+            ],
+            43: [
+                "recover",
+            ],
+            48: [
+                "calm_mind",
+            ],
+            54: [
+                "wonder_room",
+            ],
+            60: [
+                "psychic",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "calm_mind",
+        "cosmic_power",
+        "dark_pulse",
+        "endure",
+        "energy_ball",
+        "facade",
+        "guard_swap",
+        "imprison",
+        "light_screen",
+        "nasty_plot",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "screech",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stored_power",
+        "substitute",
+        "thief",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "trick_room",
+        "uproar",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "meteor_beam",
+    ]
+    egg_moves = [
+        "astonish",
+        "destiny_bond",
+        "disable",
+        "psych_up",
+    ]

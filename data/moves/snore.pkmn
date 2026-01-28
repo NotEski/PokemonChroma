@@ -11,5 +11,4 @@ class _Snore:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]
     flinch_chance = 30

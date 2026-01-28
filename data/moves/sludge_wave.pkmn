@@ -5,13 +5,12 @@ class _SludgeWave:
         "type": "poison",
         "index": 482,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 95,
         "pp": 10,
         "target": "all_other_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "poison": 10,
     }

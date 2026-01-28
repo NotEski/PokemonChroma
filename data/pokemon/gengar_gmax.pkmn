@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("gengar_gmax")
+class MegaGengar:
+    display_name = "Gengar Gmax"
+    id = 10202
+    base_stats = BaseStats(
+        hp=60,
+        attack=65,
+        defense=60,
+        special_attack=130,
+        special_defense=75,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 225
+    height_m = 20.0
+    weight_kg = 1000.0

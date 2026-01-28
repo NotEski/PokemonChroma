@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("gallade_mega")
+class MegaGallade:
+    display_name = "Gallade Mega"
+    id = 10068
+    base_stats = BaseStats(
+        hp=68,
+        attack=165,
+        defense=95,
+        special_attack=65,
+        special_defense=115,
+        speed=110
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 278
+    height_m = 1.6
+    weight_kg = 56.4

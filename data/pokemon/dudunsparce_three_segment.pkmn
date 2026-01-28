@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("dudunsparce_three_segment")
+class MegaDudunsparceThreeSegment:
+    display_name = "Dudunsparce Three Segment"
+    id = 10255
+    base_stats = BaseStats(
+        hp=125,
+        attack=100,
+        defense=80,
+        special_attack=85,
+        special_defense=75,
+        speed=55
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 182
+    height_m = 4.5
+    weight_kg = 47.4

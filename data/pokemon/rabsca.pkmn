@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rabsca")
+class Rabsca:
+    display_name = "Rabsca"
+    id = 954
+    types = ['bug', 'psychic']
+    base_stats = BaseStats(
+        hp=75,
+        attack=50,
+        defense=85,
+        special_attack=115,
+        special_defense=100,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 165
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "synchronize",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 3.5
+    egg_groups = ['bug']
+    growth_rate = "fast"
+    egg_moves = []

@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cofagrigus")
+class Cofagrigus:
+    display_name = "Cofagrigus"
+    id = 563
+    types = ['ghost']
+    base_stats = BaseStats(
+        hp=58,
+        attack=50,
+        defense=145,
+        special_attack=95,
+        special_defense=105,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 169
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "mummy",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 76.5
+    egg_groups = ['mineral', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "shadow_claw",
+            ],
+            1: [
+                "astonish",
+                "haze",
+                "night_shade",
+                "protect",
+                "scary_face",
+                "shadow_claw",
+            ],
+            12: [
+                "disable",
+            ],
+            16: [
+                "will_o_wisp",
+            ],
+            20: [
+                "crafty_shield",
+            ],
+            24: [
+                "hex",
+            ],
+            28: [
+                "mean_look",
+            ],
+            32: [
+                "grudge",
+            ],
+            38: [
+                "curse",
+            ],
+            44: [
+                "shadow_ball",
+            ],
+            50: [
+                "dark_pulse",
+            ],
+            56: [
+                "guard_split",
+                "power_split",
+            ],
+            62: [
+                "destiny_bond",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "body_press",
+        "calm_mind",
+        "dark_pulse",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "hex",
+        "hyper_beam",
+        "imprison",
+        "iron_defense",
+        "nasty_plot",
+        "payback",
+        "phantom_force",
+        "power_swap",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "revenge",
+        "round",
+        "safeguard",
+        "scary_face",
+        "shadow_ball",
+        "shadow_claw",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thief",
+        "toxic_spikes",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "poltergeist",
+    ]
+    egg_moves = []

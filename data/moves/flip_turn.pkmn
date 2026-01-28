@@ -1,0 +1,13 @@
+@move("flip_turn")  # type: ignore
+class _FlipTurn:
+    meta = {
+        "display_name": "Flip Turn",
+        "type": "water",
+        "index": 812,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

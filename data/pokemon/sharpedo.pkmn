@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sharpedo")
+class Sharpedo:
+    display_name = "Sharpedo"
+    id = 319
+    types = ['water', 'dark']
+    base_stats = BaseStats(
+        hp=70,
+        attack=120,
+        defense=40,
+        special_attack=95,
+        special_defense=40,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 161
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rough_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "speed_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 88.8
+    egg_groups = ['water2']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "slash",
+            ],
+            1: [
+                "aqua_jet",
+                "focus_energy",
+                "leer",
+                "night_slash",
+                "poison_fang",
+                "slash",
+            ],
+            12: [
+                "scary_face",
+            ],
+            16: [
+                "bite",
+            ],
+            20: [
+                "ice_fang",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "swagger",
+            ],
+            34: [
+                "crunch",
+            ],
+            40: [
+                "agility",
+            ],
+            46: [
+                "liquidation",
+            ],
+            52: [
+                "take_down",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "bounce",
+        "brine",
+        "bulldoze",
+        "close_combat",
+        "crunch",
+        "dark_pulse",
+        "dive",
+        "earthquake",
+        "endure",
+        "facade",
+        "focus_energy",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "icy_wind",
+        "liquidation",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_tomb",
+        "round",
+        "scald",
+        "scary_face",
+        "screech",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "taunt",
+        "thief",
+        "uproar",
+        "waterfall",
+        "whirlpool",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "scale_shot",
+    ]
+    egg_moves = []

@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lugia")
+class Lugia:
+    display_name = "Lugia"
+    id = 249
+    types = ['psychic', 'flying']
+    base_stats = BaseStats(
+        hp=106,
+        attack=90,
+        defense=130,
+        special_attack=90,
+        special_defense=154,
+        speed=110
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "multiscale",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 5.2
+    weight_kg = 216.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "dragon_rush",
+                "gust",
+                "weather_ball",
+                "whirlwind",
+            ],
+            9: [
+                "mist",
+            ],
+            18: [
+                "safeguard",
+            ],
+            27: [
+                "calm_mind",
+            ],
+            36: [
+                "extrasensory",
+            ],
+            45: [
+                "recover",
+            ],
+            54: [
+                "aeroblast",
+            ],
+            63: [
+                "rain_dance",
+            ],
+            72: [
+                "hydro_pump",
+            ],
+            81: [
+                "future_sight",
+            ],
+            90: [
+                "sky_attack",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "brine",
+        "bulldoze",
+        "calm_mind",
+        "dive",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fly",
+        "future_sight",
+        "giga_drain",
+        "giga_impact",
+        "hail",
+        "helping_hand",
+        "hurricane",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "imprison",
+        "iron_head",
+        "iron_tail",
+        "light_screen",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "scale_shot",
+    ]
+    egg_moves = []

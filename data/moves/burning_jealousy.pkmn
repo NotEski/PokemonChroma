@@ -1,0 +1,16 @@
+@move("burning_jealousy")  # type: ignore
+class _BurningJealousy:
+    meta = {
+        "display_name": "Burning Jealousy",
+        "type": "fire",
+        "index": 807,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 5,
+        "target": "all_opponents",
+    }
+    status_condition = {
+        "burn": 100,
+    }

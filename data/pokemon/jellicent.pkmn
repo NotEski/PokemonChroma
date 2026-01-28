@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("jellicent")
+class Jellicent:
+    display_name = "Jellicent"
+    id = 593
+    types = ['water', 'ghost']
+    base_stats = BaseStats(
+        hp=100,
+        attack=60,
+        defense=70,
+        special_attack=85,
+        special_defense=105,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.2
+    weight_kg = 135.0
+    egg_groups = ['indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "acid_armor",
+                "night_shade",
+                "poison_sting",
+                "water_gun",
+            ],
+            12: [
+                "water_pulse",
+            ],
+            16: [
+                "rain_dance",
+            ],
+            20: [
+                "hex",
+            ],
+            24: [
+                "brine",
+            ],
+            28: [
+                "recover",
+            ],
+            32: [
+                "shadow_ball",
+            ],
+            36: [
+                "whirlpool",
+            ],
+            43: [
+                "hydro_pump",
+            ],
+            48: [
+                "destiny_bond",
+            ],
+            54: [
+                "water_spout",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "brine",
+        "dark_pulse",
+        "dazzling_gleam",
+        "dive",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "hail",
+        "hex",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "imprison",
+        "muddy_water",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "scald",
+        "shadow_ball",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "surf",
+        "taunt",
+        "trick",
+        "trick_room",
+        "waterfall",
+        "whirlpool",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "poltergeist",
+    ]
+    egg_moves = []

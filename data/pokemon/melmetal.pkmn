@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("melmetal")
+class Melmetal:
+    display_name = "Melmetal"
+    id = 809
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=135,
+        attack=143,
+        defense=143,
+        special_attack=80,
+        special_defense=65,
+        speed=34
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 270
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "iron_fist",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.5
+    weight_kg = 800.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "thunder_punch",
+            ],
+            1: [
+                "harden",
+                "headbutt",
+                "tail_whip",
+                "thunder_punch",
+                "thunder_shock",
+            ],
+            24: [
+                "thunder_wave",
+            ],
+            32: [
+                "acid_armor",
+            ],
+            40: [
+                "flash_cannon",
+            ],
+            48: [
+                "mega_punch",
+            ],
+            56: [
+                "protect",
+            ],
+            64: [
+                "discharge",
+            ],
+            72: [
+                "dynamic_punch",
+            ],
+            80: [
+                "superpower",
+            ],
+            88: [
+                "double_iron_bash",
+            ],
+            96: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "brutal_swing",
+        "darkest_lariat",
+        "earthquake",
+        "electric_terrain",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "gyro_ball",
+        "heavy_slam",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "iron_defense",
+        "iron_head",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "superpower",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+    ]
+    tutor_moves = [
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

@@ -5,13 +5,12 @@ class _Bounce:
         "type": "flying",
         "index": 340,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 85,
         "power": 85,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "charge", "protect", "mirror", "gravity", "distance"]
     status_condition = {
         "paralysis": 30,
     }

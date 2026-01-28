@@ -1,0 +1,13 @@
+@move("gigaton_hammer")  # type: ignore
+class _GigatonHammer:
+    meta = {
+        "display_name": "Gigaton Hammer",
+        "type": "steel",
+        "index": 893,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 160,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

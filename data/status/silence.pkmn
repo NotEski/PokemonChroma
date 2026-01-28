@@ -1,0 +1,5 @@
+@status("silence")  # type: ignore
+class SilenceStatus:
+    meta = {
+        "display_name": "Silence",
+    }

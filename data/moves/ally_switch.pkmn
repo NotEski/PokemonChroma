@@ -5,10 +5,10 @@ class _AllySwitch:
         "type": "psychic",
         "index": 502,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "user",
     }
-    priority = 1
+    priority = 2

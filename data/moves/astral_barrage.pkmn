@@ -1,0 +1,13 @@
+@move("astral_barrage")  # type: ignore
+class _AstralBarrage:
+    meta = {
+        "display_name": "Astral Barrage",
+        "type": "ghost",
+        "index": 825,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "all_opponents",
+    }

@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hypno")
+class Hypno:
+    display_name = "Hypno"
+    id = 97
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=85,
+        attack=73,
+        defense=70,
+        special_attack=73,
+        special_defense=115,
+        speed=67
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 169
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "forewarn",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 75.6
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    egg_moves = []

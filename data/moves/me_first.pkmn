@@ -11,4 +11,3 @@ class _MeFirst:
         "pp": 20,
         "target": "selected_pokemon_me_first",
     }
-    flags = ["protect", "authentic"]

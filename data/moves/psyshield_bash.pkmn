@@ -1,0 +1,13 @@
+@move("psyshield_bash")  # type: ignore
+class _PsyshieldBash:
+    meta = {
+        "display_name": "Psyshield Bash",
+        "type": "psychic",
+        "index": 828,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

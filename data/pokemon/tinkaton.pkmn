@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tinkaton")
+class Tinkaton:
+    display_name = "Tinkaton"
+    id = 959
+    types = ['fairy', 'steel']
+    base_stats = BaseStats(
+        hp=85,
+        attack=75,
+        defense=77,
+        special_attack=70,
+        special_defense=105,
+        speed=94
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 253
+    base_happiness = 50
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "mold_breaker",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "own_tempo",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickpocket",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 112.8
+    egg_groups = ['fairy']
+    growth_rate = "medium_slow"
+    egg_moves = []

@@ -5,13 +5,12 @@ class _MagneticFlux:
         "type": "electric",
         "index": 602,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "user_and_allies",
     }
-    flags = ["snatch", "distance", "authentic"]
     stat_changes = {
-        "stat_changes_recieved": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
+        "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}],
     }

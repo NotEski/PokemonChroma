@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lanturn")
+class Lanturn:
+    display_name = "Lanturn"
+    id = 171
+    types = ['water', 'electric']
+    base_stats = BaseStats(
+        hp=125,
+        attack=58,
+        defense=58,
+        special_attack=76,
+        special_defense=76,
+        speed=67
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 161
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "illuminate",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 22.5
+    egg_groups = ['water2']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            1: [
+                "eerie_impulse",
+                "electro_ball",
+                "spit_up",
+                "stockpile",
+                "supersonic",
+                "swallow",
+                "thunder_wave",
+                "water_gun",
+            ],
+            12: [
+                "bubble_beam",
+            ],
+            16: [
+                "confuse_ray",
+            ],
+            20: [
+                "spark",
+            ],
+            24: [
+                "charge",
+            ],
+            30: [
+                "discharge",
+            ],
+            36: [
+                "aqua_ring",
+            ],
+            42: [
+                "flail",
+            ],
+            48: [
+                "take_down",
+            ],
+            54: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "amnesia",
+        "attract",
+        "blizzard",
+        "bounce",
+        "brine",
+        "dazzling_gleam",
+        "dive",
+        "eerie_impulse",
+        "electro_ball",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "waterfall",
+        "whirlpool",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

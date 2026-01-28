@@ -1,0 +1,149 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("togepi")
+class Togepi:
+    display_name = "Togepi"
+    id = 175
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=35,
+        attack=20,
+        defense=65,
+        special_attack=40,
+        special_defense=65,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 49
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 1.5
+    egg_groups = ['no_eggs']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "pound",
+            ],
+            4: [
+                "sweet_kiss",
+            ],
+            8: [
+                "life_dew",
+            ],
+            12: [
+                "charm",
+            ],
+            16: [
+                "ancient_power",
+            ],
+            20: [
+                "yawn",
+            ],
+            24: [
+                "metronome",
+            ],
+            28: [
+                "after_you",
+            ],
+            32: [
+                "double_edge",
+            ],
+            36: [
+                "safeguard",
+            ],
+            40: [
+                "follow_me",
+            ],
+            44: [
+                "baton_pass",
+            ],
+            48: [
+                "last_resort",
+            ],
+            52: [
+                "wish",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "charm",
+        "dazzling_gleam",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "future_sight",
+        "grass_knot",
+        "helping_hand",
+        "hyper_voice",
+        "light_screen",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "mystical_fire",
+        "nasty_plot",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder_wave",
+        "tri_attack",
+        "trick",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "aerial_ace",
+        "extrasensory",
+        "morning_sun",
+        "peck",
+        "present",
+        "psycho_shift",
+    ]

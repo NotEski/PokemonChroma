@@ -1,0 +1,13 @@
+@move("hydro_steam")  # type: ignore
+class _HydroSteam:
+    meta = {
+        "display_name": "Hydro Steam",
+        "type": "water",
+        "index": 876,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

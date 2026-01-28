@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("vikavolt")
+class Vikavolt:
+    display_name = "Vikavolt"
+    id = 738
+    types = ['bug', 'electric']
+    base_stats = BaseStats(
+        hp=77,
+        attack=70,
+        defense=90,
+        special_attack=145,
+        special_defense=75,
+        speed=43
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 225
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 45.0
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "thunderbolt",
+            ],
+            1: [
+                "bug_bite",
+                "charge",
+                "crunch",
+                "dig",
+                "discharge",
+                "iron_defense",
+                "mud_slap",
+                "string_shot",
+                "thunderbolt",
+                "vice_grip",
+                "x_scissor",
+            ],
+            15: [
+                "bite",
+            ],
+            23: [
+                "spark",
+            ],
+            29: [
+                "sticky_web",
+            ],
+            36: [
+                "bug_buzz",
+            ],
+            43: [
+                "guillotine",
+            ],
+            50: [
+                "fly",
+            ],
+            57: [
+                "agility",
+            ],
+            64: [
+                "zap_cannon",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "attract",
+        "bug_buzz",
+        "crunch",
+        "dig",
+        "eerie_impulse",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "flash_cannon",
+        "fly",
+        "giga_impact",
+        "hyper_beam",
+        "iron_defense",
+        "light_screen",
+        "mud_shot",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "rising_voltage",
+        "skitter_smack",
+    ]
+    egg_moves = []

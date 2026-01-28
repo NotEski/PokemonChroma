@@ -5,13 +5,12 @@ class _AromaticMist:
         "type": "fairy",
         "index": 597,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "ally",
     }
-    flags = ["authentic"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "special_defense", "change": 1, "chance": 100}],
     }

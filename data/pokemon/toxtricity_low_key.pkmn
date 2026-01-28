@@ -1,0 +1,153 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("toxtricity_low_key")
+class ToxtricityLowKey:
+    display_name = "Toxtricity Low Key"
+    id = 10184
+    types = ['electric', 'poison']
+    base_stats = BaseStats(
+        hp=75,
+        attack=98,
+        defense=70,
+        special_attack=114,
+        special_defense=70,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 176
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "punk_rock",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "minus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 40.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "spark",
+            ],
+            1: [
+                "acid",
+                "acid_spray",
+                "belch",
+                "eerie_impulse",
+                "flail",
+                "growl",
+                "leer",
+                "noble_roar",
+                "nuzzle",
+                "spark",
+                "tearful_look",
+                "thunder_shock",
+            ],
+            4: [
+                "charge",
+            ],
+            8: [
+                "shock_wave",
+            ],
+            12: [
+                "scary_face",
+            ],
+            16: [
+                "taunt",
+            ],
+            20: [
+                "venom_drench",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "swagger",
+            ],
+            32: [
+                "toxic",
+            ],
+            36: [
+                "discharge",
+            ],
+            40: [
+                "poison_jab",
+            ],
+            44: [
+                "overdrive",
+            ],
+            48: [
+                "boomburst",
+            ],
+            52: [
+                "magnetic_flux",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "drain_punch",
+        "eerie_impulse",
+        "electro_ball",
+        "encore",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "giga_impact",
+        "gunk_shot",
+        "hex",
+        "hyper_beam",
+        "hyper_voice",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rest",
+        "round",
+        "scary_face",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snarl",
+        "snore",
+        "stored_power",
+        "substitute",
+        "swift",
+        "taunt",
+        "throat_chop",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "venom_drench",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

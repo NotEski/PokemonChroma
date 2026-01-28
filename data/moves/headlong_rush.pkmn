@@ -1,0 +1,13 @@
+@move("headlong_rush")  # type: ignore
+class _HeadlongRush:
+    meta = {
+        "display_name": "Headlong Rush",
+        "type": "ground",
+        "index": 838,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("maushold_family_of_three")
+class MegaMausholdFamilyOfThree:
+    display_name = "Maushold Family Of Three"
+    id = 10257
+    base_stats = BaseStats(
+        hp=74,
+        attack=75,
+        defense=70,
+        special_attack=65,
+        special_defense=75,
+        speed=111
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 165
+    height_m = 0.3
+    weight_kg = 2.8

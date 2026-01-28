@@ -5,13 +5,12 @@ class _FieryDance:
         "type": "fire",
         "index": 552,
         "damage_class": "special",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 100,
         "power": 80,
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": 1, "chance": 50}],
     }

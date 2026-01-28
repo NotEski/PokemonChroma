@@ -1,0 +1,17 @@
+@move("zippy_zap")  # type: ignore
+class _ZippyZap:
+    meta = {
+        "display_name": "Zippy Zap",
+        "type": "electric",
+        "index": 729,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    priority = 2
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "evasion", "change": 1, "chance": 100}],
+    }

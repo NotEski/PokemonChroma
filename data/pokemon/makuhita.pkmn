@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("makuhita")
+class Makuhita:
+    display_name = "Makuhita"
+    id = 296
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=72,
+        attack=60,
+        defense=30,
+        special_attack=20,
+        special_defense=30,
+        speed=25
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 180
+    base_experience_yield = 47
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "guts",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 86.4
+    egg_groups = ['humanshape']
+    growth_rate = "fast_then_very_slow"
+    egg_moves = []

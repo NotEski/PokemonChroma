@@ -1,0 +1,13 @@
+@move("snowscape")  # type: ignore
+class _Snowscape:
+    meta = {
+        "display_name": "Snowscape",
+        "type": "ice",
+        "index": 883,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "entire_field",
+    }

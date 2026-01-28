@@ -1,0 +1,16 @@
+@move("coaching")  # type: ignore
+class _Coaching:
+    meta = {
+        "display_name": "Coaching",
+        "type": "fighting",
+        "index": 811,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 10,
+        "target": "user_and_allies",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "defense", "change": 1, "chance": 100}],
+    }

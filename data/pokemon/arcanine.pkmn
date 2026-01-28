@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("arcanine")
+class Arcanine:
+    display_name = "Arcanine"
+    id = 59
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=90,
+        attack=110,
+        defense=80,
+        special_attack=100,
+        special_defense=80,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 194
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "intimidate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "flash_fire",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "justified",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 155.0
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "extreme_speed",
+            ],
+            1: [
+                "agility",
+                "bite",
+                "burn_up",
+                "crunch",
+                "ember",
+                "extreme_speed",
+                "fire_fang",
+                "flame_wheel",
+                "flamethrower",
+                "flare_blitz",
+                "helping_hand",
+                "howl",
+                "leer",
+                "play_rough",
+                "retaliate",
+                "reversal",
+                "roar",
+                "take_down",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "bulldoze",
+        "close_combat",
+        "crunch",
+        "dig",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_fang",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "giga_impact",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "iron_head",
+        "iron_tail",
+        "outrage",
+        "overheat",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rest",
+        "retaliate",
+        "reversal",
+        "round",
+        "safeguard",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder_fang",
+        "wild_charge",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = []

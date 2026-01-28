@@ -11,4 +11,3 @@ class _LastResort:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

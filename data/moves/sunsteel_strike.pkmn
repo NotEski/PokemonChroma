@@ -1,0 +1,13 @@
+@move("sunsteel_strike")  # type: ignore
+class _SunsteelStrike:
+    meta = {
+        "display_name": "Sunsteel Strike",
+        "type": "steel",
+        "index": 713,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

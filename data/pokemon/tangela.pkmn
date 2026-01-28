@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tangela")
+class Tangela:
+    display_name = "Tangela"
+    id = 114
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=65,
+        attack=55,
+        defense=115,
+        special_attack=100,
+        special_defense=40,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 87
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "leaf_guard",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 35.0
+    egg_groups = ['plant']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "bind",
+            ],
+            4: [
+                "stun_spore",
+            ],
+            8: [
+                "growth",
+            ],
+            12: [
+                "mega_drain",
+            ],
+            16: [
+                "vine_whip",
+            ],
+            20: [
+                "poison_powder",
+            ],
+            24: [
+                "ancient_power",
+            ],
+            28: [
+                "knock_off",
+            ],
+            32: [
+                "giga_drain",
+            ],
+            36: [
+                "sleep_powder",
+            ],
+            40: [
+                "slam",
+            ],
+            44: [
+                "tickle",
+            ],
+            48: [
+                "power_whip",
+            ],
+            52: [
+                "ingrain",
+            ],
+            56: [
+                "grassy_terrain",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "body_slam",
+        "bullet_seed",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "leaf_storm",
+        "power_swap",
+        "power_whip",
+        "protect",
+        "reflect",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "thief",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = [
+        "confusion",
+        "endeavor",
+        "flail",
+        "leech_seed",
+        "nature_power",
+        "rage_powder",
+    ]

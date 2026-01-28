@@ -1,0 +1,155 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("miltank")
+class Miltank:
+    display_name = "Miltank"
+    id = 241
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=95,
+        attack=80,
+        defense=105,
+        special_attack=40,
+        special_defense=70,
+        speed=100
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "thick_fat",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "scrappy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 75.5
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "tackle",
+            ],
+            5: [
+                "rollout",
+            ],
+            10: [
+                "defense_curl",
+            ],
+            15: [
+                "stomp",
+            ],
+            20: [
+                "heal_bell",
+            ],
+            25: [
+                "headbutt",
+            ],
+            30: [
+                "zen_headbutt",
+            ],
+            35: [
+                "milk_drink",
+            ],
+            40: [
+                "body_slam",
+            ],
+            45: [
+                "play_rough",
+            ],
+            50: [
+                "charm",
+            ],
+            55: [
+                "high_horsepower",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "charm",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "gyro_ball",
+        "heavy_slam",
+        "helping_hand",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_head",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "steel_roller",
+    ]
+    egg_moves = [
+        "belch",
+        "curse",
+        "double_edge",
+        "focus_punch",
+        "hammer_arm",
+        "present",
+        "seismic_toss",
+    ]

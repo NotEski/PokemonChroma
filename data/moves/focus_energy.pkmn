@@ -5,10 +5,9 @@ class _FocusEnergy:
         "type": "normal",
         "index": 116,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 30,
         "target": "user",
     }
-    flags = ["snatch"]

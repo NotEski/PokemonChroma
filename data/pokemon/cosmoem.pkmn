@@ -1,0 +1,52 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cosmoem")
+class Cosmoem:
+    display_name = "Cosmoem"
+    id = 790
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=43,
+        attack=29,
+        defense=131,
+        special_attack=29,
+        special_defense=131,
+        speed=37
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 140
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.1
+    weight_kg = 999.9
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "cosmic_power",
+            ],
+            1: [
+                "cosmic_power",
+                "teleport",
+            ],
+        }
+    machine_moves = [
+        "cosmic_power",
+    ]
+    egg_moves = []

@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hydrapple")
+class Hydrapple:
+    display_name = "Hydrapple"
+    id = 1019
+    types = ['grass', 'dragon']
+    base_stats = BaseStats(
+        hp=106,
+        attack=80,
+        defense=110,
+        special_attack=120,
+        special_defense=80,
+        speed=44
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 10
+    base_experience_yield = 270
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "supersweet_syrup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sticky_hold",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 93.0
+    egg_groups = ['plant', 'dragon']
+    growth_rate = "slow_then_very_fast"
+    egg_moves = []

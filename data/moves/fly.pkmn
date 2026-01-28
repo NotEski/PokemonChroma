@@ -11,4 +11,3 @@ class _Fly:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "charge", "protect", "mirror", "gravity", "distance"]

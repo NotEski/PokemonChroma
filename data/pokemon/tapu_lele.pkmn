@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("tapu_lele")
+class TapuLele:
+    display_name = "Tapu Lele"
+    id = 786
+    types = ['psychic', 'fairy']
+    base_stats = BaseStats(
+        hp=70,
+        attack=85,
+        defense=75,
+        special_attack=130,
+        special_defense=115,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 257
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "psychic_surge",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 18.6
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "confusion",
+            ],
+            5: [
+                "withdraw",
+            ],
+            10: [
+                "aromatherapy",
+            ],
+            15: [
+                "draining_kiss",
+            ],
+            20: [
+                "psybeam",
+            ],
+            25: [
+                "flatter",
+            ],
+            30: [
+                "aromatic_mist",
+            ],
+            35: [
+                "sweet_scent",
+            ],
+            40: [
+                "extrasensory",
+            ],
+            45: [
+                "psyshock",
+            ],
+            50: [
+                "mean_look",
+            ],
+            55: [
+                "natures_madness",
+            ],
+            60: [
+                "moonblast",
+            ],
+            65: [
+                "tickle",
+            ],
+            70: [
+                "skill_swap",
+            ],
+            75: [
+                "psychic_terrain",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "draining_kiss",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "focus_blast",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "hyper_beam",
+        "iron_defense",
+        "light_screen",
+        "magic_room",
+        "play_rough",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psycho_cut",
+        "psyshock",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "speed_swap",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "thunder",
+        "thunderbolt",
+        "wonder_room",
+    ]
+    egg_moves = []

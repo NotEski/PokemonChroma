@@ -1,0 +1,120 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("greedent")
+class Greedent:
+    display_name = "Greedent"
+    id = 820
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=120,
+        attack=95,
+        defense=95,
+        special_attack=55,
+        special_defense=75,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 161
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cheek_pouch",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 6.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "covet",
+            ],
+            1: [
+                "bite",
+                "covet",
+                "stuff_cheeks",
+                "tackle",
+                "tail_whip",
+            ],
+            15: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            20: [
+                "body_slam",
+            ],
+            27: [
+                "rest",
+            ],
+            34: [
+                "counter",
+            ],
+            41: [
+                "bullet_seed",
+            ],
+            48: [
+                "super_fang",
+            ],
+            55: [
+                "belch",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "assurance",
+        "attract",
+        "body_press",
+        "body_slam",
+        "brutal_swing",
+        "bullet_seed",
+        "crunch",
+        "dig",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_fang",
+        "fling",
+        "giga_impact",
+        "gyro_ball",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_fang",
+        "iron_tail",
+        "mud_shot",
+        "payback",
+        "protect",
+        "psychic_fangs",
+        "rest",
+        "round",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "superpower",
+        "swords_dance",
+        "tail_slap",
+        "thief",
+        "thunder_fang",
+        "uproar",
+        "wild_charge",
+    ]
+    egg_moves = []

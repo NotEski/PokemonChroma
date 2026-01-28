@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cubchoo")
+class Cubchoo:
+    display_name = "Cubchoo"
+    id = 613
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=55,
+        attack=70,
+        defense=40,
+        special_attack=60,
+        special_defense=40,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "snow_cloak",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "slush_rush",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 8.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "powder_snow",
+            ],
+            3: [
+                "endure",
+            ],
+            6: [
+                "fury_swipes",
+            ],
+            9: [
+                "icy_wind",
+            ],
+            12: [
+                "play_nice",
+            ],
+            15: [
+                "brine",
+            ],
+            18: [
+                "frost_breath",
+            ],
+            21: [
+                "slash",
+            ],
+            24: [
+                "flail",
+            ],
+            27: [
+                "charm",
+            ],
+            30: [
+                "hail",
+            ],
+            33: [
+                "thrash",
+            ],
+            36: [
+                "rest",
+            ],
+            39: [
+                "blizzard",
+            ],
+            42: [
+                "sheer_cold",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "avalanche",
+        "blizzard",
+        "brine",
+        "charm",
+        "dig",
+        "encore",
+        "endure",
+        "facade",
+        "fling",
+        "grass_knot",
+        "hail",
+        "ice_beam",
+        "ice_fang",
+        "ice_punch",
+        "icy_wind",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_tomb",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+    ]
+    egg_moves = [
+        "focus_punch",
+        "night_slash",
+        "yawn",
+    ]

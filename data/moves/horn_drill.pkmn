@@ -5,10 +5,9 @@ class _HornDrill:
         "type": "normal",
         "index": 32,
         "damage_class": "physical",
-        "category": "ohko",
+        "category": "damage",
         "accuracy": 30,
         "power": None,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

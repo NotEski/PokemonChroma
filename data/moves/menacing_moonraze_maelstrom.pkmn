@@ -1,0 +1,13 @@
+@move("menacing_moonraze_maelstrom")  # type: ignore
+class _MenacingMoonrazeMaelstrom:
+    meta = {
+        "display_name": "Menacing Moonraze Maelstrom",
+        "type": "ghost",
+        "index": 725,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 200,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

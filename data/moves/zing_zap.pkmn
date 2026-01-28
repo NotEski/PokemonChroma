@@ -1,0 +1,14 @@
+@move("zing_zap")  # type: ignore
+class _ZingZap:
+    meta = {
+        "display_name": "Zing Zap",
+        "type": "electric",
+        "index": 716,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    flinch_chance = 30

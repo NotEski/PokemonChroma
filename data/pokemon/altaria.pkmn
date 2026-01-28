@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("altaria")
+class Altaria:
+    display_name = "Altaria"
+    id = 334
+    types = ['dragon', 'flying']
+    base_stats = BaseStats(
+        hp=75,
+        attack=70,
+        defense=90,
+        special_attack=70,
+        special_defense=105,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cloud_nine",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 20.6
+    egg_groups = ['flying', 'dragon']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "dragon_pulse",
+            ],
+            1: [
+                "disarming_voice",
+                "dragon_pulse",
+                "growl",
+                "mist",
+                "peck",
+                "pluck",
+            ],
+            12: [
+                "fury_attack",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "dragon_breath",
+            ],
+            24: [
+                "safeguard",
+            ],
+            28: [
+                "sing",
+            ],
+            32: [
+                "cotton_guard",
+            ],
+            38: [
+                "take_down",
+            ],
+            44: [
+                "moonblast",
+            ],
+            50: [
+                "perish_song",
+            ],
+            56: [
+                "sky_attack",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "breaking_swipe",
+        "bulldoze",
+        "dazzling_gleam",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "fly",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "iron_tail",
+        "outrage",
+        "play_rough",
+        "power_swap",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "uproar",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "dual_wingbeat",
+    ]
+    egg_moves = []

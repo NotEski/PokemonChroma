@@ -1,6 +1,3 @@
-from shared.pokemon.pokemon import BattleMon
-
-
 @move("sketch")  # type: ignore
 class _Sketch:
     meta = {
@@ -8,29 +5,9 @@ class _Sketch:
         "type": "normal",
         "index": 166,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 1,
         "target": "selected_pokemon",
     }
-    flags = ["authentic"]
-
-    def on_use(self, user: BattleMon, target: BattleMon, battle):
-        print (f"{user.nickname} used Sketch!")
-        # Copies the last move used by the target
-        last_move = target.last_move_used
-
-        if last_move is None:
-            return None
-
-        sketch_slot = 0
-        for i, move in enumerate(user.move_set.moves):
-            if move.name == "sketch":
-                sketch_slot = i
-        user.move_set.moves[sketch_slot] = last_move.move_factory() # Sets the Sketch move to the copied move in BattleMon
-        user.pokemon_reference.move_set.moves[sketch_slot] = last_move.move_factory() # Updates the original Pokemon's move set as well so its saved properly
-
-        print (f"{user.nickname} learned {last_move.display_name}!")
-
-        return "success"

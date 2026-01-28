@@ -1,0 +1,146 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pawniard")
+class Pawniard:
+    display_name = "Pawniard"
+    id = 624
+    types = ['dark', 'steel']
+    base_stats = BaseStats(
+        hp=45,
+        attack=85,
+        defense=70,
+        special_attack=40,
+        special_defense=40,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 68
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "defiant",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pressure",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 10.2
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "scratch",
+            ],
+            5: [
+                "fury_cutter",
+            ],
+            10: [
+                "metal_claw",
+            ],
+            15: [
+                "torment",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "assurance",
+            ],
+            30: [
+                "metal_sound",
+            ],
+            35: [
+                "slash",
+            ],
+            40: [
+                "night_slash",
+            ],
+            45: [
+                "iron_defense",
+            ],
+            50: [
+                "laser_focus",
+            ],
+            55: [
+                "iron_head",
+            ],
+            60: [
+                "swords_dance",
+            ],
+            65: [
+                "guillotine",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "beat_up",
+        "brick_break",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "foul_play",
+        "grass_knot",
+        "iron_defense",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stealth_rock",
+        "substitute",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "thunder_wave",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "steel_beam",
+    ]
+    egg_moves = [
+        "headbutt",
+        "mean_look",
+        "quick_guard",
+        "sucker_punch",
+    ]

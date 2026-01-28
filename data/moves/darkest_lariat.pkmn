@@ -1,0 +1,13 @@
+@move("darkest_lariat")  # type: ignore
+class _DarkestLariat:
+    meta = {
+        "display_name": "Darkest Lariat",
+        "type": "dark",
+        "index": 663,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

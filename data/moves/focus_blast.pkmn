@@ -5,13 +5,12 @@ class _FocusBlast:
         "type": "fighting",
         "index": 411,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 70,
         "power": 120,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "ballistics"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 10}],
     }

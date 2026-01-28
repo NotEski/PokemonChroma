@@ -1,0 +1,129 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("whiscash")
+class Whiscash:
+    display_name = "Whiscash"
+    id = 340
+    types = ['water', 'ground']
+    base_stats = BaseStats(
+        hp=110,
+        attack=78,
+        defense=73,
+        special_attack=76,
+        special_defense=71,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 164
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "oblivious",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "anticipation",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "hydration",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 23.6
+    egg_groups = ['water2']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "thrash",
+            ],
+            1: [
+                "belch",
+                "mud_slap",
+                "rest",
+                "snore",
+                "thrash",
+                "tickle",
+                "water_gun",
+                "zen_headbutt",
+            ],
+            12: [
+                "water_pulse",
+            ],
+            18: [
+                "amnesia",
+            ],
+            24: [
+                "aqua_tail",
+            ],
+            33: [
+                "muddy_water",
+            ],
+            40: [
+                "earthquake",
+            ],
+            48: [
+                "future_sight",
+            ],
+            56: [
+                "fissure",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "bounce",
+        "bulldoze",
+        "dive",
+        "dragon_dance",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "future_sight",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "liquidation",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "uproar",
+        "waterfall",
+        "weather_ball",
+        "whirlpool",
+        "zen_headbutt",
+    ]
+    egg_moves = []

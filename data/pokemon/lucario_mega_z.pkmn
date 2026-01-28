@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("lucario_mega_z")
+class MegaLucarioZ:
+    display_name = "Lucario Mega Z"
+    id = 10310
+    base_stats = BaseStats(
+        hp=70,
+        attack=100,
+        defense=70,
+        special_attack=164,
+        special_defense=70,
+        speed=151
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.3
+    weight_kg = 49.4

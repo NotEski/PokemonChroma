@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wingull")
+class Wingull:
+    display_name = "Wingull"
+    id = 278
+    types = ['water', 'flying']
+    base_stats = BaseStats(
+        hp=40,
+        attack=30,
+        defense=30,
+        special_attack=55,
+        special_defense=30,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 54
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hydration",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "rain_dish",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 9.5
+    egg_groups = ['water1', 'flying']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "water_gun",
+            ],
+            5: [
+                "quick_attack",
+            ],
+            10: [
+                "supersonic",
+            ],
+            15: [
+                "wing_attack",
+            ],
+            20: [
+                "water_pulse",
+            ],
+            26: [
+                "agility",
+            ],
+            30: [
+                "air_slash",
+            ],
+            35: [
+                "mist",
+            ],
+            40: [
+                "roost",
+            ],
+            45: [
+                "hurricane",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "attract",
+        "blizzard",
+        "brine",
+        "endure",
+        "facade",
+        "fly",
+        "hail",
+        "hurricane",
+        "ice_beam",
+        "icy_wind",
+        "liquidation",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "swift",
+        "thief",
+        "u_turn",
+        "uproar",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "aerial_ace",
+        "air_cutter",
+        "aqua_ring",
+        "gust",
+        "knock_off",
+        "soak",
+        "twister",
+        "wide_guard",
+    ]

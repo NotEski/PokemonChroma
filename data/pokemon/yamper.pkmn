@@ -1,0 +1,114 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("yamper")
+class Yamper:
+    display_name = "Yamper"
+    id = 835
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=59,
+        attack=45,
+        defense=50,
+        special_attack=40,
+        special_defense=50,
+        speed=26
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 54
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "ball_fetch",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 13.5
+    egg_groups = ['ground']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "tail_whip",
+            ],
+            5: [
+                "nuzzle",
+            ],
+            10: [
+                "bite",
+            ],
+            15: [
+                "roar",
+            ],
+            20: [
+                "spark",
+            ],
+            26: [
+                "charm",
+            ],
+            30: [
+                "crunch",
+            ],
+            35: [
+                "charge",
+            ],
+            40: [
+                "wild_charge",
+            ],
+            45: [
+                "play_rough",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "charm",
+        "crunch",
+        "dig",
+        "electro_ball",
+        "endure",
+        "facade",
+        "fire_fang",
+        "helping_hand",
+        "play_rough",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "swift",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = [
+        "discharge",
+        "double_edge",
+        "flame_charge",
+        "howl",
+        "sand_attack",
+    ]

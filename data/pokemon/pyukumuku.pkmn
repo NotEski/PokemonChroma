@@ -1,0 +1,110 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pyukumuku")
+class Pyukumuku:
+    display_name = "Pyukumuku"
+    id = 771
+    types = ['water']
+    base_stats = BaseStats(
+        hp=55,
+        attack=60,
+        defense=130,
+        special_attack=30,
+        special_defense=130,
+        speed=5
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 144
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "innards_out",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unaware",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 1.2
+    egg_groups = ['water1']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "baton_pass",
+                "harden",
+            ],
+            5: [
+                "helping_hand",
+            ],
+            10: [
+                "taunt",
+            ],
+            15: [
+                "safeguard",
+            ],
+            20: [
+                "counter",
+            ],
+            25: [
+                "purify",
+            ],
+            30: [
+                "curse",
+            ],
+            35: [
+                "gastro_acid",
+            ],
+            40: [
+                "pain_split",
+            ],
+            45: [
+                "recover",
+            ],
+            50: [
+                "soak",
+            ],
+            55: [
+                "toxic",
+            ],
+            60: [
+                "memento",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "endure",
+        "hail",
+        "helping_hand",
+        "light_screen",
+        "protect",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "safeguard",
+        "screech",
+        "sleep_talk",
+        "substitute",
+        "taunt",
+        "venom_drench",
+    ]
+    egg_moves = [
+        "mirror_coat",
+        "spite",
+        "swagger",
+        "tickle",
+    ]

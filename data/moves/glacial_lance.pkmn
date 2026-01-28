@@ -1,0 +1,13 @@
+@move("glacial_lance")  # type: ignore
+class _GlacialLance:
+    meta = {
+        "display_name": "Glacial Lance",
+        "type": "ice",
+        "index": 824,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "all_opponents",
+    }

@@ -1,0 +1,13 @@
+@move("instruct")  # type: ignore
+class _Instruct:
+    meta = {
+        "display_name": "Instruct",
+        "type": "psychic",
+        "index": 689,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

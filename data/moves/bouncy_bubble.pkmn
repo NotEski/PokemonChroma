@@ -1,0 +1,14 @@
+@move("bouncy_bubble")  # type: ignore
+class _BouncyBubble:
+    meta = {
+        "display_name": "Bouncy Bubble",
+        "type": "water",
+        "index": 733,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    drain = 100

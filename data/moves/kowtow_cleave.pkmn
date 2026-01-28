@@ -1,0 +1,13 @@
+@move("kowtow_cleave")  # type: ignore
+class _KowtowCleave:
+    meta = {
+        "display_name": "Kowtow Cleave",
+        "type": "dark",
+        "index": 869,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 85,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

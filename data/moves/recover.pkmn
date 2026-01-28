@@ -5,11 +5,10 @@ class _Recover:
         "type": "normal",
         "index": 105,
         "damage_class": "status",
-        "category": "heal",
+        "category": "damage",
         "accuracy": None,
         "power": None,
-        "pp": 10,
+        "pp": 5,
         "target": "user",
     }
-    flags = ["snatch", "heal"]
     healing = 50

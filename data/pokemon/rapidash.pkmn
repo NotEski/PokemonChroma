@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("rapidash")
+class Rapidash:
+    display_name = "Rapidash"
+    id = 78
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=65,
+        attack=100,
+        defense=70,
+        special_attack=80,
+        special_defense=80,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 60
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "run_away",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "flash_fire",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 95.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "smart_strike",
+            ],
+            1: [
+                "ember",
+                "growl",
+                "megahorn",
+                "poison_jab",
+                "quick_attack",
+                "smart_strike",
+                "tackle",
+                "tail_whip",
+            ],
+            15: [
+                "flame_charge",
+            ],
+            20: [
+                "agility",
+            ],
+            25: [
+                "flame_wheel",
+            ],
+            30: [
+                "stomp",
+            ],
+            35: [
+                "fire_spin",
+            ],
+            43: [
+                "take_down",
+            ],
+            49: [
+                "inferno",
+            ],
+            56: [
+                "fire_blast",
+            ],
+            63: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "bounce",
+        "charm",
+        "drill_run",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "giga_impact",
+        "heat_wave",
+        "high_horsepower",
+        "hyper_beam",
+        "iron_tail",
+        "low_kick",
+        "megahorn",
+        "mystical_fire",
+        "overheat",
+        "pay_day",
+        "play_rough",
+        "poison_jab",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "solar_blade",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "throat_chop",
+        "wild_charge",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = []

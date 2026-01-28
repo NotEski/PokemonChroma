@@ -1,0 +1,16 @@
+@move("splishy_splash")  # type: ignore
+class _SplishySplash:
+    meta = {
+        "display_name": "Splishy Splash",
+        "type": "water",
+        "index": 730,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    status_condition = {
+        "paralysis": 30,
+    }

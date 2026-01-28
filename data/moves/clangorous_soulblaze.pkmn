@@ -1,0 +1,16 @@
+@move("clangorous_soulblaze")  # type: ignore
+class _ClangorousSoulblaze:
+    meta = {
+        "display_name": "Clangorous Soulblaze",
+        "type": "dragon",
+        "index": 728,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": 185,
+        "pp": 1,
+        "target": "all_opponents",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "defense", "change": 1, "chance": 100}, {"stat": "special_attack", "change": 1, "chance": 100}, {"stat": "special_defense", "change": 1, "chance": 100}, {"stat": "speed", "change": 1, "chance": 100}],
+    }

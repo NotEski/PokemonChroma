@@ -11,4 +11,3 @@ class _SuperFang:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]

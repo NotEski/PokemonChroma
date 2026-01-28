@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("glimmora_mega")
+class MegaGlimmora:
+    display_name = "Glimmora Mega"
+    id = 10321
+    base_stats = BaseStats(
+        hp=83,
+        attack=90,
+        defense=105,
+        special_attack=150,
+        special_defense=96,
+        speed=101
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 2.8
+    weight_kg = 77.0

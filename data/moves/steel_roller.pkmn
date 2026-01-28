@@ -1,0 +1,13 @@
+@move("steel_roller")  # type: ignore
+class _SteelRoller:
+    meta = {
+        "display_name": "Steel Roller",
+        "type": "steel",
+        "index": 798,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,133 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("salandit")
+class Salandit:
+    display_name = "Salandit"
+    id = 757
+    types = ['poison', 'fire']
+    base_stats = BaseStats(
+        hp=48,
+        attack=44,
+        defense=40,
+        special_attack=71,
+        special_defense=40,
+        speed=77
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 120
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "corrosion",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "oblivious",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 4.8
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "poison_gas",
+                "scratch",
+            ],
+            5: [
+                "smog",
+            ],
+            10: [
+                "ember",
+            ],
+            15: [
+                "poison_fang",
+            ],
+            20: [
+                "sweet_scent",
+            ],
+            25: [
+                "nasty_plot",
+            ],
+            30: [
+                "incinerate",
+            ],
+            35: [
+                "venoshock",
+            ],
+            40: [
+                "dragon_pulse",
+            ],
+            45: [
+                "venom_drench",
+            ],
+            50: [
+                "flamethrower",
+            ],
+            55: [
+                "toxic",
+            ],
+            60: [
+                "endeavor",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "beat_up",
+        "dragon_claw",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "foul_play",
+        "gunk_shot",
+        "heat_wave",
+        "helping_hand",
+        "iron_tail",
+        "leech_life",
+        "nasty_plot",
+        "overheat",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rest",
+        "round",
+        "shadow_claw",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "swift",
+        "taunt",
+        "thief",
+        "thunder_wave",
+        "venom_drench",
+        "venoshock",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "scale_shot",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "belch",
+        "fake_out",
+        "mud_slap",
+        "sand_attack",
+    ]

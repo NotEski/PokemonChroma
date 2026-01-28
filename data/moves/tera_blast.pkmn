@@ -1,0 +1,16 @@
+@move("tera_blast")  # type: ignore
+class _TeraBlast:
+    meta = {
+        "display_name": "Tera Blast",
+        "type": "normal",
+        "index": 851,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}, {"stat": "special_attack", "change": -1, "chance": 100}],
+    }

@@ -1,0 +1,139 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hoothoot")
+class Hoothoot:
+    display_name = "Hoothoot"
+    id = 163
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=60,
+        attack=30,
+        defense=30,
+        special_attack=36,
+        special_defense=56,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 52
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "keen_eye",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "tinted_lens",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 21.2
+    egg_groups = ['flying']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "peck",
+            ],
+            3: [
+                "tackle",
+            ],
+            6: [
+                "echoed_voice",
+            ],
+            9: [
+                "confusion",
+            ],
+            12: [
+                "reflect",
+            ],
+            15: [
+                "psycho_shift",
+            ],
+            18: [
+                "air_slash",
+            ],
+            21: [
+                "extrasensory",
+            ],
+            24: [
+                "take_down",
+            ],
+            27: [
+                "uproar",
+            ],
+            30: [
+                "roost",
+            ],
+            33: [
+                "moonblast",
+            ],
+            36: [
+                "hypnosis",
+            ],
+            39: [
+                "dream_eater",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "amnesia",
+        "attract",
+        "calm_mind",
+        "endure",
+        "facade",
+        "fly",
+        "heat_wave",
+        "hurricane",
+        "hyper_voice",
+        "imprison",
+        "nasty_plot",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "screech",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "steel_wing",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "defog",
+        "feather_dance",
+        "night_shade",
+        "supersonic",
+        "whirlwind",
+        "wing_attack",
+    ]

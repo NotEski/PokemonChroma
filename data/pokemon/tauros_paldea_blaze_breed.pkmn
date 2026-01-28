@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("tauros_paldea_blaze_breed")
+class MegaTaurosPaldeaBlazeBreed:
+    display_name = "Tauros Paldea Blaze Breed"
+    id = 10251
+    base_stats = BaseStats(
+        hp=75,
+        attack=110,
+        defense=105,
+        special_attack=30,
+        special_defense=70,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 172
+    height_m = 1.4
+    weight_kg = 85.0

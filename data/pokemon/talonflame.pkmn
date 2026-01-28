@@ -1,0 +1,121 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("talonflame")
+class Talonflame:
+    display_name = "Talonflame"
+    id = 663
+    types = ['fire', 'flying']
+    base_stats = BaseStats(
+        hp=78,
+        attack=81,
+        defense=71,
+        special_attack=74,
+        special_defense=69,
+        speed=126
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flame_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "gale_wings",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 24.5
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "feint",
+                "flame_charge",
+                "flare_blitz",
+                "growl",
+                "peck",
+                "quick_attack",
+            ],
+            15: [
+                "flail",
+            ],
+            22: [
+                "acrobatics",
+            ],
+            29: [
+                "agility",
+            ],
+            38: [
+                "aerial_ace",
+            ],
+            47: [
+                "tailwind",
+            ],
+            56: [
+                "steel_wing",
+            ],
+            65: [
+                "roost",
+            ],
+            74: [
+                "fly",
+            ],
+            83: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "attract",
+        "brave_bird",
+        "bulk_up",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fly",
+        "giga_impact",
+        "heat_wave",
+        "hurricane",
+        "hyper_beam",
+        "overheat",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "u_turn",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

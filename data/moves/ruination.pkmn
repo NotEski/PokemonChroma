@@ -1,0 +1,13 @@
+@move("ruination")  # type: ignore
+class _Ruination:
+    meta = {
+        "display_name": "Ruination",
+        "type": "dark",
+        "index": 877,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 1,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

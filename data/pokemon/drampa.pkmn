@@ -1,0 +1,155 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("drampa")
+class Drampa:
+    display_name = "Drampa"
+    id = 780
+    types = ['normal', 'dragon']
+    base_stats = BaseStats(
+        hp=78,
+        attack=60,
+        defense=85,
+        special_attack=135,
+        special_defense=91,
+        speed=36
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 70
+    base_experience_yield = 170
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "berserk",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sap_sipper",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "cloud_nine",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 3.0
+    weight_kg = 185.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "echoed_voice",
+                "play_nice",
+            ],
+            5: [
+                "twister",
+            ],
+            10: [
+                "protect",
+            ],
+            15: [
+                "glare",
+            ],
+            20: [
+                "safeguard",
+            ],
+            25: [
+                "dragon_breath",
+            ],
+            30: [
+                "extrasensory",
+            ],
+            35: [
+                "dragon_pulse",
+            ],
+            40: [
+                "light_screen",
+            ],
+            45: [
+                "fly",
+            ],
+            50: [
+                "hyper_voice",
+            ],
+            55: [
+                "outrage",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "breaking_swipe",
+        "bulldoze",
+        "calm_mind",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "earthquake",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "fly",
+        "focus_blast",
+        "giga_impact",
+        "grass_knot",
+        "heat_wave",
+        "helping_hand",
+        "hurricane",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icy_wind",
+        "light_screen",
+        "outrage",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "lash_out",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "dragon_rush",
+        "mist",
+        "tickle",
+    ]

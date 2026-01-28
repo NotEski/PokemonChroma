@@ -11,5 +11,4 @@ class _Feint:
         "pp": 10,
         "target": "selected_pokemon",
     }
-    flags = ["mirror"]
     priority = 2

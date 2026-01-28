@@ -1,0 +1,13 @@
+@move("tachyon_cutter")  # type: ignore
+class _TachyonCutter:
+    meta = {
+        "display_name": "Tachyon Cutter",
+        "type": "steel",
+        "index": 911,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 0,
+        "power": 50,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,16 @@
+@move("pyro_ball")  # type: ignore
+class _PyroBall:
+    meta = {
+        "display_name": "Pyro Ball",
+        "type": "fire",
+        "index": 780,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "burn": 10,
+    }

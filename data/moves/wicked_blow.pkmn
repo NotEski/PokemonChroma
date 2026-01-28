@@ -1,0 +1,14 @@
+@move("wicked_blow")  # type: ignore
+class _WickedBlow:
+    meta = {
+        "display_name": "Wicked Blow",
+        "type": "dark",
+        "index": 817,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    critical_hit_rate = 48

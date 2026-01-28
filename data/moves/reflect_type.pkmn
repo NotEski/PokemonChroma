@@ -5,10 +5,9 @@ class _ReflectType:
         "type": "normal",
         "index": 513,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "authentic"]

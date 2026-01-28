@@ -1,0 +1,123 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("alcremie")
+class Alcremie:
+    display_name = "Alcremie"
+    id = 869
+    types = ['fairy']
+    base_stats = BaseStats(
+        hp=65,
+        attack=60,
+        defense=75,
+        special_attack=110,
+        special_defense=121,
+        speed=64
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 100
+    base_experience_yield = 173
+    base_happiness = 50
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sweet_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "aroma_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 0.5
+    egg_groups = ['fairy', 'indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "decorate",
+            ],
+            1: [
+                "aromatic_mist",
+                "decorate",
+                "sweet_kiss",
+                "sweet_scent",
+                "tackle",
+            ],
+            15: [
+                "draining_kiss",
+            ],
+            20: [
+                "aromatherapy",
+            ],
+            25: [
+                "attract",
+            ],
+            30: [
+                "acid_armor",
+            ],
+            35: [
+                "dazzling_gleam",
+            ],
+            40: [
+                "recover",
+            ],
+            45: [
+                "misty_terrain",
+            ],
+            50: [
+                "entrainment",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fake_tears",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "helping_hand",
+        "hyper_beam",
+        "imprison",
+        "light_screen",
+        "magic_room",
+        "magical_leaf",
+        "metronome",
+        "misty_terrain",
+        "mystical_fire",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "tri_attack",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "misty_explosion",
+    ]
+    egg_moves = []

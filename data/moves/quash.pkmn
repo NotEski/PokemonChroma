@@ -5,10 +5,9 @@ class _Quash:
         "type": "dark",
         "index": 511,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": 100,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

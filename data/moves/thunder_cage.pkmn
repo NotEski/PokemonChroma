@@ -1,0 +1,16 @@
+@move("thunder_cage")  # type: ignore
+class _ThunderCage:
+    meta = {
+        "display_name": "Thunder Cage",
+        "type": "electric",
+        "index": 819,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "trap": 100,
+    }

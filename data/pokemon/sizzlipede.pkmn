@@ -1,0 +1,120 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sizzlipede")
+class Sizzlipede:
+    display_name = "Sizzlipede"
+    id = 850
+    types = ['fire', 'bug']
+    base_stats = BaseStats(
+        hp=50,
+        attack=65,
+        defense=45,
+        special_attack=50,
+        special_defense=50,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 190
+    base_experience_yield = 61
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "flash_fire",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "white_smoke",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "flame_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 1.0
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "smokescreen",
+            ],
+            5: [
+                "wrap",
+            ],
+            10: [
+                "bite",
+            ],
+            15: [
+                "flame_wheel",
+            ],
+            20: [
+                "bug_bite",
+            ],
+            25: [
+                "coil",
+            ],
+            30: [
+                "slam",
+            ],
+            35: [
+                "fire_spin",
+            ],
+            40: [
+                "crunch",
+            ],
+            45: [
+                "fire_lash",
+            ],
+            50: [
+                "lunge",
+            ],
+            55: [
+                "burn_up",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brutal_swing",
+        "bug_buzz",
+        "crunch",
+        "endure",
+        "facade",
+        "fire_spin",
+        "heat_crash",
+        "heat_wave",
+        "leech_life",
+        "power_whip",
+        "protect",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "defense_curl",
+        "knock_off",
+        "rollout",
+        "struggle_bug",
+    ]

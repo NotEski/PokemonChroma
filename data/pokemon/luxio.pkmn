@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("luxio")
+class Luxio:
+    display_name = "Luxio"
+    id = 404
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=60,
+        attack=85,
+        defense=49,
+        special_attack=60,
+        special_defense=49,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 127
+    base_happiness = 100
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rivalry",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "guts",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 30.5
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "charge",
+                "leer",
+                "tackle",
+                "thunder_shock",
+            ],
+            12: [
+                "bite",
+            ],
+            18: [
+                "spark",
+            ],
+            24: [
+                "roar",
+            ],
+            31: [
+                "volt_switch",
+            ],
+            36: [
+                "scary_face",
+            ],
+            42: [
+                "thunder_wave",
+            ],
+            48: [
+                "crunch",
+            ],
+            54: [
+                "discharge",
+            ],
+            60: [
+                "swagger",
+            ],
+            68: [
+                "wild_charge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "crunch",
+        "eerie_impulse",
+        "electro_ball",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_fang",
+        "helping_hand",
+        "ice_fang",
+        "iron_tail",
+        "light_screen",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

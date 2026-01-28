@@ -1,0 +1,167 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("obstagoon")
+class Obstagoon:
+    display_name = "Obstagoon"
+    id = 862
+    types = ['dark', 'normal']
+    base_stats = BaseStats(
+        hp=93,
+        attack=90,
+        defense=101,
+        special_attack=60,
+        special_defense=81,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 260
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "reckless",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "guts",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "defiant",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 46.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "obstruct",
+            ],
+            1: [
+                "baby_doll_eyes",
+                "cross_chop",
+                "leer",
+                "lick",
+                "night_slash",
+                "obstruct",
+                "pin_missile",
+                "sand_attack",
+                "submission",
+                "switcheroo",
+                "tackle",
+            ],
+            9: [
+                "snarl",
+            ],
+            12: [
+                "headbutt",
+            ],
+            15: [
+                "hone_claws",
+            ],
+            18: [
+                "fury_swipes",
+            ],
+            23: [
+                "rest",
+            ],
+            28: [
+                "take_down",
+            ],
+            35: [
+                "scary_face",
+            ],
+            42: [
+                "counter",
+            ],
+            49: [
+                "taunt",
+            ],
+            56: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "blizzard",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "close_combat",
+        "cross_poison",
+        "dig",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_punch",
+        "fling",
+        "focus_energy",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "iron_defense",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "mud_shot",
+        "payback",
+        "pin_missile",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "round",
+        "scary_face",
+        "screech",
+        "seed_bomb",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "surf",
+        "swift",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "whirlpool",
+        "work_up",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "lash_out",
+    ]
+    egg_moves = []

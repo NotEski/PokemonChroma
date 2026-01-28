@@ -1,0 +1,127 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("cresselia")
+class Cresselia:
+    display_name = "Cresselia"
+    id = 488
+    types = ['psychic']
+    base_stats = BaseStats(
+        hp=120,
+        attack=70,
+        defense=110,
+        special_attack=75,
+        special_defense=120,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 270
+    base_happiness = 100
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 85.6
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "double_team",
+            ],
+            6: [
+                "mist",
+            ],
+            12: [
+                "aurora_beam",
+            ],
+            18: [
+                "psybeam",
+            ],
+            24: [
+                "psycho_shift",
+            ],
+            30: [
+                "slash",
+            ],
+            36: [
+                "psycho_cut",
+            ],
+            42: [
+                "moonlight",
+            ],
+            48: [
+                "safeguard",
+            ],
+            54: [
+                "psychic",
+            ],
+            60: [
+                "moonblast",
+            ],
+            66: [
+                "future_sight",
+            ],
+            72: [
+                "lunar_dance",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "body_slam",
+        "calm_mind",
+        "endure",
+        "energy_ball",
+        "facade",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "helping_hand",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "light_screen",
+        "magic_room",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder_wave",
+        "trick",
+        "trick_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+    ]
+    egg_moves = []

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("aerodactyl_mega")
+class MegaAerodactyl:
+    display_name = "Aerodactyl Mega"
+    id = 10042
+    base_stats = BaseStats(
+        hp=80,
+        attack=135,
+        defense=85,
+        special_attack=70,
+        special_defense=95,
+        speed=150
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 215
+    height_m = 2.1
+    weight_kg = 79.0

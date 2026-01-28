@@ -1,0 +1,157 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("munchlax")
+class Munchlax:
+    display_name = "Munchlax"
+    id = 446
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=135,
+        attack=85,
+        defense=40,
+        special_attack=40,
+        special_defense=85,
+        speed=5
+    )
+    ev_yield = EffortYield(
+        hp=1,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 50
+    base_experience_yield = 78
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "thick_fat",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "gluttony",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 105.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "lick",
+                "tackle",
+            ],
+            4: [
+                "defense_curl",
+            ],
+            8: [
+                "recycle",
+            ],
+            12: [
+                "covet",
+            ],
+            16: [
+                "bite",
+            ],
+            20: [
+                "stockpile",
+                "swallow",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "body_slam",
+            ],
+            32: [
+                "fling",
+            ],
+            36: [
+                "amnesia",
+            ],
+            40: [
+                "metronome",
+            ],
+            44: [
+                "flail",
+            ],
+            48: [
+                "belly_drum",
+            ],
+            52: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "amnesia",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "charm",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_punch",
+        "flamethrower",
+        "fling",
+        "gunk_shot",
+        "hydro_pump",
+        "hyper_voice",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "pay_day",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "screech",
+        "seed_bomb",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "surf",
+        "thunder",
+        "thunder_punch",
+        "thunderbolt",
+        "uproar",
+        "whirlpool",
+        "work_up",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "belch",
+        "counter",
+        "curse",
+        "double_edge",
+        "fissure",
+    ]

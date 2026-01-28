@@ -1,0 +1,13 @@
+@move("triple_arrows")  # type: ignore
+class _TripleArrows:
+    meta = {
+        "display_name": "Triple Arrows",
+        "type": "fighting",
+        "index": 843,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

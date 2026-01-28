@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("simisear")
+class Simisear:
+    display_name = "Simisear"
+    id = 514
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=75,
+        attack=98,
+        defense=63,
+        special_attack=98,
+        special_defense=63,
+        speed=101
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 75
+    base_experience_yield = 174
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "gluttony",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "blaze",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 28.0
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    egg_moves = []

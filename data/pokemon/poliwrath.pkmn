@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("poliwrath")
+class Poliwrath:
+    display_name = "Poliwrath"
+    id = 62
+    types = ['water', 'fighting']
+    base_stats = BaseStats(
+        hp=90,
+        attack=95,
+        defense=95,
+        special_attack=70,
+        special_defense=90,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 230
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 54.0
+    egg_groups = ['water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "submission",
+            ],
+            1: [
+                "belly_drum",
+                "body_slam",
+                "bubble_beam",
+                "circle_throw",
+                "double_edge",
+                "dynamic_punch",
+                "earth_power",
+                "hydro_pump",
+                "hypnosis",
+                "mind_reader",
+                "mud_shot",
+                "pound",
+                "rain_dance",
+                "submission",
+                "water_gun",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "darkest_lariat",
+        "dig",
+        "dive",
+        "drain_punch",
+        "earth_power",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "hail",
+        "helping_hand",
+        "high_horsepower",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "ice_punch",
+        "icy_wind",
+        "liquidation",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "superpower",
+        "surf",
+        "thief",
+        "throat_chop",
+        "waterfall",
+        "whirlpool",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

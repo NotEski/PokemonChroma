@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("groudon_primal")
+class MegaGroudonPrimal:
+    display_name = "Groudon Primal"
+    id = 10078
+    base_stats = BaseStats(
+        hp=100,
+        attack=180,
+        defense=160,
+        special_attack=150,
+        special_defense=90,
+        speed=90
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 347
+    height_m = 5.0
+    weight_kg = 999.7

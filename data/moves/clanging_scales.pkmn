@@ -1,0 +1,16 @@
+@move("clanging_scales")  # type: ignore
+class _ClangingScales:
+    meta = {
+        "display_name": "Clanging Scales",
+        "type": "dragon",
+        "index": 691,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 110,
+        "pp": 5,
+        "target": "all_opponents",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
+    }

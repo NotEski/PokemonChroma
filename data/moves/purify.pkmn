@@ -1,0 +1,14 @@
+@move("purify")  # type: ignore
+class _Purify:
+    meta = {
+        "display_name": "Purify",
+        "type": "poison",
+        "index": 685,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    healing = 50

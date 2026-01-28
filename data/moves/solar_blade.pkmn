@@ -1,0 +1,13 @@
+@move("solar_blade")  # type: ignore
+class _SolarBlade:
+    meta = {
+        "display_name": "Solar Blade",
+        "type": "grass",
+        "index": 669,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 125,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,13 @@
+@move("ceaseless_edge")  # type: ignore
+class _CeaselessEdge:
+    meta = {
+        "display_name": "Ceaseless Edge",
+        "type": "dark",
+        "index": 845,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 65,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

@@ -5,13 +5,12 @@ class _PoisonTail:
         "type": "poison",
         "index": 342,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 50,
         "pp": 25,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     status_condition = {
         "poison": 10,
     }

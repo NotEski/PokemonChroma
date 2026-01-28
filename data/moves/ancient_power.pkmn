@@ -5,13 +5,12 @@ class _AncientPower:
         "type": "rock",
         "index": 246,
         "damage_class": "special",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 100,
         "power": 60,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
-        "stat_changes_inflicted": [{"stat": "hp", "change": 1, "chance": 10}, {"stat": "attack", "change": 1, "chance": 10}, {"stat": "defense", "change": 1, "chance": 10}, {"stat": "special_attack", "change": 1, "chance": 10}, {"stat": "special_defense", "change": 1, "chance": 10}, {"stat": "speed", "change": 1, "chance": 10}],
+        "stat_changes_inflicted": [{"stat": "attack", "change": 1, "chance": 10}, {"stat": "defense", "change": 1, "chance": 10}, {"stat": "special_attack", "change": 1, "chance": 10}, {"stat": "special_defense", "change": 1, "chance": 10}, {"stat": "speed", "change": 1, "chance": 10}],
     }

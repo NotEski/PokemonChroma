@@ -5,13 +5,12 @@ class _Smog:
         "type": "poison",
         "index": 123,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 70,
         "power": 30,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "poison": 40,
     }

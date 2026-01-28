@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bruxish")
+class Bruxish:
+    display_name = "Bruxish"
+    id = 779
+    types = ['water', 'psychic']
+    base_stats = BaseStats(
+        hp=68,
+        attack=105,
+        defense=70,
+        special_attack=70,
+        special_defense=70,
+        speed=92
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 80
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "dazzling",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "strong_jaw",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "wonder_skin",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 19.0
+    egg_groups = ['water2']
+    growth_rate = "medium"
+    egg_moves = []

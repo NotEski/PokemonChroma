@@ -11,4 +11,3 @@ class _MagicalLeaf:
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

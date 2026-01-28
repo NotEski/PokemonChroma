@@ -11,5 +11,4 @@ class _MirrorCoat:
         "pp": 20,
         "target": "specific_move",
     }
-    flags = ["protect"]
     priority = -5

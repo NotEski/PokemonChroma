@@ -1,0 +1,14 @@
+@move("burning_bulwark")  # type: ignore
+class _BurningBulwark:
+    meta = {
+        "display_name": "Burning Bulwark",
+        "type": "fire",
+        "index": 908,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 0,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }
+    priority = 4

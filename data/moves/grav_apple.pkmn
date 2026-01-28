@@ -1,0 +1,16 @@
+@move("grav_apple")  # type: ignore
+class _GravApple:
+    meta = {
+        "display_name": "Grav Apple",
+        "type": "grass",
+        "index": 788,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
+    }

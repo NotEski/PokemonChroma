@@ -1,0 +1,128 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("elekid")
+class Elekid:
+    display_name = "Elekid"
+    id = 239
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=45,
+        attack=63,
+        defense=37,
+        special_attack=65,
+        special_defense=55,
+        speed=95
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 72
+    base_happiness = 70
+    gender_rate = 2
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "static",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "vital_spirit",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 23.5
+    egg_groups = ['no_eggs']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "quick_attack",
+            ],
+            4: [
+                "thunder_shock",
+            ],
+            8: [
+                "charge",
+            ],
+            12: [
+                "swift",
+            ],
+            16: [
+                "shock_wave",
+            ],
+            20: [
+                "thunder_wave",
+            ],
+            24: [
+                "screech",
+            ],
+            28: [
+                "thunder_punch",
+            ],
+            32: [
+                "discharge",
+            ],
+            36: [
+                "low_kick",
+            ],
+            40: [
+                "thunderbolt",
+            ],
+            44: [
+                "light_screen",
+            ],
+            48: [
+                "thunder",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "brick_break",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "helping_hand",
+        "ice_punch",
+        "light_screen",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "volt_switch",
+        "wild_charge",
+    ]
+    egg_moves = [
+        "cross_chop",
+        "dynamic_punch",
+        "feint",
+        "focus_punch",
+        "hammer_arm",
+    ]

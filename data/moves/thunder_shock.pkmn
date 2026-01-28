@@ -5,13 +5,12 @@ class _ThunderShock:
         "type": "electric",
         "index": 84,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 40,
         "pp": 30,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "paralysis": 10,
     }

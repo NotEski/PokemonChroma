@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("togekiss")
+class Togekiss:
+    display_name = "Togekiss"
+    id = 468
+    types = ['fairy', 'flying']
+    base_stats = BaseStats(
+        hp=85,
+        attack=50,
+        defense=95,
+        special_attack=120,
+        special_defense=115,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 245
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hustle",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "serene_grace",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 38.0
+    egg_groups = ['flying', 'fairy']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "air_slash",
+            ],
+            1: [
+                "after_you",
+                "air_slash",
+                "ancient_power",
+                "aura_sphere",
+                "baton_pass",
+                "charm",
+                "double_edge",
+                "extreme_speed",
+                "fairy_wind",
+                "follow_me",
+                "growl",
+                "last_resort",
+                "life_dew",
+                "metronome",
+                "pound",
+                "safeguard",
+                "sky_attack",
+                "sweet_kiss",
+                "tri_attack",
+                "wish",
+                "yawn",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "aura_sphere",
+        "baton_pass",
+        "body_slam",
+        "brick_break",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fling",
+        "fly",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "light_screen",
+        "magical_leaf",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "mystical_fire",
+        "nasty_plot",
+        "play_rough",
+        "protect",
+        "psychic",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder_wave",
+        "tri_attack",
+        "trick",
+        "uproar",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = []

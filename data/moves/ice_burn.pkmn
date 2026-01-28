@@ -5,13 +5,12 @@ class _IceBurn:
         "type": "ice",
         "index": 554,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 90,
         "power": 140,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["charge", "protect", "mirror"]
     status_condition = {
         "burn": 30,
     }

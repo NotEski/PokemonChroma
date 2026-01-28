@@ -1,0 +1,39 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chien_pao")
+class ChienPao:
+    display_name = "Chien Pao"
+    id = 1002
+    types = ['dark', 'ice']
+    base_stats = BaseStats(
+        hp=80,
+        attack=120,
+        defense=80,
+        special_attack=90,
+        special_defense=65,
+        speed=135
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 285
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sword_of_ruin",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 152.2
+    growth_rate = "medium_fast"
+    egg_moves = []

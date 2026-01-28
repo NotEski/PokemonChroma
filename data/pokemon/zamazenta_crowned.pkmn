@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("zamazenta_crowned")
+class ZamazentaCrowned:
+    display_name = "Zamazenta Crowned"
+    id = 10189
+    types = ['fighting', 'steel']
+    base_stats = BaseStats(
+        hp=92,
+        attack=120,
+        defense=140,
+        special_attack=80,
+        special_defense=140,
+        speed=128
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 360
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "dauntless_shield",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.9
+    weight_kg = 785.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bite",
+                "howl",
+                "metal_burst",
+                "metal_claw",
+                "quick_attack",
+                "wide_guard",
+            ],
+            11: [
+                "slash",
+            ],
+            22: [
+                "iron_defense",
+            ],
+            33: [
+                "iron_head",
+            ],
+            44: [
+                "laser_focus",
+            ],
+            55: [
+                "crunch",
+            ],
+            66: [
+                "moonblast",
+            ],
+            77: [
+                "close_combat",
+            ],
+            88: [
+                "giga_impact",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "close_combat",
+        "crunch",
+        "dazzling_gleam",
+        "dig",
+        "endure",
+        "facade",
+        "fire_fang",
+        "flash_cannon",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "guard_swap",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_fang",
+        "imprison",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "light_screen",
+        "payback",
+        "play_rough",
+        "power_swap",
+        "protect",
+        "psychic_fangs",
+        "reflect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "round",
+        "safeguard",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "swift",
+        "tail_slap",
+        "thunder_fang",
+        "wild_charge",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+        "steel_beam",
+    ]
+    egg_moves = []

@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("okidogi")
+class Okidogi:
+    display_name = "Okidogi"
+    id = 1014
+    types = ['poison', 'fighting']
+    base_stats = BaseStats(
+        hp=88,
+        attack=128,
+        defense=115,
+        special_attack=58,
+        special_defense=86,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 278
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "toxic_chain",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "guard_dog",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.8
+    weight_kg = 92.2
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

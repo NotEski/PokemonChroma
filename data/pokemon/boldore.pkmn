@@ -1,0 +1,119 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("boldore")
+class Boldore:
+    display_name = "Boldore"
+    id = 525
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=70,
+        attack=105,
+        defense=105,
+        special_attack=50,
+        special_defense=40,
+        speed=20
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 137
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 102.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "power_gem",
+            ],
+            1: [
+                "harden",
+                "power_gem",
+                "sand_attack",
+                "stealth_rock",
+                "tackle",
+            ],
+            12: [
+                "mud_slap",
+            ],
+            16: [
+                "smack_down",
+            ],
+            20: [
+                "iron_defense",
+            ],
+            24: [
+                "headbutt",
+            ],
+            30: [
+                "rock_slide",
+            ],
+            36: [
+                "rock_blast",
+            ],
+            42: [
+                "sandstorm",
+            ],
+            48: [
+                "stone_edge",
+            ],
+            54: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_press",
+        "bulldoze",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "heavy_slam",
+        "iron_defense",
+        "power_gem",
+        "protect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = []

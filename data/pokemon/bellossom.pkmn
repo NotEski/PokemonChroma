@@ -1,0 +1,107 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bellossom")
+class Bellossom:
+    display_name = "Bellossom"
+    id = 182
+    types = ['grass']
+    base_stats = BaseStats(
+        hp=75,
+        attack=80,
+        defense=95,
+        special_attack=90,
+        special_defense=100,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 221
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "healer",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.8
+    egg_groups = ['plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "petal_blizzard",
+            ],
+            1: [
+                "absorb",
+                "acid",
+                "giga_drain",
+                "grassy_terrain",
+                "growth",
+                "mega_drain",
+                "moonblast",
+                "moonlight",
+                "petal_blizzard",
+                "petal_dance",
+                "poison_powder",
+                "quiver_dance",
+                "sleep_powder",
+                "stun_spore",
+                "sweet_scent",
+                "toxic",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "baton_pass",
+        "bullet_seed",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "helping_hand",
+        "hyper_beam",
+        "leaf_blade",
+        "leaf_storm",
+        "magical_leaf",
+        "play_rough",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "uproar",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "grassy_glide",
+    ]
+    egg_moves = []

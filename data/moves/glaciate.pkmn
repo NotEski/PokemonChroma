@@ -5,13 +5,12 @@ class _Glaciate:
         "type": "ice",
         "index": 549,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 95,
         "power": 65,
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

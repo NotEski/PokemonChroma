@@ -1,0 +1,143 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("lunala")
+class Lunala:
+    display_name = "Lunala"
+    id = 792
+    types = ['psychic', 'ghost']
+    base_stats = BaseStats(
+        hp=137,
+        attack=113,
+        defense=89,
+        special_attack=137,
+        special_defense=107,
+        speed=97
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shadow_shield",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 4.0
+    weight_kg = 120.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "moongeist_beam",
+            ],
+            1: [
+                "confusion",
+                "cosmic_power",
+                "hypnosis",
+                "moongeist_beam",
+                "teleport",
+            ],
+            7: [
+                "night_shade",
+            ],
+            14: [
+                "confuse_ray",
+            ],
+            21: [
+                "air_slash",
+            ],
+            28: [
+                "shadow_ball",
+            ],
+            35: [
+                "moonlight",
+            ],
+            42: [
+                "night_daze",
+            ],
+            49: [
+                "magic_coat",
+            ],
+            56: [
+                "moonblast",
+            ],
+            63: [
+                "phantom_force",
+            ],
+            70: [
+                "dream_eater",
+            ],
+            77: [
+                "wide_guard",
+            ],
+            84: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "air_slash",
+        "blizzard",
+        "calm_mind",
+        "cosmic_power",
+        "dazzling_gleam",
+        "endure",
+        "facade",
+        "fly",
+        "focus_blast",
+        "future_sight",
+        "giga_impact",
+        "heat_wave",
+        "helping_hand",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "light_screen",
+        "magic_room",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "psyshock",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "scary_face",
+        "shadow_ball",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "trick_room",
+        "will_o_wisp",
+        "wonder_room",
+        "work_up",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "expanding_force",
+        "meteor_beam",
+        "poltergeist",
+    ]
+    egg_moves = []

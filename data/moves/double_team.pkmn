@@ -5,13 +5,12 @@ class _DoubleTeam:
         "type": "normal",
         "index": 104,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "evasion", "change": 1, "chance": 100}],
     }

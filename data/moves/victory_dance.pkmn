@@ -1,0 +1,13 @@
+@move("victory_dance")  # type: ignore
+class _VictoryDance:
+    meta = {
+        "display_name": "Victory Dance",
+        "type": "fighting",
+        "index": 837,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }

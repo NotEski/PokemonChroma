@@ -1,0 +1,104 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("vileplume")
+class Vileplume:
+    display_name = "Vileplume"
+    id = 45
+    types = ['grass', 'poison']
+    base_stats = BaseStats(
+        hp=75,
+        attack=80,
+        defense=85,
+        special_attack=110,
+        special_defense=90,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 221
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "effect_spore",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 18.6
+    egg_groups = ['plant']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "petal_blizzard",
+            ],
+            1: [
+                "absorb",
+                "acid",
+                "aromatherapy",
+                "giga_drain",
+                "grassy_terrain",
+                "growth",
+                "mega_drain",
+                "moonblast",
+                "moonlight",
+                "petal_blizzard",
+                "petal_dance",
+                "poison_powder",
+                "sleep_powder",
+                "stun_spore",
+                "sweet_scent",
+                "toxic",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "bullet_seed",
+        "charm",
+        "dazzling_gleam",
+        "drain_punch",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "pollen_puff",
+        "protect",
+        "rest",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "venoshock",
+    ]
+    tutor_moves = [
+        "corrosive_gas",
+        "grassy_glide",
+    ]
+    egg_moves = []

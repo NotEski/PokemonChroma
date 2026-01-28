@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("skarmory")
+class Skarmory:
+    display_name = "Skarmory"
+    id = 227
+    types = ['steel', 'flying']
+    base_stats = BaseStats(
+        hp=65,
+        attack=80,
+        defense=140,
+        special_attack=40,
+        special_defense=70,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 25
+    base_experience_yield = 163
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sturdy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.7
+    weight_kg = 50.5
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "peck",
+            ],
+            4: [
+                "sand_attack",
+            ],
+            8: [
+                "fury_attack",
+            ],
+            12: [
+                "metal_claw",
+            ],
+            16: [
+                "agility",
+            ],
+            20: [
+                "wing_attack",
+            ],
+            24: [
+                "slash",
+            ],
+            28: [
+                "steel_wing",
+            ],
+            32: [
+                "autotomize",
+            ],
+            36: [
+                "drill_peck",
+            ],
+            40: [
+                "metal_sound",
+            ],
+            44: [
+                "spikes",
+            ],
+            48: [
+                "iron_defense",
+            ],
+            52: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "air_slash",
+        "assurance",
+        "attract",
+        "body_press",
+        "brave_bird",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "fly",
+        "guard_swap",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "payback",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "stealth_rock",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "steel_beam",
+    ]
+    egg_moves = [
+        "air_cutter",
+        "curse",
+        "feint",
+        "night_slash",
+        "roost",
+        "sky_attack",
+        "whirlwind",
+    ]

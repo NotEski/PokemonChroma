@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("tatsugiri_curly_mega")
+class MegaTatsugiriCurly:
+    display_name = "Tatsugiri Curly Mega"
+    id = 10322
+    base_stats = BaseStats(
+        hp=68,
+        attack=65,
+        defense=90,
+        special_attack=135,
+        special_defense=125,
+        speed=92
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 0.6
+    weight_kg = 24.0

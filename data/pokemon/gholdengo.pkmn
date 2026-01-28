@@ -1,0 +1,40 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("gholdengo")
+class Gholdengo:
+    display_name = "Gholdengo"
+    id = 1000
+    types = ['steel', 'ghost']
+    base_stats = BaseStats(
+        hp=87,
+        attack=60,
+        defense=95,
+        special_attack=133,
+        special_defense=91,
+        speed=84
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 275
+    base_happiness = 50
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "good_as_gold",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 30.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    egg_moves = []

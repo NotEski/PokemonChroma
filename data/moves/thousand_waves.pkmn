@@ -11,4 +11,3 @@ class _ThousandWaves:
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]

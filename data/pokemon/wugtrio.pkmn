@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("wugtrio")
+class Wugtrio:
+    display_name = "Wugtrio"
+    id = 961
+    types = ['water']
+    base_stats = BaseStats(
+        hp=35,
+        attack=100,
+        defense=50,
+        special_attack=50,
+        special_defense=70,
+        speed=120
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 50
+    base_experience_yield = 149
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "gooey",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "rattled",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 5.4
+    egg_groups = ['water3']
+    growth_rate = "medium"
+    egg_moves = []

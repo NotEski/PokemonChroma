@@ -5,13 +5,12 @@ class _FlowerShield:
         "type": "fairy",
         "index": 579,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "all_pokemon",
     }
-    flags = ["distance"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 100}],
     }

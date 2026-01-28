@@ -1,0 +1,111 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("barraskewda")
+class Barraskewda:
+    display_name = "Barraskewda"
+    id = 847
+    types = ['water']
+    base_stats = BaseStats(
+        hp=61,
+        attack=123,
+        defense=60,
+        special_attack=60,
+        special_defense=50,
+        speed=136
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 60
+    base_experience_yield = 172
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "propeller_tail",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 30.0
+    egg_groups = ['water2']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "aqua_jet",
+                "bite",
+                "fury_attack",
+                "peck",
+                "throat_chop",
+            ],
+            18: [
+                "agility",
+            ],
+            24: [
+                "dive",
+            ],
+            32: [
+                "laser_focus",
+            ],
+            40: [
+                "crunch",
+            ],
+            48: [
+                "liquidation",
+            ],
+            56: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "assurance",
+        "attract",
+        "bounce",
+        "brick_break",
+        "close_combat",
+        "crunch",
+        "dive",
+        "drill_run",
+        "endure",
+        "facade",
+        "focus_energy",
+        "giga_impact",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_fang",
+        "liquidation",
+        "poison_jab",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "throat_chop",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "scale_shot",
+    ]
+    egg_moves = []

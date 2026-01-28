@@ -1,0 +1,150 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bronzong")
+class Bronzong:
+    display_name = "Bronzong"
+    id = 437
+    types = ['steel', 'psychic']
+    base_stats = BaseStats(
+        hp=67,
+        attack=89,
+        defense=116,
+        special_attack=79,
+        special_defense=116,
+        speed=33
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 175
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "heatproof",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "heavy_metal",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 187.0
+    egg_groups = ['mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "block",
+            ],
+            1: [
+                "block",
+                "confuse_ray",
+                "confusion",
+                "payback",
+                "sunny_day",
+                "tackle",
+                "weather_ball",
+            ],
+            12: [
+                "imprison",
+            ],
+            16: [
+                "gyro_ball",
+            ],
+            20: [
+                "hypnosis",
+            ],
+            24: [
+                "safeguard",
+            ],
+            28: [
+                "extrasensory",
+            ],
+            32: [
+                "heavy_slam",
+            ],
+            38: [
+                "iron_defense",
+            ],
+            44: [
+                "metal_sound",
+            ],
+            50: [
+                "future_sight",
+            ],
+            56: [
+                "rain_dance",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "body_press",
+        "bulldoze",
+        "calm_mind",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "future_sight",
+        "giga_impact",
+        "grass_knot",
+        "guard_swap",
+        "gyro_ball",
+        "heavy_slam",
+        "hex",
+        "hyper_beam",
+        "imprison",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "payback",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "speed_swap",
+        "stealth_rock",
+        "substitute",
+        "sunny_day",
+        "trick",
+        "trick_room",
+        "weather_ball",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "meteor_beam",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

@@ -5,10 +5,9 @@ class _LightScreen:
         "type": "psychic",
         "index": 113,
         "damage_class": "status",
-        "category": "field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 30,
         "target": "users_field",
     }
-    flags = ["snatch"]

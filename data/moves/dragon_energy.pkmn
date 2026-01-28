@@ -1,0 +1,13 @@
+@move("dragon_energy")  # type: ignore
+class _DragonEnergy:
+    meta = {
+        "display_name": "Dragon Energy",
+        "type": "dragon",
+        "index": 820,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 150,
+        "pp": 5,
+        "target": "all_opponents",
+    }

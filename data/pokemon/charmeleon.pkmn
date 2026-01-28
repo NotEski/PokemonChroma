@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("charmeleon")
+class Charmeleon:
+    display_name = "Charmeleon"
+    id = 5
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=58,
+        attack=64,
+        defense=58,
+        special_attack=80,
+        special_defense=65,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 142
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "solar_power",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.1
+    weight_kg = 19.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ember",
+                "growl",
+                "scratch",
+                "smokescreen",
+            ],
+            12: [
+                "dragon_breath",
+            ],
+            19: [
+                "fire_fang",
+            ],
+            24: [
+                "slash",
+            ],
+            30: [
+                "flamethrower",
+            ],
+            37: [
+                "scary_face",
+            ],
+            42: [
+                "fire_spin",
+            ],
+            48: [
+                "inferno",
+            ],
+            54: [
+                "flare_blitz",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "attract",
+        "beat_up",
+        "body_slam",
+        "brick_break",
+        "crunch",
+        "dig",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_blast",
+        "fire_fang",
+        "fire_punch",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fling",
+        "heat_wave",
+        "helping_hand",
+        "iron_tail",
+        "mega_kick",
+        "mega_punch",
+        "outrage",
+        "overheat",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thunder_punch",
+        "weather_ball",
+        "will_o_wisp",
+        "work_up",
+    ]
+    tutor_moves = [
+        "fire_pledge",
+    ]
+    egg_moves = []

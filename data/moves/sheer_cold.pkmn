@@ -5,10 +5,9 @@ class _SheerCold:
         "type": "ice",
         "index": 329,
         "damage_class": "special",
-        "category": "ohko",
+        "category": "damage",
         "accuracy": 30,
         "power": None,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]

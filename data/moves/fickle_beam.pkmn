@@ -1,0 +1,13 @@
+@move("fickle_beam")  # type: ignore
+class _FickleBeam:
+    meta = {
+        "display_name": "Fickle Beam",
+        "type": "dragon",
+        "index": 907,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

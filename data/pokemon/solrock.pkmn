@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("solrock")
+class Solrock:
+    display_name = "Solrock"
+    id = 338
+    types = ['rock', 'psychic']
+    base_stats = BaseStats(
+        hp=90,
+        attack=95,
+        defense=85,
+        special_attack=55,
+        special_defense=65,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 161
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "levitate",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 154.0
+    egg_groups = ['mineral']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "flare_blitz",
+                "harden",
+                "morning_sun",
+                "rock_throw",
+                "tackle",
+            ],
+            5: [
+                "hypnosis",
+            ],
+            10: [
+                "rock_polish",
+            ],
+            15: [
+                "rock_slide",
+            ],
+            20: [
+                "zen_headbutt",
+            ],
+            25: [
+                "cosmic_power",
+            ],
+            30: [
+                "psychic",
+            ],
+            35: [
+                "stone_edge",
+            ],
+            40: [
+                "solar_beam",
+            ],
+            45: [
+                "wonder_room",
+            ],
+            50: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "ally_switch",
+        "baton_pass",
+        "body_slam",
+        "bulldoze",
+        "calm_mind",
+        "cosmic_power",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "giga_impact",
+        "grass_knot",
+        "gyro_ball",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "overheat",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sand_tomb",
+        "sandstorm",
+        "self_destruct",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "trick_room",
+        "weather_ball",
+        "will_o_wisp",
+        "wonder_room",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = []

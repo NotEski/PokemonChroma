@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("toxtricity_low_key_gmax")
+class MegaToxtricityLowKey:
+    display_name = "Toxtricity Low Key Gmax"
+    id = 10228
+    base_stats = BaseStats(
+        hp=75,
+        attack=98,
+        defense=70,
+        special_attack=114,
+        special_defense=70,
+        speed=75
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 176
+    height_m = 24.0
+    weight_kg = 1000.0

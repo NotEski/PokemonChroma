@@ -1,0 +1,13 @@
+@move("bloom_doom_physical")  # type: ignore
+class _BloomDoomPhysical:
+    meta = {
+        "display_name": "Bloom Doom",
+        "type": "grass",
+        "index": 644,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,145 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("seismitoad")
+class Seismitoad:
+    display_name = "Seismitoad"
+    id = 537
+    types = ['water', 'ground']
+    base_stats = BaseStats(
+        hp=105,
+        attack=95,
+        defense=75,
+        special_attack=85,
+        special_defense=75,
+        speed=74
+    )
+    ev_yield = EffortYield(
+        hp=3,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 229
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "poison_touch",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 62.0
+    egg_groups = ['water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "drain_punch",
+            ],
+            1: [
+                "acid",
+                "drain_punch",
+                "echoed_voice",
+                "gastro_acid",
+                "growl",
+                "supersonic",
+            ],
+            12: [
+                "mud_shot",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "bubble_beam",
+            ],
+            24: [
+                "flail",
+            ],
+            30: [
+                "uproar",
+            ],
+            39: [
+                "aqua_ring",
+            ],
+            46: [
+                "hyper_voice",
+            ],
+            54: [
+                "muddy_water",
+            ],
+            62: [
+                "rain_dance",
+            ],
+            70: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bounce",
+        "brick_break",
+        "bulldoze",
+        "dig",
+        "dive",
+        "drain_punch",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "grass_knot",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_punch",
+        "icy_wind",
+        "liquidation",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "mud_shot",
+        "muddy_water",
+        "payback",
+        "poison_jab",
+        "power_whip",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "substitute",
+        "surf",
+        "uproar",
+        "venom_drench",
+        "venoshock",
+        "weather_ball",
+    ]
+    egg_moves = []

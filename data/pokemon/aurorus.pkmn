@@ -1,0 +1,141 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("aurorus")
+class Aurorus:
+    display_name = "Aurorus"
+    id = 699
+    types = ['rock', 'ice']
+    base_stats = BaseStats(
+        hp=123,
+        attack=77,
+        defense=72,
+        special_attack=99,
+        special_defense=92,
+        speed=58
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 104
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "refrigerate",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_warning",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.7
+    weight_kg = 225.0
+    egg_groups = ['monster']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "encore",
+                "growl",
+                "powder_snow",
+            ],
+            12: [
+                "icy_wind",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "mist",
+            ],
+            24: [
+                "aurora_beam",
+            ],
+            28: [
+                "thunder_wave",
+            ],
+            32: [
+                "nature_power",
+            ],
+            36: [
+                "freeze_dry",
+            ],
+            42: [
+                "ice_beam",
+            ],
+            48: [
+                "light_screen",
+            ],
+            54: [
+                "hail",
+            ],
+            60: [
+                "blizzard",
+            ],
+            66: [
+                "hyper_beam",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "calm_mind",
+        "dark_pulse",
+        "earth_power",
+        "earthquake",
+        "encore",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "hail",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "icicle_spear",
+        "icy_wind",
+        "iron_defense",
+        "iron_head",
+        "iron_tail",
+        "light_screen",
+        "mud_shot",
+        "outrage",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "weather_ball",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = []

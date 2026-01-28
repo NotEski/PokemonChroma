@@ -5,10 +5,9 @@ class _Imprison:
         "type": "psychic",
         "index": 286,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch", "authentic"]

@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("meowth_gmax")
+class MegaMeowth:
+    display_name = "Meowth Gmax"
+    id = 10200
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=35,
+        special_attack=40,
+        special_defense=40,
+        speed=90
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 58
+    height_m = 33.0
+    weight_kg = 1000.0

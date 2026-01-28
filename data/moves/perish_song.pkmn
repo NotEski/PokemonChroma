@@ -5,13 +5,12 @@ class _PerishSong:
         "type": "normal",
         "index": 195,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 5,
         "target": "all_pokemon",
     }
-    flags = ["sound", "distance", "authentic"]
     status_condition = {
         "perish_song": 0,
     }

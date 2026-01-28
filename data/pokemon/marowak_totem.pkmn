@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("marowak_totem")
+class MegaMarowakTotem:
+    display_name = "Marowak Totem"
+    id = 10149
+    base_stats = BaseStats(
+        hp=60,
+        attack=80,
+        defense=110,
+        special_attack=50,
+        special_defense=80,
+        speed=45
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 149
+    height_m = 1.7
+    weight_kg = 98.0

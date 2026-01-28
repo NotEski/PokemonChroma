@@ -1,0 +1,79 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("meltan")
+class Meltan:
+    display_name = "Meltan"
+    id = 808
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=46,
+        attack=65,
+        defense=65,
+        special_attack=55,
+        special_defense=35,
+        speed=34
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 135
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "magnet_pull",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 0.2
+    weight_kg = 8.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "harden",
+                "thunder_shock",
+            ],
+            8: [
+                "tail_whip",
+            ],
+            16: [
+                "headbutt",
+            ],
+            24: [
+                "thunder_wave",
+            ],
+            32: [
+                "acid_armor",
+            ],
+            40: [
+                "flash_cannon",
+            ],
+        }
+    machine_moves = [
+        "endure",
+        "facade",
+        "flash_cannon",
+        "gyro_ball",
+        "iron_defense",
+        "protect",
+        "rest",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder_wave",
+        "thunderbolt",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = []

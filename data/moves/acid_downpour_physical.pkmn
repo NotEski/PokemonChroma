@@ -1,0 +1,13 @@
+@move("acid_downpour_physical")  # type: ignore
+class _AcidDownpourPhysical:
+    meta = {
+        "display_name": "Acid Downpour",
+        "type": "poison",
+        "index": 628,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

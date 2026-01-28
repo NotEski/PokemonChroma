@@ -5,10 +5,12 @@ class _Defog:
         "type": "flying",
         "index": 432,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "authentic"]
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "evasion", "change": -1, "chance": 100}],
+    }

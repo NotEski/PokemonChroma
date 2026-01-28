@@ -1,0 +1,13 @@
+@move("sparkly_swirl")  # type: ignore
+class _SparklySwirl:
+    meta = {
+        "display_name": "Sparkly Swirl",
+        "type": "fairy",
+        "index": 740,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 85,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

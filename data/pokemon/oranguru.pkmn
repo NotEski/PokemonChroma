@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("oranguru")
+class Oranguru:
+    display_name = "Oranguru"
+    id = 765
+    types = ['normal', 'psychic']
+    base_stats = BaseStats(
+        hp=90,
+        attack=60,
+        defense=80,
+        special_attack=90,
+        special_defense=110,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=2,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "telepathy",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "symbiosis",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 76.0
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confusion",
+                "taunt",
+            ],
+            5: [
+                "after_you",
+            ],
+            10: [
+                "calm_mind",
+            ],
+            15: [
+                "stored_power",
+            ],
+            20: [
+                "psych_up",
+            ],
+            25: [
+                "quash",
+            ],
+            30: [
+                "nasty_plot",
+            ],
+            35: [
+                "zen_headbutt",
+            ],
+            40: [
+                "trick_room",
+            ],
+            45: [
+                "psychic",
+            ],
+            50: [
+                "instruct",
+            ],
+            55: [
+                "foul_play",
+            ],
+            60: [
+                "future_sight",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "calm_mind",
+        "earthquake",
+        "encore",
+        "endure",
+        "energy_ball",
+        "facade",
+        "fling",
+        "focus_blast",
+        "foul_play",
+        "future_sight",
+        "giga_impact",
+        "hyper_beam",
+        "imprison",
+        "light_screen",
+        "magic_room",
+        "mega_kick",
+        "mega_punch",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "psychic",
+        "psychic_terrain",
+        "psyshock",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "rock_slide",
+        "round",
+        "safeguard",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "stored_power",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thunder",
+        "thunderbolt",
+        "trick",
+        "trick_room",
+        "wonder_room",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "terrain_pulse",
+    ]
+    egg_moves = [
+        "dream_eater",
+        "extrasensory",
+        "last_resort",
+        "yawn",
+    ]

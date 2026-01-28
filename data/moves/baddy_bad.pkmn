@@ -1,0 +1,13 @@
+@move("baddy_bad")  # type: ignore
+class _BaddyBad:
+    meta = {
+        "display_name": "Baddy Bad",
+        "type": "dark",
+        "index": 737,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 95,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

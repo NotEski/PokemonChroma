@@ -1,0 +1,13 @@
+@move("flower_trick")  # type: ignore
+class _FlowerTrick:
+    meta = {
+        "display_name": "Flower Trick",
+        "type": "grass",
+        "index": 870,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

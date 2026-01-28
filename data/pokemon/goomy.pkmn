@@ -1,0 +1,116 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("goomy")
+class Goomy:
+    display_name = "Goomy"
+    id = 704
+    types = ['dragon']
+    base_stats = BaseStats(
+        hp=45,
+        attack=50,
+        defense=35,
+        special_attack=55,
+        special_defense=75,
+        speed=40
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 60
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sap_sipper",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hydration",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "gooey",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 2.8
+    egg_groups = ['dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "tackle",
+            ],
+            5: [
+                "water_gun",
+            ],
+            10: [
+                "dragon_breath",
+            ],
+            15: [
+                "protect",
+            ],
+            20: [
+                "flail",
+            ],
+            25: [
+                "water_pulse",
+            ],
+            30: [
+                "rain_dance",
+            ],
+            35: [
+                "dragon_pulse",
+            ],
+            41: [
+                "curse",
+            ],
+            45: [
+                "body_slam",
+            ],
+            50: [
+                "muddy_water",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "iron_tail",
+        "mud_shot",
+        "muddy_water",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "round",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "thunderbolt",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "counter",
+        "life_dew",
+    ]

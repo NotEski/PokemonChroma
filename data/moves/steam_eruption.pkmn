@@ -5,13 +5,12 @@ class _SteamEruption:
         "type": "water",
         "index": 592,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 95,
         "power": 110,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "defrost"]
     status_condition = {
         "burn": 30,
     }

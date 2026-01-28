@@ -1,0 +1,108 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("chewtle")
+class Chewtle:
+    display_name = "Chewtle"
+    id = 833
+    types = ['water']
+    base_stats = BaseStats(
+        hp=50,
+        attack=64,
+        defense=50,
+        special_attack=38,
+        special_defense=38,
+        speed=44
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 57
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "strong_jaw",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "shell_armor",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 8.5
+    egg_groups = ['monster', 'water1']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+                "water_gun",
+            ],
+            7: [
+                "bite",
+            ],
+            14: [
+                "protect",
+            ],
+            21: [
+                "headbutt",
+            ],
+            28: [
+                "counter",
+            ],
+            35: [
+                "jaw_lock",
+            ],
+            42: [
+                "liquidation",
+            ],
+            49: [
+                "body_slam",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "body_slam",
+        "dive",
+        "endure",
+        "facade",
+        "hydro_pump",
+        "ice_fang",
+        "liquidation",
+        "mud_shot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "revenge",
+        "round",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "scale_shot",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "dragon_tail",
+        "gastro_acid",
+        "skull_bash",
+    ]

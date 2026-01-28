@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("miraidon_low_power_mode")
+class MegaMiraidonLowPowerMode:
+    display_name = "Miraidon Low Power Mode"
+    id = 10268
+    base_stats = BaseStats(
+        hp=100,
+        attack=85,
+        defense=100,
+        special_attack=135,
+        special_defense=115,
+        speed=135
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 335
+    height_m = 2.8
+    weight_kg = 240.0

@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sandslash")
+class Sandslash:
+    display_name = "Sandslash"
+    id = 28
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=75,
+        attack=100,
+        defense=110,
+        special_attack=45,
+        special_defense=55,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 90
+    base_experience_yield = 158
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sand_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_rush",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 29.5
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "crush_claw",
+                "defense_curl",
+                "poison_sting",
+                "sand_attack",
+                "scratch",
+            ],
+            9: [
+                "rollout",
+            ],
+            12: [
+                "fury_cutter",
+            ],
+            15: [
+                "rapid_spin",
+            ],
+            18: [
+                "bulldoze",
+            ],
+            21: [
+                "swift",
+            ],
+            26: [
+                "fury_swipes",
+            ],
+            31: [
+                "sand_tomb",
+            ],
+            36: [
+                "slash",
+            ],
+            41: [
+                "dig",
+            ],
+            46: [
+                "gyro_ball",
+            ],
+            51: [
+                "swords_dance",
+            ],
+            56: [
+                "sandstorm",
+            ],
+            61: [
+                "earthquake",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "amnesia",
+        "attract",
+        "body_slam",
+        "brick_break",
+        "bulldoze",
+        "dig",
+        "drill_run",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "giga_impact",
+        "gyro_ball",
+        "hyper_beam",
+        "iron_tail",
+        "leech_life",
+        "mud_shot",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sand_tomb",
+        "sandstorm",
+        "shadow_claw",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "swords_dance",
+        "thief",
+        "throat_chop",
+        "work_up",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+        "steel_roller",
+    ]
+    egg_moves = []

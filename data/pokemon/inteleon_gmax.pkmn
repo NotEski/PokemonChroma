@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("inteleon_gmax")
+class MegaInteleon:
+    display_name = "Inteleon Gmax"
+    id = 10211
+    base_stats = BaseStats(
+        hp=70,
+        attack=85,
+        defense=65,
+        special_attack=125,
+        special_defense=65,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 265
+    height_m = 40.0
+    weight_kg = 1000.0

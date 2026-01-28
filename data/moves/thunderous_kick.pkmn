@@ -1,0 +1,16 @@
+@move("thunderous_kick")  # type: ignore
+class _ThunderousKick:
+    meta = {
+        "display_name": "Thunderous Kick",
+        "type": "fighting",
+        "index": 823,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}],
+    }

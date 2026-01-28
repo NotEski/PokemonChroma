@@ -5,13 +5,12 @@ class _ShiftGear:
         "type": "steel",
         "index": 508,
         "damage_class": "status",
-        "category": "net_good_stats",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 10,
         "target": "user",
     }
-    flags = ["snatch"]
     stat_changes = {
         "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "speed", "change": 2, "chance": 100}],
     }

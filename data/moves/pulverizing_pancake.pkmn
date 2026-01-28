@@ -1,0 +1,13 @@
+@move("pulverizing_pancake")  # type: ignore
+class _PulverizingPancake:
+    meta = {
+        "display_name": "Pulverizing Pancake",
+        "type": "normal",
+        "index": 701,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 210,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

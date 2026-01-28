@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("blastoise_mega")
+class MegaBlastoise:
+    display_name = "Blastoise Mega"
+    id = 10036
+    base_stats = BaseStats(
+        hp=79,
+        attack=103,
+        defense=120,
+        special_attack=135,
+        special_defense=115,
+        speed=78
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 284
+    height_m = 1.6
+    weight_kg = 101.1

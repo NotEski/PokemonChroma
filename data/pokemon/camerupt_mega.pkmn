@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("camerupt_mega")
+class MegaCamerupt:
+    display_name = "Camerupt Mega"
+    id = 10087
+    base_stats = BaseStats(
+        hp=70,
+        attack=120,
+        defense=100,
+        special_attack=145,
+        special_defense=105,
+        speed=20
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 196
+    height_m = 2.5
+    weight_kg = 320.5

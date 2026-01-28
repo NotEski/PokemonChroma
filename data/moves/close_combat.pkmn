@@ -5,13 +5,12 @@ class _CloseCombat:
         "type": "fighting",
         "index": 370,
         "damage_class": "physical",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 100,
         "power": 120,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "defense", "change": -1, "chance": 100}, {"stat": "special_defense", "change": -1, "chance": 100}],
     }

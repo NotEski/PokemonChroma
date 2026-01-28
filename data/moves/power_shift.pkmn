@@ -1,0 +1,13 @@
+@move("power_shift")  # type: ignore
+class _PowerShift:
+    meta = {
+        "display_name": "Power Shift",
+        "type": "normal",
+        "index": 829,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }

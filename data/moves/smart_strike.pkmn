@@ -1,0 +1,13 @@
+@move("smart_strike")  # type: ignore
+class _SmartStrike:
+    meta = {
+        "display_name": "Smart Strike",
+        "type": "steel",
+        "index": 684,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

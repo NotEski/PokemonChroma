@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("ho_oh")
+class HoOh:
+    display_name = "Ho Oh"
+    id = 250
+    types = ['fire', 'flying']
+    base_stats = BaseStats(
+        hp=106,
+        attack=130,
+        defense=90,
+        special_attack=110,
+        special_defense=154,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=3,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 306
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "regenerator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 3.8
+    weight_kg = 199.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "ancient_power",
+                "gust",
+                "weather_ball",
+                "whirlwind",
+            ],
+            9: [
+                "life_dew",
+            ],
+            18: [
+                "safeguard",
+            ],
+            27: [
+                "calm_mind",
+            ],
+            36: [
+                "extrasensory",
+            ],
+            45: [
+                "recover",
+            ],
+            54: [
+                "sacred_fire",
+            ],
+            63: [
+                "sunny_day",
+            ],
+            72: [
+                "fire_blast",
+            ],
+            81: [
+                "future_sight",
+            ],
+            90: [
+                "sky_attack",
+            ],
+            99: [
+                "burn_up",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "brave_bird",
+        "bulldoze",
+        "calm_mind",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_blast",
+        "fire_spin",
+        "flamethrower",
+        "flare_blitz",
+        "fly",
+        "future_sight",
+        "giga_drain",
+        "giga_impact",
+        "heat_wave",
+        "helping_hand",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "iron_head",
+        "light_screen",
+        "mystical_fire",
+        "overheat",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "reflect",
+        "rest",
+        "round",
+        "safeguard",
+        "sandstorm",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "weather_ball",
+        "will_o_wisp",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "scorching_sands",
+    ]
+    egg_moves = []

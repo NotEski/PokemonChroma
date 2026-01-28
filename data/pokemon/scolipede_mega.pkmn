@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("scolipede_mega")
+class MegaScolipede:
+    display_name = "Scolipede Mega"
+    id = 10288
+    base_stats = BaseStats(
+        hp=60,
+        attack=140,
+        defense=149,
+        special_attack=75,
+        special_defense=99,
+        speed=62
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 3.2
+    weight_kg = 230.5

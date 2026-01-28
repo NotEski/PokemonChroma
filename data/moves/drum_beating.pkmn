@@ -1,0 +1,16 @@
+@move("drum_beating")  # type: ignore
+class _DrumBeating:
+    meta = {
+        "display_name": "Drum Beating",
+        "type": "grass",
+        "index": 778,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }

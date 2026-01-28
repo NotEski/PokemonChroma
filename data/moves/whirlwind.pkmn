@@ -5,12 +5,10 @@ class _Whirlwind:
         "type": "normal",
         "index": 18,
         "damage_class": "status",
-        "category": "force_switch",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
-
     }
-    flags = ["reflectable", "mirror", "authentic"]
     priority = -6

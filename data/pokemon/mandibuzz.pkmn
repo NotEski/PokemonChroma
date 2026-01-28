@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("mandibuzz")
+class Mandibuzz:
+    display_name = "Mandibuzz"
+    id = 630
+    types = ['dark', 'flying']
+    base_stats = BaseStats(
+        hp=110,
+        attack=65,
+        defense=105,
+        special_attack=55,
+        special_defense=95,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 179
+    base_happiness = 35
+    gender_rate = 8
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "big_pecks",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "overcoat",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "weak_armor",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 39.5
+    egg_groups = ['flying']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "bone_rush",
+            ],
+            1: [
+                "bone_rush",
+                "flatter",
+                "gust",
+                "leer",
+                "pluck",
+                "sky_attack",
+                "toxic",
+            ],
+            18: [
+                "tailwind",
+            ],
+            24: [
+                "knock_off",
+            ],
+            30: [
+                "iron_defense",
+            ],
+            36: [
+                "whirlwind",
+            ],
+            42: [
+                "air_slash",
+            ],
+            48: [
+                "dark_pulse",
+            ],
+            57: [
+                "nasty_plot",
+            ],
+            64: [
+                "defog",
+            ],
+            72: [
+                "attract",
+            ],
+            80: [
+                "brave_bird",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "assurance",
+        "attract",
+        "brave_bird",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fly",
+        "foul_play",
+        "giga_impact",
+        "heat_wave",
+        "hyper_beam",
+        "iron_defense",
+        "nasty_plot",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "taunt",
+        "thief",
+        "u_turn",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+        "lash_out",
+    ]
+    egg_moves = []

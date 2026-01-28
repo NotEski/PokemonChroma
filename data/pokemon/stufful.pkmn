@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("stufful")
+class Stufful:
+    display_name = "Stufful"
+    id = 759
+    types = ['normal', 'fighting']
+    base_stats = BaseStats(
+        hp=70,
+        attack=75,
+        defense=50,
+        special_attack=45,
+        special_defense=50,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 140
+    base_experience_yield = 68
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "fluffy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "klutz",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "cute_charm",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 6.8
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "tackle",
+            ],
+            4: [
+                "baby_doll_eyes",
+            ],
+            8: [
+                "payback",
+            ],
+            12: [
+                "brutal_swing",
+            ],
+            16: [
+                "endure",
+            ],
+            20: [
+                "strength",
+            ],
+            24: [
+                "take_down",
+            ],
+            28: [
+                "flail",
+            ],
+            32: [
+                "hammer_arm",
+            ],
+            36: [
+                "thrash",
+            ],
+            40: [
+                "pain_split",
+            ],
+            44: [
+                "double_edge",
+            ],
+            48: [
+                "superpower",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bulldoze",
+        "charm",
+        "earthquake",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "ice_punch",
+        "iron_head",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "substitute",
+        "superpower",
+        "swords_dance",
+        "taunt",
+        "thunder_punch",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = [
+        "defense_curl",
+        "force_palm",
+        "rollout",
+        "stomp",
+    ]

@@ -5,10 +5,12 @@ class _Telekinesis:
         "type": "psychic",
         "index": 477,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror", "gravity"]
+    status_condition = {
+        "unknown": 0,
+    }

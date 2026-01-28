@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("trapinch")
+class Trapinch:
+    display_name = "Trapinch"
+    id = 328
+    types = ['ground']
+    base_stats = BaseStats(
+        hp=45,
+        attack=100,
+        defense=45,
+        special_attack=45,
+        special_defense=45,
+        speed=10
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "hyper_cutter",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "arena_trap",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "sheer_force",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.7
+    weight_kg = 15.0
+    egg_groups = ['bug', 'dragon']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "astonish",
+                "sand_attack",
+            ],
+            4: [
+                "laser_focus",
+            ],
+            8: [
+                "bite",
+            ],
+            12: [
+                "mud_slap",
+            ],
+            16: [
+                "sand_tomb",
+            ],
+            20: [
+                "bulldoze",
+            ],
+            24: [
+                "dig",
+            ],
+            28: [
+                "crunch",
+            ],
+            32: [
+                "sandstorm",
+            ],
+            36: [
+                "earth_power",
+            ],
+            40: [
+                "earthquake",
+            ],
+            44: [
+                "superpower",
+            ],
+            48: [
+                "fissure",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "body_slam",
+        "bulldoze",
+        "crunch",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "focus_energy",
+        "giga_drain",
+        "hyper_beam",
+        "mud_shot",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "substitute",
+        "sunny_day",
+        "superpower",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = [
+        "bug_bite",
+        "feint",
+        "first_impression",
+        "flail",
+        "fury_cutter",
+        "gust",
+        "quick_attack",
+    ]

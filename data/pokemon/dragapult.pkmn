@@ -1,0 +1,153 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("dragapult")
+class Dragapult:
+    display_name = "Dragapult"
+    id = 887
+    types = ['dragon', 'ghost']
+    base_stats = BaseStats(
+        hp=88,
+        attack=120,
+        defense=75,
+        special_attack=100,
+        special_defense=75,
+        speed=142
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=3
+    )
+    catch_rate = 45
+    base_experience_yield = 300
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "clear_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "cursed_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 3.0
+    weight_kg = 50.0
+    egg_groups = ['indeterminate', 'dragon']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "dragon_darts",
+            ],
+            1: [
+                "astonish",
+                "bite",
+                "dragon_breath",
+                "dragon_darts",
+                "infestation",
+                "quick_attack",
+                "sucker_punch",
+            ],
+            6: [
+                "lock_on",
+            ],
+            12: [
+                "assurance",
+            ],
+            18: [
+                "hex",
+            ],
+            24: [
+                "agility",
+            ],
+            30: [
+                "double_hit",
+            ],
+            36: [
+                "u_turn",
+            ],
+            42: [
+                "dragon_dance",
+            ],
+            48: [
+                "phantom_force",
+            ],
+            54: [
+                "take_down",
+            ],
+            63: [
+                "dragon_rush",
+            ],
+            70: [
+                "double_edge",
+            ],
+            78: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "agility",
+        "ally_switch",
+        "assurance",
+        "attract",
+        "baton_pass",
+        "beat_up",
+        "body_slam",
+        "breaking_swipe",
+        "brine",
+        "dive",
+        "dragon_claw",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "fire_blast",
+        "flamethrower",
+        "fly",
+        "giga_impact",
+        "helping_hand",
+        "hex",
+        "hydro_pump",
+        "hyper_beam",
+        "light_screen",
+        "outrage",
+        "phantom_force",
+        "protect",
+        "psychic_fangs",
+        "reflect",
+        "rest",
+        "round",
+        "scald",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "surf",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "tri_attack",
+        "u_turn",
+        "will_o_wisp",
+    ]
+    tutor_moves = [
+        "draco_meteor",
+    ]
+    egg_moves = []

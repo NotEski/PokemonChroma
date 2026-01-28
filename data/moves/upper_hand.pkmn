@@ -1,0 +1,14 @@
+@move("upper_hand")  # type: ignore
+class _UpperHand:
+    meta = {
+        "display_name": "Upper Hand",
+        "type": "fighting",
+        "index": 918,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 65,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    priority = 3

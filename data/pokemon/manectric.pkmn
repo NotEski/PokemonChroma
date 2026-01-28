@@ -1,0 +1,131 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("manectric")
+class Manectric:
+    display_name = "Manectric"
+    id = 310
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=70,
+        attack=75,
+        defense=60,
+        special_attack=105,
+        special_defense=60,
+        speed=105
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=2
+    )
+    catch_rate = 45
+    base_experience_yield = 166
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "static",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "lightning_rod",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "minus",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 40.2
+    egg_groups = ['ground']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fire_fang",
+                "howl",
+                "leer",
+                "tackle",
+                "thunder_wave",
+            ],
+            12: [
+                "quick_attack",
+            ],
+            16: [
+                "shock_wave",
+            ],
+            20: [
+                "bite",
+            ],
+            24: [
+                "thunder_fang",
+            ],
+            30: [
+                "roar",
+            ],
+            36: [
+                "discharge",
+            ],
+            42: [
+                "charge",
+            ],
+            48: [
+                "wild_charge",
+            ],
+            54: [
+                "thunder",
+            ],
+            60: [
+                "electric_terrain",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "crunch",
+        "eerie_impulse",
+        "electric_terrain",
+        "electro_ball",
+        "endure",
+        "facade",
+        "fire_fang",
+        "flamethrower",
+        "giga_impact",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_fang",
+        "iron_tail",
+        "light_screen",
+        "overheat",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "uproar",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = []

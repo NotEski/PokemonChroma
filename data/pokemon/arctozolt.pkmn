@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("arctozolt")
+class Arctozolt:
+    display_name = "Arctozolt"
+    id = 881
+    types = ['electric', 'ice']
+    base_stats = BaseStats(
+        hp=90,
+        attack=100,
+        defense=90,
+        special_attack=90,
+        special_defense=80,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 177
+    base_happiness = 50
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "volt_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "static",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "slush_rush",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.3
+    weight_kg = 150.0
+    egg_groups = ['no_eggs']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "powder_snow",
+                "thunder_shock",
+            ],
+            7: [
+                "charge",
+            ],
+            14: [
+                "echoed_voice",
+            ],
+            21: [
+                "ancient_power",
+            ],
+            28: [
+                "pluck",
+            ],
+            35: [
+                "avalanche",
+            ],
+            42: [
+                "freeze_dry",
+            ],
+            49: [
+                "slam",
+            ],
+            56: [
+                "discharge",
+            ],
+            63: [
+                "bolt_beak",
+            ],
+            70: [
+                "icicle_crash",
+            ],
+            77: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "electro_ball",
+        "endure",
+        "facade",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "hyper_voice",
+        "ice_beam",
+        "ice_fang",
+        "icicle_spear",
+        "icy_wind",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "surf",
+        "taunt",
+        "thunder",
+        "thunder_fang",
+        "thunder_punch",
+        "thunder_wave",
+        "thunderbolt",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+        "rising_voltage",
+    ]
+    egg_moves = []

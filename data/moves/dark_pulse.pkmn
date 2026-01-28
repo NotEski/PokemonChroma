@@ -11,5 +11,4 @@ class _DarkPulse:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance", "pulse"]
     flinch_chance = 20

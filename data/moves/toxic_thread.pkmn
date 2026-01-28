@@ -1,0 +1,19 @@
+@move("toxic_thread")  # type: ignore
+class _ToxicThread:
+    meta = {
+        "display_name": "Toxic Thread",
+        "type": "poison",
+        "index": 672,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": 100,
+        "power": None,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
+    }
+    status_condition = {
+        "poison": 100,
+    }

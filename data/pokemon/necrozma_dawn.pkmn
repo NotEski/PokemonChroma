@@ -1,0 +1,142 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("necrozma_dawn")
+class NecrozmaDawn:
+    display_name = "Necrozma Dawn"
+    id = 10156
+    types = ['psychic', 'ghost']
+    base_stats = BaseStats(
+        hp=97,
+        attack=113,
+        defense=109,
+        special_attack=157,
+        special_defense=127,
+        speed=77
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=3,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 340
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "prism_armor",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 4.2
+    weight_kg = 350.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "charge_beam",
+                "confusion",
+                "gravity",
+                "metal_claw",
+                "moonlight",
+                "morning_sun",
+            ],
+            8: [
+                "stealth_rock",
+            ],
+            16: [
+                "slash",
+            ],
+            24: [
+                "night_slash",
+            ],
+            32: [
+                "psycho_cut",
+            ],
+            40: [
+                "stored_power",
+            ],
+            48: [
+                "rock_blast",
+            ],
+            56: [
+                "iron_defense",
+            ],
+            60: [
+                "autotomize",
+            ],
+            64: [
+                "power_gem",
+            ],
+            66: [
+                "prismatic_laser",
+            ],
+            72: [
+                "photon_geyser",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "breaking_swipe",
+        "brick_break",
+        "brutal_swing",
+        "bulldoze",
+        "calm_mind",
+        "cosmic_power",
+        "dark_pulse",
+        "dragon_dance",
+        "dragon_pulse",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "fling",
+        "future_sight",
+        "giga_impact",
+        "gyro_ball",
+        "heat_wave",
+        "hyper_beam",
+        "hyper_voice",
+        "imprison",
+        "iron_defense",
+        "iron_head",
+        "light_screen",
+        "outrage",
+        "power_gem",
+        "protect",
+        "psychic",
+        "psychic_fangs",
+        "psycho_cut",
+        "psyshock",
+        "reflect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "shadow_claw",
+        "sleep_talk",
+        "smart_strike",
+        "snore",
+        "solar_beam",
+        "stealth_rock",
+        "stone_edge",
+        "stored_power",
+        "substitute",
+        "swords_dance",
+        "thief",
+        "thunder_wave",
+        "trick_room",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "meteor_beam",
+    ]
+    egg_moves = []

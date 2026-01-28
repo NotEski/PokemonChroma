@@ -1,0 +1,13 @@
+@move("sandsear_storm")  # type: ignore
+class _SandsearStorm:
+    meta = {
+        "display_name": "Sandsear Storm",
+        "type": "ground",
+        "index": 848,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 80,
+        "power": 100,
+        "pp": 10,
+        "target": "all_opponents",
+    }

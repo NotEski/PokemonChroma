@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("fennekin")
+class Fennekin:
+    display_name = "Fennekin"
+    id = 653
+    types = ['fire']
+    base_stats = BaseStats(
+        hp=40,
+        attack=45,
+        defense=40,
+        special_attack=62,
+        special_defense=60,
+        speed=60
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 61
+    base_happiness = 70
+    gender_rate = 1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "blaze",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "magician",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 9.4
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    egg_moves = []

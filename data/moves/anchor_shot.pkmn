@@ -1,0 +1,13 @@
+@move("anchor_shot")  # type: ignore
+class _AnchorShot:
+    meta = {
+        "display_name": "Anchor Shot",
+        "type": "steel",
+        "index": 677,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }

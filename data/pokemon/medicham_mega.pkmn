@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("medicham_mega")
+class MegaMedicham:
+    display_name = "Medicham Mega"
+    id = 10054
+    base_stats = BaseStats(
+        hp=60,
+        attack=100,
+        defense=85,
+        special_attack=80,
+        special_defense=85,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 179
+    height_m = 1.3
+    weight_kg = 31.5

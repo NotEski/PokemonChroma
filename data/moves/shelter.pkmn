@@ -1,0 +1,13 @@
+@move("shelter")  # type: ignore
+class _Shelter:
+    meta = {
+        "display_name": "Shelter",
+        "type": "steel",
+        "index": 842,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }

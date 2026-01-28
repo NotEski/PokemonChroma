@@ -1,0 +1,126 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("swablu")
+class Swablu:
+    display_name = "Swablu"
+    id = 333
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=45,
+        attack=40,
+        defense=60,
+        special_attack=40,
+        special_defense=75,
+        speed=50
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 62
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "natural_cure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cloud_nine",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 1.2
+    egg_groups = ['flying', 'dragon']
+    growth_rate = "slow_then_very_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "growl",
+                "peck",
+            ],
+            4: [
+                "disarming_voice",
+            ],
+            8: [
+                "mist",
+            ],
+            12: [
+                "fury_attack",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "dragon_breath",
+            ],
+            24: [
+                "safeguard",
+            ],
+            28: [
+                "sing",
+            ],
+            32: [
+                "cotton_guard",
+            ],
+            36: [
+                "take_down",
+            ],
+            40: [
+                "moonblast",
+            ],
+            44: [
+                "perish_song",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "dazzling_gleam",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fly",
+        "heat_wave",
+        "hyper_voice",
+        "ice_beam",
+        "outrage",
+        "play_rough",
+        "power_swap",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "solar_beam",
+        "steel_wing",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "uproar",
+    ]
+    tutor_moves = [
+        "dual_wingbeat",
+    ]
+    egg_moves = [
+        "astonish",
+        "defog",
+        "dragon_rush",
+        "feather_dance",
+        "haze",
+        "roost",
+        "tailwind",
+    ]

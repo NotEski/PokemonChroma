@@ -1,0 +1,16 @@
+@move("freezing_glare")  # type: ignore
+class _FreezingGlare:
+    meta = {
+        "display_name": "Freezing Glare",
+        "type": "psychic",
+        "index": 821,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "freeze": 10,
+    }

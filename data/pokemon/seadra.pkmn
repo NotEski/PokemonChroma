@@ -1,0 +1,124 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("seadra")
+class Seadra:
+    display_name = "Seadra"
+    id = 117
+    types = ['water']
+    base_stats = BaseStats(
+        hp=55,
+        attack=65,
+        defense=95,
+        special_attack=95,
+        special_defense=45,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=1,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 154
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "poison_point",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sniper",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 25.0
+    egg_groups = ['water1', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "smokescreen",
+                "twister",
+                "water_gun",
+            ],
+            15: [
+                "focus_energy",
+            ],
+            20: [
+                "dragon_breath",
+            ],
+            25: [
+                "bubble_beam",
+            ],
+            30: [
+                "agility",
+            ],
+            37: [
+                "laser_focus",
+            ],
+            44: [
+                "dragon_pulse",
+            ],
+            51: [
+                "hydro_pump",
+            ],
+            58: [
+                "dragon_dance",
+            ],
+            65: [
+                "rain_dance",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "blizzard",
+        "bounce",
+        "brine",
+        "dive",
+        "dragon_dance",
+        "dragon_pulse",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "focus_energy",
+        "giga_impact",
+        "hail",
+        "hydro_pump",
+        "hyper_beam",
+        "ice_beam",
+        "icy_wind",
+        "liquidation",
+        "muddy_water",
+        "outrage",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "waterfall",
+        "whirlpool",
+    ]
+    tutor_moves = [
+        "flip_turn",
+        "scale_shot",
+    ]
+    egg_moves = []

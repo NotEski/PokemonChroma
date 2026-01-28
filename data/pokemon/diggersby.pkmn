@@ -1,0 +1,151 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("diggersby")
+class Diggersby:
+    display_name = "Diggersby"
+    id = 660
+    types = ['normal', 'ground']
+    base_stats = BaseStats(
+        hp=85,
+        attack=56,
+        defense=77,
+        special_attack=50,
+        special_defense=77,
+        speed=78
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 127
+    base_experience_yield = 148
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pickup",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "cheek_pouch",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "huge_power",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 42.4
+    egg_groups = ['ground']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "laser_focus",
+                "leer",
+                "mud_slap",
+                "tackle",
+            ],
+            9: [
+                "quick_attack",
+            ],
+            12: [
+                "mud_shot",
+            ],
+            15: [
+                "flail",
+            ],
+            18: [
+                "double_kick",
+            ],
+            23: [
+                "bulldoze",
+            ],
+            28: [
+                "dig",
+            ],
+            33: [
+                "bounce",
+            ],
+            38: [
+                "take_down",
+            ],
+            43: [
+                "swords_dance",
+            ],
+            48: [
+                "earthquake",
+            ],
+            53: [
+                "super_fang",
+            ],
+            58: [
+                "hammer_arm",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "brutal_swing",
+        "bulk_up",
+        "bulldoze",
+        "dig",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "gunk_shot",
+        "high_horsepower",
+        "hyper_beam",
+        "ice_punch",
+        "iron_head",
+        "iron_tail",
+        "low_kick",
+        "mega_kick",
+        "mega_punch",
+        "mud_shot",
+        "payback",
+        "protect",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sand_tomb",
+        "sandstorm",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "spikes",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "surf",
+        "swords_dance",
+        "thief",
+        "thunder_punch",
+        "u_turn",
+        "uproar",
+        "wild_charge",
+        "work_up",
+    ]
+    tutor_moves = [
+        "scorching_sands",
+    ]
+    egg_moves = []

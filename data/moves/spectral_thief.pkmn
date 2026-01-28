@@ -1,0 +1,13 @@
+@move("spectral_thief")  # type: ignore
+class _SpectralThief:
+    meta = {
+        "display_name": "Spectral Thief",
+        "type": "ghost",
+        "index": 712,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 90,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

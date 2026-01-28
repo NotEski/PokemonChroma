@@ -1,0 +1,13 @@
+@move("power_trip")  # type: ignore
+class _PowerTrip:
+    meta = {
+        "display_name": "Power Trip",
+        "type": "dark",
+        "index": 681,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 20,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

@@ -1,0 +1,16 @@
+@move("fleur_cannon")  # type: ignore
+class _FleurCannon:
+    meta = {
+        "display_name": "Fleur Cannon",
+        "type": "fairy",
+        "index": 705,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 130,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
+    }

@@ -1,0 +1,117 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("exeggutor")
+class Exeggutor:
+    display_name = "Exeggutor"
+    id = 103
+    types = ['grass', 'psychic']
+    base_stats = BaseStats(
+        hp=95,
+        attack=95,
+        defense=85,
+        special_attack=125,
+        special_defense=75,
+        speed=55
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=2,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 186
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "chlorophyll",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "harvest",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 2.0
+    weight_kg = 120.0
+    egg_groups = ['plant']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "stomp",
+            ],
+            1: [
+                "absorb",
+                "bullet_seed",
+                "confusion",
+                "extrasensory",
+                "giga_drain",
+                "hypnosis",
+                "leaf_storm",
+                "leech_seed",
+                "mega_drain",
+                "psyshock",
+                "reflect",
+                "seed_bomb",
+                "solar_beam",
+                "stomp",
+                "synthesis",
+                "uproar",
+                "wood_hammer",
+                "worry_seed",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bulldoze",
+        "bullet_seed",
+        "calm_mind",
+        "endure",
+        "energy_ball",
+        "facade",
+        "future_sight",
+        "giga_drain",
+        "giga_impact",
+        "grass_knot",
+        "grassy_terrain",
+        "hyper_beam",
+        "leaf_storm",
+        "light_screen",
+        "low_kick",
+        "magical_leaf",
+        "power_swap",
+        "protect",
+        "psychic",
+        "psycho_cut",
+        "psyshock",
+        "reflect",
+        "rest",
+        "round",
+        "seed_bomb",
+        "self_destruct",
+        "skill_swap",
+        "sleep_talk",
+        "sludge_bomb",
+        "snore",
+        "solar_beam",
+        "stomping_tantrum",
+        "substitute",
+        "sunny_day",
+        "swords_dance",
+        "thief",
+        "trick_room",
+        "uproar",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "expanding_force",
+        "grassy_glide",
+        "terrain_pulse",
+    ]
+    egg_moves = []

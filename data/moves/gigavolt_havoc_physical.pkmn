@@ -1,0 +1,13 @@
+@move("gigavolt_havoc_physical")  # type: ignore
+class _GigavoltHavocPhysical:
+    meta = {
+        "display_name": "Gigavolt Havoc",
+        "type": "electric",
+        "index": 646,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

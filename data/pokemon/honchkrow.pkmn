@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("honchkrow")
+class Honchkrow:
+    display_name = "Honchkrow"
+    id = 430
+    types = ['dark', 'flying']
+    base_stats = BaseStats(
+        hp=100,
+        attack=125,
+        defense=52,
+        special_attack=105,
+        special_defense=52,
+        speed=71
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 177
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "insomnia",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "super_luck",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "moxie",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.9
+    weight_kg = 27.3
+    egg_groups = ['flying']
+    growth_rate = "medium_slow"
+    egg_moves = []

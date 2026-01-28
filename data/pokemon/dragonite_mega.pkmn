@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("dragonite_mega")
+class MegaDragonite:
+    display_name = "Dragonite Mega"
+    id = 10281
+    base_stats = BaseStats(
+        hp=91,
+        attack=124,
+        defense=115,
+        special_attack=145,
+        special_defense=125,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 5.5
+    weight_kg = 290.0

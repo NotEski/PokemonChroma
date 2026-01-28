@@ -11,4 +11,3 @@ class _WaterSpout:
         "pp": 5,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]

@@ -1,0 +1,16 @@
+@move("breaking_swipe")  # type: ignore
+class _BreakingSwipe:
+    meta = {
+        "display_name": "Breaking Swipe",
+        "type": "dragon",
+        "index": 784,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "all_opponents",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "attack", "change": -1, "chance": 100}],
+    }

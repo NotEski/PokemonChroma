@@ -5,10 +5,9 @@ class _MudSport:
         "type": "ground",
         "index": 300,
         "damage_class": "status",
-        "category": "whole_field_effect",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 15,
         "target": "entire_field",
     }
-    flags = ["non_sky_battle"]

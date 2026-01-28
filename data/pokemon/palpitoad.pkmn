@@ -1,0 +1,119 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("palpitoad")
+class Palpitoad:
+    display_name = "Palpitoad"
+    id = 536
+    types = ['water', 'ground']
+    base_stats = BaseStats(
+        hp=75,
+        attack=65,
+        defense=55,
+        special_attack=65,
+        special_defense=55,
+        speed=69
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 120
+    base_experience_yield = 134
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "swift_swim",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "hydration",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_absorb",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.8
+    weight_kg = 17.0
+    egg_groups = ['water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "acid",
+                "echoed_voice",
+                "growl",
+                "supersonic",
+            ],
+            12: [
+                "mud_shot",
+            ],
+            16: [
+                "round",
+            ],
+            20: [
+                "bubble_beam",
+            ],
+            24: [
+                "flail",
+            ],
+            30: [
+                "uproar",
+            ],
+            37: [
+                "aqua_ring",
+            ],
+            42: [
+                "hyper_voice",
+            ],
+            48: [
+                "muddy_water",
+            ],
+            54: [
+                "rain_dance",
+            ],
+            60: [
+                "hydro_pump",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "bounce",
+        "bulldoze",
+        "earth_power",
+        "endure",
+        "facade",
+        "hail",
+        "hydro_pump",
+        "hyper_voice",
+        "icy_wind",
+        "mud_shot",
+        "muddy_water",
+        "power_whip",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "screech",
+        "sleep_talk",
+        "sludge_bomb",
+        "sludge_wave",
+        "snore",
+        "stealth_rock",
+        "substitute",
+        "surf",
+        "uproar",
+        "venom_drench",
+        "weather_ball",
+    ]
+    egg_moves = []

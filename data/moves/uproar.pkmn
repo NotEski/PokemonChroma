@@ -11,4 +11,3 @@ class _Uproar:
         "pp": 10,
         "target": "random_opponent",
     }
-    flags = ["protect", "mirror", "sound", "authentic"]

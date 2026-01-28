@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("abomasnow_mega")
+class MegaAbomasnow:
+    display_name = "Abomasnow Mega"
+    id = 10060
+    base_stats = BaseStats(
+        hp=90,
+        attack=132,
+        defense=105,
+        special_attack=132,
+        special_defense=105,
+        speed=30
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 208
+    height_m = 2.7
+    weight_kg = 185.0

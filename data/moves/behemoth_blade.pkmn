@@ -1,0 +1,13 @@
+@move("behemoth_blade")  # type: ignore
+class _BehemothBlade:
+    meta = {
+        "display_name": "Behemoth Blade",
+        "type": "steel",
+        "index": 781,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

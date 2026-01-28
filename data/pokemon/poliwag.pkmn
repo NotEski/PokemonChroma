@@ -1,0 +1,122 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("poliwag")
+class Poliwag:
+    display_name = "Poliwag"
+    id = 60
+    types = ['water']
+    base_stats = BaseStats(
+        hp=40,
+        attack=50,
+        defense=40,
+        special_attack=40,
+        special_defense=40,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "water_absorb",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "damp",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "swift_swim",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 12.4
+    egg_groups = ['water1']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "hypnosis",
+                "water_gun",
+            ],
+            6: [
+                "pound",
+            ],
+            12: [
+                "mud_shot",
+            ],
+            18: [
+                "bubble_beam",
+            ],
+            24: [
+                "rain_dance",
+            ],
+            30: [
+                "body_slam",
+            ],
+            36: [
+                "earth_power",
+            ],
+            42: [
+                "hydro_pump",
+            ],
+            48: [
+                "belly_drum",
+            ],
+            54: [
+                "double_edge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "dig",
+        "dive",
+        "earth_power",
+        "encore",
+        "endure",
+        "facade",
+        "hail",
+        "helping_hand",
+        "hydro_pump",
+        "ice_beam",
+        "icy_wind",
+        "mud_shot",
+        "muddy_water",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "scald",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "thief",
+        "waterfall",
+        "whirlpool",
+    ]
+    egg_moves = [
+        "endeavor",
+        "haze",
+        "mind_reader",
+        "mist",
+        "splash",
+        "water_pulse",
+    ]

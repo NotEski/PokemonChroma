@@ -1,0 +1,13 @@
+@move("breakneck_blitz_physical")  # type: ignore
+class _BreakneckBlitzPhysical:
+    meta = {
+        "display_name": "Breakneck Blitz",
+        "type": "normal",
+        "index": 622,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

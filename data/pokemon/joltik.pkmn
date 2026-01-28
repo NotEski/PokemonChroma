@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("joltik")
+class Joltik:
+    display_name = "Joltik"
+    id = 595
+    types = ['bug', 'electric']
+    base_stats = BaseStats(
+        hp=50,
+        attack=47,
+        defense=50,
+        special_attack=57,
+        special_defense=50,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 64
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "compound_eyes",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unnerve",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "swarm",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.1
+    weight_kg = 0.6
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "absorb",
+                "fury_cutter",
+            ],
+            4: [
+                "electroweb",
+            ],
+            8: [
+                "bug_bite",
+            ],
+            12: [
+                "string_shot",
+            ],
+            16: [
+                "thunder_wave",
+            ],
+            20: [
+                "electro_ball",
+            ],
+            24: [
+                "agility",
+            ],
+            28: [
+                "sucker_punch",
+            ],
+            32: [
+                "slash",
+            ],
+            37: [
+                "discharge",
+            ],
+            40: [
+                "screech",
+            ],
+            44: [
+                "gastro_acid",
+            ],
+            48: [
+                "bug_buzz",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "bounce",
+        "bug_buzz",
+        "cross_poison",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "energy_ball",
+        "facade",
+        "giga_drain",
+        "leech_life",
+        "light_screen",
+        "pin_missile",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "speed_swap",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "skitter_smack",
+    ]
+    egg_moves = [
+        "double_team",
+        "infestation",
+        "lunge",
+        "poison_sting",
+        "struggle_bug",
+    ]

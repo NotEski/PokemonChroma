@@ -1,0 +1,16 @@
+@move("trailblaze")  # type: ignore
+class _Trailblaze:
+    meta = {
+        "display_name": "Trailblaze",
+        "type": "grass",
+        "index": 885,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 50,
+        "pp": 20,
+        "target": "selected_pokemon",
+    }
+    stat_changes = {
+        "stat_changes_inflicted": [{"stat": "speed", "change": 1, "chance": 100}],
+    }

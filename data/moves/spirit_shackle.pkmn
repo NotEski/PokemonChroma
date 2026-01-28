@@ -1,0 +1,13 @@
+@move("spirit_shackle")  # type: ignore
+class _SpiritShackle:
+    meta = {
+        "display_name": "Spirit Shackle",
+        "type": "ghost",
+        "index": 662,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

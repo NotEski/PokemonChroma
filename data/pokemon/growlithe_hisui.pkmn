@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("growlithe_hisui")
+class MegaGrowlitheHisui:
+    display_name = "Growlithe Hisui"
+    id = 10229
+    base_stats = BaseStats(
+        hp=60,
+        attack=75,
+        defense=45,
+        special_attack=65,
+        special_defense=50,
+        speed=55
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 70
+    height_m = 0.8
+    weight_kg = 22.7

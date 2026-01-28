@@ -1,0 +1,14 @@
+@move("thunderclap")  # type: ignore
+class _Thunderclap:
+    meta = {
+        "display_name": "Thunderclap",
+        "type": "electric",
+        "index": 909,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
+    priority = 1

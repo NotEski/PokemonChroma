@@ -1,0 +1,122 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("stonjourner")
+class Stonjourner:
+    display_name = "Stonjourner"
+    id = 874
+    types = ['rock']
+    base_stats = BaseStats(
+        hp=100,
+        attack=125,
+        defense=135,
+        special_attack=20,
+        special_defense=20,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=2,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 165
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "power_spot",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 2.5
+    weight_kg = 520.0
+    egg_groups = ['mineral']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "block",
+                "rock_throw",
+            ],
+            6: [
+                "rock_polish",
+            ],
+            12: [
+                "rock_tomb",
+            ],
+            18: [
+                "gravity",
+            ],
+            24: [
+                "stomp",
+            ],
+            30: [
+                "stealth_rock",
+            ],
+            36: [
+                "rock_slide",
+            ],
+            42: [
+                "body_slam",
+            ],
+            48: [
+                "wide_guard",
+            ],
+            54: [
+                "heavy_slam",
+            ],
+            60: [
+                "stone_edge",
+            ],
+            66: [
+                "mega_kick",
+            ],
+        }
+    machine_moves = [
+        "assurance",
+        "attract",
+        "body_press",
+        "body_slam",
+        "brutal_swing",
+        "bulldoze",
+        "earth_power",
+        "earthquake",
+        "endure",
+        "facade",
+        "giga_impact",
+        "heat_crash",
+        "heavy_slam",
+        "hyper_beam",
+        "imprison",
+        "iron_defense",
+        "mega_kick",
+        "protect",
+        "rest",
+        "rock_blast",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "safeguard",
+        "sand_tomb",
+        "sandstorm",
+        "self_destruct",
+        "sleep_talk",
+        "snore",
+        "stealth_rock",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "meteor_beam",
+    ]
+    egg_moves = [
+        "ancient_power",
+        "curse",
+    ]

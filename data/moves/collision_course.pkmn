@@ -1,0 +1,13 @@
+@move("collision_course")  # type: ignore
+class _CollisionCourse:
+    meta = {
+        "display_name": "Collision Course",
+        "type": "fighting",
+        "index": 878,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

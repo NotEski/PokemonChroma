@@ -1,0 +1,13 @@
+@move("psyblade")  # type: ignore
+class _Psyblade:
+    meta = {
+        "display_name": "Psyblade",
+        "type": "psychic",
+        "index": 875,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 80,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

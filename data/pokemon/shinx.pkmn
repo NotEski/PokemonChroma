@@ -1,0 +1,136 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("shinx")
+class Shinx:
+    display_name = "Shinx"
+    id = 403
+    types = ['electric']
+    base_stats = BaseStats(
+        hp=45,
+        attack=65,
+        defense=34,
+        special_attack=40,
+        special_defense=34,
+        speed=45
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 235
+    base_experience_yield = 53
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "rivalry",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "intimidate",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "guts",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 9.5
+    egg_groups = ['ground']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "tackle",
+            ],
+            4: [
+                "thunder_shock",
+            ],
+            8: [
+                "charge",
+            ],
+            12: [
+                "bite",
+            ],
+            16: [
+                "spark",
+            ],
+            20: [
+                "roar",
+            ],
+            24: [
+                "volt_switch",
+            ],
+            28: [
+                "scary_face",
+            ],
+            32: [
+                "thunder_wave",
+            ],
+            36: [
+                "crunch",
+            ],
+            40: [
+                "discharge",
+            ],
+            44: [
+                "swagger",
+            ],
+            48: [
+                "wild_charge",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "crunch",
+        "eerie_impulse",
+        "electro_ball",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fire_fang",
+        "helping_hand",
+        "ice_fang",
+        "iron_tail",
+        "light_screen",
+        "play_rough",
+        "protect",
+        "psychic_fangs",
+        "rain_dance",
+        "rest",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_fang",
+        "thunder_wave",
+        "thunderbolt",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+    ]
+    egg_moves = [
+        "baby_doll_eyes",
+        "double_kick",
+        "howl",
+        "night_slash",
+        "quick_attack",
+        "shock_wave",
+        "take_down",
+    ]

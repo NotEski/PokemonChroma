@@ -5,13 +5,12 @@ class _Overheat:
         "type": "fire",
         "index": 315,
         "damage_class": "special",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 90,
         "power": 130,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_attack", "change": -2, "chance": 100}],
     }

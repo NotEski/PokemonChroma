@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("pikipek")
+class Pikipek:
+    display_name = "Pikipek"
+    id = 731
+    types = ['normal', 'flying']
+    base_stats = BaseStats(
+        hp=35,
+        attack=75,
+        defense=30,
+        special_attack=30,
+        special_defense=30,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=1,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 255
+    base_experience_yield = 53
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "keen_eye",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "skill_link",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pickup",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.3
+    weight_kg = 1.2
+    egg_groups = ['flying']
+    growth_rate = "medium"
+    egg_moves = []

@@ -1,0 +1,137 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("minccino")
+class Minccino:
+    display_name = "Minccino"
+    id = 572
+    types = ['normal']
+    base_stats = BaseStats(
+        hp=55,
+        attack=50,
+        defense=40,
+        special_attack=40,
+        special_defense=40,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 255
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 6
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "cute_charm",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "technician",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "skill_link",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.4
+    weight_kg = 5.8
+    egg_groups = ['ground']
+    growth_rate = "fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "baby_doll_eyes",
+                "pound",
+            ],
+            4: [
+                "helping_hand",
+            ],
+            8: [
+                "echoed_voice",
+            ],
+            12: [
+                "sing",
+            ],
+            16: [
+                "charm",
+            ],
+            20: [
+                "swift",
+            ],
+            24: [
+                "encore",
+            ],
+            28: [
+                "after_you",
+            ],
+            32: [
+                "tail_slap",
+            ],
+            36: [
+                "tickle",
+            ],
+            40: [
+                "slam",
+            ],
+            44: [
+                "hyper_voice",
+            ],
+            48: [
+                "last_resort",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "calm_mind",
+        "charm",
+        "dazzling_gleam",
+        "dig",
+        "encore",
+        "endure",
+        "facade",
+        "fake_tears",
+        "fling",
+        "grass_knot",
+        "gunk_shot",
+        "helping_hand",
+        "hyper_voice",
+        "iron_tail",
+        "play_rough",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "round",
+        "safeguard",
+        "seed_bomb",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "tail_slap",
+        "thief",
+        "thunder_wave",
+        "thunderbolt",
+        "u_turn",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "triple_axel",
+    ]
+    egg_moves = [
+        "aqua_tail",
+        "flail",
+        "knock_off",
+        "tail_whip",
+    ]

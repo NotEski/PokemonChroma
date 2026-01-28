@@ -1,0 +1,50 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("venomoth")
+class Venomoth:
+    display_name = "Venomoth"
+    id = 49
+    types = ['bug', 'poison']
+    base_stats = BaseStats(
+        hp=70,
+        attack=65,
+        defense=60,
+        special_attack=90,
+        special_defense=75,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=1,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 75
+    base_experience_yield = 158
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "shield_dust",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "tinted_lens",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "wonder_skin",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 12.5
+    egg_groups = ['bug']
+    growth_rate = "medium"
+    egg_moves = []

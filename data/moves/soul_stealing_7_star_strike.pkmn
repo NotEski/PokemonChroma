@@ -1,0 +1,13 @@
+@move("soul_stealing_7_star_strike")  # type: ignore
+class _SoulStealing7StarStrike:
+    meta = {
+        "display_name": "Soul-Stealing 7-Star Strike",
+        "type": "ghost",
+        "index": 699,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": None,
+        "power": 195,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

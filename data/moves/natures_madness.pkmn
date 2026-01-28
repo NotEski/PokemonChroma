@@ -1,0 +1,13 @@
+@move("natures_madness")  # type: ignore
+class _NaturesMadness:
+    meta = {
+        "display_name": "Nature’s Madness",
+        "type": "fairy",
+        "index": 717,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": None,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

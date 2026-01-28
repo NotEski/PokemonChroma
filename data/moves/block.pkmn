@@ -5,10 +5,9 @@ class _Block:
         "type": "normal",
         "index": 335,
         "damage_class": "status",
-        "category": "unique",
+        "category": "damage",
         "accuracy": None,
         "power": None,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["reflectable", "mirror"]

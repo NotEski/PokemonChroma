@@ -1,0 +1,132 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("helioptile")
+class Helioptile:
+    display_name = "Helioptile"
+    id = 694
+    types = ['electric', 'normal']
+    base_stats = BaseStats(
+        hp=44,
+        attack=38,
+        defense=33,
+        special_attack=61,
+        special_defense=43,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 190
+    base_experience_yield = 58
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "dry_skin",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "sand_veil",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "solar_power",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.5
+    weight_kg = 6.0
+    egg_groups = ['monster', 'dragon']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "mud_slap",
+                "tail_whip",
+            ],
+            4: [
+                "pound",
+            ],
+            8: [
+                "thunder_shock",
+            ],
+            12: [
+                "quick_attack",
+            ],
+            16: [
+                "charge",
+            ],
+            20: [
+                "bulldoze",
+            ],
+            24: [
+                "volt_switch",
+            ],
+            28: [
+                "parabolic_charge",
+            ],
+            32: [
+                "thunder_wave",
+            ],
+            36: [
+                "thunderbolt",
+            ],
+            40: [
+                "electrify",
+            ],
+            44: [
+                "thunder",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "ally_switch",
+        "attract",
+        "bulldoze",
+        "dark_pulse",
+        "dig",
+        "electric_terrain",
+        "electro_ball",
+        "electroweb",
+        "endure",
+        "facade",
+        "grass_knot",
+        "iron_tail",
+        "light_screen",
+        "low_sweep",
+        "protect",
+        "rain_dance",
+        "rest",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "surf",
+        "swift",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "u_turn",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "scale_shot",
+    ]
+    egg_moves = [
+        "dragon_rush",
+        "dragon_tail",
+        "glare",
+    ]

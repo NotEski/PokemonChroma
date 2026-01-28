@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("vulpix_alola")
+class VulpixAlola:
+    display_name = "Vulpix Alola"
+    id = 10103
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=38,
+        attack=41,
+        defense=40,
+        special_attack=50,
+        special_defense=65,
+        speed=65
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 45
+    base_experience_yield = 60
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "snow_cloak",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "snow_warning",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 9.9
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "powder_snow",
+                "tail_whip",
+            ],
+            4: [
+                "disable",
+            ],
+            8: [
+                "ice_shard",
+            ],
+            12: [
+                "spite",
+            ],
+            16: [
+                "icy_wind",
+            ],
+            20: [
+                "confuse_ray",
+            ],
+            24: [
+                "aurora_beam",
+            ],
+            28: [
+                "extrasensory",
+            ],
+            32: [
+                "ice_beam",
+            ],
+            36: [
+                "imprison",
+            ],
+            40: [
+                "mist",
+            ],
+            44: [
+                "aurora_veil",
+            ],
+            48: [
+                "sheer_cold",
+            ],
+            52: [
+                "grudge",
+            ],
+            56: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "agility",
+        "attract",
+        "blizzard",
+        "body_slam",
+        "charm",
+        "dark_pulse",
+        "dig",
+        "draining_kiss",
+        "encore",
+        "endure",
+        "facade",
+        "foul_play",
+        "hail",
+        "hex",
+        "ice_beam",
+        "icy_wind",
+        "imprison",
+        "iron_tail",
+        "payback",
+        "power_swap",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "swift",
+        "tail_slap",
+        "weather_ball",
+        "zen_headbutt",
+    ]
+    egg_moves = [
+        "baby_doll_eyes",
+        "flail",
+        "freeze_dry",
+        "howl",
+        "hypnosis",
+        "moonblast",
+        "roar",
+    ]

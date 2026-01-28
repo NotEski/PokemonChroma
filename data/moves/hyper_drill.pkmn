@@ -1,0 +1,13 @@
+@move("hyper_drill")  # type: ignore
+class _HyperDrill:
+    meta = {
+        "display_name": "Hyper Drill",
+        "type": "normal",
+        "index": 887,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 100,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

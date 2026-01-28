@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("drifblim")
+class Drifblim:
+    display_name = "Drifblim"
+    id = 426
+    types = ['ghost', 'flying']
+    base_stats = BaseStats(
+        hp=150,
+        attack=80,
+        defense=44,
+        special_attack=90,
+        special_defense=54,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 60
+    base_experience_yield = 174
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "aftermath",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "flare_boost",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.2
+    weight_kg = 15.0
+    egg_groups = ['indeterminate']
+    growth_rate = "fast_then_very_slow"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "phantom_force",
+            ],
+            1: [
+                "astonish",
+                "focus_energy",
+                "gust",
+                "minimize",
+                "phantom_force",
+                "strength_sap",
+            ],
+            12: [
+                "payback",
+            ],
+            16: [
+                "hex",
+            ],
+            20: [
+                "shadow_ball",
+            ],
+            24: [
+                "spit_up",
+                "stockpile",
+                "swallow",
+            ],
+            31: [
+                "self_destruct",
+            ],
+            36: [
+                "destiny_bond",
+            ],
+            42: [
+                "baton_pass",
+            ],
+            48: [
+                "tailwind",
+            ],
+            54: [
+                "explosion",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "ally_switch",
+        "amnesia",
+        "attract",
+        "baton_pass",
+        "body_slam",
+        "brutal_swing",
+        "calm_mind",
+        "endure",
+        "facade",
+        "fly",
+        "focus_energy",
+        "giga_impact",
+        "gyro_ball",
+        "hex",
+        "hyper_beam",
+        "icy_wind",
+        "imprison",
+        "payback",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "round",
+        "self_destruct",
+        "shadow_ball",
+        "skill_swap",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "swift",
+        "thief",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick",
+        "weather_ball",
+        "will_o_wisp",
+    ]
+    egg_moves = []

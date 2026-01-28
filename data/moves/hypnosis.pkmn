@@ -5,13 +5,12 @@ class _Hypnosis:
         "type": "psychic",
         "index": 95,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 60,
         "power": None,
         "pp": 20,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "sleep": 0,
     }

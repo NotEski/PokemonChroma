@@ -1,0 +1,13 @@
+@move("poltergeist")  # type: ignore
+class _Poltergeist:
+    meta = {
+        "display_name": "Poltergeist",
+        "type": "ghost",
+        "index": 809,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 110,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

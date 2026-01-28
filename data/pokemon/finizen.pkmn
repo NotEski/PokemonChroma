@@ -1,0 +1,45 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("finizen")
+class Finizen:
+    display_name = "Finizen"
+    id = 963
+    types = ['water']
+    base_stats = BaseStats(
+        hp=70,
+        attack=45,
+        defense=40,
+        special_attack=45,
+        special_defense=40,
+        speed=75
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=1
+    )
+    catch_rate = 200
+    base_experience_yield = 63
+    base_happiness = 50
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "water_veil",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "water_veil",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.3
+    weight_kg = 60.2
+    egg_groups = ['ground', 'water2']
+    growth_rate = "slow"
+    egg_moves = []

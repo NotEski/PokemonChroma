@@ -1,0 +1,16 @@
+@move("tidy_up")  # type: ignore
+class _TidyUp:
+    meta = {
+        "display_name": "Tidy Up",
+        "type": "normal",
+        "index": 882,
+        "damage_class": "status",
+        "category": "damage",
+        "accuracy": None,
+        "power": 0,
+        "pp": 10,
+        "target": "user",
+    }
+    stat_changes = {
+        "stat_changes_recieved": [{"stat": "attack", "change": 1, "chance": 100}, {"stat": "speed", "change": 1, "chance": 100}],
+    }

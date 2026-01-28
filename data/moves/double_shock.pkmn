@@ -1,0 +1,13 @@
+@move("double_shock")  # type: ignore
+class _DoubleShock:
+    meta = {
+        "display_name": "Double Shock",
+        "type": "electric",
+        "index": 892,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }

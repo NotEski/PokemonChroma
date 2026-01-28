@@ -1,0 +1,13 @@
+@move("raging_fury")  # type: ignore
+class _RagingFury:
+    meta = {
+        "display_name": "Raging Fury",
+        "type": "fire",
+        "index": 833,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 120,
+        "pp": 10,
+        "target": "random_opponent",
+    }

@@ -5,13 +5,12 @@ class _DiamondStorm:
         "type": "rock",
         "index": 591,
         "damage_class": "physical",
-        "category": "damage_raise",
+        "category": "damage",
         "accuracy": 95,
         "power": 100,
         "pp": 5,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
-        "stat_changes_inflicted": [{"stat": "defense", "change": 1, "chance": 50}],
+        "stat_changes_inflicted": [{"stat": "defense", "change": 2, "chance": 50}],
     }

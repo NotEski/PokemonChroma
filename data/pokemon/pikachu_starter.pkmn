@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("pikachu_starter")
+class MegaPikachuStarter:
+    display_name = "Pikachu Starter"
+    id = 10158
+    base_stats = BaseStats(
+        hp=45,
+        attack=80,
+        defense=50,
+        special_attack=75,
+        special_defense=60,
+        speed=120
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 86
+    height_m = 0.4
+    weight_kg = 6.0

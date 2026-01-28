@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("copperajah_gmax")
+class MegaCopperajah:
+    display_name = "Copperajah Gmax"
+    id = 10224
+    base_stats = BaseStats(
+        hp=122,
+        attack=130,
+        defense=69,
+        special_attack=80,
+        special_defense=69,
+        speed=30
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 175
+    height_m = 23.0
+    weight_kg = 1000.0

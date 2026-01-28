@@ -11,4 +11,6 @@ class _ThousandArrows:
         "pp": 10,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror", "non_sky_battle"]
+    status_condition = {
+        "unknown": 100,
+    }

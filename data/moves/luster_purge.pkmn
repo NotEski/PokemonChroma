@@ -5,13 +5,12 @@ class _LusterPurge:
         "type": "psychic",
         "index": 295,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 100,
-        "power": 70,
+        "power": 95,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "special_defense", "change": -1, "chance": 50}],
     }

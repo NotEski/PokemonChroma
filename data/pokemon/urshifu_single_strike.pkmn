@@ -1,0 +1,147 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("urshifu_single_strike")
+class UrshifuSingleStrike:
+    display_name = "Urshifu Single Strike"
+    id = 892
+    types = ['fighting', 'dark']
+    base_stats = BaseStats(
+        hp=100,
+        attack=130,
+        defense=100,
+        special_attack=63,
+        special_defense=60,
+        speed=97
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=3,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 275
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "unseen_fist",
+            "slot": 1,
+            "is_hidden": False
+        },
+    ]
+    height_m = 1.9
+    weight_kg = 105.0
+    growth_rate = "medium_fast"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "wicked_blow",
+            ],
+            1: [
+                "endure",
+                "focus_energy",
+                "leer",
+                "rock_smash",
+                "sucker_punch",
+                "wicked_blow",
+            ],
+            12: [
+                "aerial_ace",
+            ],
+            16: [
+                "scary_face",
+            ],
+            20: [
+                "headbutt",
+            ],
+            24: [
+                "brick_break",
+            ],
+            28: [
+                "detect",
+            ],
+            32: [
+                "bulk_up",
+            ],
+            36: [
+                "iron_head",
+            ],
+            40: [
+                "dynamic_punch",
+            ],
+            44: [
+                "counter",
+            ],
+            48: [
+                "close_combat",
+            ],
+            52: [
+                "focus_punch",
+            ],
+        }
+    machine_moves = [
+        "acrobatics",
+        "assurance",
+        "attract",
+        "aura_sphere",
+        "beat_up",
+        "body_press",
+        "body_slam",
+        "brick_break",
+        "bulk_up",
+        "close_combat",
+        "crunch",
+        "dark_pulse",
+        "darkest_lariat",
+        "dig",
+        "drain_punch",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "foul_play",
+        "giga_impact",
+        "helping_hand",
+        "ice_punch",
+        "iron_defense",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "superpower",
+        "swift",
+        "taunt",
+        "throat_chop",
+        "thunder_punch",
+        "u_turn",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+        "lash_out",
+    ]
+    egg_moves = []

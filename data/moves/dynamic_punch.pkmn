@@ -5,13 +5,12 @@ class _DynamicPunch:
         "type": "fighting",
         "index": 223,
         "damage_class": "physical",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 50,
         "power": 100,
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["contact", "protect", "mirror", "punch"]
     status_condition = {
         "confusion": 100,
     }

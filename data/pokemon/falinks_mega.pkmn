@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("falinks_mega")
+class MegaFalinks:
+    display_name = "Falinks Mega"
+    id = 10303
+    base_stats = BaseStats(
+        hp=65,
+        attack=135,
+        defense=135,
+        special_attack=70,
+        special_defense=65,
+        speed=100
+    )
+    mega_evolution_item = ""
+    base_experience_yield = None
+    height_m = 1.6
+    weight_kg = 99.0

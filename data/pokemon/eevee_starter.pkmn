@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("eevee_starter")
+class MegaEeveeStarter:
+    display_name = "Eevee Starter"
+    id = 10159
+    base_stats = BaseStats(
+        hp=65,
+        attack=75,
+        defense=70,
+        special_attack=65,
+        special_defense=85,
+        speed=75
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 87
+    height_m = 0.3
+    weight_kg = 6.5

@@ -1,0 +1,138 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("sawk")
+class Sawk:
+    display_name = "Sawk"
+    id = 539
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=75,
+        attack=125,
+        defense=75,
+        special_attack=30,
+        special_defense=75,
+        speed=85
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 163
+    base_happiness = 70
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "sturdy",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "mold_breaker",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.4
+    weight_kg = 51.0
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "leer",
+                "rock_smash",
+            ],
+            5: [
+                "focus_energy",
+            ],
+            10: [
+                "double_kick",
+            ],
+            15: [
+                "quick_guard",
+            ],
+            20: [
+                "low_sweep",
+            ],
+            25: [
+                "bulk_up",
+            ],
+            30: [
+                "retaliate",
+            ],
+            35: [
+                "brick_break",
+            ],
+            40: [
+                "counter",
+            ],
+            45: [
+                "endure",
+            ],
+            50: [
+                "reversal",
+            ],
+            55: [
+                "close_combat",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "dig",
+        "earthquake",
+        "endure",
+        "facade",
+        "fire_punch",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "giga_impact",
+        "grass_knot",
+        "helping_hand",
+        "ice_punch",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "payback",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "scary_face",
+        "sleep_talk",
+        "snore",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "taunt",
+        "throat_chop",
+        "thunder_punch",
+        "work_up",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

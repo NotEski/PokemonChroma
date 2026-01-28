@@ -11,5 +11,4 @@ class _AirSlash:
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror", "distance"]
     flinch_chance = 30

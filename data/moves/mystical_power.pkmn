@@ -1,0 +1,13 @@
+@move("mystical_power")  # type: ignore
+class _MysticalPower:
+    meta = {
+        "display_name": "Mystical Power",
+        "type": "psychic",
+        "index": 832,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 90,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }

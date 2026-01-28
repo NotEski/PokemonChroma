@@ -5,13 +5,12 @@ class _MudShot:
         "type": "ground",
         "index": 341,
         "damage_class": "special",
-        "category": "damage_lower",
+        "category": "damage",
         "accuracy": 95,
         "power": 55,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     stat_changes = {
         "stat_changes_inflicted": [{"stat": "speed", "change": -1, "chance": 100}],
     }

@@ -1,0 +1,13 @@
+@move("salt_cure")  # type: ignore
+class _SaltCure:
+    meta = {
+        "display_name": "Salt Cure",
+        "type": "rock",
+        "index": 864,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 40,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }

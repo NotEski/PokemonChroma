@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("audino_mega")
+class MegaAudino:
+    display_name = "Audino Mega"
+    id = 10069
+    base_stats = BaseStats(
+        hp=103,
+        attack=60,
+        defense=126,
+        special_attack=80,
+        special_defense=126,
+        speed=50
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 425
+    height_m = 1.5
+    weight_kg = 32.0

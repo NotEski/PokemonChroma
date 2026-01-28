@@ -5,13 +5,12 @@ class _PoisonGas:
         "type": "poison",
         "index": 139,
         "damage_class": "status",
-        "category": "status",
+        "category": "damage",
         "accuracy": 90,
         "power": None,
         "pp": 40,
         "target": "all_opponents",
     }
-    flags = ["protect", "reflectable", "mirror"]
     status_condition = {
         "poison": 0,
     }

@@ -1,0 +1,145 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("hitmonlee")
+class Hitmonlee:
+    display_name = "Hitmonlee"
+    id = 106
+    types = ['fighting']
+    base_stats = BaseStats(
+        hp=50,
+        attack=120,
+        defense=53,
+        special_attack=35,
+        special_defense=110,
+        speed=87
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 159
+    base_happiness = 70
+    gender_rate = 0
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "limber",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "reckless",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "unburden",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 49.8
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "brick_break",
+            ],
+            1: [
+                "brick_break",
+                "fake_out",
+                "feint",
+                "focus_energy",
+                "helping_hand",
+                "low_sweep",
+                "tackle",
+            ],
+            4: [
+                "double_kick",
+            ],
+            8: [
+                "low_kick",
+            ],
+            12: [
+                "endure",
+            ],
+            16: [
+                "revenge",
+            ],
+            21: [
+                "wide_guard",
+            ],
+            24: [
+                "blaze_kick",
+            ],
+            28: [
+                "mind_reader",
+            ],
+            32: [
+                "mega_kick",
+            ],
+            36: [
+                "close_combat",
+            ],
+            40: [
+                "reversal",
+            ],
+            44: [
+                "high_jump_kick",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "aura_sphere",
+        "blaze_kick",
+        "body_slam",
+        "bounce",
+        "brick_break",
+        "bulk_up",
+        "bulldoze",
+        "close_combat",
+        "earthquake",
+        "endure",
+        "facade",
+        "fling",
+        "focus_blast",
+        "focus_energy",
+        "helping_hand",
+        "low_kick",
+        "low_sweep",
+        "mega_kick",
+        "mega_punch",
+        "metronome",
+        "poison_jab",
+        "protect",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "reversal",
+        "rock_slide",
+        "rock_tomb",
+        "round",
+        "sleep_talk",
+        "snore",
+        "stomping_tantrum",
+        "stone_edge",
+        "substitute",
+        "sunny_day",
+        "superpower",
+        "swift",
+        "thief",
+        "throat_chop",
+        "uproar",
+        "work_up",
+    ]
+    tutor_moves = [
+        "coaching",
+    ]
+    egg_moves = []

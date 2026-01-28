@@ -1,0 +1,144 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("bisharp")
+class Bisharp:
+    display_name = "Bisharp"
+    id = 625
+    types = ['dark', 'steel']
+    base_stats = BaseStats(
+        hp=65,
+        attack=125,
+        defense=100,
+        special_attack=60,
+        special_defense=70,
+        speed=70
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=2,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 45
+    base_experience_yield = 172
+    base_happiness = 35
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "defiant",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "inner_focus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "pressure",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.6
+    weight_kg = 70.0
+    egg_groups = ['humanshape']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "fury_cutter",
+                "leer",
+                "metal_burst",
+                "metal_claw",
+                "scratch",
+            ],
+            15: [
+                "torment",
+            ],
+            20: [
+                "scary_face",
+            ],
+            25: [
+                "assurance",
+            ],
+            30: [
+                "metal_sound",
+            ],
+            35: [
+                "slash",
+            ],
+            40: [
+                "night_slash",
+            ],
+            45: [
+                "iron_defense",
+            ],
+            50: [
+                "laser_focus",
+            ],
+            57: [
+                "iron_head",
+            ],
+            64: [
+                "swords_dance",
+            ],
+            71: [
+                "guillotine",
+            ],
+        }
+    machine_moves = [
+        "air_slash",
+        "assurance",
+        "attract",
+        "beat_up",
+        "brick_break",
+        "dark_pulse",
+        "dig",
+        "endure",
+        "facade",
+        "false_swipe",
+        "fling",
+        "focus_blast",
+        "foul_play",
+        "giga_impact",
+        "grass_knot",
+        "hyper_beam",
+        "iron_defense",
+        "iron_head",
+        "low_kick",
+        "low_sweep",
+        "payback",
+        "poison_jab",
+        "protect",
+        "psycho_cut",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "revenge",
+        "rock_tomb",
+        "round",
+        "sandstorm",
+        "scary_face",
+        "screech",
+        "shadow_claw",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "stealth_rock",
+        "stone_edge",
+        "substitute",
+        "swords_dance",
+        "taunt",
+        "thief",
+        "throat_chop",
+        "thunder_wave",
+        "x_scissor",
+    ]
+    tutor_moves = [
+        "lash_out",
+        "steel_beam",
+    ]
+    egg_moves = []

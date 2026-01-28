@@ -1,0 +1,125 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("klinklang")
+class Klinklang:
+    display_name = "Klinklang"
+    id = 601
+    types = ['steel']
+    base_stats = BaseStats(
+        hp=60,
+        attack=100,
+        defense=115,
+        special_attack=70,
+        special_defense=85,
+        speed=90
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=3,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 30
+    base_experience_yield = 234
+    base_happiness = 70
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "plus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "minus",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "clear_body",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 81.0
+    egg_groups = ['mineral']
+    growth_rate = "medium_slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "bind",
+                "charge",
+                "gear_up",
+                "magnetic_flux",
+                "thunder_shock",
+                "vice_grip",
+            ],
+            12: [
+                "charge_beam",
+            ],
+            16: [
+                "metal_sound",
+            ],
+            20: [
+                "autotomize",
+            ],
+            24: [
+                "discharge",
+            ],
+            28: [
+                "screech",
+            ],
+            32: [
+                "gear_grind",
+            ],
+            36: [
+                "lock_on",
+            ],
+            42: [
+                "shift_gear",
+            ],
+            48: [
+                "zap_cannon",
+            ],
+            56: [
+                "hyper_beam",
+            ],
+            64: [
+                "electric_terrain",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "assurance",
+        "electric_terrain",
+        "endure",
+        "facade",
+        "flash_cannon",
+        "giga_impact",
+        "hyper_beam",
+        "iron_defense",
+        "power_gem",
+        "protect",
+        "rest",
+        "round",
+        "sandstorm",
+        "screech",
+        "sleep_talk",
+        "snore",
+        "substitute",
+        "thunder",
+        "thunder_wave",
+        "thunderbolt",
+        "trick_room",
+        "uproar",
+        "volt_switch",
+        "wild_charge",
+    ]
+    tutor_moves = [
+        "rising_voltage",
+        "steel_beam",
+        "steel_roller",
+    ]
+    egg_moves = []

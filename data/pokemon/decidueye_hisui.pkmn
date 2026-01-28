@@ -1,0 +1,19 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@mega_evolution("decidueye_hisui")
+class MegaDecidueyeHisui:
+    display_name = "Decidueye Hisui"
+    id = 10244
+    base_stats = BaseStats(
+        hp=88,
+        attack=112,
+        defense=80,
+        special_attack=95,
+        special_defense=95,
+        speed=60
+    )
+    mega_evolution_item = ""
+    base_experience_yield = 239
+    height_m = 1.6
+    weight_kg = 37.0

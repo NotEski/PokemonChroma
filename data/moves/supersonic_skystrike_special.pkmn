@@ -1,0 +1,13 @@
+@move("supersonic_skystrike_special")  # type: ignore
+class _SupersonicSkystrikeSpecial:
+    meta = {
+        "display_name": "Supersonic Skystrike",
+        "type": "flying",
+        "index": 627,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": None,
+        "power": None,
+        "pp": 1,
+        "target": "selected_pokemon",
+    }

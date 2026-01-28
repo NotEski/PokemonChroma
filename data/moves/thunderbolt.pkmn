@@ -5,13 +5,12 @@ class _Thunderbolt:
         "type": "electric",
         "index": 85,
         "damage_class": "special",
-        "category": "damage_status",
+        "category": "damage",
         "accuracy": 100,
         "power": 90,
         "pp": 15,
         "target": "selected_pokemon",
     }
-    flags = ["protect", "mirror"]
     status_condition = {
         "paralysis": 10,
     }

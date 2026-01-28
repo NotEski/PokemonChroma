@@ -1,0 +1,58 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("beldum")
+class Beldum:
+    display_name = "Beldum"
+    id = 374
+    types = ['steel', 'psychic']
+    base_stats = BaseStats(
+        hp=40,
+        attack=55,
+        defense=80,
+        special_attack=35,
+        special_defense=60,
+        speed=30
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 3
+    base_experience_yield = 60
+    base_happiness = 35
+    gender_rate = -1
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "clear_body",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "light_metal",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 0.6
+    weight_kg = 95.2
+    egg_groups = ['mineral']
+    growth_rate = "slow"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "tackle",
+            ],
+        }
+    machine_moves = [
+        "iron_defense",
+        "iron_head",
+        "zen_headbutt",
+    ]
+    tutor_moves = [
+        "steel_beam",
+    ]
+    egg_moves = []

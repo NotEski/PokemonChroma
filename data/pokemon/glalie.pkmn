@@ -1,0 +1,135 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("glalie")
+class Glalie:
+    display_name = "Glalie"
+    id = 362
+    types = ['ice']
+    base_stats = BaseStats(
+        hp=80,
+        attack=80,
+        defense=80,
+        special_attack=80,
+        special_defense=80,
+        speed=80
+    )
+    ev_yield = EffortYield(
+        hp=2,
+        attack=0,
+        defense=0,
+        special_attack=0,
+        special_defense=0,
+        speed=0
+    )
+    catch_rate = 75
+    base_experience_yield = 168
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "inner_focus",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "ice_body",
+            "slot": 2,
+            "is_hidden": False
+        },
+        {
+            "ability": "moody",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.5
+    weight_kg = 256.5
+    egg_groups = ['fairy', 'mineral']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            0: [
+                "freeze_dry",
+            ],
+            1: [
+                "astonish",
+                "double_team",
+                "freeze_dry",
+                "leer",
+                "powder_snow",
+                "sheer_cold",
+            ],
+            15: [
+                "ice_shard",
+            ],
+            20: [
+                "protect",
+            ],
+            25: [
+                "icy_wind",
+            ],
+            30: [
+                "frost_breath",
+            ],
+            35: [
+                "bite",
+            ],
+            40: [
+                "ice_fang",
+            ],
+            47: [
+                "hail",
+            ],
+            54: [
+                "headbutt",
+            ],
+            61: [
+                "crunch",
+            ],
+            68: [
+                "blizzard",
+            ],
+        }
+    machine_moves = [
+        "attract",
+        "avalanche",
+        "blizzard",
+        "body_slam",
+        "bulldoze",
+        "crunch",
+        "dark_pulse",
+        "earthquake",
+        "endure",
+        "facade",
+        "fake_tears",
+        "giga_impact",
+        "gyro_ball",
+        "hail",
+        "hex",
+        "hyper_beam",
+        "ice_beam",
+        "ice_fang",
+        "icicle_spear",
+        "icy_wind",
+        "iron_head",
+        "light_screen",
+        "payback",
+        "protect",
+        "rain_dance",
+        "rest",
+        "round",
+        "safeguard",
+        "scary_face",
+        "self_destruct",
+        "shadow_ball",
+        "sleep_talk",
+        "snore",
+        "spikes",
+        "substitute",
+        "taunt",
+        "weather_ball",
+    ]
+    tutor_moves = [
+        "steel_roller",
+    ]
+    egg_moves = []

@@ -1,0 +1,14 @@
+@move("jet_punch")  # type: ignore
+class _JetPunch:
+    meta = {
+        "display_name": "Jet Punch",
+        "type": "water",
+        "index": 857,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 60,
+        "pp": 15,
+        "target": "selected_pokemon",
+    }
+    priority = 1

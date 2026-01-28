@@ -11,4 +11,3 @@ class _Eruption:
         "pp": 5,
         "target": "all_opponents",
     }
-    flags = ["protect", "mirror"]

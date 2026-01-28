@@ -1,0 +1,134 @@
+from shared.pokemon.stats import BaseStats, EffortYield
+
+
+@pokemon("spiritomb")
+class Spiritomb:
+    display_name = "Spiritomb"
+    id = 442
+    types = ['ghost', 'dark']
+    base_stats = BaseStats(
+        hp=50,
+        attack=92,
+        defense=108,
+        special_attack=92,
+        special_defense=108,
+        speed=35
+    )
+    ev_yield = EffortYield(
+        hp=0,
+        attack=0,
+        defense=1,
+        special_attack=0,
+        special_defense=1,
+        speed=0
+    )
+    catch_rate = 100
+    base_experience_yield = 170
+    base_happiness = 70
+    gender_rate = 4
+    abilities: list[dict[str, str|int|bool]] = [
+        {
+            "ability": "pressure",
+            "slot": 1,
+            "is_hidden": False
+        },
+        {
+            "ability": "infiltrator",
+            "slot": 3,
+            "is_hidden": True
+        },
+    ]
+    height_m = 1.0
+    weight_kg = 108.0
+    egg_groups = ['indeterminate']
+    growth_rate = "medium"
+    level_moves: dict[int, list[str]] = {
+            1: [
+                "confuse_ray",
+                "night_shade",
+            ],
+            5: [
+                "shadow_sneak",
+            ],
+            10: [
+                "spite",
+            ],
+            15: [
+                "payback",
+            ],
+            20: [
+                "nasty_plot",
+            ],
+            25: [
+                "hex",
+            ],
+            30: [
+                "memento",
+            ],
+            35: [
+                "sucker_punch",
+            ],
+            40: [
+                "curse",
+            ],
+            45: [
+                "shadow_ball",
+            ],
+            50: [
+                "dark_pulse",
+            ],
+            55: [
+                "hypnosis",
+            ],
+            60: [
+                "dream_eater",
+            ],
+        }
+    machine_moves = [
+        "ally_switch",
+        "attract",
+        "calm_mind",
+        "dark_pulse",
+        "endure",
+        "facade",
+        "foul_play",
+        "giga_impact",
+        "hex",
+        "hyper_beam",
+        "icy_wind",
+        "imprison",
+        "nasty_plot",
+        "payback",
+        "phantom_force",
+        "protect",
+        "psychic",
+        "rain_dance",
+        "rest",
+        "retaliate",
+        "rock_tomb",
+        "round",
+        "shadow_ball",
+        "sleep_talk",
+        "snarl",
+        "snore",
+        "substitute",
+        "sunny_day",
+        "taunt",
+        "thief",
+        "trick",
+        "uproar",
+        "will_o_wisp",
+        "wonder_room",
+    ]
+    tutor_moves = [
+        "burning_jealousy",
+        "lash_out",
+        "poltergeist",
+    ]
+    egg_moves = [
+        "destiny_bond",
+        "disable",
+        "grudge",
+        "pain_split",
+        "smokescreen",
+    ]

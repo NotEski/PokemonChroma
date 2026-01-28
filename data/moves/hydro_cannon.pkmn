@@ -11,4 +11,3 @@ class _HydroCannon:
         "pp": 5,
         "target": "selected_pokemon",
     }
-    flags = ["recharge", "protect", "mirror"]

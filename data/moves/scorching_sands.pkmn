@@ -1,0 +1,16 @@
+@move("scorching_sands")  # type: ignore
+class _ScorchingSands:
+    meta = {
+        "display_name": "Scorching Sands",
+        "type": "ground",
+        "index": 815,
+        "damage_class": "special",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 70,
+        "pp": 10,
+        "target": "selected_pokemon",
+    }
+    status_condition = {
+        "burn": 30,
+    }

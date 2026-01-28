@@ -1,0 +1,13 @@
+@move("lash_out")  # type: ignore
+class _LashOut:
+    meta = {
+        "display_name": "Lash Out",
+        "type": "dark",
+        "index": 808,
+        "damage_class": "physical",
+        "category": "damage",
+        "accuracy": 100,
+        "power": 75,
+        "pp": 5,
+        "target": "selected_pokemon",
+    }
