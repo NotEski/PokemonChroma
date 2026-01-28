@@ -6,7 +6,6 @@ import builtins
 from random import randint
 import os
 from typing import Any, Optional, List, TypeVar, Callable
-from shared.battle.type_effectiveness import get_attack_multiplier
 from shared.pokemon.genders import GenderRate
 from shared.pokemon.hazard import EntryHazard
 from shared.battle.field_effect import FieldEffect
@@ -30,6 +29,8 @@ from shared.pokemon.stats import BaseStats, Stat, EffortYield
 from shared.items.items import Item, ItemCategory, ItemAttribute, ItemFlingEffect, ItemPocket
 from shared.battle.weather import BattleWeather
 from shared.battle.battle_header import BattleState
+
+from shared.battle.type_effectiveness import get_attack_multiplier
 
 
 # TypeVar for class decorators
@@ -363,9 +364,8 @@ def hazard(hazard_name: str):
 
 def field_effect(field_effect_name: str):
     def decorator(dsl_cls: T) -> T:
-        meta = dsl_cls.__dict__.get("meta", {})
-        display_name = get_field(meta, "display_name", str, required=False, default=field_effect_name.capitalize())
-        duration = get_field(meta, "default_duration", int, required=True)
+        display_name = dsl_cls.__dict__.get("display_name", field_effect_name.capitalize())
+        duration = dsl_cls.__dict__.get("default_duration", 5)
 
         field_effect = FieldEffect(
             name=field_effect_name,
@@ -382,7 +382,7 @@ def field_effect(field_effect_name: str):
         #     field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
         if hasattr(dsl_cls, "on_stat_calculation"):
-            dsl_method: Callable[[FieldEffect, BattleMon, str], None] = dsl_cls.on_stat_calculation # type: ignore
+            dsl_method: Callable[[FieldEffect, "BattleMon", str], None] = dsl_cls.on_stat_calculation # type: ignore
             field_effect.on_stat_calculation = lambda pokemon, stat, method=dsl_method: method(dsl_cls, pokemon, stat) # type: ignore
 
         field_effect_repository.create(field_effect)
@@ -578,6 +578,7 @@ safe_namespace: dict[str, Any|dict[str, Any]] = {
         "MoveTarget": MoveTarget,
         "DamageClass": DamageClass,
         "MoveCategory": MoveCategory,
+        "BattleMon": BattleMon,
     }
 
 def validate_dsl_code_strict(source: str, filename: str):
@@ -629,8 +630,17 @@ def load_dsl_files_from_directory(file_path: str):
         # Validate first
         validate_dsl_code_strict(source, str(file_path))
         
+        # Strip import statements since safe_namespace provides everything
+        # Remove lines starting with 'import' or 'from ... import'
+        lines = source.split('\n')
+        filtered_lines = [
+            line for line in lines 
+            if not (line.strip().startswith('import ') or line.strip().startswith('from '))
+        ]
+        source_without_imports = '\n'.join(filtered_lines)
+        
         # Execute with safe namespace only
-        exec(compile(source, file_path, 'exec'), safe_namespace)
+        exec(compile(source_without_imports, file_path, 'exec'), safe_namespace)
 
     except DSLParseError as e:
         print(f"Error loading {file_path}: {e}")

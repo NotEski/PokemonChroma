@@ -103,7 +103,7 @@ class Item(BaseModel):
     fling_power: Optional[int] = None
     baby_trigger_for: Optional[int] = None
     category: ItemCategory
-    held_by_pokemon: List["PokemonBase"] = []
+    held_by_pokemon: List[str] = []
     pocket: Optional[ItemPocket] = None
 
     def after_move_effect(self, pokemon: "BattleMon", move: "BaseMove", target: "BattleMon") -> None:

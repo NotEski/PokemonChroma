@@ -1,7 +1,7 @@
 from pkmn_imports import *
 
 @move("dragon_pulse")
-class _DragonPulse(BaseMove):
+class _DragonPulse:
     meta = MoveMetaData(
         display_name="Dragon Pulse",
         index=406,

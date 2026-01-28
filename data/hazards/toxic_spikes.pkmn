@@ -4,7 +4,7 @@ from pkmn_imports import *
 class ToxicSpikes:
     display_name = "Toxic Spikes"
 
-    def on_entry(self, pokemon: BattleMon, layer_count: int) -> None:
+    def on_entry(self, pokemon: "BattleMon", layer_count: int) -> None:
         if layer_count == 0:
             return  # No effect if there are no layers
 

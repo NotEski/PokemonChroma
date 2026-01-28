@@ -1,7 +1,7 @@
 from pkmn_imports import *
 
 @move("absorb")
-class Absorb(BaseMove):
+class Absorb:
     meta = MoveMetaData(
         display_name="Absorb",
         index=1,
