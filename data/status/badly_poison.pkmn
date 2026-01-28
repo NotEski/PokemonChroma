@@ -1,7 +1,7 @@
 from pkmn_imports import *
 
 @status("badly_poison")
-class BadlyPoisonStatus(StatusCondition):
+class BadlyPoisonStatus:
     meta = {
         "mutual_exclusive": True
     }

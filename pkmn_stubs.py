@@ -3,17 +3,17 @@ Type stubs for .pkmn DSL files.
 This file provides type hints and IDE support for the Pokemon DSL.
 """
 
-from typing import Callable, TypeVar, Any, Optional
+from typing import Callable, TypeVar, Any
 from shared.pokemon.stats import BaseStats, EffortYield, Stat
 from shared.pokemon.pokemon_types import PokemonType
 from shared.pokemon.status_conditions import StatusCondition
 from shared.pokemon.move import BaseMove, MoveMetaData, DamageClass, MoveCategory, MoveTarget
 from shared.pokemon.abilities import Ability
 from shared.items.items import Item
-from shared.pokemon.hazard import EntryHazard
-from shared.battle.field_effect import FieldEffect
-from shared.pokemon.pokemon import BattleMon
-from shared.battle.type_effectiveness import get_attack_multiplier as _get_attack_multiplier
+from shared.pokemon.hazard import EntryHazard # type: ignore
+from shared.battle.field_effect import FieldEffect # type: ignore
+from shared.pokemon.pokemon import BattleMon # type: ignore
+from shared.battle.type_effectiveness import get_attack_multiplier as _get_attack_multiplier  # type: ignore
 
 # TypeVar for decorators
 T = TypeVar('T', bound=type)
@@ -268,7 +268,7 @@ def get_item(item_name: str) -> Item:
     ...
 
 def get_attack_multiplier(
-    attacking_types: list[PokemonType],
+    attacking_type: PokemonType,
     defending_types: list[PokemonType]
 ) -> float:
     """
@@ -290,7 +290,6 @@ def get_attack_multiplier(
 __all__ = [
     # Built-ins
     "max", "min", "len", "randint", "print",
-    "dict", "list", "str", "int", "float", "bool",
     
     # Decorators
     "pokemon_type", "move", "status", "item", "ability",

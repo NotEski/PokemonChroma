@@ -382,7 +382,7 @@ def field_effect(field_effect_name: str):
         #     field_effect.on_remove = lambda position, method=dsl_method: method(dsl_cls, position) # type: ignore
 
         if hasattr(dsl_cls, "on_stat_calculation"):
-            dsl_method: Callable[[FieldEffect, "BattleMon", str], None] = dsl_cls.on_stat_calculation # type: ignore
+            dsl_method: Callable[[FieldEffect, "BattleMon", Stat], None] = dsl_cls.on_stat_calculation # type: ignore
             field_effect.on_stat_calculation = lambda pokemon, stat, method=dsl_method: method(dsl_cls, pokemon, stat) # type: ignore
 
         field_effect_repository.create(field_effect)
