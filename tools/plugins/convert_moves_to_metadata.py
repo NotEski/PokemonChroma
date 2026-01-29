@@ -330,7 +330,7 @@ class Plugin(ToolPluginBase):
         if not moves_dir.exists():
             raise ValueError(f"Moves directory not found: {moves_dir}")
         
-        output_lines = []
+        output_lines: List[str] = []
         
         if dry_run:
             output_lines.append("=" * 80)

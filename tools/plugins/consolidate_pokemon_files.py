@@ -21,7 +21,7 @@ class PokemonConsolidator:
     
     def __init__(self, pokemon_dir: Path):
         self.pokemon_dir = Path(pokemon_dir)
-        self.stats = {
+        self.stats: Dict[str, Any] = {
             'moved': 0,
             'deleted_json': 0,
             'deleted_dirs': 0,
@@ -217,7 +217,7 @@ class Plugin(ToolPluginBase):
         if not pokemon_dir.exists():
             raise ValueError(f"Pokemon directory not found: {pokemon_dir}")
         
-        output_lines = []
+        output_lines: List[str] = []
         
         if dry_run:
             output_lines.append("=" * 80)
