@@ -24,6 +24,37 @@ Episodic Pokémon fangame built from scratch with `pyglet`. Follow Ash's anime r
 2. Install deps: `pip install -r requirements.txt`.
 3. Run the game: `python main.py`.
 
+## Toolbox
+
+The `tools/` directory includes a comprehensive plugin-based toolbox for managing Pokémon data and assets:
+
+### Quick Start
+```bash
+# Launch GUI (recommended)
+python tools/toolbox.py
+
+# Or use CLI
+python tools/toolbox.py --cli list
+python tools/toolbox.py --cli run asset_downloader -- --range 1 151
+```
+
+### Available Tools
+- **Asset Downloader** - Download Pokémon artwork and sprites
+- **PokeAPI Downloader** - Download comprehensive Pokémon data
+- **Pokémon Data Generator** - Generate game database
+- **Type Chart Generator** - Create type effectiveness data
+- **JSON Converter** - Convert JSON to game format
+- **Consolidate Files** - Organize data files
+- **Move Converter** - Convert move data
+
+### Documentation
+See [tools/README.md](tools/README.md) for detailed toolbox documentation.
+
+Each plugin includes comprehensive help accessible via:
+- **GUI:** Click "Help" button in plugin tab
+- **File:** See `tools/plugins/wiki/` for markdown docs
+- **Development:** See `tools/plugins/PLUGIN_DEVELOPMENT.md` to create new plugins
+
 ## Repo Structure (key parts)
 - `main.py` – entry point to launch the game.
 - `engine/` – rendering and battle systems (pyglet windowing, battle logic, type effectiveness, damage/catch calculators).

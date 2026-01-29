@@ -272,4 +272,21 @@ def render_plugin_help(plugin: ToolPluginBase) -> str:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    # Check if --cli flag is provided for CLI mode
+    if "--cli" in sys.argv:
+        # Remove --cli flag and run CLI mode
+        sys.argv.remove("--cli")
+        raise SystemExit(main())
+    else:
+        # Default to GUI mode
+        try:
+            from toolbox_gui import main as gui_main  # type: ignore
+            gui_main()
+        except ImportError as e:
+            print(f"Error: Could not import GUI: {e}")
+            print("Falling back to CLI mode...")
+            raise SystemExit(main())
+        except Exception as e:
+            print(f"Error running GUI: {e}")
+            print("Falling back to CLI mode...")
+            raise SystemExit(main())

@@ -3,7 +3,7 @@ from typing import Optional, List, TYPE_CHECKING
 from enum import Enum
 
 if TYPE_CHECKING:
-    from shared.pokemon.pokemon import BattleMon, PokemonBase
+    from shared.pokemon.pokemon import BattleMon
     from shared.pokemon.move import BaseMove
 
 class ItemAttribute(Enum):
