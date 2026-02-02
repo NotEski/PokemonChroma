@@ -18,7 +18,7 @@ INI_PATH = TOOLS_DIR / "toolbox.ini"
 if str(SHARED_DIR) not in sys.path:
     sys.path.insert(0, str(SHARED_DIR))
 
-from plugin_base import ToolPluginBase  # type: ignore
+from shared.plugin_base import ToolPluginBase  # type: ignore
 
 
 class PluginManager:

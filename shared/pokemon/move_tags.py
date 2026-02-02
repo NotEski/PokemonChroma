@@ -104,6 +104,9 @@ class FieldEffectMove(MoveTag):
     field_effect: FieldEffect
     turns: int  # Number of turns the field effect will last
 
+class FirstTurnOutMove(MoveTag):
+    pass
+
 class GravityMove(MoveTag):
     pass
 
@@ -113,6 +116,17 @@ class HazardMove(MoveTag):
 
 class HazardRemovalMove(MoveTag):
     entry_hazard: Optional[EntryHazard] # if None, removes all hazards
+
+class HPDependentMove(MoveTag):
+    check_user: bool  # if True, checks user's HP instead of target's HP
+    above_hp_threshold: bool  # True if move is more effective above threshold, False if below
+    hp_threshold_percentage: int  # HP percentage threshold
+
+class ItemDependentMove(MoveTag):
+    check_user: bool  # True if checking user's item, False if checking target's
+    item_name: Optional[str] = None  # Name of the item to check for. i.e. "Leftovers", "Choice Band" etc.
+    item_catagory: Optional[str] = None  # Category of the item to check for. i.e. "berries", "hold_items", "gem" etc.
+    requires_item: bool  # True if move requires the item to be present, False if it requires the item to be absent
 
 class ItemInteractionMove(MoveTag):
     interaction: ItemInteraction
@@ -213,6 +227,11 @@ class StatChangeReceivedMove(StatChangeMove):
 class StatusConditionMove(MoveTag):
     status_condition: StatusCondition
     chance: int  # Percentage chance to inflict the status condition. If 0 or less, always inflicts.
+
+class StatusConditionDependentMove(MoveTag):
+    check_user: bool  # True if checking user's status condition, False if checking target's
+    status_condition: StatusCondition
+    requires_condition: bool  # True if move requires the condition to be present, False if it requires the condition to be absent
 
 class StatSwapMove(MoveTag):
     stats_to_swap: dict[Stat, Stat]  # Dictionary mapping stats to be swapped from {User: Target} e.g. {Stat.ATTACK: Stat.DEFENSE}
