@@ -630,4 +630,4 @@ print (move_repository.get("struggle"))
 
 # launch_game_window()
 
-# launch_battle_inspector()
+launch_battle_inspector()

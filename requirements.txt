@@ -2,4 +2,4 @@ pydantic
 requests
 pyinstaller
 pytest
-panda3d==1.10.15
+panda3d==1.10.16
